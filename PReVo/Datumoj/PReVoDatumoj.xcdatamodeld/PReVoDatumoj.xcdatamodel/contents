@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="Artikolo" syncable="YES">
+        <attribute name="indekso" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="radiko" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titolo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tradukoj" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="vortoj" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="Fako" syncable="YES">
+        <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Lingvo" syncable="YES">
+        <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="komencajNodoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="lingvo" inverseEntity="TrieNodo" syncable="YES"/>
+    </entity>
+    <entity name="Mallongigo" syncable="YES">
+        <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Stilo" syncable="YES">
+        <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="TrieNodo" syncable="YES">
+        <attribute name="litero" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fontoNodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="sekvajNodoj" inverseEntity="TrieNodo" syncable="YES"/>
+        <relationship name="lingvo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lingvo" inverseName="komencajNodoj" inverseEntity="Lingvo" syncable="YES"/>
+        <relationship name="sekvajNodoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="fontoNodo" inverseEntity="TrieNodo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Fako" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Stilo" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="Artikolo" positionX="0" positionY="54" width="128" height="120"/>
+        <element name="Lingvo" positionX="18" positionY="99" width="128" height="90"/>
+        <element name="Mallongigo" positionX="36" positionY="108" width="128" height="75"/>
+        <element name="TrieNodo" positionX="-9" positionY="63" width="128" height="105"/>
+    </elements>
+</model>
