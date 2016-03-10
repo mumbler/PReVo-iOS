@@ -1,0 +1,651 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0009859B1C31F0CB0083DE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0009859A1C31F0CB0083DE24 /* AppDelegate.swift */; };
+		000985A21C31F0CB0083DE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000985A11C31F0CB0083DE24 /* Assets.xcassets */; };
+		000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */; };
+		000985B01C31F0CB0083DE24 /* PReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985AF1C31F0CB0083DE24 /* PReVoTests.swift */; };
+		000985BB1C31F0CB0083DE24 /* PReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */; };
+		00EAB8B51C91F9E400AA5C0C /* PReVo.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8B41C91F9E400AA5C0C /* PReVo.strings */; };
+		00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */; };
+		00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */; };
+		00EAB8C11C91FC6A00AA5C0C /* ChefaPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C01C91FC6A00AA5C0C /* ChefaPaghoViewController.swift */; };
+		00EAB8C31C91FCE400AA5C0C /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */; };
+		00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */; };
+		00EAB8C71C91FD0400AA5C0C /* ModelObjekto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */; };
+		00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */; };
+		00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */; };
+		00EAB8CE1C92000400AA5C0C /* ChefaPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */; };
+		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		000985AC1C31F0CB0083DE24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000985961C31F0CB0083DE24;
+			remoteInfo = PReVo;
+		};
+		000985B71C31F0CB0083DE24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000985961C31F0CB0083DE24;
+			remoteInfo = PReVo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000985971C31F0CB0083DE24 /* PReVo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PReVo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0009859A1C31F0CB0083DE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		000985A11C31F0CB0083DE24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		000985A41C31F0CB0083DE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		000985A61C31F0CB0083DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000985AB1C31F0CB0083DE24 /* PReVoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PReVoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		000985AF1C31F0CB0083DE24 /* PReVoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PReVoTests.swift; sourceTree = "<group>"; };
+		000985B11C31F0CB0083DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		000985B61C31F0CB0083DE24 /* PReVoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PReVoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PReVoUITests.swift; sourceTree = "<group>"; };
+		000985BC1C31F0CB0083DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00EAB8B41C91F9E400AA5C0C /* PReVo.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = PReVo.strings; sourceTree = SOURCE_ROOT; };
+		00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
+		00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
+		00EAB8C01C91FC6A00AA5C0C /* ChefaPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaPaghoViewController.swift; sourceTree = "<group>"; };
+		00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
+		00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
+		00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjekto.swift; sourceTree = "<group>"; };
+		00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
+		00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
+		00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChefaPaghoViewController.xib; sourceTree = "<group>"; };
+		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		000985941C31F0CB0083DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985A81C31F0CB0083DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985B31C31F0CB0083DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0009858E1C31F0CB0083DE24 = {
+			isa = PBXGroup;
+			children = (
+				000985991C31F0CB0083DE24 /* PReVo */,
+				000985AE1C31F0CB0083DE24 /* PReVoTests */,
+				000985B91C31F0CB0083DE24 /* PReVoUITests */,
+				000985981C31F0CB0083DE24 /* Products */,
+				36ACEC2F19732B712D3C6913 /* Pods */,
+				0282B2FEF6E4EC8E45CCEF41 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		000985981C31F0CB0083DE24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000985971C31F0CB0083DE24 /* PReVo.app */,
+				000985AB1C31F0CB0083DE24 /* PReVoTests.xctest */,
+				000985B61C31F0CB0083DE24 /* PReVoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		000985991C31F0CB0083DE24 /* PReVo */ = {
+			isa = PBXGroup;
+			children = (
+				000985A61C31F0CB0083DE24 /* Info.plist */,
+				00EAB8B41C91F9E400AA5C0C /* PReVo.strings */,
+				000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */,
+				000985A11C31F0CB0083DE24 /* Assets.xcassets */,
+				0009859A1C31F0CB0083DE24 /* AppDelegate.swift */,
+				00EAB8BA1C91FB8300AA5C0C /* Navigaciiloj */,
+				00EAB8B61C91FB8300AA5C0C /* Chefaj Paghoj */,
+				00EAB8B81C91FB8300AA5C0C /* Flanka Menuo */,
+				00EAB8BB1C91FB8300AA5C0C /* Subaj Paghoj */,
+				00EAB8B91C91FB8300AA5C0C /* Motoroj */,
+			);
+			path = PReVo;
+			sourceTree = "<group>";
+		};
+		000985AE1C31F0CB0083DE24 /* PReVoTests */ = {
+			isa = PBXGroup;
+			children = (
+				000985AF1C31F0CB0083DE24 /* PReVoTests.swift */,
+				000985B11C31F0CB0083DE24 /* Info.plist */,
+			);
+			path = PReVoTests;
+			sourceTree = "<group>";
+		};
+		000985B91C31F0CB0083DE24 /* PReVoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */,
+				000985BC1C31F0CB0083DE24 /* Info.plist */,
+			);
+			path = PReVoUITests;
+			sourceTree = "<group>";
+		};
+		00EAB8B61C91FB8300AA5C0C /* Chefaj Paghoj */ = {
+			isa = PBXGroup;
+			children = (
+				00EAB8C01C91FC6A00AA5C0C /* ChefaPaghoViewController.swift */,
+				00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */,
+				00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */,
+				00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */,
+			);
+			path = "Chefaj Paghoj";
+			sourceTree = "<group>";
+		};
+		00EAB8B81C91FB8300AA5C0C /* Flanka Menuo */ = {
+			isa = PBXGroup;
+			children = (
+				00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */,
+			);
+			path = "Flanka Menuo";
+			sourceTree = "<group>";
+		};
+		00EAB8B91C91FB8300AA5C0C /* Motoroj */ = {
+			isa = PBXGroup;
+			children = (
+				00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */,
+				00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */,
+				00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */,
+			);
+			path = Motoroj;
+			sourceTree = "<group>";
+		};
+		00EAB8BA1C91FB8300AA5C0C /* Navigaciiloj */ = {
+			isa = PBXGroup;
+			children = (
+				00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */,
+			);
+			path = Navigaciiloj;
+			sourceTree = "<group>";
+		};
+		00EAB8BB1C91FB8300AA5C0C /* Subaj Paghoj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Subaj Paghoj";
+			sourceTree = "<group>";
+		};
+		0282B2FEF6E4EC8E45CCEF41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47EF2D02040D4CCD471ACA36 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36ACEC2F19732B712D3C6913 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */,
+				8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000985961C31F0CB0083DE24 /* PReVo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000985BF1C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PReVo" */;
+			buildPhases = (
+				FA57B7E0B17AE731C8923244 /* Check Pods Manifest.lock */,
+				000985931C31F0CB0083DE24 /* Sources */,
+				000985941C31F0CB0083DE24 /* Frameworks */,
+				000985951C31F0CB0083DE24 /* Resources */,
+				6AE55078CE43B0BE13EA0BAA /* Embed Pods Frameworks */,
+				AB341A5087405B60150151AE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PReVo;
+			productName = PReVo;
+			productReference = 000985971C31F0CB0083DE24 /* PReVo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000985AA1C31F0CB0083DE24 /* PReVoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000985C21C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PReVoTests" */;
+			buildPhases = (
+				000985A71C31F0CB0083DE24 /* Sources */,
+				000985A81C31F0CB0083DE24 /* Frameworks */,
+				000985A91C31F0CB0083DE24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000985AD1C31F0CB0083DE24 /* PBXTargetDependency */,
+			);
+			name = PReVoTests;
+			productName = PReVoTests;
+			productReference = 000985AB1C31F0CB0083DE24 /* PReVoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		000985B51C31F0CB0083DE24 /* PReVoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000985C51C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PReVoUITests" */;
+			buildPhases = (
+				000985B21C31F0CB0083DE24 /* Sources */,
+				000985B31C31F0CB0083DE24 /* Frameworks */,
+				000985B41C31F0CB0083DE24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000985B81C31F0CB0083DE24 /* PBXTargetDependency */,
+			);
+			name = PReVoUITests;
+			productName = PReVoUITests;
+			productReference = 000985B61C31F0CB0083DE24 /* PReVoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0009858F1C31F0CB0083DE24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = NormalSoft;
+				TargetAttributes = {
+					000985961C31F0CB0083DE24 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					000985AA1C31F0CB0083DE24 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 000985961C31F0CB0083DE24;
+					};
+					000985B51C31F0CB0083DE24 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 000985961C31F0CB0083DE24;
+					};
+				};
+			};
+			buildConfigurationList = 000985921C31F0CB0083DE24 /* Build configuration list for PBXProject "PReVo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0009858E1C31F0CB0083DE24;
+			productRefGroup = 000985981C31F0CB0083DE24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000985961C31F0CB0083DE24 /* PReVo */,
+				000985AA1C31F0CB0083DE24 /* PReVoTests */,
+				000985B51C31F0CB0083DE24 /* PReVoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		000985951C31F0CB0083DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00EAB8CE1C92000400AA5C0C /* ChefaPaghoViewController.xib in Resources */,
+				00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */,
+				00EAB8B51C91F9E400AA5C0C /* PReVo.strings in Resources */,
+				000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */,
+				000985A21C31F0CB0083DE24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985A91C31F0CB0083DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985B41C31F0CB0083DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AE55078CE43B0BE13EA0BAA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB341A5087405B60150151AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA57B7E0B17AE731C8923244 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		000985931C31F0CB0083DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */,
+				00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */,
+				0009859B1C31F0CB0083DE24 /* AppDelegate.swift in Sources */,
+				00EAB8C31C91FCE400AA5C0C /* SeancDatumaro.swift in Sources */,
+				00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */,
+				00EAB8C71C91FD0400AA5C0C /* ModelObjekto.swift in Sources */,
+				00EAB8C11C91FC6A00AA5C0C /* ChefaPaghoViewController.swift in Sources */,
+				00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985A71C31F0CB0083DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000985B01C31F0CB0083DE24 /* PReVoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985B21C31F0CB0083DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				000985BB1C31F0CB0083DE24 /* PReVoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		000985AD1C31F0CB0083DE24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000985961C31F0CB0083DE24 /* PReVo */;
+			targetProxy = 000985AC1C31F0CB0083DE24 /* PBXContainerItemProxy */;
+		};
+		000985B81C31F0CB0083DE24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000985961C31F0CB0083DE24 /* PReVo */;
+			targetProxy = 000985B71C31F0CB0083DE24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				000985A41C31F0CB0083DE24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		000985BD1C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		000985BE1C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		000985C01C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PReVo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		000985C11C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PReVo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		000985C31C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PReVoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PReVo.app/PReVo";
+			};
+			name = Debug;
+		};
+		000985C41C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PReVoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PReVo.app/PReVo";
+			};
+			name = Release;
+		};
+		000985C61C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PReVoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PReVo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		000985C71C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PReVoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PReVo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000985921C31F0CB0083DE24 /* Build configuration list for PBXProject "PReVo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985BD1C31F0CB0083DE24 /* Debug */,
+				000985BE1C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000985BF1C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PReVo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985C01C31F0CB0083DE24 /* Debug */,
+				000985C11C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000985C21C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PReVoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985C31C31F0CB0083DE24 /* Debug */,
+				000985C41C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000985C51C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PReVoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985C61C31F0CB0083DE24 /* Debug */,
+				000985C71C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0009858F1C31F0CB0083DE24 /* Project object */;
+}
