@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iOS_Slide_Menu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,20 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var kreiDatumbazon = false
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        
         
         if kreiDatumbazon {
             
         }
         
-        let navilo = ChefaNavigationController()
-        let pagho = ChefaPaghoViewController()
-        navilo.viewControllers.append(pagho)
-        navilo.navigationBar.translucent = false
+        //SeancDatumaro
+        //UzantDatumaro
         
-        pagho.montriPaghon(Pagho.Serchi)
-
+        let navilo = ChefaNavigationController()
+        
         fenestro = UIWindow(frame: UIScreen.mainScreen().bounds)
         fenestro?.rootViewController = navilo
         fenestro?.makeKeyAndVisible()

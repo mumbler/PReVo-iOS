@@ -8,6 +8,12 @@
 
 import Foundation
 import UIKit
+import iOS_Slide_Menu
+
+protocol Subpagho {
+    
+    func aranghiNavigaciilo() -> Void
+}
 
 enum Pagho : Int {
     case Serchi = 0, Historio, Konservitaj, Agordoj, Pri
@@ -71,7 +77,22 @@ class ChefaPaghoViewController : UIViewController {
             addChildViewController(filoVC!)
             view.addSubview(filoV!)
             filoV?.frame = view.frame
+            
+            if let konforma = novaPagho as? Subpagho {
+                konforma.aranghiNavigaciilo()
+            }
         }
     }
     
+}
+
+extension ChefaPaghoViewController : SlideNavigationControllerDelegate {
+    
+    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
+        return true
+    }
+    
+    func slideNavigationControllerShouldDisplayRightMenu() -> Bool {
+        return false
+    }
 }

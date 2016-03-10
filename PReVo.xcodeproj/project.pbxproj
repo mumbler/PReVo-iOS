@@ -22,6 +22,7 @@
 		00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */; };
 		00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */; };
 		00EAB8CE1C92000400AA5C0C /* ChefaPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */; };
+		00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
 		00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
 		00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChefaPaghoViewController.xib; sourceTree = "<group>"; };
+		00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */,
+				00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */,
 			);
 			path = "Flanka Menuo";
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			files = (
 				00EAB8CE1C92000400AA5C0C /* ChefaPaghoViewController.xib in Resources */,
 				00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */,
+				00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */,
 				00EAB8B51C91F9E400AA5C0C /* PReVo.strings in Resources */,
 				000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */,
 				000985A21C31F0CB0083DE24 /* Assets.xcassets in Resources */,
