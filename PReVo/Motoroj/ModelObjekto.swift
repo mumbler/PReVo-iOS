@@ -54,3 +54,8 @@ class Uzo {
         nomo = ennomo
     }
 }
+
+struct Listero {
+    
+    let kodo: String, nomo: String
+}

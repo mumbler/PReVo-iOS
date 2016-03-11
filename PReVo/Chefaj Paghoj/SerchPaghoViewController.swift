@@ -20,6 +20,8 @@ class SerchPaghoViewController : UIViewController, Subpagho {
     
     override func viewDidLoad() {
         
+        serchTabulo?.delegate = self
+        
         trovTabelo?.delegate = self
         trovTabelo?.dataSource = self
         trovTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchChelIdent)
@@ -38,6 +40,20 @@ class SerchPaghoViewController : UIViewController, Subpagho {
 
 extension SerchPaghoViewController : UISearchBarDelegate {
     
+    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        
+        return true
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchBar.text = searchBar.text?.lowercaseString
+        if let teksto = searchBar.text {
+        
+            serchRezultoj = TrieRegilo.serchi("en", teksto: teksto)
+            var x = 4
+        }
+    }
 }
 
 extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource {

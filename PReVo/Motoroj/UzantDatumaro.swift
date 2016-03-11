@@ -10,4 +10,6 @@ import Foundation
 
 class UzantDatumaro {
     
+    //static var historio: [Listero]
+    
 }

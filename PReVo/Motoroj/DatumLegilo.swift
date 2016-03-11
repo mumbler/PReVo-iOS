@@ -19,6 +19,8 @@ class DatumLegilo {
             return
         }
         
+        var lingvoKodoj = ["eo"]
+        
         // Enlegi lingvojn
         if let lingvoDos = NSBundle.mainBundle().pathForResource("lingvoj", ofType: "dat") {
             do {
@@ -33,6 +35,9 @@ class DatumLegilo {
                                 let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Lingvo", inManagedObjectContext: konteksto!)
                                 novaObjekto.setValue(enhavoj[0], forKey: "kodo")
                                 novaObjekto.setValue(enhavoj[1], forKey: "nomo")
+                                if let kodo = enhavoj[0] as? String {
+                                    lingvoKodoj.append(kodo)
+                                }
                             }
                         }
                         
@@ -119,5 +124,77 @@ class DatumLegilo {
             }
         }
         
+        // Enlegi mallongigojn
+        if let artikoloDos = NSBundle.mainBundle().pathForResource("vortoj", ofType: "dat") {
+            do {
+                if let artikoloDat = NSData(contentsOfFile: artikoloDos) {
+                    let artikoloJ = try NSJSONSerialization.JSONObjectWithData(artikoloDat, options: NSJSONReadingOptions())
+                    
+                    if let listo = artikoloJ as? NSArray {
+                        
+                        for artikolo in listo {
+                            if let enhavoj = artikolo as? NSDictionary {
+                                
+                                let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Artikolo", inManagedObjectContext: konteksto!)
+                                novaObjekto.setValue(enhavoj["titolo"], forKey: "titolo")
+                                novaObjekto.setValue(enhavoj["radiko"], forKey: "radiko")
+                                novaObjekto.setValue(enhavoj["indekso"], forKey: "indekso")
+                                let tradukDatumoj = try NSJSONSerialization.dataWithJSONObject(enhavoj["tradukoj"]!, options: NSJSONWritingOptions())
+                                novaObjekto.setValue(tradukDatumoj, forKey: "tradukoj")
+                                let vortDatumoj = try NSJSONSerialization.dataWithJSONObject(enhavoj["objekto"]!, options: NSJSONWritingOptions())
+                                novaObjekto.setValue(vortDatumoj, forKey: "vortoj")
+                            }
+                        }
+                        
+                        try konteksto?.save()
+                    }
+                }
+            } catch {
+                NSLog("Erar en kreado de artikolo-datumbaz-objektoj")
+            }
+        }
+        
+        TrieRegilo.konstruiChiuTrie(lingvoKodoj)
+        
+    }
+    
+    // =============================
+    // Helpaj funkcioj
+    // =============================
+    
+    static func lingvoPorKodo(kodo: String) -> NSManagedObject? {
+        
+        if konteksto == nil {
+            return nil
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Lingvo", inManagedObjectContext: konteksto!)
+        serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
+        do {
+            return try konteksto!.executeFetchRequest(serchPeto).first as? NSManagedObject
+        } catch {
+            
+        }
+        
+        return nil
+    }
+    
+    static func artikoloPorIndekso(indekso: String) -> NSManagedObject? {
+        
+        if konteksto == nil {
+            return nil
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Artikolo", inManagedObjectContext: konteksto!)
+        serchPeto.predicate = NSPredicate(format: "indekso == %@", argumentArray: [indekso])
+        do {
+            return try konteksto!.executeFetchRequest(serchPeto).first as? NSManagedObject
+        } catch {
+            
+        }
+        
+        return nil
     }
 }

@@ -16,15 +16,15 @@ let datumbazNomo = "PReVoDatumbazo"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var fenestro: UIWindow?
-    var kreiDatumbazon = true
+    var kreiDatumbazon = false
     var konteksto: NSManagedObjectContext?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        TrieRegilo.konteksto = self.managedObjectContext
+        DatumLegilo.konteksto = self.managedObjectContext
+        
         if kreiDatumbazon {
-            konteksto = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
-            konteksto?.persistentStoreCoordinator = self.persistentStoreCoordinator
-            DatumLegilo.konteksto = konteksto
             DatumLegilo.fariDatumbazon()
         }
         

@@ -482,9 +482,9 @@
 		00EAB8B91C91FB8300AA5C0C /* Motoroj */ = {
 			isa = PBXGroup;
 			children = (
+				00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */,
 				00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */,
 				00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */,
-				00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */,
 				00F09C661C922CE400B29687 /* DatumLegilo.swift */,
 				00F09C681C922CEB00B29687 /* TrieRegilo.swift */,
 			);
