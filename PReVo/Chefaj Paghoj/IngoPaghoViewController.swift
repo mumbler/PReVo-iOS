@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
-protocol Subpagho {
+protocol Chefpagho {
     
     func aranghiNavigaciilo() -> Void
 }
@@ -40,7 +40,7 @@ enum Pagho : Int {
     
 }
 
-class ChefaPaghoViewController : UIViewController {
+class IngoPaghoViewController : UIViewController {
     
     @IBOutlet var nunaEkrano: UIView?
     var filoVC: UIViewController?
@@ -78,7 +78,7 @@ class ChefaPaghoViewController : UIViewController {
             view.addSubview(filoV!)
             filoV?.frame = view.frame
             
-            if let konforma = novaPagho as? Subpagho {
+            if let konforma = novaPagho as? Chefpagho {
                 konforma.aranghiNavigaciilo()
             }
         }
@@ -86,7 +86,7 @@ class ChefaPaghoViewController : UIViewController {
     
 }
 
-extension ChefaPaghoViewController : SlideNavigationControllerDelegate {
+extension IngoPaghoViewController : SlideNavigationControllerDelegate {
     
     func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
         return true

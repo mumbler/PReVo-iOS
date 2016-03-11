@@ -12,16 +12,19 @@
 		000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */; };
 		000985B01C31F0CB0083DE24 /* PReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985AF1C31F0CB0083DE24 /* PReVoTests.swift */; };
 		000985BB1C31F0CB0083DE24 /* PReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */; };
+		003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */; };
+		003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */; };
+		003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19711C932AA800A1BFB1 /* Iloj.swift */; };
 		00EAB8B51C91F9E400AA5C0C /* PReVo.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8B41C91F9E400AA5C0C /* PReVo.strings */; };
 		00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */; };
 		00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */; };
-		00EAB8C11C91FC6A00AA5C0C /* ChefaPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C01C91FC6A00AA5C0C /* ChefaPaghoViewController.swift */; };
+		00EAB8C11C91FC6A00AA5C0C /* IngoPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C01C91FC6A00AA5C0C /* IngoPaghoViewController.swift */; };
 		00EAB8C31C91FCE400AA5C0C /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */; };
 		00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */; };
 		00EAB8C71C91FD0400AA5C0C /* ModelObjekto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */; };
 		00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */; };
 		00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */; };
-		00EAB8CE1C92000400AA5C0C /* ChefaPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */; };
+		00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */; };
 		00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */; };
 		00F09C651C92273F00B29687 /* PReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C631C92273F00B29687 /* PReVoDatumoj.xcdatamodeld */; };
 		00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C661C922CE400B29687 /* DatumLegilo.swift */; };
@@ -207,16 +210,19 @@
 		000985B61C31F0CB0083DE24 /* PReVoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PReVoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PReVoUITests.swift; sourceTree = "<group>"; };
 		000985BC1C31F0CB0083DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
+		003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
+		003E19711C932AA800A1BFB1 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
 		00EAB8B41C91F9E400AA5C0C /* PReVo.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = PReVo.strings; sourceTree = SOURCE_ROOT; };
 		00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
 		00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
-		00EAB8C01C91FC6A00AA5C0C /* ChefaPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaPaghoViewController.swift; sourceTree = "<group>"; };
+		00EAB8C01C91FC6A00AA5C0C /* IngoPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngoPaghoViewController.swift; sourceTree = "<group>"; };
 		00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
 		00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
 		00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjekto.swift; sourceTree = "<group>"; };
 		00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
 		00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
-		00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChefaPaghoViewController.xib; sourceTree = "<group>"; };
+		00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngoPaghoViewController.xib; sourceTree = "<group>"; };
 		00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
 		00F09C641C92273F00B29687 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
 		00F09C661C922CE400B29687 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
@@ -433,8 +439,8 @@
 				0009859A1C31F0CB0083DE24 /* AppDelegate.swift */,
 				00EAB8BA1C91FB8300AA5C0C /* Navigaciiloj */,
 				00EAB8B61C91FB8300AA5C0C /* Chefaj Paghoj */,
-				00EAB8B81C91FB8300AA5C0C /* Flanka Menuo */,
 				00EAB8BB1C91FB8300AA5C0C /* Subaj Paghoj */,
+				00EAB8B81C91FB8300AA5C0C /* Flanka Menuo */,
 				00EAB8B91C91FB8300AA5C0C /* Motoroj */,
 				00F09C621C92273300B29687 /* Datumoj */,
 			);
@@ -462,8 +468,8 @@
 		00EAB8B61C91FB8300AA5C0C /* Chefaj Paghoj */ = {
 			isa = PBXGroup;
 			children = (
-				00EAB8C01C91FC6A00AA5C0C /* ChefaPaghoViewController.swift */,
-				00EAB8CD1C92000400AA5C0C /* ChefaPaghoViewController.xib */,
+				00EAB8C01C91FC6A00AA5C0C /* IngoPaghoViewController.swift */,
+				00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */,
 				00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */,
 				00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */,
 			);
@@ -487,6 +493,7 @@
 				00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */,
 				00F09C661C922CE400B29687 /* DatumLegilo.swift */,
 				00F09C681C922CEB00B29687 /* TrieRegilo.swift */,
+				003E19711C932AA800A1BFB1 /* Iloj.swift */,
 			);
 			path = Motoroj;
 			sourceTree = "<group>";
@@ -502,6 +509,8 @@
 		00EAB8BB1C91FB8300AA5C0C /* Subaj Paghoj */ = {
 			isa = PBXGroup;
 			children = (
+				003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */,
+				003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */,
 			);
 			path = "Subaj Paghoj";
 			sourceTree = "<group>";
@@ -811,7 +820,7 @@
 				00F09D681C92328200B29687 /* indekso_sg.dat in Resources */,
 				00F09D8E1C92328200B29687 /* indekso_yo.dat in Resources */,
 				00F09D631C92328200B29687 /* indekso_ro.dat in Resources */,
-				00EAB8CE1C92000400AA5C0C /* ChefaPaghoViewController.xib in Resources */,
+				00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */,
 				00F09D401C92328200B29687 /* indekso_ko.dat in Resources */,
 				00F09D361C92328200B29687 /* indekso_iu.dat in Resources */,
 				00F09D831C92328200B29687 /* indekso_tt.dat in Resources */,
@@ -906,6 +915,7 @@
 				00F09D281C92328200B29687 /* indekso_grc.dat in Resources */,
 				00F09D921C92328200B29687 /* lingvoj.dat in Resources */,
 				00F09D231C92328200B29687 /* indekso_fy.dat in Resources */,
+				003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */,
 				00F09D5F1C92328200B29687 /* indekso_pt.dat in Resources */,
 				00F09D5A1C92328200B29687 /* indekso_or.dat in Resources */,
 				00F09D0B1C92328200B29687 /* indekso_bg.dat in Resources */,
@@ -1033,13 +1043,15 @@
 				00F09C691C922CEB00B29687 /* TrieRegilo.swift in Sources */,
 				00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */,
 				00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */,
+				003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */,
 				00F09C651C92273F00B29687 /* PReVoDatumoj.xcdatamodeld in Sources */,
 				00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */,
 				0009859B1C31F0CB0083DE24 /* AppDelegate.swift in Sources */,
 				00EAB8C31C91FCE400AA5C0C /* SeancDatumaro.swift in Sources */,
+				003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */,
 				00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */,
 				00EAB8C71C91FD0400AA5C0C /* ModelObjekto.swift in Sources */,
-				00EAB8C11C91FC6A00AA5C0C /* ChefaPaghoViewController.swift in Sources */,
+				00EAB8C11C91FC6A00AA5C0C /* IngoPaghoViewController.swift in Sources */,
 				00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

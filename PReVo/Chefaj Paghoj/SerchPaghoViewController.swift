@@ -11,8 +11,9 @@ import UIKit
 import CoreData
 
 let serchChelIdent = "serchRezultoChelo"
+let serchLimo = 32
 
-class SerchPaghoViewController : UIViewController, Subpagho {
+class SerchPaghoViewController : UIViewController, Chefpagho {
     
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var trovTabelo: UITableView?
@@ -47,11 +48,12 @@ extension SerchPaghoViewController : UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchBar.text = searchBar.text?.lowercaseString
-        if let teksto = searchBar.text {
-        
-            serchRezultoj = TrieRegilo.serchi("en", teksto: teksto)
-            var x = 4
+        if let teksto = searchBar.text?.lowercaseString {
+            
+            if !teksto.isEmpty {
+                serchRezultoj = TrieRegilo.serchi("en", teksto: teksto, limo: serchLimo)
+                trovTabelo?.reloadData()
+            }
         }
     }
 }
@@ -64,7 +66,7 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return serchRezultoj.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -76,6 +78,17 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
             novaChelo = UITableViewCell()
         }
         
+        novaChelo.textLabel?.text = serchRezultoj[indexPath.row].0
+        
         return novaChelo
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if let artikolObjekto = serchRezultoj[indexPath.row].1.valueForKey("artikolo") as? NSManagedObject {
+            let artikolo = Artikolo(objekto: artikolObjekto)
+        }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

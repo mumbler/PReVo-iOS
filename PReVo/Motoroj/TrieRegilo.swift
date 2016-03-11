@@ -112,7 +112,7 @@ class TrieRegilo {
     // Trie navigaciado
     // ====================================
     
-    static func serchi(lingvoKodo: String, teksto: String) -> [(String, NSManagedObject)] {
+    static func serchi(lingvoKodo: String, teksto: String, limo: Int) -> [(String, NSManagedObject)] {
         
         var nunNodo: NSManagedObject? = nil
         var sekvaNodo: NSManagedObject? = nil
@@ -136,7 +136,7 @@ class TrieRegilo {
         }
         
         if nunNodo != nil {
-            return chiuFinajho(nunNodo!).sort({ (unua: (String, NSManagedObject), dua: (String, NSManagedObject)) -> Bool in
+            return chiuFinajho(nunNodo!, limo: limo).sort({ (unua: (String, NSManagedObject), dua: (String, NSManagedObject)) -> Bool in
                 return unua.0 < dua.0
             })
         } else {
@@ -144,7 +144,7 @@ class TrieRegilo {
         }
     }
     
-    static func chiuFinajho(nodo: NSManagedObject) -> [(String, NSManagedObject)] {
+    static func chiuFinajho(nodo: NSManagedObject, limo: Int) -> [(String, NSManagedObject)] {
         
         var rezultoj = [(String, NSManagedObject)]()
         
@@ -156,7 +156,10 @@ class TrieRegilo {
             
             for sekvaNodo in sekvaj {
                 
-                rezultoj.appendContentsOf(chiuFinajho(sekvaNodo))
+                rezultoj.appendContentsOf(chiuFinajho(sekvaNodo, limo: limo))
+                if rezultoj.count > limo {
+                    return Array(rezultoj.prefix(limo))
+                }
             }
         }
         

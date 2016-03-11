@@ -25,7 +25,7 @@ class ChefaNavigationController : SlideNavigationController {
         portraitSlideOffset = 150
         enableSwipeGesture = true
         
-        let pagho = ChefaPaghoViewController()
+        let pagho = IngoPaghoViewController()
         viewControllers.append(pagho)
         pagho.montriPaghon(Pagho.Serchi)
     }
