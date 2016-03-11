@@ -86,7 +86,9 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if let artikolObjekto = serchRezultoj[indexPath.row].1.valueForKey("artikolo") as? NSManagedObject {
-            let artikolo = Artikolo(objekto: artikolObjekto)
+            if let artikolo = Artikolo(objekto: artikolObjekto) {
+                navigationController?.pushViewController(ArtikoloViewController(enartikolo: artikolo)!, animated: true)
+            }
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

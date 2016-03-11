@@ -59,8 +59,8 @@ class Artikolo {
                             }
                         }
                         teksto = teksto.substringToIndex(teksto.startIndex.advancedBy(teksto.characters.count - 1))
-                        if let lingvoKodo = lingvo as? String {
-                            novajTradukoj.append(Traduko(nomo: lingvoKodo, teksto: teksto))
+                        if let lingvo = SeancDatumaro.lingvoPorKodo(lingvo as! String) {
+                            novajTradukoj.append(Traduko(lingvo: lingvo, teksto: teksto))
                         }
                         
                     }
@@ -89,14 +89,14 @@ struct Vorto {
 
 struct Traduko {
     
-    let nomo: String, teksto: String
+    let lingvo: Lingvo, teksto: String
 }
 
 class Lingvo {
     
     let kodo: String, nomo: String
     
-    init(enkodo: String, ennomo: String) {
+    init(_ enkodo: String, _ ennomo: String) {
         kodo = enkodo
         nomo = ennomo
     }
@@ -107,21 +107,31 @@ func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
     return lhs.kodo == rhs.kodo
 }
 
-class Fako {
+struct Fako {
     
     let kodo: String, nomo: String
     
-    init(enkodo: String, ennomo: String) {
+    init(_ enkodo: String, _ ennomo: String) {
         kodo = enkodo
         nomo = ennomo
     }
 }
 
-class Uzo {
+struct Stilo {
     
     let kodo: String, nomo: String
     
-    init(enkodo: String, ennomo: String) {
+    init(_ enkodo: String, _ ennomo: String) {
+        kodo = enkodo
+        nomo = ennomo
+    }
+}
+
+struct Mallongigo {
+    
+    let kodo: String, nomo: String
+    
+    init(_ enkodo: String, _ ennomo: String) {
         kodo = enkodo
         nomo = ennomo
     }

@@ -162,6 +162,68 @@ class DatumLegilo {
     // Helpaj funkcioj
     // =============================
     
+    static func chiujLingvoj() -> [NSManagedObject]? {
+        
+        if konteksto == nil {
+            return nil
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Lingvo", inManagedObjectContext: konteksto!)
+        do {
+            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+        } catch { }
+        
+        return nil
+    }
+    
+    static func chiujFakoj() -> [NSManagedObject]? {
+        
+        if konteksto == nil {
+            return nil
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Fako", inManagedObjectContext: konteksto!)
+        do {
+            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+        } catch { }
+        
+        return nil
+    }
+    
+    static func chiujStiloj() -> [NSManagedObject]? {
+        
+        if konteksto == nil {
+            return nil
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Stilo", inManagedObjectContext: konteksto!)
+        do {
+            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+        } catch { }
+        
+        return nil
+    }
+    
+    static func chiujMallongigoj() -> [NSManagedObject]? {
+        
+        if konteksto == nil {
+            return nil
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Mallongigo", inManagedObjectContext: konteksto!)
+        do {
+            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+        } catch { }
+        
+        return nil
+    }
+    
+    // Serchi specifajn objektojn
+    
     static func lingvoPorKodo(kodo: String) -> NSManagedObject? {
         
         if konteksto == nil {

@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DatumLegilo.fariDatumbazon()
         }
         
-        //SeancDatumaro
+        SeancDatumaro.starigi()
         //UzantDatumaro
         
         let navilo = ChefaNavigationController()

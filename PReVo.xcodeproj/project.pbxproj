@@ -15,6 +15,8 @@
 		003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */; };
 		003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */; };
 		003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19711C932AA800A1BFB1 /* Iloj.swift */; };
+		003E19751C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19741C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift */; };
+		003E19771C93667B00A1BFB1 /* ArtikoloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E19761C93667B00A1BFB1 /* ArtikoloTableViewCell.xib */; };
 		00EAB8B51C91F9E400AA5C0C /* PReVo.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8B41C91F9E400AA5C0C /* PReVo.strings */; };
 		00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */; };
 		00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */; };
@@ -213,6 +215,8 @@
 		003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
 		003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
 		003E19711C932AA800A1BFB1 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
+		003E19741C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikolCheloTableViewCell.swift; sourceTree = "<group>"; };
+		003E19761C93667B00A1BFB1 /* ArtikoloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloTableViewCell.xib; sourceTree = "<group>"; };
 		00EAB8B41C91F9E400AA5C0C /* PReVo.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = PReVo.strings; sourceTree = SOURCE_ROOT; };
 		00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
 		00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
@@ -491,9 +495,9 @@
 				00EAB8C61C91FD0400AA5C0C /* ModelObjekto.swift */,
 				00EAB8C21C91FCE400AA5C0C /* SeancDatumaro.swift */,
 				00EAB8C41C91FCF200AA5C0C /* UzantDatumaro.swift */,
+				003E19711C932AA800A1BFB1 /* Iloj.swift */,
 				00F09C661C922CE400B29687 /* DatumLegilo.swift */,
 				00F09C681C922CEB00B29687 /* TrieRegilo.swift */,
-				003E19711C932AA800A1BFB1 /* Iloj.swift */,
 			);
 			path = Motoroj;
 			sourceTree = "<group>";
@@ -511,6 +515,8 @@
 			children = (
 				003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */,
 				003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */,
+				003E19741C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift */,
+				003E19761C93667B00A1BFB1 /* ArtikoloTableViewCell.xib */,
 			);
 			path = "Subaj Paghoj";
 			sourceTree = "<group>";
@@ -963,6 +969,7 @@
 				00F09D5C1C92328200B29687 /* indekso_pa.dat in Resources */,
 				00F09D561C92328200B29687 /* indekso_nl.dat in Resources */,
 				00F09D531C92328200B29687 /* indekso_my.dat in Resources */,
+				003E19771C93667B00A1BFB1 /* ArtikoloTableViewCell.xib in Resources */,
 				00F09D331C92328200B29687 /* indekso_ik.dat in Resources */,
 				00F09D451C92328200B29687 /* indekso_lat.dat in Resources */,
 				00F09D7C1C92328200B29687 /* indekso_tk.dat in Resources */,
@@ -1040,6 +1047,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003E19751C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift in Sources */,
 				00F09C691C922CEB00B29687 /* TrieRegilo.swift in Sources */,
 				00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */,
 				00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */,
