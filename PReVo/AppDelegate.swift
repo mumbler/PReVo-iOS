@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         SeancDatumaro.starigi()
-        //UzantDatumaro
+        UzantDatumaro.starigi()
         
         let navilo = ChefaNavigationController()
         

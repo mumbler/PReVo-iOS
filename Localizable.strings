@@ -1,0 +1,13 @@
+/* 
+  PReVo.strings
+  PReVo
+
+  Created by Robin Hill on 3/10/16.
+  Copyright © 2016 NormalSoft. All rights reserved.
+*/
+
+// Serch lingvo elektilo
+
+"serch-elektilo titolo"                         = "Elekti serch-lingvon";
+"serch-elektilo oftaj etikedo"                  = "Oftaj Lingvoj";
+"serch-elektilo chiuj etikedo"                  = "Chiuj Lingvoj";

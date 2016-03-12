@@ -31,11 +31,24 @@ class SerchPaghoViewController : UIViewController, Chefpagho {
     
     func aranghiNavigaciilo() {
         
-        parentViewController?.title = "Serchi"
+        ghisdatigiTitolon()
         
         let dekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItemStyle.Plain, target: self, action: "elektiLingvon")
         dekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 0)
         parentViewController?.navigationItem.rightBarButtonItem = dekstraButono
+    }
+    
+    func ghisdatigiTitolon() {
+        parentViewController?.title = "Serchi (" + UzantDatumaro.serchLingvo.nomo + ")"
+    }
+    
+    func elektiLingvon() {
+        
+        let navigaciilo = HelpaNavigationController()
+        let elektilo = SerchLingvoElektiloViewController()
+        elektilo.delegate = self
+        navigaciilo.viewControllers.append(elektilo)
+        self.navigationController?.presentViewController(navigaciilo, animated: true, completion: nil)
     }
 }
 
@@ -92,5 +105,12 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+}
+
+extension SerchPaghoViewController : SerchLingvoElektiloDelegate {
+    
+    func elektisSerchLingvon() {
+        ghisdatigiTitolon()
     }
 }

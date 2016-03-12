@@ -55,10 +55,10 @@ class Artikolo {
                                 let tradIndekso = tradDict["indekso"] as! String
                                 let tradNomo = tradDict["nomo"] as! String
                                 let tradTeksto = tradDict["teksto"] as! String
-                                teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo + "</a>" + ": " + tradTeksto + ";"
+                                teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo + "</a>" + ": " + tradTeksto + "; "
                             }
                         }
-                        teksto = teksto.substringToIndex(teksto.startIndex.advancedBy(teksto.characters.count - 1))
+                        teksto = teksto.substringToIndex(teksto.startIndex.advancedBy(teksto.characters.count - 2))
                         if let lingvo = SeancDatumaro.lingvoPorKodo(lingvo as! String) {
                             novajTradukoj.append(Traduko(lingvo: lingvo, teksto: teksto))
                         }

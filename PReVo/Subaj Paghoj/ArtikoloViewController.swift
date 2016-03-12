@@ -38,13 +38,14 @@ class ArtikoloViewController : UIViewController {
         vortTabelo?.delegate = self
         vortTabelo?.dataSource = self
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
-        //vortTabelo?.registerClass(ArtikoloTableViewCell.self, forCellReuseIdentifier:  artikolChelIdent)
         vortTabelo?.reloadData()
     }
     
     func prepariTradukListon() {
         
-        tradukListo = artikolo?.tradukoj
+        tradukListo = artikolo?.tradukoj.sort({ (unua: Traduko, dua: Traduko) -> Bool in
+            return unua.lingvo.nomo < dua.lingvo.nomo
+        })
     }
     
 }
@@ -54,7 +55,6 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         let tradukSumo = artikolo?.tradukoj.count ?? 0, videblaSumo = tradukListo?.count ?? 0
         return 1 + ((videblaSumo > 0 || tradukSumo - videblaSumo > 0) ? 1 : 0)
-        //return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -103,6 +103,10 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             }
         } else if indexPath.section == 1 {
             
+            if let traduko = tradukListo?[indexPath.row] {
+                
+                novaChelo.prepari(titolo: traduko.lingvo.nomo, teksto: traduko.teksto)
+            }
         }
         
         return novaChelo

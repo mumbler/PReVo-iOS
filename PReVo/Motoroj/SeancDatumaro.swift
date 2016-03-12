@@ -30,6 +30,9 @@ class SeancDatumaro {
                 }
             }
         }
+        lingvoj.sortInPlace { (unua: Lingvo, dua: Lingvo) -> Bool in
+            return unua.nomo < dua.nomo
+        }
         
         for fako in DatumLegilo.chiujFakoj() ?? [] {
             
