@@ -11,6 +11,7 @@ import UIKit
 import TTTAttributedLabel
 
 let artikolChelIdent = "artikolaChelo"
+let artikolKapIdent  = "artikolaKapo"
 let artikolPiedIdent = "artikolaPiedo"
 
 class ArtikoloViewController : UIViewController {
@@ -40,9 +41,13 @@ class ArtikoloViewController : UIViewController {
 
         prepariTradukListon()
         
+        automaticallyAdjustsScrollViewInsets = false
+        
+        vortTabelo?.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         vortTabelo?.delegate = self
         vortTabelo?.dataSource = self
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
+        vortTabelo?.registerNib(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
         vortTabelo?.reloadData()
         
@@ -56,9 +61,7 @@ class ArtikoloViewController : UIViewController {
         tradukListo = [Traduko]()
         
         for traduko in artikolo?.tradukoj ?? [] {
-            if UzantDatumaro.tradukLingvoj.contains({ (nuna: Lingvo) -> Bool in
-                nuna.kodo == traduko.lingvo.kodo
-            }) {
+            if UzantDatumaro.tradukLingvoj.contains(traduko.lingvo) {
                 tradukListo?.append(traduko)
             }
         }
@@ -78,6 +81,7 @@ class ArtikoloViewController : UIViewController {
             for vorto in grupo.vortoj {
                 
                 if vorto.marko == marko {
+                    
                     vortTabelo?.scrollToRowAtIndexPath(NSIndexPath(forRow: sumo, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: animacii)
                     return
                 }
@@ -169,9 +173,29 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return novaChelo
     }
     
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if section == 0 {
+            return nil
+        }
+        
+        let novaKapo: ArtikoloKapoTableViewHeaderFooterView
+        if let trovKapo = vortTabelo?.dequeueReusableHeaderFooterViewWithIdentifier(artikolKapIdent) as? ArtikoloKapoTableViewHeaderFooterView {
+            novaKapo = trovKapo
+        } else {
+            novaKapo = ArtikoloKapoTableViewHeaderFooterView()
+        }
+        
+        if section == 1 {
+            novaKapo.etikedo?.text = "Tradukoj"
+        }
+        
+        return novaKapo
+    }
+    
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        if section == 1 && artikolo?.tradukoj.count > 0 && tradukListo?.count < artikolo?.tradukoj.count {
+        if section == 1 && artikolo?.tradukoj.count > 0 {
             
             let novaPiedo: ArtikoloPiedButonoTableViewHeaderFooterView
             if let trovPiedo = vortTabelo?.dequeueReusableHeaderFooterViewWithIdentifier(artikolPiedIdent) as? ArtikoloPiedButonoTableViewHeaderFooterView {
@@ -206,7 +230,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if section == 0 {
-            return 0
+            return 1
         }
     
         return UITableViewAutomaticDimension
@@ -215,7 +239,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if section == 1 {
-            return UITableViewAutomaticDimension
+            return 50
         }
         
         return 0
@@ -223,7 +247,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+        return 100
     }
     
     func tableView(tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
@@ -235,7 +259,9 @@ extension ArtikoloViewController : TradukLingvojElektiloDelegate {
     
     func elektisTradukLingvojn() {
         
+        prepariTradukListon()
         vortTabelo?.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Fade)
+        vortTabelo?.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
     }
 }
 

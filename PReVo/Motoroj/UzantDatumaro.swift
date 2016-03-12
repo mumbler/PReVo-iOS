@@ -14,7 +14,7 @@ class UzantDatumaro {
 
     static var serchLingvo: Lingvo = Lingvo("", "")
     static var oftajSerchLingvoj: [Lingvo] = [Lingvo]()
-    static var tradukLingvoj: [Lingvo] = [Lingvo]()
+    static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
     //static var historio: [Listero]
     
     static func starigi() {
@@ -23,7 +23,7 @@ class UzantDatumaro {
             
             let bazKodo = kodo.componentsSeparatedByString("-").first
             if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo) {
-                tradukLingvoj.append(lingvo)
+                tradukLingvoj.insert(lingvo)
                 oftajSerchLingvoj.append(lingvo)
             }
         }

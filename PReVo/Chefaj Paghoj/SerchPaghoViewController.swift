@@ -64,7 +64,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
         if let teksto = searchBar.text?.lowercaseString {
             
             if !teksto.isEmpty {
-                serchRezultoj = TrieRegilo.serchi("en", teksto: teksto, limo: serchLimo)
+                serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
                 trovTabelo?.reloadData()
             }
         }
@@ -100,7 +100,11 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         
         if let artikolObjekto = serchRezultoj[indexPath.row].1.valueForKey("artikolo") as? NSManagedObject {
             if let artikolo = Artikolo(objekto: artikolObjekto) {
-                navigationController?.pushViewController(ArtikoloViewController(enartikolo: artikolo)!, animated: true)
+                if let marko = serchRezultoj[indexPath.row].1.valueForKey("marko") as? String where !marko.isEmpty {
+                    navigationController?.pushViewController(ArtikoloViewController(enartikolo: artikolo, enmarko: marko)!, animated: true)
+                } else {
+                    navigationController?.pushViewController(ArtikoloViewController(enartikolo: artikolo)!, animated: true)
+                }
             }
         }
         

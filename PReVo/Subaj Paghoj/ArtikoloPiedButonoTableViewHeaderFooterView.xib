@@ -13,9 +13,6 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IdF-o4-dTZ">
                     <rect key="frame" x="8" y="8" width="304" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="34" id="rP6-Pi-gWp"/>
-                    </constraints>
                     <state key="normal" title="Montri Pliajn Tradukojn">
                         <color key="titleColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>

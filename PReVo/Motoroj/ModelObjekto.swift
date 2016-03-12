@@ -92,13 +92,17 @@ struct Traduko {
     let lingvo: Lingvo, teksto: String
 }
 
-class Lingvo {
+class Lingvo : Hashable {
     
     let kodo: String, nomo: String
     
     init(_ enkodo: String, _ ennomo: String) {
         kodo = enkodo
         nomo = ennomo
+    }
+    
+    var hashValue: Int {
+        return kodo.hashValue
     }
 }
 

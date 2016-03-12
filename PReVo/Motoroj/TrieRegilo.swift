@@ -20,9 +20,10 @@ class TrieRegilo {
     static func konstruiChiuTrie(kodoj: [String]) {
         
         for lingvo in kodoj {
-            //konstruiTriePorLingvo(lingvo)
+            konstruiTriePorLingvo(lingvo)
         }
-        konstruiTriePorLingvo("en")
+        
+        //konstruiTriePorLingvo("en")
     }
     
     static func konstruiTriePorLingvo(kodo: String) {
@@ -152,7 +153,9 @@ class TrieRegilo {
             rezultoj.append( (destino.valueForKey("teksto") as! String, destino) )
         }
         
-        if let sekvaj: [NSManagedObject] = (nodo.valueForKey("sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject] {
+        if let sekvaj = ((nodo.valueForKey("sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject])?.sort({ (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
+            return (unua.valueForKey("litero") as? String) < (dua.valueForKey("litero") as? String)
+        }) {
             
             for sekvaNodo in sekvaj {
                 

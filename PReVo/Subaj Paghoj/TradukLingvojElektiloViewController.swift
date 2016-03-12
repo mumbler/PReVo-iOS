@@ -21,6 +21,7 @@ class TradukLingvojElektiloViewController : UIViewController {
     @IBOutlet var lingvoTabelo: UITableView?
     var eoIndekso: Int = 0
     var delegate: TradukLingvojElektiloDelegate?
+    var shanghisLingvojn: Bool = false
     
     override func viewDidLoad() {
         
@@ -31,8 +32,15 @@ class TradukLingvojElektiloViewController : UIViewController {
         title = NSLocalizedString("traduk-elektilo titolo", comment: "")
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
-        lingvoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
+        lingvoTabelo?.registerNib(UINib(nibName: "TradukLingvoElektiloTableViewCell", bundle: nil), forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
         lingvoTabelo?.reloadData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        
+        if shanghisLingvojn {
+            delegate?.elektisTradukLingvojn()
+        }
     }
 }
 
@@ -61,9 +69,10 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
             novaChelo = trovChelo
         } else {
             novaChelo = TradukLingvojElektiloTableViewCell()
-            novaChelo.shaltilo?.tag = indexPath.row
-            novaChelo.shaltilo?.addTarget(self, action: "shaltisLingvon:", forControlEvents: UIControlEvents.PrimaryActionTriggered)
         }
+        
+        novaChelo.shaltilo?.tag = indexPath.row + ((indexPath.row <= eoIndekso) ? 1 : 0)
+        novaChelo.shaltilo?.addTarget(self, action: Selector("shaltisLingvon:"), forControlEvents: UIControlEvents.ValueChanged)
         
         if indexPath.section == 0 {
             
@@ -81,8 +90,9 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         }
         else if indexPath.section == 1 {
 
+            let lingvo = SeancDatumaro.lingvoj[indexPath.row + ((indexPath.row <= eoIndekso) ? 1 : 0)]
             novaChelo.shaltilo?.hidden = false
-            let lingvo = SeancDatumaro.lingvoj[indexPath.row + ((indexPath.row <= eoIndekso) ? 0 : 1)]
+            novaChelo.shaltilo?.on = UzantDatumaro.tradukLingvoj.contains(lingvo)
             novaChelo.etikedo?.text = lingvo.nomo
             
         }
@@ -90,13 +100,54 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         return novaChelo
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                for lingvo in SeancDatumaro.lingvoj {
+                    if lingvo != SeancDatumaro.esperantaLingvo() {
+                        UzantDatumaro.tradukLingvoj.insert(lingvo)
+                    }
+                }
+                break;
+            case 1:
+                UzantDatumaro.tradukLingvoj.removeAll()
+                break;
+            default:
+                break;
+            }
+            
+            shanghisLingvojn = true
+            for chelo in lingvoTabelo?.visibleCells as? [TradukLingvojElektiloTableViewCell] ?? [] {
+                chelo.shaltilo?.setOn(indexPath.row == 0, animated: true)
+            }
+        }
+        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        
+        if indexPath.section != 0 {
+            return nil
+        }
+        
+        return indexPath
+    }
+    
 }
 
 // Shaltilo reagado
 extension TradukLingvojElektiloViewController {
     
-    func shaltilsLingvon(shaltilo: AnyObject) {
+    func shaltisLingvon(shaltilo: UISwitch) {
         
-        
+        if shaltilo.on {
+            UzantDatumaro.tradukLingvoj.insert(SeancDatumaro.lingvoj[shaltilo.tag])
+        } else {
+            UzantDatumaro.tradukLingvoj.remove(SeancDatumaro.lingvoj[shaltilo.tag])
+        }
+        shanghisLingvojn = true
     }
 }
