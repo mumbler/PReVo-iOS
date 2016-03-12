@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let lingvoElektiloChelIdent = "lingvoElektiloChelo"
+let serchLingvoElektiloChelIdent = "lingvoElektiloChelo"
 
 protocol SerchLingvoElektiloDelegate {
     
@@ -26,7 +26,7 @@ class SerchLingvoElektiloViewController : UIViewController {
         title = NSLocalizedString("serch-elektilo titolo", comment: "")
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
-        lingvoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: lingvoElektiloChelIdent)
+        lingvoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
         lingvoTabelo?.reloadData()
     }
     
@@ -60,7 +60,7 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let novaChelo: UITableViewCell
-        if let trovChelo = lingvoTabelo?.dequeueReusableCellWithIdentifier(lingvoElektiloChelIdent) {
+        if let trovChelo = lingvoTabelo?.dequeueReusableCellWithIdentifier(serchLingvoElektiloChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()

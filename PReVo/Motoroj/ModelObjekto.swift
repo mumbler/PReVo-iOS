@@ -84,7 +84,7 @@ struct Grupo {
 
 struct Vorto {
     
-    let titolo: String, teksto: String
+    let titolo: String, teksto: String, marko: String?
 }
 
 struct Traduko {
@@ -162,7 +162,7 @@ class Modeloj {
             
             for uzo in uzoj {
                 if let uzString = uzo as? String {
-                    if tipo == "snc" {
+                    if tipo == "snc" || tipo == "subsnc" {
                         teksto += uzString + " "
                     } else {
                         teksto += uzString + "\n"
@@ -183,14 +183,15 @@ class Modeloj {
             
             let filTipo = filDict["tipo"] as? String
             if filTipo == "subart" {
+                
+                var grupTeksto = ""
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    //teksto += Iloj.alRomia(filNombro)
+                    grupTeksto += Iloj.alRomia(filNombro) + ". "
                     filNombro += 1
-                    teksto += "\n"
                 }
                 let rezulto = traktiNodon(filDict)
-                if let novaGrupo = rezulto.2?.first {
-                    grupoj.append(novaGrupo)
+                if let novajVortoj = rezulto.1 {
+                    grupoj.append( Grupo(teksto: grupTeksto + (rezulto.0 ?? ""), vortoj: novajVortoj) )
                 }
             } else if filTipo == "drv" {
                 let rezulto = traktiNodon(filDict)
@@ -199,16 +200,18 @@ class Modeloj {
                 }
             } else if filTipo == "subdrv" {
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    //teksto += Iloj.alLitero(filNombro, true)
+                    teksto += Iloj.alLitero(filNombro, true)
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
                 if let subaTeksto = rezulto.0 {
-                    teksto += subaTeksto
+                    teksto += subaTeksto + "\n"
                 }
                 teksto += "\n"
             } else if filTipo == "snc" {
-                teksto += "\n"
+                if !teksto.isEmpty {
+                    teksto += "\n\n"
+                }
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
                     teksto += String(filNombro) + ".\n"
                     filNombro += 1
@@ -219,7 +222,7 @@ class Modeloj {
                 }
             } else if filTipo == "subsnc" {
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    //teksto += Iloj.alLitero(filNombro, false)
+                    teksto += Iloj.alLitero(filNombro, false)
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
@@ -230,6 +233,11 @@ class Modeloj {
             } else {
                 let rezulto = traktiNodon(filDict)
                 if let subaTeksto = rezulto.0 {
+
+                    if filTipo == "rim" {
+                        teksto += "\n"
+                    }
+                    
                     teksto += subaTeksto
                 }
                 if let subajVortoj = rezulto.1 {
@@ -245,7 +253,7 @@ class Modeloj {
         
         if tipo == "drv" {
             if let kapo = nodo["kapo"] as? NSDictionary, let titolo = kapo["nomo"] as? String {
-                vortoj.append(Vorto(titolo: titolo, teksto: teksto))
+                vortoj.append(Vorto(titolo: titolo, teksto: teksto, marko: nodo["mrk"] as? String))
             }
         }
         

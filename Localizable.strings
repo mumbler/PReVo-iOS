@@ -6,8 +6,19 @@
   Copyright © 2016 NormalSoft. All rights reserved.
 */
 
+// Artikolo pagho
+
+"artikolo tradukoj etikedo"                     = "Tradukoj";
+
 // Serch lingvo elektilo
 
 "serch-elektilo titolo"                         = "Elekti serch-lingvon";
 "serch-elektilo oftaj etikedo"                  = "Oftaj Lingvoj";
 "serch-elektilo chiuj etikedo"                  = "Chiuj Lingvoj";
+
+// Traduk lingvo elektilo
+
+"traduk-elektilo titolo"                        = "Elekti traduk-lingvojn";
+"traduk-elektilo chiuj etikedo"                 = "Ĉiuj Lingvoj";
+"traduk-elektilo neniuj etikedo"                = "Neniuj Lingvoj";
+"traduk-elektilo butono titolo"                 = "Montri Pliajn Tradukojn";

@@ -59,6 +59,10 @@ class SeancDatumaro {
         }
     }
     
+    static func esperantaLingvo() -> Lingvo {
+        return Lingvo("eo", "Esperanto")
+    }
+    
     static func lingvoPorKodo(kodo: String) -> Lingvo? {
         
         if let indekso = lingvoj.indexOf ({ (nuna: Lingvo) -> Bool in
@@ -70,7 +74,13 @@ class SeancDatumaro {
         return nil
     }
     
-    static func esperantaLingvo() -> Lingvo {
-        return Lingvo("eo", "Esperanto")
+    static func artikoloPorIndekso(indekso: String) -> Artikolo? {
+        
+        if let objekto = DatumLegilo.artikoloPorIndekso(indekso) {
+            return Artikolo(objekto: objekto)
+        }
+        
+        return nil
     }
+    
 }

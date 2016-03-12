@@ -20,6 +20,12 @@
 		003E19791C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19781C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift */; };
 		003E197B1C93876500A1BFB1 /* SerchLingvoElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E197A1C93876500A1BFB1 /* SerchLingvoElektiloViewController.xib */; };
 		003E197D1C938C7500A1BFB1 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E197C1C938C7500A1BFB1 /* HelpaNavigationController.swift */; };
+		003E197F1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E197E1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift */; };
+		003E19811C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E19801C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib */; };
+		003E19831C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E19821C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib */; };
+		003E19851C93B05B00A1BFB1 /* TradukLingvoElektiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19841C93B05B00A1BFB1 /* TradukLingvoElektiloTableViewCell.swift */; };
+		003E19871C93B50E00A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19861C93B50E00A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */; };
+		003E19891C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E19881C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */; };
 		00EAB8B51C91F9E400AA5C0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8B41C91F9E400AA5C0C /* Localizable.strings */; };
 		00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */; };
 		00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */; };
@@ -223,6 +229,12 @@
 		003E19781C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchLingvoElektiloViewController.swift; sourceTree = "<group>"; };
 		003E197A1C93876500A1BFB1 /* SerchLingvoElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchLingvoElektiloViewController.xib; sourceTree = "<group>"; };
 		003E197C1C938C7500A1BFB1 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
+		003E197E1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvojElektiloViewController.swift; sourceTree = "<group>"; };
+		003E19801C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvojElektiloViewController.xib; sourceTree = "<group>"; };
+		003E19821C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvoElektiloTableViewCell.xib; sourceTree = "<group>"; };
+		003E19841C93B05B00A1BFB1 /* TradukLingvoElektiloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvoElektiloTableViewCell.swift; sourceTree = "<group>"; };
+		003E19861C93B50E00A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloPiedButonoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		003E19881C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloPiedButonoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		00EAB8B41C91F9E400AA5C0C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = SOURCE_ROOT; };
 		00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
 		00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
@@ -522,10 +534,16 @@
 			children = (
 				003E19781C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift */,
 				003E197A1C93876500A1BFB1 /* SerchLingvoElektiloViewController.xib */,
+				003E197E1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift */,
+				003E19801C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib */,
+				003E19841C93B05B00A1BFB1 /* TradukLingvoElektiloTableViewCell.swift */,
+				003E19821C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib */,
 				003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */,
 				003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */,
 				003E19741C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift */,
 				003E19761C93667B00A1BFB1 /* ArtikoloTableViewCell.xib */,
+				003E19861C93B50E00A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
+				003E19881C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
 			);
 			path = "Subaj Paghoj";
 			sourceTree = "<group>";
@@ -844,6 +862,7 @@
 				00F09D031C92328200B29687 /* indekso_af.dat in Resources */,
 				00F09D881C92328200B29687 /* indekso_uz.dat in Resources */,
 				00F09D291C92328200B29687 /* indekso_gu.dat in Resources */,
+				003E19811C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib in Resources */,
 				00F09D1F1C92328200B29687 /* indekso_fi.dat in Resources */,
 				00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */,
 				00F09D771C92328200B29687 /* indekso_ta.dat in Resources */,
@@ -902,6 +921,7 @@
 				00F09D6B1C92328200B29687 /* indekso_sk.dat in Resources */,
 				00F09D4E1C92328200B29687 /* indekso_mn.dat in Resources */,
 				00F09D761C92328200B29687 /* indekso_sw.dat in Resources */,
+				003E19831C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
 				00F09D841C92328200B29687 /* indekso_tw.dat in Resources */,
 				00F09D801C92328200B29687 /* indekso_tp.dat in Resources */,
 				00F09D581C92328200B29687 /* indekso_oc.dat in Resources */,
@@ -966,6 +986,7 @@
 				00F09D0D1C92328200B29687 /* indekso_bi.dat in Resources */,
 				00F09D081C92328200B29687 /* indekso_az.dat in Resources */,
 				00F09D871C92328200B29687 /* indekso_ur.dat in Resources */,
+				003E19891C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
 				00F09D5E1C92328200B29687 /* indekso_ps.dat in Resources */,
 				00F09D1E1C92328200B29687 /* indekso_fa.dat in Resources */,
 				00F09D0C1C92328200B29687 /* indekso_bh.dat in Resources */,
@@ -1065,7 +1086,9 @@
 				00F09C651C92273F00B29687 /* PReVoDatumoj.xcdatamodeld in Sources */,
 				00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */,
 				0009859B1C31F0CB0083DE24 /* AppDelegate.swift in Sources */,
+				003E19851C93B05B00A1BFB1 /* TradukLingvoElektiloTableViewCell.swift in Sources */,
 				003E197D1C938C7500A1BFB1 /* HelpaNavigationController.swift in Sources */,
+				003E197F1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift in Sources */,
 				00EAB8C31C91FCE400AA5C0C /* SeancDatumaro.swift in Sources */,
 				003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */,
 				00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */,
@@ -1073,6 +1096,7 @@
 				00EAB8C11C91FC6A00AA5C0C /* IngoPaghoViewController.swift in Sources */,
 				00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */,
 				003E19791C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift in Sources */,
+				003E19871C93B50E00A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

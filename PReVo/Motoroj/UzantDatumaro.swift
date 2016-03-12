@@ -19,6 +19,19 @@ class UzantDatumaro {
     
     static func starigi() {
         
+        for kodo in NSLocale.preferredLanguages() {
+            
+            let bazKodo = kodo.componentsSeparatedByString("-").first
+            if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo) {
+                tradukLingvoj.append(lingvo)
+                oftajSerchLingvoj.append(lingvo)
+            }
+        }
+        
+        if oftajSerchLingvoj.count > oftajLimo {
+            oftajSerchLingvoj = Array(oftajSerchLingvoj.prefix(oftajLimo))
+        }
+        
         elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
     }
     

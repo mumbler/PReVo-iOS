@@ -14,6 +14,50 @@ let markoFortoKlavo = "forto"
 
 class Iloj {
     
+    static func alLitero(nombro: Int, _ granda: Bool) -> String {
+        
+        let alfabeto = "abcdefghijklmnoprstuvz"
+        
+        if nombro < alfabeto.characters.count {
+            return ""
+        }
+        
+        let litero = alfabeto[alfabeto.startIndex.advancedBy(nombro)]
+
+        if !granda {
+            return String(litero)
+        } else {
+            return String(litero).uppercaseString
+        }
+    }
+    
+    static func alRomia(nombro: Int) -> String {
+        
+        let romiajLiteroj = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        let arabajLiteroj = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        
+        var romia = ""
+        var komenca = nombro
+        
+        for (index, romiaLitero) in romiajLiteroj.enumerate() {
+            
+            let arabaSumo = arabajLiteroj[index]
+            let div = komenca / arabaSumo
+            
+            if (div > 0)
+            {
+                for var i = 0; i < div; i += 1
+                {
+                    romia += romiaLitero
+                }
+                
+                komenca -= arabaSumo * div
+            }
+        }
+        
+        return romia
+    }
+    
     static func troviMarkojn(teksto: String) -> [String : [(Int, Int, String)]] {
         
         var rez = [String : [(Int, Int, String)]]()
