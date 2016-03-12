@@ -9,13 +9,14 @@
 import Foundation
 
 let oftajLimo = 5
+let historioLimo = 32
 
 class UzantDatumaro {
 
     static var serchLingvo: Lingvo = Lingvo("", "")
     static var oftajSerchLingvoj: [Lingvo] = [Lingvo]()
     static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
-    //static var historio: [Listero]
+    static var historio: [Listero] = [Listero]()
     
     static func starigi() {
         
@@ -48,6 +49,15 @@ class UzantDatumaro {
         oftajSerchLingvoj.insert(elektita, atIndex: 0)
         if oftajSerchLingvoj.count > oftajLimo {
             oftajSerchLingvoj = Array(oftajSerchLingvoj.prefix(oftajLimo))
+        }
+    }
+    
+    static func visitisPaghon(artikolo: Listero) {
+        
+        historio.insert(artikolo, atIndex: 0)
+        
+        if historio.count > historioLimo {
+            historio = Array(historio.prefix(historioLimo))
         }
     }
 }

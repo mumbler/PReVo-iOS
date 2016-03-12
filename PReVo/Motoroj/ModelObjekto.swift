@@ -143,7 +143,12 @@ struct Mallongigo {
 
 struct Listero {
     
-    let kodo: String, nomo: String
+    let nomo: String, indekso: String
+    
+    init(_ ennomo: String, _ enindekso: String) {
+        nomo = ennomo
+        indekso = enindekso
+    }
 }
 
 class Modeloj {
@@ -152,7 +157,6 @@ class Modeloj {
         
         let tipo = nodo["tipo"] as? String
         let filoj = nodo["filoj"] as? NSArray
-        var titolo: String? = nil
         var vortoj: [Vorto] = [Vorto]()
         var grupoj: [Grupo] = [Grupo]()
         var teksto: String = ""

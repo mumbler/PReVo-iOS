@@ -100,10 +100,12 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         
         if let artikolObjekto = serchRezultoj[indexPath.row].1.valueForKey("artikolo") as? NSManagedObject {
             if let artikolo = Artikolo(objekto: artikolObjekto) {
+                
+                (navigationController as? ChefaNavigationController)?.nomiPostilo("Serĉi")
                 if let marko = serchRezultoj[indexPath.row].1.valueForKey("marko") as? String where !marko.isEmpty {
-                    navigationController?.pushViewController(ArtikoloViewController(enartikolo: artikolo, enmarko: marko)!, animated: true)
+                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
                 } else {
-                    navigationController?.pushViewController(ArtikoloViewController(enartikolo: artikolo)!, animated: true)
+                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
                 }
             }
         }

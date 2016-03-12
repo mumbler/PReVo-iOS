@@ -31,12 +31,26 @@ enum Pagho : Int {
             return "Agordoj"
         case .Pri:
             return "Pri"
-        default:
-            return ""
         }
     }
     
-    var count: Int { return Pri.rawValue + 1 }
+    var bildoNomo: String {
+        
+        switch self {
+        case .Serchi:
+            return "pikto_lenso"
+        case .Historio:
+            return "pikto_libro"
+        case .Konservitaj:
+            return "pikto_stelo"
+        case .Agordoj:
+            return "pikto_dentrado"
+        case .Pri:
+            return "pikto_informo"
+        }
+    }
+    
+    static var count: Int { return Pri.rawValue + 1 }
     
 }
 
@@ -58,14 +72,13 @@ class IngoPaghoViewController : UIViewController {
             novaPagho = SerchPaghoViewController()
             break
         case .Historio:
+            novaPagho = HistorioViewController()
             break
         case .Konservitaj:
             break
         case .Agordoj:
             break
         case .Pri:
-            break
-        default:
             break
         }
         
@@ -76,7 +89,7 @@ class IngoPaghoViewController : UIViewController {
             filoV = novaPagho?.view
             addChildViewController(filoVC!)
             view.addSubview(filoV!)
-            filoV?.frame = view.frame
+            filoV?.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             
             if let konforma = novaPagho as? Chefpagho {
                 konforma.aranghiNavigaciilo()
@@ -94,5 +107,14 @@ extension IngoPaghoViewController : SlideNavigationControllerDelegate {
     
     func slideNavigationControllerShouldDisplayRightMenu() -> Bool {
         return false
+    }
+}
+
+extension IngoPaghoViewController : FlankMenuoDelegate {
+    
+    func elektisPaghon(novaPagho: Pagho) {
+        
+        montriPaghon(novaPagho)
+        SlideNavigationController.sharedInstance().closeMenuWithCompletion(nil)
     }
 }

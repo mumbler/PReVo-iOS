@@ -40,8 +40,11 @@ class ArtikoloViewController : UIViewController {
     override func viewDidLoad() {
 
         prepariTradukListon()
+        if let veraArtikolo = artikolo {
+            UzantDatumaro.visitisPaghon(Listero(veraArtikolo.titolo, veraArtikolo.indekso))
+        }
         
-        automaticallyAdjustsScrollViewInsets = false
+        title = artikolo?.titolo
         
         vortTabelo?.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         vortTabelo?.delegate = self

@@ -20,18 +20,30 @@ class ChefaNavigationController : SlideNavigationController {
         maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
         navigationItem.leftBarButtonItem = maldekstraButono
         leftBarButtonItem = maldekstraButono
-        leftMenu = FlankMenuoViewController()
+        let flankMenuo = FlankMenuoViewController()
+        leftMenu = flankMenuo
 
         portraitSlideOffset = 150
         enableSwipeGesture = true
         
         let pagho = IngoPaghoViewController()
         viewControllers.append(pagho)
+        flankMenuo.delegate = pagho
         pagho.montriPaghon(Pagho.Serchi)
     }
     
-    func elektiLingvon() {
+    func montriArtikolon(artikolo: Artikolo) {
         
+        montriArtikolon(artikolo, marko: nil)
+    }
+    
+    func montriArtikolon(artikolo: Artikolo, marko: String?) {
+        
+        if let veraMarko = marko {
+            pushViewController(ArtikoloViewController(enartikolo: artikolo, enmarko: veraMarko)!, animated: true)
+        } else {
+            pushViewController(ArtikoloViewController(enartikolo: artikolo)!, animated: true)
+        }
     }
     
 }
