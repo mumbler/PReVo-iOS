@@ -18,6 +18,7 @@ class UzantDatumaro {
     static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
     static var historio: [Listero] = [Listero]()
     static var konservitaj: [Listero] = [Listero]()
+    static var stilo: KolorStilo = KolorStilo.Hela
     
     static func starigi() {
         
@@ -35,7 +36,10 @@ class UzantDatumaro {
         }
         
         elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
+        
     }
+    
+    // Lingvoj --------------
     
     static func elektisSerchLingvon(elektita: Lingvo) {
         
@@ -53,6 +57,8 @@ class UzantDatumaro {
         }
     }
     
+    // Historio -------------
+    
     static func visitisPaghon(artikolo: Listero) {
         
         if let trovo = historio.indexOf({ (nuna: Listero) -> Bool in
@@ -67,6 +73,8 @@ class UzantDatumaro {
             historio = Array(historio.prefix(historioLimo))
         }
     }
+    
+    // Konservado de artikoloj ---------
     
     static func konserviPaghon(artikolo: Listero) {
         
@@ -96,4 +104,10 @@ class UzantDatumaro {
         }
     }
     
+    // Stiloj -----------
+    
+    static func shanghisStilon(novaStilo: KolorStilo) {
+        
+        stilo = novaStilo
+    }
 }

@@ -93,8 +93,8 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.section == 2 {
             if indexPath.row == 0 {
-                novaChelo.textLabel?.text = NSLocalizedString("agordoj elekti stilon subetikedo", comment: "")
-                novaChelo.detailTextLabel?.text = "STILO"
+                novaChelo.textLabel?.text = NSLocalizedString("agordoj elekti stilon etikedo", comment: "")
+                novaChelo.detailTextLabel?.text = UzantDatumaro.stilo.nomo
             }
             novaChelo.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
@@ -108,11 +108,11 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == 0 {
                 UzantDatumaro.historio.removeAll()
             }
-            else if indexPath.row == 1{
+            else if indexPath.row == 1 {
                 UzantDatumaro.konservitaj.removeAll()
             }
         }
-        else if indexPath.section == 1{
+        else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 let elektilo = SerchLingvoElektiloViewController()
                 elektilo.delegate = self
@@ -121,6 +121,12 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
             else if indexPath.row == 1{
                 let elektilo = TradukLingvojElektiloViewController()
                 elektilo.delegate = self
+                navigationController?.pushViewController(elektilo, animated: true)
+            }
+        }
+        else if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                let elektilo = StiloElektiloViewController()
                 navigationController?.pushViewController(elektilo, animated: true)
             }
         }

@@ -81,6 +81,7 @@ class IngoPaghoViewController : UIViewController {
             novaPagho = AgordojViewController()
             break
         case .Pri:
+            novaPagho = PriViewController()
             break
         }
         
