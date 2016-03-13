@@ -17,6 +17,7 @@ class UzantDatumaro {
     static var oftajSerchLingvoj: [Lingvo] = [Lingvo]()
     static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
     static var historio: [Listero] = [Listero]()
+    static var konservitaj: [Listero] = [Listero]()
     
     static func starigi() {
         
@@ -54,10 +55,45 @@ class UzantDatumaro {
     
     static func visitisPaghon(artikolo: Listero) {
         
+        if let trovo = historio.indexOf({ (nuna: Listero) -> Bool in
+            nuna.indekso == artikolo.indekso
+        }) {
+            historio.removeAtIndex(trovo)
+        }
+        
         historio.insert(artikolo, atIndex: 0)
         
         if historio.count > historioLimo {
             historio = Array(historio.prefix(historioLimo))
         }
     }
+    
+    static func konserviPaghon(artikolo: Listero) {
+        
+        konservitaj.append(artikolo)
+        konservitaj.sortInPlace({ (unua: Listero, dua: Listero) -> Bool in
+            return unua.nomo < dua.nomo
+        })
+    }
+    
+    static func malkonserviPaghon(artikolo: Listero) {
+        
+        if let trovo = konservitaj.indexOf({ (nuna: Listero) -> Bool in
+        return nuna.indekso == artikolo.indekso
+        }) {
+            konservitaj.removeAtIndex(trovo)
+        }
+    }
+    
+    static func shanghiKonservitecon(artikolo: Listero) {
+        
+        if !konservitaj.contains({(unua: Listero) -> Bool in
+            return unua.indekso == artikolo.indekso
+        }) {
+            konserviPaghon(artikolo)
+        } else {
+            malkonserviPaghon(artikolo)
+        }
+    }
+    
 }

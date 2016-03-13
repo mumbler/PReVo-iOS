@@ -75,8 +75,10 @@ class IngoPaghoViewController : UIViewController {
             novaPagho = HistorioViewController()
             break
         case .Konservitaj:
+            novaPagho = KonservitajViewController()
             break
         case .Agordoj:
+            novaPagho = AgordojViewController()
             break
         case .Pri:
             break

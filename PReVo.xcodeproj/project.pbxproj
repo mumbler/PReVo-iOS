@@ -32,6 +32,10 @@
 		008DA44C1C94CF2A0082C601 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DA44B1C94CF2A0082C601 /* FlankMenuoTableViewCell.xib */; };
 		008DA44E1C94D6980082C601 /* HistorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DA44D1C94D6980082C601 /* HistorioViewController.swift */; };
 		008DA4501C94D6A20082C601 /* HistorioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DA44F1C94D6A20082C601 /* HistorioViewController.xib */; };
+		008DA4521C94E5C20082C601 /* KonservitajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DA4511C94E5C20082C601 /* KonservitajViewController.swift */; };
+		008DA4541C94E61C0082C601 /* KonservitajViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DA4531C94E61C0082C601 /* KonservitajViewController.xib */; };
+		00E56D231C94FB8700D9C895 /* AgordojViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E56D221C94FB8700D9C895 /* AgordojViewController.swift */; };
+		00E56D251C9500FA00D9C895 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D241C9500FA00D9C895 /* AgordojViewController.xib */; };
 		00EAB8B51C91F9E400AA5C0C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8B41C91F9E400AA5C0C /* Localizable.strings */; };
 		00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */; };
 		00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */; };
@@ -247,6 +251,10 @@
 		008DA44B1C94CF2A0082C601 /* FlankMenuoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoTableViewCell.xib; sourceTree = "<group>"; };
 		008DA44D1C94D6980082C601 /* HistorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorioViewController.swift; sourceTree = "<group>"; };
 		008DA44F1C94D6A20082C601 /* HistorioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorioViewController.xib; sourceTree = "<group>"; };
+		008DA4511C94E5C20082C601 /* KonservitajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KonservitajViewController.swift; sourceTree = "<group>"; };
+		008DA4531C94E61C0082C601 /* KonservitajViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KonservitajViewController.xib; sourceTree = "<group>"; };
+		00E56D221C94FB8700D9C895 /* AgordojViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgordojViewController.swift; sourceTree = "<group>"; };
+		00E56D241C9500FA00D9C895 /* AgordojViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgordojViewController.xib; sourceTree = "<group>"; };
 		00EAB8B41C91F9E400AA5C0C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = SOURCE_ROOT; };
 		00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
 		00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
@@ -508,6 +516,10 @@
 				00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */,
 				008DA44D1C94D6980082C601 /* HistorioViewController.swift */,
 				008DA44F1C94D6A20082C601 /* HistorioViewController.xib */,
+				008DA4511C94E5C20082C601 /* KonservitajViewController.swift */,
+				008DA4531C94E61C0082C601 /* KonservitajViewController.xib */,
+				00E56D221C94FB8700D9C895 /* AgordojViewController.swift */,
+				00E56D241C9500FA00D9C895 /* AgordojViewController.xib */,
 			);
 			path = "Chefaj Paghoj";
 			sourceTree = "<group>";
@@ -916,6 +928,7 @@
 				00F09D481C92328200B29687 /* indekso_lt.dat in Resources */,
 				00F09D6D1C92328200B29687 /* indekso_sm.dat in Resources */,
 				00F09D191C92328200B29687 /* indekso_en.dat in Resources */,
+				00E56D251C9500FA00D9C895 /* AgordojViewController.xib in Resources */,
 				00F09D741C92328200B29687 /* indekso_su.dat in Resources */,
 				00F09D181C92328200B29687 /* indekso_el.dat in Resources */,
 				00F09D511C92328200B29687 /* indekso_ms.dat in Resources */,
@@ -1018,6 +1031,7 @@
 				00F09D751C92328200B29687 /* indekso_sv.dat in Resources */,
 				00F09D301C92328200B29687 /* indekso_ia.dat in Resources */,
 				00F09D701C92328200B29687 /* indekso_sq.dat in Resources */,
+				008DA4541C94E61C0082C601 /* KonservitajViewController.xib in Resources */,
 				00F09D5C1C92328200B29687 /* indekso_pa.dat in Resources */,
 				00F09D561C92328200B29687 /* indekso_nl.dat in Resources */,
 				00F09D531C92328200B29687 /* indekso_my.dat in Resources */,
@@ -1102,6 +1116,7 @@
 				003E19751C93666500A1BFB1 /* ArtikolCheloTableViewCell.swift in Sources */,
 				00F09C691C922CEB00B29687 /* TrieRegilo.swift in Sources */,
 				00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */,
+				00E56D231C94FB8700D9C895 /* AgordojViewController.swift in Sources */,
 				008DA44A1C94CEA70082C601 /* FlankMenuoTableViewCell.swift in Sources */,
 				00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */,
 				003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */,
@@ -1113,6 +1128,7 @@
 				008DA44E1C94D6980082C601 /* HistorioViewController.swift in Sources */,
 				003E197D1C938C7500A1BFB1 /* HelpaNavigationController.swift in Sources */,
 				003E197F1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift in Sources */,
+				008DA4521C94E5C20082C601 /* KonservitajViewController.swift in Sources */,
 				00EAB8C31C91FCE400AA5C0C /* SeancDatumaro.swift in Sources */,
 				003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */,
 				00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */,

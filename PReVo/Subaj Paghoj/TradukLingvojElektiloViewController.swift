@@ -71,7 +71,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
             novaChelo = TradukLingvojElektiloTableViewCell()
         }
         
-        novaChelo.shaltilo?.tag = indexPath.row + ((indexPath.row <= eoIndekso) ? 1 : 0)
+        novaChelo.shaltilo?.tag = indexPath.row + ((indexPath.row >= eoIndekso) ? 1 : 0)
         novaChelo.shaltilo?.addTarget(self, action: Selector("shaltisLingvon:"), forControlEvents: UIControlEvents.ValueChanged)
         
         if indexPath.section == 0 {
@@ -90,7 +90,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         }
         else if indexPath.section == 1 {
 
-            let lingvo = SeancDatumaro.lingvoj[indexPath.row + ((indexPath.row <= eoIndekso) ? 1 : 0)]
+            let lingvo = SeancDatumaro.lingvoj[indexPath.row + ((indexPath.row >= eoIndekso) ? 1 : 0)]
             novaChelo.shaltilo?.hidden = false
             novaChelo.shaltilo?.on = UzantDatumaro.tradukLingvoj.contains(lingvo)
             novaChelo.etikedo?.text = lingvo.nomo

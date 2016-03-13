@@ -10,6 +10,23 @@
 
 "historio titolo"                               = "Historio";
 
+// Konservitaj
+
+"konservitaj titolo"                            = "Konservitaj";
+
+// Agordoj
+
+"agordoj titolo"                                = "Agordoj";
+"agordoj datumoj etikedo"                       = "Datumoj";
+"agordoj lingvoj etikedo"                       = "Lingvoj";
+"agordoj aspekto etikedo"                       = "Aspekto";
+"agordoj nuligi historion etikedo"              = "Nuligi Historion";
+"agordoj nuligi konservitajn etikedo"           = "Nuligi Konservitajn";
+"agordoj elekti serch-lingvon etikedo"          = "Elekti Serch-lingvojn";
+"agordoj elekti traduk-lingvojn etikedo"        = "Elekti Traduk-lingvojn";
+"agordoj elekti stilon etikedo"                 = "Elekti Stilon";
+"agordoj traduk-lingvoj subetikedo"             = "%@ lingvoj";
+
 // Artikolo pagho
 
 "artikolo tradukoj etikedo"                     = "Tradukoj";

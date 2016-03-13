@@ -40,9 +40,7 @@ class ArtikoloViewController : UIViewController {
     override func viewDidLoad() {
 
         prepariTradukListon()
-        if let veraArtikolo = artikolo {
-            UzantDatumaro.visitisPaghon(Listero(veraArtikolo.titolo, veraArtikolo.indekso))
-        }
+        prepariNavigaciajnButonojn()
         
         title = artikolo?.titolo
         
@@ -57,6 +55,31 @@ class ArtikoloViewController : UIViewController {
         if konservitaMarko != nil {
             iriAlMarko(konservitaMarko!, animacii: false)
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if let veraArtikolo = artikolo {
+            UzantDatumaro.visitisPaghon(Listero(veraArtikolo.titolo, veraArtikolo.indekso))
+        }
+    }
+    
+    func prepariNavigaciajnButonojn() {
+        let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
+        let bildo = UzantDatumaro.konservitaj.contains { (nuna: Listero) -> Bool in
+            return nuna.indekso == artikolo?.indekso
+            } ? UIImage(named: "pikto_stelo_plena") : UIImage(named: "pikto_stelo")
+        let konservButono = UIButton()
+        konservButono.setImage(bildo, forState: UIControlState.Normal)
+        konservButono.addTarget(self, action: "premisKonservButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
+        let serchButono = UIButton()
+        serchButono.setImage(UIImage(named: "pikto_lenso"), forState: UIControlState.Normal)
+        serchButono.addTarget(self, action: "premisSerchButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
+        butonujo.addSubview(konservButono)
+        butonujo.addSubview(serchButono)
+        serchButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
+        konservButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
     }
     
     func prepariTradukListon() {
@@ -92,6 +115,19 @@ class ArtikoloViewController : UIViewController {
                 sumo += 1
             }
         }
+    }
+    
+    func premisSerchButonon() {
+        
+        if let ingo = (navigationController as? ChefaNavigationController)?.viewControllers.first as? IngoPaghoViewController {
+            ingo.montriPaghon(Pagho.Serchi)
+        }
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func premisKonservButonon() {
+        
+        UzantDatumaro.shanghiKonservitecon(Listero(artikolo!.titolo, artikolo!.indekso))
     }
     
     func premisPliajnTradukojnButonon() {

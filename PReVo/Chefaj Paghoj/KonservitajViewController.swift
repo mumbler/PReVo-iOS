@@ -1,5 +1,5 @@
 //
-//  HistorioViewController.swift
+//  KonservitajViewController.swift
 //  PReVo
 //
 //  Created by Robin Hill on 3/12/16.
@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-let historiChelIdent = "historioChelo"
+let konservitajChelIdent = "konservitajChelo"
 
-class HistorioViewController : UIViewController, Chefpagho {
-
+class KonservitajViewController : UIViewController, Chefpagho {
+    
     @IBOutlet var vortoTabelo: UITableView?
     
     override func viewDidLoad() {
         
         vortoTabelo?.delegate = self
         vortoTabelo?.dataSource = self
-        vortoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: historiChelIdent)
+        vortoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: konservitajChelIdent)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -27,33 +27,33 @@ class HistorioViewController : UIViewController, Chefpagho {
     }
     
     func aranghiNavigaciilo() {
-        parentViewController?.title = NSLocalizedString("historio titolo", comment: "")
+        parentViewController?.title = NSLocalizedString("konservitaj titolo", comment: "")
         parentViewController?.navigationItem.rightBarButtonItem = nil
     }
-    
 }
 
-extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
-    
+extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource {
+
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return UzantDatumaro.historio.count
+        return UzantDatumaro.konservitaj.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let novaChelo: UITableViewCell
-        if let trovChelo = vortoTabelo?.dequeueReusableCellWithIdentifier(historiChelIdent) {
+        if let trovChelo = vortoTabelo?.dequeueReusableCellWithIdentifier(konservitajChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()
         }
         
-        novaChelo.textLabel?.text = UzantDatumaro.historio[indexPath.row].nomo
+        novaChelo.textLabel?.text = UzantDatumaro.konservitaj[indexPath.row].nomo
         
         return novaChelo
     }
