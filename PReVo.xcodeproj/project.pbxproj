@@ -12,6 +12,7 @@
 		000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */; };
 		000985B01C31F0CB0083DE24 /* PReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985AF1C31F0CB0083DE24 /* PReVoTests.swift */; };
 		000985BB1C31F0CB0083DE24 /* PReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */; };
+		0022478E1C97580100676257 /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0022478D1C9757D000676257 /* PReVoDatumbazo.sqlite */; };
 		003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */; };
 		003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */; };
 		003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19711C932AA800A1BFB1 /* Iloj.swift */; };
@@ -90,6 +91,7 @@
 		000985B61C31F0CB0083DE24 /* PReVoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PReVoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PReVoUITests.swift; sourceTree = "<group>"; };
 		000985BC1C31F0CB0083DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0022478D1C9757D000676257 /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
 		003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
 		003E19711C932AA800A1BFB1 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 		00F09C621C92273300B29687 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
+				0022478D1C9757D000676257 /* PReVoDatumbazo.sqlite */,
 				00F09C631C92273F00B29687 /* PReVoDatumoj.xcdatamodeld */,
 			);
 			path = Datumoj;
@@ -396,7 +399,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = NormalSoft;
+				ORGANIZATIONNAME = "Sinuous Rill";
 				TargetAttributes = {
 					000985961C31F0CB0083DE24 = {
 						CreatedOnToolsVersion = 7.2;
@@ -456,6 +459,7 @@
 				008DA4501C94D6A20082C601 /* HistorioViewController.xib in Resources */,
 				008DA4541C94E61C0082C601 /* KonservitajViewController.xib in Resources */,
 				003E19771C93667B00A1BFB1 /* ArtikoloTableViewCell.xib in Resources */,
+				0022478E1C97580100676257 /* PReVoDatumbazo.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

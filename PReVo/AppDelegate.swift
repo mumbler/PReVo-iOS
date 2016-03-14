@@ -79,15 +79,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent(datumbazNomo + ".sqlite")
-        var failureReason = "Eraro sharghante je datumoj"
         
-        // TODO - kopii chi tie
+
         var fileMgr = NSFileManager.defaultManager()
-        if let path = NSBundle.mainBundle().pathForResource(datumbazNomo, ofType: "sqlite") {
+        if let fonto = NSBundle.mainBundle().pathForResource(datumbazNomo, ofType: "sqlite"),
+           let destino = url.path {
             do {
-                try fileMgr.copyItemAtPath(path, toPath: url.absoluteString)
-            } catch {
-                NSLog("Faris novan datumbazon")
+                try fileMgr.copyItemAtPath(fonto, toPath: destino)
+            } catch let error as NSError {
+                NSLog("Kopiis datumbazon")
             }
         }
         
@@ -97,9 +97,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Report any error we got.
             var dict = [String: AnyObject]()
             dict[NSLocalizedDescriptionKey] = "Malsukcesis sharghante je datumoj"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
-            
+            dict[NSLocalizedFailureReasonErrorKey] = "Eraro sharghante je datumoj"
             dict[NSUnderlyingErrorKey] = error as NSError
+            
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             abort()
         }
