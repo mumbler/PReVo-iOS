@@ -41,6 +41,7 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
         
         if shanghisLingvojn {
             delegate?.elektisTradukLingvojn()
+            UzantDatumaro.elektisTradukLingvojn()
         }
     }
     
@@ -156,6 +157,7 @@ extension TradukLingvojElektiloViewController {
         } else {
             UzantDatumaro.tradukLingvoj.remove(SeancDatumaro.lingvoj[shaltilo.tag])
         }
+        
         shanghisLingvojn = true
     }
 }

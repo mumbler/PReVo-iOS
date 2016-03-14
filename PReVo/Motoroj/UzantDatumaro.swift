@@ -14,29 +14,42 @@ let historioLimo = 32
 
 class UzantDatumaro {
 
-    static var serchLingvo: Lingvo = Lingvo("", "")
+    static var serchLingvo: Lingvo! = nil
     static var oftajSerchLingvoj: [Lingvo] = [Lingvo]()
     static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
     static var historio: [Listero] = [Listero]()
     static var konservitaj: [Listero] = [Listero]()
     static var stilo: KolorStilo = KolorStilo.Hela
     
+    static var konserviSerchLingvon: Bool = false
+    static var konserviOftajnLingvojn: Bool = false
+    static var konserviTradukLingvojn: Bool = false
+    static var konserviHistorion: Bool = false
+    static var konserviKonservitajn: Bool = false
+    static var konserviStilon: Bool = false
+    
     static func starigi() {
         
-        for kodo in NSLocale.preferredLanguages() {
-            
-            let bazKodo = kodo.componentsSeparatedByString("-").first
-            if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo) {
-                tradukLingvoj.insert(lingvo)
-                oftajSerchLingvoj.append(lingvo)
+        sharghiJeKonservitajnDatumojn()
+        
+        if oftajSerchLingvoj.count == 0 || tradukLingvoj.count == 0 {
+            for kodo in NSLocale.preferredLanguages() {
+                
+                let bazKodo = kodo.componentsSeparatedByString("-").first
+                if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo) {
+                    tradukLingvoj.insert(lingvo)
+                    oftajSerchLingvoj.append(lingvo)
+                }
             }
+        }
+        
+        if serchLingvo == nil {
+            elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
         }
         
         if oftajSerchLingvoj.count > oftajLimo {
             oftajSerchLingvoj = Array(oftajSerchLingvoj.prefix(oftajLimo))
         }
-        
-        elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
         
     }
     
@@ -56,6 +69,16 @@ class UzantDatumaro {
         if oftajSerchLingvoj.count > oftajLimo {
             oftajSerchLingvoj = Array(oftajSerchLingvoj.prefix(oftajLimo))
         }
+        
+        konserviSerchLingvon = true
+        konserviOftajnLingvojn = true
+        konserviDatumojn()
+    }
+    
+    static func elektisTradukLingvojn() {
+        
+        konserviTradukLingvojn = true
+        konserviDatumojn()
     }
     
     // Historio -------------
@@ -73,6 +96,9 @@ class UzantDatumaro {
         if historio.count > historioLimo {
             historio = Array(historio.prefix(historioLimo))
         }
+        
+        konserviHistorion = true
+        konserviDatumojn()
     }
     
     // Konservado de artikoloj ---------
@@ -83,6 +109,9 @@ class UzantDatumaro {
         konservitaj.sortInPlace({ (unua: Listero, dua: Listero) -> Bool in
             return unua.nomo < dua.nomo
         })
+        
+        konserviKonservitajn = true
+        konserviDatumojn()
     }
     
     static func malkonserviPaghon(artikolo: Listero) {
@@ -92,6 +121,9 @@ class UzantDatumaro {
         }) {
             konservitaj.removeAtIndex(trovo)
         }
+        
+        konserviKonservitajn = true
+        konserviDatumojn()
     }
     
     static func shanghiKonservitecon(artikolo: Listero) {
@@ -111,5 +143,84 @@ class UzantDatumaro {
         
         stilo = novaStilo
         Stiloj.efektivigiStilon(novaStilo)
+        
+        konserviStilon = true
+        konserviDatumojn()
+    }
+    
+    // Konservado kaj resharghado de datumoj ---------------------------
+    
+    static func konserviDatumojn() {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if konserviSerchLingvon {
+            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(serchLingvo)
+            defaults.setObject(datumoj, forKey: "serchLingvo")
+            konserviSerchLingvon = false
+        }
+        
+        if konserviOftajnLingvojn {
+            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(oftajSerchLingvoj)
+            defaults.setObject(datumoj, forKey: "oftajSerchLingvoj")
+            konserviOftajnLingvojn = false
+        }
+        
+        if konserviTradukLingvojn {
+            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(tradukLingvoj)
+            defaults.setObject(datumoj, forKey: "tradukLingvoj")
+            konserviTradukLingvojn = false
+        }
+        
+        if konserviHistorion {
+            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(historio)
+            defaults.setObject(datumoj, forKey: "historio")
+            konserviHistorion = false
+        }
+        
+        if konserviKonservitajn {
+            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(konservitaj)
+            defaults.setObject(datumoj, forKey: "konservitaj")
+            konserviKonservitajn = false
+        }
+        
+        if konserviStilon {
+            defaults.setInteger(stilo.rawValue, forKey: "stilo")
+            konserviStilon = false
+        }
+        
+        defaults.synchronize()
+    }
+    
+    static func sharghiJeKonservitajnDatumojn() {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let datumoj = defaults.objectForKey("serchLingvo") as? NSData,
+           let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? Lingvo {
+            serchLingvo = trovo
+        }
+        
+        if let datumoj = defaults.objectForKey("oftajSerchLingvoj") as? NSData,
+            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? [Lingvo] {
+            oftajSerchLingvoj = trovo
+        }
+        
+        if let datumoj = defaults.objectForKey("tradukLingvoj") as? NSData,
+            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? Set<Lingvo> {
+            tradukLingvoj = trovo
+        }
+        
+        if let datumoj = defaults.objectForKey("historio") as? NSData,
+            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? [Listero] {
+            historio = trovo
+        }
+        
+        if let datumoj = defaults.objectForKey("konservitaj") as? NSData,
+            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? [Listero] {
+            konservitaj = trovo
+        }
+        
+        stilo = KolorStilo(rawValue: defaults.integerForKey("stilo")) ?? KolorStilo.Hela
     }
 }

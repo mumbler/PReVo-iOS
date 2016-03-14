@@ -68,7 +68,7 @@ extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let indekso = UzantDatumaro.historio[indexPath.row].indekso
+        let indekso = UzantDatumaro.konservitaj[indexPath.row].indekso
         if let artikolo = SeancDatumaro.artikoloPorIndekso(indekso) {
             (navigationController as? ChefaNavigationController)?.montriArtikolon( artikolo )
         }

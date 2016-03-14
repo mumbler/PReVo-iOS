@@ -37,6 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fenestro?.rootViewController = navilo
         fenestro?.makeKeyAndVisible()
         
+        Stiloj.efektivigiStilon(UzantDatumaro.stilo)
+        
         return true
     }
 

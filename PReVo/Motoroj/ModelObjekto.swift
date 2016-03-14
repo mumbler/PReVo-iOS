@@ -92,7 +92,7 @@ struct Traduko {
     let lingvo: Lingvo, teksto: String
 }
 
-class Lingvo : Hashable {
+class Lingvo : NSObject, NSCoding {
     
     let kodo: String, nomo: String
     
@@ -101,8 +101,18 @@ class Lingvo : Hashable {
         nomo = ennomo
     }
     
-    var hashValue: Int {
-        return kodo.hashValue
+    required convenience init?(coder aDecoder: NSCoder) {
+        if let enkodo = aDecoder.decodeObjectForKey("kodo") as? String,
+           let ennomo = aDecoder.decodeObjectForKey("nomo") as? String {
+           self.init(enkodo, ennomo)
+        } else {
+            return nil
+        }
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(kodo, forKey: "kodo")
+        aCoder.encodeObject(nomo, forKey: "nomo")
     }
 }
 
@@ -141,13 +151,27 @@ struct Mallongigo {
     }
 }
 
-struct Listero {
+class Listero : NSObject, NSCoding {
     
     let nomo: String, indekso: String
     
     init(_ ennomo: String, _ enindekso: String) {
         nomo = ennomo
         indekso = enindekso
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        if let ennomo = aDecoder.decodeObjectForKey("nomo") as? String,
+            let enindekso = aDecoder.decodeObjectForKey("indekso") as? String {
+            self.init(ennomo, enindekso)
+        } else {
+            return nil
+        }
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(nomo, forKey: "nomo")
+        aCoder.encodeObject(indekso, forKey: "indekso")
     }
 }
 
