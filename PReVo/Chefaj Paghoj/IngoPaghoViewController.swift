@@ -30,15 +30,15 @@ enum Pagho : Int {
         
         switch self {
         case .Serchi:
-            return "Serchi"
+            return NSLocalizedString("flanko serchi etikedo", comment: "")
         case .Historio:
-            return "Historio"
+            return NSLocalizedString("flanko historio etikedo", comment: "")
         case .Konservitaj:
-            return "Konservitaj"
+            return NSLocalizedString("flanko konservitaj etikedo", comment: "")
         case .Agordoj:
-            return "Agordoj"
+            return NSLocalizedString("flanko agordoj etikedo", comment: "")
         case .Pri:
-            return "Pri"
+            return NSLocalizedString("flanko pri etikedo", comment: "")
         }
     }
     

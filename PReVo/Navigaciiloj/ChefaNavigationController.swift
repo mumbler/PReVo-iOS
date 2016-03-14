@@ -52,7 +52,13 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
     func montriArtikolon(artikolo: Artikolo, marko: String?) {
         
         if let veraMarko = marko {
-            pushViewController(ArtikoloViewController(enartikolo: artikolo, enmarko: veraMarko)!, animated: true)
+            
+            var serchilo = veraMarko
+            if let partoj = marko?.componentsSeparatedByString(".") where partoj.count > 2 {
+                serchilo = partoj[0] + "." + partoj[1]
+            }
+            
+            pushViewController(ArtikoloViewController(enartikolo: artikolo, enmarko: serchilo)!, animated: true)
         } else {
             pushViewController(ArtikoloViewController(enartikolo: artikolo)!, animated: true)
         }

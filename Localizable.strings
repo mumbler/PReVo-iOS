@@ -6,6 +6,14 @@
   Copyright © 2016 NormalSoft. All rights reserved.
 */
 
+// Flanka Menuo
+
+"flanko serchi etikedo"                         = "Serĉi";
+"flanko historio etikedo"                       = "Etikedo";
+"flanko konservitaj etikedo"                    = "Konservitaj";
+"flanko agordoj etikedo"                        = "Agordoj";
+"flanko pri etikedo"                            = "Pri";
+
 // Serchi
 
 "serchi baza titolo"                            = "Serĉi";
@@ -42,6 +50,7 @@
 // Artikolo pagho
 
 "artikolo tradukoj etikedo"                     = "Tradukoj";
+"artikolo kopii teksto"                 = "Ĉu kopiu tekston?";]
 
 // Serch lingvo elektilo
 

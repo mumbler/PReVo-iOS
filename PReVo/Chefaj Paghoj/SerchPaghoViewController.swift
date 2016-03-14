@@ -73,6 +73,11 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         navigaciilo.viewControllers.append(elektilo)
         self.navigationController?.presentViewController(navigaciilo, animated: true, completion: nil)
     }
+    
+    func fariSerchon(teksto: String) {
+        serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
+        trovTabelo?.reloadData()
+    }
 }
 
 extension SerchPaghoViewController : UISearchBarDelegate {
@@ -102,13 +107,12 @@ extension SerchPaghoViewController : UISearchBarDelegate {
         if let teksto = searchBar.text {
             
             if !teksto.isEmpty {
-                serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
+                fariSerchon(teksto)
             } else {
                 serchRezultoj.removeAll()
+                trovTabelo?.reloadData()
             }
         }
-        
-        trovTabelo?.reloadData()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -168,5 +172,6 @@ extension SerchPaghoViewController : SerchLingvoElektiloDelegate {
     
     func elektisSerchLingvon() {
         ghisdatigiTitolon()
+        fariSerchon(serchTabulo?.text ?? "")
     }
 }

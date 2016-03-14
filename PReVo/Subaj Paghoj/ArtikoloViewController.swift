@@ -170,6 +170,19 @@ class ArtikoloViewController : UIViewController, Stilplena {
         navigaciilo.viewControllers.append(elektilo)
         navigationController?.presentViewController(navigaciilo, animated: true, completion: nil)
     }
+    
+    func premisChelon(rekonilo: UILongPressGestureRecognizer) {
+        
+        if let chelo = rekonilo.view as? ArtikoloTableViewCell {
+            let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("artikolo kopii teksto", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertActionStyle.Default, handler: { (ago: UIAlertAction) -> Void in
+                let tabulo = UIPasteboard.generalPasteboard()
+                tabulo.string = chelo.chefaEtikedo?.text
+            }))
+            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+            presentViewController(mesagho, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
@@ -248,6 +261,14 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             novaChelo.accessibilityLabel? += titolo + ", "
         }
         novaChelo.accessibilityLabel? += novaChelo.chefaEtikedo?.text ?? ""
+        
+        // Gesture Recognizer por kopiado
+        
+        for afero in novaChelo.gestureRecognizers ?? [] {
+            novaChelo.removeGestureRecognizer(afero)
+        }
+        let rekonilo = UILongPressGestureRecognizer(target: self, action: "premisChelon:")
+        novaChelo.addGestureRecognizer(rekonilo)
         
         return novaChelo
     }

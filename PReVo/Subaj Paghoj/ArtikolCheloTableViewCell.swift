@@ -41,6 +41,7 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         for ligMarko in markoj[markoLigoKlavo]! {
             chefaEtikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
+
     }
     
     func efektivigiStilon() {
