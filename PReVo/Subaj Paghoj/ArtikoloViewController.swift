@@ -158,6 +158,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
     func premisKonservButonon() {
         
         UzantDatumaro.shanghiKonservitecon(Listero(artikolo!.titolo, artikolo!.indekso))
+        prepariNavigaciajnButonojn()
     }
     
     // Montri la traduk-lingvoj elektilon

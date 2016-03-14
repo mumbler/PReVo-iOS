@@ -40,7 +40,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         
         ghisdatigiTitolon()
         
-        let dekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItemStyle.Plain, target: self, action: "elektiLingvon")
+        let dekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_traduko"), style: UIBarButtonItemStyle.Plain, target: self, action: "elektiLingvon")
         dekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 0)
         parentViewController?.navigationItem.rightBarButtonItem = dekstraButono
     }

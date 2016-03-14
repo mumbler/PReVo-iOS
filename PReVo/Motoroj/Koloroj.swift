@@ -34,7 +34,7 @@ enum Koloro {
         case .KlasikaVerdo:
             return UIColor(red: 0.0, green: 153.0/255.0, blue: 0.0, alpha: 1.0)
         case .HelaVerdo:
-            return UIColor(red: 45.0/255.0, green: 145.0/255.0, blue: 45.0/255.0, alpha: 1.0)
+            return UIColor(red: 60.0/255.0, green: 180.0/255.0, blue: 60.0/255.0, alpha: 1.0)
         case .HelegaVerdo:
             return UIColor(red: 60.0/255.0, green: 213.0/255.0, blue: 60.0/255.0, alpha: 1.0)
         }
