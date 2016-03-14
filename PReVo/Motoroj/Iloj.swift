@@ -33,7 +33,7 @@ class Iloj {
         
         let alfabeto = "abcdefghijklmnoprstuvz"
         
-        if nombro < alfabeto.characters.count {
+        if nombro >= alfabeto.characters.count {
             return ""
         }
         

@@ -185,19 +185,21 @@ class Modeloj {
         var grupoj: [Grupo] = [Grupo]()
         var teksto: String = ""
         
-        
         if let vspec = nodo["vspec"] as? String {
             teksto += vspec + " "
         }
         
-        if let uzoj = nodo["uzo"] as? NSArray {
+        if let uzoj = nodo["uzoj"] as? NSArray {
             
             for uzo in uzoj {
-                if let uzString = uzo as? String {
-                    if tipo == "snc" || tipo == "subsnc" {
-                        teksto += uzString + " "
-                    } else {
-                        teksto += uzString + "\n"
+                if let enhavoj = uzo as? NSDictionary {
+                    
+                    if let enteksto = enhavoj["teksto"] as? String,
+                       let entipo = enhavoj["tip"] as? String,
+                       let uzTeksto = SeancDatumaro.tekstoPorUzo(enteksto, tipo: entipo) {
+                        if tipo == "snc" || tipo == "subsnc" {
+                            teksto += uzTeksto + " "
+                        }
                     }
                 }
             }
@@ -222,8 +224,8 @@ class Modeloj {
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
-                if let novajVortoj = rezulto.1 {
-                    grupoj.append( Grupo(teksto: grupTeksto + (rezulto.0 ?? ""), vortoj: novajVortoj) )
+                if !(rezulto.0 == nil && rezulto.1 == nil && rezulto.2 == nil) {
+                    grupoj.append( Grupo(teksto: grupTeksto + (rezulto.0 ?? ""), vortoj: rezulto.1 ?? []) )
                 }
             } else if filTipo == "drv" {
                 let rezulto = traktiNodon(filDict)
@@ -231,21 +233,23 @@ class Modeloj {
                     vortoj.append(novaVorto)
                 }
             } else if filTipo == "subdrv" {
+                if !teksto.isEmpty {
+                    teksto += "\n\n"
+                }
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
                     teksto += Iloj.alLitero(filNombro, true)
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
                 if let subaTeksto = rezulto.0 {
-                    teksto += subaTeksto + "\n"
+                    teksto += subaTeksto
                 }
-                teksto += "\n"
             } else if filTipo == "snc" {
                 if !teksto.isEmpty {
                     teksto += "\n\n"
                 }
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += String(filNombro) + ".\n"
+                    teksto += String(filNombro) + ". "
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
@@ -253,15 +257,17 @@ class Modeloj {
                     teksto += subaTeksto
                 }
             } else if filTipo == "subsnc" {
+                if !teksto.isEmpty {
+                    teksto += "\n\n"
+                }
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += Iloj.alLitero(filNombro, false)
+                    teksto += Iloj.alLitero(filNombro, false) + ") "
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
                 if let subaTeksto = rezulto.0 {
                     teksto += subaTeksto
                 }
-                teksto += "\n"
             } else {
                 let rezulto = traktiNodon(filDict)
                 if let subaTeksto = rezulto.0 {

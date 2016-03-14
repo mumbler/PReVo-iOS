@@ -63,6 +63,8 @@ class SeancDatumaro {
         return Lingvo("eo", "Esperanto")
     }
     
+    // Trovo de datumbazeroj -------------------
+    
     static func lingvoPorKodo(kodo: String) -> Lingvo? {
         
         if let indekso = lingvoj.indexOf ({ (nuna: Lingvo) -> Bool in
@@ -80,6 +82,28 @@ class SeancDatumaro {
             return Artikolo(objekto: objekto)
         }
         
+        return nil
+    }
+    
+    static func tekstoPorUzo(teksto: String, tipo: String)  -> String? {
+        
+        if tipo == "fak" {
+            
+            /*if let indekso = fakoj.indexOf({ (nuna: Fako) -> Bool in
+                return nuna.kodo == teksto
+            }) {
+                return "[" + fakoj[indekso].nomo + "]"
+            }*/
+            return "[" + teksto + "]"
+        }
+        else if tipo == "stl" {
+            if let indekso = stiloj.indexOf({ (nuna: Stilo) -> Bool in
+                return nuna.kodo == teksto
+            }) {
+                return "(" + stiloj[indekso].nomo + ")"
+            }
+        }
+    
         return nil
     }
     
