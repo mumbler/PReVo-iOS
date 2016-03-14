@@ -309,7 +309,11 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     
-        return UITableViewAutomaticDimension
+        if section == 1 {
+            return UITableViewAutomaticDimension
+        }
+        
+        return 1
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -326,14 +330,6 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        
-        if section == 1 {
-            return 50
-        }
-        
-        return 1
-    }
     
     func tableView(tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
