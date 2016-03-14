@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 let markoLigoKlavo = "ligo"
 let markoAkcentoKlavo = "akcento"
 let markoFortoKlavo = "forto"
 
+/*
+    Diversaj iloj
+*/
 class Iloj {
     
+    // Aldoni chapelon al litero, se tio taugas
     static func chapeligi(litero: Character) -> Character? {
     
         let unua = "chgjsuCGHJSU"
@@ -29,6 +34,7 @@ class Iloj {
         return nil
     }
     
+    // Trovi la X-an literon de la alfabeto (por listado)
     static func alLitero(nombro: Int, _ granda: Bool) -> String {
         
         let alfabeto = "abcdefghijklmnoprstuvz"
@@ -46,6 +52,7 @@ class Iloj {
         }
     }
     
+    // Trovi Romian version de nombro (por listado)
     static func alRomia(nombro: Int) -> String {
         
         let romiajLiteroj = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
@@ -73,6 +80,17 @@ class Iloj {
         return romia
     }
     
+    // Funkcioj pri TTTAttributedLabel uzado ===================
+    
+    /*
+        Legi la tekston kaj trovi markojn reprezentata de HTML kodoj.
+        Tiu trovos:
+            <i>...</i> por akcentaj tekstoj
+            <b>...</b> por fortaj tekstoj
+            <a href="...">...</a> por ligoj
+    
+        La rezulto estas aro de listo de trovajhoj, en la form do (komenca loko, fina loko, ligo-teksto)
+    */
     static func troviMarkojn(teksto: String) -> [String : [(Int, Int, String)]] {
         
         var rez = [String : [(Int, Int, String)]]()
@@ -149,6 +167,7 @@ class Iloj {
         return rez
     }
 
+    // Forigi la HTML kodojn el la teksto, por ke ghi povos esti montrata nude
     static func forigiAngulojn(teksto: String) -> String {
         
         var rez: String = ""
@@ -165,5 +184,30 @@ class Iloj {
         }
         
         return rez
+    }
+    
+    // Pretigi NSAttributedString kun la akcentoj, fortaj regionoj, kaj ligoj kiujn uzas artikoloj ktp.
+    // Chi tiu funkciono uzas la rezultojn de la troviMarkojn funkcio
+    static func pretigiTekston(teksto: String, kunMarkoj markoj: [String : [(Int, Int, String)]] ) -> NSMutableAttributedString {
+        
+        let mutaciaTeksto: NSMutableAttributedString = NSMutableAttributedString(string: forigiAngulojn(teksto))
+        let tekstGrandeco = CGFloat(16.0)
+        let tekstStilo = UIFont.systemFontOfSize(tekstGrandeco)
+        let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
+        let akcentaTeksto = UIFont.italicSystemFontOfSize(tekstGrandeco)
+    
+        mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: tekstStilo, range: NSMakeRange(0, mutaciaTeksto.length))
+        mutaciaTeksto.addAttribute(kCTForegroundColorAttributeName as String, value: UzantDatumaro.stilo.tekstKoloro, range: NSMakeRange(0, mutaciaTeksto.length))
+        
+        for akcentMarko in markoj[markoAkcentoKlavo]! {
+            mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: akcentaTeksto, range: NSMakeRange(akcentMarko.0, akcentMarko.1 - akcentMarko.0))
+        }
+        
+        for fortMarko in markoj[markoFortoKlavo]! {
+            mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
+        }
+        
+        return mutaciaTeksto
+        
     }
 }

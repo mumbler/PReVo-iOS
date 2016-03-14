@@ -13,6 +13,9 @@ import CoreData
 let serchChelIdent = "serchRezultoChelo"
 let serchLimo = 32
 
+/*
+    Pagho por serchi vortojn en la vortaro
+*/
 class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var serchTabulo: UISearchBar?
@@ -23,6 +26,8 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         
         serchTabulo?.delegate = self
         serchTabulo?.placeholder = NSLocalizedString("serchi tabulo teksto", comment: "")
+        serchTabulo?.isAccessibilityElement = true
+        serchTabulo?.accessibilityLabel = serchTabulo?.placeholder
         
         trovTabelo?.delegate = self
         trovTabelo?.dataSource = self

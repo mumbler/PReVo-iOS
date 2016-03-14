@@ -12,6 +12,10 @@ import iOS_Slide_Menu
 
 let flankMenuoLargheco: CGFloat = 180
 
+/*
+    La chefa UINavigationControlle de la programo. Ghi starigas la maldekstra-flankan menuon,
+    kaj enhavas la chefajn paghojn.
+*/
 class ChefaNavigationController : SlideNavigationController, Stilplena {
     
     var subLinio: UIView?
@@ -38,11 +42,13 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         efektivigiStilon()
     }
     
+    // Surpushi artikolan paghon
     func montriArtikolon(artikolo: Artikolo) {
         
         montriArtikolon(artikolo, marko: nil)
     }
     
+    // Surpushi artikolan paghon kaj hasti al specifa loko en la artikolo
     func montriArtikolon(artikolo: Artikolo, marko: String?) {
         
         if let veraMarko = marko {
@@ -72,15 +78,4 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         }
     }
 
-}
-
-extension ChefaNavigationController {
-    
-    func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
-        return true
-    }
-    
-    func slideNavigationControllerShouldDisplayRightMenu() -> Bool {
-        return false
-    }
 }

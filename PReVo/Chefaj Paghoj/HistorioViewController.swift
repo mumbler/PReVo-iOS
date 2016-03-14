@@ -11,6 +11,9 @@ import UIKit
 
 let historiChelIdent = "historioChelo"
 
+/*
+    Pagho por vidi lastaj serchitaj vortoj
+*/
 class HistorioViewController : UIViewController, Chefpagho, Stilplena {
 
     @IBOutlet var vortoTabelo: UITableView?
@@ -62,6 +65,8 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = UzantDatumaro.historio[indexPath.row].nomo
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
         return novaChelo
     }

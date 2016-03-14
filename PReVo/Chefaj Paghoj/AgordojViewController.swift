@@ -11,6 +11,9 @@ import UIKit
 
 let agordojChelIdent = "agordaChelo"
 
+/*
+    Pagho por agordi la programon
+*/
 class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var tabelo: UITableView?
@@ -108,6 +111,11 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
+        if let teksto = novaChelo.detailTextLabel?.text where teksto != "" {
+            novaChelo.accessibilityLabel! += ", " + teksto
+        }
         
         return novaChelo
     }

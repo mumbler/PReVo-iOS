@@ -14,6 +14,9 @@ let artikolChelIdent = "artikolaChelo"
 let artikolKapIdent  = "artikolaKapo"
 let artikolPiedIdent = "artikolaPiedo"
 
+/*
+    Pagho kiu montras la artikolojn kun difinoj kaj tradukoj
+*/
 class ArtikoloViewController : UIViewController, Stilplena {
     
     @IBOutlet var vortTabelo: UITableView?
@@ -79,7 +82,13 @@ class ArtikoloViewController : UIViewController, Stilplena {
     }
     
     func prepariNavigaciajnButonojn() {
+        
+        // Por meti du butonoj malproksime unu al la alia, oni devas krei UIView kiu enhavas
+        // du UIButton-ojn, kaj uzi tion kiel la vera rightBarButtonItem
+        
         let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
+        
+        // Elekti plena stelo se la artikolo estas konservia, alie la malplena
         let bildo = UzantDatumaro.konservitaj.contains { (nuna: Listero) -> Bool in
             return nuna.indekso == artikolo?.indekso
             } ? UIImage(named: "pikto_stelo_plena") : UIImage(named: "pikto_stelo")
@@ -98,6 +107,8 @@ class ArtikoloViewController : UIViewController, Stilplena {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
     }
     
+    // Krei liston de tradukoj por montri - tiuj kiuj estas kaj en la listo de
+    // tradukoj por la artikolo kaj la elektitaj traduk-lingvoj
     func prepariTradukListon() {
 
         tradukListo = [Traduko]()
@@ -113,6 +124,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         })
     }
     
+    // Haste movi la ekranon al la dezirata vorto en la artikolo
     func iriAlMarko(marko: String, animacii: Bool) {
         
         var sumo = 0
@@ -133,6 +145,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         }
     }
     
+    // Reiri al la ingo pagho kaj igi ghin montri la serch-paghon
     func premisSerchButonon() {
         
         if let ingo = (navigationController as? ChefaNavigationController)?.viewControllers.first as? IngoPaghoViewController {
@@ -141,11 +154,13 @@ class ArtikoloViewController : UIViewController, Stilplena {
         navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    // Konservi au malkonservi la artikolon
     func premisKonservButonon() {
         
         UzantDatumaro.shanghiKonservitecon(Listero(artikolo!.titolo, artikolo!.indekso))
     }
     
+    // Montri la traduk-lingvoj elektilon
     func premisPliajnTradukojnButonon() {
         
         let navigaciilo = HelpaNavigationController()
@@ -192,6 +207,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         if indexPath.section == 0 {
+            // La chelo montros difinon
             
             if artikolo?.grupoj.count == 1 {
                 if let vorto = artikolo?.grupoj.first?.vortoj[indexPath.row] {
@@ -216,6 +232,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
                 }
             }
         } else if indexPath.section == 1 {
+            // La chelo montros tradukon
             
             if let traduko = tradukListo?[indexPath.row] {
                 
@@ -224,6 +241,12 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         novaChelo.chefaEtikedo?.delegate = self
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = ""
+        if let titolo = novaChelo.titolaEtikedo?.text where !titolo.isEmpty {
+            novaChelo.accessibilityLabel? += titolo + ", "
+        }
+        novaChelo.accessibilityLabel? += novaChelo.chefaEtikedo?.text ?? ""
         
         return novaChelo
     }
@@ -281,14 +304,9 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return UITableViewAutomaticDimension
-        //return veraHeight(tableView, indexPath)
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        if section == 0 {
-            return 1
-        }
     
         return UITableViewAutomaticDimension
     }
@@ -329,6 +347,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension ArtikoloViewController : TradukLingvojElektiloDelegate {
     
+    // Elektis traduk-lingvojn - reprezenti la tradukan sekcion de la pagho
     func elektisTradukLingvojn() {
         
         prepariTradukListon()
@@ -339,6 +358,7 @@ extension ArtikoloViewController : TradukLingvojElektiloDelegate {
 
 extension ArtikoloViewController : TTTAttributedLabelDelegate {
     
+    // Uzanto premis ligilon - iri al la dezirata sekcio de la artikolo, au montri novan artikolon
     func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
         
         let marko = url.absoluteString

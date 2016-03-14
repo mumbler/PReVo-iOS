@@ -9,9 +9,13 @@
 import Foundation
 import UIKit
 
-let oftajLimo = 5
-let historioLimo = 32
+let oftajLimo = 5 // Limo de lingvoj en la "oftaj uzataj serch-lingvoj" listo
+let historioLimo = 32 // Limo de artikoloj en la historio-listo
 
+/*
+    La UzantDatumaro enhavas datumojn pri la uzado de la programo. Chi tiuj datumoj
+    estas konservitaj ke re-uzataj kiam la programo rekomencas.
+*/
 class UzantDatumaro {
 
     static var serchLingvo: Lingvo! = nil
@@ -32,6 +36,9 @@ class UzantDatumaro {
         
         sharghiJeKonservitajnDatumojn()
         
+        // Se datumoj ne estas trovitaj, starigi bazan informon
+        
+        // Trovi lingvojn el la aparataj agoroj, kaj uzi ilin
         if oftajSerchLingvoj.count == 0 || tradukLingvoj.count == 0 {
             for kodo in NSLocale.preferredLanguages() {
                 
@@ -43,6 +50,7 @@ class UzantDatumaro {
             }
         }
         
+        // Esperanto estas la baza serch-lingvo, se alia ne trovighis
         if serchLingvo == nil {
             elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
         }
@@ -55,6 +63,7 @@ class UzantDatumaro {
     
     // Lingvoj --------------
     
+    // Uzata post kiam oni elektas serch-lingvon. Ghi ghisdatigas parencajn aferojn
     static func elektisSerchLingvon(elektita: Lingvo) {
         
         serchLingvo = elektita
@@ -75,6 +84,7 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
+    // Uzata post elekto de traduk-lingvojn. Ghi konservas la novajn.
     static func elektisTradukLingvojn() {
         
         konserviTradukLingvojn = true
@@ -83,6 +93,8 @@ class UzantDatumaro {
     
     // Historio -------------
     
+    // Uzata kiam oni vizitas artikolon por konservi ghin kaj ghisdatigi
+    // la historion
     static func visitisPaghon(artikolo: Listero) {
         
         if let trovo = historio.indexOf({ (nuna: Listero) -> Bool in
@@ -126,6 +138,7 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
+    // Konservi au malkonservi lausituacio
     static func shanghiKonservitecon(artikolo: Listero) {
         
         if !konservitaj.contains({(unua: Listero) -> Bool in
@@ -150,6 +163,7 @@ class UzantDatumaro {
     
     // Konservado kaj resharghado de datumoj ---------------------------
     
+    // Konservi la uzant datumojn por reuzi ghin post rekomenco de la programo
     static func konserviDatumojn() {
         
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -192,6 +206,7 @@ class UzantDatumaro {
         defaults.synchronize()
     }
     
+    // Trovi kaj starigi jamajn datumojn pri uzado
     static func sharghiJeKonservitajnDatumojn() {
         
         let defaults = NSUserDefaults.standardUserDefaults()

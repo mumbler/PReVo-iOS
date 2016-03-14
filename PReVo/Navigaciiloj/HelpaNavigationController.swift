@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+/*
+    UINavigationController por montri subajn paghojn kiuj aperas el la suba flanko de la ekrano.
+    Chi tiu Navigation Controller pretigas sian propran navigacia tabulo kun X butono, ktp.
+*/
 class HelpaNavigationController : UINavigationController, Stilplena {
 
     var subLinio: UIView?

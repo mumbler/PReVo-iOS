@@ -9,6 +9,10 @@
 import Foundation
 import CoreData
 
+/*
+    La trie regilo faras la trie parton de la datumbazo, kaj havas kapablon traserchi
+    ghin por trovi vortojn
+*/
 class TrieRegilo {
     
     static var konteksto: NSManagedObjectContext?
@@ -143,6 +147,7 @@ class TrieRegilo {
         }
     }
     
+    // Trovi chiun vorton kiu havas komence la jam trovitan tekston
     static func chiuFinajho(nodo: NSManagedObject, limo: Int) -> [(String, NSManagedObject)] {
         
         var rezultoj = [(String, NSManagedObject)]()

@@ -9,6 +9,10 @@
 import Foundation
 import CoreData
 
+/*
+    Chi tiu klaso legas la datumojn faritajn de la Ruby-programeto kaj uzas ilin
+    cele al konstrui Core Data datumbazon por posta uzado.
+*/
 class DatumLegilo {
     
     static var konteksto: NSManagedObjectContext?
@@ -162,6 +166,8 @@ class DatumLegilo {
     // Helpaj funkcioj
     // =============================
     
+    // Trovado de kelkaj objekt-tipojn
+    
     static func chiujLingvoj() -> [NSManagedObject]? {
         
         if konteksto == nil {
@@ -222,7 +228,7 @@ class DatumLegilo {
         return nil
     }
     
-    // Serchi specifajn objektojn
+    // Serchi specifajn objektojn ======================
     
     static func lingvoPorKodo(kodo: String) -> NSManagedObject? {
         

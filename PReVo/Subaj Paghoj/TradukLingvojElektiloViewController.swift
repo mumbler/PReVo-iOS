@@ -11,11 +11,18 @@ import UIKit
 
 let tradukLingvojElektiloChelIdent = "tradukLingvoElektiloChelo"
 
+/*
+    Protocol por ke aliaj paghoj povos reagi al la elekto de traduk-lingvoj
+*/
 protocol TradukLingvojElektiloDelegate {
     
     func elektisTradukLingvojn()
 }
 
+/*
+    Pagho por elekti lingvojn en kiu tradukoj por vortoj montrighos. La unua sekcio
+    ebligas samtemple elekti chiun lingvon au malshalti chiujn.
+*/
 class TradukLingvojElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var lingvoTabelo: UITableView?
@@ -105,6 +112,9 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
             novaChelo.etikedo?.text = lingvo.nomo
             
         }
+        
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
         return novaChelo
     }

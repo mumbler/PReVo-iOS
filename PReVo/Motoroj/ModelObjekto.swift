@@ -9,6 +9,17 @@
 import Foundation
 import CoreData
 
+/*
+    Objektoj kiuj reprezentas la enhavojn de la datumbazon, kaj kiu estas uzata de la pli antaua flanko
+    de la programo.
+*/
+
+/*
+    Artikolo reprezentas la enhavoj de unu artikolo pagho.
+    "grupoj" spegulas la sub-artikoloj de la retejo - la plejparto de artikoloj
+    havas nur unu grupo, sed kelkaj havas pli. La chi tie tradukoj estas tiuj
+    kiuj aperas en la artikolo
+*/
 class Artikolo {
     
     let titolo: String, radiko: String, indekso: String
@@ -38,11 +49,13 @@ class Artikolo {
             if let vortDatumoj = objekto.valueForKey("vortoj") as? NSData {
                 let vortJ = try NSJSONSerialization.JSONObjectWithData(vortDatumoj, options: NSJSONReadingOptions())
                 if let vortDict = vortJ as? NSDictionary {
+                    // Fari la grupojn, vortojn, kaj tekstojn de la artikolo
                     let rezulto = Modeloj.traktiNodon(vortDict)
                     novajGrupoj = rezulto.2
                 }
             }
             
+            // Prepari la tradukojn
             if let tradukDatumoj = objekto.valueForKey("tradukoj") as? NSData {
                 let tradukJ = try NSJSONSerialization.JSONObjectWithData(tradukDatumoj, options: NSJSONReadingOptions())
                 if let tradukDict = tradukJ as? NSDictionary {
@@ -74,24 +87,42 @@ class Artikolo {
         
         grupoj = novajGrupoj ?? [Grupo]()
         tradukoj = novajTradukoj
+ 
     }
 }
 
+/*
+    Grupo enhavas sian propran tekston, kaj listo de vortoj
+    kies teksto aperos sube
+*/
 struct Grupo {
     
     let teksto: String, vortoj: [Vorto]
 }
 
+/*
+    Vorto reprezentas unu au pli vortoj kun sama difino.
+    Ili estas la bazaj eroj de artikoloj
+*/
 struct Vorto {
     
     let titolo: String, teksto: String, marko: String?
 }
 
+/*
+    Traduko aperas en la suba parto de artikolo, kaj montras
+    tradukoj en aliajn lingvojn.
+*/
 struct Traduko {
     
     let lingvo: Lingvo, teksto: String
 }
 
+/*
+    La lingvo objekto estas uzata por elekti kiun lingvon uzi por
+    serchado, kaj kiujn lingvojn montri en la traduka sekcio de
+    artikolo
+*/
 class Lingvo : NSObject, NSCoding {
     
     let kodo: String, nomo: String
@@ -121,6 +152,7 @@ func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
     return lhs.kodo == rhs.kodo
 }
 
+// Fakoj aperas en kelkaj difinoj
 struct Fako {
     
     let kodo: String, nomo: String
@@ -131,6 +163,7 @@ struct Fako {
     }
 }
 
+// Stiloj aperas en kelkaj difinoj
 struct Stilo {
     
     let kodo: String, nomo: String
@@ -141,6 +174,7 @@ struct Stilo {
     }
 }
 
+// Mallongigoj nun ne uzatas, sed eble estontece
 struct Mallongigo {
     
     let kodo: String, nomo: String
@@ -151,6 +185,9 @@ struct Mallongigo {
     }
 }
 
+/* Listero estas ghenerala objekto por reprezenti artikolon en
+   liston ekzemple la historio, kaj havas apartan nomon por montri
+*/
 class Listero : NSObject, NSCoding {
     
     let nomo: String, indekso: String
@@ -177,6 +214,10 @@ class Listero : NSObject, NSCoding {
 
 class Modeloj {
     
+    /*
+        Chi tiu funkcio konstruas la tekstojn de artikoloj. Ghi estas memuzanta, kaj traktas la
+        krudajn datumojn kaj faras legeblan tekston el ili.
+    */
     static func traktiNodon(nodo: NSDictionary) -> (String?, [Vorto]?, [Grupo]?) {
         
         let tipo = nodo["tipo"] as? String

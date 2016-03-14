@@ -16,6 +16,9 @@ protocol FlankMenuoDelegate {
     func elektisPaghon(novaPagho: Pagho)
 }
 
+/*
+    Flanka menuo per kiu la uzanto povos elekti kiun paghon ri volas vidi
+*/
 class FlankMenuoViewController : UIViewController, Stilplena {
 
     @IBOutlet var tabelo: UITableView?

@@ -10,11 +10,19 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
+/*
+    Protocol por la enhavitaj paghoj. Tiu chi funkcio helpas ilin pritigi la
+    navigacian tabulon lau siaj proproaj bezonoj
+*/
 protocol Chefpagho {
     
     func aranghiNavigaciilo() -> Void
 }
 
+/*
+    Enum kiu reprezentas la elektojn de la maldekstra menuo. Kiam la uzanto premas
+    unu el tiuj butonoj, la elekto reprezentighas per unu el chi tiuj valoroj.
+*/
 enum Pagho : Int {
     case Serchi = 0, Historio, Konservitaj, Agordoj, Pri
     
@@ -54,6 +62,12 @@ enum Pagho : Int {
     
 }
 
+/*
+    La ingo pagho estas la baza ekrano de la programo. Kiam alia chefa pagho, ekzemple sercha,
+    historia, ktp. montrighos, fakte la ingo pagho nur intershanghas siajn enhavojn. Tiu ebligas
+    ke la montrita pagho shanghighas ech kiam alia pagho sidas sure - ekzemple, ni povos forigi
+    artikolan paghon kaj malkashi ian ajn paghon sube, ne nur tio kiu estis sube antau.
+*/
 class IngoPaghoViewController : UIViewController, Stilplena {
     
     @IBOutlet var nunaEkrano: UIView?
@@ -64,6 +78,7 @@ class IngoPaghoViewController : UIViewController, Stilplena {
         
     }
     
+    // Montri paghon de tiu speco.
     func montriPaghon(paghTipo: Pagho) {
         
         var novaPagho: UIViewController? = nil

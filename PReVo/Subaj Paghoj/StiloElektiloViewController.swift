@@ -11,6 +11,9 @@ import UIKit
 
 let stiloChelIdent = "stilaChelo"
 
+/*
+    Pagho por elekti la stilon de la programo
+*/
 class StiloElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var stiloTabelo: UITableView?
@@ -69,6 +72,8 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
         novaChelo.tintColor = UzantDatumaro.stilo.tintKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = KolorStilo(rawValue: indexPath.row)?.nomo
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
         return novaChelo
     }

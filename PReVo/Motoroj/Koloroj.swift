@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/*
+    La koloroj uzata de la programo
+*/
 enum Koloro {
     
     case Nigro, MalhelaGrizo, MezaGrizo, HelaGrizo, HelegaGrizo, Blanko

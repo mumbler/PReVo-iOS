@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+/*
+    La seancDatumaro enhavas preparitajn datumojn el la datumbazo por rapida
+    atingo. Ekzemple la listo de lingvoj, fakoj, ktp.
+
+    Ghi ankau inkluzivas kelkajn funkciojn por facila uzado de tiuj datumoj.
+*/
 class SeancDatumaro {
     
     static var lingvoj: [Lingvo] = [Lingvo]()
@@ -88,6 +94,8 @@ class SeancDatumaro {
     static func tekstoPorUzo(teksto: String, tipo: String)  -> String? {
         
         if tipo == "fak" {
+            // Nun ni ne uzas la tutajn fakajn tekstojn. La mallongigoj
+            // sufichas
             
             /*if let indekso = fakoj.indexOf({ (nuna: Fako) -> Bool in
                 return nuna.kodo == teksto

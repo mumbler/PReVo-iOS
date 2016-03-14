@@ -11,11 +11,18 @@ import UIKit
 
 let serchLingvoElektiloChelIdent = "lingvoElektiloChelo"
 
+/*
+    Delegate por ke aliaj paghoj povos reagi al lingvo-elektado
+*/
 protocol SerchLingvoElektiloDelegate {
     
     func elektisSerchLingvon()
 }
 
+/*
+    Pagho por elekti la lingvo en kiu serchoj okazos. La unua sekcio montras
+    lastaj elektitaj lingvoj, kaj sube videblas chiu lingvo
+*/
 class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var lingvoTabelo: UITableView?
@@ -83,6 +90,9 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
             
             novaChelo.textLabel?.text = SeancDatumaro.lingvoj[indexPath.row].nomo
         }
+        
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
         return novaChelo
     }

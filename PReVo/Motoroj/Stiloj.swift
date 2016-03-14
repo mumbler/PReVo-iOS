@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
+/*
+    La elekteblaj kolor-stiloj
+*/
 enum KolorStilo : Int {
     case Hela = 0, Malhela
     
@@ -184,13 +187,21 @@ enum KolorStilo : Int {
     }
 }
 
+/*
+    La Stilplena protocol ebligas ke la Stiloj klaso igas la vidblajn ekranojn
+    intershanghi siajn kolojn kiam la stilo shanghighas
+*/
 protocol Stilplena {
     
-    func efektivigiStilon()
+    func efektivigiStilon() // Shanghi kolorojn laubezono
 }
 
 class Stiloj {
     
+    /*
+        Chi tiu funkcio shanghas plurajn gheneralajn kolor-agordojn, kaj igas ke la prezentitaj ekranoj
+        faru same.
+    */
     static func efektivigiStilon(stilo: KolorStilo) {
         
         UIApplication.sharedApplication().statusBarStyle = UzantDatumaro.stilo.statusKoloro

@@ -27,33 +27,16 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
         self.subart = subart
         
-        efektivigiStilon()
-        
         if subart {
             titolaAlteco?.constant = 0
         } else {
             titolaAlteco?.constant = bazaTitolaAlteco
         }
         
+        efektivigiStilon()
+        
         let markoj = Iloj.troviMarkojn(teksto)
-        
-        let tekstGrandeco = CGFloat(16.0)
-        chefaEtikedo?.font = UIFont.systemFontOfSize(tekstGrandeco)
-        let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
-        let akcentaTeksto = UIFont.italicSystemFontOfSize(tekstGrandeco)
-        
-        chefaEtikedo?.setText(Iloj.forigiAngulojn(teksto), afterInheritingLabelAttributesAndConfiguringWithBlock: { (mutaciaTeksto: NSMutableAttributedString!) -> NSMutableAttributedString! in
-            
-            for akcentMarko in markoj[markoAkcentoKlavo]! {
-                mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: akcentaTeksto, range: NSMakeRange(akcentMarko.0, akcentMarko.1 - akcentMarko.0))
-            }
-
-            for fortMarko in markoj[markoFortoKlavo]! {
-                mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
-            }
-            
-            return mutaciaTeksto
-        })
+        chefaEtikedo?.setText(Iloj.pretigiTekston(teksto, kunMarkoj: markoj))
         
         for ligMarko in markoj[markoLigoKlavo]! {
             chefaEtikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )

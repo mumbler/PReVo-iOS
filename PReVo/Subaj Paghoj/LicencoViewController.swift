@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/*
+    Pagho por montri la MIT permesilon
+*/
 class LicencoViewController : UIViewController, Stilplena {
     
     @IBOutlet var etikedo: UILabel?

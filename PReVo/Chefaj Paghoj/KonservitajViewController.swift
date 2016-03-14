@@ -11,6 +11,9 @@ import UIKit
 
 let konservitajChelIdent = "konservitajChelo"
 
+/*
+    Pagho por vidi konservitaj artikoloj
+*/
 class KonservitajViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var vortoTabelo: UITableView?
@@ -62,6 +65,8 @@ extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = UzantDatumaro.konservitaj[indexPath.row].nomo
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
         return novaChelo
     }
