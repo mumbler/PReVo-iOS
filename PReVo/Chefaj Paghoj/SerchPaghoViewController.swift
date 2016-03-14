@@ -110,6 +110,12 @@ extension SerchPaghoViewController : UISearchBarDelegate {
         
         trovTabelo?.reloadData()
     }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        searchBar.resignFirstResponder()
+    }
+    
 }
 
 extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource {

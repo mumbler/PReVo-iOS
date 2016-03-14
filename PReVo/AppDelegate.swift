@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var fileMgr = NSFileManager.defaultManager()
         if let fonto = NSBundle.mainBundle().pathForResource(datumbazNomo, ofType: "sqlite"),
-           let destino = url.path {
+           let destino = url.path where fileMgr.fileExistsAtPath(destino) == false {
             do {
                 try fileMgr.copyItemAtPath(fonto, toPath: destino)
             } catch let error as NSError {
