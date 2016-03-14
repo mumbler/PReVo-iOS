@@ -14,6 +14,21 @@ let markoFortoKlavo = "forto"
 
 class Iloj {
     
+    static func chapeligi(litero: Character) -> Character? {
+    
+        let unua = "chgjsuCGHJSU"
+        let dua  = "ĉĥĝĵŝŭĈĜĤĴŜŬ"
+        
+        for var i = 0; i < unua.characters.count; i += 1 {
+            
+            if unua[unua.startIndex.advancedBy(i)] == litero {
+                return dua[dua.startIndex.advancedBy(i)]
+            }
+        }
+        
+        return nil
+    }
+    
     static func alLitero(nombro: Int, _ granda: Bool) -> String {
         
         let alfabeto = "abcdefghijklmnoprstuvz"

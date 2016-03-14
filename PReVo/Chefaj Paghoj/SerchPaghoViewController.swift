@@ -74,12 +74,27 @@ extension SerchPaghoViewController : UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
+        var teksto = searchBar.text
+        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo() && text == "x" && teksto?.characters.count > 0 {
+            
+            let lasta = teksto?[teksto!.endIndex.advancedBy(-1)]
+            if let chapeligita = Iloj.chapeligi(lasta!) {
+                teksto = teksto!.substringToIndex(teksto!.endIndex.advancedBy(-1)) + String(chapeligita)
+            }
+            
+            searchBar.text = teksto!
+            self.searchBar(searchBar, textDidChange: teksto!)
+            return false
+        }
+        
+        searchBar.text = teksto!
         return true
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
-        if let teksto = searchBar.text?.lowercaseString {
+        searchBar.text = searchBar.text?.lowercaseString
+        if let teksto = searchBar.text {
             
             if !teksto.isEmpty {
                 serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)

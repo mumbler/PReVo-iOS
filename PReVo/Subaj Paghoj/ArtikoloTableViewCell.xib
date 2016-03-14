@@ -29,7 +29,6 @@
                         <constraints>
                             <constraint firstItem="QPM-C6-8DQ" firstAttribute="leading" secondItem="DFi-1d-Dhf" secondAttribute="leading" constant="8" id="9ER-QH-sDa"/>
                             <constraint firstAttribute="trailing" secondItem="QPM-C6-8DQ" secondAttribute="trailing" constant="8" id="Knu-1z-rIu"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="SbE-eM-RyB"/>
                             <constraint firstItem="QPM-C6-8DQ" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="top" constant="8" id="fx9-Yh-wgD"/>
                             <constraint firstAttribute="height" constant="35" id="jrb-u4-vSn"/>
                             <constraint firstAttribute="bottom" secondItem="QPM-C6-8DQ" secondAttribute="bottom" constant="8" id="og5-ZE-W0N"/>
@@ -38,7 +37,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-uM-sRB" userLabel="Chefa Etikedo" customClass="TTTAttributedLabel">
                         <rect key="frame" x="8" y="43" width="418" height="104.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -55,6 +54,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="chefaEtikedo" destination="DKb-uM-sRB" id="CpS-lP-joO"/>
+                <outlet property="titolaAlteco" destination="jrb-u4-vSn" id="pqd-t1-y1a"/>
                 <outlet property="titolaEtikedo" destination="QPM-C6-8DQ" id="B7O-at-wmC"/>
                 <outlet property="titolaRegiono" destination="DFi-1d-Dhf" id="KR0-UP-M88"/>
             </connections>

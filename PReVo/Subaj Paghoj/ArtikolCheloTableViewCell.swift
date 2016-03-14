@@ -10,17 +10,30 @@ import Foundation
 import UIKit
 import TTTAttributedLabel
 
+let bazaTitolaAlteco: CGFloat = 35
+
 class ArtikoloTableViewCell : UITableViewCell, Stilplena {
 
     @IBOutlet var titolaRegiono: UIView?
     @IBOutlet var titolaEtikedo: UILabel?
+    @IBOutlet var titolaAlteco: NSLayoutConstraint?
     @IBOutlet var chefaEtikedo: TTTAttributedLabel?
     
-    func prepari(titolo titolo: String, teksto: String) {
+    var subart: Bool = false
+    
+    func prepari(titolo titolo: String, teksto: String, subart: Bool) {
         
         titolaEtikedo?.text = titolo
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
         efektivigiStilon()
+        self.subart = subart
+        
+        if subart {
+            titolaAlteco?.constant = 0
+        } else {
+            titolaAlteco?.constant = bazaTitolaAlteco
+        }
+        
         let markoj = Iloj.troviMarkojn(teksto)
         
         let tekstGrandeco = CGFloat(16.0)
@@ -47,10 +60,16 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
     
     func efektivigiStilon() {
         
-        backgroundColor = UzantDatumaro.stilo.bazKoloro
-        titolaEtikedo?.textColor = UzantDatumaro.stilo.difinKapTekstKoloro
-        titolaRegiono?.backgroundColor = UzantDatumaro.stilo.difinKapFonKoloro
-        chefaEtikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
+        if subart {
+            backgroundColor = UzantDatumaro.stilo.fonKoloro
+            chefaEtikedo?.textColor = UzantDatumaro.stilo.fonTekstKoloro
+        } else {
+            backgroundColor = UzantDatumaro.stilo.bazKoloro
+            titolaEtikedo?.textColor = UzantDatumaro.stilo.difinKapTekstKoloro
+            titolaRegiono?.backgroundColor = UzantDatumaro.stilo.difinKapFonKoloro
+            chefaEtikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
+        }
+
         chefaEtikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
         chefaEtikedo?.activeLinkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
     }

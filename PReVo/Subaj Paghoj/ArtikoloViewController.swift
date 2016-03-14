@@ -189,7 +189,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             
             if artikolo?.grupoj.count == 1 {
                 if let vorto = artikolo?.grupoj.first?.vortoj[indexPath.row] {
-                    novaChelo.prepari(titolo: vorto.titolo, teksto: vorto.teksto)
+                    novaChelo.prepari(titolo: vorto.titolo, teksto: vorto.teksto, subart: false)
                 }
             } else {
                 
@@ -197,12 +197,12 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
                 for grupo in artikolo!.grupoj {
                     
                     if sumo == indexPath.row {
-                        novaChelo.prepari(titolo: "", teksto: grupo.teksto)
+                        novaChelo.prepari(titolo: "", teksto: grupo.teksto, subart: true)
                         break
                     }
                     else if indexPath.row < sumo + grupo.vortoj.count + 1 {
                         let vorto = grupo.vortoj[indexPath.row - sumo - 1]
-                        novaChelo.prepari(titolo: vorto.titolo, teksto: vorto.teksto)
+                        novaChelo.prepari(titolo: vorto.titolo, teksto: vorto.teksto, subart: false)
                         break
                     }
                     
@@ -213,7 +213,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             
             if let traduko = tradukListo?[indexPath.row] {
                 
-                novaChelo.prepari(titolo: traduko.lingvo.nomo, teksto: traduko.teksto)
+                novaChelo.prepari(titolo: traduko.lingvo.nomo, teksto: traduko.teksto, subart: false)
             }
         }
         
@@ -297,11 +297,68 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 100
+        let kalket: UILabel = UILabel()
+        var teksto: String = ""
+        
+        if indexPath.section == 0 {
+            
+            if artikolo?.grupoj.count == 1 {
+                if let vorto = artikolo?.grupoj.first?.vortoj[indexPath.row] {
+                    teksto = vorto.teksto
+                }
+            } else {
+                
+                var sumo = 0
+                for grupo in artikolo!.grupoj {
+                    
+                    if sumo == indexPath.row {
+                        teksto = grupo.teksto
+                        break
+                    }
+                    else if indexPath.row < sumo + grupo.vortoj.count + 1 {
+                        let vorto = grupo.vortoj[indexPath.row - sumo - 1]
+                        teksto = vorto.teksto
+                        break
+                    }
+                    
+                    sumo += grupo.vortoj.count + 1
+                }
+            }
+        } else if indexPath.section == 1 {
+            
+            if let traduko = tradukListo?[indexPath.row] {
+                
+                teksto = traduko.teksto
+            }
+        }
+        
+        kalket.text = Iloj.forigiAngulojn(teksto)
+
+        let teksto2: NSAttributedString = NSAttributedString(string: teksto)
+        let fenestro = UIApplication.sharedApplication().keyWindow
+        let constraintRect = CGSize(width: fenestro?.frame.width ?? 400, height: CGFloat.max)
+        let boundingBox = teksto2.boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        
+        return 35 + 16 + ceil(boundingBox.height)
+        //return 100
     }
     
+    /*func tableView(tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 1 {
+            return 50
+        }
+        
+        return 1
+    }*/
+    
     func tableView(tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-        return 100
+        
+        if section == 1 {
+            return 50
+        }
+        
+        return 0
     }
 }
 
