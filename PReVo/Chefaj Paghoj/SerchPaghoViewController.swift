@@ -98,9 +98,12 @@ extension SerchPaghoViewController : UISearchBarDelegate {
             
             if !teksto.isEmpty {
                 serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
-                trovTabelo?.reloadData()
+            } else {
+                serchRezultoj.removeAll()
             }
         }
+        
+        trovTabelo?.reloadData()
     }
 }
 
@@ -127,6 +130,8 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = serchRezultoj[indexPath.row].0
+        novaChelo.isAccessibilityElement = true
+        novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
         return novaChelo
     }

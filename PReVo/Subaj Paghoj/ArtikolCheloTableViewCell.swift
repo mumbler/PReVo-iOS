@@ -25,8 +25,9 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         
         titolaEtikedo?.text = titolo
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
-        efektivigiStilon()
         self.subart = subart
+        
+        efektivigiStilon()
         
         if subart {
             titolaAlteco?.constant = 0
@@ -37,6 +38,7 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         let markoj = Iloj.troviMarkojn(teksto)
         
         let tekstGrandeco = CGFloat(16.0)
+        chefaEtikedo?.font = UIFont.systemFontOfSize(tekstGrandeco)
         let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
         let akcentaTeksto = UIFont.italicSystemFontOfSize(tekstGrandeco)
         
