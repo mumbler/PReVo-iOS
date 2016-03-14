@@ -38,6 +38,24 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
         tabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         tabelo?.reloadData()
     }
+    
+    func nuligiHistorion() {
+        let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi historion averto", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (ago: UIAlertAction) -> Void in
+            UzantDatumaro.historio.removeAll()
+        }))
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+        presentViewController(mesagho, animated: true, completion: nil)
+    }
+    
+    func nuligiKonservitajn() {
+        let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi konservitajn averto", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (ago: UIAlertAction) -> Void in
+            UzantDatumaro.konservitaj.removeAll()
+        }))
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+        presentViewController(mesagho, animated: true, completion: nil)
+    }
 }
 
 extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
@@ -124,10 +142,11 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                UzantDatumaro.historio.removeAll()
+                nuligiHistorion()
+
             }
             else if indexPath.row == 1 {
-                UzantDatumaro.konservitaj.removeAll()
+                nuligiKonservitajn()
             }
         }
         else if indexPath.section == 1 {
