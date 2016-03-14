@@ -16,7 +16,7 @@ protocol TradukLingvojElektiloDelegate {
     func elektisTradukLingvojn()
 }
 
-class TradukLingvojElektiloViewController : UIViewController {
+class TradukLingvojElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var lingvoTabelo: UITableView?
     var eoIndekso: Int = 0
@@ -33,7 +33,8 @@ class TradukLingvojElektiloViewController : UIViewController {
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
         lingvoTabelo?.registerNib(UINib(nibName: "TradukLingvoElektiloTableViewCell", bundle: nil), forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
-        lingvoTabelo?.reloadData()
+        
+        efektivigiStilon()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -41,6 +42,12 @@ class TradukLingvojElektiloViewController : UIViewController {
         if shanghisLingvojn {
             delegate?.elektisTradukLingvojn()
         }
+    }
+    
+    func efektivigiStilon() {
+
+        lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        lingvoTabelo?.reloadData()
     }
 }
 
@@ -71,6 +78,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
             novaChelo = TradukLingvojElektiloTableViewCell()
         }
         
+        novaChelo.prepari()
         novaChelo.shaltilo?.tag = indexPath.row + ((indexPath.row >= eoIndekso) ? 1 : 0)
         novaChelo.shaltilo?.addTarget(self, action: Selector("shaltisLingvon:"), forControlEvents: UIControlEvents.ValueChanged)
         

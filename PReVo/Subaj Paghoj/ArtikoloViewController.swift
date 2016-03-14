@@ -14,7 +14,7 @@ let artikolChelIdent = "artikolaChelo"
 let artikolKapIdent  = "artikolaKapo"
 let artikolPiedIdent = "artikolaPiedo"
 
-class ArtikoloViewController : UIViewController {
+class ArtikoloViewController : UIViewController, Stilplena {
     
     @IBOutlet var vortTabelo: UITableView?
     var artikolo: Artikolo? = nil
@@ -50,7 +50,8 @@ class ArtikoloViewController : UIViewController {
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
-        vortTabelo?.reloadData()
+        
+        efektivigiStilon()
         
         if konservitaMarko != nil {
             iriAlMarko(konservitaMarko!, animacii: false)
@@ -64,16 +65,25 @@ class ArtikoloViewController : UIViewController {
         }
     }
     
+    func efektivigiStilon() {
+        
+        navigationController?.navigationBar.tintColor = UzantDatumaro.stilo.navTintKoloro
+        vortTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        vortTabelo?.reloadData()
+    }
+    
     func prepariNavigaciajnButonojn() {
         let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
         let bildo = UzantDatumaro.konservitaj.contains { (nuna: Listero) -> Bool in
             return nuna.indekso == artikolo?.indekso
             } ? UIImage(named: "pikto_stelo_plena") : UIImage(named: "pikto_stelo")
         let konservButono = UIButton()
-        konservButono.setImage(bildo, forState: UIControlState.Normal)
+        konservButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+        konservButono.setImage(bildo?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
         konservButono.addTarget(self, action: "premisKonservButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
         let serchButono = UIButton()
-        serchButono.setImage(UIImage(named: "pikto_lenso"), forState: UIControlState.Normal)
+        serchButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+        serchButono.setImage(UIImage(named: "pikto_lenso")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
         serchButono.addTarget(self, action: "premisSerchButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
         butonujo.addSubview(konservButono)
         butonujo.addSubview(serchButono)
@@ -226,6 +236,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         if section == 1 {
+            novaKapo.prepari()
             novaKapo.etikedo?.text = "Tradukoj"
         }
         

@@ -54,7 +54,7 @@ enum Pagho : Int {
     
 }
 
-class IngoPaghoViewController : UIViewController {
+class IngoPaghoViewController : UIViewController, Stilplena {
     
     @IBOutlet var nunaEkrano: UIView?
     var filoVC: UIViewController?
@@ -100,6 +100,13 @@ class IngoPaghoViewController : UIViewController {
         }
     }
     
+    func efektivigiStilon() {
+        
+        if let konforma = filoVC as? Stilplena {
+            
+            konforma.efektivigiStilon()
+        }
+    }
 }
 
 extension IngoPaghoViewController : SlideNavigationControllerDelegate {

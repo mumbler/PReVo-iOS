@@ -6,6 +6,12 @@
   Copyright © 2016 NormalSoft. All rights reserved.
 */
 
+// Serchi
+
+"serchi baza titolo"                            = "Serĉi";
+"serchi lingva titolo"                          = "Serĉi (%@)";
+"serchi tabulo teksto"                          = "Serĉu vorton aŭ frazon";
+
 // Historio
 
 "historio titolo"                               = "Historio";

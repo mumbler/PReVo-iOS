@@ -11,7 +11,7 @@ import UIKit
 
 let stiloChelIdent = "stilaChelo"
 
-class StiloElektiloViewController : UIViewController {
+class StiloElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var stiloTabelo: UITableView?
     
@@ -22,6 +22,13 @@ class StiloElektiloViewController : UIViewController {
         stiloTabelo?.delegate = self
         stiloTabelo?.dataSource = self
         stiloTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: stiloChelIdent)
+
+        efektivigiStilon()
+    }
+    
+    func efektivigiStilon() {
+        
+        stiloTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         stiloTabelo?.reloadData()
     }
     
@@ -58,6 +65,9 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
             novaChelo.accessoryType = UITableViewCellAccessoryType.None
         }
         
+        novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        novaChelo.tintColor = UzantDatumaro.stilo.tintKoloro
+        novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = KolorStilo(rawValue: indexPath.row)?.nomo
         
         return novaChelo

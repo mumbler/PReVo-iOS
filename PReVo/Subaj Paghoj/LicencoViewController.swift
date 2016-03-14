@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LicencoViewController : UIViewController {
+class LicencoViewController : UIViewController, Stilplena {
     
     @IBOutlet var etikedo: UILabel?
     
@@ -17,5 +17,13 @@ class LicencoViewController : UIViewController {
         
         title = NSLocalizedString("licenco titolo", comment: "")
         etikedo?.text = NSLocalizedString("licenco teksto", comment: "")
+        
+        efektivigiStilon()
+    }
+    
+    func efektivigiStilon() {
+        
+        view.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        etikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
     }
 }

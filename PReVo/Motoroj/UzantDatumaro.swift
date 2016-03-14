@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 let oftajLimo = 5
 let historioLimo = 32
@@ -109,5 +110,6 @@ class UzantDatumaro {
     static func shanghisStilon(novaStilo: KolorStilo) {
         
         stilo = novaStilo
+        Stiloj.efektivigiStilon(novaStilo)
     }
 }

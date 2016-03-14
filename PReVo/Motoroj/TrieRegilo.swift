@@ -22,8 +22,6 @@ class TrieRegilo {
         for lingvo in kodoj {
             konstruiTriePorLingvo(lingvo)
         }
-        
-        //konstruiTriePorLingvo("en")
     }
     
     static func konstruiTriePorLingvo(kodo: String) {

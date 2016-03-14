@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import TTTAttributedLabel
 
-class ArtikoloTableViewCell : UITableViewCell {
+class ArtikoloTableViewCell : UITableViewCell, Stilplena {
 
     @IBOutlet var titolaRegiono: UIView?
     @IBOutlet var titolaEtikedo: UILabel?
@@ -19,10 +19,9 @@ class ArtikoloTableViewCell : UITableViewCell {
     func prepari(titolo titolo: String, teksto: String) {
         
         titolaEtikedo?.text = titolo
-        
-        let markoj = Iloj.troviMarkojn(teksto)
-        
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
+        efektivigiStilon()
+        let markoj = Iloj.troviMarkojn(teksto)
         
         let tekstGrandeco = CGFloat(16.0)
         let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
@@ -44,6 +43,16 @@ class ArtikoloTableViewCell : UITableViewCell {
         for ligMarko in markoj[markoLigoKlavo]! {
             chefaEtikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
+    }
+    
+    func efektivigiStilon() {
+        
+        backgroundColor = UzantDatumaro.stilo.bazKoloro
+        titolaEtikedo?.textColor = UzantDatumaro.stilo.difinKapTekstKoloro
+        titolaRegiono?.backgroundColor = UzantDatumaro.stilo.difinKapFonKoloro
+        chefaEtikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
+        chefaEtikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
+        chefaEtikedo?.activeLinkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
     }
     
 }

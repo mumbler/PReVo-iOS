@@ -119,7 +119,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             do {
                 try managedObjectContext.save()
             } catch {
-                let nserror = error as NSError
                 abort()
             }
         }

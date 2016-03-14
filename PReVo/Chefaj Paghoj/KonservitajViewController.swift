@@ -11,7 +11,7 @@ import UIKit
 
 let konservitajChelIdent = "konservitajChelo"
 
-class KonservitajViewController : UIViewController, Chefpagho {
+class KonservitajViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var vortoTabelo: UITableView?
     
@@ -23,12 +23,18 @@ class KonservitajViewController : UIViewController, Chefpagho {
     }
     
     override func viewWillAppear(animated: Bool) {
-        vortoTabelo?.reloadData()
+        efektivigiStilon()
     }
     
     func aranghiNavigaciilo() {
         parentViewController?.title = NSLocalizedString("konservitaj titolo", comment: "")
         parentViewController?.navigationItem.rightBarButtonItem = nil
+    }
+    
+    func efektivigiStilon() {
+        
+        vortoTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        vortoTabelo?.reloadData()
     }
 }
 
@@ -53,6 +59,8 @@ extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource
             novaChelo = UITableViewCell()
         }
         
+        novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = UzantDatumaro.konservitaj[indexPath.row].nomo
         
         return novaChelo

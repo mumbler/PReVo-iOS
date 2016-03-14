@@ -16,7 +16,7 @@ protocol SerchLingvoElektiloDelegate {
     func elektisSerchLingvon()
 }
 
-class SerchLingvoElektiloViewController : UIViewController {
+class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var lingvoTabelo: UITableView?
     var delegate: SerchLingvoElektiloDelegate?
@@ -27,6 +27,13 @@ class SerchLingvoElektiloViewController : UIViewController {
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
         lingvoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
+
+        efektivigiStilon()
+    }
+    
+    func efektivigiStilon() {
+        
+        lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         lingvoTabelo?.reloadData()
     }
     
@@ -65,6 +72,9 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
         } else {
             novaChelo = UITableViewCell()
         }
+        
+        novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         
         if indexPath.section == 0 {
             

@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlankMenuoViewController" customModule="PReVo" customModuleProvider="target">
             <connections>
                 <outlet property="navAlteco" destination="dc4-Yt-5Hz" id="HxU-gw-QPY"/>
+                <outlet property="supraRegiono" destination="ZNF-PU-mO0" id="eUx-ET-gRU"/>
                 <outlet property="tabelo" destination="e6O-CM-Wpn" id="j4C-Q2-Y3E"/>
                 <outlet property="view" destination="iN0-l3-epB" id="UmX-y1-vw9"/>
             </connections>

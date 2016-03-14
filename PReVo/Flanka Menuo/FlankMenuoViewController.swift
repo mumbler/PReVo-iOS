@@ -16,10 +16,12 @@ protocol FlankMenuoDelegate {
     func elektisPaghon(novaPagho: Pagho)
 }
 
-class FlankMenuoViewController : UIViewController {
+class FlankMenuoViewController : UIViewController, Stilplena {
 
     @IBOutlet var tabelo: UITableView?
     @IBOutlet var navAlteco: NSLayoutConstraint?
+    @IBOutlet var supraRegiono: UIView?
+    
     var delegate: FlankMenuoDelegate?
     
     override func viewDidLoad() {
@@ -29,6 +31,14 @@ class FlankMenuoViewController : UIViewController {
         tabelo?.delegate = self
         tabelo?.dataSource = self
         tabelo?.registerNib(UINib(nibName: "FlankMenuoTableViewCell", bundle: nil), forCellReuseIdentifier: flankMenuoChelIdent)
+        
+        efektivigiStilon()
+    }
+    
+    func efektivigiStilon() {
+        
+        supraRegiono?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
+        tabelo?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
         tabelo?.reloadData()
     }
     
@@ -54,8 +64,7 @@ extension FlankMenuoViewController : UITableViewDelegate, UITableViewDataSource 
         }
         
         if let pagho = Pagho(rawValue: indexPath.row) {
-            novaChelo.etikedo?.text = pagho.nomo
-            novaChelo.bildo?.image = UIImage(named: pagho.bildoNomo)
+            novaChelo.prepari(pagho.nomo, bildoNomo: pagho.bildoNomo)
         }
         
         return novaChelo

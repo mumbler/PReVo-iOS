@@ -23,9 +23,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="10U-iJ-uZH">
-                        <rect key="frame" x="54" y="11" width="42" height="21"/>
+                        <rect key="frame" x="62" y="11.5" width="42" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -33,7 +33,7 @@
                     <constraint firstItem="10U-iJ-uZH" firstAttribute="centerY" secondItem="Rf4-0A-MXI" secondAttribute="centerY" id="DJE-VP-18z"/>
                     <constraint firstItem="ogJ-Ye-xcz" firstAttribute="leading" secondItem="Rf4-0A-MXI" secondAttribute="leadingMargin" constant="8" id="Nrg-MU-6Z2"/>
                     <constraint firstItem="ogJ-Ye-xcz" firstAttribute="centerY" secondItem="Rf4-0A-MXI" secondAttribute="centerY" id="O1l-Iz-07e"/>
-                    <constraint firstItem="10U-iJ-uZH" firstAttribute="leading" secondItem="ogJ-Ye-xcz" secondAttribute="trailing" constant="8" id="VgS-RL-UgH"/>
+                    <constraint firstItem="10U-iJ-uZH" firstAttribute="leading" secondItem="ogJ-Ye-xcz" secondAttribute="trailing" constant="16" id="VgS-RL-UgH"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

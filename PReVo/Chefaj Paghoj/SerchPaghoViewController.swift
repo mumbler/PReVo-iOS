@@ -13,7 +13,7 @@ import CoreData
 let serchChelIdent = "serchRezultoChelo"
 let serchLimo = 32
 
-class SerchPaghoViewController : UIViewController, Chefpagho {
+class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var trovTabelo: UITableView?
@@ -22,11 +22,13 @@ class SerchPaghoViewController : UIViewController, Chefpagho {
     override func viewDidLoad() {
         
         serchTabulo?.delegate = self
+        serchTabulo?.placeholder = NSLocalizedString("serchi tabulo teksto", comment: "")
         
         trovTabelo?.delegate = self
         trovTabelo?.dataSource = self
         trovTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchChelIdent)
-        trovTabelo?.reloadData()
+
+        efektivigiStilon()
     }
     
     func aranghiNavigaciilo() {
@@ -38,8 +40,24 @@ class SerchPaghoViewController : UIViewController, Chefpagho {
         parentViewController?.navigationItem.rightBarButtonItem = dekstraButono
     }
     
+    func efektivigiStilon() {
+        
+        serchTabulo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        serchTabulo?.barStyle = UzantDatumaro.stilo.serchTabuloKoloro
+        serchTabulo?.keyboardAppearance = UzantDatumaro.stilo.klavaroKoloro
+        serchTabulo?.tintColor = UzantDatumaro.stilo.tintKoloro
+        
+        trovTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        trovTabelo?.reloadData()
+    }
+    
     func ghisdatigiTitolon() {
-        parentViewController?.title = "Serchi (" + UzantDatumaro.serchLingvo.nomo + ")"
+        
+        if UzantDatumaro.serchLingvo.kodo.characters.count > 0 {
+            parentViewController?.title = String(format: NSLocalizedString("serchi lingva titolo", comment: ""), arguments: [UzantDatumaro.serchLingvo.nomo])
+        } else {
+            parentViewController?.title = NSLocalizedString("serchi baza titolo", comment: "")
+        }
     }
     
     func elektiLingvon() {
@@ -91,6 +109,8 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
             novaChelo = UITableViewCell()
         }
         
+        novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.textLabel?.text = serchRezultoj[indexPath.row].0
         
         return novaChelo

@@ -11,7 +11,7 @@ import UIKit
 
 let agordojChelIdent = "agordaChelo"
 
-class AgordojViewController : UIViewController, Chefpagho {
+class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var tabelo: UITableView?
     
@@ -20,13 +20,20 @@ class AgordojViewController : UIViewController, Chefpagho {
         tabelo?.delegate = self
         tabelo?.dataSource = self
         tabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: agordojChelIdent)
-        tabelo?.reloadData()
+
+        efektivigiStilon()
     }
     
     func aranghiNavigaciilo() {
         
         parentViewController?.title = NSLocalizedString("agordoj titolo", comment: "")
         parentViewController?.navigationItem.rightBarButtonItem = nil
+    }
+    
+    func efektivigiStilon() {
+        
+        tabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        tabelo?.reloadData()
     }
 }
 
@@ -98,6 +105,9 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
             }
             novaChelo.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
+        
+        novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         
         return novaChelo
     }

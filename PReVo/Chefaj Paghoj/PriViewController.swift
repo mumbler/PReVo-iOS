@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import TTTAttributedLabel
 
-class PriViewController : UIViewController {
+class PriViewController : UIViewController, Stilplena {
     
     @IBOutlet var etikedo: TTTAttributedLabel?
     
@@ -22,6 +22,8 @@ class PriViewController : UIViewController {
         let markoj = Iloj.troviMarkojn(teksto)
         etikedo?.text = Iloj.forigiAngulojn(teksto)
         etikedo?.delegate = self
+        
+        efektivigiStilon()
         
         let tekstGrandeco = CGFloat(16.0)
         let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
@@ -43,6 +45,14 @@ class PriViewController : UIViewController {
         for ligMarko in markoj[markoLigoKlavo]! {
             etikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
+    }
+    
+    func efektivigiStilon() {
+        
+        view.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        etikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
+        etikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
+        etikedo?.activeLinkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
     }
 }
 
