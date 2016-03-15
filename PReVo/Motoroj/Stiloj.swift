@@ -106,6 +106,15 @@ enum KolorStilo : Int {
         }
     }
     
+    var apartigiloKoloro: UIColor {
+        switch self {
+        case .Hela:
+            return Koloro.KvaraGrizo.valoro
+        case .Malhela:
+            return Koloro.HelaGrizo.valoro
+        }
+    }
+    
     var flankFonKoloro: UIColor {
         switch self {
         case .Hela:

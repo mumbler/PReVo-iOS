@@ -41,6 +41,7 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     func efektivigiStilon() {
         
         lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        lingvoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         lingvoTabelo?.reloadData()
     }
     

@@ -53,6 +53,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         serchTabulo?.tintColor = UzantDatumaro.stilo.tintKoloro
         
         trovTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        trovTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         trovTabelo?.reloadData()
     }
     

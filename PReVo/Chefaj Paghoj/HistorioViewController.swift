@@ -37,6 +37,7 @@ class HistorioViewController : UIViewController, Chefpagho, Stilplena {
     func efektivigiStilon() {
         
         vortoTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        vortoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         vortoTabelo?.reloadData()
     }
     

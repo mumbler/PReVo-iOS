@@ -36,6 +36,7 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     func efektivigiStilon() {
         
         tabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        tabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         tabelo?.reloadData()
     }
     
@@ -45,6 +46,13 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
             UzantDatumaro.historio.removeAll()
         }))
         mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        if let prezentilo = mesagho.popoverPresentationController,
+           let chelo = tabelo?.cellForRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)) {
+            prezentilo.sourceView = chelo;
+            prezentilo.sourceRect = chelo.bounds;
+        }
+        
         presentViewController(mesagho, animated: true, completion: nil)
     }
     
@@ -54,6 +62,13 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
             UzantDatumaro.konservitaj.removeAll()
         }))
         mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        if let prezentilo = mesagho.popoverPresentationController,
+            let chelo = tabelo?.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0)) {
+                prezentilo.sourceView = chelo;
+                prezentilo.sourceRect = chelo.bounds;
+        }
+        
         presentViewController(mesagho, animated: true, completion: nil)
     }
 }

@@ -32,6 +32,7 @@ class StiloElektiloViewController : UIViewController, Stilplena {
     func efektivigiStilon() {
         
         stiloTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        stiloTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         stiloTabelo?.reloadData()
     }
     

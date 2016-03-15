@@ -14,7 +14,7 @@ import UIKit
 */
 enum Koloro {
     
-    case Nigro, MalhelaGrizo, MezaGrizo, HelaGrizo, HelegaGrizo, Blanko
+    case Nigro, MalhelaGrizo, MezaGrizo, HelaGrizo, KvaraGrizo, HelegaGrizo, Blanko
     case KlasikaVerdo, HelaVerdo, HelegaVerdo
     
     var valoro: UIColor {
@@ -27,6 +27,8 @@ enum Koloro {
             return UIColor(red: 46.0/255.0, green: 46.0/255.0, blue: 46.0/255.0, alpha: 1.0)
         case .HelaGrizo:
             return UIColor(red: 90.0/255.0, green: 90.0/255.0, blue: 95.0/255.0, alpha: 1.0)
+        case .KvaraGrizo:
+            return UIColor(red: 188.0/255.0, green: 186.0/255.0, blue: 193.0/255.0, alpha: 1.0)
         case .HelegaGrizo:
             return UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 241.0/255.0, alpha: 1.0)
         case .Blanko:

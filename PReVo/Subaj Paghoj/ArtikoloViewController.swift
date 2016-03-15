@@ -181,9 +181,9 @@ class ArtikoloViewController : UIViewController, Stilplena {
             }))
             mesagho.addAction( UIAlertAction(title: NSLocalizedString("Nenio", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
             
-            if let presenter = mesagho.popoverPresentationController {
-                presenter.sourceView = chelo;
-                presenter.sourceRect = chelo.bounds;
+            if let prezentilo = mesagho.popoverPresentationController {
+                prezentilo.sourceView = chelo;
+                prezentilo.sourceRect = chelo.bounds;
             }
             
             presentViewController(mesagho, animated: true, completion: nil)

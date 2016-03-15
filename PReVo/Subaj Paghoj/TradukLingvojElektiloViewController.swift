@@ -55,6 +55,7 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
     func efektivigiStilon() {
 
         lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        lingvoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         lingvoTabelo?.reloadData()
     }
 }
@@ -142,17 +143,17 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
                 chelo.shaltilo?.setOn(indexPath.row == 0, animated: true)
             }
         }
-        
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
-    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
-        
-        if indexPath.section != 0 {
-            return nil
+        else if indexPath.section == 1 {
+            
+            if let chelo = tableView.cellForRowAtIndexPath(indexPath) as? TradukLingvojElektiloTableViewCell,
+               let shaltilo = chelo.shaltilo {
+                
+                shaltilo.setOn(!shaltilo.on, animated: true)
+                shaltisLingvon(shaltilo)
+            }
         }
         
-        return indexPath
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 }

@@ -21,8 +21,16 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         
         navigationBar.translucent = false
         
-        let maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso"), style: UIBarButtonItemStyle.Plain, target: self, action: "forigiSin")
-        maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
+        let maldekstraButono: UIBarButtonItem
+        
+        if (UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft ||
+            UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) &&
+            navigationBar.frame.height < 42 {
+            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso_eta"), style: UIBarButtonItemStyle.Plain, target: self, action: "forigiSin")
+        } else {
+            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso"), style: UIBarButtonItemStyle.Plain, target: self, action: "forigiSin")
+            maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
+        }
         topViewController?.navigationItem.leftBarButtonItem = maldekstraButono
         
         efektivigiStilon()
@@ -37,8 +45,13 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         if subLinio == nil {
             subLinio = UIView()
             navigationBar.addSubview(subLinio!)
-            subLinio?.frame = CGRectMake(0, navigationBar.frame.size.height - 1, navigationBar.frame.size.width, 1)
         }
+        // Por ke la suba linio staru bone post rotacio
+        subLinio?.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0.0))
+        subLinio?.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 1.0))
         subLinio?.backgroundColor = UzantDatumaro.stilo.SubLinioKoloro
         
         for filo in childViewControllers {
@@ -46,6 +59,15 @@ class HelpaNavigationController : UINavigationController, Stilplena {
                 konforma.efektivigiStilon()
             }
         }
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        subLinio?.hidden = true
+        weak var malforta = self
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            malforta?.subLinio?.hidden = false
+        });
     }
     
     func forigiSin() {
