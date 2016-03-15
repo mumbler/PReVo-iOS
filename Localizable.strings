@@ -3,13 +3,13 @@
   PReVo
 
   Created by Robin Hill on 3/10/16.
-  Copyright © 2016 NormalSoft. All rights reserved.
+  Copyright © 2016 Sinuous Rill. All rights reserved.
 */
 
 // Flanka Menuo
 
 "flanko serchi etikedo"                         = "Serĉi";
-"flanko historio etikedo"                       = "Etikedo";
+"flanko historio etikedo"                       = "Historio";
 "flanko konservitaj etikedo"                    = "Konservitaj";
 "flanko agordoj etikedo"                        = "Agordoj";
 "flanko pri etikedo"                            = "Pri";
@@ -50,7 +50,8 @@
 // Artikolo pagho
 
 "artikolo tradukoj etikedo"                     = "Tradukoj";
-"artikolo kopii teksto"                 = "Ĉu kopiu tekston?";]
+"artikolo chelo agoj titolo"                    = "Difinaj agoj:";
+"artikolo chelo ago kopii"                      = "Kopii tekston";
 
 // Serch lingvo elektilo
 
@@ -84,3 +85,4 @@
 "Okej"                                          = "Okej";
 "Jes"                                           = "Jes";
 "Ne"                                            = "Ne";
+"Nenio"                                         = "Nenio";

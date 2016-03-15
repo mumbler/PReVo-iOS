@@ -3,7 +3,7 @@
 //  PReVo
 //
 //  Created by Robin Hill on 3/10/16.
-//  Copyright © 2016 NormalSoft. All rights reserved.
+//  Copyright © 2016 Sinuous Rill. All rights reserved.
 //
 
 import Foundation
@@ -41,7 +41,7 @@ class Artikolo {
         
         titolo = trovTitolo!
         radiko = trovRadiko!
-        indekso = trovRadiko!
+        indekso = trovIndekso!
         
         var novajGrupoj: [Grupo]? = nil
         var novajTradukoj: [Traduko] = [Traduko]()
@@ -278,7 +278,7 @@ class Modeloj {
                     teksto += "\n\n"
                 }
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += Iloj.alLitero(filNombro, true)
+                    teksto += Iloj.alLitero(filNombro - 1, true) + ". "
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)
@@ -302,7 +302,7 @@ class Modeloj {
                     teksto += "\n\n"
                 }
                 if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += Iloj.alLitero(filNombro, false) + ") "
+                    teksto += Iloj.alLitero(filNombro - 1, false) + ") "
                     filNombro += 1
                 }
                 let rezulto = traktiNodon(filDict)

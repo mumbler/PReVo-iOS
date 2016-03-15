@@ -12,7 +12,8 @@
 		000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */; };
 		000985B01C31F0CB0083DE24 /* PReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985AF1C31F0CB0083DE24 /* PReVoTests.swift */; };
 		000985BB1C31F0CB0083DE24 /* PReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */; };
-		0022478E1C97580100676257 /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0022478D1C9757D000676257 /* PReVoDatumbazo.sqlite */; };
+		002249E91C985DD200676257 /* PReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002249E71C985DD200676257 /* PReVoDatumoj.xcdatamodeld */; };
+		00224C451C98820100676257 /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00224C441C9881FB00676257 /* PReVoDatumbazo.sqlite */; };
 		003E196E1C931FF500A1BFB1 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */; };
 		003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */; };
 		003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003E19711C932AA800A1BFB1 /* Iloj.swift */; };
@@ -56,7 +57,6 @@
 		00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */; };
 		00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */; };
 		00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */; };
-		00F09C651C92273F00B29687 /* PReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C631C92273F00B29687 /* PReVoDatumoj.xcdatamodeld */; };
 		00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C661C922CE400B29687 /* DatumLegilo.swift */; };
 		00F09C691C922CEB00B29687 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C681C922CEB00B29687 /* TrieRegilo.swift */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
@@ -91,7 +91,8 @@
 		000985B61C31F0CB0083DE24 /* PReVoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PReVoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985BA1C31F0CB0083DE24 /* PReVoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PReVoUITests.swift; sourceTree = "<group>"; };
 		000985BC1C31F0CB0083DE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0022478D1C9757D000676257 /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		002249E81C985DD200676257 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
+		00224C441C9881FB00676257 /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		003E196D1C931FF500A1BFB1 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
 		003E196F1C93200300A1BFB1 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
 		003E19711C932AA800A1BFB1 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
 		00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngoPaghoViewController.xib; sourceTree = "<group>"; };
 		00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
-		00F09C641C92273F00B29687 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
 		00F09C661C922CE400B29687 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
 		00F09C681C922CEB00B29687 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,8 +309,8 @@
 		00F09C621C92273300B29687 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				0022478D1C9757D000676257 /* PReVoDatumbazo.sqlite */,
-				00F09C631C92273F00B29687 /* PReVoDatumoj.xcdatamodeld */,
+				00224C441C9881FB00676257 /* PReVoDatumbazo.sqlite */,
+				002249E71C985DD200676257 /* PReVoDatumoj.xcdatamodeld */,
 			);
 			path = Datumoj;
 			sourceTree = "<group>";
@@ -403,6 +403,7 @@
 				TargetAttributes = {
 					000985961C31F0CB0083DE24 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WYZ8GHNKW7;
 					};
 					000985AA1C31F0CB0083DE24 = {
 						CreatedOnToolsVersion = 7.2;
@@ -459,7 +460,7 @@
 				008DA4501C94D6A20082C601 /* HistorioViewController.xib in Resources */,
 				008DA4541C94E61C0082C601 /* KonservitajViewController.xib in Resources */,
 				003E19771C93667B00A1BFB1 /* ArtikoloTableViewCell.xib in Resources */,
-				0022478E1C97580100676257 /* PReVoDatumbazo.sqlite in Resources */,
+				00224C451C98820100676257 /* PReVoDatumbazo.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,7 +542,6 @@
 				008DA44A1C94CEA70082C601 /* FlankMenuoTableViewCell.swift in Sources */,
 				00EAB8C51C91FCF200AA5C0C /* UzantDatumaro.swift in Sources */,
 				003E19721C932AA800A1BFB1 /* Iloj.swift in Sources */,
-				00F09C651C92273F00B29687 /* PReVoDatumoj.xcdatamodeld in Sources */,
 				00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */,
 				0009859B1C31F0CB0083DE24 /* AppDelegate.swift in Sources */,
 				008DA4451C947B6D0082C601 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
@@ -559,6 +559,7 @@
 				00EAB8C71C91FD0400AA5C0C /* ModelObjekto.swift in Sources */,
 				00EAB8C11C91FC6A00AA5C0C /* IngoPaghoViewController.swift in Sources */,
 				00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */,
+				002249E91C985DD200676257 /* PReVoDatumoj.xcdatamodeld in Sources */,
 				003E19791C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift in Sources */,
 				003E19871C93B50E00A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
 			);
@@ -695,9 +696,10 @@
 			baseConfigurationReference = FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PReVo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SinuousRill.PReVo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -707,9 +709,10 @@
 			baseConfigurationReference = 8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PReVo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SinuousRill.PReVo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -720,7 +723,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PReVoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PReVo.app/PReVo";
 			};
@@ -732,7 +735,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PReVoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PReVo.app/PReVo";
 			};
@@ -743,7 +746,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PReVoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = PReVo;
 				USES_XCTRUNNER = YES;
@@ -755,7 +758,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = PReVoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = normalsoft.PReVoUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = PReVo;
 				USES_XCTRUNNER = YES;
@@ -804,12 +807,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		00F09C631C92273F00B29687 /* PReVoDatumoj.xcdatamodeld */ = {
+		002249E71C985DD200676257 /* PReVoDatumoj.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				00F09C641C92273F00B29687 /* PReVoDatumoj.xcdatamodel */,
+				002249E81C985DD200676257 /* PReVoDatumoj.xcdatamodel */,
 			);
-			currentVersion = 00F09C641C92273F00B29687 /* PReVoDatumoj.xcdatamodel */;
+			currentVersion = 002249E81C985DD200676257 /* PReVoDatumoj.xcdatamodel */;
 			path = PReVoDatumoj.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

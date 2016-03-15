@@ -3,7 +3,7 @@
 //  PReVo
 //
 //  Created by Robin Hill on 3/12/16.
-//  Copyright © 2016 NormalSoft. All rights reserved.
+//  Copyright © 2016 Sinuous Rill. All rights reserved.
 //
 
 import Foundation

@@ -3,7 +3,7 @@
 //  PReVo
 //
 //  Created by Robin Hill on 3/10/16.
-//  Copyright © 2016 NormalSoft. All rights reserved.
+//  Copyright © 2016 Sinuous Rill. All rights reserved.
 //
 
 import Foundation
@@ -48,11 +48,16 @@ class UzantDatumaro {
                     oftajSerchLingvoj.append(lingvo)
                 }
             }
+            
+            konserviTradukLingvojn = true
+            konserviDatumojn()
         }
         
         // Esperanto estas la baza serch-lingvo, se alia ne trovighis
         if serchLingvo == nil {
             elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
+        } else {
+            elektisSerchLingvon(UzantDatumaro.serchLingvo)
         }
         
         if oftajSerchLingvoj.count > oftajLimo {

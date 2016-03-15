@@ -3,7 +3,7 @@
 //  PReVoTests
 //
 //  Created by Robin Hill on 12/28/15.
-//  Copyright © 2015 NormalSoft. All rights reserved.
+//  Copyright © 2015 Sinuous Rill. All rights reserved.
 //
 
 import XCTest

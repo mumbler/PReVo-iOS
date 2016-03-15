@@ -3,7 +3,7 @@
 //  PReVo
 //
 //  Created by Robin Hill on 3/11/16.
-//  Copyright © 2016 NormalSoft. All rights reserved.
+//  Copyright © 2016 Sinuous Rill. All rights reserved.
 //
 
 import Foundation
@@ -173,13 +173,19 @@ class ArtikoloViewController : UIViewController, Stilplena {
     
     func premisChelon(rekonilo: UILongPressGestureRecognizer) {
         
-        if let chelo = rekonilo.view as? ArtikoloTableViewCell {
-            let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("artikolo kopii teksto", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertActionStyle.Default, handler: { (ago: UIAlertAction) -> Void in
+        if let chelo = rekonilo.view as? ArtikoloTableViewCell where rekonilo.state == UIGestureRecognizerState.Began {
+            let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("artikolo chelo agoj titolo", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            mesagho.addAction( UIAlertAction(title: NSLocalizedString("artikolo chelo ago kopii", comment: ""), style: UIAlertActionStyle.Default, handler: { (ago: UIAlertAction) -> Void in
                 let tabulo = UIPasteboard.generalPasteboard()
                 tabulo.string = chelo.chefaEtikedo?.text
             }))
-            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Nenio", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+            
+            if let presenter = mesagho.popoverPresentationController {
+                presenter.sourceView = chelo;
+                presenter.sourceRect = chelo.bounds;
+            }
+            
             presentViewController(mesagho, animated: true, completion: nil)
         }
     }

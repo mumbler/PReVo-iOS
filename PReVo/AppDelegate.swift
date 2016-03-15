@@ -3,20 +3,20 @@
 //  PReVo
 //
 //  Created by Robin Hill on 12/28/15.
-//  Copyright © 2015 NormalSoft. All rights reserved.
+//  Copyright © 2015 Sinuous Rill. All rights reserved.
 //
 
 import UIKit
 import CoreData
 import iOS_Slide_Menu
 
+let kreiDatumbazon = false
 let datumbazNomo = "PReVoDatumbazo"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var fenestro: UIWindow?
-    var kreiDatumbazon = false
     var konteksto: NSManagedObjectContext?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -78,21 +78,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent(datumbazNomo + ".sqlite")
         
+        let docsUrl = self.applicationDocumentsDirectory.URLByAppendingPathComponent(datumbazNomo + ".sqlite")
+        let bundleUrl = NSBundle.mainBundle().URLForResource(datumbazNomo, withExtension: "sqlite")
 
-        var fileMgr = NSFileManager.defaultManager()
-        if let fonto = NSBundle.mainBundle().pathForResource(datumbazNomo, ofType: "sqlite"),
-           let destino = url.path where fileMgr.fileExistsAtPath(destino) == false {
-            do {
-                try fileMgr.copyItemAtPath(fonto, toPath: destino)
-            } catch let error as NSError {
-                NSLog("Kopiis datumbazon")
-            }
-        }
-        
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+            let pragmas: [String : String] = ["journal_mode" : "DELETE", "synchronous" : "OFF"]
+            if kreiDatumbazon {
+                let options = [NSSQLitePragmasOption : pragmas]
+                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: docsUrl, options: options)
+            } else {
+                let options = [NSReadOnlyPersistentStoreOption : true, NSSQLitePragmasOption : ["journal_mode" : "DELETE", "synchronous" : "OFF"]]
+                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: bundleUrl, options: options)
+            }
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
