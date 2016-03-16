@@ -12,6 +12,8 @@ import UIKit
 let markoLigoKlavo = "ligo"
 let markoAkcentoKlavo = "akcento"
 let markoFortoKlavo = "forto"
+let markoSuperKlavo = "super"
+let markoSubKlavo = "sub"
 
 /*
     Diversaj iloj
@@ -97,17 +99,21 @@ class Iloj {
         rez[markoAkcentoKlavo] = [(Int, Int, String)]()
         rez[markoFortoKlavo] = [(Int, Int, String)]()
         rez[markoLigoKlavo] = [(Int, Int, String)]()
+        rez[markoSuperKlavo] = [(Int, Int, String)]()
+        rez[markoSubKlavo] = [(Int, Int, String)]()
         var ligoStako = [(Int, String)]()
         var akcentoStako = [Int]()
         var fortoStako = [Int]()
+        var superStako = [Int]()
+        var subStako = [Int]()
         
         var en: Bool = false
         var enhavo: String = ""
         var rubo: Int = 0
         var loko: Int = 0
         
-        for litero in teksto.characters {
-            
+        for litero in teksto.unicodeScalars {
+        
             if litero == "<" {
                 
                 rubo += 1
@@ -131,6 +137,22 @@ class Iloj {
                 else if enhavo == "/b" {
                     if let nombro = fortoStako.popLast() {
                         rez[markoFortoKlavo]?.append((nombro, loko, ""))
+                    }
+                }
+                else if enhavo == "sup" {
+                    superStako.append(loko)
+                }
+                else if enhavo == "/sup" {
+                    if let nombro = superStako.popLast() {
+                        rez[markoSuperKlavo]?.append((nombro, loko, ""))
+                    }
+                }
+                else if enhavo == "sub" {
+                    subStako.append(loko)
+                }
+                else if enhavo == "/sub" {
+                    if let nombro = subStako.popLast() {
+                        rez[markoSubKlavo]?.append((nombro, loko, ""))
                     }
                 }
                 else if enhavo == "/a" {
@@ -172,13 +194,40 @@ class Iloj {
         
         var rez: String = ""
         var en: Bool = false
-        for litero in teksto.characters {
+        var enhavoj: String = ""
+        for litero in teksto.unicodeScalars {
             
             if litero == "<" {
                 en = true
+                enhavoj.append(litero)
             } else if litero == ">" {
                 en = false
-            } else if !en {
+                enhavoj.append(litero)
+
+                do {
+                    let regesp = try NSRegularExpression(pattern: "<a href=\"(.*?)\">", options: NSRegularExpressionOptions())
+                    let trovoj = regesp.matchesInString(enhavoj, options: NSMatchingOptions(), range: NSMakeRange(0, enhavoj.characters.count))
+                    if trovoj.count > 0 {
+                        // Fari nenion
+                    } else if enhavoj == "<i>"    ||
+                              enhavoj == "</i>"   ||
+                              enhavoj == "<b>"    ||
+                              enhavoj == "</b>"   ||
+                              enhavoj == "<sup>"  ||
+                              enhavoj == "</sup>" ||
+                              enhavoj == "<sub>"  ||
+                              enhavoj == "</sub>" ||
+                              enhavoj == "</a>" {
+                                // Fari nenion
+                    } else {
+                        rez += enhavoj
+                    }
+                    
+                    enhavoj = ""
+                } catch { }
+            } else if en {
+                enhavoj.append(litero)
+            } else {
                 rez.append(litero)
             }
         }
@@ -205,6 +254,14 @@ class Iloj {
         
         for fortMarko in markoj[markoFortoKlavo]! {
             mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
+        }
+
+        for superMarko in markoj[markoSuperKlavo]! {
+            mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as String, value: 2, range: NSMakeRange(superMarko.0, superMarko.1 - superMarko.0))
+        }
+
+        for subMarko in markoj[markoSubKlavo]! {
+            mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as String, value: -2, range: NSMakeRange(subMarko.0, subMarko.1 - subMarko.0))
         }
         
         return mutaciaTeksto

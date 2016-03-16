@@ -26,6 +26,7 @@ class TrieRegilo {
         for lingvo in kodoj {
             konstruiTriePorLingvo(lingvo)
         }
+        //konstruiTriePorLingvo("en")
     }
     
     static func konstruiTriePorLingvo(kodo: String) {
@@ -49,12 +50,13 @@ class TrieRegilo {
                             if let enhavoj = traduko as? NSDictionary {
                                 // Kiel dict: indekso, senco, teksto, marko
                                 
+                                let videbla = enhavoj["videbla"] as? String
                                 let teksto = enhavoj["teksto"] as? String
                                 let indekso = enhavoj["indekso"] as? String
                                 let marko = enhavoj["marko"] as? String
                                 let senco = enhavoj["senco"] as? String
                                 
-                                for nunLitero in teksto!.characters {
+                                for nunLitero in teksto!.lowercaseString.characters {
                                     
                                     var sekvaNodo: NSManagedObject? = nil
                                     if nunNodo == nil {
@@ -84,14 +86,14 @@ class TrieRegilo {
                                 
                                 if indekso != nil {
                                     let novaDestino = NSEntityDescription.insertNewObjectForEntityForName("Destino", inManagedObjectContext: konteksto!)
-                                    novaDestino.setValue(teksto, forKey: "teksto")
+                                    novaDestino.setValue(videbla, forKey: "teksto")
                                     novaDestino.setValue(indekso, forKey: "indekso")
                                     novaDestino.setValue(marko, forKey: "marko")
                                     novaDestino.setValue(senco, forKey: "senco")
                                     if let artikolo = DatumLegilo.artikoloPorIndekso(indekso!) {
                                         novaDestino.setValue(artikolo, forKey: "artikolo")
                                     }
-                                    nunNodo?.setValue(novaDestino, forKey: "destino")
+                                    nunNodo?.mutableOrderedSetValueForKey("destinoj").addObject(novaDestino)
                                 }
                                 
                                 nunNodo = nil
@@ -139,9 +141,9 @@ class TrieRegilo {
         }
         
         if nunNodo != nil {
-            return chiuFinajho(nunNodo!, limo: limo).sort({ (unua: (String, NSManagedObject), dua: (String, NSManagedObject)) -> Bool in
+            return chiuFinajho(nunNodo!, limo: limo ) /*.sort({ (unua: (String, NSManagedObject), dua: (String, NSManagedObject)) -> Bool in
                 return unua.0 < dua.0
-            })
+            })*/
         } else {
             return [(String, NSManagedObject)]()
         }
@@ -152,8 +154,10 @@ class TrieRegilo {
         
         var rezultoj = [(String, NSManagedObject)]()
         
-        if let destino = nodo.valueForKey("destino") as? NSManagedObject {
-            rezultoj.append( (destino.valueForKey("teksto") as! String, destino) )
+        for destino in nodo.mutableOrderedSetValueForKey("destinoj") ?? [] {
+            if let veraDestino = destino as? NSManagedObject {
+                rezultoj.append( (veraDestino.valueForKey("teksto") as! String, veraDestino) )
+            }
         }
         
         if let sekvaj = ((nodo.valueForKey("sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject])?.sort({ (unua: NSManagedObject, dua: NSManagedObject) -> Bool in

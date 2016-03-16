@@ -14,7 +14,7 @@
         <attribute name="senco" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teksto" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="artikolo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artikolo" inverseName="destinoj" inverseEntity="Artikolo" syncable="YES"/>
-        <relationship name="nodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="destino" inverseEntity="TrieNodo" syncable="YES"/>
+        <relationship name="nodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="destinoj" inverseEntity="TrieNodo" syncable="YES"/>
     </entity>
     <entity name="Fako" syncable="YES">
         <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
@@ -35,18 +35,18 @@
     </entity>
     <entity name="TrieNodo" syncable="YES">
         <attribute name="litero" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="destino" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Destino" inverseName="nodo" inverseEntity="Destino" syncable="YES"/>
+        <relationship name="destinoj" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Destino" inverseName="nodo" inverseEntity="Destino" syncable="YES"/>
         <relationship name="fontoNodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="sekvajNodoj" inverseEntity="TrieNodo" syncable="YES"/>
         <relationship name="lingvo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lingvo" inverseName="komencajNodoj" inverseEntity="Lingvo" syncable="YES"/>
         <relationship name="sekvajNodoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="fontoNodo" inverseEntity="TrieNodo" syncable="YES"/>
     </entity>
     <elements>
         <element name="Artikolo" positionX="0" positionY="54" width="128" height="135"/>
+        <element name="Destino" positionX="-9" positionY="72" width="128" height="135"/>
         <element name="Fako" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Lingvo" positionX="18" positionY="99" width="128" height="90"/>
         <element name="Mallongigo" positionX="36" positionY="108" width="128" height="75"/>
         <element name="Stilo" positionX="-54" positionY="9" width="128" height="75"/>
         <element name="TrieNodo" positionX="-9" positionY="63" width="128" height="120"/>
-        <element name="Destino" positionX="-9" positionY="72" width="128" height="135"/>
     </elements>
 </model>

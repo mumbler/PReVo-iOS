@@ -23,7 +23,7 @@ class DatumLegilo {
             return
         }
         
-        var lingvoKodoj = ["eo"]
+        var lingvoKodoj = [String]()
         
         // Enlegi lingvojn
         if let lingvoDos = NSBundle.mainBundle().pathForResource("lingvoj", ofType: "dat") {

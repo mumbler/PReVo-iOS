@@ -62,13 +62,21 @@ class Artikolo {
                     for (lingvo, tradukoj) in tradukDict {
                         
                         var teksto: String = ""
+                        var lasta: String = ""
                         for traduko in (tradukoj as! NSArray) {
                             
                             if let tradDict = traduko as? NSDictionary {
                                 let tradIndekso = tradDict["indekso"] as! String
                                 let tradNomo = tradDict["nomo"] as! String
                                 let tradTeksto = tradDict["teksto"] as! String
-                                teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo + "</a>" + ": " + tradTeksto + "; "
+                                
+                                if tradNomo == lasta {
+                                    teksto += ", " + tradTeksto
+                                } else {
+                                    if !teksto.isEmpty { teksto += "; " }
+                                    teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo + "</a>" + ": " + tradTeksto
+                                    lasta = tradNomo
+                                }
                             }
                         }
                         teksto = teksto.substringToIndex(teksto.startIndex.advancedBy(teksto.characters.count - 2))
