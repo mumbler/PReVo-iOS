@@ -227,7 +227,7 @@ class UzantDatumaro {
         }
         
         if let datumoj = defaults.objectForKey("tradukLingvoj") as? NSData,
-            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? Set<Lingvo> {
+            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? [Lingvo] {
             tradukLingvoj = Set<Lingvo>(trovo)
         }
         
