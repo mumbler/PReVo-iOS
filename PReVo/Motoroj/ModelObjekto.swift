@@ -145,6 +145,19 @@ class Lingvo : NSObject, NSCoding {
         aCoder.encodeObject(kodo, forKey: "kodo")
         aCoder.encodeObject(nomo, forKey: "nomo")
     }
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+
+        if let konforma = object as? Lingvo {
+            return kodo == konforma.kodo
+        }
+        
+        return false
+    }
+    
+    override var hashValue: Int {
+        return kodo.hashValue
+    }
 }
 
 func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {

@@ -39,7 +39,7 @@ class UzantDatumaro {
         // Se datumoj ne estas trovitaj, starigi bazan informon
         
         // Trovi lingvojn el la aparataj agoroj, kaj uzi ilin
-        if oftajSerchLingvoj.count == 0 || tradukLingvoj.count == 0 {
+        if oftajSerchLingvoj.count == 0 {
             for kodo in NSLocale.preferredLanguages() {
                 
                 let bazKodo = kodo.componentsSeparatedByString("-").first
@@ -186,7 +186,7 @@ class UzantDatumaro {
         }
         
         if konserviTradukLingvojn {
-            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(tradukLingvoj)
+            let datumoj = NSKeyedArchiver.archivedDataWithRootObject(Array(tradukLingvoj))
             defaults.setObject(datumoj, forKey: "tradukLingvoj")
             konserviTradukLingvojn = false
         }
@@ -228,7 +228,7 @@ class UzantDatumaro {
         
         if let datumoj = defaults.objectForKey("tradukLingvoj") as? NSData,
             let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? Set<Lingvo> {
-            tradukLingvoj = trovo
+            tradukLingvoj = Set<Lingvo>(trovo)
         }
         
         if let datumoj = defaults.objectForKey("historio") as? NSData,

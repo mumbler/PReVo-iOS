@@ -25,7 +25,7 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         
         if (UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft ||
             UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) &&
-            navigationBar.frame.height < 42 {
+            UIApplication.sharedApplication().statusBarHidden {
             maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso_eta"), style: UIBarButtonItemStyle.Plain, target: self, action: "forigiSin")
         } else {
             maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso"), style: UIBarButtonItemStyle.Plain, target: self, action: "forigiSin")

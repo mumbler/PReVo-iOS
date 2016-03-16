@@ -13,7 +13,7 @@ import TTTAttributedLabel
 /*
     Informoj pri la programo, kaj ligoj al samtemaj retpaghoj
 */
-class PriViewController : UIViewController, Stilplena {
+class PriViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var etikedo: TTTAttributedLabel?
     
@@ -30,7 +30,13 @@ class PriViewController : UIViewController, Stilplena {
         for ligMarko in markoj[markoLigoKlavo]! {
             etikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
-}
+    }
+    
+    func aranghiNavigaciilo() {
+        
+        parentViewController?.title = NSLocalizedString("pri titolo", comment: "")
+        parentViewController?.navigationItem.rightBarButtonItem = nil
+    }
     
     func efektivigiStilon() {
         

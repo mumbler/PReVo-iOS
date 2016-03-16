@@ -29,11 +29,11 @@ class FlankMenuoViewController : UIViewController, Stilplena {
     
     override func viewDidLoad() {
         
-        navAlteco?.constant =  UIApplication.sharedApplication().statusBarFrame.size.height + (navigationController?.navigationBar.frame.size.height ?? 40)
-        
         tabelo?.delegate = self
         tabelo?.dataSource = self
         tabelo?.registerNib(UINib(nibName: "FlankMenuoTableViewCell", bundle: nil), forCellReuseIdentifier: flankMenuoChelIdent)
+        
+        //navAltecoShanghis(navigationController?.navigationBar.frame.size.height ?? 0)
         
         efektivigiStilon()
     }
@@ -44,6 +44,22 @@ class FlankMenuoViewController : UIViewController, Stilplena {
         tabelo?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
         tabelo?.reloadData()
     }
+    
+    func navAltecoShanghis(alteco: CGFloat) {
+        navAlteco?.constant = alteco + ((UIApplication.sharedApplication().statusBarHidden) ? 0 : UIApplication.sharedApplication().statusBarFrame.size.height)
+        view.setNeedsUpdateConstraints()
+    }
+    
+    /*override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if (UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft ||
+            UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) &&
+            prefersStatusBarHidden() {
+            navAlteco?.constant = 0.0
+        } else {
+            navAlteco?.constant = UIApplication.sharedApplication().statusBarFrame.size.height
+        }
+    }*/
     
 }
 

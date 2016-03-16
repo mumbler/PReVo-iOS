@@ -27,8 +27,8 @@
                 <constraint firstItem="ok8-0n-abQ" firstAttribute="top" secondItem="Pw2-ek-DIs" secondAttribute="top" id="9CM-49-YzW"/>
                 <constraint firstItem="IdF-o4-dTZ" firstAttribute="leading" secondItem="Pw2-ek-DIs" secondAttribute="leading" constant="8" id="D4e-2a-aiy"/>
                 <constraint firstAttribute="trailing" secondItem="ok8-0n-abQ" secondAttribute="trailing" id="Ibu-78-oYN"/>
-                <constraint firstAttribute="bottom" secondItem="IdF-o4-dTZ" secondAttribute="bottom" constant="8" id="KWT-cZ-u0D"/>
-                <constraint firstItem="IdF-o4-dTZ" firstAttribute="top" secondItem="Pw2-ek-DIs" secondAttribute="top" constant="8" id="XtX-iS-EVb"/>
+                <constraint firstAttribute="bottom" secondItem="IdF-o4-dTZ" secondAttribute="bottom" priority="999" constant="8" id="KWT-cZ-u0D"/>
+                <constraint firstItem="IdF-o4-dTZ" firstAttribute="top" secondItem="Pw2-ek-DIs" secondAttribute="top" priority="999" constant="8" id="XtX-iS-EVb"/>
                 <constraint firstAttribute="bottom" secondItem="ok8-0n-abQ" secondAttribute="bottom" id="eUR-1L-V0o"/>
                 <constraint firstItem="ok8-0n-abQ" firstAttribute="leading" secondItem="Pw2-ek-DIs" secondAttribute="leading" id="hXM-Oy-A9C"/>
             </constraints>

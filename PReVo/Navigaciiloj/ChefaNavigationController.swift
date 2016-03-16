@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
-let flankMenuoLargheco: CGFloat = 180
+var flankMenuoLargheco: CGFloat = 180
 
 /*
     La chefa UINavigationControlle de la programo. Ghi starigas la maldekstra-flankan menuon,
@@ -31,7 +31,15 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         let flankMenuo = FlankMenuoViewController()
         leftMenu = flankMenuo
 
-        portraitSlideOffset = view.frame.size.width - flankMenuoLargheco
+        let longa = max(view.frame.size.height, view.frame.size.width)
+        let mallonga = min(view.frame.size.height, view.frame.size.width)
+        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+            portraitSlideOffset = mallonga * 0.55
+            landscapeSlideOffset = longa * 0.75
+        } else {
+            portraitSlideOffset = mallonga * 0.75
+            landscapeSlideOffset = longa * 0.80
+        }
         enableSwipeGesture = true
         
         let pagho = IngoPaghoViewController()
@@ -75,11 +83,7 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
             navigationBar.addSubview(subLinio!)
         }
         // Por ke la suba linio staru bone post rotacio
-        subLinio?.translatesAutoresizingMaskIntoConstraints = false
-        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0.0))
-        subLinio?.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 1.0))
+        subLinio?.frame = CGRectMake(0, navigationBar.frame.size.height - 1, navigationBar.frame.size.width, 1)
         subLinio?.backgroundColor = UzantDatumaro.stilo.SubLinioKoloro
         
         for filo in childViewControllers {
@@ -90,11 +94,25 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+
+        //subLinio?.hidden = true
+        closeMenuWithCompletion(nil)
         
-        subLinio?.hidden = true
         weak var malforta = self
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            malforta?.subLinio?.hidden = false
-        });
+        
+        if coordinator.conformsToProtocol(UIViewControllerTransitionCoordinator) {
+            coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+            
+                if let grandeco = malforta?.navigationBar.frame.size {
+                    malforta?.subLinio?.frame = CGRectMake(0, grandeco.height - 1, grandeco.width, 1)
+                }
+                }) { (UIViewControllerTransitionCoordinatorContext) -> Void in
+                    
+                malforta?.subLinio?.hidden = false
+                if let alteco = malforta?.navigationBar.frame.size.height {
+                    (malforta?.leftMenu as? FlankMenuoViewController)?.navAltecoShanghis(alteco)
+                }
+            }
+        }
     }
 }
