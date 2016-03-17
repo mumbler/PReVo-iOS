@@ -58,7 +58,7 @@
 		00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */; };
 		00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C661C922CE400B29687 /* DatumLegilo.swift */; };
 		00F09C691C922CEB00B29687 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C681C922CEB00B29687 /* TrieRegilo.swift */; };
-		00F19E021C99F88500261ACF /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00F19E011C99F87900261ACF /* PReVoDatumbazo.sqlite */; };
+		00F1A18A1C9A605D00261ACF /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00F1A1891C9A605300261ACF /* PReVoDatumbazo.sqlite */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +137,7 @@
 		00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
 		00F09C661C922CE400B29687 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
 		00F09C681C922CEB00B29687 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
-		00F19E011C99F87900261ACF /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		00F1A1891C9A605300261ACF /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 		00F09C621C92273300B29687 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				00F19E011C99F87900261ACF /* PReVoDatumbazo.sqlite */,
+				00F1A1891C9A605300261ACF /* PReVoDatumbazo.sqlite */,
 				002249E71C985DD200676257 /* PReVoDatumoj.xcdatamodeld */,
 			);
 			path = Datumoj;
@@ -440,7 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00F19E021C99F88500261ACF /* PReVoDatumbazo.sqlite in Resources */,
+				00F1A18A1C9A605D00261ACF /* PReVoDatumbazo.sqlite in Resources */,
 				00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */,
 				003E19811C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib in Resources */,
 				00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */,
