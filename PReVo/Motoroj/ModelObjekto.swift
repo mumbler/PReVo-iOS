@@ -79,7 +79,6 @@ class Artikolo {
                                 }
                             }
                         }
-                        teksto = teksto.substringToIndex(teksto.startIndex.advancedBy(teksto.characters.count - 2))
                         if let lingvo = SeancDatumaro.lingvoPorKodo(lingvo as! String) {
                             novajTradukoj.append(Traduko(lingvo: lingvo, teksto: teksto))
                         }

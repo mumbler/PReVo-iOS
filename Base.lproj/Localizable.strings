@@ -45,7 +45,7 @@
 
 // Pri
 "pri titolo"                                    = "Pri PReVo";
-"pri teksto"                                    = "PReVo iOS © 2016, Robin Hill\n\nPReVo iOS estas programita de Robin Hill. La vortaraj datumoj venas el <a href=\"http://www.reta-vortaro.de\">Reta Vortaro</a>. La kodo de ĉi tiu programo estas libere havebla kaj oni rajtas legi, kopii, ŝanĝi, redisdoni, kaj vendi ĝin ajnamaniere (kun atribuo al originala kreinto). Tiu kodo disponeblas <a href=\"https://www.github.com/mumbler/PReVo-iOS\">ĉi tie</a>, kaj estas eldonita sub la <a href=\"::MIT\">MIT Permesilo</a>.";
+"pri teksto"                                    = "PReVo iOS © 2016, Robin Hill\n\nProgramita de Robin Hill. La vortaraj datumoj venas el <a href=\"http://www.reta-vortaro.de\">Reta Vortaro</a>. La kodo de ĉi tiu programo estas libere havebla kaj oni rajtas legi, kopii, ŝanĝi, redisdoni, kaj vendi ĝin ajnamaniere (kun atribuo al originala kreinto). Tiu kodo disponeblas <a href=\"https://www.github.com/mumbler/PReVo-iOS\">ĉi tie</a>, kaj estas eldonita sub la <a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 Permesilo</a>.\n\nBildetoj de <a href=\"http://www.icons8.com\">icons8</a>";
 
 // Artikolo pagho
 
@@ -78,7 +78,7 @@
 // Licenco
 
 "licenco titolo"                                = "Licenco";
-"licenco teksto"                                = "MIT Permesilo (angla):\n\nCopyright © 2016 Robin Hill\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.";
+"licenco teksto"                                = "NENIU ENPROGRAMA LICENC-TEKSTO NUNTEMPE";
 
 // Gheneralaj tekstetoj
 

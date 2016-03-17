@@ -51,11 +51,6 @@ extension PriViewController : TTTAttributedLabelDelegate {
     
     func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
         
-        let teksto = url.absoluteString
-        if teksto == "::MIT" {
-            navigationController?.pushViewController(LicencoViewController(), animated: true)
-        } else {
-            UIApplication.sharedApplication().openURL(url)
-        }
+        UIApplication.sharedApplication().openURL(url)
     }
 }
