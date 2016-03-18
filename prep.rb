@@ -282,7 +282,7 @@ def traktiNodon(nod, stato)
          if nod.name == "drv"
             # Registri tradukojn en esperanton
 	    for nom in objekto["nomo"].split(", ")
-	       @esperantaj << fariSerchTradukon(nom, stato["artikolo"]["indekso"], stato["marko"], 0)
+	       @esperantaj << fariSerchTradukon(nom, nom, stato["artikolo"]["indekso"], stato["marko"], 0)
 	    end
          end
       elsif fil.name == "uzo"
@@ -338,6 +338,9 @@ def traktiNodon(nod, stato)
       elsif fil.name == "text"
          #puts "teksto: " + fil.text + "|"
          #objekto["filoj"] << {"tipo" => "teksto", "teksto" => fil.text}
+      elsif fil.name == "frm"
+         novaFormulo = traktiFormulon(fil, stato)
+	 teksto += novaFormulo["teksto"]
       else
          objekto["filoj"] << traktiNodon(fil, stato)
       end
@@ -351,6 +354,18 @@ def traktiNodon(nod, stato)
          teksto += fil["teksto"]
       end
    end
+
+   # atendu ghis la fino de drv antau enmeti tradukojn el ekzemploj -
+   # tiuj ghenerale rilatas al dirajhoj, ke ne estas baza vortoj por serchi
+   if stato["super"].count == 1 and stato["ekzTradukoj"] != []
+      for lng, tradoj in stato["ekzTradukoj"]
+         for trad in tradoj
+	    stato["artikolo"]["tradukoj"][lng] << trad
+	 end
+      end
+
+      stato["ekzTradukoj"] = {}
+   end	       	  
 
    #objekto["teksto"] = teksto
    stato["super"].pop
@@ -450,6 +465,9 @@ def traktiDifinon(dif, stato)
       elsif fil.name == "trd"
          novaTraduko = traktiTradukon(fil, stato)
          teksto += "<i>#{novaTraduko["teksto"]}</i>"
+      elsif fil.name == "trdgrp"
+         novaTradukGrupo = traktiTradukGrupon(fil, stato)
+	 teksto += "<i>#{novaTradukGrupo["teksto"]}</i>"
       elsif fil.name == "ref"
          stato["refspac"] = (teksto == "")
          novaRefo = traktiRefon(fil, stato)
@@ -460,13 +478,21 @@ def traktiDifinon(dif, stato)
          teksto += " " + novaRefgrupo["teksto"]
       elsif fil.name == "tld"
          teksto += traktiTildon(fil, stato)
+      elsif fil.name == "ctl"
+         teksto += "„" + fil.text + "“"
+      elsif fil.name == "frm"
+         novaFormulo = traktiFormulon(fil, stato)
+	 teksto += novaFormulo["teksto"]
       else
-         
+         if fil != nil and fil.text != nil
+	    subdifino = traktiDifinon(fil, stato)
+	    teksto += subdifino["teksto"]
+	 end
       end
    end
 
    teksto.gsub!("</i><i>", "")
-   objekto["teksto"] = teksto.squeeze(" ").strip
+   objekto["teksto"] = teksto.gsub(/\n\r\t/, " ").squeeze(" ").strip
    stato["super"].pop
    return objekto
 end
@@ -499,13 +525,18 @@ def traktiRimarkon(rim, stato)
          teksto += traktiTildon(fil.text, stato)
       elsif fil.name == "em"
          teksto += "<b>" + tekstoPorNodo(fil, stato) + "</b>"
+      elsif fil.name == "ctl"
+         teksto += "„" + fil.text + "“"         
+      elsif fil.name == "frm"
+         novaFormulo = traktiFormulon(fil, stato)
+	 teksto += novaFormulo["teksto"]
       else
-         
+
       end
    end
 
    teksto.gsub!("</i><i>", "")
-   teksto = "\n<b>Rim.</b>: " + teksto.squeeze(" ").strip
+   teksto = "<b>Rim.</b>: " + teksto.squeeze(" ").strip
    objekto["teksto"] = teksto
    stato["super"].pop
    return objekto
@@ -524,13 +555,16 @@ def traktiEkzemplon(ekz, stato)
          teksto += fil.text
       elsif fil.name == "ind"
          novaIndekso = traktiIndekson(fil, stato)
-         stato["indekso"] = novaIndekso["teksto"]
+         stato["indekso"] = novaIndekso["tildo"]
          miaIndekso = true
          teksto += novaIndekso["teksto"]
       elsif fil.name == "klr"
-         teksto += "</i>" + prepariVorte(fil.text, stato["radiko"]) + "<i>"
+         subEkzemplo = traktiDifinon(fil, stato)
+         teksto += "</i>" + prepariVorte(subEkzemplo["teksto"], stato["radiko"]) + "<i>"
       elsif fil.name == "trd"
          traktiTradukon(fil, stato)
+      elsif fil.name == "trdgrp"
+         traktiTradukGrupon(fil, stato)
       elsif fil.name == "tld"
          teksto += traktiTildon(fil, stato)
       elsif fil.name == "fnt"
@@ -541,6 +575,11 @@ def traktiEkzemplon(ekz, stato)
          teksto += novaRefo["teksto"]
       elsif fil.name == "em"
          teksto += "<b>" + tekstoPorNodo(fil, stato) + "</b>"
+      elsif fil.name == "ctl"
+         teksto += "„" + fil.text + "“"         
+      elsif fil.name == "frm"
+         novaFormulo = traktiFormulon(fil, stato)
+	 teksto += novaFormulo["teksto"]
       else
 
       end
@@ -557,17 +596,21 @@ end
 def traktiIndekson(ind, stato)
 
    objekto = {"tipo" => "indekso"}
-   teksto = ""   
+   teksto = ""
+   tildo = ""
 
    ind.children().each do |fil|
       if fil.name == "text"
          teksto += fil.text
+	 tildo += fil.text
       elsif fil.name == "tld"
          teksto += traktiTildon(fil, stato)
+	 tildo += uziTildon(fil.to_s)
       end
    end
 
    objekto["teksto"] = teksto
+   objekto["tildo"] = tildo
    return objekto
 end
 
@@ -594,6 +637,8 @@ def traktiRefon(ref, stato)
    ref.children().each do |fil|
       if fil.name == "tld"
          teksto += traktiTildon(fil, stato)
+      elsif fil.name == "ctl"
+         teksto += "„" + fil.text + "“"         
       elsif fil.name == "text"
          teksto += prepariTekston(fil.text)
       end
@@ -644,6 +689,8 @@ def refSimbolo(tip)
    case tip
       when "sin"
          return "⇒"
+      when "ant"
+         return "⇝"
       when "dif"
          return "="
       when "super"
@@ -652,6 +699,12 @@ def refSimbolo(tip)
          return "⇘"
       when "vid"
          return "➞"
+      when "ekz"
+         return "⇉"
+      when "prt"
+         return ""
+      when "malprt"
+         return ""
       else
          return ""
     end
@@ -668,11 +721,35 @@ def traktiTildon(tld, stato)
 
 end
 
+def traktiFormulon(frm, stato)
+
+    objekto = {"tipo" => "frm"}
+    teksto = ""
+    frm.children().each do |fil|
+
+    	if fil.name == "k"
+	   teksto += fil.text
+	elsif fil.name == "g"
+	   teksto += "<b>" + fil.text + "</b>"
+	elsif fil.name == "sup"
+	   teksto += "<sup>" + fil.text + "</sup>"
+	elsif fil.name == "sub"
+	   teksto += "<sub>" + fil.text + "</sub>"
+	else
+	   teksto += fil.text
+	end
+    end
+
+    objekto["teksto"] = teksto
+    return objekto
+end
+
 def traktiTradukon(trd, stato)
 
    objekto = {"tipo" => "traduko", "lingvo" => trd["lng"]}
    lingvo = trd["lng"]
    teksto = ""
+   indekso = nil
 
    trd.children().each do |fil|
 
@@ -681,7 +758,7 @@ def traktiTradukon(trd, stato)
       elsif fil.name == "ind"
          novaIndekso = traktiIndekson(fil, stato)
          teksto += novaIndekso["teksto"]
-         # Fakte, ni ignoras indeksojn trovitajn en la traduko. La retejo shajne ne zorgas pri ili
+	 indekso = novaIndekso["teksto"]
       elsif fil.name == "klr"
          teksto += anstatauTildo(fil.text, stato["radiko"])
       else
@@ -689,12 +766,17 @@ def traktiTradukon(trd, stato)
       end
    end
 
-   indekso = teksto
-   if stato["indekso"] != nil and stato["indekso"] != "" then indekso = stato["indekso"] end
-
    if stato["artikolo"]["tradukoj"][lingvo] == nil then stato["artikolo"]["tradukoj"][lingvo] = [] end
-   stato["artikolo"]["tradukoj"][lingvo] << fariArtikolTradukon(stato["tildo"], teksto, stato["marko"], stato["senco"])
-   stato["tradukoj"][lingvo] << fariSerchTradukon(indekso, stato["artikolo"]["indekso"], stato["marko"], stato["senco"])
+   if stato["indekso"] != nil and stato["indekso"] != ""
+      if stato["ekzTradukoj"][lingvo] == nil then stato["ekzTradukoj"][lingvo] = [] end
+      stato["ekzTradukoj"][lingvo] << fariArtikolTradukon(stato["indekso"], teksto, stato["marko"], stato["senco"])
+   else
+      if indekso == nil then indekso = teksto end
+      stato["artikolo"]["tradukoj"][lingvo] << fariArtikolTradukon(stato["tildo"], teksto, stato["marko"], stato["senco"])
+      stato["tradukoj"][lingvo] << fariSerchTradukon(teksto, indekso, stato["artikolo"]["indekso"], stato["marko"], stato["senco"])
+   end
+
+
 
    objekto["teksto"] = teksto
    return objekto   
@@ -705,13 +787,17 @@ def traktiTradukGrupon(trdgrp, stato)
    objekto = {"tipo" => "trdgrp", "lingvo" => trdgrp["lng"]}
    teksto = ""
 
-   trdgrp.children() do |trd|
-
+   trdgrp.children().each do |trd|
       if trd.name == "trd"
-         traktiTradukon(trd, stato)
+         trd["lng"] = trdgrp["lng"]
+         novaTraduko = traktiTradukon(trd, stato)
+	 teksto += novaTraduko["teksto"]
+      else
+         teksto += trd.text
       end
    end
 
+   objekto["teksto"] = teksto.strip
    return objekto
 end
 
@@ -721,9 +807,9 @@ def fariArtikolTradukon(nomo, teksto, marko, senco)
 
 end
 
-def fariSerchTradukon(teksto, indekso, marko, senco)
+def fariSerchTradukon(videbla, teksto, indekso, marko, senco)
 
-   return {"teksto" => teksto, "indekso" => indekso, "marko" => marko, "senco" => senco}
+   return {"videbla" => videbla, "teksto" => teksto, "indekso" => indekso, "marko" => marko, "senco" => senco}
 
 end
 
@@ -800,7 +886,7 @@ if vortoDos and File.directory?(dir+"/xml/")
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..'
 
-      #artikolDosiero = "kontrol.xml"
+      #artikolDosiero = "egx.xml"
       puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
@@ -809,13 +895,15 @@ if vortoDos and File.directory?(dir+"/xml/")
       xml = Nokogiri::XML(prepariTekston(enhavo))
 
       artikolo = {"indekso" => artikolDosiero.gsub(".xml", ""), "tradukoj" => {}}
-      stato = {"artikolo" => artikolo, "tradukoj" => tradukoj, "super" => [], "senco" => 0}
+      stato = {"artikolo" => artikolo, "tradukoj" => tradukoj, "super" => [], "senco" => 0, "ekzTradukoj" => {}}
       objekto = traktiNodon(xml, stato)
       artikolo["objekto"] = objekto
 
       artikoloj << artikolo
       #provi(objekto)
       #puts objekto
+      #puts tradukoj
+      #puts artikolo["tradukoj"]
       #exit
    end
 end
