@@ -18,6 +18,14 @@ class HistorioViewController : UIViewController, Chefpagho, Stilplena {
 
     @IBOutlet var vortoTabelo: UITableView?
     
+    init() {
+        super.init(nibName: "HistorioViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         vortoTabelo?.delegate = self

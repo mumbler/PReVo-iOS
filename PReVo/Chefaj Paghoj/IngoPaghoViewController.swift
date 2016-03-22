@@ -74,6 +74,14 @@ class IngoPaghoViewController : UIViewController, Stilplena {
     var filoVC: UIViewController?
     var filoV: UIView?
     
+    init() {
+        super.init(nibName: "IngoPaghoViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
     }

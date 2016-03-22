@@ -28,6 +28,14 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     @IBOutlet var lingvoTabelo: UITableView?
     var delegate: SerchLingvoElektiloDelegate?
     
+    init() {
+        super.init(nibName: "SerchLingvoElektiloViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         title = NSLocalizedString("serch-elektilo titolo", comment: "")

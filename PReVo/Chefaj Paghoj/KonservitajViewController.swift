@@ -18,6 +18,14 @@ class KonservitajViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var vortoTabelo: UITableView?
     
+    init() {
+        super.init(nibName: "KonservitajViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         vortoTabelo?.delegate = self

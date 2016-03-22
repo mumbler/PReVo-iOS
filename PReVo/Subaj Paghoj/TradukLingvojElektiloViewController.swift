@@ -30,6 +30,14 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
     var delegate: TradukLingvojElektiloDelegate?
     var shanghisLingvojn: Bool = false
     
+    init() {
+        super.init(nibName: "TradukLingvojElektiloViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         eoIndekso = SeancDatumaro.lingvoj.indexOf({ (nuna: Lingvo) -> Bool in

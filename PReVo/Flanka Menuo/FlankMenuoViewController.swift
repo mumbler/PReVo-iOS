@@ -27,6 +27,14 @@ class FlankMenuoViewController : UIViewController, Stilplena {
     
     var delegate: FlankMenuoDelegate?
     
+    init() {
+        super.init(nibName: "FlankMenuoViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         tabelo?.delegate = self

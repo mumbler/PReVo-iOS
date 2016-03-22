@@ -30,12 +30,12 @@ class ArtikoloViewController : UIViewController, Stilplena {
     
     init?(enartikolo: Artikolo) {
     
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "ArtikoloViewController", bundle: nil)
         artikolo = enartikolo
     }
     
     init?(enartikolo: Artikolo, enmarko: String) {
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "ArtikoloViewController", bundle: nil)
         artikolo = enartikolo
         konservitaMarko = enmarko
     }

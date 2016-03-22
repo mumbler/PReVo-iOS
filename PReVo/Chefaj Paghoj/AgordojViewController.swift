@@ -18,6 +18,14 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var tabelo: UITableView?
     
+    init() {
+        super.init(nibName: "AgordojViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         tabelo?.delegate = self

@@ -18,6 +18,14 @@ class StiloElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var stiloTabelo: UITableView?
     
+    init() {
+        super.init(nibName: "StiloElektiloViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         title = NSLocalizedString("stilo-elektilo titolo", comment: "")

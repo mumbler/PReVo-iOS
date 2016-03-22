@@ -16,6 +16,14 @@ class LicencoViewController : UIViewController, Stilplena {
     
     @IBOutlet var etikedo: UILabel?
     
+    init() {
+        super.init(nibName: "LicencoViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         title = NSLocalizedString("licenco titolo", comment: "")

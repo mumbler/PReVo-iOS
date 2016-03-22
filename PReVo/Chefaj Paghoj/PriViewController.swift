@@ -17,6 +17,14 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var etikedo: TTTAttributedLabel?
     
+    init() {
+        super.init(nibName: "PriViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         title = NSLocalizedString("pri titolo", comment: "")

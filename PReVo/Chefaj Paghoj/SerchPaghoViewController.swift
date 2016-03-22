@@ -22,6 +22,14 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     @IBOutlet var trovTabelo: UITableView?
     var serchRezultoj = [(String, NSManagedObject)]()
     
+    init() {
+        super.init(nibName: "SerchPaghoViewController", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         
         serchTabulo?.delegate = self
