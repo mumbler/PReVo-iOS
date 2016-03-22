@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import iOS_Slide_Menu
 
-let kreiDatumbazon = false
+let kreiDatumbazon = true
 let datumbazNomo = "PReVoDatumbazo"
 
 @UIApplicationMain

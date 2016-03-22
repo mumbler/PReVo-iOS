@@ -62,23 +62,45 @@ class Artikolo {
                     for (lingvo, tradukoj) in tradukDict {
                         
                         var teksto: String = ""
-                        var lasta: String = ""
-                        for traduko in (tradukoj as! NSArray) {
+                        var montriSencon = false
+                        
+                        let tradukArr = tradukoj as! NSArray
+                        for var i = 0; i < tradukArr.count; i += 1 {
                             
-                            if let tradDict = traduko as? NSDictionary {
-                                let tradIndekso = tradDict["indekso"] as! String
-                                let tradNomo = tradDict["nomo"] as! String
-                                let tradTeksto = tradDict["teksto"] as! String
-                                
-                                if tradNomo == lasta {
-                                    teksto += ", " + tradTeksto
-                                } else {
-                                    if !teksto.isEmpty { teksto += "; " }
-                                    teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo + "</a>" + ": " + tradTeksto
-                                    lasta = tradNomo
+                            let nuna = tradukArr[i] as! NSDictionary
+                            let lasta: NSDictionary! = (i > 0) ? tradukArr[i-1] as? NSDictionary : nil
+                            if lasta != nil && (lasta["nomo"] as? String) != (nuna["nomo"] as? String) { montriSencon = false}
+
+                            for var j = i+1; j < tradukArr.count; j += 1 {
+                                if (tradukArr[i]["nomo"] as? String) != (tradukArr[j]["nomo"] as? String) {
+                                    break
+                                }
+                                else if (tradukArr[i]["senco"] as? Int) != (tradukArr[j]["senco"] as? Int) {
+                                    montriSencon = true
+                                    break
                                 }
                             }
+                            
+                            if let tradTeksto = tradukArr[i]["teksto"] as? String,
+                               let tradNomo = tradukArr[i]["nomo"] as? String,
+                               let tradIndekso = tradukArr[i]["indekso"] as? String {
+                                
+                                if lasta == nil ||
+                                   (lasta["nomo"] as? String) != (nuna["nomo"] as? String) ||
+                                   (lasta["senco"] as? Int) != (nuna["senco"] as? Int) {
+                                        if !teksto.isEmpty { teksto += "; " }
+                                        teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo
+                                        if montriSencon && (tradukArr[i]["senco"] as? Int) > 0 { teksto += " " + String(tradukArr[i]["senco"] as! Int)}
+                                        teksto += "</a>: "
+                                } else {
+                                    teksto += ", "
+                                }
+                            
+                                teksto += tradTeksto
+                            }
                         }
+                        
+                        teksto += "."
                         if let lingvo = SeancDatumaro.lingvoPorKodo(lingvo as! String) {
                             novajTradukoj.append(Traduko(lingvo: lingvo, teksto: teksto))
                         }
