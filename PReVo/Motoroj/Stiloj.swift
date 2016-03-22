@@ -214,8 +214,13 @@ class Stiloj {
     static func efektivigiStilon(stilo: KolorStilo) {
         
         UIApplication.sharedApplication().statusBarStyle = UzantDatumaro.stilo.statusKoloro
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UzantDatumaro.stilo.fonTekstKoloro
-        UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).textColor = UzantDatumaro.stilo.tekstKoloro
+        
+        // Ni uzas specialajn versiojn de chi tiuj funkcioj char alie ghi ne estas uzeblaj sub iOS 8.1 per Swift
+        UILabel.nia_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).textColor = UzantDatumaro.stilo.fonTekstKoloro
+        UITextField.nia_appearanceWhenContainedIn(UISearchBar.self).textColor = UzantDatumaro.stilo.tekstKoloro
+        
+        /*UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UzantDatumaro.stilo.fonTekstKoloro
+        UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).textColor = UzantDatumaro.stilo.tekstKoloro*/
         
         if let konforma = SlideNavigationController.sharedInstance().leftMenu as? Stilplena {
             

@@ -95,11 +95,11 @@ class ArtikoloViewController : UIViewController, Stilplena {
         let konservButono = UIButton()
         konservButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         konservButono.setImage(bildo?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-        konservButono.addTarget(self, action: "premisKonservButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
+        konservButono.addTarget(self, action: "premisKonservButonon", forControlEvents: UIControlEvents.TouchUpInside)
         let serchButono = UIButton()
         serchButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         serchButono.setImage(UIImage(named: "pikto_lenso")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-        serchButono.addTarget(self, action: "premisSerchButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
+        serchButono.addTarget(self, action: "premisSerchButonon", forControlEvents: UIControlEvents.TouchUpInside)
         butonujo.addSubview(konservButono)
         butonujo.addSubview(serchButono)
         serchButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
@@ -312,7 +312,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             }
             
             novaPiedo.prepari()
-            novaPiedo.butono?.addTarget(self, action: "premisPliajnTradukojnButonon", forControlEvents: UIControlEvents.PrimaryActionTriggered)
+            novaPiedo.butono?.addTarget(self, action: "premisPliajnTradukojnButonon", forControlEvents: UIControlEvents.TouchUpInside)
             
             return novaPiedo
         }
