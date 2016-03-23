@@ -22,7 +22,7 @@ import CoreData
 */
 class Artikolo {
     
-    let titolo: String, radiko: String, indekso: String
+    let titolo: String, radiko: String, indekso: String, ofc: String?
     let grupoj: [Grupo], tradukoj: [Traduko]
     
     init?(objekto: NSManagedObject) {
@@ -34,6 +34,7 @@ class Artikolo {
             titolo = ""
             radiko = ""
             indekso = ""
+            ofc = nil
             grupoj = [Grupo]()
             tradukoj = [Traduko]()
             return nil
@@ -43,6 +44,7 @@ class Artikolo {
         radiko = trovRadiko!
         indekso = trovIndekso!
         
+        var trovOfc: String? = nil
         var novajGrupoj: [Grupo]? = nil
         var novajTradukoj: [Traduko] = [Traduko]()
         do {
@@ -52,6 +54,7 @@ class Artikolo {
                     // Fari la grupojn, vortojn, kaj tekstojn de la artikolo
                     let rezulto = Modeloj.traktiNodon(vortDict)
                     novajGrupoj = rezulto.2
+                    trovOfc = rezulto.0
                 }
             }
             
@@ -111,9 +114,11 @@ class Artikolo {
         } catch {
             grupoj = [Grupo]()
             tradukoj = [Traduko]()
+            ofc = nil
             return
         }
         
+        ofc = trovOfc
         grupoj = novajGrupoj ?? [Grupo]()
         tradukoj = novajTradukoj
  
@@ -135,7 +140,15 @@ struct Grupo {
 */
 struct Vorto {
     
-    let titolo: String, teksto: String, marko: String?
+    let titolo: String, teksto: String, marko: String?, ofc: String?
+    
+    var kunaTitolo: String {
+        if let verOfc = ofc {
+            return titolo + Iloj.superLit(verOfc)
+        } else {
+            return titolo
+        }
+    }
 }
 
 /*
@@ -264,9 +277,15 @@ class Modeloj {
         
         let tipo = nodo["tipo"] as? String
         let filoj = nodo["filoj"] as? NSArray
+        let kapo = nodo["kapo"] as? NSDictionary
         var vortoj: [Vorto] = [Vorto]()
         var grupoj: [Grupo] = [Grupo]()
         var teksto: String = ""
+        var ofc: String? = nil
+        
+        if let verKapo = kapo {
+            ofc = verKapo["ofc"] as? String
+        }
         
         if let vspec = nodo["vspec"] as? String {
             teksto += vspec + " "
@@ -374,7 +393,7 @@ class Modeloj {
         
         if tipo == "drv" {
             if let kapo = nodo["kapo"] as? NSDictionary, let titolo = kapo["nomo"] as? String {
-                vortoj.append(Vorto(titolo: titolo, teksto: teksto, marko: nodo["mrk"] as? String))
+                vortoj.append(Vorto(titolo: titolo, teksto: teksto, marko: nodo["mrk"] as? String, ofc: ofc))
             }
         }
         
@@ -389,6 +408,9 @@ class Modeloj {
         }
         if grupoj.count > 0 {
             ret.2 = grupoj
+        }
+        if tipo == "art" {
+            ret.0 = ofc
         }
         
         return ret

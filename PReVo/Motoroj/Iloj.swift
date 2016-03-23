@@ -267,4 +267,39 @@ class Iloj {
         return mutaciaTeksto
         
     }
+    
+    static func superLit(litero: String) -> String {
+        
+        var ret: String = ""
+        for char in litero.characters {
+            switch char {
+                case "*":
+                    ret += "*";
+                case "0":
+                    ret += "⁰";
+                case "1":
+                    ret += "¹";
+                case "2":
+                    ret += "²";
+                case "3":
+                    ret += "³";
+                case "4":
+                    ret += "⁴";
+                case "5":
+                    ret += "⁵";
+                case "6":
+                    ret += "⁶";
+                case "7":
+                    ret += "⁷";
+                case "8":
+                    ret += "⁸";
+                case "9":
+                    ret += "⁹";
+                default:
+                    ret += "";
+        }
+        }
+        
+        return ret
+    }
 }

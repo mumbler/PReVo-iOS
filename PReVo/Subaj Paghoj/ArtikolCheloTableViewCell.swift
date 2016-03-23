@@ -15,7 +15,7 @@ let bazaTitolaAlteco: CGFloat = 35
 class ArtikoloTableViewCell : UITableViewCell, Stilplena {
 
     @IBOutlet var titolaRegiono: UIView?
-    @IBOutlet var titolaEtikedo: UILabel?
+    @IBOutlet var titolaEtikedo: TTTAttributedLabel?
     @IBOutlet var titolaAlteco: NSLayoutConstraint?
     @IBOutlet var chefaEtikedo: TTTAttributedLabel?
     
@@ -23,7 +23,10 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
     
     func prepari(titolo titolo: String, teksto: String, subart: Bool) {
         
-        titolaEtikedo?.text = titolo
+        titolaEtikedo?.setText(titolo)
+        /*let titolMarkoj = Iloj.troviMarkojn(titolo)
+        titolaEtikedo?.setText(Iloj.pretigiTekston(titolo, kunMarkoj: titolMarkoj))*/ // Shajne, superscript in TTTAttributedLabel ne chiam funkcias
+        
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
         self.subart = subart
         

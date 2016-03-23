@@ -45,7 +45,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         prepariTradukListon()
         prepariNavigaciajnButonojn()
         
-        title = artikolo?.titolo
+        title = (artikolo?.titolo ?? "") + Iloj.superLit((artikolo?.ofc ?? ""))
         
         vortTabelo?.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
         vortTabelo?.delegate = self
@@ -231,7 +231,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             
             if artikolo?.grupoj.count == 1 {
                 if let vorto = artikolo?.grupoj.first?.vortoj[indexPath.row] {
-                    novaChelo.prepari(titolo: vorto.titolo, teksto: vorto.teksto, subart: false)
+                    novaChelo.prepari(titolo: vorto.kunaTitolo, teksto: vorto.teksto, subart: false)
                 }
             } else {
                 
@@ -244,7 +244,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
                     }
                     else if indexPath.row < sumo + grupo.vortoj.count + 1 {
                         let vorto = grupo.vortoj[indexPath.row - sumo - 1]
-                        novaChelo.prepari(titolo: vorto.titolo, teksto: vorto.teksto, subart: false)
+                        novaChelo.prepari(titolo: vorto.kunaTitolo, teksto: vorto.teksto, subart: false)
                         break
                     }
                     
