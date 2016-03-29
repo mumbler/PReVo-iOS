@@ -20,6 +20,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var trovTabelo: UITableView?
+    var lastaSercho: String? = nil
     var serchRezultoj = [(String, NSManagedObject)]()
     
     init() {
@@ -84,8 +85,11 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     }
     
     func fariSerchon(teksto: String) {
-        serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
-        trovTabelo?.reloadData()
+        if teksto != lastaSercho {
+            serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
+            trovTabelo?.reloadData()
+            lastaSercho = teksto
+        }
     }
 }
 
@@ -106,7 +110,17 @@ extension SerchPaghoViewController : UISearchBarDelegate {
             return false
         }
         
-        searchBar.text = teksto!
+        // Chi tiu abomenajho necesas char japanaj klavaroj ne kauzas textDidChange, kaj la fina teksto ne disponeblas chi tie
+        // Espereble Apple riparos tion estontece
+        if teksto != nil {
+            weak var malforta = self
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                if let vera = malforta {
+                    vera.fariSerchon(vera.serchTabulo?.text! ?? "")
+                }
+            });
+        }
+        
         return true
     }
     
