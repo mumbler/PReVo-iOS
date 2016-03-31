@@ -24,8 +24,6 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
     func prepari(titolo titolo: String, teksto: String, subart: Bool) {
         
         titolaEtikedo?.setText(titolo)
-        /*let titolMarkoj = Iloj.troviMarkojn(titolo)
-        titolaEtikedo?.setText(Iloj.pretigiTekston(titolo, kunMarkoj: titolMarkoj))*/ // Shajne, superscript in TTTAttributedLabel ne chiam funkcias
         
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
         self.subart = subart

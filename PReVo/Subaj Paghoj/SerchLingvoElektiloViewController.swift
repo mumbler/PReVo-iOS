@@ -109,7 +109,7 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0 {
-            return NSLocalizedString("serch-elektilo oftaj etikedo", comment: "")
+            return NSLocalizedString("serch-elektilo lastaj etikedo", comment: "")
         } else if section == 1 {
             return NSLocalizedString("serch-elektilo chiuj etikedo", comment: "")
         }
