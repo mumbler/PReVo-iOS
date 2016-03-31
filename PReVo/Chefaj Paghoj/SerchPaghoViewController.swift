@@ -21,7 +21,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var trovTabelo: UITableView?
     var lastaSercho: String? = nil
-    var serchRezultoj = [(String, NSManagedObject)]()
+    var serchRezultoj = [(String, [NSManagedObject])]()
     
     init() {
         super.init(nibName: "SerchPaghoViewController", bundle: nil)
@@ -158,12 +158,13 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let novaChelo: UITableViewCell
+        /*let novaChelo: UITableViewCell
         if let trovChelo = trovTabelo?.dequeueReusableCellWithIdentifier(serchChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()
-        }
+        }*/
+        let novaChelo = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: serchChelIdent)
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
@@ -171,20 +172,32 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         novaChelo.isAccessibilityElement = true
         novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
+        if serchRezultoj[indexPath.row].1.count == 1 {
+            novaChelo.detailTextLabel?.text = nil
+        } else {
+            novaChelo.detailTextLabel?.text = String(serchRezultoj[indexPath.row].1.count) + " trovoj"
+        }
+        
         return novaChelo
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if let artikolObjekto = serchRezultoj[indexPath.row].1.valueForKey("artikolo") as? NSManagedObject {
-            if let artikolo = Artikolo(objekto: artikolObjekto) {
-                
-                if let marko = serchRezultoj[indexPath.row].1.valueForKey("marko") as? String where !marko.isEmpty {
-                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
-                } else {
-                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
+        if serchRezultoj[indexPath.row].1.count == 1 {
+            if let artikolObjekto = serchRezultoj[indexPath.row].1.first?.valueForKey("artikolo") as? NSManagedObject {
+                if let artikolo = Artikolo(objekto: artikolObjekto) {
+                    
+                    if let marko = serchRezultoj[indexPath.row].1.first?.valueForKey("marko") as? String where !marko.isEmpty {
+                        (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
+                    } else {
+                        (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
+                    }
                 }
             }
+        } else {
+            let disigilo = VortoDisigiloViewController(endestinoj: serchRezultoj[indexPath.row].1)
+            navigationController?.pushViewController(disigilo, animated: true)
+            
         }
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

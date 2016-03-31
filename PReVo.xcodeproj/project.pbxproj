@@ -42,6 +42,8 @@
 		00BC6C5C1C95212A00B9BC22 /* PriViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC6C5B1C95212A00B9BC22 /* PriViewController.xib */; };
 		00BC6C5E1C95231A00B9BC22 /* LicencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC6C5D1C95231A00B9BC22 /* LicencoViewController.swift */; };
 		00BC6C601C9524CD00B9BC22 /* LicencoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC6C5F1C9524CD00B9BC22 /* LicencoViewController.xib */; };
+		00E4C05E1CAD739C000A4849 /* VortoDisigiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E4C05D1CAD739C000A4849 /* VortoDisigiloViewController.swift */; };
+		00E4C0601CAD742B000A4849 /* VortoDisigiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E4C05F1CAD742B000A4849 /* VortoDisigiloViewController.xib */; };
 		00E56D231C94FB8700D9C895 /* AgordojViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E56D221C94FB8700D9C895 /* AgordojViewController.swift */; };
 		00E56D251C9500FA00D9C895 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D241C9500FA00D9C895 /* AgordojViewController.xib */; };
 		00E56D281C95065C00D9C895 /* StiloElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E56D271C95065C00D9C895 /* StiloElektiloViewController.swift */; };
@@ -124,6 +126,8 @@
 		00BC6C5B1C95212A00B9BC22 /* PriViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriViewController.xib; sourceTree = "<group>"; };
 		00BC6C5D1C95231A00B9BC22 /* LicencoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencoViewController.swift; sourceTree = "<group>"; };
 		00BC6C5F1C9524CD00B9BC22 /* LicencoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicencoViewController.xib; sourceTree = "<group>"; };
+		00E4C05D1CAD739C000A4849 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
+		00E4C05F1CAD742B000A4849 /* VortoDisigiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VortoDisigiloViewController.xib; sourceTree = "<group>"; };
 		00E56D221C94FB8700D9C895 /* AgordojViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgordojViewController.swift; sourceTree = "<group>"; };
 		00E56D241C9500FA00D9C895 /* AgordojViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgordojViewController.xib; sourceTree = "<group>"; };
 		00E56D271C95065C00D9C895 /* StiloElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloElektiloViewController.swift; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 		00EAB8BB1C91FB8300AA5C0C /* Subaj Paghoj */ = {
 			isa = PBXGroup;
 			children = (
+				00E4C05D1CAD739C000A4849 /* VortoDisigiloViewController.swift */,
+				00E4C05F1CAD742B000A4849 /* VortoDisigiloViewController.xib */,
 				003E19781C93875B00A1BFB1 /* SerchLingvoElektiloViewController.swift */,
 				003E197A1C93876500A1BFB1 /* SerchLingvoElektiloViewController.xib */,
 				003E197E1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift */,
@@ -467,6 +473,7 @@
 				00BC6C581C951CBE00B9BC22 /* StiloElektiloViewController.xib in Resources */,
 				003E19831C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
 				000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */,
+				00E4C0601CAD742B000A4849 /* VortoDisigiloViewController.xib in Resources */,
 				003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */,
 				008DA44C1C94CF2A0082C601 /* FlankMenuoTableViewCell.xib in Resources */,
 				000985A21C31F0CB0083DE24 /* Assets.xcassets in Resources */,
@@ -564,6 +571,7 @@
 				00B398C21CA19A2500AD2812 /* ObjCPonto.m in Sources */,
 				008DA44E1C94D6980082C601 /* HistorioViewController.swift in Sources */,
 				003E197D1C938C7500A1BFB1 /* HelpaNavigationController.swift in Sources */,
+				00E4C05E1CAD739C000A4849 /* VortoDisigiloViewController.swift in Sources */,
 				00BC6C5A1C951F3300B9BC22 /* PriViewController.swift in Sources */,
 				003E197F1C93A8A200A1BFB1 /* TradukLingvojElektiloViewController.swift in Sources */,
 				008DA4521C94E5C20082C601 /* KonservitajViewController.swift in Sources */,

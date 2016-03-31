@@ -117,7 +117,7 @@ class TrieRegilo {
     // Trie navigaciado
     // ====================================
     
-    static func serchi(lingvoKodo: String, teksto: String, limo: Int) -> [(String, NSManagedObject)] {
+    static func serchi(lingvoKodo: String, teksto: String, limo: Int) -> [(String, [NSManagedObject])] {
         
         var nunNodo: NSManagedObject? = nil
         var sekvaNodo: NSManagedObject? = nil
@@ -136,7 +136,7 @@ class TrieRegilo {
             if sekvaNodo != nil {
                 nunNodo = sekvaNodo
             } else {
-                return [(String, NSManagedObject)]()
+                return [(String, [NSManagedObject])]()
             }
         }
         
@@ -145,19 +145,24 @@ class TrieRegilo {
                 return unua.0 < dua.0
             })*/
         } else {
-            return [(String, NSManagedObject)]()
+            return [(String, [NSManagedObject])]()
         }
     }
     
     // Trovi chiun vorton kiu havas komence la jam trovitan tekston
-    static func chiuFinajho(nodo: NSManagedObject, limo: Int) -> [(String, NSManagedObject)] {
+    static func chiuFinajho(nodo: NSManagedObject, limo: Int) -> [(String, [NSManagedObject])] {
         
-        var rezultoj = [(String, NSManagedObject)]()
+        var rezultoj = [(String, [NSManagedObject])]()
         
+        var trovoj = [String : [NSManagedObject]]()
         for destino in nodo.mutableOrderedSetValueForKey("destinoj") ?? [] {
-            if let veraDestino = destino as? NSManagedObject {
-                rezultoj.append( (veraDestino.valueForKey("teksto") as! String, veraDestino) )
+            if let veraDestino = destino as? NSManagedObject, let destTeksto = veraDestino.valueForKey("teksto") as? String {
+                if trovoj[destTeksto] == nil { trovoj[destTeksto] = [NSManagedObject]() }
+                trovoj[destTeksto]?.append(veraDestino)
             }
+        }
+        for (teksto, destinoj) in trovoj {
+            rezultoj.append( (teksto, destinoj))
         }
         
         if let sekvaj = ((nodo.valueForKey("sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject])?.sort({ (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
