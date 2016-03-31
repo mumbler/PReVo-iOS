@@ -307,9 +307,10 @@ def traktiNodon(nod, stato)
          objekto["filNombro"] += 1
          objekto["filoj"] << traktiNodon(fil, stato)
       elsif fil.name == "snc"
-         stato["senco"] = objekto["filNombro"]
          objekto["filNombro"] += 1
+         stato["senco"] = objekto["filNombro"]
          objekto["filoj"] << traktiNodon(fil, stato)
+         stato["senco"] = 0
       elsif fil.name == "subsnc"
          objekto["filNombro"] += 1
          objekto["filoj"] << traktiNodon(fil, stato)
@@ -886,7 +887,7 @@ if vortoDos and File.directory?(dir+"/xml/")
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..'
 
-      #artikolDosiero = "egx.xml"
+      artikolDosiero = "sucx.xml"
       puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
@@ -901,10 +902,11 @@ if vortoDos and File.directory?(dir+"/xml/")
 
       artikoloj << artikolo
       #provi(objekto)
-      #puts objekto
+      puts objekto
       #puts tradukoj
       #puts artikolo["tradukoj"]
       #exit
+      exit
    end
 end
 
