@@ -45,6 +45,15 @@ class VortoDisigiloViewController : UIViewController, Stilplena {
         vortoTabelo?.reloadData()
     }
     
+    func devasMontriSencon(indexPath: NSIndexPath) -> Bool {
+        
+        if (destinoj[indexPath.row].valueForKey("senco") as? String) == "0" {
+            return false
+        }
+        
+        return true
+    }
+    
 }
 
 extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSource {
@@ -67,7 +76,10 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
         let chelo = UITableViewCell(style: .Value1, reuseIdentifier: disigiloChelIdent)
         
         chelo.textLabel?.text = (destinoj[indexPath.row].valueForKey("teksto") as? String) ?? ""
-        chelo.detailTextLabel?.text = String(indexPath.row + 1)
+        chelo.detailTextLabel?.text = (destinoj[indexPath.row].valueForKey("nomo") as? String) ?? ""
+        if devasMontriSencon(indexPath), let senco = destinoj[indexPath.row].valueForKey("senco") as? String {
+            chelo.detailTextLabel?.text = (chelo.detailTextLabel?.text ?? "") + " " + senco
+        }
         
         return chelo
     }

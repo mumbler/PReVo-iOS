@@ -265,9 +265,13 @@ def traktiNodon(nod, stato)
 
    objekto = {"tipo" => nod.name, "filoj" => [], "tradukoj" => {}, "filNombro" => 0}
    stato["super"] << nod.name
+
+   miaMarko = false
+
    if nod["mrk"] != nil
       objekto["mrk"] = nod["mrk"]
-      stato["marko"] = nod["mrk"]
+      stato["marko"] << nod["mrk"]
+      miaMarko = true
    end
 
    teksto = ""
@@ -282,7 +286,7 @@ def traktiNodon(nod, stato)
          if nod.name == "drv"
             # Registri tradukojn en esperanton
 	    for nom in objekto["nomo"].split(", ")
-	       @esperantaj << fariSerchTradukon(nom, nom, stato["artikolo"]["indekso"], stato["marko"], 0)
+	       @esperantaj << fariSerchTradukon(nom, nom, stato["nomo"], stato["artikolo"]["indekso"], stato["marko"], 0)
 	    end
          end
       elsif fil.name == "uzo"
@@ -367,6 +371,8 @@ def traktiNodon(nod, stato)
 
       stato["ekzTradukoj"] = {}
    end	       	  
+
+   if miaMarko then stato["marko"].pop end
 
    #objekto["teksto"] = teksto
    stato["super"].pop
@@ -768,13 +774,14 @@ def traktiTradukon(trd, stato)
    end
 
    if stato["artikolo"]["tradukoj"][lingvo] == nil then stato["artikolo"]["tradukoj"][lingvo] = [] end
+   puts stato["senco"]
    if stato["indekso"] != nil and stato["indekso"] != ""
       if stato["ekzTradukoj"][lingvo] == nil then stato["ekzTradukoj"][lingvo] = [] end
-      stato["ekzTradukoj"][lingvo] << fariArtikolTradukon(stato["indekso"], teksto, stato["marko"], stato["senco"])
+      stato["ekzTradukoj"][lingvo] << fariArtikolTradukon(stato["indekso"], teksto, stato["marko"].last, stato["senco"])
    else
       if indekso == nil then indekso = teksto end
-      stato["artikolo"]["tradukoj"][lingvo] << fariArtikolTradukon(stato["tildo"], teksto, stato["marko"], stato["senco"])
-      stato["tradukoj"][lingvo] << fariSerchTradukon(teksto, indekso, stato["artikolo"]["indekso"], stato["marko"], stato["senco"])
+      stato["artikolo"]["tradukoj"][lingvo] << fariArtikolTradukon(stato["tildo"], teksto, stato["marko"].last, stato["senco"])
+      stato["tradukoj"][lingvo] << fariSerchTradukon(teksto, indekso, stato["nomo"], stato["artikolo"]["indekso"], stato["marko"].last, stato["senco"])
    end
 
 
@@ -808,9 +815,9 @@ def fariArtikolTradukon(nomo, teksto, marko, senco)
 
 end
 
-def fariSerchTradukon(videbla, teksto, indekso, marko, senco)
+def fariSerchTradukon(videbla, teksto, nomo, indekso, marko, senco)
 
-   return {"videbla" => videbla, "teksto" => teksto, "indekso" => indekso, "marko" => marko, "senco" => senco}
+   return {"videbla" => videbla, "teksto" => teksto, "nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco}
 
 end
 
@@ -887,7 +894,7 @@ if vortoDos and File.directory?(dir+"/xml/")
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..'
 
-      artikolDosiero = "sucx.xml"
+      #artikolDosiero = "aprior.xml"
       puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
@@ -896,17 +903,16 @@ if vortoDos and File.directory?(dir+"/xml/")
       xml = Nokogiri::XML(prepariTekston(enhavo))
 
       artikolo = {"indekso" => artikolDosiero.gsub(".xml", ""), "tradukoj" => {}}
-      stato = {"artikolo" => artikolo, "tradukoj" => tradukoj, "super" => [], "senco" => 0, "ekzTradukoj" => {}}
+      stato = {"artikolo" => artikolo, "tradukoj" => tradukoj, "super" => [], "senco" => 0, "ekzTradukoj" => {}, "marko" => []}
       objekto = traktiNodon(xml, stato)
       artikolo["objekto"] = objekto
 
-      artikoloj << artikolo
+      #artikoloj << artikolo
       #provi(objekto)
-      puts objekto
+      #puts objekto
       #puts tradukoj
       #puts artikolo["tradukoj"]
       #exit
-      exit
    end
 end
 

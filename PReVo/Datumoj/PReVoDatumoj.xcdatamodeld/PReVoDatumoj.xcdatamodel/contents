@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="Artikolo" syncable="YES">
         <attribute name="indekso" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="radiko" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,6 +11,7 @@
     <entity name="Destino" syncable="YES">
         <attribute name="indekso" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="marko" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senco" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teksto" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="artikolo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artikolo" inverseName="destinoj" inverseEntity="Artikolo" syncable="YES"/>
@@ -42,7 +43,7 @@
     </entity>
     <elements>
         <element name="Artikolo" positionX="0" positionY="54" width="128" height="135"/>
-        <element name="Destino" positionX="-9" positionY="72" width="128" height="135"/>
+        <element name="Destino" positionX="-9" positionY="72" width="128" height="150"/>
         <element name="Fako" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Lingvo" positionX="18" positionY="99" width="128" height="90"/>
         <element name="Mallongigo" positionX="36" positionY="108" width="128" height="75"/>

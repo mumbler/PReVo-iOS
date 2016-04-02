@@ -23,10 +23,10 @@ class TrieRegilo {
     
     static func konstruiChiuTrie(kodoj: [String]) {
         
-        for lingvo in kodoj {
+        /*for lingvo in kodoj {
             konstruiTriePorLingvo(lingvo)
-        }
-        //konstruiTriePorLingvo("en")
+        }*/
+        konstruiTriePorLingvo("es")
     }
     
     static func konstruiTriePorLingvo(kodo: String) {
@@ -52,9 +52,10 @@ class TrieRegilo {
                                 
                                 let videbla = enhavoj["videbla"] as? String
                                 let teksto = enhavoj["teksto"] as? String
+                                let nomo = enhavoj["nomo"] as? String
                                 let indekso = enhavoj["indekso"] as? String
                                 let marko = enhavoj["marko"] as? String
-                                let senco = enhavoj["senco"] as? String
+                                let senco = enhavoj["senco"] as! Int
                                 
                                 for nunLitero in teksto!.lowercaseString.characters {
                                     
@@ -88,8 +89,9 @@ class TrieRegilo {
                                     let novaDestino = NSEntityDescription.insertNewObjectForEntityForName("Destino", inManagedObjectContext: konteksto!)
                                     novaDestino.setValue(videbla, forKey: "teksto")
                                     novaDestino.setValue(indekso, forKey: "indekso")
+                                    novaDestino.setValue(nomo, forKey: "nomo")
                                     novaDestino.setValue(marko, forKey: "marko")
-                                    novaDestino.setValue(senco, forKey: "senco")
+                                    novaDestino.setValue(String(senco), forKey: "senco")
                                     if let artikolo = DatumLegilo.artikoloPorIndekso(indekso!) {
                                         novaDestino.setValue(artikolo, forKey: "artikolo")
                                     }
