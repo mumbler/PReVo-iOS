@@ -397,9 +397,9 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
                 iriAlMarko(partoj[0] + "." + partoj[1], animacii: true)
             }
         } else {
-            if let novaArtikolo = SeancDatumaro.artikoloPorIndekso(partoj[0]),
-               let novaPagho = ArtikoloViewController(enartikolo: novaArtikolo) {
-                navigationController?.pushViewController(novaPagho, animated: true)
+            if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
+                
+                (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
             }
         }
     }

@@ -197,6 +197,7 @@
 		00E56D251C9500FA00D9C895 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E56D241C9500FA00D9C895 /* AgordojViewController.xib */; };
 		00E56D281C95065C00D9C895 /* StiloElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E56D271C95065C00D9C895 /* StiloElektiloViewController.swift */; };
 		00E56D2A1C95066500D9C895 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E56D291C95066500D9C895 /* Stiloj.swift */; };
+		00E93A791CB094BF00C01CB2 /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00E93A781CB094BA00C01CB2 /* PReVoDatumbazo.sqlite */; };
 		00EAB8BD1C91FC2B00AA5C0C /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */; };
 		00EAB8BF1C91FC4100AA5C0C /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */; };
 		00EAB8C11C91FC6A00AA5C0C /* IngoPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C01C91FC6A00AA5C0C /* IngoPaghoViewController.swift */; };
@@ -429,6 +430,7 @@
 		00E56D241C9500FA00D9C895 /* AgordojViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgordojViewController.xib; sourceTree = "<group>"; };
 		00E56D271C95065C00D9C895 /* StiloElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloElektiloViewController.swift; sourceTree = "<group>"; };
 		00E56D291C95066500D9C895 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
+		00E93A781CB094BA00C01CB2 /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00EAB8BC1C91FC2B00AA5C0C /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
 		00EAB8BE1C91FC4100AA5C0C /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
 		00EAB8C01C91FC6A00AA5C0C /* IngoPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngoPaghoViewController.swift; sourceTree = "<group>"; };
@@ -790,6 +792,7 @@
 		00F09C621C92273300B29687 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
+				00E93A781CB094BA00C01CB2 /* PReVoDatumbazo.sqlite */,
 				0087BE751CADFBBB00A191D6 /* preparita */,
 				002249E71C985DD200676257 /* PReVoDatumoj.xcdatamodeld */,
 			);
@@ -920,6 +923,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00E93A791CB094BF00C01CB2 /* PReVoDatumbazo.sqlite in Resources */,
 				0087BF6B1CADFBBB00A191D6 /* indekso_qu.dat in Resources */,
 				0087BF4C1CADFBBB00A191D6 /* indekso_ks.dat in Resources */,
 				0087BF651CADFBBB00A191D6 /* indekso_or.dat in Resources */,

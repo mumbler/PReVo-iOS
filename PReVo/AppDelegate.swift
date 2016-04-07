@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import iOS_Slide_Menu
 
-let kreiDatumbazon = true
+let kreiDatumbazon = false
 let datumbazNomo = "PReVoDatumbazo"
 
 @UIApplicationMain
@@ -77,14 +77,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let docsUrl = self.applicationDocumentsDirectory.URLByAppendingPathComponent(datumbazNomo + ".sqlite")
         let bundleUrl = NSBundle.mainBundle().URLForResource(datumbazNomo, withExtension: "sqlite")
 
         do {
             let pragmas: [String : String] = ["journal_mode" : "DELETE", "synchronous" : "OFF"]
             if kreiDatumbazon {
+                do {
+                    try NSFileManager.defaultManager().removeItemAtURL(docsUrl)
+                } catch { }
                 let options = [NSSQLitePragmasOption : pragmas]
                 try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: docsUrl, options: options)
             } else {

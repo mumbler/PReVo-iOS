@@ -23,10 +23,10 @@ class TrieRegilo {
     
     static func konstruiChiuTrie(kodoj: [String]) {
         
-        /*for lingvo in kodoj {
+        for lingvo in kodoj {
             konstruiTriePorLingvo(lingvo)
-        }*/
-        konstruiTriePorLingvo("es")
+        }
+        //konstruiTriePorLingvo("es")
     }
     
     static func konstruiTriePorLingvo(kodo: String) {
@@ -121,6 +121,23 @@ class TrieRegilo {
     
     static func serchi(lingvoKodo: String, teksto: String, limo: Int) -> [(String, [NSManagedObject])] {
         
+        if konteksto == nil {
+            return [(String, [NSManagedObject])]()
+        }
+        
+        let serchPeto = NSFetchRequest()
+        serchPeto.entity = NSEntityDescription.entityForName("Artikolo", inManagedObjectContext: konteksto!)
+        serchPeto.predicate = NSPredicate(format: "indekso LIKE %@", argumentArray: [teksto + "%"])
+        do {
+            let rezultoj = try konteksto!.executeFetchRequest(serchPeto).first as? NSManagedObject
+            
+        } catch {
+            
+        }
+        
+        return [(String, [NSManagedObject])]()
+        
+        ///
         var nunNodo: NSManagedObject? = nil
         var sekvaNodo: NSManagedObject? = nil
         
