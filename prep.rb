@@ -233,7 +233,7 @@ end
 
 puts "=== Legante stilojn ==="
 stilojDos = File.open(dir+"/cfg/stiloj.xml", "r")
-stiloj = []
+@stiloj = []
 
 if stilojDos
    linio = ""
@@ -242,7 +242,7 @@ if stilojDos
 
       trovo = stilojRegesp.match(linio)
       if trovo != nil and trovo.size == 3
-         stiloj << [trovo[1], trovo[2]]
+         @stiloj << [trovo[1], trovo[2]]
       end
    end
 else
@@ -286,7 +286,7 @@ def traktiNodon(nod, stato)
          if nod.name == "drv"
             # Registri tradukojn en esperanton
 	    for nom in objekto["nomo"].split(", ")
-	       @esperantaj << fariSerchTradukon(nom, nom, stato["nomo"], stato["artikolo"]["indekso"], stato["marko"], 0)
+	       @esperantaj << fariSerchTradukon(nom, nom, stato["nomo"], stato["artikolo"]["indekso"], stato["marko"].last, 0)
 	    end
          end
       elsif fil.name == "uzo"
@@ -774,7 +774,6 @@ def traktiTradukon(trd, stato)
    end
 
    if stato["artikolo"]["tradukoj"][lingvo] == nil then stato["artikolo"]["tradukoj"][lingvo] = [] end
-   puts stato["senco"]
    if stato["indekso"] != nil and stato["indekso"] != ""
       if stato["ekzTradukoj"][lingvo] == nil then stato["ekzTradukoj"][lingvo] = [] end
       stato["ekzTradukoj"][lingvo] << fariArtikolTradukon(stato["indekso"], teksto, stato["marko"].last, stato["senco"])
@@ -889,12 +888,182 @@ def provi(nodo)
 
 end
 
+def tekstoPorUzo(kodo, tipo)
+
+   if tipo == "fak"
+      return "[" + kodo + "]"
+   elsif tipo == "stl"
+      for stilo in @stiloj
+         if stilo[0] == kodo
+            return "(" + stilo[1] + ")"
+         end
+      end
+   end
+
+   return kodo
+
+end
+
+# Trovi Romian version de nombro (por listado)
+def alRomia(nombro)
+
+   romiajLiteroj = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+   arabajLiteroj = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        
+   romia = ""
+   komenca = nombro
+        
+   for j in 0..romiajLiteroj.count - 1
+    
+      romiaLitero = romiajLiteroj[j]        
+      arabaSumo = arabajLiteroj[j]
+      div = komenca / arabaSumo
+            
+      if div > 0
+      
+         for i in 0..div-1
+             romia += romiaLitero
+         end
+                
+         komenca -= arabaSumo * div
+      end
+    end
+
+    return romia
+end
+
+def printi(nodo)
+
+   objekto = {"marko" => nodo["mrk"]}
+   
+   if nodo["tipo"] == "art"
+      objekto["tipo"] = "artikolo"
+      objekto["grupoj"] = []
+      objekto["vortoj"] = []
+   elsif nodo["tipo"] == "subart"
+      objekto["tipo"] = "grupo"
+      objekto["vortoj"] = []
+   elsif nodo["tipo"] == "drv"
+      objekto["tipo"] = "vorto"
+   end
+
+   teksto = ""
+
+   if nodo["kapo"] != nil
+      objekto["ofc"] = nodo["kapo"]["ofc"]
+      if nodo["tipo"] == "art"
+         objekto["titolo"] = nodo["kapo"]["teksto"]
+      else 
+         objekto["titolo"] = nodo["kapo"]["nomo"]
+      end
+   end
+
+   if nodo["vspec"] != nil
+      teksto += nodo["vspec"] + " "
+   end
+
+   if nodo["uzoj"] != nil and nodo["uzoj"].count > 0
+      for uzo in nodo["uzoj"]
+         teksto += tekstoPorUzo(uzo["teksto"], uzo["tip"])
+         if nodo["tipo"] == "snc" or nodo["tipo"] == "subsnc"
+            teksto += " "
+         end
+      end
+   end
+
+   if nodo["teksto"] != nil and nodo["teksto"] != ""
+      teksto += nodo["teksto"]
+   end
+
+   filNombro = 1
+   
+   if nodo["filoj"] != nil
+   for fil in nodo["filoj"]
+
+      if fil["tipo"] == "subart"
+         if nodo["filNombro"] != nil and nodo["filNombro"] > 1
+           nombro = alRomia(filNombro) + ". "
+           filNombro += 1
+         end
+         rez = printi(fil)
+	 rez["teksto"] = nombro + rez["teksto"]
+	 objekto["grupoj"] << rez
+      elsif fil["tipo"] == "drv"
+         rez = printi(fil)
+	 objekto["vortoj"] << rez
+      elsif fil["tipo"] == "subdrv"
+         if teksto != ""
+            teksto += "\n\n"
+	 end
+         if nodo["filNombro"] != nil and nodo["filNombro"] > 1
+            teksto += ("A".."Z").to_a[filNombro-1] + ". "
+            filNombro += 1
+         end
+         rez = printi(fil)
+	 teksto += rez["teksto"]
+      elsif fil["tipo"] == "snc"
+         if teksto != ""
+            teksto += "\n\n"
+	 end
+         if nodo["filNombro"] != nil and nodo["filNombro"] > 1
+            teksto += filNombro.to_s + ". "
+            filNombro += 1
+         end
+         rez = printi(fil)
+	 teksto += rez["teksto"]
+      elsif fil["tipo"] == "subsnc"
+         if teksto != ""
+            teksto += " "
+	 end
+         if nodo["filNombro"] != nil and nodo["filNombro"] > 1
+            teksto += ("a".."z").to_a[filNombro-1] + ")\n"
+            filNombro += 1
+         end
+         rez = printi(fil)
+	 teksto += rez["teksto"]
+      else
+         rez = printi(fil)
+	 if fil["tipo"] == "rim"
+	    teksto += "\n"
+	 end
+
+	 teksto += rez["teksto"]
+
+	 if rez["vortoj"] != nil
+	    objekto["vortoj"] = rez["vortoj"]
+	 end
+	 if rez["grupoj"] != nil
+	    objekto["grupoj"] = rez["grupoj"]
+	 end
+	 if rez["titolo"] != nil
+	    objekto["titolo"] = rez["titolo"]
+	 end
+
+	 if fil["tipo"] == "art"
+	    objekto["marko"] = rez["marko"]
+	 end
+      end
+
+   end
+   end # Fino de filoj
+
+   objekto["teksto"] = teksto
+
+   if nodo["tipo"] == "art" and objekto["vortoj"] != nil and objekto["grupoj"] == []
+      objekto["grupoj"] = ["vortoj" => objekto["vortoj"], "teksto" => ""]
+      objekto["vortoj"] = nil
+   end
+
+   return objekto
+
+end
+
 if vortoDos and File.directory?(dir+"/xml/")
 
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..'
 
-      #artikolDosiero = "aprior.xml"
+      #artikolDosiero = "hund.xml"
       puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
@@ -904,10 +1073,10 @@ if vortoDos and File.directory?(dir+"/xml/")
 
       artikolo = {"indekso" => artikolDosiero.gsub(".xml", ""), "tradukoj" => {}}
       stato = {"artikolo" => artikolo, "tradukoj" => tradukoj, "super" => [], "senco" => 0, "ekzTradukoj" => {}, "marko" => []}
-      objekto = traktiNodon(xml, stato)
+      objekto = printi(traktiNodon(xml, stato))
       artikolo["objekto"] = objekto
+      artikoloj << artikolo
 
-      #artikoloj << artikolo
       #provi(objekto)
       #puts objekto
       #puts tradukoj
@@ -946,7 +1115,7 @@ MallongigElDos.close
 
 StilojElDos = File.open("preparita/stiloj.dat", "w")
 
-StilojElDos.print JSON.generate(stiloj)
+StilojElDos.print JSON.generate(@stiloj)
 
 StilojElDos.close
 
@@ -978,4 +1147,4 @@ miaDos = File.open("preparita/indeksoj/indekso_eo.dat", "w")
 miaDos.print JSON.generate(@esperantaj)
 miaDos.close
 
-# === Fino ===
+# === Fino ===/Users/robin/Desktop

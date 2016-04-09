@@ -45,16 +45,27 @@ class Artikolo {
         indekso = trovIndekso!
         
         var trovOfc: String? = nil
-        var novajGrupoj: [Grupo]? = nil
+        var novajGrupoj: [Grupo]? = [Grupo]()
         var novajTradukoj: [Traduko] = [Traduko]()
         do {
-            if let vortDatumoj = objekto.valueForKey("vortoj") as? NSData {
-                let vortJ = try NSJSONSerialization.JSONObjectWithData(vortDatumoj, options: NSJSONReadingOptions())
-                if let vortDict = vortJ as? NSDictionary {
-                    // Fari la grupojn, vortojn, kaj tekstojn de la artikolo
-                    let rezulto = Modeloj.traktiNodon(vortDict)
-                    novajGrupoj = rezulto.2
-                    trovOfc = rezulto.0
+            
+            if let vortoDatumoj = objekto.valueForKey("vortoj") as? NSData {
+                let vortoJ = try NSJSONSerialization.JSONObjectWithData(vortoDatumoj, options: NSJSONReadingOptions())
+                if let vortoDict = vortoJ as? NSDictionary {
+                    
+                    for grupo in (vortoDict["grupoj"] as? NSArray) ?? [] {
+                        var novajVortoj = [Vorto]()
+                        for vorto in (grupo["vortoj"] as? NSArray) ?? [] {
+                            if let titolo = vorto["titolo"] as? String,
+                               let teksto = vorto["teksto"] as? String,
+                               let marko = vorto["marko"] as? String {
+                                novajVortoj.append(Vorto(titolo: titolo, teksto: teksto, marko: marko, ofc: vorto["ofc"] as? String))
+                            }
+                        }
+                        
+                        let teksto = (grupo["teksto"] as? String) ?? ""
+                        novajGrupoj?.append(Grupo(teksto: teksto, vortoj:novajVortoj ))
+                    }
                 }
             }
             
@@ -264,155 +275,5 @@ class Listero : NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(nomo, forKey: "nomo")
         aCoder.encodeObject(indekso, forKey: "indekso")
-    }
-}
-
-class Modeloj {
-    
-    /*
-        Chi tiu funkcio konstruas la tekstojn de artikoloj. Ghi estas memuzanta, kaj traktas la
-        krudajn datumojn kaj faras legeblan tekston el ili.
-    */
-    static func traktiNodon(nodo: NSDictionary) -> (String?, [Vorto]?, [Grupo]?) {
-        
-        let tipo = nodo["tipo"] as? String
-        let filoj = nodo["filoj"] as? NSArray
-        let kapo = nodo["kapo"] as? NSDictionary
-        var vortoj: [Vorto] = [Vorto]()
-        var grupoj: [Grupo] = [Grupo]()
-        var teksto: String = ""
-        var ofc: String? = nil
-        
-        if let verKapo = kapo {
-            ofc = verKapo["ofc"] as? String
-        }
-        
-        if let vspec = nodo["vspec"] as? String {
-            teksto += vspec + " "
-        }
-        
-        if let uzoj = nodo["uzoj"] as? NSArray {
-            
-            for uzo in uzoj {
-                if let enhavoj = uzo as? NSDictionary {
-                    
-                    if let enteksto = enhavoj["teksto"] as? String,
-                       let entipo = enhavoj["tip"] as? String,
-                       let uzTeksto = SeancDatumaro.tekstoPorUzo(enteksto, tipo: entipo) {
-                        if tipo == "snc" || tipo == "subsnc" {
-                            teksto += uzTeksto + " "
-                        }
-                    }
-                }
-            }
-        }
-        
-        if let nodTeksto = nodo["teksto"] as? String {
-            teksto += nodTeksto
-        }
-        
-        var filNombro = 1
-        
-        if let verFiloj = filoj {
-        for filo in verFiloj {
-        if let filDict = filo as? NSDictionary {
-            
-            let filTipo = filDict["tipo"] as? String
-            if filTipo == "subart" {
-                
-                var grupTeksto = ""
-                if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    grupTeksto += Iloj.alRomia(filNombro) + ". "
-                    filNombro += 1
-                }
-                let rezulto = traktiNodon(filDict)
-                if !(rezulto.0 == nil && rezulto.1 == nil && rezulto.2 == nil) {
-                    grupoj.append( Grupo(teksto: grupTeksto + (rezulto.0 ?? ""), vortoj: rezulto.1 ?? []) )
-                }
-            } else if filTipo == "drv" {
-                let rezulto = traktiNodon(filDict)
-                if let novaVorto = rezulto.1?.first {
-                    vortoj.append(novaVorto)
-                }
-            } else if filTipo == "subdrv" {
-                if !teksto.isEmpty {
-                    teksto += "\n\n"
-                }
-                if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += Iloj.alLitero(filNombro - 1, true) + ". "
-                    filNombro += 1
-                }
-                let rezulto = traktiNodon(filDict)
-                if let subaTeksto = rezulto.0 {
-                    teksto += subaTeksto
-                }
-            } else if filTipo == "snc" {
-                if !teksto.isEmpty {
-                    teksto += "\n\n"
-                }
-                if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += String(filNombro) + ". "
-                    filNombro += 1
-                }
-                let rezulto = traktiNodon(filDict)
-                if let subaTeksto = rezulto.0 {
-                    teksto += subaTeksto
-                }
-            } else if filTipo == "subsnc" {
-                if !teksto.isEmpty {
-                    teksto += "\n\n"
-                }
-                if let nombro = (nodo["filNombro"] as? Int) where nombro > 1 {
-                    teksto += Iloj.alLitero(filNombro - 1, false) + ") "
-                    filNombro += 1
-                }
-                let rezulto = traktiNodon(filDict)
-                if let subaTeksto = rezulto.0 {
-                    teksto += subaTeksto
-                }
-            } else {
-                let rezulto = traktiNodon(filDict)
-                if let subaTeksto = rezulto.0 {
-
-                    if filTipo == "rim" {
-                        teksto += "\n"
-                    }
-                    
-                    teksto += subaTeksto
-                }
-                if let subajVortoj = rezulto.1 {
-                    vortoj = subajVortoj
-                }
-                if let subajGrupoj = rezulto.2 {
-                    grupoj = subajGrupoj
-                }
-            }
-        }
-        }
-        }
-        
-        if tipo == "drv" {
-            if let kapo = nodo["kapo"] as? NSDictionary, let titolo = kapo["nomo"] as? String {
-                vortoj.append(Vorto(titolo: titolo, teksto: teksto, marko: nodo["mrk"] as? String, ofc: ofc))
-            }
-        }
-        
-        if tipo == "art" && grupoj.count == 0 {
-            grupoj.append(Grupo(teksto: "", vortoj: vortoj))
-        }
-        
-        var ret: (String?, [Vorto]?, [Grupo]?) = (nil, nil, nil)
-        if !teksto.isEmpty { ret.0 = teksto }
-        if vortoj.count > 0 {
-            ret.1 = vortoj
-        }
-        if grupoj.count > 0 {
-            ret.2 = grupoj
-        }
-        if tipo == "art" {
-            ret.0 = ofc
-        }
-        
-        return ret
     }
 }
