@@ -53,6 +53,8 @@ class Artikolo {
                 let vortoJ = try NSJSONSerialization.JSONObjectWithData(vortoDatumoj, options: NSJSONReadingOptions())
                 if let vortoDict = vortoJ as? NSDictionary {
                     
+                    trovOfc = vortoDict["ofc"] as? String
+                    
                     for grupo in (vortoDict["grupoj"] as? NSArray) ?? [] {
                         var novajVortoj = [Vorto]()
                         for vorto in (grupo["vortoj"] as? NSArray) ?? [] {
