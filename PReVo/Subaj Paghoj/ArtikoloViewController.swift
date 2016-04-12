@@ -398,7 +398,7 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
             }
         } else {
             if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
-                parentViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: artikolo.titolo, style: .Plain, target: nil, action: nil)
+                navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .Plain, target: nil, action: nil)
                 (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
             }
         }
