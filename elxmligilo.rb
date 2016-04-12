@@ -1038,9 +1038,8 @@ def printi(nodo)
 	 if rez["titolo"] != nil
 	    objekto["titolo"] = rez["titolo"]
 	 end
-
-	 if fil["tipo"] == "art"
-	    objekto["marko"] = rez["marko"]
+	 if rez["ofc"] != nil
+	    objekto["ofc"] = rez["ofc"]
 	 end
       end
 
