@@ -36,7 +36,7 @@
 "agordoj aspekto etikedo"                       = "Aspekto";
 "agordoj nuligi historion etikedo"              = "Nuligi Historion";
 "agordoj nuligi konservitajn etikedo"           = "Nuligi Konservitajn";
-"agordoj elekti serch-lingvon etikedo"          = "Elekti Serch-lingvojn";
+"agordoj elekti serch-lingvon etikedo"          = "Elekti Serĉ-lingvojn";
 "agordoj elekti traduk-lingvojn etikedo"        = "Elekti Traduk-lingvojn";
 "agordoj elekti stilon etikedo"                 = "Elekti Stilon";
 "agordoj traduk-lingvoj subetikedo"             = "%@ lingvoj";
@@ -55,7 +55,7 @@
 
 // Serch lingvo elektilo
 
-"serch-elektilo titolo"                         = "Elekti serch-lingvon";
+"serch-elektilo titolo"                         = "Elekti serĉ-lingvon";
 "serch-elektilo lastaj etikedo"                 = "Lastaj Lingvoj";
 "serch-elektilo chiuj etikedo"                  = "Chiuj Lingvoj";
 

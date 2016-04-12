@@ -95,11 +95,11 @@ class ArtikoloViewController : UIViewController, Stilplena {
         let konservButono = UIButton()
         konservButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         konservButono.setImage(bildo?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-        konservButono.addTarget(self, action: "premisKonservButonon", forControlEvents: UIControlEvents.TouchUpInside)
+        konservButono.addTarget(self, action: #selector(premisKonservButonon), forControlEvents: UIControlEvents.TouchUpInside)
         let serchButono = UIButton()
         serchButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         serchButono.setImage(UIImage(named: "pikto_lenso")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-        serchButono.addTarget(self, action: "premisSerchButonon", forControlEvents: UIControlEvents.TouchUpInside)
+        serchButono.addTarget(self, action: #selector(premisSerchButonon), forControlEvents: UIControlEvents.TouchUpInside)
         butonujo.addSubview(konservButono)
         butonujo.addSubview(serchButono)
         serchButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
@@ -273,7 +273,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         for afero in novaChelo.gestureRecognizers ?? [] {
             novaChelo.removeGestureRecognizer(afero)
         }
-        let rekonilo = UILongPressGestureRecognizer(target: self, action: "premisChelon:")
+        let rekonilo = UILongPressGestureRecognizer(target: self, action: #selector(premisChelon(_:)))
         novaChelo.addGestureRecognizer(rekonilo)
         
         return novaChelo
@@ -312,7 +312,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
             }
             
             novaPiedo.prepari()
-            novaPiedo.butono?.addTarget(self, action: "premisPliajnTradukojnButonon", forControlEvents: UIControlEvents.TouchUpInside)
+            novaPiedo.butono?.addTarget(self, action: #selector(premisPliajnTradukojnButonon), forControlEvents: UIControlEvents.TouchUpInside)
             
             return novaPiedo
         }
@@ -398,7 +398,7 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
             }
         } else {
             if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
-                
+                parentViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: artikolo.titolo, style: .Plain, target: nil, action: nil)
                 (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
             }
         }

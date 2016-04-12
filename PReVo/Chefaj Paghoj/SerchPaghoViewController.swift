@@ -20,7 +20,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var trovTabelo: UITableView?
-    var lastaSercho: String? = nil
+    var lastaSercho: (Lingvo, String)? = nil
     var serchRezultoj = [(String, [NSManagedObject])]()
     
     init() {
@@ -44,12 +44,11 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
 
         efektivigiStilon()
     }
-    
+
     func aranghiNavigaciilo() {
         
         ghisdatigiTitolon()
-        
-        let dekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_traduko"), style: UIBarButtonItemStyle.Plain, target: self, action: "elektiLingvon")
+        let dekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_traduko"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(elektiLingvon))
         dekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 0)
         parentViewController?.navigationItem.rightBarButtonItem = dekstraButono
     }
@@ -85,10 +84,24 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     }
     
     func fariSerchon(teksto: String) {
-        if teksto != lastaSercho {
+        if UzantDatumaro.serchLingvo != lastaSercho?.0 || teksto != lastaSercho?.1 {
             serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
             trovTabelo?.reloadData()
-            lastaSercho = teksto
+            lastaSercho = (UzantDatumaro.serchLingvo, teksto)
+        }
+    }
+    
+    func tekstoPorDestinoj(destinoj: [NSManagedObject]) -> String {
+        
+        var bonaNomo: String = ""
+        if destinoj.count == 1 {
+            bonaNomo = (destinoj.first?.valueForKey("nomo") as? String)?.componentsSeparatedByString(", ").first ?? ""
+            if let senco = destinoj.first?.valueForKey("senco") as? String where senco != "0" {
+                bonaNomo += " (" + senco + ")"
+            }
+            return bonaNomo
+        } else {
+            return String(destinoj.count) + " trovoj"
         }
     }
 }
@@ -171,11 +184,9 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         novaChelo.textLabel?.text = serchRezultoj[indexPath.row].0
         novaChelo.isAccessibilityElement = true
         novaChelo.accessibilityLabel = novaChelo.textLabel?.text
-        
-        if serchRezultoj[indexPath.row].1.count == 1 {
-            novaChelo.detailTextLabel?.text = nil
-        } else {
-            novaChelo.detailTextLabel?.text = String(serchRezultoj[indexPath.row].1.count) + " trovoj"
+
+        if UzantDatumaro.serchLingvo != SeancDatumaro.esperantaLingvo() {
+            novaChelo.detailTextLabel?.text = tekstoPorDestinoj(serchRezultoj[indexPath.row].1)
         }
         
         return novaChelo
@@ -187,6 +198,7 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
             if let artikolObjekto = serchRezultoj[indexPath.row].1.first?.valueForKey("artikolo") as? NSManagedObject {
                 if let artikolo = Artikolo(objekto: artikolObjekto) {
                     
+                    parentViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .Plain, target: nil, action: nil)
                     if let marko = serchRezultoj[indexPath.row].1.first?.valueForKey("marko") as? String where !marko.isEmpty {
                         (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
                     } else {
