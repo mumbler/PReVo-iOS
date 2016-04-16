@@ -26,7 +26,7 @@ class Iloj {
         let unua = "chgjsuCGHJSU"
         let dua  = "ĉĥĝĵŝŭĈĜĤĴŜŬ"
         
-        for var i = 0; i < unua.characters.count; i += 1 {
+        for i in 0 ..< unua.characters.count {
             
             if unua[unua.startIndex.advancedBy(i)] == litero {
                 return dua[dua.startIndex.advancedBy(i)]
@@ -70,7 +70,7 @@ class Iloj {
             
             if (div > 0)
             {
-                for var i = 0; i < div; i += 1
+                for _ in 0 ..< div
                 {
                     romia += romiaLitero
                 }

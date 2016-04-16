@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import iOS_Slide_Menu
 
-let kreiDatumbazon = false
+var kreiDatumbazon: Bool = false
 let datumbazNomo = "PReVoDatumbazo"
 
 @UIApplicationMain
@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var konteksto: NSManagedObjectContext?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        kreiDatumbazon = NSProcessInfo.processInfo().environment["kreiDatumbazon"] == "true"
         
         TrieRegilo.konteksto = self.managedObjectContext
         DatumLegilo.konteksto = self.managedObjectContext

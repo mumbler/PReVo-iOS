@@ -24,7 +24,7 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         
         navigationBar.translucent = false
         
-        let maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItemStyle.Plain, target: self, action: "toggleLeftMenu")
+        let maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SlideNavigationController.toggleLeftMenu))
         maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
         navigationItem.leftBarButtonItem = maldekstraButono
         leftBarButtonItem = maldekstraButono

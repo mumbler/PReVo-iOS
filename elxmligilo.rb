@@ -103,7 +103,7 @@ if ARGV.count > 0
    dir = ARGV[0]
 end
 
-# === Kontroli ke la dosierujo ekzistas, kaj havas ĝustan strukturon
+# === Kontroli chu la dosierujo ekzistas, kaj havas ĝustan strukturon
 unless File.exists?(dir) and File.exists?(dir+"/cfg") and File.exists?(dir+"/xml")
    puts "Eraro: bezonataj doserujoj ne trovitas"
 end
@@ -124,8 +124,7 @@ if lingvoDos
    linio = ""
    lingvoRegesp = /\s*<lingvo kodo="([[:alpha:]]+)">(.+)<\/lingvo>\s*/
    while linio = lingvoDos.gets
-
-      if komentoRegesp.match(linio) then next end
+      #if komentoRegesp.match(linio) then next end
       rezulto = lingvoRegesp.match(linio)
       if rezulto and rezulto.size == 3
       	 lingvoj << [rezulto[1], rezulto[2]]
@@ -136,6 +135,8 @@ if lingvoDos
 else
    puts "Lingvo-lista dosiero ne troveblas"
 end
+
+lingvoDos.close
 
 # -- fakolisto
 
@@ -160,6 +161,8 @@ end
 
 # -- literoj
 #    Kodoj por neASCII literoj
+
+fakoDos.close
 
 puts "=== Legante literojn ==="
 literoDos = File.open(dir+"/cfg/literoj.xml", "r")
@@ -203,6 +206,8 @@ if literoDos
 
 end
 
+literoDos.close
+
 # ripari kelkajn mankantajn literojn
 
 if @literoj["a_a"] == nil then @literoj["a_a"] = @literoj["a_A"] end
@@ -229,6 +234,8 @@ if mallongigDos
    end
 end
 
+mallongigDos.close
+
 # -- Stiloj
 
 puts "=== Legante stilojn ==="
@@ -249,9 +256,9 @@ else
    puts "Stiloj dosiero netroveblas"
 end
 
-# === Trakti vort-dosierojn
+stilojDos.close
 
-vortoDos = File.open(dir+"/xml/")
+# === Trakti vort-dosierojn
 
 artikoloj = []
 
@@ -1057,13 +1064,16 @@ def printi(nodo)
 
 end
 
+vortoDos = File.open(dir+"/xml/")
+
 if vortoDos and File.directory?(dir+"/xml/")
 
+   puts "=== Legante artikolojn ==="
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..'
 
       #artikolDosiero = "hund.xml"
-      puts "-legante #{artikolDosiero}"
+      #puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
       dosiero.close()
@@ -1081,8 +1091,11 @@ if vortoDos and File.directory?(dir+"/xml/")
       #puts tradukoj
       #puts artikolo["tradukoj"]
       #exit
+
    end
 end
+
+vortoDos.close
 
 # ============================
 

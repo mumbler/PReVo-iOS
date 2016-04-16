@@ -81,13 +81,13 @@ class Artikolo {
                         var montriSencon = false
                         
                         let tradukArr = tradukoj as! NSArray
-                        for var i = 0; i < tradukArr.count; i += 1 {
+                        for i in 0 ..< tradukArr.count {
                             
                             let nuna = tradukArr[i] as! NSDictionary
                             let lasta: NSDictionary! = (i > 0) ? tradukArr[i-1] as? NSDictionary : nil
                             if lasta != nil && (lasta["nomo"] as? String) != (nuna["nomo"] as? String) { montriSencon = false}
 
-                            for var j = i+1; j < tradukArr.count; j += 1 {
+                            for j in i+1 ..< tradukArr.count {
                                 if (tradukArr[i]["nomo"] as? String) != (tradukArr[j]["nomo"] as? String) {
                                     break
                                 }

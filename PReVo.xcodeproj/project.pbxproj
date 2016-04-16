@@ -41,157 +41,7 @@
 		00BC6C5C1C95212A00B9BC22 /* PriViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC6C5B1C95212A00B9BC22 /* PriViewController.xib */; };
 		00BC6C5E1C95231A00B9BC22 /* LicencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BC6C5D1C95231A00B9BC22 /* LicencoViewController.swift */; };
 		00BC6C601C9524CD00B9BC22 /* LicencoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00BC6C5F1C9524CD00B9BC22 /* LicencoViewController.xib */; };
-		00E3B7B51CBD82B600CF397C /* fakoj.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B71F1CBD82B500CF397C /* fakoj.dat */; };
-		00E3B7B61CBD82B600CF397C /* indekso_ab.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7211CBD82B500CF397C /* indekso_ab.dat */; };
-		00E3B7B71CBD82B600CF397C /* indekso_af.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7221CBD82B500CF397C /* indekso_af.dat */; };
-		00E3B7B81CBD82B600CF397C /* indekso_am.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7231CBD82B500CF397C /* indekso_am.dat */; };
-		00E3B7B91CBD82B600CF397C /* indekso_ar.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7241CBD82B500CF397C /* indekso_ar.dat */; };
-		00E3B7BA1CBD82B600CF397C /* indekso_as.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7251CBD82B500CF397C /* indekso_as.dat */; };
-		00E3B7BB1CBD82B600CF397C /* indekso_ay.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7261CBD82B500CF397C /* indekso_ay.dat */; };
-		00E3B7BC1CBD82B600CF397C /* indekso_az.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7271CBD82B500CF397C /* indekso_az.dat */; };
-		00E3B7BD1CBD82B600CF397C /* indekso_ba.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7281CBD82B500CF397C /* indekso_ba.dat */; };
-		00E3B7BE1CBD82B600CF397C /* indekso_be.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7291CBD82B500CF397C /* indekso_be.dat */; };
-		00E3B7BF1CBD82B600CF397C /* indekso_bg.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B72A1CBD82B500CF397C /* indekso_bg.dat */; };
-		00E3B7C01CBD82B600CF397C /* indekso_bh.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B72B1CBD82B500CF397C /* indekso_bh.dat */; };
-		00E3B7C11CBD82B600CF397C /* indekso_bi.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B72C1CBD82B500CF397C /* indekso_bi.dat */; };
-		00E3B7C21CBD82B600CF397C /* indekso_bn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B72D1CBD82B500CF397C /* indekso_bn.dat */; };
-		00E3B7C31CBD82B600CF397C /* indekso_bo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B72E1CBD82B500CF397C /* indekso_bo.dat */; };
-		00E3B7C41CBD82B600CF397C /* indekso_br.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B72F1CBD82B500CF397C /* indekso_br.dat */; };
-		00E3B7C51CBD82B600CF397C /* indekso_ca.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7301CBD82B500CF397C /* indekso_ca.dat */; };
-		00E3B7C61CBD82B600CF397C /* indekso_co.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7311CBD82B500CF397C /* indekso_co.dat */; };
-		00E3B7C71CBD82B600CF397C /* indekso_cs.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7321CBD82B500CF397C /* indekso_cs.dat */; };
-		00E3B7C81CBD82B600CF397C /* indekso_cy.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7331CBD82B500CF397C /* indekso_cy.dat */; };
-		00E3B7C91CBD82B600CF397C /* indekso_da.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7341CBD82B500CF397C /* indekso_da.dat */; };
-		00E3B7CA1CBD82B600CF397C /* indekso_de.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7351CBD82B500CF397C /* indekso_de.dat */; };
-		00E3B7CB1CBD82B600CF397C /* indekso_dz.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7361CBD82B500CF397C /* indekso_dz.dat */; };
-		00E3B7CC1CBD82B600CF397C /* indekso_el.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7371CBD82B500CF397C /* indekso_el.dat */; };
-		00E3B7CD1CBD82B600CF397C /* indekso_en.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7381CBD82B500CF397C /* indekso_en.dat */; };
-		00E3B7CE1CBD82B600CF397C /* indekso_eo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7391CBD82B500CF397C /* indekso_eo.dat */; };
-		00E3B7CF1CBD82B600CF397C /* indekso_es.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B73A1CBD82B500CF397C /* indekso_es.dat */; };
-		00E3B7D01CBD82B600CF397C /* indekso_et.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B73B1CBD82B500CF397C /* indekso_et.dat */; };
-		00E3B7D11CBD82B600CF397C /* indekso_eu.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B73C1CBD82B500CF397C /* indekso_eu.dat */; };
-		00E3B7D21CBD82B600CF397C /* indekso_fa.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B73D1CBD82B500CF397C /* indekso_fa.dat */; };
-		00E3B7D31CBD82B600CF397C /* indekso_fi.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B73E1CBD82B500CF397C /* indekso_fi.dat */; };
-		00E3B7D41CBD82B600CF397C /* indekso_fj.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B73F1CBD82B500CF397C /* indekso_fj.dat */; };
-		00E3B7D51CBD82B600CF397C /* indekso_fo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7401CBD82B500CF397C /* indekso_fo.dat */; };
-		00E3B7D61CBD82B600CF397C /* indekso_fr.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7411CBD82B500CF397C /* indekso_fr.dat */; };
-		00E3B7D71CBD82B600CF397C /* indekso_fy.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7421CBD82B500CF397C /* indekso_fy.dat */; };
-		00E3B7D81CBD82B600CF397C /* indekso_ga.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7431CBD82B500CF397C /* indekso_ga.dat */; };
-		00E3B7D91CBD82B600CF397C /* indekso_gd.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7441CBD82B500CF397C /* indekso_gd.dat */; };
-		00E3B7DA1CBD82B600CF397C /* indekso_gl.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7451CBD82B500CF397C /* indekso_gl.dat */; };
-		00E3B7DB1CBD82B600CF397C /* indekso_gn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7461CBD82B500CF397C /* indekso_gn.dat */; };
-		00E3B7DC1CBD82B600CF397C /* indekso_grc.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7471CBD82B500CF397C /* indekso_grc.dat */; };
-		00E3B7DD1CBD82B600CF397C /* indekso_gu.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7481CBD82B500CF397C /* indekso_gu.dat */; };
-		00E3B7DE1CBD82B600CF397C /* indekso_ha.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7491CBD82B500CF397C /* indekso_ha.dat */; };
-		00E3B7DF1CBD82B600CF397C /* indekso_he.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B74A1CBD82B500CF397C /* indekso_he.dat */; };
-		00E3B7E01CBD82B600CF397C /* indekso_hi.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B74B1CBD82B500CF397C /* indekso_hi.dat */; };
-		00E3B7E11CBD82B600CF397C /* indekso_hr.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B74C1CBD82B500CF397C /* indekso_hr.dat */; };
-		00E3B7E21CBD82B600CF397C /* indekso_hu.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B74D1CBD82B500CF397C /* indekso_hu.dat */; };
-		00E3B7E31CBD82B600CF397C /* indekso_hy.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B74E1CBD82B500CF397C /* indekso_hy.dat */; };
-		00E3B7E41CBD82B600CF397C /* indekso_ia.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B74F1CBD82B500CF397C /* indekso_ia.dat */; };
-		00E3B7E51CBD82B600CF397C /* indekso_id.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7501CBD82B500CF397C /* indekso_id.dat */; };
-		00E3B7E61CBD82B600CF397C /* indekso_ie.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7511CBD82B500CF397C /* indekso_ie.dat */; };
-		00E3B7E71CBD82B600CF397C /* indekso_ik.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7521CBD82B500CF397C /* indekso_ik.dat */; };
-		00E3B7E81CBD82B600CF397C /* indekso_is.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7531CBD82B500CF397C /* indekso_is.dat */; };
-		00E3B7E91CBD82B600CF397C /* indekso_it.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7541CBD82B500CF397C /* indekso_it.dat */; };
-		00E3B7EA1CBD82B600CF397C /* indekso_iu.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7551CBD82B500CF397C /* indekso_iu.dat */; };
-		00E3B7EB1CBD82B600CF397C /* indekso_ja.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7561CBD82B500CF397C /* indekso_ja.dat */; };
-		00E3B7EC1CBD82B600CF397C /* indekso_jbo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7571CBD82B500CF397C /* indekso_jbo.dat */; };
-		00E3B7ED1CBD82B600CF397C /* indekso_jw.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7581CBD82B500CF397C /* indekso_jw.dat */; };
-		00E3B7EE1CBD82B600CF397C /* indekso_ka.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7591CBD82B500CF397C /* indekso_ka.dat */; };
-		00E3B7EF1CBD82B600CF397C /* indekso_kek.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B75A1CBD82B500CF397C /* indekso_kek.dat */; };
-		00E3B7F01CBD82B600CF397C /* indekso_kk.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B75B1CBD82B500CF397C /* indekso_kk.dat */; };
-		00E3B7F11CBD82B600CF397C /* indekso_kl.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B75C1CBD82B500CF397C /* indekso_kl.dat */; };
-		00E3B7F21CBD82B600CF397C /* indekso_km.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B75D1CBD82B500CF397C /* indekso_km.dat */; };
-		00E3B7F31CBD82B600CF397C /* indekso_kn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B75E1CBD82B500CF397C /* indekso_kn.dat */; };
-		00E3B7F41CBD82B600CF397C /* indekso_ko.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B75F1CBD82B500CF397C /* indekso_ko.dat */; };
-		00E3B7F51CBD82B600CF397C /* indekso_ks.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7601CBD82B500CF397C /* indekso_ks.dat */; };
-		00E3B7F61CBD82B600CF397C /* indekso_ku.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7611CBD82B500CF397C /* indekso_ku.dat */; };
-		00E3B7F71CBD82B600CF397C /* indekso_ky.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7621CBD82B500CF397C /* indekso_ky.dat */; };
-		00E3B7F81CBD82B600CF397C /* indekso_la.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7631CBD82B500CF397C /* indekso_la.dat */; };
-		00E3B7F91CBD82B600CF397C /* indekso_lat.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7641CBD82B500CF397C /* indekso_lat.dat */; };
-		00E3B7FA1CBD82B600CF397C /* indekso_ln.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7651CBD82B500CF397C /* indekso_ln.dat */; };
-		00E3B7FB1CBD82B600CF397C /* indekso_lo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7661CBD82B500CF397C /* indekso_lo.dat */; };
-		00E3B7FC1CBD82B600CF397C /* indekso_lt.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7671CBD82B500CF397C /* indekso_lt.dat */; };
-		00E3B7FD1CBD82B600CF397C /* indekso_lv.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7681CBD82B500CF397C /* indekso_lv.dat */; };
-		00E3B7FE1CBD82B600CF397C /* indekso_mg.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7691CBD82B500CF397C /* indekso_mg.dat */; };
-		00E3B7FF1CBD82B600CF397C /* indekso_mi.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B76A1CBD82B500CF397C /* indekso_mi.dat */; };
-		00E3B8001CBD82B600CF397C /* indekso_mk.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B76B1CBD82B500CF397C /* indekso_mk.dat */; };
-		00E3B8011CBD82B600CF397C /* indekso_ml.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B76C1CBD82B500CF397C /* indekso_ml.dat */; };
-		00E3B8021CBD82B600CF397C /* indekso_mn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B76D1CBD82B500CF397C /* indekso_mn.dat */; };
-		00E3B8031CBD82B600CF397C /* indekso_mo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B76E1CBD82B500CF397C /* indekso_mo.dat */; };
-		00E3B8041CBD82B600CF397C /* indekso_mr.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B76F1CBD82B500CF397C /* indekso_mr.dat */; };
-		00E3B8051CBD82B600CF397C /* indekso_ms.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7701CBD82B600CF397C /* indekso_ms.dat */; };
-		00E3B8061CBD82B600CF397C /* indekso_mt.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7711CBD82B600CF397C /* indekso_mt.dat */; };
-		00E3B8071CBD82B600CF397C /* indekso_my.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7721CBD82B600CF397C /* indekso_my.dat */; };
-		00E3B8081CBD82B600CF397C /* indekso_na.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7731CBD82B600CF397C /* indekso_na.dat */; };
-		00E3B8091CBD82B600CF397C /* indekso_ne.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7741CBD82B600CF397C /* indekso_ne.dat */; };
-		00E3B80A1CBD82B600CF397C /* indekso_nl.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7751CBD82B600CF397C /* indekso_nl.dat */; };
-		00E3B80B1CBD82B600CF397C /* indekso_no.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7761CBD82B600CF397C /* indekso_no.dat */; };
-		00E3B80C1CBD82B600CF397C /* indekso_oc.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7771CBD82B600CF397C /* indekso_oc.dat */; };
-		00E3B80D1CBD82B600CF397C /* indekso_om.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7781CBD82B600CF397C /* indekso_om.dat */; };
-		00E3B80E1CBD82B600CF397C /* indekso_or.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7791CBD82B600CF397C /* indekso_or.dat */; };
-		00E3B80F1CBD82B600CF397C /* indekso_os.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B77A1CBD82B600CF397C /* indekso_os.dat */; };
-		00E3B8101CBD82B600CF397C /* indekso_pa.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B77B1CBD82B600CF397C /* indekso_pa.dat */; };
-		00E3B8111CBD82B600CF397C /* indekso_pl.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B77C1CBD82B600CF397C /* indekso_pl.dat */; };
-		00E3B8121CBD82B600CF397C /* indekso_ps.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B77D1CBD82B600CF397C /* indekso_ps.dat */; };
-		00E3B8131CBD82B600CF397C /* indekso_pt.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B77E1CBD82B600CF397C /* indekso_pt.dat */; };
-		00E3B8141CBD82B600CF397C /* indekso_qu.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B77F1CBD82B600CF397C /* indekso_qu.dat */; };
-		00E3B8151CBD82B600CF397C /* indekso_rm.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7801CBD82B600CF397C /* indekso_rm.dat */; };
-		00E3B8161CBD82B600CF397C /* indekso_rn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7811CBD82B600CF397C /* indekso_rn.dat */; };
-		00E3B8171CBD82B600CF397C /* indekso_ro.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7821CBD82B600CF397C /* indekso_ro.dat */; };
-		00E3B8181CBD82B600CF397C /* indekso_ru.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7831CBD82B600CF397C /* indekso_ru.dat */; };
-		00E3B8191CBD82B600CF397C /* indekso_rw.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7841CBD82B600CF397C /* indekso_rw.dat */; };
-		00E3B81A1CBD82B600CF397C /* indekso_sa.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7851CBD82B600CF397C /* indekso_sa.dat */; };
-		00E3B81B1CBD82B600CF397C /* indekso_sd.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7861CBD82B600CF397C /* indekso_sd.dat */; };
-		00E3B81C1CBD82B600CF397C /* indekso_sg.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7871CBD82B600CF397C /* indekso_sg.dat */; };
-		00E3B81D1CBD82B600CF397C /* indekso_sh.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7881CBD82B600CF397C /* indekso_sh.dat */; };
-		00E3B81E1CBD82B600CF397C /* indekso_si.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7891CBD82B600CF397C /* indekso_si.dat */; };
-		00E3B81F1CBD82B600CF397C /* indekso_sk.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B78A1CBD82B600CF397C /* indekso_sk.dat */; };
-		00E3B8201CBD82B600CF397C /* indekso_sl.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B78B1CBD82B600CF397C /* indekso_sl.dat */; };
-		00E3B8211CBD82B600CF397C /* indekso_sm.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B78C1CBD82B600CF397C /* indekso_sm.dat */; };
-		00E3B8221CBD82B600CF397C /* indekso_sn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B78D1CBD82B600CF397C /* indekso_sn.dat */; };
-		00E3B8231CBD82B600CF397C /* indekso_so.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B78E1CBD82B600CF397C /* indekso_so.dat */; };
-		00E3B8241CBD82B600CF397C /* indekso_sq.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B78F1CBD82B600CF397C /* indekso_sq.dat */; };
-		00E3B8251CBD82B600CF397C /* indekso_sr.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7901CBD82B600CF397C /* indekso_sr.dat */; };
-		00E3B8261CBD82B600CF397C /* indekso_ss.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7911CBD82B600CF397C /* indekso_ss.dat */; };
-		00E3B8271CBD82B600CF397C /* indekso_st.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7921CBD82B600CF397C /* indekso_st.dat */; };
-		00E3B8281CBD82B600CF397C /* indekso_su.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7931CBD82B600CF397C /* indekso_su.dat */; };
-		00E3B8291CBD82B600CF397C /* indekso_sv.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7941CBD82B600CF397C /* indekso_sv.dat */; };
-		00E3B82A1CBD82B600CF397C /* indekso_sw.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7951CBD82B600CF397C /* indekso_sw.dat */; };
-		00E3B82B1CBD82B600CF397C /* indekso_ta.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7961CBD82B600CF397C /* indekso_ta.dat */; };
-		00E3B82C1CBD82B600CF397C /* indekso_te.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7971CBD82B600CF397C /* indekso_te.dat */; };
-		00E3B82D1CBD82B600CF397C /* indekso_tg.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7981CBD82B600CF397C /* indekso_tg.dat */; };
-		00E3B82E1CBD82B600CF397C /* indekso_th.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7991CBD82B600CF397C /* indekso_th.dat */; };
-		00E3B82F1CBD82B600CF397C /* indekso_ti.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B79A1CBD82B600CF397C /* indekso_ti.dat */; };
-		00E3B8301CBD82B600CF397C /* indekso_tk.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B79B1CBD82B600CF397C /* indekso_tk.dat */; };
-		00E3B8311CBD82B600CF397C /* indekso_tl.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B79C1CBD82B600CF397C /* indekso_tl.dat */; };
-		00E3B8321CBD82B600CF397C /* indekso_tn.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B79D1CBD82B600CF397C /* indekso_tn.dat */; };
-		00E3B8331CBD82B600CF397C /* indekso_to.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B79E1CBD82B600CF397C /* indekso_to.dat */; };
-		00E3B8341CBD82B600CF397C /* indekso_tp.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B79F1CBD82B600CF397C /* indekso_tp.dat */; };
-		00E3B8351CBD82B600CF397C /* indekso_tr.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A01CBD82B600CF397C /* indekso_tr.dat */; };
-		00E3B8361CBD82B600CF397C /* indekso_ts.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A11CBD82B600CF397C /* indekso_ts.dat */; };
-		00E3B8371CBD82B600CF397C /* indekso_tt.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A21CBD82B600CF397C /* indekso_tt.dat */; };
-		00E3B8381CBD82B600CF397C /* indekso_tw.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A31CBD82B600CF397C /* indekso_tw.dat */; };
-		00E3B8391CBD82B600CF397C /* indekso_ug.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A41CBD82B600CF397C /* indekso_ug.dat */; };
-		00E3B83A1CBD82B600CF397C /* indekso_uk.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A51CBD82B600CF397C /* indekso_uk.dat */; };
-		00E3B83B1CBD82B600CF397C /* indekso_ur.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A61CBD82B600CF397C /* indekso_ur.dat */; };
-		00E3B83C1CBD82B600CF397C /* indekso_uz.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A71CBD82B600CF397C /* indekso_uz.dat */; };
-		00E3B83D1CBD82B600CF397C /* indekso_vi.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A81CBD82B600CF397C /* indekso_vi.dat */; };
-		00E3B83E1CBD82B600CF397C /* indekso_vo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7A91CBD82B600CF397C /* indekso_vo.dat */; };
-		00E3B83F1CBD82B600CF397C /* indekso_wo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7AA1CBD82B600CF397C /* indekso_wo.dat */; };
-		00E3B8401CBD82B600CF397C /* indekso_xh.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7AB1CBD82B600CF397C /* indekso_xh.dat */; };
-		00E3B8411CBD82B600CF397C /* indekso_yi.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7AC1CBD82B600CF397C /* indekso_yi.dat */; };
-		00E3B8421CBD82B600CF397C /* indekso_yo.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7AD1CBD82B600CF397C /* indekso_yo.dat */; };
-		00E3B8431CBD82B600CF397C /* indekso_za.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7AE1CBD82B600CF397C /* indekso_za.dat */; };
-		00E3B8441CBD82B600CF397C /* indekso_zh.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7AF1CBD82B600CF397C /* indekso_zh.dat */; };
-		00E3B8451CBD82B600CF397C /* indekso_zu.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7B01CBD82B600CF397C /* indekso_zu.dat */; };
-		00E3B8461CBD82B600CF397C /* lingvoj.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7B11CBD82B600CF397C /* lingvoj.dat */; };
-		00E3B8471CBD82B600CF397C /* mallongigoj.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7B21CBD82B600CF397C /* mallongigoj.dat */; };
-		00E3B8481CBD82B600CF397C /* stiloj.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7B31CBD82B600CF397C /* stiloj.dat */; };
-		00E3B8491CBD82B600CF397C /* vortoj.dat in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B7B41CBD82B600CF397C /* vortoj.dat */; };
 		00E3B8511CBD998B00CF397C /* PReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00E3B84F1CBD998B00CF397C /* PReVoDatumoj.xcdatamodeld */; };
-		00E3B8531CBD99AC00CF397C /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00E3B8521CBD99A900CF397C /* PReVoDatumbazo.sqlite */; };
 		00E4C05E1CAD739C000A4849 /* VortoDisigiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E4C05D1CAD739C000A4849 /* VortoDisigiloViewController.swift */; };
 		00E4C0601CAD742B000A4849 /* VortoDisigiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E4C05F1CAD742B000A4849 /* VortoDisigiloViewController.xib */; };
 		00E56D231C94FB8700D9C895 /* AgordojViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E56D221C94FB8700D9C895 /* AgordojViewController.swift */; };
@@ -207,6 +57,7 @@
 		00EAB8CA1C91FE4100AA5C0C /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */; };
 		00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */; };
 		00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */; };
+		00EE035C1CBEA984002A4EDA /* komenci.sh in Resources */ = {isa = PBXBuildFile; fileRef = 00EE035B1CBEA984002A4EDA /* komenci.sh */; };
 		00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */; };
 		00F09C671C922CE400B29687 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C661C922CE400B29687 /* DatumLegilo.swift */; };
 		00F09C691C922CEB00B29687 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F09C681C922CEB00B29687 /* TrieRegilo.swift */; };
@@ -424,7 +275,6 @@
 		00E3B7B31CBD82B600CF397C /* stiloj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stiloj.dat; sourceTree = "<group>"; };
 		00E3B7B41CBD82B600CF397C /* vortoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vortoj.dat; sourceTree = "<group>"; };
 		00E3B8501CBD998B00CF397C /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
-		00E3B8521CBD99A900CF397C /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00E4C05D1CAD739C000A4849 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
 		00E4C05F1CAD742B000A4849 /* VortoDisigiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VortoDisigiloViewController.xib; sourceTree = "<group>"; };
 		00E56D221C94FB8700D9C895 /* AgordojViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgordojViewController.swift; sourceTree = "<group>"; };
@@ -440,6 +290,7 @@
 		00EAB8C91C91FE4100AA5C0C /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
 		00EAB8CB1C91FE5300AA5C0C /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
 		00EAB8CD1C92000400AA5C0C /* IngoPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngoPaghoViewController.xib; sourceTree = "<group>"; };
+		00EE035B1CBEA984002A4EDA /* komenci.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = komenci.sh; sourceTree = SOURCE_ROOT; };
 		00F09C601C921B1D00B29687 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
 		00F09C661C922CE400B29687 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
 		00F09C681C922CEB00B29687 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
@@ -500,6 +351,7 @@
 		000985991C31F0CB0083DE24 /* PReVo */ = {
 			isa = PBXGroup;
 			children = (
+				00EE035B1CBEA984002A4EDA /* komenci.sh */,
 				000985A61C31F0CB0083DE24 /* Info.plist */,
 				00F1A18D1C9A844400261ACF /* Localizable.strings */,
 				000985A31C31F0CB0083DE24 /* LaunchScreen.storyboard */,
@@ -792,7 +644,6 @@
 		00F09C621C92273300B29687 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				00E3B8521CBD99A900CF397C /* PReVoDatumbazo.sqlite */,
 				00E3B84F1CBD998B00CF397C /* PReVoDatumoj.xcdatamodeld */,
 				00E3B71E1CBD82B500CF397C /* preparita */,
 			);
@@ -923,177 +774,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E3B8531CBD99AC00CF397C /* PReVoDatumbazo.sqlite in Resources */,
-				00E3B8291CBD82B600CF397C /* indekso_sv.dat in Resources */,
-				00E3B7D71CBD82B600CF397C /* indekso_fy.dat in Resources */,
-				00E3B8131CBD82B600CF397C /* indekso_pt.dat in Resources */,
-				00E3B7FC1CBD82B600CF397C /* indekso_lt.dat in Resources */,
-				00E3B81C1CBD82B600CF397C /* indekso_sg.dat in Resources */,
-				00E3B82E1CBD82B600CF397C /* indekso_th.dat in Resources */,
-				00E3B7D31CBD82B600CF397C /* indekso_fi.dat in Resources */,
-				00E3B7F21CBD82B600CF397C /* indekso_km.dat in Resources */,
-				00E3B7C41CBD82B600CF397C /* indekso_br.dat in Resources */,
-				00E3B8471CBD82B600CF397C /* mallongigoj.dat in Resources */,
-				00E3B7C11CBD82B600CF397C /* indekso_bi.dat in Resources */,
-				00E3B7B61CBD82B600CF397C /* indekso_ab.dat in Resources */,
-				00E3B7C51CBD82B600CF397C /* indekso_ca.dat in Resources */,
-				00E3B7C31CBD82B600CF397C /* indekso_bo.dat in Resources */,
-				00E3B7DE1CBD82B600CF397C /* indekso_ha.dat in Resources */,
-				00E3B7F11CBD82B600CF397C /* indekso_kl.dat in Resources */,
-				00E3B7D51CBD82B600CF397C /* indekso_fo.dat in Resources */,
-				00E3B7BC1CBD82B600CF397C /* indekso_az.dat in Resources */,
-				00E3B8081CBD82B600CF397C /* indekso_na.dat in Resources */,
-				00E3B83C1CBD82B600CF397C /* indekso_uz.dat in Resources */,
-				00E3B8271CBD82B600CF397C /* indekso_st.dat in Resources */,
-				00E3B8251CBD82B600CF397C /* indekso_sr.dat in Resources */,
-				00E3B8031CBD82B600CF397C /* indekso_mo.dat in Resources */,
-				00E3B81B1CBD82B600CF397C /* indekso_sd.dat in Resources */,
 				00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */,
-				00E3B8281CBD82B600CF397C /* indekso_su.dat in Resources */,
 				003E19811C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib in Resources */,
-				00E3B8171CBD82B600CF397C /* indekso_ro.dat in Resources */,
-				00E3B7CC1CBD82B600CF397C /* indekso_el.dat in Resources */,
-				00E3B7B81CBD82B600CF397C /* indekso_am.dat in Resources */,
-				00E3B81A1CBD82B600CF397C /* indekso_sa.dat in Resources */,
-				00E3B8151CBD82B600CF397C /* indekso_rm.dat in Resources */,
-				00E3B80F1CBD82B600CF397C /* indekso_os.dat in Resources */,
-				00E3B7EE1CBD82B600CF397C /* indekso_ka.dat in Resources */,
-				00E3B7DF1CBD82B600CF397C /* indekso_he.dat in Resources */,
-				00E3B8221CBD82B600CF397C /* indekso_sn.dat in Resources */,
+				00EE035C1CBEA984002A4EDA /* komenci.sh in Resources */,
 				00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */,
-				00E3B7D61CBD82B600CF397C /* indekso_fr.dat in Resources */,
-				00E3B7B51CBD82B600CF397C /* fakoj.dat in Resources */,
-				00E3B81F1CBD82B600CF397C /* indekso_sk.dat in Resources */,
-				00E3B7EA1CBD82B600CF397C /* indekso_iu.dat in Resources */,
-				00E3B81D1CBD82B600CF397C /* indekso_sh.dat in Resources */,
 				00BC6C5C1C95212A00B9BC22 /* PriViewController.xib in Resources */,
-				00E3B8341CBD82B600CF397C /* indekso_tp.dat in Resources */,
-				00E3B7D11CBD82B600CF397C /* indekso_eu.dat in Resources */,
-				00E3B7CE1CBD82B600CF397C /* indekso_eo.dat in Resources */,
 				003E197B1C93876500A1BFB1 /* SerchLingvoElektiloViewController.xib in Resources */,
-				00E3B8331CBD82B600CF397C /* indekso_to.dat in Resources */,
 				00E56D251C9500FA00D9C895 /* AgordojViewController.xib in Resources */,
-				00E3B7FE1CBD82B600CF397C /* indekso_mg.dat in Resources */,
-				00E3B8361CBD82B600CF397C /* indekso_ts.dat in Resources */,
-				00E3B8451CBD82B600CF397C /* indekso_zu.dat in Resources */,
-				00E3B7D21CBD82B600CF397C /* indekso_fa.dat in Resources */,
-				00E3B7BF1CBD82B600CF397C /* indekso_bg.dat in Resources */,
-				00E3B7F51CBD82B600CF397C /* indekso_ks.dat in Resources */,
-				00E3B7CA1CBD82B600CF397C /* indekso_de.dat in Resources */,
-				00E3B83A1CBD82B600CF397C /* indekso_uk.dat in Resources */,
-				00E3B7BA1CBD82B600CF397C /* indekso_as.dat in Resources */,
-				00E3B8481CBD82B600CF397C /* stiloj.dat in Resources */,
-				00E3B8491CBD82B600CF397C /* vortoj.dat in Resources */,
-				00E3B7EF1CBD82B600CF397C /* indekso_kek.dat in Resources */,
-				00E3B7F01CBD82B600CF397C /* indekso_kk.dat in Resources */,
 				00BC6C601C9524CD00B9BC22 /* LicencoViewController.xib in Resources */,
 				00F09C611C921B1D00B29687 /* FlankMenuoViewController.xib in Resources */,
-				00E3B80A1CBD82B600CF397C /* indekso_nl.dat in Resources */,
-				00E3B8391CBD82B600CF397C /* indekso_ug.dat in Resources */,
-				00E3B80C1CBD82B600CF397C /* indekso_oc.dat in Resources */,
-				00E3B8441CBD82B600CF397C /* indekso_zh.dat in Resources */,
-				00E3B8091CBD82B600CF397C /* indekso_ne.dat in Resources */,
-				00E3B80D1CBD82B600CF397C /* indekso_om.dat in Resources */,
-				00E3B8021CBD82B600CF397C /* indekso_mn.dat in Resources */,
-				00E3B7CD1CBD82B600CF397C /* indekso_en.dat in Resources */,
-				00E3B7F71CBD82B600CF397C /* indekso_ky.dat in Resources */,
-				00E3B82F1CBD82B600CF397C /* indekso_ti.dat in Resources */,
-				00E3B7BE1CBD82B600CF397C /* indekso_be.dat in Resources */,
 				00F1A18B1C9A844400261ACF /* Localizable.strings in Resources */,
-				00E3B7F41CBD82B600CF397C /* indekso_ko.dat in Resources */,
-				00E3B8051CBD82B600CF397C /* indekso_ms.dat in Resources */,
-				00E3B8101CBD82B600CF397C /* indekso_pa.dat in Resources */,
-				00E3B7E41CBD82B600CF397C /* indekso_ia.dat in Resources */,
-				00E3B7D91CBD82B600CF397C /* indekso_gd.dat in Resources */,
-				00E3B7E61CBD82B600CF397C /* indekso_ie.dat in Resources */,
-				00E3B80E1CBD82B600CF397C /* indekso_or.dat in Resources */,
-				00E3B7FB1CBD82B600CF397C /* indekso_lo.dat in Resources */,
-				00E3B83E1CBD82B600CF397C /* indekso_vo.dat in Resources */,
-				00E3B8311CBD82B600CF397C /* indekso_tl.dat in Resources */,
-				00E3B7EB1CBD82B600CF397C /* indekso_ja.dat in Resources */,
-				00E3B7FD1CBD82B600CF397C /* indekso_lv.dat in Resources */,
-				00E3B83D1CBD82B600CF397C /* indekso_vi.dat in Resources */,
-				00E3B7F31CBD82B600CF397C /* indekso_kn.dat in Resources */,
-				00E3B7D81CBD82B600CF397C /* indekso_ga.dat in Resources */,
 				00BC6C581C951CBE00B9BC22 /* StiloElektiloViewController.xib in Resources */,
-				00E3B83B1CBD82B600CF397C /* indekso_ur.dat in Resources */,
-				00E3B8071CBD82B600CF397C /* indekso_my.dat in Resources */,
-				00E3B7E71CBD82B600CF397C /* indekso_ik.dat in Resources */,
-				00E3B8351CBD82B600CF397C /* indekso_tr.dat in Resources */,
-				00E3B8211CBD82B600CF397C /* indekso_sm.dat in Resources */,
-				00E3B7CF1CBD82B600CF397C /* indekso_es.dat in Resources */,
-				00E3B8401CBD82B600CF397C /* indekso_xh.dat in Resources */,
-				00E3B7EC1CBD82B600CF397C /* indekso_jbo.dat in Resources */,
-				00E3B7FF1CBD82B600CF397C /* indekso_mi.dat in Resources */,
-				00E3B7D01CBD82B600CF397C /* indekso_et.dat in Resources */,
-				00E3B7E51CBD82B600CF397C /* indekso_id.dat in Resources */,
-				00E3B8241CBD82B600CF397C /* indekso_sq.dat in Resources */,
 				003E19831C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
-				00E3B8301CBD82B600CF397C /* indekso_tk.dat in Resources */,
-				00E3B7E91CBD82B600CF397C /* indekso_it.dat in Resources */,
-				00E3B82C1CBD82B600CF397C /* indekso_te.dat in Resources */,
-				00E3B8411CBD82B600CF397C /* indekso_yi.dat in Resources */,
-				00E3B8061CBD82B600CF397C /* indekso_mt.dat in Resources */,
-				00E3B8461CBD82B600CF397C /* lingvoj.dat in Resources */,
-				00E3B83F1CBD82B600CF397C /* indekso_wo.dat in Resources */,
-				00E3B8111CBD82B600CF397C /* indekso_pl.dat in Resources */,
-				00E3B7C01CBD82B600CF397C /* indekso_bh.dat in Resources */,
-				00E3B8381CBD82B600CF397C /* indekso_tw.dat in Resources */,
-				00E3B8161CBD82B600CF397C /* indekso_rn.dat in Resources */,
-				00E3B7C71CBD82B600CF397C /* indekso_cs.dat in Resources */,
-				00E3B8201CBD82B600CF397C /* indekso_sl.dat in Resources */,
-				00E3B7E81CBD82B600CF397C /* indekso_is.dat in Resources */,
-				00E3B7F81CBD82B600CF397C /* indekso_la.dat in Resources */,
-				00E3B82D1CBD82B600CF397C /* indekso_tg.dat in Resources */,
-				00E3B8121CBD82B600CF397C /* indekso_ps.dat in Resources */,
-				00E3B8431CBD82B600CF397C /* indekso_za.dat in Resources */,
-				00E3B7DB1CBD82B600CF397C /* indekso_gn.dat in Resources */,
-				00E3B7C91CBD82B600CF397C /* indekso_da.dat in Resources */,
-				00E3B7F61CBD82B600CF397C /* indekso_ku.dat in Resources */,
 				000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */,
 				00E4C0601CAD742B000A4849 /* VortoDisigiloViewController.xib in Resources */,
 				003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */,
-				00E3B7B71CBD82B600CF397C /* indekso_af.dat in Resources */,
-				00E3B8371CBD82B600CF397C /* indekso_tt.dat in Resources */,
 				008DA44C1C94CF2A0082C601 /* FlankMenuoTableViewCell.xib in Resources */,
-				00E3B7ED1CBD82B600CF397C /* indekso_jw.dat in Resources */,
-				00E3B7E11CBD82B600CF397C /* indekso_hr.dat in Resources */,
-				00E3B7DD1CBD82B600CF397C /* indekso_gu.dat in Resources */,
-				00E3B7DA1CBD82B600CF397C /* indekso_gl.dat in Resources */,
-				00E3B8231CBD82B600CF397C /* indekso_so.dat in Resources */,
-				00E3B8181CBD82B600CF397C /* indekso_ru.dat in Resources */,
-				00E3B7E31CBD82B600CF397C /* indekso_hy.dat in Resources */,
-				00E3B8261CBD82B600CF397C /* indekso_ss.dat in Resources */,
 				000985A21C31F0CB0083DE24 /* Assets.xcassets in Resources */,
-				00E3B80B1CBD82B600CF397C /* indekso_no.dat in Resources */,
-				00E3B8421CBD82B600CF397C /* indekso_yo.dat in Resources */,
-				00E3B7F91CBD82B600CF397C /* indekso_lat.dat in Resources */,
 				008DA4471C947BA20082C601 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
-				00E3B8011CBD82B600CF397C /* indekso_ml.dat in Resources */,
-				00E3B7C61CBD82B600CF397C /* indekso_co.dat in Resources */,
 				003E19891C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
-				00E3B7E01CBD82B600CF397C /* indekso_hi.dat in Resources */,
-				00E3B8141CBD82B600CF397C /* indekso_qu.dat in Resources */,
-				00E3B7FA1CBD82B600CF397C /* indekso_ln.dat in Resources */,
-				00E3B7CB1CBD82B600CF397C /* indekso_dz.dat in Resources */,
-				00E3B7BB1CBD82B600CF397C /* indekso_ay.dat in Resources */,
-				00E3B7DC1CBD82B600CF397C /* indekso_grc.dat in Resources */,
-				00E3B7B91CBD82B600CF397C /* indekso_ar.dat in Resources */,
 				008DA4501C94D6A20082C601 /* HistorioViewController.xib in Resources */,
 				008DA4541C94E61C0082C601 /* KonservitajViewController.xib in Resources */,
-				00E3B7BD1CBD82B600CF397C /* indekso_ba.dat in Resources */,
-				00E3B8321CBD82B600CF397C /* indekso_tn.dat in Resources */,
-				00E3B8191CBD82B600CF397C /* indekso_rw.dat in Resources */,
-				00E3B8041CBD82B600CF397C /* indekso_mr.dat in Resources */,
-				00E3B7C21CBD82B600CF397C /* indekso_bn.dat in Resources */,
-				00E3B7C81CBD82B600CF397C /* indekso_cy.dat in Resources */,
-				00E3B8001CBD82B600CF397C /* indekso_mk.dat in Resources */,
-				00E3B82A1CBD82B600CF397C /* indekso_sw.dat in Resources */,
-				00E3B7E21CBD82B600CF397C /* indekso_hu.dat in Resources */,
-				00E3B81E1CBD82B600CF397C /* indekso_si.dat in Resources */,
 				003E19771C93667B00A1BFB1 /* ArtikoloTableViewCell.xib in Resources */,
-				00E3B82B1CBD82B600CF397C /* indekso_ta.dat in Resources */,
-				00E3B7D41CBD82B600CF397C /* indekso_fj.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

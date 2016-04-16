@@ -97,7 +97,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         
         novaChelo.prepari()
         novaChelo.shaltilo?.tag = indexPath.row + ((indexPath.row >= eoIndekso) ? 1 : 0)
-        novaChelo.shaltilo?.addTarget(self, action: Selector("shaltisLingvon:"), forControlEvents: UIControlEvents.ValueChanged)
+        novaChelo.shaltilo?.addTarget(self, action: #selector(TradukLingvojElektiloViewController.shaltisLingvon(_:)), forControlEvents: UIControlEvents.ValueChanged)
         
         if indexPath.section == 0 {
             
