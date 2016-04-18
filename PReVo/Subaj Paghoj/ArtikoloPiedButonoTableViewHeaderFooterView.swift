@@ -16,6 +16,7 @@ class ArtikoloPiedButonoTableViewHeaderFooterView : UITableViewHeaderFooterView,
     
     func prepari() {
         
+        butono?.titleLabel?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody);
         butono?.titleLabel?.text = NSLocalizedString("traduk-elektilo butono titolo", comment: "")
         butono?.layer.borderWidth = 1
         butono?.layer.cornerRadius = 9

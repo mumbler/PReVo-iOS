@@ -49,6 +49,8 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
         lingvoTabelo?.dataSource = self
         lingvoTabelo?.registerNib(UINib(nibName: "TradukLingvoElektiloTableViewCell", bundle: nil), forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         efektivigiStilon()
     }
     
@@ -62,6 +64,7 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
     
     func efektivigiStilon() {
 
+        lingvoTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         lingvoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         lingvoTabelo?.reloadData()
@@ -164,6 +167,12 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }    
 }
 
 // Shaltilo reagado
@@ -178,5 +187,13 @@ extension TradukLingvojElektiloViewController {
         }
         
         shanghisLingvojn = true
+    }
+}
+
+// Respondi al mediaj shanghoj
+extension TradukLingvojElektiloViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        lingvoTabelo?.reloadData()
     }
 }

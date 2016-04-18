@@ -54,6 +54,8 @@ class ArtikoloViewController : UIViewController, Stilplena {
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
         vortTabelo?.registerNib(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         efektivigiStilon()
         
     }
@@ -78,6 +80,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         
         navigationController?.navigationBar.tintColor = UzantDatumaro.stilo.navTintKoloro
         vortTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        vortTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         vortTabelo?.reloadData()
     }
     
@@ -346,7 +349,8 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if section == 1 {
-            return 50
+            let desc = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            return 50 + desc.pointSize - 14
         }
         
         return 1
@@ -361,7 +365,8 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
         if section == 1 {
-            return 50
+            let desc = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            return 50 + desc.pointSize - 14
         }
         
         return 0
@@ -404,3 +409,12 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
         }
     }
 }
+
+// Respondi al mediaj shanghoj
+extension ArtikoloViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        vortTabelo?.reloadData()
+    }
+}
+

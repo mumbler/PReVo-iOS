@@ -28,6 +28,8 @@
 		003E19891C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 003E19881C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */; };
 		008472771CC2EDCC00CB17BF /* elxmligilo.rb in Resources */ = {isa = PBXBuildFile; fileRef = 008472751CC2EDCC00CB17BF /* elxmligilo.rb */; };
 		008472781CC2EDCC00CB17BF /* prepari.sh in Resources */ = {isa = PBXBuildFile; fileRef = 008472761CC2EDCC00CB17BF /* prepari.sh */; };
+		0084727A1CC5216300CB17BF /* ShanghiTekstGrandeconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008472791CC5216300CB17BF /* ShanghiTekstGrandeconViewController.xib */; };
+		0084727C1CC5221400CB17BF /* PReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0084727B1CC5220F00CB17BF /* PReVoDatumbazo.sqlite */; };
 		008DA4451C947B6D0082C601 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DA4441C947B6D0082C601 /* ArtikoloKapoTableViewHeaderFooterView.swift */; };
 		008DA4471C947BA20082C601 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DA4461C947BA20082C601 /* ArtikoloKapoTableViewHeaderFooterView.xib */; };
 		008DA44A1C94CEA70082C601 /* FlankMenuoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DA4491C94CEA70082C601 /* FlankMenuoTableViewCell.swift */; };
@@ -111,6 +113,8 @@
 		003E19881C93B56100A1BFB1 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloPiedButonoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		008472751CC2EDCC00CB17BF /* elxmligilo.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = elxmligilo.rb; sourceTree = "<group>"; };
 		008472761CC2EDCC00CB17BF /* prepari.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = prepari.sh; sourceTree = "<group>"; };
+		008472791CC5216300CB17BF /* ShanghiTekstGrandeconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShanghiTekstGrandeconViewController.xib; sourceTree = "<group>"; };
+		0084727B1CC5220F00CB17BF /* PReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		008DA4441C947B6D0082C601 /* ArtikoloKapoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloKapoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		008DA4461C947BA20082C601 /* ArtikoloKapoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloKapoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		008DA4491C94CEA70082C601 /* FlankMenuoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoTableViewCell.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 				00BC6C571C951CBE00B9BC22 /* StiloElektiloViewController.xib */,
 				00BC6C5D1C95231A00B9BC22 /* LicencoViewController.swift */,
 				00BC6C5F1C9524CD00B9BC22 /* LicencoViewController.xib */,
+				008472791CC5216300CB17BF /* ShanghiTekstGrandeconViewController.xib */,
 			);
 			path = "Subaj Paghoj";
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 		00F09C621C92273300B29687 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
+				0084727B1CC5220F00CB17BF /* PReVoDatumbazo.sqlite */,
 				00E3B84F1CBD998B00CF397C /* PReVoDatumoj.xcdatamodeld */,
 			);
 			path = Datumoj;
@@ -472,6 +478,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0084727C1CC5221400CB17BF /* PReVoDatumbazo.sqlite in Resources */,
 				00EAB8CE1C92000400AA5C0C /* IngoPaghoViewController.xib in Resources */,
 				003E19811C93A8B300A1BFB1 /* TradukLingvojElektiloViewController.xib in Resources */,
 				00EAB8CC1C91FE5300AA5C0C /* SerchPaghoViewController.xib in Resources */,
@@ -485,6 +492,7 @@
 				00BC6C581C951CBE00B9BC22 /* StiloElektiloViewController.xib in Resources */,
 				003E19831C93AFD400A1BFB1 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
 				000985A51C31F0CB0083DE24 /* LaunchScreen.storyboard in Resources */,
+				0084727A1CC5216300CB17BF /* ShanghiTekstGrandeconViewController.xib in Resources */,
 				00E4C0601CAD742B000A4849 /* VortoDisigiloViewController.xib in Resources */,
 				003E19701C93200300A1BFB1 /* ArtikoloViewController.xib in Resources */,
 				008DA44C1C94CF2A0082C601 /* FlankMenuoTableViewCell.xib in Resources */,

@@ -99,4 +99,11 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }

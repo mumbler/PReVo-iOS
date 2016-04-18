@@ -15,6 +15,7 @@ class ArtikoloKapoTableViewHeaderFooterView : UITableViewHeaderFooterView, Stilp
     
     func prepari() {
         
+        etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody);
         efektivigiStilon()
     }
     

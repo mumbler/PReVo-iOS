@@ -43,11 +43,14 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
         lingvoTabelo?.dataSource = self
         lingvoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         efektivigiStilon()
     }
     
     func efektivigiStilon() {
         
+        lingvoTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         lingvoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         lingvoTabelo?.reloadData()
@@ -136,4 +139,20 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
         lingvoTabelo?.deselectRowAtIndexPath(indexPath, animated: true)
         forigiSin()
     }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
+
+// Respondi al mediaj shanghoj
+extension SerchLingvoElektiloViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        lingvoTabelo?.reloadData()
+    }
+}
+

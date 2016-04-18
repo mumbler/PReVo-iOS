@@ -240,7 +240,7 @@ class Iloj {
     static func pretigiTekston(teksto: String, kunMarkoj markoj: [String : [(Int, Int, String)]] ) -> NSMutableAttributedString {
         
         let mutaciaTeksto: NSMutableAttributedString = NSMutableAttributedString(string: forigiAngulojn(teksto))
-        let tekstGrandeco = CGFloat(16.0)
+        let tekstGrandeco = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).pointSize
         let tekstStilo = UIFont.systemFontOfSize(tekstGrandeco)
         let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
         let akcentaTeksto = UIFont.italicSystemFontOfSize(tekstGrandeco)

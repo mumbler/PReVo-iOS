@@ -16,32 +16,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-1d-Dhf" userLabel="Titola View">
-                        <rect key="frame" x="0.0" y="0.0" width="434" height="35"/>
+                        <rect key="frame" x="0.0" y="0.0" width="434" height="36"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-C6-8DQ" userLabel="Titola Etikedo" customClass="TTTAttributedLabel">
-                                <rect key="frame" x="8" y="7.5" width="418" height="20.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Label">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-C6-8DQ" userLabel="Titola Etikedo" customClass="TTTAttributedLabel">
+                                <rect key="frame" x="8" y="8" width="418" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="height" secondItem="QPM-C6-8DQ" secondAttribute="height" constant="16" id="3Ld-Yu-oM2"/>
                             <constraint firstItem="QPM-C6-8DQ" firstAttribute="leading" secondItem="DFi-1d-Dhf" secondAttribute="leading" constant="8" id="9ER-QH-sDa"/>
                             <constraint firstAttribute="trailing" secondItem="QPM-C6-8DQ" secondAttribute="trailing" constant="8" id="Knu-1z-rIu"/>
-                            <constraint firstItem="QPM-C6-8DQ" firstAttribute="centerY" secondItem="DFi-1d-Dhf" secondAttribute="centerY" id="NuR-on-5MD"/>
-                            <constraint firstAttribute="height" priority="999" constant="35" id="jrb-u4-vSn"/>
+                            <constraint firstItem="QPM-C6-8DQ" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="top" constant="8" id="me1-MJ-1bK"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-uM-sRB" userLabel="Chefa Etikedo" customClass="TTTAttributedLabel">
-                        <rect key="frame" x="8" y="43" width="418" height="104.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-uM-sRB" userLabel="Chefa Etikedo" customClass="TTTAttributedLabel">
+                        <rect key="frame" x="8" y="44" width="418" height="103.5"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -49,7 +43,7 @@
                 <constraints>
                     <constraint firstItem="DFi-1d-Dhf" firstAttribute="top" secondItem="Qva-HQ-aAy" secondAttribute="topMargin" constant="-8" id="S3k-Sc-gFC"/>
                     <constraint firstItem="DKb-uM-sRB" firstAttribute="leading" secondItem="Qva-HQ-aAy" secondAttribute="leadingMargin" id="TCN-2e-zgX"/>
-                    <constraint firstItem="DKb-uM-sRB" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="bottom" constant="8" id="Ud3-XS-Q2o"/>
+                    <constraint firstItem="DKb-uM-sRB" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="bottom" priority="999" constant="8" id="ULJ-We-QBw"/>
                     <constraint firstItem="DFi-1d-Dhf" firstAttribute="leading" secondItem="Qva-HQ-aAy" secondAttribute="leadingMargin" constant="-8" id="bK0-NT-0Ka"/>
                     <constraint firstItem="DKb-uM-sRB" firstAttribute="trailing" secondItem="Qva-HQ-aAy" secondAttribute="trailingMargin" id="fkQ-7g-LlI"/>
                     <constraint firstItem="DKb-uM-sRB" firstAttribute="bottom" secondItem="Qva-HQ-aAy" secondAttribute="bottomMargin" id="npp-E5-hht"/>
@@ -58,7 +52,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="chefaEtikedo" destination="DKb-uM-sRB" id="CpS-lP-joO"/>
-                <outlet property="titolaAlteco" destination="jrb-u4-vSn" id="pqd-t1-y1a"/>
                 <outlet property="titolaEtikedo" destination="QPM-C6-8DQ" id="B7O-at-wmC"/>
                 <outlet property="titolaRegiono" destination="DFi-1d-Dhf" id="KR0-UP-M88"/>
             </connections>

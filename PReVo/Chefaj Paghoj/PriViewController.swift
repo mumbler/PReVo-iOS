@@ -15,6 +15,7 @@ import TTTAttributedLabel
 */
 class PriViewController : UIViewController, Chefpagho, Stilplena {
     
+    @IBOutlet var rulumilo: UIScrollView?
     @IBOutlet var etikedo: TTTAttributedLabel?
     
     init() {
@@ -29,7 +30,8 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
         
         title = NSLocalizedString("pri titolo", comment: "")
         let teksto = NSLocalizedString("pri teksto", comment: "")
-    
+        etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
         etikedo?.delegate = self
         
         efektivigiStilon()
@@ -38,6 +40,8 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
         for ligMarko in markoj[markoLigoKlavo]! {
             etikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
     
     func aranghiNavigaciilo() {
@@ -48,6 +52,7 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
     
     func efektivigiStilon() {
         
+        rulumilo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         view.backgroundColor = UzantDatumaro.stilo.bazKoloro
         etikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
         etikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
@@ -60,5 +65,13 @@ extension PriViewController : TTTAttributedLabelDelegate {
     func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
         
         UIApplication.sharedApplication().openURL(url)
+    }
+}
+
+// Respondi al mediaj shanghoj
+extension PriViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 }

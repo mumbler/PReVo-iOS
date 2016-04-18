@@ -34,11 +34,14 @@ class StiloElektiloViewController : UIViewController, Stilplena {
         stiloTabelo?.dataSource = self
         stiloTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: stiloChelIdent)
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         efektivigiStilon()
     }
     
     func efektivigiStilon() {
         
+        stiloTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         stiloTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         stiloTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         stiloTabelo?.reloadData()
@@ -95,5 +98,20 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
             tableView.reloadRowsAtIndexPaths([antaua, indexPath], withRowAnimation: UITableViewRowAnimation.None)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+}
+
+// Respondi al mediaj shanghoj
+extension StiloElektiloViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        stiloTabelo?.reloadData()
     }
 }

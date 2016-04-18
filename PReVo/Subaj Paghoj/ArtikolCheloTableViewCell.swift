@@ -24,6 +24,7 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
     func prepari(titolo titolo: String, teksto: String, subart: Bool) {
         
         titolaEtikedo?.setText(titolo)
+        titolaEtikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody);
         
         chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
         self.subart = subart

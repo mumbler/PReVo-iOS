@@ -31,6 +31,8 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
         tabelo?.delegate = self
         tabelo?.dataSource = self
         tabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: agordojChelIdent)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
 
         efektivigiStilon()
     }
@@ -43,6 +45,7 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     
     func efektivigiStilon() {
         
+        tabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         tabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         tabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         tabelo?.reloadData()
@@ -193,6 +196,13 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
 
 extension AgordojViewController : SerchLingvoElektiloDelegate {
@@ -208,3 +218,12 @@ extension AgordojViewController : TradukLingvojElektiloDelegate {
         tabelo?.reloadRowsAtIndexPaths([NSIndexPath(forItem: 1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.None)
     }
 }
+
+// Respondi al mediaj shanghoj
+extension AgordojViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        tabelo?.reloadData()
+    }
+}
+

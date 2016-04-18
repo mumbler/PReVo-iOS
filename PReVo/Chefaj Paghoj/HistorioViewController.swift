@@ -31,6 +31,8 @@ class HistorioViewController : UIViewController, Chefpagho, Stilplena {
         vortoTabelo?.delegate = self
         vortoTabelo?.dataSource = self
         vortoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: historiChelIdent)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -44,6 +46,7 @@ class HistorioViewController : UIViewController, Chefpagho, Stilplena {
     
     func efektivigiStilon() {
         
+        vortoTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         vortoTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
         vortoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         vortoTabelo?.reloadData()
@@ -87,5 +90,20 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
             (navigationController as? ChefaNavigationController)?.montriArtikolon( artikolo )
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+}
+
+// Respondi al mediaj shanghoj
+extension HistorioViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        vortoTabelo?.reloadData()
     }
 }

@@ -42,6 +42,8 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         trovTabelo?.dataSource = self
         trovTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchChelIdent)
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
         efektivigiStilon()
     }
 
@@ -60,6 +62,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         serchTabulo?.keyboardAppearance = UzantDatumaro.stilo.klavaroKoloro
         serchTabulo?.tintColor = UzantDatumaro.stilo.tintKoloro
         
+        trovTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         trovTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
         trovTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         trovTabelo?.reloadData()
@@ -88,20 +91,6 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
             serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
             trovTabelo?.reloadData()
             lastaSercho = (UzantDatumaro.serchLingvo, teksto)
-        }
-    }
-    
-    func tekstoPorDestinoj(destinoj: [NSManagedObject]) -> String {
-        
-        var bonaNomo: String = ""
-        if destinoj.count == 1 {
-            bonaNomo = (destinoj.first?.valueForKey("nomo") as? String)?.componentsSeparatedByString(", ").first ?? ""
-            if let senco = destinoj.first?.valueForKey("senco") as? String where senco != "0" {
-                bonaNomo += " (" + senco + ")"
-            }
-            return bonaNomo
-        } else {
-            return String(destinoj.count) + " trovoj"
         }
     }
 }
@@ -158,6 +147,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
     
 }
 
+// Trakti tabelon
 extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -171,13 +161,7 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        /*let novaChelo: UITableViewCell
-        if let trovChelo = trovTabelo?.dequeueReusableCellWithIdentifier(serchChelIdent) {
-            novaChelo = trovChelo
-        } else {
-            novaChelo = UITableViewCell()
-        }*/
-        let novaChelo = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: serchChelIdent)
+        let novaChelo = UITableViewCell(style: .Subtitle, reuseIdentifier: serchChelIdent)
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
@@ -214,12 +198,47 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
 
+// Trakti lingvo-elektadon
 extension SerchPaghoViewController : SerchLingvoElektiloDelegate {
     
     func elektisSerchLingvon() {
         ghisdatigiTitolon()
         fariSerchon(serchTabulo?.text ?? "")
+    }
+}
+
+// Helpaj aferoj
+extension SerchPaghoViewController {
+    
+    func tekstoPorDestinoj(destinoj: [NSManagedObject]) -> String {
+        
+        var bonaNomo: String = ""
+        if destinoj.count == 1 {
+            bonaNomo = (destinoj.first?.valueForKey("nomo") as? String)?.componentsSeparatedByString(", ").first ?? ""
+            if let senco = destinoj.first?.valueForKey("senco") as? String where senco != "0" {
+                bonaNomo += " (" + senco + ")"
+            }
+            return bonaNomo
+        } else {
+            return String(destinoj.count) + " trovoj"
+        }
+    }
+}
+
+// Respondi al mediaj shanghoj
+extension SerchPaghoViewController {
+    
+    func didChangePreferredContentSize(notification: NSNotification) -> Void {
+        trovTabelo?.reloadData()
     }
 }
