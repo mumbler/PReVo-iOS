@@ -103,6 +103,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         serchButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         serchButono.setImage(UIImage(named: "pikto_lenso")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
         serchButono.addTarget(self, action: #selector(premisSerchButonon), forControlEvents: UIControlEvents.TouchUpInside)
+        
         butonujo.addSubview(konservButono)
         butonujo.addSubview(serchButono)
         serchButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)

@@ -50,9 +50,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     func aranghiNavigaciilo() {
         
         ghisdatigiTitolon()
-        let dekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_traduko"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(elektiLingvon))
-        dekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 0)
-        parentViewController?.navigationItem.rightBarButtonItem = dekstraButono
+        prepariNavigaciajnButonojn()
     }
     
     func efektivigiStilon() {
@@ -77,6 +75,30 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         }
     }
     
+    func prepariNavigaciajnButonojn() {
+        
+        let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
+
+        let elektiloButono = UIButton()
+        elektiloButono.setImage(UIImage(named: "pikto_traduko")?.imageWithRenderingMode(.AlwaysTemplate), forState: UIControlState.Normal)
+        elektiloButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+        elektiloButono.addTarget(self, action: #selector(elektiLingvon), forControlEvents: .TouchUpInside)
+        
+        let lastaButono = UIButton(type: UIButtonType.System)
+        let lastaKodo = UzantDatumaro.oftajSerchLingvoj[1].kodo ?? ""
+        lastaButono.setTitle(lastaKodo, forState: UIControlState.Normal)
+        lastaButono.titleLabel?.textColor = UzantDatumaro.stilo.navTintKoloro
+        lastaButono.titleLabel?.font = UIFont.boldSystemFontOfSize(18.0)
+        lastaButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+        lastaButono.addTarget(self, action: #selector(uziLastanLingvon), forControlEvents: .TouchUpInside)
+        
+        butonujo.addSubview(lastaButono)
+        butonujo.addSubview(elektiloButono)
+        elektiloButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
+        lastaButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        parentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
+    }
+    
     func elektiLingvon() {
         
         let navigaciilo = HelpaNavigationController()
@@ -84,6 +106,14 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)
         self.navigationController?.presentViewController(navigaciilo, animated: true, completion: nil)
+    }
+    
+    func uziLastanLingvon() {
+        if UzantDatumaro.oftajSerchLingvoj.count > 1 {
+            let lasta = UzantDatumaro.oftajSerchLingvoj[1]
+            UzantDatumaro.elektisSerchLingvon(lasta)
+            elektisSerchLingvon()
+        }
     }
     
     func fariSerchon(teksto: String) {
@@ -213,6 +243,7 @@ extension SerchPaghoViewController : SerchLingvoElektiloDelegate {
     
     func elektisSerchLingvon() {
         ghisdatigiTitolon()
+        prepariNavigaciajnButonojn()
         fariSerchon(serchTabulo?.text ?? "")
     }
 }
