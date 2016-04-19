@@ -1,5 +1,5 @@
-# PReVo-iOS
-Portebla Reta Vortaro por iOS aparatoj
+# PoshReVo
+Posha Reta Vortaro
 
 Konstruado de la datumbazo:
 - elshutu la tutan retpaghan font-kodaron de La Reta Vortaro (http://reta-vortaro.de/tgz/index.html - tion nomata "fontdosieroj")

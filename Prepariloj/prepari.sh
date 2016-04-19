@@ -13,7 +13,7 @@ then
    echo "Finis elxmligadon"
    if [ -e $LOKO/preparita ]
    then
-      mv $LOKO/preparita $LOKO/PReVo/Datumoj
+      mv $LOKO/preparita $LOKO/PoshReVo/Datumoj
    else
       echo "Ne trovis preparitan dosierujon"
    fi

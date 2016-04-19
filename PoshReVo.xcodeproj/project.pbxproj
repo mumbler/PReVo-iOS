@@ -1,0 +1,912 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0028DF6B1CC6A3A20034AE8C /* PoshReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC261CC6A053000925E8 /* PoshReVoTests.swift */; };
+		0028DF6C1CC6A3A80034AE8C /* PoshReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */; };
+		0028DF701CC6A3FD0034AE8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */; };
+		008DBC231CC6A041000925E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC211CC6A041000925E8 /* Info.plist */; };
+		008DBC2C1CC6A077000925E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC2B1CC6A077000925E8 /* AppDelegate.swift */; };
+		008DBC2E1CC6A088000925E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC2D1CC6A088000925E8 /* Assets.xcassets */; };
+		008DBC3A1CC6A0B7000925E8 /* elxmligilo.rb in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC381CC6A0B7000925E8 /* elxmligilo.rb */; };
+		008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC391CC6A0B7000925E8 /* prepari.sh */; };
+		008DBC491CC6A0D8000925E8 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */; };
+		008DBC4A1CC6A0D8000925E8 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3E1CC6A0D8000925E8 /* Iloj.swift */; };
+		008DBC4B1CC6A0D8000925E8 /* Koloroj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */; };
+		008DBC4C1CC6A0D8000925E8 /* ModelObjekto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC401CC6A0D8000925E8 /* ModelObjekto.swift */; };
+		008DBC4D1CC6A0D8000925E8 /* ObjCPonto.m in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC431CC6A0D8000925E8 /* ObjCPonto.m */; };
+		008DBC4E1CC6A0D8000925E8 /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC451CC6A0D8000925E8 /* SeancDatumaro.swift */; };
+		008DBC4F1CC6A0D8000925E8 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC461CC6A0D8000925E8 /* Stiloj.swift */; };
+		008DBC501CC6A0D8000925E8 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */; };
+		008DBC511CC6A0D8000925E8 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */; };
+		008DBC581CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC531CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite */; };
+		008DBC591CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */; };
+		008DBC5F1CC6A129000925E8 /* FlankMenuoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */; };
+		008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */; };
+		008DBC611CC6A129000925E8 /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC5D1CC6A129000925E8 /* FlankMenuoViewController.swift */; };
+		008DBC621CC6A129000925E8 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC5E1CC6A129000925E8 /* FlankMenuoViewController.xib */; };
+		008DBC791CC6A132000925E8 /* ArtikolCheloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC641CC6A132000925E8 /* ArtikolCheloTableViewCell.swift */; };
+		008DBC7A1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC651CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift */; };
+		008DBC7B1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC661CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib */; };
+		008DBC7C1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC671CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */; };
+		008DBC7D1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC681CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */; };
+		008DBC7E1CC6A132000925E8 /* ArtikoloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC691CC6A132000925E8 /* ArtikoloTableViewCell.xib */; };
+		008DBC7F1CC6A132000925E8 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC6A1CC6A132000925E8 /* ArtikoloViewController.swift */; };
+		008DBC801CC6A132000925E8 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC6B1CC6A132000925E8 /* ArtikoloViewController.xib */; };
+		008DBC811CC6A132000925E8 /* LicencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC6C1CC6A132000925E8 /* LicencoViewController.swift */; };
+		008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC6D1CC6A132000925E8 /* LicencoViewController.xib */; };
+		008DBC831CC6A132000925E8 /* SerchLingvoElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC6E1CC6A132000925E8 /* SerchLingvoElektiloViewController.swift */; };
+		008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC6F1CC6A132000925E8 /* SerchLingvoElektiloViewController.xib */; };
+		008DBC851CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC701CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib */; };
+		008DBC861CC6A132000925E8 /* StiloElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC711CC6A132000925E8 /* StiloElektiloViewController.swift */; };
+		008DBC871CC6A132000925E8 /* StiloElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC721CC6A132000925E8 /* StiloElektiloViewController.xib */; };
+		008DBC881CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC731CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift */; };
+		008DBC891CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC741CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib */; };
+		008DBC8A1CC6A132000925E8 /* TradukLingvojElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC751CC6A132000925E8 /* TradukLingvojElektiloViewController.swift */; };
+		008DBC8B1CC6A132000925E8 /* TradukLingvojElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC761CC6A132000925E8 /* TradukLingvojElektiloViewController.xib */; };
+		008DBC8C1CC6A132000925E8 /* VortoDisigiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC771CC6A132000925E8 /* VortoDisigiloViewController.swift */; };
+		008DBC8D1CC6A132000925E8 /* VortoDisigiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC781CC6A132000925E8 /* VortoDisigiloViewController.xib */; };
+		008DBC9B1CC6A13A000925E8 /* AgordojViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC8F1CC6A13A000925E8 /* AgordojViewController.swift */; };
+		008DBC9C1CC6A13A000925E8 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC901CC6A13A000925E8 /* AgordojViewController.xib */; };
+		008DBC9D1CC6A13A000925E8 /* HistorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC911CC6A13A000925E8 /* HistorioViewController.swift */; };
+		008DBC9E1CC6A13A000925E8 /* HistorioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC921CC6A13A000925E8 /* HistorioViewController.xib */; };
+		008DBC9F1CC6A13A000925E8 /* IngoPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC931CC6A13A000925E8 /* IngoPaghoViewController.swift */; };
+		008DBCA01CC6A13A000925E8 /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC941CC6A13A000925E8 /* IngoPaghoViewController.xib */; };
+		008DBCA11CC6A13A000925E8 /* KonservitajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC951CC6A13A000925E8 /* KonservitajViewController.swift */; };
+		008DBCA21CC6A13A000925E8 /* KonservitajViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC961CC6A13A000925E8 /* KonservitajViewController.xib */; };
+		008DBCA31CC6A13A000925E8 /* PriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC971CC6A13A000925E8 /* PriViewController.swift */; };
+		008DBCA41CC6A13A000925E8 /* PriViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC981CC6A13A000925E8 /* PriViewController.xib */; };
+		008DBCA51CC6A13A000925E8 /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC991CC6A13A000925E8 /* SerchPaghoViewController.swift */; };
+		008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */; };
+		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
+		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
+		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		000985AC1C31F0CB0083DE24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000985961C31F0CB0083DE24;
+			remoteInfo = PReVo;
+		};
+		000985B71C31F0CB0083DE24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000985961C31F0CB0083DE24;
+			remoteInfo = PReVo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		000985971C31F0CB0083DE24 /* PoshReVo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoshReVo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0028DF6F1CC6A3FD0034AE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
+		008DBC211CC6A041000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoUITests/Info.plist; sourceTree = SOURCE_ROOT; };
+		008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoshReVoUITests.swift; path = PoshReVoUITests/PoshReVoUITests.swift; sourceTree = SOURCE_ROOT; };
+		008DBC251CC6A053000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		008DBC261CC6A053000925E8 /* PoshReVoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoshReVoTests.swift; path = PoshReVoTests/PoshReVoTests.swift; sourceTree = SOURCE_ROOT; };
+		008DBC291CC6A069000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVo/Info.plist; sourceTree = SOURCE_ROOT; };
+		008DBC2B1CC6A077000925E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PoshReVo/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		008DBC2D1CC6A088000925E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PoshReVo/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		008DBC381CC6A0B7000925E8 /* elxmligilo.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = elxmligilo.rb; sourceTree = "<group>"; };
+		008DBC391CC6A0B7000925E8 /* prepari.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = prepari.sh; sourceTree = "<group>"; };
+		008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
+		008DBC3E1CC6A0D8000925E8 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
+		008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Koloroj.swift; sourceTree = "<group>"; };
+		008DBC401CC6A0D8000925E8 /* ModelObjekto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjekto.swift; sourceTree = "<group>"; };
+		008DBC421CC6A0D8000925E8 /* ObjCPonto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCPonto.h; sourceTree = "<group>"; };
+		008DBC431CC6A0D8000925E8 /* ObjCPonto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCPonto.m; sourceTree = "<group>"; };
+		008DBC441CC6A0D8000925E8 /* PoshReVo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PoshReVo-Bridging-Header.h"; sourceTree = "<group>"; };
+		008DBC451CC6A0D8000925E8 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
+		008DBC461CC6A0D8000925E8 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
+		008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
+		008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
+		008DBC531CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
+		008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoTableViewCell.swift; sourceTree = "<group>"; };
+		008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoTableViewCell.xib; sourceTree = "<group>"; };
+		008DBC5D1CC6A129000925E8 /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
+		008DBC5E1CC6A129000925E8 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
+		008DBC641CC6A132000925E8 /* ArtikolCheloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikolCheloTableViewCell.swift; sourceTree = "<group>"; };
+		008DBC651CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloKapoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		008DBC661CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloKapoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		008DBC671CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloPiedButonoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		008DBC681CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloPiedButonoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		008DBC691CC6A132000925E8 /* ArtikoloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloTableViewCell.xib; sourceTree = "<group>"; };
+		008DBC6A1CC6A132000925E8 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
+		008DBC6B1CC6A132000925E8 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
+		008DBC6C1CC6A132000925E8 /* LicencoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencoViewController.swift; sourceTree = "<group>"; };
+		008DBC6D1CC6A132000925E8 /* LicencoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicencoViewController.xib; sourceTree = "<group>"; };
+		008DBC6E1CC6A132000925E8 /* SerchLingvoElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchLingvoElektiloViewController.swift; sourceTree = "<group>"; };
+		008DBC6F1CC6A132000925E8 /* SerchLingvoElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchLingvoElektiloViewController.xib; sourceTree = "<group>"; };
+		008DBC701CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShanghiTekstGrandeconViewController.xib; sourceTree = "<group>"; };
+		008DBC711CC6A132000925E8 /* StiloElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloElektiloViewController.swift; sourceTree = "<group>"; };
+		008DBC721CC6A132000925E8 /* StiloElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StiloElektiloViewController.xib; sourceTree = "<group>"; };
+		008DBC731CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvoElektiloTableViewCell.swift; sourceTree = "<group>"; };
+		008DBC741CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvoElektiloTableViewCell.xib; sourceTree = "<group>"; };
+		008DBC751CC6A132000925E8 /* TradukLingvojElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvojElektiloViewController.swift; sourceTree = "<group>"; };
+		008DBC761CC6A132000925E8 /* TradukLingvojElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvojElektiloViewController.xib; sourceTree = "<group>"; };
+		008DBC771CC6A132000925E8 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
+		008DBC781CC6A132000925E8 /* VortoDisigiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VortoDisigiloViewController.xib; sourceTree = "<group>"; };
+		008DBC8F1CC6A13A000925E8 /* AgordojViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgordojViewController.swift; sourceTree = "<group>"; };
+		008DBC901CC6A13A000925E8 /* AgordojViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgordojViewController.xib; sourceTree = "<group>"; };
+		008DBC911CC6A13A000925E8 /* HistorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorioViewController.swift; sourceTree = "<group>"; };
+		008DBC921CC6A13A000925E8 /* HistorioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorioViewController.xib; sourceTree = "<group>"; };
+		008DBC931CC6A13A000925E8 /* IngoPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngoPaghoViewController.swift; sourceTree = "<group>"; };
+		008DBC941CC6A13A000925E8 /* IngoPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngoPaghoViewController.xib; sourceTree = "<group>"; };
+		008DBC951CC6A13A000925E8 /* KonservitajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KonservitajViewController.swift; sourceTree = "<group>"; };
+		008DBC961CC6A13A000925E8 /* KonservitajViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KonservitajViewController.xib; sourceTree = "<group>"; };
+		008DBC971CC6A13A000925E8 /* PriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriViewController.swift; sourceTree = "<group>"; };
+		008DBC981CC6A13A000925E8 /* PriViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriViewController.xib; sourceTree = "<group>"; };
+		008DBC991CC6A13A000925E8 /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
+		008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
+		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
+		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
+		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		000985941C31F0CB0083DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985A81C31F0CB0083DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985B31C31F0CB0083DE24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0009858E1C31F0CB0083DE24 = {
+			isa = PBXGroup;
+			children = (
+				000985991C31F0CB0083DE24 /* PoshReVo */,
+				000985AE1C31F0CB0083DE24 /* PoshReVoTests */,
+				000985B91C31F0CB0083DE24 /* PoshReVoUITests */,
+				000985981C31F0CB0083DE24 /* Products */,
+				36ACEC2F19732B712D3C6913 /* Pods */,
+				0282B2FEF6E4EC8E45CCEF41 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		000985981C31F0CB0083DE24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				000985971C31F0CB0083DE24 /* PoshReVo.app */,
+				000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */,
+				000985B61C31F0CB0083DE24 /* PoshReVo.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		000985991C31F0CB0083DE24 /* PoshReVo */ = {
+			isa = PBXGroup;
+			children = (
+				0028DF6D1CC6A3FD0034AE8C /* Base.lproj */,
+				008DBC291CC6A069000925E8 /* Info.plist */,
+				008DBC2B1CC6A077000925E8 /* AppDelegate.swift */,
+				008DBCA71CC6A144000925E8 /* Navigaciiloj */,
+				008DBC8E1CC6A13A000925E8 /* Chefaj Paghoj */,
+				008DBC631CC6A132000925E8 /* Subaj Paghoj */,
+				008DBC5A1CC6A129000925E8 /* Flanka Menuo */,
+				008DBC3C1CC6A0D8000925E8 /* Motoroj */,
+				008DBC371CC6A0B7000925E8 /* Prepariloj */,
+				008DBC521CC6A0EC000925E8 /* Datumoj */,
+				008DBC2D1CC6A088000925E8 /* Assets.xcassets */,
+			);
+			name = PoshReVo;
+			path = PReVo;
+			sourceTree = "<group>";
+		};
+		000985AE1C31F0CB0083DE24 /* PoshReVoTests */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC251CC6A053000925E8 /* Info.plist */,
+				008DBC261CC6A053000925E8 /* PoshReVoTests.swift */,
+			);
+			name = PoshReVoTests;
+			path = PReVoTests;
+			sourceTree = "<group>";
+		};
+		000985B91C31F0CB0083DE24 /* PoshReVoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC211CC6A041000925E8 /* Info.plist */,
+				008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */,
+			);
+			name = PoshReVoUITests;
+			path = PReVoUITests;
+			sourceTree = "<group>";
+		};
+		0028DF6D1CC6A3FD0034AE8C /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */,
+			);
+			path = Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBC371CC6A0B7000925E8 /* Prepariloj */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC381CC6A0B7000925E8 /* elxmligilo.rb */,
+				008DBC391CC6A0B7000925E8 /* prepari.sh */,
+			);
+			path = Prepariloj;
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBC3C1CC6A0D8000925E8 /* Motoroj */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */,
+				008DBC3E1CC6A0D8000925E8 /* Iloj.swift */,
+				008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */,
+				008DBC401CC6A0D8000925E8 /* ModelObjekto.swift */,
+				008DBC451CC6A0D8000925E8 /* SeancDatumaro.swift */,
+				008DBC461CC6A0D8000925E8 /* Stiloj.swift */,
+				008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */,
+				008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */,
+				008DBC411CC6A0D8000925E8 /* ObjC Ponto */,
+			);
+			name = Motoroj;
+			path = PoshReVo/Motoroj;
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBC411CC6A0D8000925E8 /* ObjC Ponto */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC421CC6A0D8000925E8 /* ObjCPonto.h */,
+				008DBC431CC6A0D8000925E8 /* ObjCPonto.m */,
+				008DBC441CC6A0D8000925E8 /* PoshReVo-Bridging-Header.h */,
+			);
+			path = "ObjC Ponto";
+			sourceTree = "<group>";
+		};
+		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC531CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite */,
+				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
+				008DBC561CC6A0EC000925E8 /* preparita */,
+			);
+			name = Datumoj;
+			path = PoshReVo/Datumoj;
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBC561CC6A0EC000925E8 /* preparita */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC571CC6A0EC000925E8 /* indeksoj */,
+			);
+			path = preparita;
+			sourceTree = "<group>";
+		};
+		008DBC571CC6A0EC000925E8 /* indeksoj */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = indeksoj;
+			sourceTree = "<group>";
+		};
+		008DBC5A1CC6A129000925E8 /* Flanka Menuo */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */,
+				008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */,
+				008DBC5D1CC6A129000925E8 /* FlankMenuoViewController.swift */,
+				008DBC5E1CC6A129000925E8 /* FlankMenuoViewController.xib */,
+			);
+			name = "Flanka Menuo";
+			path = "PoshReVo/Flanka Menuo";
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBC631CC6A132000925E8 /* Subaj Paghoj */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC641CC6A132000925E8 /* ArtikolCheloTableViewCell.swift */,
+				008DBC651CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift */,
+				008DBC661CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib */,
+				008DBC671CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
+				008DBC681CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
+				008DBC691CC6A132000925E8 /* ArtikoloTableViewCell.xib */,
+				008DBC6A1CC6A132000925E8 /* ArtikoloViewController.swift */,
+				008DBC6B1CC6A132000925E8 /* ArtikoloViewController.xib */,
+				008DBC6C1CC6A132000925E8 /* LicencoViewController.swift */,
+				008DBC6D1CC6A132000925E8 /* LicencoViewController.xib */,
+				008DBC6E1CC6A132000925E8 /* SerchLingvoElektiloViewController.swift */,
+				008DBC6F1CC6A132000925E8 /* SerchLingvoElektiloViewController.xib */,
+				008DBC701CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib */,
+				008DBC711CC6A132000925E8 /* StiloElektiloViewController.swift */,
+				008DBC721CC6A132000925E8 /* StiloElektiloViewController.xib */,
+				008DBC731CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift */,
+				008DBC741CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib */,
+				008DBC751CC6A132000925E8 /* TradukLingvojElektiloViewController.swift */,
+				008DBC761CC6A132000925E8 /* TradukLingvojElektiloViewController.xib */,
+				008DBC771CC6A132000925E8 /* VortoDisigiloViewController.swift */,
+				008DBC781CC6A132000925E8 /* VortoDisigiloViewController.xib */,
+			);
+			name = "Subaj Paghoj";
+			path = "PoshReVo/Subaj Paghoj";
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBC8E1CC6A13A000925E8 /* Chefaj Paghoj */ = {
+			isa = PBXGroup;
+			children = (
+				008DBC8F1CC6A13A000925E8 /* AgordojViewController.swift */,
+				008DBC901CC6A13A000925E8 /* AgordojViewController.xib */,
+				008DBC911CC6A13A000925E8 /* HistorioViewController.swift */,
+				008DBC921CC6A13A000925E8 /* HistorioViewController.xib */,
+				008DBC931CC6A13A000925E8 /* IngoPaghoViewController.swift */,
+				008DBC941CC6A13A000925E8 /* IngoPaghoViewController.xib */,
+				008DBC951CC6A13A000925E8 /* KonservitajViewController.swift */,
+				008DBC961CC6A13A000925E8 /* KonservitajViewController.xib */,
+				008DBC971CC6A13A000925E8 /* PriViewController.swift */,
+				008DBC981CC6A13A000925E8 /* PriViewController.xib */,
+				008DBC991CC6A13A000925E8 /* SerchPaghoViewController.swift */,
+				008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */,
+			);
+			name = "Chefaj Paghoj";
+			path = "PoshReVo/Chefaj Paghoj";
+			sourceTree = SOURCE_ROOT;
+		};
+		008DBCA71CC6A144000925E8 /* Navigaciiloj */ = {
+			isa = PBXGroup;
+			children = (
+				008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */,
+				008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */,
+			);
+			name = Navigaciiloj;
+			path = PoshReVo/Navigaciiloj;
+			sourceTree = SOURCE_ROOT;
+		};
+		0282B2FEF6E4EC8E45CCEF41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47EF2D02040D4CCD471ACA36 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36ACEC2F19732B712D3C6913 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */,
+				8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		000985961C31F0CB0083DE24 /* PoshReVo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000985BF1C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVo" */;
+			buildPhases = (
+				FA57B7E0B17AE731C8923244 /* Check Pods Manifest.lock */,
+				000985931C31F0CB0083DE24 /* Sources */,
+				000985941C31F0CB0083DE24 /* Frameworks */,
+				000985951C31F0CB0083DE24 /* Resources */,
+				6AE55078CE43B0BE13EA0BAA /* Embed Pods Frameworks */,
+				AB341A5087405B60150151AE /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoshReVo;
+			productName = PReVo;
+			productReference = 000985971C31F0CB0083DE24 /* PoshReVo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		000985AA1C31F0CB0083DE24 /* PoshReVoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000985C21C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoTests" */;
+			buildPhases = (
+				000985A71C31F0CB0083DE24 /* Sources */,
+				000985A81C31F0CB0083DE24 /* Frameworks */,
+				000985A91C31F0CB0083DE24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000985AD1C31F0CB0083DE24 /* PBXTargetDependency */,
+			);
+			name = PoshReVoTests;
+			productName = PReVoTests;
+			productReference = 000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		000985B51C31F0CB0083DE24 /* PoshReVoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 000985C51C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoUITests" */;
+			buildPhases = (
+				000985B21C31F0CB0083DE24 /* Sources */,
+				000985B31C31F0CB0083DE24 /* Frameworks */,
+				000985B41C31F0CB0083DE24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				000985B81C31F0CB0083DE24 /* PBXTargetDependency */,
+			);
+			name = PoshReVoUITests;
+			productName = PReVoUITests;
+			productReference = 000985B61C31F0CB0083DE24 /* PoshReVo.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0009858F1C31F0CB0083DE24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Sinuous Rill";
+				TargetAttributes = {
+					000985961C31F0CB0083DE24 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WYZ8GHNKW7;
+					};
+					000985AA1C31F0CB0083DE24 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 000985961C31F0CB0083DE24;
+					};
+					000985B51C31F0CB0083DE24 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 000985961C31F0CB0083DE24;
+					};
+				};
+			};
+			buildConfigurationList = 000985921C31F0CB0083DE24 /* Build configuration list for PBXProject "PoshReVo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+			);
+			mainGroup = 0009858E1C31F0CB0083DE24;
+			productRefGroup = 000985981C31F0CB0083DE24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				000985961C31F0CB0083DE24 /* PoshReVo */,
+				000985AA1C31F0CB0083DE24 /* PoshReVoTests */,
+				000985B51C31F0CB0083DE24 /* PoshReVoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		000985951C31F0CB0083DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */,
+				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
+				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
+				008DBC621CC6A129000925E8 /* FlankMenuoViewController.xib in Resources */,
+				008DBC871CC6A132000925E8 /* StiloElektiloViewController.xib in Resources */,
+				008DBC801CC6A132000925E8 /* ArtikoloViewController.xib in Resources */,
+				008DBC581CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite in Resources */,
+				008DBC7D1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
+				008DBC891CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
+				008DBCA21CC6A13A000925E8 /* KonservitajViewController.xib in Resources */,
+				0028DF701CC6A3FD0034AE8C /* Localizable.strings in Resources */,
+				008DBC7B1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
+				008DBCA01CC6A13A000925E8 /* IngoPaghoViewController.xib in Resources */,
+				008DBC9E1CC6A13A000925E8 /* HistorioViewController.xib in Resources */,
+				008DBC851CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib in Resources */,
+				008DBC231CC6A041000925E8 /* Info.plist in Resources */,
+				008DBC8B1CC6A132000925E8 /* TradukLingvojElektiloViewController.xib in Resources */,
+				008DBC8D1CC6A132000925E8 /* VortoDisigiloViewController.xib in Resources */,
+				008DBC3A1CC6A0B7000925E8 /* elxmligilo.rb in Resources */,
+				008DBC9C1CC6A13A000925E8 /* AgordojViewController.xib in Resources */,
+				008DBC2E1CC6A088000925E8 /* Assets.xcassets in Resources */,
+				008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */,
+				008DBCA41CC6A13A000925E8 /* PriViewController.xib in Resources */,
+				008DBC7E1CC6A132000925E8 /* ArtikoloTableViewCell.xib in Resources */,
+				008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985A91C31F0CB0083DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985B41C31F0CB0083DE24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AE55078CE43B0BE13EA0BAA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB341A5087405B60150151AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA57B7E0B17AE731C8923244 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		000985931C31F0CB0083DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				008DBC8A1CC6A132000925E8 /* TradukLingvojElektiloViewController.swift in Sources */,
+				008DBC591CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld in Sources */,
+				008DBC861CC6A132000925E8 /* StiloElektiloViewController.swift in Sources */,
+				008DBC511CC6A0D8000925E8 /* UzantDatumaro.swift in Sources */,
+				008DBC501CC6A0D8000925E8 /* TrieRegilo.swift in Sources */,
+				008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */,
+				008DBC7A1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
+				008DBCA51CC6A13A000925E8 /* SerchPaghoViewController.swift in Sources */,
+				008DBC4F1CC6A0D8000925E8 /* Stiloj.swift in Sources */,
+				008DBC9B1CC6A13A000925E8 /* AgordojViewController.swift in Sources */,
+				008DBC4A1CC6A0D8000925E8 /* Iloj.swift in Sources */,
+				008DBC4C1CC6A0D8000925E8 /* ModelObjekto.swift in Sources */,
+				008DBC9D1CC6A13A000925E8 /* HistorioViewController.swift in Sources */,
+				008DBC4B1CC6A0D8000925E8 /* Koloroj.swift in Sources */,
+				008DBC881CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift in Sources */,
+				008DBC5F1CC6A129000925E8 /* FlankMenuoTableViewCell.swift in Sources */,
+				008DBC811CC6A132000925E8 /* LicencoViewController.swift in Sources */,
+				008DBC611CC6A129000925E8 /* FlankMenuoViewController.swift in Sources */,
+				008DBC491CC6A0D8000925E8 /* DatumLegilo.swift in Sources */,
+				008DBC831CC6A132000925E8 /* SerchLingvoElektiloViewController.swift in Sources */,
+				008DBC7C1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
+				008DBC4D1CC6A0D8000925E8 /* ObjCPonto.m in Sources */,
+				008DBC8C1CC6A132000925E8 /* VortoDisigiloViewController.swift in Sources */,
+				008DBC4E1CC6A0D8000925E8 /* SeancDatumaro.swift in Sources */,
+				008DBCA11CC6A13A000925E8 /* KonservitajViewController.swift in Sources */,
+				008DBC791CC6A132000925E8 /* ArtikolCheloTableViewCell.swift in Sources */,
+				008DBCA31CC6A13A000925E8 /* PriViewController.swift in Sources */,
+				008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */,
+				008DBC7F1CC6A132000925E8 /* ArtikoloViewController.swift in Sources */,
+				008DBC2C1CC6A077000925E8 /* AppDelegate.swift in Sources */,
+				008DBC9F1CC6A13A000925E8 /* IngoPaghoViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985A71C31F0CB0083DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0028DF6B1CC6A3A20034AE8C /* PoshReVoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		000985B21C31F0CB0083DE24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0028DF6C1CC6A3A80034AE8C /* PoshReVoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		000985AD1C31F0CB0083DE24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
+			targetProxy = 000985AC1C31F0CB0083DE24 /* PBXContainerItemProxy */;
+		};
+		000985B81C31F0CB0083DE24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
+			targetProxy = 000985B71C31F0CB0083DE24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0028DF6F1CC6A3FD0034AE8C /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		000985BD1C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "9303a5a2-da06-46da-bf8c-8e3b5333ea76";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		000985BE1C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "9303a5a2-da06-46da-bf8c-8e3b5333ea76";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		000985C01C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PoshReVo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SinuousRill.PReVo;
+				PRODUCT_NAME = PoshReVo;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Motoroj/ObjC Ponto/PoshReVo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		000985C11C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PoshReVo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks $(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.SinuousRill.PReVo;
+				PRODUCT_NAME = PoshReVo;
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Motoroj/ObjC Ponto/PoshReVo-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		000985C31C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PoshReVoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoTests;
+				PRODUCT_NAME = PoshReVo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoshReVo.app/PoshReVo";
+			};
+			name = Debug;
+		};
+		000985C41C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PoshReVoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoTests;
+				PRODUCT_NAME = PoshReVo;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoshReVo.app/PoshReVo";
+			};
+			name = Release;
+		};
+		000985C61C31F0CB0083DE24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PoshReVoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
+				PRODUCT_NAME = PoshReVo;
+				TEST_TARGET_NAME = PoshReVo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		000985C71C31F0CB0083DE24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PoshReVoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
+				PRODUCT_NAME = PoshReVo;
+				TEST_TARGET_NAME = PoshReVo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		000985921C31F0CB0083DE24 /* Build configuration list for PBXProject "PoshReVo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985BD1C31F0CB0083DE24 /* Debug */,
+				000985BE1C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000985BF1C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985C01C31F0CB0083DE24 /* Debug */,
+				000985C11C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000985C21C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985C31C31F0CB0083DE24 /* Debug */,
+				000985C41C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		000985C51C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				000985C61C31F0CB0083DE24 /* Debug */,
+				000985C71C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */,
+			);
+			currentVersion = 008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */;
+			path = PoshReVoDatumoj.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0009858F1C31F0CB0083DE24 /* Project object */;
+}
