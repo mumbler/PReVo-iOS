@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PReVo (eldona).xcscheme</key>
+		<key>PoshReVo (eldona).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>PReVo (konstrua).xcscheme</key>
+		<key>PoshReVo (konstrua).xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
-		<key>PReVo.xcscheme</key>
+		<key>PoshReVo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>

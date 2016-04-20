@@ -85,12 +85,14 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         elektiloButono.addTarget(self, action: #selector(elektiLingvon), forControlEvents: .TouchUpInside)
         
         let lastaButono = UIButton(type: UIButtonType.System)
-        let lastaKodo = UzantDatumaro.oftajSerchLingvoj[1].kodo ?? ""
-        lastaButono.setTitle(lastaKodo, forState: UIControlState.Normal)
-        lastaButono.titleLabel?.textColor = UzantDatumaro.stilo.navTintKoloro
-        lastaButono.titleLabel?.font = UIFont.boldSystemFontOfSize(18.0)
-        lastaButono.tintColor = UzantDatumaro.stilo.navTintKoloro
-        lastaButono.addTarget(self, action: #selector(uziLastanLingvon), forControlEvents: .TouchUpInside)
+        if UzantDatumaro.oftajSerchLingvoj.count > 1 {
+            let lastaKodo = UzantDatumaro.oftajSerchLingvoj[1].kodo ?? ""
+            lastaButono.setTitle(lastaKodo, forState: UIControlState.Normal)
+            lastaButono.titleLabel?.textColor = UzantDatumaro.stilo.navTintKoloro
+            lastaButono.titleLabel?.font = UIFont.boldSystemFontOfSize(18.0)
+            lastaButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+            lastaButono.addTarget(self, action: #selector(uziLastanLingvon), forControlEvents: .TouchUpInside)
+        }
         
         butonujo.addSubview(lastaButono)
         butonujo.addSubview(elektiloButono)

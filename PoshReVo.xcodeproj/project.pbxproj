@@ -24,7 +24,6 @@
 		008DBC4F1CC6A0D8000925E8 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC461CC6A0D8000925E8 /* Stiloj.swift */; };
 		008DBC501CC6A0D8000925E8 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */; };
 		008DBC511CC6A0D8000925E8 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */; };
-		008DBC581CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC531CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite */; };
 		008DBC591CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */; };
 		008DBC5F1CC6A129000925E8 /* FlankMenuoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */; };
 		008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */; };
@@ -65,6 +64,7 @@
 		008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */; };
 		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
 		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
+		00CDC9E71CC7EAB10073201F /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00CDC9E61CC7EAAA0073201F /* PoshReVoDatumbazo.sqlite */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +110,6 @@
 		008DBC461CC6A0D8000925E8 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
 		008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
 		008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
-		008DBC531CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
 		008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoTableViewCell.swift; sourceTree = "<group>"; };
 		008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoTableViewCell.xib; sourceTree = "<group>"; };
@@ -151,6 +150,7 @@
 		008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
 		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
 		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
+		00CDC9E61CC7EAAA0073201F /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -290,28 +290,12 @@
 		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				008DBC531CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite */,
+				00CDC9E61CC7EAAA0073201F /* PoshReVoDatumbazo.sqlite */,
 				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
-				008DBC561CC6A0EC000925E8 /* preparita */,
 			);
 			name = Datumoj;
 			path = PoshReVo/Datumoj;
 			sourceTree = SOURCE_ROOT;
-		};
-		008DBC561CC6A0EC000925E8 /* preparita */ = {
-			isa = PBXGroup;
-			children = (
-				008DBC571CC6A0EC000925E8 /* indeksoj */,
-			);
-			path = preparita;
-			sourceTree = "<group>";
-		};
-		008DBC571CC6A0EC000925E8 /* indeksoj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = indeksoj;
-			sourceTree = "<group>";
 		};
 		008DBC5A1CC6A129000925E8 /* Flanka Menuo */ = {
 			isa = PBXGroup;
@@ -508,13 +492,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CDC9E71CC7EAB10073201F /* PoshReVoDatumbazo.sqlite in Resources */,
 				008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */,
 				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
 				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
 				008DBC621CC6A129000925E8 /* FlankMenuoViewController.xib in Resources */,
 				008DBC871CC6A132000925E8 /* StiloElektiloViewController.xib in Resources */,
 				008DBC801CC6A132000925E8 /* ArtikoloViewController.xib in Resources */,
-				008DBC581CC6A0EC000925E8 /* PoshReVoDatumbazo.sqlite in Resources */,
 				008DBC7D1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
 				008DBC891CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
 				008DBCA21CC6A13A000925E8 /* KonservitajViewController.xib in Resources */,
