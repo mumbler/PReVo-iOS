@@ -216,6 +216,10 @@ class UzantDatumaro {
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
+        // Legi malnov-nomajn aferojn
+        NSKeyedUnarchiver.setClass(Lingvo.self, forClassName: "PReVo.Lingvo")
+        NSKeyedUnarchiver.setClass(Listero.self, forClassName: "PReVo.Listero")
+        
         if let datumoj = defaults.objectForKey("serchLingvo") as? NSData,
            let trovo = NSKeyedUnarchiver.unarchiveObjectWithData(datumoj) as? Lingvo {
             serchLingvo = trovo
