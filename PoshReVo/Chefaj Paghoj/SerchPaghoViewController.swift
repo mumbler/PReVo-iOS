@@ -89,7 +89,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
             let lastaKodo = UzantDatumaro.oftajSerchLingvoj[1].kodo ?? ""
             lastaButono.setTitle(lastaKodo, forState: UIControlState.Normal)
             lastaButono.titleLabel?.textColor = UzantDatumaro.stilo.navTintKoloro
-            lastaButono.titleLabel?.font = UIFont.boldSystemFontOfSize(18.0)
+            lastaButono.titleLabel?.font = UIFont.systemFontOfSize(18.0)
             lastaButono.tintColor = UzantDatumaro.stilo.navTintKoloro
             lastaButono.addTarget(self, action: #selector(uziLastanLingvon), forControlEvents: .TouchUpInside)
         }

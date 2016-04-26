@@ -493,7 +493,7 @@ def traktiDifinon(dif, stato)
       elsif fil.name == "tld"
          teksto += traktiTildon(fil, stato)
       elsif fil.name == "ctl"
-         teksto += "„" + fil.text + "“"
+         teksto += "„" + anstatauTildo(fil.inner_html, stato["radiko"]) + "“"
       elsif fil.name == "frm"
          novaFormulo = traktiFormulon(fil, stato)
 	 teksto += novaFormulo["teksto"]
@@ -540,7 +540,7 @@ def traktiRimarkon(rim, stato)
       elsif fil.name == "em"
          teksto += "<b>" + tekstoPorNodo(fil, stato) + "</b>"
       elsif fil.name == "ctl"
-         teksto += "„" + fil.text + "“"         
+         teksto += "„" + anstatauTildo(fil.inner_html, stato["radiko"]) + "“"
       elsif fil.name == "frm"
          novaFormulo = traktiFormulon(fil, stato)
 	 teksto += novaFormulo["teksto"]
@@ -590,7 +590,7 @@ def traktiEkzemplon(ekz, stato)
       elsif fil.name == "em"
          teksto += "<b>" + tekstoPorNodo(fil, stato) + "</b>"
       elsif fil.name == "ctl"
-         teksto += "„" + fil.text + "“"         
+         teksto += "„" + anstatauTildo(fil.inner_html, stato["radiko"]) + "“"
       elsif fil.name == "frm"
          novaFormulo = traktiFormulon(fil, stato)
 	 teksto += novaFormulo["teksto"]
@@ -652,7 +652,7 @@ def traktiRefon(ref, stato)
       if fil.name == "tld"
          teksto += traktiTildon(fil, stato)
       elsif fil.name == "ctl"
-         teksto += "„" + fil.text + "“"         
+         teksto += "„" + anstatauTildo(fil.inner_html, stato["radiko"]) + "“"         
       elsif fil.name == "text"
          teksto += prepariTekston(fil.text)
       end
@@ -774,7 +774,7 @@ def traktiTradukon(trd, stato)
          teksto += novaIndekso["teksto"]
 	 indekso = novaIndekso["teksto"]
       elsif fil.name == "klr"
-         teksto += anstatauTildo(fil.text, stato["radiko"])
+         teksto += anstatauTildo(fil.inner_html, stato["radiko"])
       else
      
       end
@@ -1020,10 +1020,10 @@ def printi(nodo)
 	 teksto += rez["teksto"]
       elsif fil["tipo"] == "subsnc"
          if teksto != ""
-            teksto += " "
+            teksto += "\n\n"
 	 end
          if nodo["filNombro"] != nil and nodo["filNombro"] > 1
-            teksto += ("a".."z").to_a[filNombro-1] + ")\n"
+            teksto += ("a".."z").to_a[filNombro-1] + ") "
             filNombro += 1
          end
          rez = printi(fil)
@@ -1072,7 +1072,7 @@ if vortoDos and File.directory?(dir+"/xml/")
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..'
 
-      #artikolDosiero = "hund.xml"
+      #artikolDosiero = "stabl.xml"
       #puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
@@ -1091,7 +1091,6 @@ if vortoDos and File.directory?(dir+"/xml/")
       #puts tradukoj
       #puts artikolo["tradukoj"]
       #exit
-
    end
 end
 
