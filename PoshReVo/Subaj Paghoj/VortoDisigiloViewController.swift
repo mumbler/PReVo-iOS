@@ -41,7 +41,10 @@ class VortoDisigiloViewController : UIViewController, Stilplena {
     }
     
     func efektivigiStilon() {
-        
+
+        vortoTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
+        vortoTabelo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        vortoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         vortoTabelo?.reloadData()
     }
     
@@ -75,6 +78,8 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
 
         let chelo = UITableViewCell(style: .Value1, reuseIdentifier: disigiloChelIdent)
         
+        chelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        chelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         chelo.textLabel?.text = (destinoj[indexPath.row].valueForKey("teksto") as? String) ?? ""
         chelo.detailTextLabel?.text = (destinoj[indexPath.row].valueForKey("nomo") as? String) ?? ""
         if devasMontriSencon(indexPath), let senco = destinoj[indexPath.row].valueForKey("senco") as? String {

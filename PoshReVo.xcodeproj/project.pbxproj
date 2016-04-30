@@ -65,6 +65,7 @@
 		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
 		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
 		00E5FA111CCFAF1A00CF81A4 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA101CCFAF1400CF81A4 /* PoshReVoDatumbazo.sqlite */; };
+		00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
 		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
 		00E5FA101CCFAF1400CF81A4 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PoshReVo/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				0028DF6D1CC6A3FD0034AE8C /* Base.lproj */,
 				008DBC291CC6A069000925E8 /* Info.plist */,
+				00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */,
 				008DBC2B1CC6A077000925E8 /* AppDelegate.swift */,
 				008DBCA71CC6A144000925E8 /* Navigaciiloj */,
 				008DBC8E1CC6A13A000925E8 /* Chefaj Paghoj */,
@@ -496,6 +499,7 @@
 				008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */,
 				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
 				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
+				00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */,
 				008DBC621CC6A129000925E8 /* FlankMenuoViewController.xib in Resources */,
 				008DBC871CC6A132000925E8 /* StiloElektiloViewController.xib in Resources */,
 				008DBC801CC6A132000925E8 /* ArtikoloViewController.xib in Resources */,
