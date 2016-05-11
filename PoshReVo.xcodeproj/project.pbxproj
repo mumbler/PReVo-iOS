@@ -64,7 +64,7 @@
 		008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */; };
 		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
 		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
-		00E5FA111CCFAF1A00CF81A4 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA101CCFAF1400CF81A4 /* PoshReVoDatumbazo.sqlite */; };
+		00B88E341CE3C0A80079A6C8 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00B88E331CE3C0A20079A6C8 /* PoshReVoDatumbazo.sqlite */; };
 		00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -151,7 +151,7 @@
 		008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
 		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
 		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
-		00E5FA101CCFAF1400CF81A4 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		00B88E331CE3C0A20079A6C8 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PoshReVo/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				00E5FA101CCFAF1400CF81A4 /* PoshReVoDatumbazo.sqlite */,
+				00B88E331CE3C0A20079A6C8 /* PoshReVoDatumbazo.sqlite */,
 				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
 			);
 			name = Datumoj;
@@ -495,8 +495,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E5FA111CCFAF1A00CF81A4 /* PoshReVoDatumbazo.sqlite in Resources */,
 				008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */,
+				00B88E341CE3C0A80079A6C8 /* PoshReVoDatumbazo.sqlite in Resources */,
 				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
 				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
 				00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */,

@@ -45,7 +45,7 @@
 
 // Pri
 "pri titolo"                                    = "Pri PoŝReVo";
-"pri teksto"                                    = "PoŝReVo iOS © 2016, Robin Hill\n\nPoŝReVo estas programita de Robin Hill.\nLa vortaraj datumoj venas de <a href=\"http://www.reta-vortaro.de\">La Reta Vortaro</a>.\n\nLa font-kodo de ĉi tiu programo estas libere havebla kaj oni rajtas legi, kopii, ŝanĝi, redisdoni, kaj vendi ĝin ajnamaniere. Tiu kodo disponeblas <a href=\"https://www.github.com/mumbler/PosReVo\">ĉi tie</a>, kaj estas eldonita sub la <a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 Permesilo</a>.\n\nSe vi bezonas helpon, renkontis eraron, aŭ havas ajnaspecan komenton vi povas kontakti min per retpoŝtmesaĝo ĉe <a href=\"mailto:sinuous.rill+PoshReVo@gmail.com\">sinuous.rill+PoshReVo@gmail.com</a>\n\nBildetoj estas faritaj de <a href=\"http://www.icons8.com\">icons8</a>.";
+"pri teksto"                                    = "Poŝa Reta Vortaro, PoŝReVo iOS © 2016, Robin Hill\n\nPoŝReVo estas programita de Robin Hill.\nLa vortaraj datumoj venas de <a href=\"http://www.reta-vortaro.de\">La Reta Vortaro</a>.\n\nLa font-kodo de ĉi tiu programo estas libere havebla kaj oni rajtas legi, kopii, ŝanĝi, redisdoni, kaj vendi ĝin ajnamaniere. Tiu kodo disponeblas <a href=\"https://www.github.com/mumbler/PoshReVo\">ĉi tie</a>, kaj estas eldonita sub la <a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 Permesilo</a>.\n\nSe vi bezonas helpon, renkontis eraron, aŭ havas ajnaspecan komenton vi povas kontakti min per retpoŝtmesaĝo ĉe <a href=\"mailto:sinuous.rill+PoshReVo@gmail.com\">sinuous.rill+PoshReVo@gmail.com</a>\n\nPli da informo sin trovas ĉe <a href=\"http://www.sinuousrill.com/projects/PoshReVo_eo.html\">la oficiala retpaĝo</a>.\n\nBildetoj estas faritaj de <a href=\"http://www.icons8.com\">icons8</a>.";
 
 // Artikolo pagho
 
@@ -57,7 +57,7 @@
 
 "serch-elektilo titolo"                         = "Elekti serĉ-lingvon";
 "serch-elektilo lastaj etikedo"                 = "Lastaj Lingvoj";
-"serch-elektilo chiuj etikedo"                  = "Chiuj Lingvoj";
+"serch-elektilo chiuj etikedo"                  = "Ĉiuj Lingvoj";
 
 // Traduk lingvo elektilo
 
