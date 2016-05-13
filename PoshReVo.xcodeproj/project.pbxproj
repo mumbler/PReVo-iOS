@@ -10,6 +10,7 @@
 		0028DF6B1CC6A3A20034AE8C /* PoshReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC261CC6A053000925E8 /* PoshReVoTests.swift */; };
 		0028DF6C1CC6A3A80034AE8C /* PoshReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */; };
 		0028DF701CC6A3FD0034AE8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */; };
+		004778781CE55629004CA683 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004778771CE55611004CA683 /* PoshReVoDatumbazo.sqlite */; };
 		008DBC231CC6A041000925E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC211CC6A041000925E8 /* Info.plist */; };
 		008DBC2C1CC6A077000925E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC2B1CC6A077000925E8 /* AppDelegate.swift */; };
 		008DBC2E1CC6A088000925E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC2D1CC6A088000925E8 /* Assets.xcassets */; };
@@ -64,7 +65,6 @@
 		008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */; };
 		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
 		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
-		00B88E341CE3C0A80079A6C8 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00B88E331CE3C0A20079A6C8 /* PoshReVoDatumbazo.sqlite */; };
 		00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +91,7 @@
 		000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0028DF6F1CC6A3FD0034AE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
+		004778771CE55611004CA683 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		008DBC211CC6A041000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoUITests/Info.plist; sourceTree = SOURCE_ROOT; };
 		008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoshReVoUITests.swift; path = PoshReVoUITests/PoshReVoUITests.swift; sourceTree = SOURCE_ROOT; };
 		008DBC251CC6A053000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoTests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -151,7 +152,6 @@
 		008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
 		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
 		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
-		00B88E331CE3C0A20079A6C8 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PoshReVo/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				00B88E331CE3C0A20079A6C8 /* PoshReVoDatumbazo.sqlite */,
+				004778771CE55611004CA683 /* PoshReVoDatumbazo.sqlite */,
 				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
 			);
 			name = Datumoj;
@@ -495,8 +495,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004778781CE55629004CA683 /* PoshReVoDatumbazo.sqlite in Resources */,
 				008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */,
-				00B88E341CE3C0A80079A6C8 /* PoshReVoDatumbazo.sqlite in Resources */,
 				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
 				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
 				00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */,
