@@ -29,7 +29,8 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
     override func viewDidLoad() {
         
         title = NSLocalizedString("pri titolo", comment: "")
-        let teksto = NSLocalizedString("pri teksto", comment: "")
+        let versioTeksto = String(format: NSLocalizedString("pri versio", comment: ""), arguments: [ (NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String) ?? "" ])
+        let teksto = NSLocalizedString("pri teksto", comment: "") + "\n\n" + versioTeksto
         etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
         etikedo?.delegate = self
