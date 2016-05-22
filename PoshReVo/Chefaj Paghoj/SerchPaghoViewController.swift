@@ -97,7 +97,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         butonujo.addSubview(lastaButono)
         butonujo.addSubview(elektiloButono)
         elektiloButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
-        lastaButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        lastaButono.frame = CGRect(x: 0, y: -1, width: 30, height: 30)
         parentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
     }
     
