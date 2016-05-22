@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
-var flankMenuoLargheco: CGFloat = 180
+var flankMenuoLargheco: CGFloat = 200
 
 /*
     La chefa UINavigationControlle de la programo. Ghi starigas la maldekstra-flankan menuon,

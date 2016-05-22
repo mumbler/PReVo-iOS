@@ -15,7 +15,7 @@ class FlankMenuoTableViewCell : UITableViewCell, Stilplena {
     @IBOutlet var bildo: UIImageView?
     
     func prepari(teksto: String, bildoNomo: String) {
-    
+
         etikedo?.text = teksto
         bildo?.image = UIImage(named:bildoNomo)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
@@ -27,5 +27,9 @@ class FlankMenuoTableViewCell : UITableViewCell, Stilplena {
         contentView.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
         etikedo?.textColor = UzantDatumaro.stilo.flankTekstKoloro
         bildo?.tintColor = UzantDatumaro.stilo.flankTekstKoloro
+        
+        let elektitaView = UIView()
+        elektitaView.backgroundColor = UzantDatumaro.stilo.flankElektitaKoloro
+        selectedBackgroundView = elektitaView
     }
 }

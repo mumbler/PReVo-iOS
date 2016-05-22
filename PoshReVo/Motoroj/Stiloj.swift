@@ -123,6 +123,15 @@ enum KolorStilo : Int {
             return Koloro.KlasikaVerdo.valoro
         }
     }
+
+    var flankElektitaKoloro: UIColor {
+        switch self {
+        case .Hela:
+            return Koloro.HelaVerdo.valoro
+        case .Malhela:
+            return Koloro.HelaVerdo.valoro
+        }
+    }
     
     var flankTekstKoloro: UIColor {
         switch self {
