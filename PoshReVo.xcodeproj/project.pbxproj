@@ -64,7 +64,6 @@
 		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
 		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
 		00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */; };
-		00FEFEAE1D2F38BC003FAFEB /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FEFEAB1D2F3803003FAFEB /* PoshReVoDatumbazo.sqlite */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -300,7 +299,6 @@
 		00FEFE131D2E9030003FAFEB /* mallongigoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mallongigoj.dat; sourceTree = "<group>"; };
 		00FEFE141D2E9030003FAFEB /* stiloj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stiloj.dat; sourceTree = "<group>"; };
 		00FEFE151D2E9030003FAFEB /* vortoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vortoj.dat; sourceTree = "<group>"; };
-		00FEFEAB1D2F3803003FAFEB /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -442,7 +440,6 @@
 		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				00FEFEAB1D2F3803003FAFEB /* PoshReVoDatumbazo.sqlite */,
 				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
 			);
 			name = Datumoj;
@@ -832,7 +829,6 @@
 				008DBCA41CC6A13A000925E8 /* PriViewController.xib in Resources */,
 				008DBC7E1CC6A132000925E8 /* ArtikoloTableViewCell.xib in Resources */,
 				008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */,
-				00FEFEAE1D2F38BC003FAFEB /* PoshReVoDatumbazo.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
