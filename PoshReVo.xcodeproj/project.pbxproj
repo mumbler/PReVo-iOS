@@ -10,12 +10,10 @@
 		0028DF6B1CC6A3A20034AE8C /* PoshReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC261CC6A053000925E8 /* PoshReVoTests.swift */; };
 		0028DF6C1CC6A3A80034AE8C /* PoshReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */; };
 		0028DF701CC6A3FD0034AE8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */; };
-		004778781CE55629004CA683 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 004778771CE55611004CA683 /* PoshReVoDatumbazo.sqlite */; };
 		008DBC231CC6A041000925E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC211CC6A041000925E8 /* Info.plist */; };
 		008DBC2C1CC6A077000925E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC2B1CC6A077000925E8 /* AppDelegate.swift */; };
 		008DBC2E1CC6A088000925E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC2D1CC6A088000925E8 /* Assets.xcassets */; };
 		008DBC3A1CC6A0B7000925E8 /* elxmligilo.rb in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC381CC6A0B7000925E8 /* elxmligilo.rb */; };
-		008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC391CC6A0B7000925E8 /* prepari.sh */; };
 		008DBC491CC6A0D8000925E8 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */; };
 		008DBC4A1CC6A0D8000925E8 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3E1CC6A0D8000925E8 /* Iloj.swift */; };
 		008DBC4B1CC6A0D8000925E8 /* Koloroj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */; };
@@ -66,6 +64,7 @@
 		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
 		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
 		00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */; };
+		00FEFEAE1D2F38BC003FAFEB /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00FEFEAB1D2F3803003FAFEB /* PoshReVoDatumbazo.sqlite */; };
 		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +90,6 @@
 		000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0028DF6F1CC6A3FD0034AE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
-		004778771CE55611004CA683 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		008DBC211CC6A041000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoUITests/Info.plist; sourceTree = SOURCE_ROOT; };
 		008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoshReVoUITests.swift; path = PoshReVoUITests/PoshReVoUITests.swift; sourceTree = SOURCE_ROOT; };
 		008DBC251CC6A053000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoTests/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -153,6 +151,156 @@
 		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
 		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
 		00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PoshReVo/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		00FEFD801D2E9030003FAFEB /* fakoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fakoj.dat; sourceTree = "<group>"; };
+		00FEFD821D2E9030003FAFEB /* indekso_ab.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ab.dat; sourceTree = "<group>"; };
+		00FEFD831D2E9030003FAFEB /* indekso_af.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_af.dat; sourceTree = "<group>"; };
+		00FEFD841D2E9030003FAFEB /* indekso_am.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_am.dat; sourceTree = "<group>"; };
+		00FEFD851D2E9030003FAFEB /* indekso_ar.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ar.dat; sourceTree = "<group>"; };
+		00FEFD861D2E9030003FAFEB /* indekso_as.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_as.dat; sourceTree = "<group>"; };
+		00FEFD871D2E9030003FAFEB /* indekso_ay.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ay.dat; sourceTree = "<group>"; };
+		00FEFD881D2E9030003FAFEB /* indekso_az.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_az.dat; sourceTree = "<group>"; };
+		00FEFD891D2E9030003FAFEB /* indekso_ba.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ba.dat; sourceTree = "<group>"; };
+		00FEFD8A1D2E9030003FAFEB /* indekso_be.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_be.dat; sourceTree = "<group>"; };
+		00FEFD8B1D2E9030003FAFEB /* indekso_bg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bg.dat; sourceTree = "<group>"; };
+		00FEFD8C1D2E9030003FAFEB /* indekso_bh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bh.dat; sourceTree = "<group>"; };
+		00FEFD8D1D2E9030003FAFEB /* indekso_bi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bi.dat; sourceTree = "<group>"; };
+		00FEFD8E1D2E9030003FAFEB /* indekso_bn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bn.dat; sourceTree = "<group>"; };
+		00FEFD8F1D2E9030003FAFEB /* indekso_bo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bo.dat; sourceTree = "<group>"; };
+		00FEFD901D2E9030003FAFEB /* indekso_br.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_br.dat; sourceTree = "<group>"; };
+		00FEFD911D2E9030003FAFEB /* indekso_ca.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ca.dat; sourceTree = "<group>"; };
+		00FEFD921D2E9030003FAFEB /* indekso_co.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_co.dat; sourceTree = "<group>"; };
+		00FEFD931D2E9030003FAFEB /* indekso_cs.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_cs.dat; sourceTree = "<group>"; };
+		00FEFD941D2E9030003FAFEB /* indekso_cy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_cy.dat; sourceTree = "<group>"; };
+		00FEFD951D2E9030003FAFEB /* indekso_da.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_da.dat; sourceTree = "<group>"; };
+		00FEFD961D2E9030003FAFEB /* indekso_de.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_de.dat; sourceTree = "<group>"; };
+		00FEFD971D2E9030003FAFEB /* indekso_dz.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_dz.dat; sourceTree = "<group>"; };
+		00FEFD981D2E9030003FAFEB /* indekso_el.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_el.dat; sourceTree = "<group>"; };
+		00FEFD991D2E9030003FAFEB /* indekso_en.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_en.dat; sourceTree = "<group>"; };
+		00FEFD9A1D2E9030003FAFEB /* indekso_eo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_eo.dat; sourceTree = "<group>"; };
+		00FEFD9B1D2E9030003FAFEB /* indekso_es.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_es.dat; sourceTree = "<group>"; };
+		00FEFD9C1D2E9030003FAFEB /* indekso_et.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_et.dat; sourceTree = "<group>"; };
+		00FEFD9D1D2E9030003FAFEB /* indekso_eu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_eu.dat; sourceTree = "<group>"; };
+		00FEFD9E1D2E9030003FAFEB /* indekso_fa.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fa.dat; sourceTree = "<group>"; };
+		00FEFD9F1D2E9030003FAFEB /* indekso_fi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fi.dat; sourceTree = "<group>"; };
+		00FEFDA01D2E9030003FAFEB /* indekso_fj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fj.dat; sourceTree = "<group>"; };
+		00FEFDA11D2E9030003FAFEB /* indekso_fo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fo.dat; sourceTree = "<group>"; };
+		00FEFDA21D2E9030003FAFEB /* indekso_fr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fr.dat; sourceTree = "<group>"; };
+		00FEFDA31D2E9030003FAFEB /* indekso_fy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fy.dat; sourceTree = "<group>"; };
+		00FEFDA41D2E9030003FAFEB /* indekso_ga.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ga.dat; sourceTree = "<group>"; };
+		00FEFDA51D2E9030003FAFEB /* indekso_gd.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gd.dat; sourceTree = "<group>"; };
+		00FEFDA61D2E9030003FAFEB /* indekso_gl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gl.dat; sourceTree = "<group>"; };
+		00FEFDA71D2E9030003FAFEB /* indekso_gn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gn.dat; sourceTree = "<group>"; };
+		00FEFDA81D2E9030003FAFEB /* indekso_grc.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_grc.dat; sourceTree = "<group>"; };
+		00FEFDA91D2E9030003FAFEB /* indekso_gu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gu.dat; sourceTree = "<group>"; };
+		00FEFDAA1D2E9030003FAFEB /* indekso_ha.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ha.dat; sourceTree = "<group>"; };
+		00FEFDAB1D2E9030003FAFEB /* indekso_he.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_he.dat; sourceTree = "<group>"; };
+		00FEFDAC1D2E9030003FAFEB /* indekso_hi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hi.dat; sourceTree = "<group>"; };
+		00FEFDAD1D2E9030003FAFEB /* indekso_hr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hr.dat; sourceTree = "<group>"; };
+		00FEFDAE1D2E9030003FAFEB /* indekso_hu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hu.dat; sourceTree = "<group>"; };
+		00FEFDAF1D2E9030003FAFEB /* indekso_hy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hy.dat; sourceTree = "<group>"; };
+		00FEFDB01D2E9030003FAFEB /* indekso_ia.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ia.dat; sourceTree = "<group>"; };
+		00FEFDB11D2E9030003FAFEB /* indekso_id.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_id.dat; sourceTree = "<group>"; };
+		00FEFDB21D2E9030003FAFEB /* indekso_ie.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ie.dat; sourceTree = "<group>"; };
+		00FEFDB31D2E9030003FAFEB /* indekso_ik.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ik.dat; sourceTree = "<group>"; };
+		00FEFDB41D2E9030003FAFEB /* indekso_is.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_is.dat; sourceTree = "<group>"; };
+		00FEFDB51D2E9030003FAFEB /* indekso_it.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_it.dat; sourceTree = "<group>"; };
+		00FEFDB61D2E9030003FAFEB /* indekso_iu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_iu.dat; sourceTree = "<group>"; };
+		00FEFDB71D2E9030003FAFEB /* indekso_ja.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ja.dat; sourceTree = "<group>"; };
+		00FEFDB81D2E9030003FAFEB /* indekso_jbo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_jbo.dat; sourceTree = "<group>"; };
+		00FEFDB91D2E9030003FAFEB /* indekso_jw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_jw.dat; sourceTree = "<group>"; };
+		00FEFDBA1D2E9030003FAFEB /* indekso_ka.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ka.dat; sourceTree = "<group>"; };
+		00FEFDBB1D2E9030003FAFEB /* indekso_kek.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kek.dat; sourceTree = "<group>"; };
+		00FEFDBC1D2E9030003FAFEB /* indekso_kk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kk.dat; sourceTree = "<group>"; };
+		00FEFDBD1D2E9030003FAFEB /* indekso_kl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kl.dat; sourceTree = "<group>"; };
+		00FEFDBE1D2E9030003FAFEB /* indekso_km.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_km.dat; sourceTree = "<group>"; };
+		00FEFDBF1D2E9030003FAFEB /* indekso_kn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kn.dat; sourceTree = "<group>"; };
+		00FEFDC01D2E9030003FAFEB /* indekso_ko.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ko.dat; sourceTree = "<group>"; };
+		00FEFDC11D2E9030003FAFEB /* indekso_ks.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ks.dat; sourceTree = "<group>"; };
+		00FEFDC21D2E9030003FAFEB /* indekso_ku.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ku.dat; sourceTree = "<group>"; };
+		00FEFDC31D2E9030003FAFEB /* indekso_ky.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ky.dat; sourceTree = "<group>"; };
+		00FEFDC41D2E9030003FAFEB /* indekso_la.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_la.dat; sourceTree = "<group>"; };
+		00FEFDC51D2E9030003FAFEB /* indekso_lat.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lat.dat; sourceTree = "<group>"; };
+		00FEFDC61D2E9030003FAFEB /* indekso_ln.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ln.dat; sourceTree = "<group>"; };
+		00FEFDC71D2E9030003FAFEB /* indekso_lo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lo.dat; sourceTree = "<group>"; };
+		00FEFDC81D2E9030003FAFEB /* indekso_lt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lt.dat; sourceTree = "<group>"; };
+		00FEFDC91D2E9030003FAFEB /* indekso_lv.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lv.dat; sourceTree = "<group>"; };
+		00FEFDCA1D2E9030003FAFEB /* indekso_mg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mg.dat; sourceTree = "<group>"; };
+		00FEFDCB1D2E9030003FAFEB /* indekso_mi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mi.dat; sourceTree = "<group>"; };
+		00FEFDCC1D2E9030003FAFEB /* indekso_mk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mk.dat; sourceTree = "<group>"; };
+		00FEFDCD1D2E9030003FAFEB /* indekso_ml.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ml.dat; sourceTree = "<group>"; };
+		00FEFDCE1D2E9030003FAFEB /* indekso_mn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mn.dat; sourceTree = "<group>"; };
+		00FEFDCF1D2E9030003FAFEB /* indekso_mo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mo.dat; sourceTree = "<group>"; };
+		00FEFDD01D2E9030003FAFEB /* indekso_mr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mr.dat; sourceTree = "<group>"; };
+		00FEFDD11D2E9030003FAFEB /* indekso_ms.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ms.dat; sourceTree = "<group>"; };
+		00FEFDD21D2E9030003FAFEB /* indekso_mt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mt.dat; sourceTree = "<group>"; };
+		00FEFDD31D2E9030003FAFEB /* indekso_my.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_my.dat; sourceTree = "<group>"; };
+		00FEFDD41D2E9030003FAFEB /* indekso_na.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_na.dat; sourceTree = "<group>"; };
+		00FEFDD51D2E9030003FAFEB /* indekso_ne.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ne.dat; sourceTree = "<group>"; };
+		00FEFDD61D2E9030003FAFEB /* indekso_nl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_nl.dat; sourceTree = "<group>"; };
+		00FEFDD71D2E9030003FAFEB /* indekso_no.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_no.dat; sourceTree = "<group>"; };
+		00FEFDD81D2E9030003FAFEB /* indekso_oc.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_oc.dat; sourceTree = "<group>"; };
+		00FEFDD91D2E9030003FAFEB /* indekso_om.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_om.dat; sourceTree = "<group>"; };
+		00FEFDDA1D2E9030003FAFEB /* indekso_or.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_or.dat; sourceTree = "<group>"; };
+		00FEFDDB1D2E9030003FAFEB /* indekso_os.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_os.dat; sourceTree = "<group>"; };
+		00FEFDDC1D2E9030003FAFEB /* indekso_pa.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_pa.dat; sourceTree = "<group>"; };
+		00FEFDDD1D2E9030003FAFEB /* indekso_pl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_pl.dat; sourceTree = "<group>"; };
+		00FEFDDE1D2E9030003FAFEB /* indekso_ps.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ps.dat; sourceTree = "<group>"; };
+		00FEFDDF1D2E9030003FAFEB /* indekso_pt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_pt.dat; sourceTree = "<group>"; };
+		00FEFDE01D2E9030003FAFEB /* indekso_qu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_qu.dat; sourceTree = "<group>"; };
+		00FEFDE11D2E9030003FAFEB /* indekso_rm.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_rm.dat; sourceTree = "<group>"; };
+		00FEFDE21D2E9030003FAFEB /* indekso_rn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_rn.dat; sourceTree = "<group>"; };
+		00FEFDE31D2E9030003FAFEB /* indekso_ro.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ro.dat; sourceTree = "<group>"; };
+		00FEFDE41D2E9030003FAFEB /* indekso_ru.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ru.dat; sourceTree = "<group>"; };
+		00FEFDE51D2E9030003FAFEB /* indekso_rw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_rw.dat; sourceTree = "<group>"; };
+		00FEFDE61D2E9030003FAFEB /* indekso_sa.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sa.dat; sourceTree = "<group>"; };
+		00FEFDE71D2E9030003FAFEB /* indekso_sd.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sd.dat; sourceTree = "<group>"; };
+		00FEFDE81D2E9030003FAFEB /* indekso_sg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sg.dat; sourceTree = "<group>"; };
+		00FEFDE91D2E9030003FAFEB /* indekso_sh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sh.dat; sourceTree = "<group>"; };
+		00FEFDEA1D2E9030003FAFEB /* indekso_si.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_si.dat; sourceTree = "<group>"; };
+		00FEFDEB1D2E9030003FAFEB /* indekso_sk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sk.dat; sourceTree = "<group>"; };
+		00FEFDEC1D2E9030003FAFEB /* indekso_sl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sl.dat; sourceTree = "<group>"; };
+		00FEFDED1D2E9030003FAFEB /* indekso_sm.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sm.dat; sourceTree = "<group>"; };
+		00FEFDEE1D2E9030003FAFEB /* indekso_sn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sn.dat; sourceTree = "<group>"; };
+		00FEFDEF1D2E9030003FAFEB /* indekso_so.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_so.dat; sourceTree = "<group>"; };
+		00FEFDF01D2E9030003FAFEB /* indekso_sq.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sq.dat; sourceTree = "<group>"; };
+		00FEFDF11D2E9030003FAFEB /* indekso_sr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sr.dat; sourceTree = "<group>"; };
+		00FEFDF21D2E9030003FAFEB /* indekso_ss.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ss.dat; sourceTree = "<group>"; };
+		00FEFDF31D2E9030003FAFEB /* indekso_st.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_st.dat; sourceTree = "<group>"; };
+		00FEFDF41D2E9030003FAFEB /* indekso_su.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_su.dat; sourceTree = "<group>"; };
+		00FEFDF51D2E9030003FAFEB /* indekso_sv.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sv.dat; sourceTree = "<group>"; };
+		00FEFDF61D2E9030003FAFEB /* indekso_sw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sw.dat; sourceTree = "<group>"; };
+		00FEFDF71D2E9030003FAFEB /* indekso_ta.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ta.dat; sourceTree = "<group>"; };
+		00FEFDF81D2E9030003FAFEB /* indekso_te.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_te.dat; sourceTree = "<group>"; };
+		00FEFDF91D2E9030003FAFEB /* indekso_tg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tg.dat; sourceTree = "<group>"; };
+		00FEFDFA1D2E9030003FAFEB /* indekso_th.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_th.dat; sourceTree = "<group>"; };
+		00FEFDFB1D2E9030003FAFEB /* indekso_ti.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ti.dat; sourceTree = "<group>"; };
+		00FEFDFC1D2E9030003FAFEB /* indekso_tk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tk.dat; sourceTree = "<group>"; };
+		00FEFDFD1D2E9030003FAFEB /* indekso_tl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tl.dat; sourceTree = "<group>"; };
+		00FEFDFE1D2E9030003FAFEB /* indekso_tn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tn.dat; sourceTree = "<group>"; };
+		00FEFDFF1D2E9030003FAFEB /* indekso_to.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_to.dat; sourceTree = "<group>"; };
+		00FEFE001D2E9030003FAFEB /* indekso_tp.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tp.dat; sourceTree = "<group>"; };
+		00FEFE011D2E9030003FAFEB /* indekso_tr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tr.dat; sourceTree = "<group>"; };
+		00FEFE021D2E9030003FAFEB /* indekso_ts.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ts.dat; sourceTree = "<group>"; };
+		00FEFE031D2E9030003FAFEB /* indekso_tt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tt.dat; sourceTree = "<group>"; };
+		00FEFE041D2E9030003FAFEB /* indekso_tw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tw.dat; sourceTree = "<group>"; };
+		00FEFE051D2E9030003FAFEB /* indekso_ug.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ug.dat; sourceTree = "<group>"; };
+		00FEFE061D2E9030003FAFEB /* indekso_uk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_uk.dat; sourceTree = "<group>"; };
+		00FEFE071D2E9030003FAFEB /* indekso_ur.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ur.dat; sourceTree = "<group>"; };
+		00FEFE081D2E9030003FAFEB /* indekso_uz.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_uz.dat; sourceTree = "<group>"; };
+		00FEFE091D2E9030003FAFEB /* indekso_vi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_vi.dat; sourceTree = "<group>"; };
+		00FEFE0A1D2E9030003FAFEB /* indekso_vo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_vo.dat; sourceTree = "<group>"; };
+		00FEFE0B1D2E9030003FAFEB /* indekso_wo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_wo.dat; sourceTree = "<group>"; };
+		00FEFE0C1D2E9030003FAFEB /* indekso_xh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_xh.dat; sourceTree = "<group>"; };
+		00FEFE0D1D2E9030003FAFEB /* indekso_yi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_yi.dat; sourceTree = "<group>"; };
+		00FEFE0E1D2E9030003FAFEB /* indekso_yo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_yo.dat; sourceTree = "<group>"; };
+		00FEFE0F1D2E9030003FAFEB /* indekso_za.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_za.dat; sourceTree = "<group>"; };
+		00FEFE101D2E9030003FAFEB /* indekso_zh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_zh.dat; sourceTree = "<group>"; };
+		00FEFE111D2E9030003FAFEB /* indekso_zu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_zu.dat; sourceTree = "<group>"; };
+		00FEFE121D2E9030003FAFEB /* lingvoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lingvoj.dat; sourceTree = "<group>"; };
+		00FEFE131D2E9030003FAFEB /* mallongigoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mallongigoj.dat; sourceTree = "<group>"; };
+		00FEFE141D2E9030003FAFEB /* stiloj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stiloj.dat; sourceTree = "<group>"; };
+		00FEFE151D2E9030003FAFEB /* vortoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vortoj.dat; sourceTree = "<group>"; };
+		00FEFEAB1D2F3803003FAFEB /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +405,7 @@
 		008DBC371CC6A0B7000925E8 /* Prepariloj */ = {
 			isa = PBXGroup;
 			children = (
+				00FEFD7F1D2E9030003FAFEB /* preparita */,
 				008DBC381CC6A0B7000925E8 /* elxmligilo.rb */,
 				008DBC391CC6A0B7000925E8 /* prepari.sh */,
 			);
@@ -293,7 +442,7 @@
 		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
 			isa = PBXGroup;
 			children = (
-				004778771CE55611004CA683 /* PoshReVoDatumbazo.sqlite */,
+				00FEFEAB1D2F3803003FAFEB /* PoshReVoDatumbazo.sqlite */,
 				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
 			);
 			name = Datumoj;
@@ -370,6 +519,170 @@
 			name = Navigaciiloj;
 			path = PoshReVo/Navigaciiloj;
 			sourceTree = SOURCE_ROOT;
+		};
+		00FEFD7F1D2E9030003FAFEB /* preparita */ = {
+			isa = PBXGroup;
+			children = (
+				00FEFD801D2E9030003FAFEB /* fakoj.dat */,
+				00FEFD811D2E9030003FAFEB /* indeksoj */,
+				00FEFE121D2E9030003FAFEB /* lingvoj.dat */,
+				00FEFE131D2E9030003FAFEB /* mallongigoj.dat */,
+				00FEFE141D2E9030003FAFEB /* stiloj.dat */,
+				00FEFE151D2E9030003FAFEB /* vortoj.dat */,
+			);
+			path = preparita;
+			sourceTree = "<group>";
+		};
+		00FEFD811D2E9030003FAFEB /* indeksoj */ = {
+			isa = PBXGroup;
+			children = (
+				00FEFD821D2E9030003FAFEB /* indekso_ab.dat */,
+				00FEFD831D2E9030003FAFEB /* indekso_af.dat */,
+				00FEFD841D2E9030003FAFEB /* indekso_am.dat */,
+				00FEFD851D2E9030003FAFEB /* indekso_ar.dat */,
+				00FEFD861D2E9030003FAFEB /* indekso_as.dat */,
+				00FEFD871D2E9030003FAFEB /* indekso_ay.dat */,
+				00FEFD881D2E9030003FAFEB /* indekso_az.dat */,
+				00FEFD891D2E9030003FAFEB /* indekso_ba.dat */,
+				00FEFD8A1D2E9030003FAFEB /* indekso_be.dat */,
+				00FEFD8B1D2E9030003FAFEB /* indekso_bg.dat */,
+				00FEFD8C1D2E9030003FAFEB /* indekso_bh.dat */,
+				00FEFD8D1D2E9030003FAFEB /* indekso_bi.dat */,
+				00FEFD8E1D2E9030003FAFEB /* indekso_bn.dat */,
+				00FEFD8F1D2E9030003FAFEB /* indekso_bo.dat */,
+				00FEFD901D2E9030003FAFEB /* indekso_br.dat */,
+				00FEFD911D2E9030003FAFEB /* indekso_ca.dat */,
+				00FEFD921D2E9030003FAFEB /* indekso_co.dat */,
+				00FEFD931D2E9030003FAFEB /* indekso_cs.dat */,
+				00FEFD941D2E9030003FAFEB /* indekso_cy.dat */,
+				00FEFD951D2E9030003FAFEB /* indekso_da.dat */,
+				00FEFD961D2E9030003FAFEB /* indekso_de.dat */,
+				00FEFD971D2E9030003FAFEB /* indekso_dz.dat */,
+				00FEFD981D2E9030003FAFEB /* indekso_el.dat */,
+				00FEFD991D2E9030003FAFEB /* indekso_en.dat */,
+				00FEFD9A1D2E9030003FAFEB /* indekso_eo.dat */,
+				00FEFD9B1D2E9030003FAFEB /* indekso_es.dat */,
+				00FEFD9C1D2E9030003FAFEB /* indekso_et.dat */,
+				00FEFD9D1D2E9030003FAFEB /* indekso_eu.dat */,
+				00FEFD9E1D2E9030003FAFEB /* indekso_fa.dat */,
+				00FEFD9F1D2E9030003FAFEB /* indekso_fi.dat */,
+				00FEFDA01D2E9030003FAFEB /* indekso_fj.dat */,
+				00FEFDA11D2E9030003FAFEB /* indekso_fo.dat */,
+				00FEFDA21D2E9030003FAFEB /* indekso_fr.dat */,
+				00FEFDA31D2E9030003FAFEB /* indekso_fy.dat */,
+				00FEFDA41D2E9030003FAFEB /* indekso_ga.dat */,
+				00FEFDA51D2E9030003FAFEB /* indekso_gd.dat */,
+				00FEFDA61D2E9030003FAFEB /* indekso_gl.dat */,
+				00FEFDA71D2E9030003FAFEB /* indekso_gn.dat */,
+				00FEFDA81D2E9030003FAFEB /* indekso_grc.dat */,
+				00FEFDA91D2E9030003FAFEB /* indekso_gu.dat */,
+				00FEFDAA1D2E9030003FAFEB /* indekso_ha.dat */,
+				00FEFDAB1D2E9030003FAFEB /* indekso_he.dat */,
+				00FEFDAC1D2E9030003FAFEB /* indekso_hi.dat */,
+				00FEFDAD1D2E9030003FAFEB /* indekso_hr.dat */,
+				00FEFDAE1D2E9030003FAFEB /* indekso_hu.dat */,
+				00FEFDAF1D2E9030003FAFEB /* indekso_hy.dat */,
+				00FEFDB01D2E9030003FAFEB /* indekso_ia.dat */,
+				00FEFDB11D2E9030003FAFEB /* indekso_id.dat */,
+				00FEFDB21D2E9030003FAFEB /* indekso_ie.dat */,
+				00FEFDB31D2E9030003FAFEB /* indekso_ik.dat */,
+				00FEFDB41D2E9030003FAFEB /* indekso_is.dat */,
+				00FEFDB51D2E9030003FAFEB /* indekso_it.dat */,
+				00FEFDB61D2E9030003FAFEB /* indekso_iu.dat */,
+				00FEFDB71D2E9030003FAFEB /* indekso_ja.dat */,
+				00FEFDB81D2E9030003FAFEB /* indekso_jbo.dat */,
+				00FEFDB91D2E9030003FAFEB /* indekso_jw.dat */,
+				00FEFDBA1D2E9030003FAFEB /* indekso_ka.dat */,
+				00FEFDBB1D2E9030003FAFEB /* indekso_kek.dat */,
+				00FEFDBC1D2E9030003FAFEB /* indekso_kk.dat */,
+				00FEFDBD1D2E9030003FAFEB /* indekso_kl.dat */,
+				00FEFDBE1D2E9030003FAFEB /* indekso_km.dat */,
+				00FEFDBF1D2E9030003FAFEB /* indekso_kn.dat */,
+				00FEFDC01D2E9030003FAFEB /* indekso_ko.dat */,
+				00FEFDC11D2E9030003FAFEB /* indekso_ks.dat */,
+				00FEFDC21D2E9030003FAFEB /* indekso_ku.dat */,
+				00FEFDC31D2E9030003FAFEB /* indekso_ky.dat */,
+				00FEFDC41D2E9030003FAFEB /* indekso_la.dat */,
+				00FEFDC51D2E9030003FAFEB /* indekso_lat.dat */,
+				00FEFDC61D2E9030003FAFEB /* indekso_ln.dat */,
+				00FEFDC71D2E9030003FAFEB /* indekso_lo.dat */,
+				00FEFDC81D2E9030003FAFEB /* indekso_lt.dat */,
+				00FEFDC91D2E9030003FAFEB /* indekso_lv.dat */,
+				00FEFDCA1D2E9030003FAFEB /* indekso_mg.dat */,
+				00FEFDCB1D2E9030003FAFEB /* indekso_mi.dat */,
+				00FEFDCC1D2E9030003FAFEB /* indekso_mk.dat */,
+				00FEFDCD1D2E9030003FAFEB /* indekso_ml.dat */,
+				00FEFDCE1D2E9030003FAFEB /* indekso_mn.dat */,
+				00FEFDCF1D2E9030003FAFEB /* indekso_mo.dat */,
+				00FEFDD01D2E9030003FAFEB /* indekso_mr.dat */,
+				00FEFDD11D2E9030003FAFEB /* indekso_ms.dat */,
+				00FEFDD21D2E9030003FAFEB /* indekso_mt.dat */,
+				00FEFDD31D2E9030003FAFEB /* indekso_my.dat */,
+				00FEFDD41D2E9030003FAFEB /* indekso_na.dat */,
+				00FEFDD51D2E9030003FAFEB /* indekso_ne.dat */,
+				00FEFDD61D2E9030003FAFEB /* indekso_nl.dat */,
+				00FEFDD71D2E9030003FAFEB /* indekso_no.dat */,
+				00FEFDD81D2E9030003FAFEB /* indekso_oc.dat */,
+				00FEFDD91D2E9030003FAFEB /* indekso_om.dat */,
+				00FEFDDA1D2E9030003FAFEB /* indekso_or.dat */,
+				00FEFDDB1D2E9030003FAFEB /* indekso_os.dat */,
+				00FEFDDC1D2E9030003FAFEB /* indekso_pa.dat */,
+				00FEFDDD1D2E9030003FAFEB /* indekso_pl.dat */,
+				00FEFDDE1D2E9030003FAFEB /* indekso_ps.dat */,
+				00FEFDDF1D2E9030003FAFEB /* indekso_pt.dat */,
+				00FEFDE01D2E9030003FAFEB /* indekso_qu.dat */,
+				00FEFDE11D2E9030003FAFEB /* indekso_rm.dat */,
+				00FEFDE21D2E9030003FAFEB /* indekso_rn.dat */,
+				00FEFDE31D2E9030003FAFEB /* indekso_ro.dat */,
+				00FEFDE41D2E9030003FAFEB /* indekso_ru.dat */,
+				00FEFDE51D2E9030003FAFEB /* indekso_rw.dat */,
+				00FEFDE61D2E9030003FAFEB /* indekso_sa.dat */,
+				00FEFDE71D2E9030003FAFEB /* indekso_sd.dat */,
+				00FEFDE81D2E9030003FAFEB /* indekso_sg.dat */,
+				00FEFDE91D2E9030003FAFEB /* indekso_sh.dat */,
+				00FEFDEA1D2E9030003FAFEB /* indekso_si.dat */,
+				00FEFDEB1D2E9030003FAFEB /* indekso_sk.dat */,
+				00FEFDEC1D2E9030003FAFEB /* indekso_sl.dat */,
+				00FEFDED1D2E9030003FAFEB /* indekso_sm.dat */,
+				00FEFDEE1D2E9030003FAFEB /* indekso_sn.dat */,
+				00FEFDEF1D2E9030003FAFEB /* indekso_so.dat */,
+				00FEFDF01D2E9030003FAFEB /* indekso_sq.dat */,
+				00FEFDF11D2E9030003FAFEB /* indekso_sr.dat */,
+				00FEFDF21D2E9030003FAFEB /* indekso_ss.dat */,
+				00FEFDF31D2E9030003FAFEB /* indekso_st.dat */,
+				00FEFDF41D2E9030003FAFEB /* indekso_su.dat */,
+				00FEFDF51D2E9030003FAFEB /* indekso_sv.dat */,
+				00FEFDF61D2E9030003FAFEB /* indekso_sw.dat */,
+				00FEFDF71D2E9030003FAFEB /* indekso_ta.dat */,
+				00FEFDF81D2E9030003FAFEB /* indekso_te.dat */,
+				00FEFDF91D2E9030003FAFEB /* indekso_tg.dat */,
+				00FEFDFA1D2E9030003FAFEB /* indekso_th.dat */,
+				00FEFDFB1D2E9030003FAFEB /* indekso_ti.dat */,
+				00FEFDFC1D2E9030003FAFEB /* indekso_tk.dat */,
+				00FEFDFD1D2E9030003FAFEB /* indekso_tl.dat */,
+				00FEFDFE1D2E9030003FAFEB /* indekso_tn.dat */,
+				00FEFDFF1D2E9030003FAFEB /* indekso_to.dat */,
+				00FEFE001D2E9030003FAFEB /* indekso_tp.dat */,
+				00FEFE011D2E9030003FAFEB /* indekso_tr.dat */,
+				00FEFE021D2E9030003FAFEB /* indekso_ts.dat */,
+				00FEFE031D2E9030003FAFEB /* indekso_tt.dat */,
+				00FEFE041D2E9030003FAFEB /* indekso_tw.dat */,
+				00FEFE051D2E9030003FAFEB /* indekso_ug.dat */,
+				00FEFE061D2E9030003FAFEB /* indekso_uk.dat */,
+				00FEFE071D2E9030003FAFEB /* indekso_ur.dat */,
+				00FEFE081D2E9030003FAFEB /* indekso_uz.dat */,
+				00FEFE091D2E9030003FAFEB /* indekso_vi.dat */,
+				00FEFE0A1D2E9030003FAFEB /* indekso_vo.dat */,
+				00FEFE0B1D2E9030003FAFEB /* indekso_wo.dat */,
+				00FEFE0C1D2E9030003FAFEB /* indekso_xh.dat */,
+				00FEFE0D1D2E9030003FAFEB /* indekso_yi.dat */,
+				00FEFE0E1D2E9030003FAFEB /* indekso_yo.dat */,
+				00FEFE0F1D2E9030003FAFEB /* indekso_za.dat */,
+				00FEFE101D2E9030003FAFEB /* indekso_zh.dat */,
+				00FEFE111D2E9030003FAFEB /* indekso_zu.dat */,
+			);
+			path = indeksoj;
+			sourceTree = "<group>";
 		};
 		0282B2FEF6E4EC8E45CCEF41 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -495,8 +808,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				004778781CE55629004CA683 /* PoshReVoDatumbazo.sqlite in Resources */,
-				008DBC3B1CC6A0B7000925E8 /* prepari.sh in Resources */,
 				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
 				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
 				00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */,
@@ -521,6 +832,7 @@
 				008DBCA41CC6A13A000925E8 /* PriViewController.xib in Resources */,
 				008DBC7E1CC6A132000925E8 /* ArtikoloTableViewCell.xib in Resources */,
 				008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */,
+				00FEFEAE1D2F38BC003FAFEB /* PoshReVoDatumbazo.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
