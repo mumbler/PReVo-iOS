@@ -19,8 +19,8 @@ enum Koloro {
     
     var valoro: UIColor {
         switch self {
-        case Nigro:
-            return UIColor.blackColor()
+        case .Nigro:
+            return UIColor.black
         case .MalhelaGrizo:
             return UIColor(red: 30.0/255.0, green: 30.0/255.0, blue: 30.0/255.0, alpha: 1.0)
         case .MezaGrizo:
@@ -32,7 +32,7 @@ enum Koloro {
         case .HelegaGrizo:
             return UIColor(red: 235.0/255.0, green: 235.0/255.0, blue: 241.0/255.0, alpha: 1.0)
         case .Blanko:
-            return UIColor.whiteColor()
+            return UIColor.white
         case .KlasikaVerdo:
             return UIColor(red: 0.0, green: 153.0/255.0, blue: 0.0, alpha: 1.0)
         case .HelaVerdo:

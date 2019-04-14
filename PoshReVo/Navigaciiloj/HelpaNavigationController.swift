@@ -19,16 +19,16 @@ class HelpaNavigationController : UINavigationController, Stilplena {
     
     override func viewDidLoad() {
         
-        navigationBar.translucent = false
+        navigationBar.isTranslucent = false
         
         let maldekstraButono: UIBarButtonItem
         
-        if (UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeLeft ||
-            UIApplication.sharedApplication().statusBarOrientation == UIInterfaceOrientation.LandscapeRight) &&
-            UIApplication.sharedApplication().statusBarHidden {
-            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso_eta"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(HelpaNavigationController.forigiSin))
+        if (UIApplication.shared.statusBarOrientation == .landscapeLeft ||
+            UIApplication.shared.statusBarOrientation == .landscapeRight) &&
+            UIApplication.shared.isStatusBarHidden {
+            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso_eta"), style: .plain, target: self, action: #selector(HelpaNavigationController.forigiSin))
         } else {
-            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(HelpaNavigationController.forigiSin))
+            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso"), style: .plain, target: self, action: #selector(HelpaNavigationController.forigiSin))
             maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
         }
         topViewController?.navigationItem.leftBarButtonItem = maldekstraButono
@@ -40,7 +40,7 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         
         navigationBar.barTintColor = UzantDatumaro.stilo.navFonKoloro
         navigationBar.tintColor = UzantDatumaro.stilo.navTintKoloro
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UzantDatumaro.stilo.navTekstoKoloro]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UzantDatumaro.stilo.navTekstoKoloro]
         
         if subLinio == nil {
             subLinio = UIView()
@@ -48,29 +48,29 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         }
         // Por ke la suba linio staru bone post rotacio
         subLinio?.translatesAutoresizingMaskIntoConstraints = false
-        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Left, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Right, multiplier: 1.0, constant: 0.0))
-        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: navigationBar, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0.0))
-        subLinio?.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 1.0))
+        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: .left, relatedBy: .equal, toItem: navigationBar, attribute: .left, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: .right, relatedBy: .equal, toItem: navigationBar, attribute: .right, multiplier: 1.0, constant: 0.0))
+        view.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: .bottom, relatedBy: .equal, toItem: navigationBar, attribute: .bottom, multiplier: 1.0, constant: 0.0))
+        subLinio?.addConstraint(NSLayoutConstraint(item: subLinio!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 1.0))
         subLinio?.backgroundColor = UzantDatumaro.stilo.SubLinioKoloro
         
-        for filo in childViewControllers {
+        for filo in children {
             if let konforma = filo as? Stilplena {
                 konforma.efektivigiStilon()
             }
         }
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
-        subLinio?.hidden = true
-        weak var malforta = self
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            malforta?.subLinio?.hidden = false
-        });
+        subLinio?.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (0.3 * Double(NSEC_PER_SEC)) ) {
+            [weak self] in
+            self?.subLinio?.isHidden = false
+        }
     }
     
-    func forigiSin() {
-        dismissViewControllerAnimated(true, completion: nil)
+    @objc func forigiSin() {
+        dismiss(animated: true, completion: nil)
     }
 }

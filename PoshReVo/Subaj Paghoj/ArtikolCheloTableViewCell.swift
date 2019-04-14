@@ -24,9 +24,9 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
     func prepari(titolo titolo: String, teksto: String, subart: Bool) {
         
         titolaEtikedo?.setText(titolo)
-        titolaEtikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody);
+        titolaEtikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body);
         
-        chefaEtikedo?.text = Iloj.forigiAngulojn(teksto)
+        chefaEtikedo?.text = Iloj.forigiAngulojn(teksto: teksto)
         self.subart = subart
         
         if subart {
@@ -37,11 +37,11 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         
         efektivigiStilon()
         
-        let markoj = Iloj.troviMarkojn(teksto)
+        let markoj = Iloj.troviMarkojn(teksto: teksto)
         chefaEtikedo?.setText(Iloj.pretigiTekston(teksto, kunMarkoj: markoj))
         
         for ligMarko in markoj[markoLigoKlavo]! {
-            chefaEtikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
+            chefaEtikedo?.addLink( to: NSURL(string: ligMarko.2) as! URL, with: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
 
     }
@@ -58,8 +58,8 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
             chefaEtikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
         }
 
-        chefaEtikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
-        chefaEtikedo?.activeLinkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
+        chefaEtikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(value: NSUnderlineStyle.single.rawValue)]
+        chefaEtikedo?.activeLinkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(value: NSUnderlineStyle.single.rawValue)]
     }
     
 }

@@ -26,8 +26,8 @@ class SeancDatumaro {
         
         for lingvo in DatumLegilo.chiujLingvoj() ?? [] {
             
-            if let kodo = lingvo.valueForKey("kodo") as? String,
-               let nomo = lingvo.valueForKey("nomo") as? String {
+            if let kodo = lingvo.value(forKey: "kodo") as? String,
+               let nomo = lingvo.value(forKey: "nomo") as? String {
                 
                 if kodo == "eo" {
                     lingvoj.append(esperantaLingvo())
@@ -36,30 +36,30 @@ class SeancDatumaro {
                 }
             }
         }
-        lingvoj.sortInPlace { (unua: Lingvo, dua: Lingvo) -> Bool in
+        lingvoj.sort { (unua: Lingvo, dua: Lingvo) -> Bool in
             return unua.nomo < dua.nomo
         }
         
         for fako in DatumLegilo.chiujFakoj() ?? [] {
             
-            if let kodo = fako.valueForKey("kodo") as? String,
-               let nomo = fako.valueForKey("nomo") as? String {
+            if let kodo = fako.value(forKey: "kodo") as? String,
+               let nomo = fako.value(forKey: "nomo") as? String {
                 fakoj.append( Fako(kodo, nomo) )
             }
         }
 
         for stilo in DatumLegilo.chiujStiloj() ?? [] {
             
-            if let kodo = stilo.valueForKey("kodo") as? String,
-               let nomo = stilo.valueForKey("nomo") as? String {
+            if let kodo = stilo.value(forKey: "kodo") as? String,
+               let nomo = stilo.value(forKey: "nomo") as? String {
                 stiloj.append( Stilo(kodo, nomo) )
             }
         }
         
         for mallongigo in DatumLegilo.chiujMallongigoj() ?? [] {
             
-            if let kodo = mallongigo.valueForKey("kodo") as? String,
-               let nomo = mallongigo.valueForKey("nomo") as? String {
+            if let kodo = mallongigo.value(forKey: "kodo") as? String,
+               let nomo = mallongigo.value(forKey: "nomo") as? String {
                 mallongigoj.append( Mallongigo(kodo, nomo) )
             }
         }
@@ -71,9 +71,9 @@ class SeancDatumaro {
     
     // Trovo de datumbazeroj -------------------
     
-    static func lingvoPorKodo(kodo: String) -> Lingvo? {
+    static func lingvoPorKodo(_ kodo: String) -> Lingvo? {
         
-        if let indekso = lingvoj.indexOf ({ (nuna: Lingvo) -> Bool in
+        if let indekso = lingvoj.firstIndex(where: { (nuna: Lingvo) -> Bool in
             return nuna.kodo == kodo
         }) {
             return lingvoj[indekso]
@@ -82,7 +82,7 @@ class SeancDatumaro {
         return nil
     }
     
-    static func artikoloPorIndekso(indekso: String) -> Artikolo? {
+    static func artikoloPorIndekso(_ indekso: String) -> Artikolo? {
         
         if let objekto = DatumLegilo.artikoloPorIndekso(indekso) {
             return Artikolo(objekto: objekto)
@@ -91,13 +91,13 @@ class SeancDatumaro {
         return nil
     }
     
-    static func tekstoPorUzo(teksto: String, tipo: String)  -> String? {
+    static func tekstoPorUzo(_ teksto: String, tipo: String)  -> String? {
         
         if tipo == "fak" {
             // Nun ni ne uzas la tutajn fakajn tekstojn. La mallongigoj
             // sufichas
             
-            /*if let indekso = fakoj.indexOf({ (nuna: Fako) -> Bool in
+            /*if let indekso = fakoj.firstIndex(where: { (nuna: Fako) -> Bool in
                 return nuna.kodo == teksto
             }) {
                 return "[" + fakoj[indekso].nomo + "]"
@@ -105,7 +105,7 @@ class SeancDatumaro {
             return "[" + teksto + "]"
         }
         else if tipo == "stl" {
-            if let indekso = stiloj.indexOf({ (nuna: Stilo) -> Bool in
+            if let indekso = stiloj.firstIndex(where: { (nuna: Stilo) -> Bool in
                 return nuna.kodo == teksto
             }) {
                 return "(" + stiloj[indekso].nomo + ")"

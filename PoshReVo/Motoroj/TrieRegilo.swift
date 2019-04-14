@@ -21,17 +21,18 @@ class TrieRegilo {
     // Trie farado
     // ====================================
     
-    static func konstruiChiuTrie(kodoj: [String]) {
+    static func konstruiChiuTrie(_ kodoj: [String]) {
         
-        for lingvo in kodoj {
+        // ["om"] has one entry - starts with W
+        for lingvo in ["om"] /*kodoj*/ {
             konstruiTriePorLingvo(lingvo)
         }
         //konstruiTriePorLingvo("eo")
     }
     
-    static func konstruiTriePorLingvo(kodo: String) {
+    static func konstruiTriePorLingvo(_ kodo: String) {
         
-        if let tradukoDos = NSBundle.mainBundle().pathForResource("indekso_" + kodo, ofType: "dat") {
+        if let tradukoURL = Bundle.main.url(forResource: "indekso_" + kodo, withExtension: "dat") {
             
             let lingvoObjekto = DatumLegilo.lingvoPorKodo(kodo)
             if lingvoObjekto == nil {
@@ -39,74 +40,81 @@ class TrieRegilo {
             }
             
             do {
-                if let tradukoDat = NSData(contentsOfFile: tradukoDos) {
-                    let tradukoJ = try NSJSONSerialization.JSONObjectWithData(tradukoDat, options: NSJSONReadingOptions())
+                let tradukoData = try Data(contentsOf: tradukoURL)
+                let tradukoJSON = try JSONSerialization.jsonObject(with: tradukoData, options: JSONSerialization.ReadingOptions())
+                //let tradukoJSON = try JSONSerialization.JSONObjectWithStream(tradukoData, options: JSONSerialization.ReadingOptions())
+                
+                if let tradukoj = tradukoJSON as? NSArray {
                     
-                    if let tradukoj = tradukoJ as? NSArray {
+                    var nunNodo: NSManagedObject? = nil
+                    for traduko in tradukoj {
                         
-                        var nunNodo: NSManagedObject? = nil
-                        for traduko in tradukoj {
+                        if let enhavoj = traduko as? NSDictionary {
+                            // Kiel dict: indekso, senco, teksto, marko
                             
-                            if let enhavoj = traduko as? NSDictionary {
-                                // Kiel dict: indekso, senco, teksto, marko
+                            let videbla = enhavoj["videbla"] as? String
+                            let teksto = enhavoj["teksto"] as? String
+                            let nomo = enhavoj["nomo"] as? String
+                            let indekso = enhavoj["indekso"] as? String
+                            let marko = enhavoj["marko"] as? String
+                            let senco = enhavoj["senco"] as! Int
+                            
+                            for nunLitero in teksto!.lowercased() {
                                 
-                                let videbla = enhavoj["videbla"] as? String
-                                let teksto = enhavoj["teksto"] as? String
-                                let nomo = enhavoj["nomo"] as? String
-                                let indekso = enhavoj["indekso"] as? String
-                                let marko = enhavoj["marko"] as? String
-                                let senco = enhavoj["senco"] as! Int
+                                var sekvaNodo: NSManagedObject? = nil
+                                if nunNodo == nil {
+                                    if let trovNodo = komencaNodo(el: lingvoObjekto!, kunLitero: String(nunLitero)) {
+                                        sekvaNodo = trovNodo
+                                    }
+                                } else {
+                                    if let trovNodo = self.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
+                                        sekvaNodo = trovNodo
+                                    }
+                                }
                                 
-                                for nunLitero in teksto!.lowercaseString.characters {
+                                if sekvaNodo == nil {
+                                    sekvaNodo = NSEntityDescription.insertNewObject(forEntityName: "TrieNodo", into: konteksto!)
+                                    sekvaNodo?.setValue(String(nunLitero), forKey: "litero")
                                     
-                                    var sekvaNodo: NSManagedObject? = nil
                                     if nunNodo == nil {
-                                        if let trovNodo = komencaNodoElLingvo(lingvoObjekto!, kunLitero: String(nunLitero)) {
-                                            sekvaNodo = trovNodo
-                                        }
+                                        lingvoObjekto?.mutableSetValue(forKey: "komencajNodoj").add(sekvaNodo!)
                                     } else {
-                                        if let trovNodo = sekvaNodoElNodo(nunNodo!, kunLitero: String(nunLitero)) {
-                                            sekvaNodo = trovNodo
-                                        }
+                                        nunNodo?.mutableSetValue(forKey: "sekvajNodoj").add(sekvaNodo!)
                                     }
-                                    
-                                    if sekvaNodo == nil {
-                                        sekvaNodo = NSEntityDescription.insertNewObjectForEntityForName("TrieNodo", inManagedObjectContext: konteksto!)
-                                        sekvaNodo?.setValue(String(nunLitero), forKey: "litero")
-                                        
-                                        if nunNodo == nil {
-                                            lingvoObjekto?.mutableSetValueForKey("komencajNodoj").addObject(sekvaNodo!)
-                                        } else {
-                                            nunNodo?.mutableSetValueForKey("sekvajNodoj").addObject(sekvaNodo!)
-                                        }
-                                    }
-                                    
-                                    nunNodo = sekvaNodo
-                                    
                                 }
                                 
-                                if indekso != nil {
-                                    let novaDestino = NSEntityDescription.insertNewObjectForEntityForName("Destino", inManagedObjectContext: konteksto!)
-                                    novaDestino.setValue(videbla, forKey: "teksto")
-                                    novaDestino.setValue(indekso, forKey: "indekso")
-                                    novaDestino.setValue(nomo, forKey: "nomo")
-                                    novaDestino.setValue(marko, forKey: "marko")
-                                    novaDestino.setValue(String(senco), forKey: "senco")
-                                    if let artikolo = DatumLegilo.artikoloPorIndekso(indekso!) {
-                                        novaDestino.setValue(artikolo, forKey: "artikolo")
-                                    }
-                                    nunNodo?.mutableOrderedSetValueForKey("destinoj").addObject(novaDestino)
-                                }
+                                nunNodo = sekvaNodo
                                 
-                                nunNodo = nil
-                                
-                            } // Enhavoj de la traduko
+                            }
                             
-                            try konteksto?.save()
-                        } // Chiu traduko
+                            if indekso != nil {
+                                let novaDestino = NSEntityDescription.insertNewObject(forEntityName: "Destino", into: konteksto!)
+                                novaDestino.setValue(videbla, forKey: "teksto")
+                                novaDestino.setValue(indekso, forKey: "indekso")
+                                novaDestino.setValue(nomo, forKey: "nomo")
+                                novaDestino.setValue(marko, forKey: "marko")
+                                novaDestino.setValue(String(senco), forKey: "senco")
+                                if let artikolo = DatumLegilo.artikoloPorIndekso(indekso!) {
+                                    novaDestino.setValue(artikolo, forKey: "artikolo")
+                                }
+                                nunNodo?.mutableOrderedSetValue(forKey: "destinoj").add(novaDestino)
+                            }
+                            
+                            nunNodo = nil
+                        } // Enhavoj de la traduko
                         
-                        //konteksto?.save()
-                    }
+                        if let konteksto = konteksto {
+                            konteksto.persistentStoreCoordinator?.performAndWait { () -> Void in
+                                do {
+                                    try konteksto.save()
+                                } catch {
+                                    NSLog("ERARO 2")
+                                }
+                            }
+                        }
+                    } // Chiu traduko
+                    
+                    //konteksto?.save()
                 }
             } catch {
                 NSLog("ERARO")
@@ -141,15 +149,15 @@ class TrieRegilo {
         var nunNodo: NSManagedObject? = nil
         var sekvaNodo: NSManagedObject? = nil
         
-        for nunLitero in teksto.characters {
+        for nunLitero in teksto {
             
             sekvaNodo = nil
             if nunNodo == nil {
                 if let lingvo = DatumLegilo.lingvoPorKodo(lingvoKodo) {
-                    sekvaNodo = komencaNodoElLingvo(lingvo , kunLitero: String(nunLitero))
+                    sekvaNodo = komencaNodo(el: lingvo , kunLitero: String(nunLitero))
                 }
             } else {
-                sekvaNodo = sekvaNodoElNodo(nunNodo!, kunLitero: String(nunLitero))
+                sekvaNodo = self.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero))
             }
             
             if sekvaNodo != nil {
@@ -169,13 +177,13 @@ class TrieRegilo {
     }
     
     // Trovi chiun vorton kiu havas komence la jam trovitan tekston
-    static func chiuFinajho(nodo: NSManagedObject, limo: Int) -> [(String, [NSManagedObject])] {
+    static func chiuFinajho(_ nodo: NSManagedObject, limo: Int) -> [(String, [NSManagedObject])] {
         
         var rezultoj = [(String, [NSManagedObject])]()
         
         var trovoj = [String : [NSManagedObject]]()
-        for destino in nodo.mutableOrderedSetValueForKey("destinoj") ?? [] {
-            if let veraDestino = destino as? NSManagedObject, let destTeksto = veraDestino.valueForKey("teksto") as? String {
+        for destino in nodo.mutableOrderedSetValue(forKey: "destinoj") {
+            if let veraDestino = destino as? NSManagedObject, let destTeksto = veraDestino.value(forKey: "teksto") as? String {
                 if trovoj[destTeksto] == nil { trovoj[destTeksto] = [NSManagedObject]() }
                 trovoj[destTeksto]?.append(veraDestino)
             }
@@ -184,13 +192,13 @@ class TrieRegilo {
             rezultoj.append( (teksto, destinoj))
         }
         
-        if let sekvaj = ((nodo.valueForKey("sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject])?.sort({ (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
-            return (unua.valueForKey("litero") as? String) < (dua.valueForKey("litero") as? String)
+        if let sekvaj = ((nodo.value(forKey: "sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject])?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
+            return (unua.value(forKey: "litero") as? String ?? "") < (dua.value(forKey: "litero") as? String ?? "")
         }) {
             
             for sekvaNodo in sekvaj {
                 
-                rezultoj.appendContentsOf(chiuFinajho(sekvaNodo, limo: limo))
+                rezultoj.append(contentsOf: chiuFinajho(sekvaNodo, limo: limo))
                 if rezultoj.count > limo {
                     return Array(rezultoj.prefix(limo))
                 }
@@ -200,18 +208,18 @@ class TrieRegilo {
         return rezultoj
     }
     
-    static func komencajNodojPorLingvo(lingvo: NSManagedObject) -> [NSManagedObject] {
+    static func komencajNodojPorLingvo(_ lingvo: NSManagedObject) -> [NSManagedObject] {
         
-        return Array(lingvo.valueForKey("komencajNodoj") as! Set)
+        return Array(lingvo.value(forKey: "komencajNodoj") as! Set)
     }
     
-    static func komencaNodoElLingvo(lingvo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
+    static func komencaNodo(el lingvo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
         
         let nodoj = komencajNodojPorLingvo(lingvo)
 
-        if let trovo = nodoj.indexOf ( {
+        if let trovo = nodoj.firstIndex(where: {
             (kontrol: NSManagedObject) -> Bool in
-            return kontrol.valueForKey("litero") as? String == litero
+            return kontrol.value(forKey: "litero") as? String == litero
         }) {
             return nodoj[trovo]
         }
@@ -219,13 +227,13 @@ class TrieRegilo {
         return nil
     }
     
-    static func sekvaNodoElNodo(nodo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
+    static func sekvaNodo(el nodo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
         
-        if let sekvaj: [NSManagedObject] = (nodo.valueForKey("sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject] {
+        if let sekvaj: [NSManagedObject] = (nodo.value(forKey: "sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject] {
         
-            if let trov = sekvaj.indexOf( {
+            if let trov = sekvaj.firstIndex(where: {
                 (kontrol: NSManagedObject) -> Bool in
-                return kontrol.valueForKey("litero") as? String == litero
+                return kontrol.value(forKey: "litero") as? String == litero
             }) {
                 return sekvaj[trov]
             }

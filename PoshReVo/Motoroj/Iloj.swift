@@ -21,15 +21,15 @@ let markoSubKlavo = "sub"
 class Iloj {
     
     // Aldoni chapelon al litero, se tio taugas
-    static func chapeligi(litero: Character) -> Character? {
+    static func chapeli(_ litero: Character) -> Character? {
     
         let unua = "chgjsuCGHJSU"
         let dua  = "ĉĥĝĵŝŭĈĜĤĴŜŬ"
         
-        for i in 0 ..< unua.characters.count {
+        for i in 0 ..< unua.count {
             
-            if unua[unua.startIndex.advancedBy(i)] == litero {
-                return dua[dua.startIndex.advancedBy(i)]
+            if unua[unua.index(unua.startIndex, offsetBy: i)] == litero {
+                return dua[dua.index(dua.startIndex, offsetBy: i)]
             }
         }
         
@@ -41,16 +41,16 @@ class Iloj {
         
         let alfabeto = "abcdefghijklmnoprstuvz"
         
-        if nombro >= alfabeto.characters.count {
+        if nombro >= alfabeto.count {
             return ""
         }
         
-        let litero = alfabeto[alfabeto.startIndex.advancedBy(nombro)]
+        let litero = alfabeto[alfabeto.index(alfabeto.startIndex, offsetBy: nombro)]
 
         if !granda {
             return String(litero)
         } else {
-            return String(litero).uppercaseString
+            return String(litero).uppercased()
         }
     }
     
@@ -63,7 +63,7 @@ class Iloj {
         var romia = ""
         var komenca = nombro
         
-        for (index, romiaLitero) in romiajLiteroj.enumerate() {
+        for (index, romiaLitero) in romiajLiteroj.enumerated() {
             
             let arabaSumo = arabajLiteroj[index]
             let div = komenca / arabaSumo
@@ -112,8 +112,10 @@ class Iloj {
         var rubo: Int = 0
         var loko: Int = 0
         
-        for litero in teksto.unicodeScalars {
+        for literoScalar in teksto.unicodeScalars {
         
+            let litero = String(literoScalar)
+            
             if litero == "<" {
                 
                 rubo += 1
@@ -162,10 +164,10 @@ class Iloj {
                     }
                 } else {
                     do {
-                        let regesp = try NSRegularExpression(pattern: "a href=\"(.*?)\"", options: NSRegularExpressionOptions())
-                        let trovoj = regesp.matchesInString(enhavo, options: NSMatchingOptions(), range: NSMakeRange(0, enhavo.characters.count))
+                        let regesp = try NSRegularExpression(pattern: "a href=\"(.*?)\"", options: NSRegularExpression.Options())
+                        let trovoj = regesp.matches(in: enhavo, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, enhavo.count))
                         if let trovo = trovoj.first {
-                            let celo = (enhavo as NSString).substringWithRange(trovo.rangeAtIndex(1))
+                            let celo = (enhavo as NSString).substring(with: trovo.range(at: 1))
                             ligoStako.append((loko, celo))
                         }
                     } catch { }
@@ -189,13 +191,15 @@ class Iloj {
         return rez
     }
 
-    // Forigi la HTML kodojn el la teksto, por ke ghi povos esti montrata nude
+    // Forigi la HTML kodojn el la teksto, por ke ghi povu montriĝi nude
     static func forigiAngulojn(teksto: String) -> String {
         
         var rez: String = ""
         var en: Bool = false
         var enhavoj: String = ""
-        for litero in teksto.unicodeScalars {
+        for literoScalar in teksto.unicodeScalars {
+            
+            let litero = String(literoScalar)
             
             if litero == "<" {
                 en = true
@@ -205,8 +209,8 @@ class Iloj {
                 enhavoj.append(litero)
 
                 do {
-                    let regesp = try NSRegularExpression(pattern: "<a href=\"(.*?)\">", options: NSRegularExpressionOptions())
-                    let trovoj = regesp.matchesInString(enhavoj, options: NSMatchingOptions(), range: NSMakeRange(0, enhavoj.characters.count))
+                    let regesp = try NSRegularExpression(pattern: "<a href=\"(.*?)\">", options: NSRegularExpression.Options())
+                    let trovoj = regesp.matches(in: enhavoj, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, enhavoj.count))
                     if trovoj.count > 0 {
                         // Fari nenion
                     } else if enhavoj == "<i>"    ||
@@ -237,41 +241,43 @@ class Iloj {
     
     // Pretigi NSAttributedString kun la akcentoj, fortaj regionoj, kaj ligoj kiujn uzas artikoloj ktp.
     // Chi tiu funkciono uzas la rezultojn de la troviMarkojn funkcio
-    static func pretigiTekston(teksto: String, kunMarkoj markoj: [String : [(Int, Int, String)]] ) -> NSMutableAttributedString {
+    static func pretigiTekston(_ teksto: String, kunMarkoj markoj: [String : [(Int, Int, String)]] ) -> NSMutableAttributedString {
         
-        let mutaciaTeksto: NSMutableAttributedString = NSMutableAttributedString(string: forigiAngulojn(teksto))
-        let tekstGrandeco = UIFont.preferredFontForTextStyle(UIFontTextStyleBody).pointSize
-        let tekstStilo = UIFont.systemFontOfSize(tekstGrandeco)
-        let fortaTeksto = UIFont.boldSystemFontOfSize(tekstGrandeco)
-        let akcentaTeksto = UIFont.italicSystemFontOfSize(tekstGrandeco)
+        let mutaciaTeksto: NSMutableAttributedString = NSMutableAttributedString(string: forigiAngulojn(teksto: teksto))
+        let tekstGrandeco = UIFont.preferredFont(forTextStyle: .body).pointSize
+        let tekstStilo = UIFont.systemFont(ofSize: tekstGrandeco)
+        let fortaTeksto = UIFont.boldSystemFont(ofSize: tekstGrandeco)
+        let akcentaTeksto = UIFont.italicSystemFont(ofSize: tekstGrandeco)
     
-        mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: tekstStilo, range: NSMakeRange(0, mutaciaTeksto.length))
-        mutaciaTeksto.addAttribute(kCTForegroundColorAttributeName as String, value: UzantDatumaro.stilo.tekstKoloro, range: NSMakeRange(0, mutaciaTeksto.length))
+        mutaciaTeksto.addAttribute(.font, value: tekstStilo, range: NSMakeRange(0, mutaciaTeksto.length))
+        mutaciaTeksto.addAttribute(.foregroundColor, value: UzantDatumaro.stilo.tekstKoloro, range: NSMakeRange(0, mutaciaTeksto.length))
         
         for akcentMarko in markoj[markoAkcentoKlavo]! {
-            mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: akcentaTeksto, range: NSMakeRange(akcentMarko.0, akcentMarko.1 - akcentMarko.0))
+            mutaciaTeksto.addAttribute(.font, value: akcentaTeksto, range: NSMakeRange(akcentMarko.0, akcentMarko.1 - akcentMarko.0))
         }
         
         for fortMarko in markoj[markoFortoKlavo]! {
-            mutaciaTeksto.addAttribute(kCTFontAttributeName as String, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
+            mutaciaTeksto.addAttribute(.font, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
         }
 
+        // TODO la superscript vershajne ne funkcios
+        
         for superMarko in markoj[markoSuperKlavo]! {
-            mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as String, value: 2, range: NSMakeRange(superMarko.0, superMarko.1 - superMarko.0))
+            mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as NSAttributedString.Key, value: 2, range: NSMakeRange(superMarko.0, superMarko.1 - superMarko.0))
         }
 
         for subMarko in markoj[markoSubKlavo]! {
-            mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as String, value: -2, range: NSMakeRange(subMarko.0, subMarko.1 - subMarko.0))
+            mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as NSAttributedString.Key, value: -2, range: NSMakeRange(subMarko.0, subMarko.1 - subMarko.0))
         }
         
         return mutaciaTeksto
         
     }
     
-    static func superLit(litero: String) -> String {
+    static func superLit(_ litero: String) -> String {
         
         var ret: String = ""
-        for char in litero.characters {
+        for char in litero {
             switch char {
                 case "*":
                     ret += "*";

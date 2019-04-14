@@ -26,27 +26,26 @@ class DatumLegilo {
         var lingvoKodoj = [String]()
         
         // Enlegi lingvojn
-        if let lingvoDos = NSBundle.mainBundle().pathForResource("lingvoj", ofType: "dat") {
+        if let lingvoURL = Bundle.main.url(forResource: "lingvoj", withExtension: "dat") {
             do {
-                if let lingvoDat = NSData(contentsOfFile: lingvoDos) {
-                    let lingvoJ = try NSJSONSerialization.JSONObjectWithData(lingvoDat, options: NSJSONReadingOptions())
+                let lingvoDat = try Data(contentsOf: lingvoURL)
+                let lingvoJ = try JSONSerialization.jsonObject(with: lingvoDat, options: JSONSerialization.ReadingOptions())
+                
+                if let listo = lingvoJ as? NSArray {
                     
-                    if let listo = lingvoJ as? NSArray {
-                        
-                        for lingvo in listo {
-                            if let enhavoj = lingvo as? NSArray {
-                                
-                                let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Lingvo", inManagedObjectContext: konteksto!)
-                                novaObjekto.setValue(enhavoj[0], forKey: "kodo")
-                                novaObjekto.setValue(enhavoj[1], forKey: "nomo")
-                                if let kodo = enhavoj[0] as? String {
-                                    lingvoKodoj.append(kodo)
-                                }
+                    for lingvo in listo {
+                        if let enhavoj = lingvo as? NSArray {
+                            
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Lingvo", into: konteksto!)
+                            novaObjekto.setValue(enhavoj[0], forKey: "kodo")
+                            novaObjekto.setValue(enhavoj[1], forKey: "nomo")
+                            if let kodo = enhavoj[0] as? String {
+                                lingvoKodoj.append(kodo)
                             }
                         }
-                        
-                        try konteksto?.save()
                     }
+                    
+                    try konteksto?.save()
                 }
             } catch {
                 NSLog("Erar en kreado de lingvo-datumbaz-objektoj")
@@ -54,24 +53,23 @@ class DatumLegilo {
         }
         
         // Enlegi fakojn
-        if let fakoDos = NSBundle.mainBundle().pathForResource("fakoj", ofType: "dat") {
+        if let fakoURL = Bundle.main.url(forResource: "fakoj", withExtension: "dat") {
             do {
-                if let fakoDat = NSData(contentsOfFile: fakoDos) {
-                    let fakoJ = try NSJSONSerialization.JSONObjectWithData(fakoDat, options: NSJSONReadingOptions())
+                let fakoDat = try Data(contentsOf: fakoURL)
+                let fakoJ = try JSONSerialization.jsonObject(with: fakoDat as Data, options: JSONSerialization.ReadingOptions())
+                
+                if let listo = fakoJ as? NSArray {
                     
-                    if let listo = fakoJ as? NSArray {
-                        
-                        for fako in listo {
-                            if let enhavoj = fako as? NSArray {
-                                
-                                let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Fako", inManagedObjectContext: konteksto!)
-                                novaObjekto.setValue(enhavoj[0], forKey: "kodo")
-                                novaObjekto.setValue(enhavoj[1], forKey: "nomo")
-                            }
+                    for fako in listo {
+                        if let enhavoj = fako as? NSArray {
+                            
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Fako", into: konteksto!)
+                            novaObjekto.setValue(enhavoj[0], forKey: "kodo")
+                            novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                         }
-                        
-                        try konteksto?.save()
                     }
+                    
+                    try konteksto?.save()
                 }
             } catch {
                 NSLog("Erar en kreado de fako-datumbaz-objektoj")
@@ -79,24 +77,23 @@ class DatumLegilo {
         }
         
         // Enlegi stilojn
-        if let stiloDos = NSBundle.mainBundle().pathForResource("stiloj", ofType: "dat") {
+        if let stiloURL = Bundle.main.url(forResource: "stiloj", withExtension: "dat") {
             do {
-                if let stiloDat = NSData(contentsOfFile: stiloDos) {
-                    let stiloJ = try NSJSONSerialization.JSONObjectWithData(stiloDat, options: NSJSONReadingOptions())
+                let stiloDat = try Data(contentsOf: stiloURL)
+                let stiloJ = try JSONSerialization.jsonObject(with: stiloDat as Data, options: JSONSerialization.ReadingOptions())
+                
+                if let listo = stiloJ as? NSArray {
                     
-                    if let listo = stiloJ as? NSArray {
-                        
-                        for stilo in listo {
-                            if let enhavoj = stilo as? NSArray {
-                                
-                                let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Stilo", inManagedObjectContext: konteksto!)
-                                novaObjekto.setValue(enhavoj[0], forKey: "kodo")
-                                novaObjekto.setValue(enhavoj[1], forKey: "nomo")
-                            }
+                    for stilo in listo {
+                        if let enhavoj = stilo as? NSArray {
+                            
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Stilo", into: konteksto!)
+                            novaObjekto.setValue(enhavoj[0], forKey: "kodo")
+                            novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                         }
-                        
-                        try konteksto?.save()
                     }
+                    
+                    try konteksto?.save()
                 }
             } catch {
                 NSLog("Erar en kreado de stilo-datumbaz-objektoj")
@@ -104,24 +101,23 @@ class DatumLegilo {
         }
         
         // Enlegi mallongigojn
-        if let mallongigoDos = NSBundle.mainBundle().pathForResource("mallongigoj", ofType: "dat") {
+        if let mallongigoURL = Bundle.main.url(forResource: "mallongigoj", withExtension: "dat") {
             do {
-                if let mallongigoDat = NSData(contentsOfFile: mallongigoDos) {
-                    let mallongigoJ = try NSJSONSerialization.JSONObjectWithData(mallongigoDat, options: NSJSONReadingOptions())
+                let mallongigoDat = try Data(contentsOf: mallongigoURL)
+                let mallongigoJ = try JSONSerialization.jsonObject(with: mallongigoDat as Data, options: JSONSerialization.ReadingOptions())
+                
+                if let listo = mallongigoJ as? NSArray {
                     
-                    if let listo = mallongigoJ as? NSArray {
-                        
-                        for mallongigo in listo {
-                            if let enhavoj = mallongigo as? NSArray {
-                                
-                                let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Mallongigo", inManagedObjectContext: konteksto!)
-                                novaObjekto.setValue(enhavoj[0], forKey: "kodo")
-                                novaObjekto.setValue(enhavoj[1], forKey: "nomo")
-                            }
+                    for mallongigo in listo {
+                        if let enhavoj = mallongigo as? NSArray {
+                            
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Mallongigo", into: konteksto!)
+                            novaObjekto.setValue(enhavoj[0], forKey: "kodo")
+                            novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                         }
-                        
-                        try konteksto?.save()
                     }
+                    
+                    try konteksto?.save()
                 }
             } catch {
                 NSLog("Erar en kreado de mallongigo-datumbaz-objektoj")
@@ -129,29 +125,28 @@ class DatumLegilo {
         }
         
         // Enlegi mallongigojn
-        if let artikoloDos = NSBundle.mainBundle().pathForResource("vortoj", ofType: "dat") {
+        if let artikoloURL = Bundle.main.url(forResource: "vortoj", withExtension: "dat") {
             do {
-                if let artikoloDat = NSData(contentsOfFile: artikoloDos) {
-                    let artikoloJ = try NSJSONSerialization.JSONObjectWithData(artikoloDat, options: NSJSONReadingOptions())
+                let artikoloDat = try Data(contentsOf: artikoloURL)
+                let artikoloJ = try JSONSerialization.jsonObject(with: artikoloDat as Data, options: JSONSerialization.ReadingOptions())
+                
+                if let listo = artikoloJ as? NSArray {
                     
-                    if let listo = artikoloJ as? NSArray {
-                        
-                        for artikolo in listo {
-                            if let enhavoj = artikolo as? NSDictionary {
-                                
-                                let novaObjekto = NSEntityDescription.insertNewObjectForEntityForName("Artikolo", inManagedObjectContext: konteksto!)
-                                novaObjekto.setValue(enhavoj["titolo"], forKey: "titolo")
-                                novaObjekto.setValue(enhavoj["radiko"], forKey: "radiko")
-                                novaObjekto.setValue(enhavoj["indekso"], forKey: "indekso")
-                                let tradukDatumoj = try NSJSONSerialization.dataWithJSONObject(enhavoj["tradukoj"]!, options: NSJSONWritingOptions())
-                                novaObjekto.setValue(tradukDatumoj, forKey: "tradukoj")
-                                let vortDatumoj = try NSJSONSerialization.dataWithJSONObject(enhavoj["objekto"]!, options: NSJSONWritingOptions())
-                                novaObjekto.setValue(vortDatumoj, forKey: "vortoj")
-                            }
+                    for artikolo in listo {
+                        if let enhavoj = artikolo as? NSDictionary {
+                            
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Artikolo", into: konteksto!)
+                            novaObjekto.setValue(enhavoj["titolo"], forKey: "titolo")
+                            novaObjekto.setValue(enhavoj["radiko"], forKey: "radiko")
+                            novaObjekto.setValue(enhavoj["indekso"], forKey: "indekso")
+                            let tradukDatumoj = try JSONSerialization.data(withJSONObject: enhavoj["tradukoj"]!, options: JSONSerialization.WritingOptions())
+                            novaObjekto.setValue(tradukDatumoj, forKey: "tradukoj")
+                            let vortDatumoj = try JSONSerialization.data(withJSONObject: enhavoj["objekto"]!, options: JSONSerialization.WritingOptions())
+                            novaObjekto.setValue(vortDatumoj, forKey: "vortoj")
                         }
-                        
-                        try konteksto?.save()
                     }
+                    
+                    try konteksto?.save()
                 }
             } catch {
                 NSLog("Erar en kreado de artikolo-datumbaz-objektoj")
@@ -174,10 +169,10 @@ class DatumLegilo {
             return nil
         }
         
-        let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Lingvo", inManagedObjectContext: konteksto!)
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Lingvo", in: konteksto!)
         do {
-            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+            return try konteksto!.fetch(serchPeto) as? [NSManagedObject]
         } catch { }
         
         return nil
@@ -189,10 +184,10 @@ class DatumLegilo {
             return nil
         }
         
-        let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Fako", inManagedObjectContext: konteksto!)
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Fako", in: konteksto!)
         do {
-            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+            return try konteksto!.fetch(serchPeto) as? [NSManagedObject]
         } catch { }
         
         return nil
@@ -204,10 +199,10 @@ class DatumLegilo {
             return nil
         }
         
-        let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Stilo", inManagedObjectContext: konteksto!)
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Stilo", in: konteksto!)
         do {
-            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+            return try konteksto!.fetch(serchPeto) as? [NSManagedObject]
         } catch { }
         
         return nil
@@ -219,10 +214,10 @@ class DatumLegilo {
             return nil
         }
         
-        let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Mallongigo", inManagedObjectContext: konteksto!)
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Mallongigo", in: konteksto!)
         do {
-            return try konteksto!.executeFetchRequest(serchPeto) as? [NSManagedObject]
+            return try konteksto!.fetch(serchPeto) as? [NSManagedObject]
         } catch { }
         
         return nil
@@ -230,17 +225,17 @@ class DatumLegilo {
     
     // Serchi specifajn objektojn ======================
     
-    static func lingvoPorKodo(kodo: String) -> NSManagedObject? {
+    static func lingvoPorKodo(_ kodo: String) -> NSManagedObject? {
         
         if konteksto == nil {
             return nil
         }
         
-        let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Lingvo", inManagedObjectContext: konteksto!)
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Lingvo", in: konteksto!)
         serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
         do {
-            return try konteksto!.executeFetchRequest(serchPeto).first as? NSManagedObject
+            return try konteksto!.fetch(serchPeto).first as? NSManagedObject
         } catch {
             
         }
@@ -248,17 +243,17 @@ class DatumLegilo {
         return nil
     }
     
-    static func artikoloPorIndekso(indekso: String) -> NSManagedObject? {
+    static func artikoloPorIndekso(_ indekso: String) -> NSManagedObject? {
         
         if konteksto == nil {
             return nil
         }
         
-        let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Artikolo", inManagedObjectContext: konteksto!)
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto!)
         serchPeto.predicate = NSPredicate(format: "indekso == %@", argumentArray: [indekso])
         do {
-            return try konteksto!.executeFetchRequest(serchPeto).first as? NSManagedObject
+            return try konteksto!.fetch(serchPeto).first as? NSManagedObject
         } catch {
             
         }

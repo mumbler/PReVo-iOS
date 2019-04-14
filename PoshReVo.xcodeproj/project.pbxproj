@@ -7,64 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0028DF6B1CC6A3A20034AE8C /* PoshReVoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC261CC6A053000925E8 /* PoshReVoTests.swift */; };
-		0028DF6C1CC6A3A80034AE8C /* PoshReVoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */; };
-		0028DF701CC6A3FD0034AE8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */; };
-		008DBC231CC6A041000925E8 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC211CC6A041000925E8 /* Info.plist */; };
-		008DBC2C1CC6A077000925E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC2B1CC6A077000925E8 /* AppDelegate.swift */; };
-		008DBC2E1CC6A088000925E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC2D1CC6A088000925E8 /* Assets.xcassets */; };
-		008DBC3A1CC6A0B7000925E8 /* elxmligilo.rb in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC381CC6A0B7000925E8 /* elxmligilo.rb */; };
-		008DBC491CC6A0D8000925E8 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */; };
-		008DBC4A1CC6A0D8000925E8 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3E1CC6A0D8000925E8 /* Iloj.swift */; };
-		008DBC4B1CC6A0D8000925E8 /* Koloroj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */; };
-		008DBC4C1CC6A0D8000925E8 /* ModelObjekto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC401CC6A0D8000925E8 /* ModelObjekto.swift */; };
-		008DBC4D1CC6A0D8000925E8 /* ObjCPonto.m in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC431CC6A0D8000925E8 /* ObjCPonto.m */; };
-		008DBC4E1CC6A0D8000925E8 /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC451CC6A0D8000925E8 /* SeancDatumaro.swift */; };
-		008DBC4F1CC6A0D8000925E8 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC461CC6A0D8000925E8 /* Stiloj.swift */; };
-		008DBC501CC6A0D8000925E8 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */; };
-		008DBC511CC6A0D8000925E8 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */; };
-		008DBC591CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */; };
-		008DBC5F1CC6A129000925E8 /* FlankMenuoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */; };
-		008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */; };
-		008DBC611CC6A129000925E8 /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC5D1CC6A129000925E8 /* FlankMenuoViewController.swift */; };
-		008DBC621CC6A129000925E8 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC5E1CC6A129000925E8 /* FlankMenuoViewController.xib */; };
-		008DBC791CC6A132000925E8 /* ArtikolCheloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC641CC6A132000925E8 /* ArtikolCheloTableViewCell.swift */; };
-		008DBC7A1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC651CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift */; };
-		008DBC7B1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC661CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib */; };
-		008DBC7C1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC671CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */; };
-		008DBC7D1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC681CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */; };
-		008DBC7E1CC6A132000925E8 /* ArtikoloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC691CC6A132000925E8 /* ArtikoloTableViewCell.xib */; };
-		008DBC7F1CC6A132000925E8 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC6A1CC6A132000925E8 /* ArtikoloViewController.swift */; };
-		008DBC801CC6A132000925E8 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC6B1CC6A132000925E8 /* ArtikoloViewController.xib */; };
-		008DBC811CC6A132000925E8 /* LicencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC6C1CC6A132000925E8 /* LicencoViewController.swift */; };
-		008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC6D1CC6A132000925E8 /* LicencoViewController.xib */; };
-		008DBC831CC6A132000925E8 /* SerchLingvoElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC6E1CC6A132000925E8 /* SerchLingvoElektiloViewController.swift */; };
-		008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC6F1CC6A132000925E8 /* SerchLingvoElektiloViewController.xib */; };
-		008DBC851CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC701CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib */; };
-		008DBC861CC6A132000925E8 /* StiloElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC711CC6A132000925E8 /* StiloElektiloViewController.swift */; };
-		008DBC871CC6A132000925E8 /* StiloElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC721CC6A132000925E8 /* StiloElektiloViewController.xib */; };
-		008DBC881CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC731CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift */; };
-		008DBC891CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC741CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib */; };
-		008DBC8A1CC6A132000925E8 /* TradukLingvojElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC751CC6A132000925E8 /* TradukLingvojElektiloViewController.swift */; };
-		008DBC8B1CC6A132000925E8 /* TradukLingvojElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC761CC6A132000925E8 /* TradukLingvojElektiloViewController.xib */; };
-		008DBC8C1CC6A132000925E8 /* VortoDisigiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC771CC6A132000925E8 /* VortoDisigiloViewController.swift */; };
-		008DBC8D1CC6A132000925E8 /* VortoDisigiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC781CC6A132000925E8 /* VortoDisigiloViewController.xib */; };
-		008DBC9B1CC6A13A000925E8 /* AgordojViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC8F1CC6A13A000925E8 /* AgordojViewController.swift */; };
-		008DBC9C1CC6A13A000925E8 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC901CC6A13A000925E8 /* AgordojViewController.xib */; };
-		008DBC9D1CC6A13A000925E8 /* HistorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC911CC6A13A000925E8 /* HistorioViewController.swift */; };
-		008DBC9E1CC6A13A000925E8 /* HistorioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC921CC6A13A000925E8 /* HistorioViewController.xib */; };
-		008DBC9F1CC6A13A000925E8 /* IngoPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC931CC6A13A000925E8 /* IngoPaghoViewController.swift */; };
-		008DBCA01CC6A13A000925E8 /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC941CC6A13A000925E8 /* IngoPaghoViewController.xib */; };
-		008DBCA11CC6A13A000925E8 /* KonservitajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC951CC6A13A000925E8 /* KonservitajViewController.swift */; };
-		008DBCA21CC6A13A000925E8 /* KonservitajViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC961CC6A13A000925E8 /* KonservitajViewController.xib */; };
-		008DBCA31CC6A13A000925E8 /* PriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC971CC6A13A000925E8 /* PriViewController.swift */; };
-		008DBCA41CC6A13A000925E8 /* PriViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC981CC6A13A000925E8 /* PriViewController.xib */; };
-		008DBCA51CC6A13A000925E8 /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBC991CC6A13A000925E8 /* SerchPaghoViewController.swift */; };
-		008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */; };
-		008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */; };
-		008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */; };
-		00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */; };
-		078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EF2D02040D4CCD471ACA36 /* Pods.framework */; };
+		0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084890F226385200071CEC2 /* SeancDatumaro.swift */; };
+		0084894E226385200071CEC2 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848910226385200071CEC2 /* UzantDatumaro.swift */; };
+		0084894F226385200071CEC2 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848911226385200071CEC2 /* Stiloj.swift */; };
+		00848950226385200071CEC2 /* ObjCPonto.m in Sources */ = {isa = PBXBuildFile; fileRef = 00848914226385200071CEC2 /* ObjCPonto.m */; };
+		00848951226385200071CEC2 /* Iloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848916226385200071CEC2 /* Iloj.swift */; };
+		00848952226385200071CEC2 /* ModelObjekto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848917226385200071CEC2 /* ModelObjekto.swift */; };
+		00848953226385200071CEC2 /* Koloroj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848918226385200071CEC2 /* Koloroj.swift */; };
+		00848954226385200071CEC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848919226385200071CEC2 /* LaunchScreen.storyboard */; };
+		00848955226385200071CEC2 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084891B226385200071CEC2 /* ArtikoloViewController.xib */; };
+		00848956226385200071CEC2 /* ArtikolCheloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891C226385200071CEC2 /* ArtikolCheloTableViewCell.swift */; };
+		00848957226385200071CEC2 /* TradukLingvojElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */; };
+		00848958226385200071CEC2 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891E226385200071CEC2 /* ArtikoloViewController.swift */; };
+		00848959226385200071CEC2 /* TradukLingvojElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */; };
+		0084895A226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */; };
+		0084895B226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */; };
+		0084895C226385200071CEC2 /* SerchLingvoElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */; };
+		0084895D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */; };
+		0084895E226385200071CEC2 /* StiloElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848924226385200071CEC2 /* StiloElektiloViewController.xib */; };
+		0084895F226385200071CEC2 /* SerchLingvoElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */; };
+		00848960226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */; };
+		00848961226385200071CEC2 /* StiloElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848927226385200071CEC2 /* StiloElektiloViewController.swift */; };
+		00848962226385200071CEC2 /* LicencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848928226385200071CEC2 /* LicencoViewController.swift */; };
+		00848963226385200071CEC2 /* LicencoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848929226385200071CEC2 /* LicencoViewController.xib */; };
+		00848964226385200071CEC2 /* ArtikoloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */; };
+		00848965226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */; };
+		00848966226385200071CEC2 /* VortoDisigiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */; };
+		00848967226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */; };
+		00848968226385200071CEC2 /* VortoDisigiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */; };
+		00848969226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084892F226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift */; };
+		0084896A226385200071CEC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00848930226385200071CEC2 /* Assets.xcassets */; };
+		0084896B226385200071CEC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848931226385200071CEC2 /* LaunchScreen.storyboard */; };
+		0084896C226385200071CEC2 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */; };
+		0084896D226385200071CEC2 /* FlankMenuoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848935226385200071CEC2 /* FlankMenuoViewController.swift */; };
+		0084896E226385200071CEC2 /* FlankMenuoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848936226385200071CEC2 /* FlankMenuoTableViewCell.swift */; };
+		0084896F226385200071CEC2 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848937226385200071CEC2 /* FlankMenuoViewController.xib */; };
+		00848970226385200071CEC2 /* HelpaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848939226385200071CEC2 /* HelpaNavigationController.swift */; };
+		00848971226385200071CEC2 /* ChefaNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084893A226385200071CEC2 /* ChefaNavigationController.swift */; };
+		00848972226385200071CEC2 /* AgordojViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084893C226385200071CEC2 /* AgordojViewController.swift */; };
+		00848973226385200071CEC2 /* PriViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084893D226385200071CEC2 /* PriViewController.xib */; };
+		00848974226385200071CEC2 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084893E226385200071CEC2 /* SerchPaghoViewController.xib */; };
+		00848975226385200071CEC2 /* HistorioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084893F226385200071CEC2 /* HistorioViewController.swift */; };
+		00848976226385200071CEC2 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848940226385200071CEC2 /* AgordojViewController.xib */; };
+		00848977226385200071CEC2 /* SerchPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848941226385200071CEC2 /* SerchPaghoViewController.swift */; };
+		00848978226385200071CEC2 /* KonservitajViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848942226385200071CEC2 /* KonservitajViewController.xib */; };
+		00848979226385200071CEC2 /* IngoPaghoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848943226385200071CEC2 /* IngoPaghoViewController.swift */; };
+		0084897A226385200071CEC2 /* KonservitajViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848944226385200071CEC2 /* KonservitajViewController.swift */; };
+		0084897B226385200071CEC2 /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848945226385200071CEC2 /* IngoPaghoViewController.xib */; };
+		0084897C226385200071CEC2 /* HistorioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848946226385200071CEC2 /* HistorioViewController.xib */; };
+		0084897D226385200071CEC2 /* PriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848947226385200071CEC2 /* PriViewController.swift */; };
+		0084897E226385200071CEC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848948226385200071CEC2 /* AppDelegate.swift */; };
+		00848980226385200071CEC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0084894C226385200071CEC2 /* Info.plist */; };
+		0084898F226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0084898D226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld */; };
+		008489922263E0470071CEC2 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008489902263E0470071CEC2 /* TrieRegilo.swift */; };
+		008489932263E0470071CEC2 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008489912263E0470071CEC2 /* DatumLegilo.swift */; };
+		7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,220 +85,66 @@
 		000985971C31F0CB0083DE24 /* PoshReVo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoshReVo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0028DF6F1CC6A3FD0034AE8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
-		008DBC211CC6A041000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoUITests/Info.plist; sourceTree = SOURCE_ROOT; };
-		008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoshReVoUITests.swift; path = PoshReVoUITests/PoshReVoUITests.swift; sourceTree = SOURCE_ROOT; };
-		008DBC251CC6A053000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVoTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		008DBC261CC6A053000925E8 /* PoshReVoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PoshReVoTests.swift; path = PoshReVoTests/PoshReVoTests.swift; sourceTree = SOURCE_ROOT; };
-		008DBC291CC6A069000925E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PoshReVo/Info.plist; sourceTree = SOURCE_ROOT; };
-		008DBC2B1CC6A077000925E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = PoshReVo/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		008DBC2D1CC6A088000925E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = PoshReVo/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		008DBC381CC6A0B7000925E8 /* elxmligilo.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = elxmligilo.rb; sourceTree = "<group>"; };
-		008DBC391CC6A0B7000925E8 /* prepari.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = prepari.sh; sourceTree = "<group>"; };
-		008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
-		008DBC3E1CC6A0D8000925E8 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
-		008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Koloroj.swift; sourceTree = "<group>"; };
-		008DBC401CC6A0D8000925E8 /* ModelObjekto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjekto.swift; sourceTree = "<group>"; };
-		008DBC421CC6A0D8000925E8 /* ObjCPonto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCPonto.h; sourceTree = "<group>"; };
-		008DBC431CC6A0D8000925E8 /* ObjCPonto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCPonto.m; sourceTree = "<group>"; };
-		008DBC441CC6A0D8000925E8 /* PoshReVo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PoshReVo-Bridging-Header.h"; sourceTree = "<group>"; };
-		008DBC451CC6A0D8000925E8 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
-		008DBC461CC6A0D8000925E8 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
-		008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
-		008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
-		008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
-		008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoTableViewCell.swift; sourceTree = "<group>"; };
-		008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoTableViewCell.xib; sourceTree = "<group>"; };
-		008DBC5D1CC6A129000925E8 /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
-		008DBC5E1CC6A129000925E8 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
-		008DBC641CC6A132000925E8 /* ArtikolCheloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikolCheloTableViewCell.swift; sourceTree = "<group>"; };
-		008DBC651CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloKapoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
-		008DBC661CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloKapoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
-		008DBC671CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloPiedButonoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
-		008DBC681CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloPiedButonoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
-		008DBC691CC6A132000925E8 /* ArtikoloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloTableViewCell.xib; sourceTree = "<group>"; };
-		008DBC6A1CC6A132000925E8 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
-		008DBC6B1CC6A132000925E8 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
-		008DBC6C1CC6A132000925E8 /* LicencoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencoViewController.swift; sourceTree = "<group>"; };
-		008DBC6D1CC6A132000925E8 /* LicencoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicencoViewController.xib; sourceTree = "<group>"; };
-		008DBC6E1CC6A132000925E8 /* SerchLingvoElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchLingvoElektiloViewController.swift; sourceTree = "<group>"; };
-		008DBC6F1CC6A132000925E8 /* SerchLingvoElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchLingvoElektiloViewController.xib; sourceTree = "<group>"; };
-		008DBC701CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShanghiTekstGrandeconViewController.xib; sourceTree = "<group>"; };
-		008DBC711CC6A132000925E8 /* StiloElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloElektiloViewController.swift; sourceTree = "<group>"; };
-		008DBC721CC6A132000925E8 /* StiloElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StiloElektiloViewController.xib; sourceTree = "<group>"; };
-		008DBC731CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvoElektiloTableViewCell.swift; sourceTree = "<group>"; };
-		008DBC741CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvoElektiloTableViewCell.xib; sourceTree = "<group>"; };
-		008DBC751CC6A132000925E8 /* TradukLingvojElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvojElektiloViewController.swift; sourceTree = "<group>"; };
-		008DBC761CC6A132000925E8 /* TradukLingvojElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvojElektiloViewController.xib; sourceTree = "<group>"; };
-		008DBC771CC6A132000925E8 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
-		008DBC781CC6A132000925E8 /* VortoDisigiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VortoDisigiloViewController.xib; sourceTree = "<group>"; };
-		008DBC8F1CC6A13A000925E8 /* AgordojViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgordojViewController.swift; sourceTree = "<group>"; };
-		008DBC901CC6A13A000925E8 /* AgordojViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgordojViewController.xib; sourceTree = "<group>"; };
-		008DBC911CC6A13A000925E8 /* HistorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorioViewController.swift; sourceTree = "<group>"; };
-		008DBC921CC6A13A000925E8 /* HistorioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorioViewController.xib; sourceTree = "<group>"; };
-		008DBC931CC6A13A000925E8 /* IngoPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngoPaghoViewController.swift; sourceTree = "<group>"; };
-		008DBC941CC6A13A000925E8 /* IngoPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngoPaghoViewController.xib; sourceTree = "<group>"; };
-		008DBC951CC6A13A000925E8 /* KonservitajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KonservitajViewController.swift; sourceTree = "<group>"; };
-		008DBC961CC6A13A000925E8 /* KonservitajViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KonservitajViewController.xib; sourceTree = "<group>"; };
-		008DBC971CC6A13A000925E8 /* PriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriViewController.swift; sourceTree = "<group>"; };
-		008DBC981CC6A13A000925E8 /* PriViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriViewController.xib; sourceTree = "<group>"; };
-		008DBC991CC6A13A000925E8 /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
-		008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
-		008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
-		008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
-		00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PoshReVo/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		00FEFD801D2E9030003FAFEB /* fakoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fakoj.dat; sourceTree = "<group>"; };
-		00FEFD821D2E9030003FAFEB /* indekso_ab.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ab.dat; sourceTree = "<group>"; };
-		00FEFD831D2E9030003FAFEB /* indekso_af.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_af.dat; sourceTree = "<group>"; };
-		00FEFD841D2E9030003FAFEB /* indekso_am.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_am.dat; sourceTree = "<group>"; };
-		00FEFD851D2E9030003FAFEB /* indekso_ar.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ar.dat; sourceTree = "<group>"; };
-		00FEFD861D2E9030003FAFEB /* indekso_as.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_as.dat; sourceTree = "<group>"; };
-		00FEFD871D2E9030003FAFEB /* indekso_ay.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ay.dat; sourceTree = "<group>"; };
-		00FEFD881D2E9030003FAFEB /* indekso_az.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_az.dat; sourceTree = "<group>"; };
-		00FEFD891D2E9030003FAFEB /* indekso_ba.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ba.dat; sourceTree = "<group>"; };
-		00FEFD8A1D2E9030003FAFEB /* indekso_be.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_be.dat; sourceTree = "<group>"; };
-		00FEFD8B1D2E9030003FAFEB /* indekso_bg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bg.dat; sourceTree = "<group>"; };
-		00FEFD8C1D2E9030003FAFEB /* indekso_bh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bh.dat; sourceTree = "<group>"; };
-		00FEFD8D1D2E9030003FAFEB /* indekso_bi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bi.dat; sourceTree = "<group>"; };
-		00FEFD8E1D2E9030003FAFEB /* indekso_bn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bn.dat; sourceTree = "<group>"; };
-		00FEFD8F1D2E9030003FAFEB /* indekso_bo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_bo.dat; sourceTree = "<group>"; };
-		00FEFD901D2E9030003FAFEB /* indekso_br.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_br.dat; sourceTree = "<group>"; };
-		00FEFD911D2E9030003FAFEB /* indekso_ca.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ca.dat; sourceTree = "<group>"; };
-		00FEFD921D2E9030003FAFEB /* indekso_co.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_co.dat; sourceTree = "<group>"; };
-		00FEFD931D2E9030003FAFEB /* indekso_cs.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_cs.dat; sourceTree = "<group>"; };
-		00FEFD941D2E9030003FAFEB /* indekso_cy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_cy.dat; sourceTree = "<group>"; };
-		00FEFD951D2E9030003FAFEB /* indekso_da.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_da.dat; sourceTree = "<group>"; };
-		00FEFD961D2E9030003FAFEB /* indekso_de.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_de.dat; sourceTree = "<group>"; };
-		00FEFD971D2E9030003FAFEB /* indekso_dz.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_dz.dat; sourceTree = "<group>"; };
-		00FEFD981D2E9030003FAFEB /* indekso_el.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_el.dat; sourceTree = "<group>"; };
-		00FEFD991D2E9030003FAFEB /* indekso_en.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_en.dat; sourceTree = "<group>"; };
-		00FEFD9A1D2E9030003FAFEB /* indekso_eo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_eo.dat; sourceTree = "<group>"; };
-		00FEFD9B1D2E9030003FAFEB /* indekso_es.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_es.dat; sourceTree = "<group>"; };
-		00FEFD9C1D2E9030003FAFEB /* indekso_et.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_et.dat; sourceTree = "<group>"; };
-		00FEFD9D1D2E9030003FAFEB /* indekso_eu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_eu.dat; sourceTree = "<group>"; };
-		00FEFD9E1D2E9030003FAFEB /* indekso_fa.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fa.dat; sourceTree = "<group>"; };
-		00FEFD9F1D2E9030003FAFEB /* indekso_fi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fi.dat; sourceTree = "<group>"; };
-		00FEFDA01D2E9030003FAFEB /* indekso_fj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fj.dat; sourceTree = "<group>"; };
-		00FEFDA11D2E9030003FAFEB /* indekso_fo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fo.dat; sourceTree = "<group>"; };
-		00FEFDA21D2E9030003FAFEB /* indekso_fr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fr.dat; sourceTree = "<group>"; };
-		00FEFDA31D2E9030003FAFEB /* indekso_fy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_fy.dat; sourceTree = "<group>"; };
-		00FEFDA41D2E9030003FAFEB /* indekso_ga.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ga.dat; sourceTree = "<group>"; };
-		00FEFDA51D2E9030003FAFEB /* indekso_gd.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gd.dat; sourceTree = "<group>"; };
-		00FEFDA61D2E9030003FAFEB /* indekso_gl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gl.dat; sourceTree = "<group>"; };
-		00FEFDA71D2E9030003FAFEB /* indekso_gn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gn.dat; sourceTree = "<group>"; };
-		00FEFDA81D2E9030003FAFEB /* indekso_grc.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_grc.dat; sourceTree = "<group>"; };
-		00FEFDA91D2E9030003FAFEB /* indekso_gu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_gu.dat; sourceTree = "<group>"; };
-		00FEFDAA1D2E9030003FAFEB /* indekso_ha.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ha.dat; sourceTree = "<group>"; };
-		00FEFDAB1D2E9030003FAFEB /* indekso_he.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_he.dat; sourceTree = "<group>"; };
-		00FEFDAC1D2E9030003FAFEB /* indekso_hi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hi.dat; sourceTree = "<group>"; };
-		00FEFDAD1D2E9030003FAFEB /* indekso_hr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hr.dat; sourceTree = "<group>"; };
-		00FEFDAE1D2E9030003FAFEB /* indekso_hu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hu.dat; sourceTree = "<group>"; };
-		00FEFDAF1D2E9030003FAFEB /* indekso_hy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hy.dat; sourceTree = "<group>"; };
-		00FEFDB01D2E9030003FAFEB /* indekso_ia.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ia.dat; sourceTree = "<group>"; };
-		00FEFDB11D2E9030003FAFEB /* indekso_id.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_id.dat; sourceTree = "<group>"; };
-		00FEFDB21D2E9030003FAFEB /* indekso_ie.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ie.dat; sourceTree = "<group>"; };
-		00FEFDB31D2E9030003FAFEB /* indekso_ik.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ik.dat; sourceTree = "<group>"; };
-		00FEFDB41D2E9030003FAFEB /* indekso_is.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_is.dat; sourceTree = "<group>"; };
-		00FEFDB51D2E9030003FAFEB /* indekso_it.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_it.dat; sourceTree = "<group>"; };
-		00FEFDB61D2E9030003FAFEB /* indekso_iu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_iu.dat; sourceTree = "<group>"; };
-		00FEFDB71D2E9030003FAFEB /* indekso_ja.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ja.dat; sourceTree = "<group>"; };
-		00FEFDB81D2E9030003FAFEB /* indekso_jbo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_jbo.dat; sourceTree = "<group>"; };
-		00FEFDB91D2E9030003FAFEB /* indekso_jw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_jw.dat; sourceTree = "<group>"; };
-		00FEFDBA1D2E9030003FAFEB /* indekso_ka.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ka.dat; sourceTree = "<group>"; };
-		00FEFDBB1D2E9030003FAFEB /* indekso_kek.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kek.dat; sourceTree = "<group>"; };
-		00FEFDBC1D2E9030003FAFEB /* indekso_kk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kk.dat; sourceTree = "<group>"; };
-		00FEFDBD1D2E9030003FAFEB /* indekso_kl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kl.dat; sourceTree = "<group>"; };
-		00FEFDBE1D2E9030003FAFEB /* indekso_km.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_km.dat; sourceTree = "<group>"; };
-		00FEFDBF1D2E9030003FAFEB /* indekso_kn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_kn.dat; sourceTree = "<group>"; };
-		00FEFDC01D2E9030003FAFEB /* indekso_ko.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ko.dat; sourceTree = "<group>"; };
-		00FEFDC11D2E9030003FAFEB /* indekso_ks.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ks.dat; sourceTree = "<group>"; };
-		00FEFDC21D2E9030003FAFEB /* indekso_ku.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ku.dat; sourceTree = "<group>"; };
-		00FEFDC31D2E9030003FAFEB /* indekso_ky.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ky.dat; sourceTree = "<group>"; };
-		00FEFDC41D2E9030003FAFEB /* indekso_la.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_la.dat; sourceTree = "<group>"; };
-		00FEFDC51D2E9030003FAFEB /* indekso_lat.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lat.dat; sourceTree = "<group>"; };
-		00FEFDC61D2E9030003FAFEB /* indekso_ln.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ln.dat; sourceTree = "<group>"; };
-		00FEFDC71D2E9030003FAFEB /* indekso_lo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lo.dat; sourceTree = "<group>"; };
-		00FEFDC81D2E9030003FAFEB /* indekso_lt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lt.dat; sourceTree = "<group>"; };
-		00FEFDC91D2E9030003FAFEB /* indekso_lv.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_lv.dat; sourceTree = "<group>"; };
-		00FEFDCA1D2E9030003FAFEB /* indekso_mg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mg.dat; sourceTree = "<group>"; };
-		00FEFDCB1D2E9030003FAFEB /* indekso_mi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mi.dat; sourceTree = "<group>"; };
-		00FEFDCC1D2E9030003FAFEB /* indekso_mk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mk.dat; sourceTree = "<group>"; };
-		00FEFDCD1D2E9030003FAFEB /* indekso_ml.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ml.dat; sourceTree = "<group>"; };
-		00FEFDCE1D2E9030003FAFEB /* indekso_mn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mn.dat; sourceTree = "<group>"; };
-		00FEFDCF1D2E9030003FAFEB /* indekso_mo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mo.dat; sourceTree = "<group>"; };
-		00FEFDD01D2E9030003FAFEB /* indekso_mr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mr.dat; sourceTree = "<group>"; };
-		00FEFDD11D2E9030003FAFEB /* indekso_ms.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ms.dat; sourceTree = "<group>"; };
-		00FEFDD21D2E9030003FAFEB /* indekso_mt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_mt.dat; sourceTree = "<group>"; };
-		00FEFDD31D2E9030003FAFEB /* indekso_my.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_my.dat; sourceTree = "<group>"; };
-		00FEFDD41D2E9030003FAFEB /* indekso_na.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_na.dat; sourceTree = "<group>"; };
-		00FEFDD51D2E9030003FAFEB /* indekso_ne.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ne.dat; sourceTree = "<group>"; };
-		00FEFDD61D2E9030003FAFEB /* indekso_nl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_nl.dat; sourceTree = "<group>"; };
-		00FEFDD71D2E9030003FAFEB /* indekso_no.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_no.dat; sourceTree = "<group>"; };
-		00FEFDD81D2E9030003FAFEB /* indekso_oc.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_oc.dat; sourceTree = "<group>"; };
-		00FEFDD91D2E9030003FAFEB /* indekso_om.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_om.dat; sourceTree = "<group>"; };
-		00FEFDDA1D2E9030003FAFEB /* indekso_or.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_or.dat; sourceTree = "<group>"; };
-		00FEFDDB1D2E9030003FAFEB /* indekso_os.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_os.dat; sourceTree = "<group>"; };
-		00FEFDDC1D2E9030003FAFEB /* indekso_pa.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_pa.dat; sourceTree = "<group>"; };
-		00FEFDDD1D2E9030003FAFEB /* indekso_pl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_pl.dat; sourceTree = "<group>"; };
-		00FEFDDE1D2E9030003FAFEB /* indekso_ps.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ps.dat; sourceTree = "<group>"; };
-		00FEFDDF1D2E9030003FAFEB /* indekso_pt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_pt.dat; sourceTree = "<group>"; };
-		00FEFDE01D2E9030003FAFEB /* indekso_qu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_qu.dat; sourceTree = "<group>"; };
-		00FEFDE11D2E9030003FAFEB /* indekso_rm.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_rm.dat; sourceTree = "<group>"; };
-		00FEFDE21D2E9030003FAFEB /* indekso_rn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_rn.dat; sourceTree = "<group>"; };
-		00FEFDE31D2E9030003FAFEB /* indekso_ro.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ro.dat; sourceTree = "<group>"; };
-		00FEFDE41D2E9030003FAFEB /* indekso_ru.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ru.dat; sourceTree = "<group>"; };
-		00FEFDE51D2E9030003FAFEB /* indekso_rw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_rw.dat; sourceTree = "<group>"; };
-		00FEFDE61D2E9030003FAFEB /* indekso_sa.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sa.dat; sourceTree = "<group>"; };
-		00FEFDE71D2E9030003FAFEB /* indekso_sd.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sd.dat; sourceTree = "<group>"; };
-		00FEFDE81D2E9030003FAFEB /* indekso_sg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sg.dat; sourceTree = "<group>"; };
-		00FEFDE91D2E9030003FAFEB /* indekso_sh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sh.dat; sourceTree = "<group>"; };
-		00FEFDEA1D2E9030003FAFEB /* indekso_si.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_si.dat; sourceTree = "<group>"; };
-		00FEFDEB1D2E9030003FAFEB /* indekso_sk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sk.dat; sourceTree = "<group>"; };
-		00FEFDEC1D2E9030003FAFEB /* indekso_sl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sl.dat; sourceTree = "<group>"; };
-		00FEFDED1D2E9030003FAFEB /* indekso_sm.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sm.dat; sourceTree = "<group>"; };
-		00FEFDEE1D2E9030003FAFEB /* indekso_sn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sn.dat; sourceTree = "<group>"; };
-		00FEFDEF1D2E9030003FAFEB /* indekso_so.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_so.dat; sourceTree = "<group>"; };
-		00FEFDF01D2E9030003FAFEB /* indekso_sq.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sq.dat; sourceTree = "<group>"; };
-		00FEFDF11D2E9030003FAFEB /* indekso_sr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sr.dat; sourceTree = "<group>"; };
-		00FEFDF21D2E9030003FAFEB /* indekso_ss.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ss.dat; sourceTree = "<group>"; };
-		00FEFDF31D2E9030003FAFEB /* indekso_st.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_st.dat; sourceTree = "<group>"; };
-		00FEFDF41D2E9030003FAFEB /* indekso_su.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_su.dat; sourceTree = "<group>"; };
-		00FEFDF51D2E9030003FAFEB /* indekso_sv.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sv.dat; sourceTree = "<group>"; };
-		00FEFDF61D2E9030003FAFEB /* indekso_sw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_sw.dat; sourceTree = "<group>"; };
-		00FEFDF71D2E9030003FAFEB /* indekso_ta.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ta.dat; sourceTree = "<group>"; };
-		00FEFDF81D2E9030003FAFEB /* indekso_te.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_te.dat; sourceTree = "<group>"; };
-		00FEFDF91D2E9030003FAFEB /* indekso_tg.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tg.dat; sourceTree = "<group>"; };
-		00FEFDFA1D2E9030003FAFEB /* indekso_th.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_th.dat; sourceTree = "<group>"; };
-		00FEFDFB1D2E9030003FAFEB /* indekso_ti.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ti.dat; sourceTree = "<group>"; };
-		00FEFDFC1D2E9030003FAFEB /* indekso_tk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tk.dat; sourceTree = "<group>"; };
-		00FEFDFD1D2E9030003FAFEB /* indekso_tl.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tl.dat; sourceTree = "<group>"; };
-		00FEFDFE1D2E9030003FAFEB /* indekso_tn.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tn.dat; sourceTree = "<group>"; };
-		00FEFDFF1D2E9030003FAFEB /* indekso_to.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_to.dat; sourceTree = "<group>"; };
-		00FEFE001D2E9030003FAFEB /* indekso_tp.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tp.dat; sourceTree = "<group>"; };
-		00FEFE011D2E9030003FAFEB /* indekso_tr.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tr.dat; sourceTree = "<group>"; };
-		00FEFE021D2E9030003FAFEB /* indekso_ts.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ts.dat; sourceTree = "<group>"; };
-		00FEFE031D2E9030003FAFEB /* indekso_tt.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tt.dat; sourceTree = "<group>"; };
-		00FEFE041D2E9030003FAFEB /* indekso_tw.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_tw.dat; sourceTree = "<group>"; };
-		00FEFE051D2E9030003FAFEB /* indekso_ug.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ug.dat; sourceTree = "<group>"; };
-		00FEFE061D2E9030003FAFEB /* indekso_uk.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_uk.dat; sourceTree = "<group>"; };
-		00FEFE071D2E9030003FAFEB /* indekso_ur.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ur.dat; sourceTree = "<group>"; };
-		00FEFE081D2E9030003FAFEB /* indekso_uz.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_uz.dat; sourceTree = "<group>"; };
-		00FEFE091D2E9030003FAFEB /* indekso_vi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_vi.dat; sourceTree = "<group>"; };
-		00FEFE0A1D2E9030003FAFEB /* indekso_vo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_vo.dat; sourceTree = "<group>"; };
-		00FEFE0B1D2E9030003FAFEB /* indekso_wo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_wo.dat; sourceTree = "<group>"; };
-		00FEFE0C1D2E9030003FAFEB /* indekso_xh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_xh.dat; sourceTree = "<group>"; };
-		00FEFE0D1D2E9030003FAFEB /* indekso_yi.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_yi.dat; sourceTree = "<group>"; };
-		00FEFE0E1D2E9030003FAFEB /* indekso_yo.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_yo.dat; sourceTree = "<group>"; };
-		00FEFE0F1D2E9030003FAFEB /* indekso_za.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_za.dat; sourceTree = "<group>"; };
-		00FEFE101D2E9030003FAFEB /* indekso_zh.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_zh.dat; sourceTree = "<group>"; };
-		00FEFE111D2E9030003FAFEB /* indekso_zu.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_zu.dat; sourceTree = "<group>"; };
-		00FEFE121D2E9030003FAFEB /* lingvoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lingvoj.dat; sourceTree = "<group>"; };
-		00FEFE131D2E9030003FAFEB /* mallongigoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = mallongigoj.dat; sourceTree = "<group>"; };
-		00FEFE141D2E9030003FAFEB /* stiloj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stiloj.dat; sourceTree = "<group>"; };
-		00FEFE151D2E9030003FAFEB /* vortoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vortoj.dat; sourceTree = "<group>"; };
+		0084890F226385200071CEC2 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
+		00848910226385200071CEC2 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
+		00848911226385200071CEC2 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
+		00848913226385200071CEC2 /* PoshReVo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PoshReVo-Bridging-Header.h"; sourceTree = "<group>"; };
+		00848914226385200071CEC2 /* ObjCPonto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjCPonto.m; sourceTree = "<group>"; };
+		00848915226385200071CEC2 /* ObjCPonto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjCPonto.h; sourceTree = "<group>"; };
+		00848916226385200071CEC2 /* Iloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Iloj.swift; sourceTree = "<group>"; };
+		00848917226385200071CEC2 /* ModelObjekto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjekto.swift; sourceTree = "<group>"; };
+		00848918226385200071CEC2 /* Koloroj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Koloroj.swift; sourceTree = "<group>"; };
+		00848919226385200071CEC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0084891B226385200071CEC2 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
+		0084891C226385200071CEC2 /* ArtikolCheloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikolCheloTableViewCell.swift; sourceTree = "<group>"; };
+		0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvojElektiloViewController.swift; sourceTree = "<group>"; };
+		0084891E226385200071CEC2 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
+		0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvojElektiloViewController.xib; sourceTree = "<group>"; };
+		00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloKapoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvoElektiloTableViewCell.xib; sourceTree = "<group>"; };
+		00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchLingvoElektiloViewController.xib; sourceTree = "<group>"; };
+		00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloPiedButonoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		00848924226385200071CEC2 /* StiloElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StiloElektiloViewController.xib; sourceTree = "<group>"; };
+		00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchLingvoElektiloViewController.swift; sourceTree = "<group>"; };
+		00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvoElektiloTableViewCell.swift; sourceTree = "<group>"; };
+		00848927226385200071CEC2 /* StiloElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloElektiloViewController.swift; sourceTree = "<group>"; };
+		00848928226385200071CEC2 /* LicencoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencoViewController.swift; sourceTree = "<group>"; };
+		00848929226385200071CEC2 /* LicencoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicencoViewController.xib; sourceTree = "<group>"; };
+		0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloTableViewCell.xib; sourceTree = "<group>"; };
+		0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShanghiTekstGrandeconViewController.xib; sourceTree = "<group>"; };
+		0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VortoDisigiloViewController.xib; sourceTree = "<group>"; };
+		0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloPiedButonoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
+		0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
+		0084892F226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloKapoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		00848930226385200071CEC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00848932226385200071CEC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoTableViewCell.xib; sourceTree = "<group>"; };
+		00848935226385200071CEC2 /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
+		00848936226385200071CEC2 /* FlankMenuoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoTableViewCell.swift; sourceTree = "<group>"; };
+		00848937226385200071CEC2 /* FlankMenuoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoViewController.xib; sourceTree = "<group>"; };
+		00848939226385200071CEC2 /* HelpaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpaNavigationController.swift; sourceTree = "<group>"; };
+		0084893A226385200071CEC2 /* ChefaNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChefaNavigationController.swift; sourceTree = "<group>"; };
+		0084893C226385200071CEC2 /* AgordojViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgordojViewController.swift; sourceTree = "<group>"; };
+		0084893D226385200071CEC2 /* PriViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriViewController.xib; sourceTree = "<group>"; };
+		0084893E226385200071CEC2 /* SerchPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchPaghoViewController.xib; sourceTree = "<group>"; };
+		0084893F226385200071CEC2 /* HistorioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorioViewController.swift; sourceTree = "<group>"; };
+		00848940226385200071CEC2 /* AgordojViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgordojViewController.xib; sourceTree = "<group>"; };
+		00848941226385200071CEC2 /* SerchPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchPaghoViewController.swift; sourceTree = "<group>"; };
+		00848942226385200071CEC2 /* KonservitajViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KonservitajViewController.xib; sourceTree = "<group>"; };
+		00848943226385200071CEC2 /* IngoPaghoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngoPaghoViewController.swift; sourceTree = "<group>"; };
+		00848944226385200071CEC2 /* KonservitajViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KonservitajViewController.swift; sourceTree = "<group>"; };
+		00848945226385200071CEC2 /* IngoPaghoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngoPaghoViewController.xib; sourceTree = "<group>"; };
+		00848946226385200071CEC2 /* HistorioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistorioViewController.xib; sourceTree = "<group>"; };
+		00848947226385200071CEC2 /* PriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriViewController.swift; sourceTree = "<group>"; };
+		00848948226385200071CEC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0084894C226385200071CEC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0084898E226387F00071CEC2 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
+		008489902263E0470071CEC2 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
+		008489912263E0470071CEC2 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6D400D687919A5D860DDEA7C /* Pods-PoshReVo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshReVo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo.debug.xcconfig"; sourceTree = "<group>"; };
+		9310B9D90FE8D936EB3410BA /* Pods-PoshReVo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshReVo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo.release.xcconfig"; sourceTree = "<group>"; };
+		DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoshReVo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078A2889D2397462F2F5E080 /* Pods.framework in Frameworks */,
+				7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,12 +176,10 @@
 		0009858E1C31F0CB0083DE24 = {
 			isa = PBXGroup;
 			children = (
-				000985991C31F0CB0083DE24 /* PoshReVo */,
-				000985AE1C31F0CB0083DE24 /* PoshReVoTests */,
-				000985B91C31F0CB0083DE24 /* PoshReVoUITests */,
+				0084890D226385200071CEC2 /* PoshReVo */,
 				000985981C31F0CB0083DE24 /* Products */,
-				36ACEC2F19732B712D3C6913 /* Pods */,
 				0282B2FEF6E4EC8E45CCEF41 /* Frameworks */,
+				93F3CA26D2E3AB8B6C0FBA24 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -352,348 +193,147 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		000985991C31F0CB0083DE24 /* PoshReVo */ = {
+		0084890D226385200071CEC2 /* PoshReVo */ = {
 			isa = PBXGroup;
 			children = (
-				0028DF6D1CC6A3FD0034AE8C /* Base.lproj */,
-				008DBC291CC6A069000925E8 /* Info.plist */,
-				00E5FA121CCFBBF400CF81A4 /* LaunchScreen.storyboard */,
-				008DBC2B1CC6A077000925E8 /* AppDelegate.swift */,
-				008DBCA71CC6A144000925E8 /* Navigaciiloj */,
-				008DBC8E1CC6A13A000925E8 /* Chefaj Paghoj */,
-				008DBC631CC6A132000925E8 /* Subaj Paghoj */,
-				008DBC5A1CC6A129000925E8 /* Flanka Menuo */,
-				008DBC3C1CC6A0D8000925E8 /* Motoroj */,
-				008DBC371CC6A0B7000925E8 /* Prepariloj */,
-				008DBC521CC6A0EC000925E8 /* Datumoj */,
-				008DBC2D1CC6A088000925E8 /* Assets.xcassets */,
+				0084890E226385200071CEC2 /* Motoroj */,
+				00848919226385200071CEC2 /* LaunchScreen.storyboard */,
+				0084891A226385200071CEC2 /* Subaj Paghoj */,
+				00848930226385200071CEC2 /* Assets.xcassets */,
+				00848931226385200071CEC2 /* LaunchScreen.storyboard */,
+				00848933226385200071CEC2 /* Flanka Menuo */,
+				00848938226385200071CEC2 /* Navigaciiloj */,
+				0084893B226385200071CEC2 /* Chefaj Paghoj */,
+				00848948226385200071CEC2 /* AppDelegate.swift */,
+				00848949226385200071CEC2 /* App Bildo */,
+				0084894A226385200071CEC2 /* Datumoj */,
+				0084894C226385200071CEC2 /* Info.plist */,
 			);
-			name = PoshReVo;
-			path = PReVo;
+			path = PoshReVo;
 			sourceTree = "<group>";
 		};
-		000985AE1C31F0CB0083DE24 /* PoshReVoTests */ = {
+		0084890E226385200071CEC2 /* Motoroj */ = {
 			isa = PBXGroup;
 			children = (
-				008DBC251CC6A053000925E8 /* Info.plist */,
-				008DBC261CC6A053000925E8 /* PoshReVoTests.swift */,
+				0084890F226385200071CEC2 /* SeancDatumaro.swift */,
+				00848910226385200071CEC2 /* UzantDatumaro.swift */,
+				00848911226385200071CEC2 /* Stiloj.swift */,
+				00848912226385200071CEC2 /* ObjC Ponto */,
+				00848916226385200071CEC2 /* Iloj.swift */,
+				008489912263E0470071CEC2 /* DatumLegilo.swift */,
+				008489902263E0470071CEC2 /* TrieRegilo.swift */,
+				00848917226385200071CEC2 /* ModelObjekto.swift */,
+				00848918226385200071CEC2 /* Koloroj.swift */,
 			);
-			name = PoshReVoTests;
-			path = PReVoTests;
+			path = Motoroj;
 			sourceTree = "<group>";
 		};
-		000985B91C31F0CB0083DE24 /* PoshReVoUITests */ = {
+		00848912226385200071CEC2 /* ObjC Ponto */ = {
 			isa = PBXGroup;
 			children = (
-				008DBC211CC6A041000925E8 /* Info.plist */,
-				008DBC221CC6A041000925E8 /* PoshReVoUITests.swift */,
-			);
-			name = PoshReVoUITests;
-			path = PReVoUITests;
-			sourceTree = "<group>";
-		};
-		0028DF6D1CC6A3FD0034AE8C /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */,
-			);
-			path = Base.lproj;
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBC371CC6A0B7000925E8 /* Prepariloj */ = {
-			isa = PBXGroup;
-			children = (
-				00FEFD7F1D2E9030003FAFEB /* preparita */,
-				008DBC381CC6A0B7000925E8 /* elxmligilo.rb */,
-				008DBC391CC6A0B7000925E8 /* prepari.sh */,
-			);
-			path = Prepariloj;
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBC3C1CC6A0D8000925E8 /* Motoroj */ = {
-			isa = PBXGroup;
-			children = (
-				008DBC3D1CC6A0D8000925E8 /* DatumLegilo.swift */,
-				008DBC3E1CC6A0D8000925E8 /* Iloj.swift */,
-				008DBC3F1CC6A0D8000925E8 /* Koloroj.swift */,
-				008DBC401CC6A0D8000925E8 /* ModelObjekto.swift */,
-				008DBC451CC6A0D8000925E8 /* SeancDatumaro.swift */,
-				008DBC461CC6A0D8000925E8 /* Stiloj.swift */,
-				008DBC471CC6A0D8000925E8 /* TrieRegilo.swift */,
-				008DBC481CC6A0D8000925E8 /* UzantDatumaro.swift */,
-				008DBC411CC6A0D8000925E8 /* ObjC Ponto */,
-			);
-			name = Motoroj;
-			path = PoshReVo/Motoroj;
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBC411CC6A0D8000925E8 /* ObjC Ponto */ = {
-			isa = PBXGroup;
-			children = (
-				008DBC421CC6A0D8000925E8 /* ObjCPonto.h */,
-				008DBC431CC6A0D8000925E8 /* ObjCPonto.m */,
-				008DBC441CC6A0D8000925E8 /* PoshReVo-Bridging-Header.h */,
+				00848913226385200071CEC2 /* PoshReVo-Bridging-Header.h */,
+				00848914226385200071CEC2 /* ObjCPonto.m */,
+				00848915226385200071CEC2 /* ObjCPonto.h */,
 			);
 			path = "ObjC Ponto";
 			sourceTree = "<group>";
 		};
-		008DBC521CC6A0EC000925E8 /* Datumoj */ = {
+		0084891A226385200071CEC2 /* Subaj Paghoj */ = {
 			isa = PBXGroup;
 			children = (
-				008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */,
+				0084891B226385200071CEC2 /* ArtikoloViewController.xib */,
+				0084891C226385200071CEC2 /* ArtikolCheloTableViewCell.swift */,
+				0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */,
+				0084891E226385200071CEC2 /* ArtikoloViewController.swift */,
+				0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */,
+				00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */,
+				00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */,
+				00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */,
+				00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
+				00848924226385200071CEC2 /* StiloElektiloViewController.xib */,
+				00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */,
+				00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */,
+				00848927226385200071CEC2 /* StiloElektiloViewController.swift */,
+				00848928226385200071CEC2 /* LicencoViewController.swift */,
+				00848929226385200071CEC2 /* LicencoViewController.xib */,
+				0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */,
+				0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */,
+				0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */,
+				0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
+				0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */,
+				0084892F226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift */,
 			);
-			name = Datumoj;
-			path = PoshReVo/Datumoj;
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBC5A1CC6A129000925E8 /* Flanka Menuo */ = {
-			isa = PBXGroup;
-			children = (
-				008DBC5B1CC6A129000925E8 /* FlankMenuoTableViewCell.swift */,
-				008DBC5C1CC6A129000925E8 /* FlankMenuoTableViewCell.xib */,
-				008DBC5D1CC6A129000925E8 /* FlankMenuoViewController.swift */,
-				008DBC5E1CC6A129000925E8 /* FlankMenuoViewController.xib */,
-			);
-			name = "Flanka Menuo";
-			path = "PoshReVo/Flanka Menuo";
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBC631CC6A132000925E8 /* Subaj Paghoj */ = {
-			isa = PBXGroup;
-			children = (
-				008DBC641CC6A132000925E8 /* ArtikolCheloTableViewCell.swift */,
-				008DBC651CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift */,
-				008DBC661CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib */,
-				008DBC671CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
-				008DBC681CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
-				008DBC691CC6A132000925E8 /* ArtikoloTableViewCell.xib */,
-				008DBC6A1CC6A132000925E8 /* ArtikoloViewController.swift */,
-				008DBC6B1CC6A132000925E8 /* ArtikoloViewController.xib */,
-				008DBC6C1CC6A132000925E8 /* LicencoViewController.swift */,
-				008DBC6D1CC6A132000925E8 /* LicencoViewController.xib */,
-				008DBC6E1CC6A132000925E8 /* SerchLingvoElektiloViewController.swift */,
-				008DBC6F1CC6A132000925E8 /* SerchLingvoElektiloViewController.xib */,
-				008DBC701CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib */,
-				008DBC711CC6A132000925E8 /* StiloElektiloViewController.swift */,
-				008DBC721CC6A132000925E8 /* StiloElektiloViewController.xib */,
-				008DBC731CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift */,
-				008DBC741CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib */,
-				008DBC751CC6A132000925E8 /* TradukLingvojElektiloViewController.swift */,
-				008DBC761CC6A132000925E8 /* TradukLingvojElektiloViewController.xib */,
-				008DBC771CC6A132000925E8 /* VortoDisigiloViewController.swift */,
-				008DBC781CC6A132000925E8 /* VortoDisigiloViewController.xib */,
-			);
-			name = "Subaj Paghoj";
-			path = "PoshReVo/Subaj Paghoj";
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBC8E1CC6A13A000925E8 /* Chefaj Paghoj */ = {
-			isa = PBXGroup;
-			children = (
-				008DBC8F1CC6A13A000925E8 /* AgordojViewController.swift */,
-				008DBC901CC6A13A000925E8 /* AgordojViewController.xib */,
-				008DBC911CC6A13A000925E8 /* HistorioViewController.swift */,
-				008DBC921CC6A13A000925E8 /* HistorioViewController.xib */,
-				008DBC931CC6A13A000925E8 /* IngoPaghoViewController.swift */,
-				008DBC941CC6A13A000925E8 /* IngoPaghoViewController.xib */,
-				008DBC951CC6A13A000925E8 /* KonservitajViewController.swift */,
-				008DBC961CC6A13A000925E8 /* KonservitajViewController.xib */,
-				008DBC971CC6A13A000925E8 /* PriViewController.swift */,
-				008DBC981CC6A13A000925E8 /* PriViewController.xib */,
-				008DBC991CC6A13A000925E8 /* SerchPaghoViewController.swift */,
-				008DBC9A1CC6A13A000925E8 /* SerchPaghoViewController.xib */,
-			);
-			name = "Chefaj Paghoj";
-			path = "PoshReVo/Chefaj Paghoj";
-			sourceTree = SOURCE_ROOT;
-		};
-		008DBCA71CC6A144000925E8 /* Navigaciiloj */ = {
-			isa = PBXGroup;
-			children = (
-				008DBCA81CC6A144000925E8 /* ChefaNavigationController.swift */,
-				008DBCA91CC6A144000925E8 /* HelpaNavigationController.swift */,
-			);
-			name = Navigaciiloj;
-			path = PoshReVo/Navigaciiloj;
-			sourceTree = SOURCE_ROOT;
-		};
-		00FEFD7F1D2E9030003FAFEB /* preparita */ = {
-			isa = PBXGroup;
-			children = (
-				00FEFD801D2E9030003FAFEB /* fakoj.dat */,
-				00FEFD811D2E9030003FAFEB /* indeksoj */,
-				00FEFE121D2E9030003FAFEB /* lingvoj.dat */,
-				00FEFE131D2E9030003FAFEB /* mallongigoj.dat */,
-				00FEFE141D2E9030003FAFEB /* stiloj.dat */,
-				00FEFE151D2E9030003FAFEB /* vortoj.dat */,
-			);
-			path = preparita;
+			path = "Subaj Paghoj";
 			sourceTree = "<group>";
 		};
-		00FEFD811D2E9030003FAFEB /* indeksoj */ = {
+		00848933226385200071CEC2 /* Flanka Menuo */ = {
 			isa = PBXGroup;
 			children = (
-				00FEFD821D2E9030003FAFEB /* indekso_ab.dat */,
-				00FEFD831D2E9030003FAFEB /* indekso_af.dat */,
-				00FEFD841D2E9030003FAFEB /* indekso_am.dat */,
-				00FEFD851D2E9030003FAFEB /* indekso_ar.dat */,
-				00FEFD861D2E9030003FAFEB /* indekso_as.dat */,
-				00FEFD871D2E9030003FAFEB /* indekso_ay.dat */,
-				00FEFD881D2E9030003FAFEB /* indekso_az.dat */,
-				00FEFD891D2E9030003FAFEB /* indekso_ba.dat */,
-				00FEFD8A1D2E9030003FAFEB /* indekso_be.dat */,
-				00FEFD8B1D2E9030003FAFEB /* indekso_bg.dat */,
-				00FEFD8C1D2E9030003FAFEB /* indekso_bh.dat */,
-				00FEFD8D1D2E9030003FAFEB /* indekso_bi.dat */,
-				00FEFD8E1D2E9030003FAFEB /* indekso_bn.dat */,
-				00FEFD8F1D2E9030003FAFEB /* indekso_bo.dat */,
-				00FEFD901D2E9030003FAFEB /* indekso_br.dat */,
-				00FEFD911D2E9030003FAFEB /* indekso_ca.dat */,
-				00FEFD921D2E9030003FAFEB /* indekso_co.dat */,
-				00FEFD931D2E9030003FAFEB /* indekso_cs.dat */,
-				00FEFD941D2E9030003FAFEB /* indekso_cy.dat */,
-				00FEFD951D2E9030003FAFEB /* indekso_da.dat */,
-				00FEFD961D2E9030003FAFEB /* indekso_de.dat */,
-				00FEFD971D2E9030003FAFEB /* indekso_dz.dat */,
-				00FEFD981D2E9030003FAFEB /* indekso_el.dat */,
-				00FEFD991D2E9030003FAFEB /* indekso_en.dat */,
-				00FEFD9A1D2E9030003FAFEB /* indekso_eo.dat */,
-				00FEFD9B1D2E9030003FAFEB /* indekso_es.dat */,
-				00FEFD9C1D2E9030003FAFEB /* indekso_et.dat */,
-				00FEFD9D1D2E9030003FAFEB /* indekso_eu.dat */,
-				00FEFD9E1D2E9030003FAFEB /* indekso_fa.dat */,
-				00FEFD9F1D2E9030003FAFEB /* indekso_fi.dat */,
-				00FEFDA01D2E9030003FAFEB /* indekso_fj.dat */,
-				00FEFDA11D2E9030003FAFEB /* indekso_fo.dat */,
-				00FEFDA21D2E9030003FAFEB /* indekso_fr.dat */,
-				00FEFDA31D2E9030003FAFEB /* indekso_fy.dat */,
-				00FEFDA41D2E9030003FAFEB /* indekso_ga.dat */,
-				00FEFDA51D2E9030003FAFEB /* indekso_gd.dat */,
-				00FEFDA61D2E9030003FAFEB /* indekso_gl.dat */,
-				00FEFDA71D2E9030003FAFEB /* indekso_gn.dat */,
-				00FEFDA81D2E9030003FAFEB /* indekso_grc.dat */,
-				00FEFDA91D2E9030003FAFEB /* indekso_gu.dat */,
-				00FEFDAA1D2E9030003FAFEB /* indekso_ha.dat */,
-				00FEFDAB1D2E9030003FAFEB /* indekso_he.dat */,
-				00FEFDAC1D2E9030003FAFEB /* indekso_hi.dat */,
-				00FEFDAD1D2E9030003FAFEB /* indekso_hr.dat */,
-				00FEFDAE1D2E9030003FAFEB /* indekso_hu.dat */,
-				00FEFDAF1D2E9030003FAFEB /* indekso_hy.dat */,
-				00FEFDB01D2E9030003FAFEB /* indekso_ia.dat */,
-				00FEFDB11D2E9030003FAFEB /* indekso_id.dat */,
-				00FEFDB21D2E9030003FAFEB /* indekso_ie.dat */,
-				00FEFDB31D2E9030003FAFEB /* indekso_ik.dat */,
-				00FEFDB41D2E9030003FAFEB /* indekso_is.dat */,
-				00FEFDB51D2E9030003FAFEB /* indekso_it.dat */,
-				00FEFDB61D2E9030003FAFEB /* indekso_iu.dat */,
-				00FEFDB71D2E9030003FAFEB /* indekso_ja.dat */,
-				00FEFDB81D2E9030003FAFEB /* indekso_jbo.dat */,
-				00FEFDB91D2E9030003FAFEB /* indekso_jw.dat */,
-				00FEFDBA1D2E9030003FAFEB /* indekso_ka.dat */,
-				00FEFDBB1D2E9030003FAFEB /* indekso_kek.dat */,
-				00FEFDBC1D2E9030003FAFEB /* indekso_kk.dat */,
-				00FEFDBD1D2E9030003FAFEB /* indekso_kl.dat */,
-				00FEFDBE1D2E9030003FAFEB /* indekso_km.dat */,
-				00FEFDBF1D2E9030003FAFEB /* indekso_kn.dat */,
-				00FEFDC01D2E9030003FAFEB /* indekso_ko.dat */,
-				00FEFDC11D2E9030003FAFEB /* indekso_ks.dat */,
-				00FEFDC21D2E9030003FAFEB /* indekso_ku.dat */,
-				00FEFDC31D2E9030003FAFEB /* indekso_ky.dat */,
-				00FEFDC41D2E9030003FAFEB /* indekso_la.dat */,
-				00FEFDC51D2E9030003FAFEB /* indekso_lat.dat */,
-				00FEFDC61D2E9030003FAFEB /* indekso_ln.dat */,
-				00FEFDC71D2E9030003FAFEB /* indekso_lo.dat */,
-				00FEFDC81D2E9030003FAFEB /* indekso_lt.dat */,
-				00FEFDC91D2E9030003FAFEB /* indekso_lv.dat */,
-				00FEFDCA1D2E9030003FAFEB /* indekso_mg.dat */,
-				00FEFDCB1D2E9030003FAFEB /* indekso_mi.dat */,
-				00FEFDCC1D2E9030003FAFEB /* indekso_mk.dat */,
-				00FEFDCD1D2E9030003FAFEB /* indekso_ml.dat */,
-				00FEFDCE1D2E9030003FAFEB /* indekso_mn.dat */,
-				00FEFDCF1D2E9030003FAFEB /* indekso_mo.dat */,
-				00FEFDD01D2E9030003FAFEB /* indekso_mr.dat */,
-				00FEFDD11D2E9030003FAFEB /* indekso_ms.dat */,
-				00FEFDD21D2E9030003FAFEB /* indekso_mt.dat */,
-				00FEFDD31D2E9030003FAFEB /* indekso_my.dat */,
-				00FEFDD41D2E9030003FAFEB /* indekso_na.dat */,
-				00FEFDD51D2E9030003FAFEB /* indekso_ne.dat */,
-				00FEFDD61D2E9030003FAFEB /* indekso_nl.dat */,
-				00FEFDD71D2E9030003FAFEB /* indekso_no.dat */,
-				00FEFDD81D2E9030003FAFEB /* indekso_oc.dat */,
-				00FEFDD91D2E9030003FAFEB /* indekso_om.dat */,
-				00FEFDDA1D2E9030003FAFEB /* indekso_or.dat */,
-				00FEFDDB1D2E9030003FAFEB /* indekso_os.dat */,
-				00FEFDDC1D2E9030003FAFEB /* indekso_pa.dat */,
-				00FEFDDD1D2E9030003FAFEB /* indekso_pl.dat */,
-				00FEFDDE1D2E9030003FAFEB /* indekso_ps.dat */,
-				00FEFDDF1D2E9030003FAFEB /* indekso_pt.dat */,
-				00FEFDE01D2E9030003FAFEB /* indekso_qu.dat */,
-				00FEFDE11D2E9030003FAFEB /* indekso_rm.dat */,
-				00FEFDE21D2E9030003FAFEB /* indekso_rn.dat */,
-				00FEFDE31D2E9030003FAFEB /* indekso_ro.dat */,
-				00FEFDE41D2E9030003FAFEB /* indekso_ru.dat */,
-				00FEFDE51D2E9030003FAFEB /* indekso_rw.dat */,
-				00FEFDE61D2E9030003FAFEB /* indekso_sa.dat */,
-				00FEFDE71D2E9030003FAFEB /* indekso_sd.dat */,
-				00FEFDE81D2E9030003FAFEB /* indekso_sg.dat */,
-				00FEFDE91D2E9030003FAFEB /* indekso_sh.dat */,
-				00FEFDEA1D2E9030003FAFEB /* indekso_si.dat */,
-				00FEFDEB1D2E9030003FAFEB /* indekso_sk.dat */,
-				00FEFDEC1D2E9030003FAFEB /* indekso_sl.dat */,
-				00FEFDED1D2E9030003FAFEB /* indekso_sm.dat */,
-				00FEFDEE1D2E9030003FAFEB /* indekso_sn.dat */,
-				00FEFDEF1D2E9030003FAFEB /* indekso_so.dat */,
-				00FEFDF01D2E9030003FAFEB /* indekso_sq.dat */,
-				00FEFDF11D2E9030003FAFEB /* indekso_sr.dat */,
-				00FEFDF21D2E9030003FAFEB /* indekso_ss.dat */,
-				00FEFDF31D2E9030003FAFEB /* indekso_st.dat */,
-				00FEFDF41D2E9030003FAFEB /* indekso_su.dat */,
-				00FEFDF51D2E9030003FAFEB /* indekso_sv.dat */,
-				00FEFDF61D2E9030003FAFEB /* indekso_sw.dat */,
-				00FEFDF71D2E9030003FAFEB /* indekso_ta.dat */,
-				00FEFDF81D2E9030003FAFEB /* indekso_te.dat */,
-				00FEFDF91D2E9030003FAFEB /* indekso_tg.dat */,
-				00FEFDFA1D2E9030003FAFEB /* indekso_th.dat */,
-				00FEFDFB1D2E9030003FAFEB /* indekso_ti.dat */,
-				00FEFDFC1D2E9030003FAFEB /* indekso_tk.dat */,
-				00FEFDFD1D2E9030003FAFEB /* indekso_tl.dat */,
-				00FEFDFE1D2E9030003FAFEB /* indekso_tn.dat */,
-				00FEFDFF1D2E9030003FAFEB /* indekso_to.dat */,
-				00FEFE001D2E9030003FAFEB /* indekso_tp.dat */,
-				00FEFE011D2E9030003FAFEB /* indekso_tr.dat */,
-				00FEFE021D2E9030003FAFEB /* indekso_ts.dat */,
-				00FEFE031D2E9030003FAFEB /* indekso_tt.dat */,
-				00FEFE041D2E9030003FAFEB /* indekso_tw.dat */,
-				00FEFE051D2E9030003FAFEB /* indekso_ug.dat */,
-				00FEFE061D2E9030003FAFEB /* indekso_uk.dat */,
-				00FEFE071D2E9030003FAFEB /* indekso_ur.dat */,
-				00FEFE081D2E9030003FAFEB /* indekso_uz.dat */,
-				00FEFE091D2E9030003FAFEB /* indekso_vi.dat */,
-				00FEFE0A1D2E9030003FAFEB /* indekso_vo.dat */,
-				00FEFE0B1D2E9030003FAFEB /* indekso_wo.dat */,
-				00FEFE0C1D2E9030003FAFEB /* indekso_xh.dat */,
-				00FEFE0D1D2E9030003FAFEB /* indekso_yi.dat */,
-				00FEFE0E1D2E9030003FAFEB /* indekso_yo.dat */,
-				00FEFE0F1D2E9030003FAFEB /* indekso_za.dat */,
-				00FEFE101D2E9030003FAFEB /* indekso_zh.dat */,
-				00FEFE111D2E9030003FAFEB /* indekso_zu.dat */,
+				00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */,
+				00848935226385200071CEC2 /* FlankMenuoViewController.swift */,
+				00848936226385200071CEC2 /* FlankMenuoTableViewCell.swift */,
+				00848937226385200071CEC2 /* FlankMenuoViewController.xib */,
 			);
-			path = indeksoj;
+			path = "Flanka Menuo";
+			sourceTree = "<group>";
+		};
+		00848938226385200071CEC2 /* Navigaciiloj */ = {
+			isa = PBXGroup;
+			children = (
+				00848939226385200071CEC2 /* HelpaNavigationController.swift */,
+				0084893A226385200071CEC2 /* ChefaNavigationController.swift */,
+			);
+			path = Navigaciiloj;
+			sourceTree = "<group>";
+		};
+		0084893B226385200071CEC2 /* Chefaj Paghoj */ = {
+			isa = PBXGroup;
+			children = (
+				0084893C226385200071CEC2 /* AgordojViewController.swift */,
+				0084893D226385200071CEC2 /* PriViewController.xib */,
+				0084893E226385200071CEC2 /* SerchPaghoViewController.xib */,
+				0084893F226385200071CEC2 /* HistorioViewController.swift */,
+				00848940226385200071CEC2 /* AgordojViewController.xib */,
+				00848941226385200071CEC2 /* SerchPaghoViewController.swift */,
+				00848942226385200071CEC2 /* KonservitajViewController.xib */,
+				00848943226385200071CEC2 /* IngoPaghoViewController.swift */,
+				00848944226385200071CEC2 /* KonservitajViewController.swift */,
+				00848945226385200071CEC2 /* IngoPaghoViewController.xib */,
+				00848946226385200071CEC2 /* HistorioViewController.xib */,
+				00848947226385200071CEC2 /* PriViewController.swift */,
+			);
+			path = "Chefaj Paghoj";
+			sourceTree = "<group>";
+		};
+		00848949226385200071CEC2 /* App Bildo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "App Bildo";
+			sourceTree = "<group>";
+		};
+		0084894A226385200071CEC2 /* Datumoj */ = {
+			isa = PBXGroup;
+			children = (
+				0084898D226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld */,
+			);
+			path = Datumoj;
 			sourceTree = "<group>";
 		};
 		0282B2FEF6E4EC8E45CCEF41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				47EF2D02040D4CCD471ACA36 /* Pods.framework */,
+				DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		36ACEC2F19732B712D3C6913 /* Pods */ = {
+		93F3CA26D2E3AB8B6C0FBA24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */,
-				8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */,
+				6D400D687919A5D860DDEA7C /* Pods-PoshReVo.debug.xcconfig */,
+				9310B9D90FE8D936EB3410BA /* Pods-PoshReVo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -705,12 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 000985BF1C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVo" */;
 			buildPhases = (
-				FA57B7E0B17AE731C8923244 /* Check Pods Manifest.lock */,
+				204E88F7D8733BB02F27269C /* [CP] Check Pods Manifest.lock */,
 				000985931C31F0CB0083DE24 /* Sources */,
 				000985941C31F0CB0083DE24 /* Frameworks */,
 				000985951C31F0CB0083DE24 /* Resources */,
-				6AE55078CE43B0BE13EA0BAA /* Embed Pods Frameworks */,
-				AB341A5087405B60150151AE /* Copy Pods Resources */,
+				29488E03CC32E129F3E387D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -805,30 +444,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008DBC841CC6A132000925E8 /* SerchLingvoElektiloViewController.xib in Resources */,
-				008DBC821CC6A132000925E8 /* LicencoViewController.xib in Resources */,
-				00E5FA131CCFBBF400CF81A4 /* LaunchScreen.storyboard in Resources */,
-				008DBC621CC6A129000925E8 /* FlankMenuoViewController.xib in Resources */,
-				008DBC871CC6A132000925E8 /* StiloElektiloViewController.xib in Resources */,
-				008DBC801CC6A132000925E8 /* ArtikoloViewController.xib in Resources */,
-				008DBC7D1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
-				008DBC891CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
-				008DBCA21CC6A13A000925E8 /* KonservitajViewController.xib in Resources */,
-				0028DF701CC6A3FD0034AE8C /* Localizable.strings in Resources */,
-				008DBC7B1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
-				008DBCA01CC6A13A000925E8 /* IngoPaghoViewController.xib in Resources */,
-				008DBC9E1CC6A13A000925E8 /* HistorioViewController.xib in Resources */,
-				008DBC851CC6A132000925E8 /* ShanghiTekstGrandeconViewController.xib in Resources */,
-				008DBC231CC6A041000925E8 /* Info.plist in Resources */,
-				008DBC8B1CC6A132000925E8 /* TradukLingvojElektiloViewController.xib in Resources */,
-				008DBC8D1CC6A132000925E8 /* VortoDisigiloViewController.xib in Resources */,
-				008DBC3A1CC6A0B7000925E8 /* elxmligilo.rb in Resources */,
-				008DBC9C1CC6A13A000925E8 /* AgordojViewController.xib in Resources */,
-				008DBC2E1CC6A088000925E8 /* Assets.xcassets in Resources */,
-				008DBCA61CC6A13A000925E8 /* SerchPaghoViewController.xib in Resources */,
-				008DBCA41CC6A13A000925E8 /* PriViewController.xib in Resources */,
-				008DBC7E1CC6A132000925E8 /* ArtikoloTableViewCell.xib in Resources */,
-				008DBC601CC6A129000925E8 /* FlankMenuoTableViewCell.xib in Resources */,
+				00848964226385200071CEC2 /* ArtikoloTableViewCell.xib in Resources */,
+				0084895A226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
+				00848973226385200071CEC2 /* PriViewController.xib in Resources */,
+				00848966226385200071CEC2 /* VortoDisigiloViewController.xib in Resources */,
+				0084895B226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
+				00848978226385200071CEC2 /* KonservitajViewController.xib in Resources */,
+				0084897B226385200071CEC2 /* IngoPaghoViewController.xib in Resources */,
+				0084895C226385200071CEC2 /* SerchLingvoElektiloViewController.xib in Resources */,
+				00848954226385200071CEC2 /* LaunchScreen.storyboard in Resources */,
+				0084896A226385200071CEC2 /* Assets.xcassets in Resources */,
+				00848980226385200071CEC2 /* Info.plist in Resources */,
+				00848955226385200071CEC2 /* ArtikoloViewController.xib in Resources */,
+				00848959226385200071CEC2 /* TradukLingvojElektiloViewController.xib in Resources */,
+				00848967226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
+				00848963226385200071CEC2 /* LicencoViewController.xib in Resources */,
+				0084896B226385200071CEC2 /* LaunchScreen.storyboard in Resources */,
+				0084896F226385200071CEC2 /* FlankMenuoViewController.xib in Resources */,
+				0084895E226385200071CEC2 /* StiloElektiloViewController.xib in Resources */,
+				0084897C226385200071CEC2 /* HistorioViewController.xib in Resources */,
+				0084896C226385200071CEC2 /* FlankMenuoTableViewCell.xib in Resources */,
+				00848974226385200071CEC2 /* SerchPaghoViewController.xib in Resources */,
+				00848965226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib in Resources */,
+				00848976226385200071CEC2 /* AgordojViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,49 +487,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6AE55078CE43B0BE13EA0BAA /* Embed Pods Frameworks */ = {
+		204E88F7D8733BB02F27269C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PoshReVo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB341A5087405B60150151AE /* Copy Pods Resources */ = {
+		29488E03CC32E129F3E387D6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/iOS-Slide-Menu/iOS_Slide_Menu.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOS_Slide_Menu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA57B7E0B17AE731C8923244 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -901,37 +540,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				008DBC8A1CC6A132000925E8 /* TradukLingvojElektiloViewController.swift in Sources */,
-				008DBC591CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld in Sources */,
-				008DBC861CC6A132000925E8 /* StiloElektiloViewController.swift in Sources */,
-				008DBC511CC6A0D8000925E8 /* UzantDatumaro.swift in Sources */,
-				008DBC501CC6A0D8000925E8 /* TrieRegilo.swift in Sources */,
-				008DBCAA1CC6A144000925E8 /* ChefaNavigationController.swift in Sources */,
-				008DBC7A1CC6A132000925E8 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
-				008DBCA51CC6A13A000925E8 /* SerchPaghoViewController.swift in Sources */,
-				008DBC4F1CC6A0D8000925E8 /* Stiloj.swift in Sources */,
-				008DBC9B1CC6A13A000925E8 /* AgordojViewController.swift in Sources */,
-				008DBC4A1CC6A0D8000925E8 /* Iloj.swift in Sources */,
-				008DBC4C1CC6A0D8000925E8 /* ModelObjekto.swift in Sources */,
-				008DBC9D1CC6A13A000925E8 /* HistorioViewController.swift in Sources */,
-				008DBC4B1CC6A0D8000925E8 /* Koloroj.swift in Sources */,
-				008DBC881CC6A132000925E8 /* TradukLingvoElektiloTableViewCell.swift in Sources */,
-				008DBC5F1CC6A129000925E8 /* FlankMenuoTableViewCell.swift in Sources */,
-				008DBC811CC6A132000925E8 /* LicencoViewController.swift in Sources */,
-				008DBC611CC6A129000925E8 /* FlankMenuoViewController.swift in Sources */,
-				008DBC491CC6A0D8000925E8 /* DatumLegilo.swift in Sources */,
-				008DBC831CC6A132000925E8 /* SerchLingvoElektiloViewController.swift in Sources */,
-				008DBC7C1CC6A132000925E8 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
-				008DBC4D1CC6A0D8000925E8 /* ObjCPonto.m in Sources */,
-				008DBC8C1CC6A132000925E8 /* VortoDisigiloViewController.swift in Sources */,
-				008DBC4E1CC6A0D8000925E8 /* SeancDatumaro.swift in Sources */,
-				008DBCA11CC6A13A000925E8 /* KonservitajViewController.swift in Sources */,
-				008DBC791CC6A132000925E8 /* ArtikolCheloTableViewCell.swift in Sources */,
-				008DBCA31CC6A13A000925E8 /* PriViewController.swift in Sources */,
-				008DBCAB1CC6A144000925E8 /* HelpaNavigationController.swift in Sources */,
-				008DBC7F1CC6A132000925E8 /* ArtikoloViewController.swift in Sources */,
-				008DBC2C1CC6A077000925E8 /* AppDelegate.swift in Sources */,
-				008DBC9F1CC6A13A000925E8 /* IngoPaghoViewController.swift in Sources */,
+				00848970226385200071CEC2 /* HelpaNavigationController.swift in Sources */,
+				00848972226385200071CEC2 /* AgordojViewController.swift in Sources */,
+				0084896E226385200071CEC2 /* FlankMenuoTableViewCell.swift in Sources */,
+				00848951226385200071CEC2 /* Iloj.swift in Sources */,
+				0084897E226385200071CEC2 /* AppDelegate.swift in Sources */,
+				0084895D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
+				0084897D226385200071CEC2 /* PriViewController.swift in Sources */,
+				00848950226385200071CEC2 /* ObjCPonto.m in Sources */,
+				00848975226385200071CEC2 /* HistorioViewController.swift in Sources */,
+				0084894F226385200071CEC2 /* Stiloj.swift in Sources */,
+				00848957226385200071CEC2 /* TradukLingvojElektiloViewController.swift in Sources */,
+				0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */,
+				00848962226385200071CEC2 /* LicencoViewController.swift in Sources */,
+				0084895F226385200071CEC2 /* SerchLingvoElektiloViewController.swift in Sources */,
+				00848977226385200071CEC2 /* SerchPaghoViewController.swift in Sources */,
+				00848969226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
+				00848979226385200071CEC2 /* IngoPaghoViewController.swift in Sources */,
+				008489922263E0470071CEC2 /* TrieRegilo.swift in Sources */,
+				00848961226385200071CEC2 /* StiloElektiloViewController.swift in Sources */,
+				00848952226385200071CEC2 /* ModelObjekto.swift in Sources */,
+				00848953226385200071CEC2 /* Koloroj.swift in Sources */,
+				00848968226385200071CEC2 /* VortoDisigiloViewController.swift in Sources */,
+				0084897A226385200071CEC2 /* KonservitajViewController.swift in Sources */,
+				0084898F226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld in Sources */,
+				00848958226385200071CEC2 /* ArtikoloViewController.swift in Sources */,
+				00848960226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift in Sources */,
+				00848956226385200071CEC2 /* ArtikolCheloTableViewCell.swift in Sources */,
+				0084896D226385200071CEC2 /* FlankMenuoViewController.swift in Sources */,
+				008489932263E0470071CEC2 /* DatumLegilo.swift in Sources */,
+				0084894E226385200071CEC2 /* UzantDatumaro.swift in Sources */,
+				00848971226385200071CEC2 /* ChefaNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,7 +578,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0028DF6B1CC6A3A20034AE8C /* PoshReVoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,7 +585,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0028DF6C1CC6A3A80034AE8C /* PoshReVoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,12 +604,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0028DF6E1CC6A3FD0034AE8C /* Localizable.strings */ = {
+		00848931226385200071CEC2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0028DF6F1CC6A3FD0034AE8C /* Base */,
+				00848932226385200071CEC2 /* Base */,
 			);
-			name = Localizable.strings;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1021,6 +658,7 @@
 				PROVISIONING_PROFILE = "9303a5a2-da06-46da-bf8c-8e3b5333ea76";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1060,6 +698,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "9303a5a2-da06-46da-bf8c-8e3b5333ea76";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1067,7 +706,7 @@
 		};
 		000985C01C31F0CB0083DE24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FCDC0E6896AA6C6AC452D6F6 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 6D400D687919A5D860DDEA7C /* Pods-PoshReVo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1086,7 +725,7 @@
 		};
 		000985C11C31F0CB0083DE24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8015B10869E989ADBE661CA2 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9310B9D90FE8D936EB3410BA /* Pods-PoshReVo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1105,6 +744,7 @@
 		000985C31C31F0CB0083DE24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PoshReVoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1117,6 +757,7 @@
 		000985C41C31F0CB0083DE24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PoshReVoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1129,6 +770,7 @@
 		000985C61C31F0CB0083DE24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PoshReVoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
@@ -1141,6 +783,7 @@
 		000985C71C31F0CB0083DE24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PoshReVoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
@@ -1192,12 +835,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		008DBC541CC6A0EC000925E8 /* PoshReVoDatumoj.xcdatamodeld */ = {
+		0084898D226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */,
+				0084898E226387F00071CEC2 /* PReVoDatumoj.xcdatamodel */,
 			);
-			currentVersion = 008DBC551CC6A0EC000925E8 /* PReVoDatumoj.xcdatamodel */;
+			currentVersion = 0084898E226387F00071CEC2 /* PReVoDatumoj.xcdatamodel */;
 			path = PoshReVoDatumoj.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

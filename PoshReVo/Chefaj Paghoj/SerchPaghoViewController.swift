@@ -40,9 +40,9 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         
         trovTabelo?.delegate = self
         trovTabelo?.dataSource = self
-        trovTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchChelIdent)
+        trovTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: serchChelIdent)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
     }
@@ -68,10 +68,10 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func ghisdatigiTitolon() {
         
-        if UzantDatumaro.serchLingvo.kodo.characters.count > 0 {
-            parentViewController?.title = String(format: NSLocalizedString("serchi lingva titolo", comment: ""), arguments: [UzantDatumaro.serchLingvo.nomo])
+        if UzantDatumaro.serchLingvo.kodo.count > 0 {
+            parent?.title = String(format: NSLocalizedString("serchi lingva titolo", comment: ""), arguments: [UzantDatumaro.serchLingvo.nomo])
         } else {
-            parentViewController?.title = NSLocalizedString("serchi baza titolo", comment: "")
+            parent?.title = NSLocalizedString("serchi baza titolo", comment: "")
         }
     }
     
@@ -80,37 +80,37 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
 
         let elektiloButono = UIButton()
-        elektiloButono.setImage(UIImage(named: "pikto_traduko")?.imageWithRenderingMode(.AlwaysTemplate), forState: UIControlState.Normal)
+        elektiloButono.setImage(UIImage(named: "pikto_traduko")?.withRenderingMode(.alwaysTemplate), for: .normal)
         elektiloButono.tintColor = UzantDatumaro.stilo.navTintKoloro
-        elektiloButono.addTarget(self, action: #selector(elektiLingvon), forControlEvents: .TouchUpInside)
+        elektiloButono.addTarget(self, action: #selector(elektiLingvon), for: .touchUpInside)
         
-        let lastaButono = UIButton(type: UIButtonType.System)
+        let lastaButono = UIButton(type: .system)
         if UzantDatumaro.oftajSerchLingvoj.count > 1 {
-            let lastaKodo = UzantDatumaro.oftajSerchLingvoj[1].kodo ?? ""
-            lastaButono.setTitle(lastaKodo, forState: UIControlState.Normal)
+            let lastaKodo = UzantDatumaro.oftajSerchLingvoj[1].kodo
+            lastaButono.setTitle(lastaKodo, for: .normal)
             lastaButono.titleLabel?.textColor = UzantDatumaro.stilo.navTintKoloro
-            lastaButono.titleLabel?.font = UIFont.systemFontOfSize(18.0)
+            lastaButono.titleLabel?.font = UIFont.systemFont(ofSize: 18.0)
             lastaButono.tintColor = UzantDatumaro.stilo.navTintKoloro
-            lastaButono.addTarget(self, action: #selector(uziLastanLingvon), forControlEvents: .TouchUpInside)
+            lastaButono.addTarget(self, action: #selector(uziLastanLingvon), for: .touchUpInside)
         }
         
         butonujo.addSubview(lastaButono)
         butonujo.addSubview(elektiloButono)
         elektiloButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
         lastaButono.frame = CGRect(x: 0, y: -1, width: 30, height: 30)
-        parentViewController?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
+        parent?.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
     }
     
-    func elektiLingvon() {
+    @objc func elektiLingvon() {
         
         let navigaciilo = HelpaNavigationController()
         let elektilo = SerchLingvoElektiloViewController()
         elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)
-        self.navigationController?.presentViewController(navigaciilo, animated: true, completion: nil)
+        self.navigationController?.present(navigaciilo, animated: true, completion: nil)
     }
     
-    func uziLastanLingvon() {
+    @objc func uziLastanLingvon() {
         if UzantDatumaro.oftajSerchLingvoj.count > 1 {
             let lasta = UzantDatumaro.oftajSerchLingvoj[1]
             UzantDatumaro.elektisSerchLingvon(lasta)
@@ -120,7 +120,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func fariSerchon(teksto: String) {
         if UzantDatumaro.serchLingvo != lastaSercho?.0 || teksto != lastaSercho?.1 {
-            serchRezultoj = TrieRegilo.serchi(UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
+            serchRezultoj = TrieRegilo.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
             trovTabelo?.reloadData()
             lastaSercho = (UzantDatumaro.serchLingvo, teksto)
         }
@@ -129,14 +129,13 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
 
 extension SerchPaghoViewController : UISearchBarDelegate {
     
-    func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
         var teksto = searchBar.text
-        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo() && text == "x" && teksto?.characters.count > 0 {
+        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo() && text == "x" && teksto?.count ?? 0 > 0 {
             
-            let lasta = teksto?[teksto!.endIndex.advancedBy(-1)]
-            if let chapeligita = Iloj.chapeligi(lasta!) {
-                teksto = teksto!.substringToIndex(teksto!.endIndex.advancedBy(-1)) + String(chapeligita)
+            if let lasta = teksto?.last, let chapelita = Iloj.chapeli(lasta) {
+                teksto = teksto!.prefix(teksto!.count - 1) + String(chapelita)
             }
             
             searchBar.text = teksto!
@@ -147,24 +146,22 @@ extension SerchPaghoViewController : UISearchBarDelegate {
         // Chi tiu abomenajho necesas char japanaj klavaroj ne kauzas textDidChange, kaj la fina teksto ne disponeblas chi tie
         // Espereble Apple riparos tion estontece
         if teksto != nil {
-            weak var malforta = self
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                if let vera = malforta {
-                    vera.fariSerchon(vera.serchTabulo?.text! ?? "")
-                }
-            });
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (0.3 * Double(NSEC_PER_SEC)) ) {
+                [weak self] in
+                self?.fariSerchon(teksto: self?.serchTabulo?.text! ?? "")
+            }
         }
         
         return true
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        searchBar.text = searchBar.text?.lowercaseString
+        searchBar.text = searchBar.text?.lowercased()
         if let teksto = searchBar.text {
             
             if !teksto.isEmpty {
-                fariSerchon(teksto)
+                fariSerchon(teksto: teksto)
             } else {
                 serchRezultoj.removeAll()
                 trovTabelo?.reloadData()
@@ -172,7 +169,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
         }
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
     }
@@ -186,14 +183,14 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return serchRezultoj.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let novaChelo = UITableViewCell(style: .Value1, reuseIdentifier: serchChelIdent)
+        let novaChelo = UITableViewCell(style: .value1, reuseIdentifier: serchChelIdent)
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
@@ -202,20 +199,20 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         novaChelo.accessibilityLabel = novaChelo.textLabel?.text
 
         if UzantDatumaro.serchLingvo != SeancDatumaro.esperantaLingvo() {
-            novaChelo.detailTextLabel?.text = tekstoPorDestinoj(serchRezultoj[indexPath.row].1)
+            novaChelo.detailTextLabel?.text = tekstoPorDestinoj(destinoj: serchRezultoj[indexPath.row].1)
         }
         
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if serchRezultoj[indexPath.row].1.count == 1 {
-            if let artikolObjekto = serchRezultoj[indexPath.row].1.first?.valueForKey("artikolo") as? NSManagedObject {
+            if let artikolObjekto = serchRezultoj[indexPath.row].1.first?.value(forKey: "artikolo") as? NSManagedObject {
                 if let artikolo = Artikolo(objekto: artikolObjekto) {
                     
-                    parentViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .Plain, target: nil, action: nil)
-                    if let marko = serchRezultoj[indexPath.row].1.first?.valueForKey("marko") as? String where !marko.isEmpty {
+                    parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .plain, target: nil, action: nil)
+                    if let marko = serchRezultoj[indexPath.row].1.first?.value(forKey: "marko") as? String, !marko.isEmpty {
                         (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
                     } else {
                         (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
@@ -228,15 +225,15 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
             
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
@@ -246,7 +243,7 @@ extension SerchPaghoViewController : SerchLingvoElektiloDelegate {
     func elektisSerchLingvon() {
         ghisdatigiTitolon()
         prepariNavigaciajnButonojn()
-        fariSerchon(serchTabulo?.text ?? "")
+        fariSerchon(teksto: serchTabulo?.text ?? "")
     }
 }
 
@@ -257,8 +254,8 @@ extension SerchPaghoViewController {
         
         var bonaNomo: String = ""
         if destinoj.count == 1 {
-            bonaNomo = (destinoj.first?.valueForKey("nomo") as? String)?.componentsSeparatedByString(", ").first ?? ""
-            if let senco = destinoj.first?.valueForKey("senco") as? String where senco != "0" {
+            bonaNomo = (destinoj.first?.value(forKey: "nomo") as? String)?.components(separatedBy: ", ").first ?? ""
+            if let senco = destinoj.first?.value(forKey: "senco") as? String, senco != "0" {
                 bonaNomo += " (" + senco + ")"
             }
             return bonaNomo

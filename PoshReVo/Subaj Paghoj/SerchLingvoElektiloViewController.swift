@@ -41,9 +41,9 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
         title = NSLocalizedString("serch-elektilo titolo", comment: "")
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
-        lingvoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
+        lingvoTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
     }
@@ -59,20 +59,20 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     func forigiSin() {
         
         if presentingViewController != nil {
-            navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            navigationController?.dismiss(animated: true, completion: nil)
         } else {
-            navigationController?.popViewControllerAnimated(true)
+            navigationController?.dismiss(animated: true, completion: nil)
         }
     }
 }
 
 extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return UzantDatumaro.oftajSerchLingvoj.count
@@ -83,10 +83,10 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo: UITableViewCell
-        if let trovChelo = lingvoTabelo?.dequeueReusableCellWithIdentifier(serchLingvoElektiloChelIdent) {
+        if let trovChelo = lingvoTabelo?.dequeueReusableCell(withIdentifier: serchLingvoElektiloChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()
@@ -109,7 +109,7 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 0 {
             return NSLocalizedString("serch-elektilo lastaj etikedo", comment: "")
@@ -120,7 +120,7 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
         return ""
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var lingvo: Lingvo? = nil
         if indexPath.section == 0 {
@@ -136,15 +136,15 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
             }
         }
         
-        lingvoTabelo?.deselectRowAtIndexPath(indexPath, animated: true)
+        lingvoTabelo?.deselectRow(at: indexPath, animated: true)
         forigiSin()
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

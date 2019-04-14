@@ -30,18 +30,18 @@ class HistorioViewController : UIViewController, Chefpagho, Stilplena {
         
         vortoTabelo?.delegate = self
         vortoTabelo?.dataSource = self
-        vortoTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: historiChelIdent)
+        vortoTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: historiChelIdent)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         efektivigiStilon()
     }
     
     func aranghiNavigaciilo() {
-        parentViewController?.title = NSLocalizedString("historio titolo", comment: "")
-        parentViewController?.navigationItem.rightBarButtonItem = nil
+        parent?.title = NSLocalizedString("historio titolo", comment: "")
+        parent?.navigationItem.rightBarButtonItem = nil
     }
     
     func efektivigiStilon() {
@@ -60,15 +60,15 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return UzantDatumaro.historio.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo: UITableViewCell
-        if let trovChelo = vortoTabelo?.dequeueReusableCellWithIdentifier(historiChelIdent) {
+        if let trovChelo = vortoTabelo?.dequeueReusableCell(withIdentifier: historiChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()
@@ -83,20 +83,20 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indekso = UzantDatumaro.historio[indexPath.row].indekso
         if let artikolo = SeancDatumaro.artikoloPorIndekso(indekso) {
-            (navigationController as? ChefaNavigationController)?.montriArtikolon( artikolo )
+            (navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

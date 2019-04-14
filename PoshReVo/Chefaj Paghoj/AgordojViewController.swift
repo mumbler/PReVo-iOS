@@ -30,17 +30,17 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
         
         tabelo?.delegate = self
         tabelo?.dataSource = self
-        tabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: agordojChelIdent)
+        tabelo?.register(UITableViewCell.self, forCellReuseIdentifier: agordojChelIdent)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
 
         efektivigiStilon()
     }
     
     func aranghiNavigaciilo() {
         
-        parentViewController?.title = NSLocalizedString("agordoj titolo", comment: "")
-        parentViewController?.navigationItem.rightBarButtonItem = nil
+        parent?.title = NSLocalizedString("agordoj titolo", comment: "")
+        parent?.navigationItem.rightBarButtonItem = nil
     }
     
     func efektivigiStilon() {
@@ -52,35 +52,35 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     }
     
     func nuligiHistorion() {
-        let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi historion averto", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (ago: UIAlertAction) -> Void in
+        let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi historion averto", comment: ""), message: nil, preferredStyle: .actionSheet)
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: .destructive, handler: { (ago: UIAlertAction) -> Void in
             UzantDatumaro.historio.removeAll()
         }))
-        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: .cancel, handler: nil))
         
         if let prezentilo = mesagho.popoverPresentationController,
-           let chelo = tabelo?.cellForRowAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)) {
+            let chelo = tabelo?.cellForRow(at: IndexPath(item: 0, section: 0)) {
             prezentilo.sourceView = chelo;
             prezentilo.sourceRect = chelo.bounds;
         }
         
-        presentViewController(mesagho, animated: true, completion: nil)
+        present(mesagho, animated: true, completion: nil)
     }
     
     func nuligiKonservitajn() {
-        let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi konservitajn averto", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertActionStyle.Destructive, handler: { (ago: UIAlertAction) -> Void in
+        let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi konservitajn averto", comment: ""), message: nil, preferredStyle: UIAlertController.Style.actionSheet)
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertAction.Style.destructive, handler: { (ago: UIAlertAction) -> Void in
             UzantDatumaro.konservitaj.removeAll()
         }))
-        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+        mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertAction.Style.cancel, handler: nil))
         
         if let prezentilo = mesagho.popoverPresentationController,
-            let chelo = tabelo?.cellForRowAtIndexPath(NSIndexPath(forItem: 1, inSection: 0)) {
+            let chelo = tabelo?.cellForRow(at: IndexPath(item: 1, section: 0)) {
                 prezentilo.sourceView = chelo;
                 prezentilo.sourceRect = chelo.bounds;
         }
         
-        presentViewController(mesagho, animated: true, completion: nil)
+        present(mesagho, animated: true, completion: nil)
     }
 }
 
@@ -90,7 +90,7 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         return 3
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
         case 0:
@@ -104,7 +104,7 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
             return NSLocalizedString("agordoj datumoj etikedo", comment: "")
@@ -117,9 +117,9 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let novaChelo = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: agordojChelIdent)
+        let novaChelo = UITableViewCell(style: .value1, reuseIdentifier: agordojChelIdent)
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -128,7 +128,7 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
             else if indexPath.row == 1 {
                 novaChelo.textLabel?.text = NSLocalizedString("agordoj nuligi konservitajn etikedo", comment: "")
             }
-            novaChelo.accessoryType = UITableViewCellAccessoryType.None
+            novaChelo.accessoryType = .none
         }
         else if indexPath.section == 1 {
             if indexPath.row == 0 {
@@ -143,28 +143,28 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
                     novaChelo.detailTextLabel?.text = String(format: NSLocalizedString("agordoj traduk-lingvoj subetikedo", comment: ""), arguments: [String(UzantDatumaro.tradukLingvoj.count)])
                 }
             }
-            novaChelo.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            novaChelo.accessoryType = .disclosureIndicator
         }
         else if indexPath.section == 2 {
             if indexPath.row == 0 {
                 novaChelo.textLabel?.text = NSLocalizedString("agordoj elekti stilon etikedo", comment: "")
                 novaChelo.detailTextLabel?.text = UzantDatumaro.stilo.nomo
             }
-            novaChelo.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            novaChelo.accessoryType = .disclosureIndicator
         }
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         novaChelo.isAccessibilityElement = true
         novaChelo.accessibilityLabel = novaChelo.textLabel?.text
-        if let teksto = novaChelo.detailTextLabel?.text where teksto != "" {
+        if let teksto = novaChelo.detailTextLabel?.text, teksto != "" {
             novaChelo.accessibilityLabel! += ", " + teksto
         }
         
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -194,28 +194,28 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
 extension AgordojViewController : SerchLingvoElektiloDelegate {
     
     func elektisSerchLingvon() {
-        tabelo?.reloadRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 1)], withRowAnimation: UITableViewRowAnimation.None)
+        tabelo?.reloadRows(at: [IndexPath(item: 0, section: 1)], with: .none)
     }
 }
 
 extension AgordojViewController : TradukLingvojElektiloDelegate {
     
     func elektisTradukLingvojn() {
-        tabelo?.reloadRowsAtIndexPaths([NSIndexPath(forItem: 1, inSection: 1)], withRowAnimation: UITableViewRowAnimation.None)
+        tabelo?.reloadRows(at: [IndexPath(item: 1, section: 1)], with: .none)
     }
 }
 

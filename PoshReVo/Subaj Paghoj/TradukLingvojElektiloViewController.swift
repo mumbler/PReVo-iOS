@@ -40,21 +40,21 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
     
     override func viewDidLoad() {
         
-        eoIndekso = SeancDatumaro.lingvoj.indexOf({ (nuna: Lingvo) -> Bool in
+        eoIndekso = SeancDatumaro.lingvoj.firstIndex(where: { (nuna: Lingvo) -> Bool in
             nuna.kodo == "eo"
         }) ?? 0
         
         title = NSLocalizedString("traduk-elektilo titolo", comment: "")
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
-        lingvoTabelo?.registerNib(UINib(nibName: "TradukLingvoElektiloTableViewCell", bundle: nil), forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
+        lingvoTabelo?.register(UINib(nibName: "TradukLingvoElektiloTableViewCell", bundle: nil), forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         
         if shanghisLingvojn {
             delegate?.elektisTradukLingvojn()
@@ -77,7 +77,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         return 2
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return 2
@@ -89,10 +89,10 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo: TradukLingvojElektiloTableViewCell
-        if let trovChelo = lingvoTabelo?.dequeueReusableCellWithIdentifier(tradukLingvojElektiloChelIdent) as? TradukLingvojElektiloTableViewCell {
+        if let trovChelo = lingvoTabelo?.dequeueReusableCell(withIdentifier: tradukLingvojElektiloChelIdent) as? TradukLingvojElektiloTableViewCell {
             novaChelo = trovChelo
         } else {
             novaChelo = TradukLingvojElektiloTableViewCell()
@@ -100,11 +100,11 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         
         novaChelo.prepari()
         novaChelo.shaltilo?.tag = indexPath.row + ((indexPath.row >= eoIndekso) ? 1 : 0)
-        novaChelo.shaltilo?.addTarget(self, action: #selector(TradukLingvojElektiloViewController.shaltisLingvon(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        novaChelo.shaltilo?.addTarget(self, action: #selector(TradukLingvojElektiloViewController.shaltisLingvon(shaltilo:)), for: .valueChanged)
         
         if indexPath.section == 0 {
             
-            novaChelo.shaltilo?.hidden = true
+            novaChelo.shaltilo?.isHidden = true
             switch indexPath.row {
             case 0:
                 novaChelo.etikedo?.text = NSLocalizedString("traduk-elektilo chiuj etikedo", comment: "")
@@ -119,8 +119,8 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         else if indexPath.section == 1 {
 
             let lingvo = SeancDatumaro.lingvoj[indexPath.row + ((indexPath.row >= eoIndekso) ? 1 : 0)]
-            novaChelo.shaltilo?.hidden = false
-            novaChelo.shaltilo?.on = UzantDatumaro.tradukLingvoj.contains(lingvo)
+            novaChelo.shaltilo?.isHidden = false
+            novaChelo.shaltilo?.isOn = UzantDatumaro.tradukLingvoj.contains(lingvo)
             novaChelo.etikedo?.text = lingvo.nomo
             
         }
@@ -131,7 +131,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
         
         if indexPath.section == 0 {
             switch indexPath.row {
@@ -156,31 +156,31 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         }
         else if indexPath.section == 1 {
             
-            if let chelo = tableView.cellForRowAtIndexPath(indexPath) as? TradukLingvojElektiloTableViewCell,
+            if let chelo = tableView.cellForRow(at: indexPath) as? TradukLingvojElektiloTableViewCell,
                let shaltilo = chelo.shaltilo {
                 
-                shaltilo.setOn(!shaltilo.on, animated: true)
-                shaltisLingvon(shaltilo)
+                shaltilo.setOn(!shaltilo.isOn, animated: true)
+                shaltisLingvon(shaltilo: shaltilo)
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }    
 }
 
 // Shaltilo reagado
 extension TradukLingvojElektiloViewController {
     
-    func shaltisLingvon(shaltilo: UISwitch) {
+    @objc func shaltisLingvon(shaltilo: UISwitch) {
         
-        if shaltilo.on {
+        if shaltilo.isOn {
             UzantDatumaro.tradukLingvoj.insert(SeancDatumaro.lingvoj[shaltilo.tag])
         } else {
             UzantDatumaro.tradukLingvoj.remove(SeancDatumaro.lingvoj[shaltilo.tag])

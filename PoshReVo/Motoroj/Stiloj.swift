@@ -100,7 +100,7 @@ enum KolorStilo : Int {
     var SubLinioKoloro: UIColor {
         switch self {
         case .Hela:
-            return UIColor.clearColor()
+            return UIColor.clear
         case .Malhela:
             return Koloro.HelaGrizo.valoro
         }
@@ -162,39 +162,39 @@ enum KolorStilo : Int {
     
     // --------
     
-    var scrollKoloro: UIScrollViewIndicatorStyle {
+    var scrollKoloro: UIScrollView.IndicatorStyle {
         switch self {
         case .Hela:
-            return UIScrollViewIndicatorStyle.Black
+            return UIScrollView.IndicatorStyle.black
         case .Malhela:
-            return UIScrollViewIndicatorStyle.White
+            return UIScrollView.IndicatorStyle.white
         }
     }
     
      var serchTabuloKoloro: UIBarStyle {
         switch self {
         case .Hela:
-            return UIBarStyle.Default
+            return UIBarStyle.default
         case .Malhela:
-            return UIBarStyle.Black
+            return UIBarStyle.black
         }
     }
     
     var statusKoloro: UIStatusBarStyle {
         switch self {
         case .Hela:
-            return UIStatusBarStyle.Default
+            return UIStatusBarStyle.default
         case .Malhela:
-            return UIStatusBarStyle.LightContent
+            return UIStatusBarStyle.lightContent
         }
     }
     
     var klavaroKoloro: UIKeyboardAppearance {
         switch self {
         case .Hela:
-            return UIKeyboardAppearance.Light
+            return UIKeyboardAppearance.light
         case .Malhela:
-            return UIKeyboardAppearance.Dark
+            return UIKeyboardAppearance.dark
         }
     }
     
@@ -220,13 +220,13 @@ class Stiloj {
         Chi tiu funkcio shanghas plurajn gheneralajn kolor-agordojn, kaj igas ke la prezentitaj ekranoj
         faru same.
     */
-    static func efektivigiStilon(stilo: KolorStilo) {
+    static func efektivigiStilon(_ stilo: KolorStilo) {
         
-        UIApplication.sharedApplication().statusBarStyle = UzantDatumaro.stilo.statusKoloro
+        UIApplication.shared.statusBarStyle = UzantDatumaro.stilo.statusKoloro
         
         // Ni uzas specialajn versiojn de chi tiuj funkcioj char alie ghi ne estas uzeblaj sub iOS 8.1 per Swift
-        UILabel.nia_appearanceWhenContainedIn(UITableViewHeaderFooterView.self).textColor = UzantDatumaro.stilo.fonTekstKoloro
-        UITextField.nia_appearanceWhenContainedIn(UISearchBar.self).textColor = UzantDatumaro.stilo.tekstKoloro
+        UILabel.nia_appearanceWhenContained(in: UITableViewHeaderFooterView.self).textColor = UzantDatumaro.stilo.fonTekstKoloro
+        UITextField.nia_appearanceWhenContained(in: UISearchBar.self).textColor = UzantDatumaro.stilo.tekstKoloro
         
         /*UILabel.appearanceWhenContainedInInstancesOfClasses([UITableViewHeaderFooterView.self]).textColor = UzantDatumaro.stilo.fonTekstKoloro
         UITextField.appearanceWhenContainedInInstancesOfClasses([UISearchBar.self]).textColor = UzantDatumaro.stilo.tekstKoloro*/
@@ -236,13 +236,13 @@ class Stiloj {
             konforma.efektivigiStilon()
         }
         
-        if let nav = UIApplication.sharedApplication().keyWindow?.rootViewController {
+        if let nav = UIApplication.shared.keyWindow?.rootViewController {
             
             if let konformaNav = nav as? ChefaNavigationController {
                 
                 konformaNav.efektivigiStilon()
                 
-                for filo in konformaNav.childViewControllers {
+                for filo in konformaNav.children {
                     
                     if let konforma = filo as? Stilplena {
                         

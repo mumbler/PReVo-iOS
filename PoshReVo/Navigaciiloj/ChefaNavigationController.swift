@@ -22,9 +22,9 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
     
     override func viewDidLoad() {
         
-        navigationBar.translucent = false
+        navigationBar.isTranslucent = false
         
-        let maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SlideNavigationController.toggleLeftMenu))
+        let maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(SlideNavigationController.toggleLeftMenu))
         maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
         navigationItem.leftBarButtonItem = maldekstraButono
         leftBarButtonItem = maldekstraButono
@@ -33,7 +33,7 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
 
         let longa = max(view.frame.size.height, view.frame.size.width)
         let mallonga = min(view.frame.size.height, view.frame.size.width)
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+        if UIDevice.current.userInterfaceIdiom == .phone {
             portraitSlideOffset = mallonga * 0.55
             landscapeSlideOffset = longa * 0.75
         } else {
@@ -50,19 +50,13 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         efektivigiStilon()
     }
     
-    // Surpushi artikolan paghon
-    func montriArtikolon(artikolo: Artikolo) {
-        
-        montriArtikolon(artikolo, marko: nil)
-    }
-    
     // Surpushi artikolan paghon kaj hasti al specifa loko en la artikolo
-    func montriArtikolon(artikolo: Artikolo, marko: String?) {
+    func montriArtikolon(_ artikolo: Artikolo, marko: String? = nil) {
         
         if let veraMarko = marko {
             
             var serchilo = veraMarko
-            if let partoj = marko?.componentsSeparatedByString(".") where partoj.count > 2 {
+            if let partoj = marko?.components(separatedBy: "."), partoj.count > 2 {
                 serchilo = partoj[0] + "." + partoj[1]
             }
             
@@ -76,41 +70,41 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         
         navigationBar.barTintColor = UzantDatumaro.stilo.navFonKoloro
         navigationBar.tintColor = UzantDatumaro.stilo.navTintKoloro
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UzantDatumaro.stilo.navTekstoKoloro]
+        navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UzantDatumaro.stilo.navTekstoKoloro]
         
         if subLinio == nil {
             subLinio = UIView()
             navigationBar.addSubview(subLinio!)
         }
         // Por ke la suba linio staru bone post rotacio
-        subLinio?.frame = CGRectMake(0, navigationBar.frame.size.height - 1, navigationBar.frame.size.width, 1)
+        subLinio?.frame = CGRect(x: 0, y: navigationBar.frame.size.height - 1, width: navigationBar.frame.size.width, height: 1)
         subLinio?.backgroundColor = UzantDatumaro.stilo.SubLinioKoloro
         
-        for filo in childViewControllers {
+        for filo in children {
             if let konforma = filo as? Stilplena {
                 konforma.efektivigiStilon()
             }
         }
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 
         //subLinio?.hidden = true
-        closeMenuWithCompletion(nil)
+        closeMenu(completion: nil)
         
         weak var malforta = self
         
-        if coordinator.conformsToProtocol(UIViewControllerTransitionCoordinator) {
-            coordinator.animateAlongsideTransition({ (UIViewControllerTransitionCoordinatorContext) -> Void in
+        if coordinator.conforms(to: UIViewControllerTransitionCoordinator.self) {
+            coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             
                 if let grandeco = malforta?.navigationBar.frame.size {
-                    malforta?.subLinio?.frame = CGRectMake(0, grandeco.height - 1, grandeco.width, 1)
+                    malforta?.subLinio?.frame = CGRect(x: 0, y: grandeco.height - 1, width: grandeco.width, height: 1)
                 }
                 }) { (UIViewControllerTransitionCoordinatorContext) -> Void in
                     
-                malforta?.subLinio?.hidden = false
+                    malforta?.subLinio?.isHidden = false
                 if let alteco = malforta?.navigationBar.frame.size.height {
-                    (malforta?.leftMenu as? FlankMenuoViewController)?.navAltecoShanghis(alteco)
+                    (malforta?.leftMenu as? FlankMenuoViewController)?.navAltecoShanghis(alteco: alteco)
                 }
             }
         }

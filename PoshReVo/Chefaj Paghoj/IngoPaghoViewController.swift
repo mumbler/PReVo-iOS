@@ -87,7 +87,7 @@ class IngoPaghoViewController : UIViewController, Stilplena {
     }
     
     // Montri paghon de tiu speco.
-    func montriPaghon(paghTipo: Pagho) {
+    func montriPaghon(_ paghTipo: Pagho) {
         
         var novaPagho: UIViewController? = nil
         switch paghTipo {
@@ -108,12 +108,12 @@ class IngoPaghoViewController : UIViewController, Stilplena {
             break
         }
         
-        if filoVC == nil || novaPagho.dynamicType != filoVC?.dynamicType {
-            filoVC?.removeFromParentViewController()
+        if filoVC == nil || type(of: novaPagho) != type(of: filoVC!) {
+            filoVC?.removeFromParent()
             filoV?.removeFromSuperview()
             filoVC = novaPagho
             filoV = novaPagho?.view
-            addChildViewController(filoVC!)
+            addChild(filoVC!)
             view.addSubview(filoV!)
             filoV?.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             
@@ -148,6 +148,6 @@ extension IngoPaghoViewController : FlankMenuoDelegate {
     func elektisPaghon(novaPagho: Pagho) {
         
         montriPaghon(novaPagho)
-        SlideNavigationController.sharedInstance().closeMenuWithCompletion(nil)
+        SlideNavigationController.sharedInstance().closeMenu(completion: nil)
     }
 }

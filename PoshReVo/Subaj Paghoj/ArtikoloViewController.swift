@@ -47,29 +47,29 @@ class ArtikoloViewController : UIViewController, Stilplena {
         
         title = (artikolo?.titolo ?? "") + Iloj.superLit((artikolo?.ofc ?? ""))
         
-        vortTabelo?.contentInset = UIEdgeInsetsMake(-1, 0, 0, 0)
+        vortTabelo?.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
         vortTabelo?.delegate = self
         vortTabelo?.dataSource = self
-        vortTabelo?.registerNib(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
-        vortTabelo?.registerNib(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
-        vortTabelo?.registerNib(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
+        vortTabelo?.register(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
+        vortTabelo?.register(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
+        vortTabelo?.register(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
         
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if konservitaMarko != nil {
-            weak var malforta = self
-            dispatch_async(dispatch_get_main_queue() , {
-                malforta?.iriAlMarko(malforta?.konservitaMarko ?? "", animacii: false)
-            })
+            DispatchQueue.main.async { [weak self] in
+                self?.iriAlMarko(self?.konservitaMarko ?? "", animacii: false)
+            }
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         if let veraArtikolo = artikolo {
             UzantDatumaro.visitisPaghon(Listero(veraArtikolo.titolo, veraArtikolo.indekso))
@@ -97,12 +97,12 @@ class ArtikoloViewController : UIViewController, Stilplena {
             } ? UIImage(named: "pikto_stelo_plena") : UIImage(named: "pikto_stelo")
         let konservButono = UIButton()
         konservButono.tintColor = UzantDatumaro.stilo.navTintKoloro
-        konservButono.setImage(bildo?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-        konservButono.addTarget(self, action: #selector(premisKonservButonon), forControlEvents: UIControlEvents.TouchUpInside)
+        konservButono.setImage(bildo?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
+        konservButono.addTarget(self, action: #selector(premisKonservButonon), for: UIControl.Event.touchUpInside)
         let serchButono = UIButton()
         serchButono.tintColor = UzantDatumaro.stilo.navTintKoloro
-        serchButono.setImage(UIImage(named: "pikto_lenso")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
-        serchButono.addTarget(self, action: #selector(premisSerchButonon), forControlEvents: UIControlEvents.TouchUpInside)
+        serchButono.setImage(UIImage(named: "pikto_lenso")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
+        serchButono.addTarget(self, action: #selector(premisSerchButonon), for: .touchUpInside)
         
         butonujo.addSubview(konservButono)
         butonujo.addSubview(serchButono)
@@ -123,24 +123,24 @@ class ArtikoloViewController : UIViewController, Stilplena {
             }
         }
         
-        tradukListo?.sortInPlace({ (unua: Traduko, dua: Traduko) -> Bool in
+        tradukListo?.sort(by: { (unua: Traduko, dua: Traduko) -> Bool in
             return unua.lingvo.nomo < dua.lingvo.nomo
         })
     }
     
     // Haste movi la ekranon al la dezirata vorto en la artikolo
-    func iriAlMarko(marko: String, animacii: Bool) {
+    func iriAlMarko(_ marko: String, animacii: Bool) {
         
         var sumo = 0
         for grupo in artikolo?.grupoj ?? [] {
             
-            if artikolo?.grupoj.count > 1 { sumo += 1 }
+            if artikolo?.grupoj.count ?? 0 > 1 { sumo += 1 }
             
             for vorto in grupo.vortoj {
                 
                 if vorto.marko == marko {
                     
-                    vortTabelo?.scrollToRowAtIndexPath(NSIndexPath(forRow: sumo, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: animacii)
+                    vortTabelo?.scrollToRow(at: IndexPath(row: sumo, section: 0), at: .top, animated: animacii)
                     return
                 }
                 
@@ -150,47 +150,47 @@ class ArtikoloViewController : UIViewController, Stilplena {
     }
     
     // Reiri al la ingo pagho kaj igi ghin montri la serch-paghon
-    func premisSerchButonon() {
+    @objc func premisSerchButonon() {
         
         if let ingo = (navigationController as? ChefaNavigationController)?.viewControllers.first as? IngoPaghoViewController {
             ingo.montriPaghon(Pagho.Serchi)
         }
-        navigationController?.popToRootViewControllerAnimated(true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // Konservi au malkonservi la artikolon
-    func premisKonservButonon() {
+    @objc func premisKonservButonon() {
         
-        UzantDatumaro.shanghiKonservitecon(Listero(artikolo!.titolo, artikolo!.indekso))
+        UzantDatumaro.shanghiKonservitecon(artikolo: Listero(artikolo!.titolo, artikolo!.indekso))
         prepariNavigaciajnButonojn()
     }
     
     // Montri la traduk-lingvoj elektilon
-    func premisPliajnTradukojnButonon() {
+    @objc func premisPliajnTradukojnButonon() {
         
         let navigaciilo = HelpaNavigationController()
         let elektilo = TradukLingvojElektiloViewController()
         elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)
-        navigationController?.presentViewController(navigaciilo, animated: true, completion: nil)
+        navigationController?.present(navigaciilo, animated: true, completion: nil)
     }
     
-    func premisChelon(rekonilo: UILongPressGestureRecognizer) {
+    @objc func premisChelon(_ rekonilo: UILongPressGestureRecognizer) {
         
-        if let chelo = rekonilo.view as? ArtikoloTableViewCell where rekonilo.state == UIGestureRecognizerState.Began {
-            let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("artikolo chelo agoj titolo", comment: ""), message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-            mesagho.addAction( UIAlertAction(title: NSLocalizedString("artikolo chelo ago kopii", comment: ""), style: UIAlertActionStyle.Default, handler: { (ago: UIAlertAction) -> Void in
-                let tabulo = UIPasteboard.generalPasteboard()
-                tabulo.string = chelo.chefaEtikedo?.text
+        if let chelo = rekonilo.view as? ArtikoloTableViewCell, rekonilo.state == .began {
+            let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("artikolo chelo agoj titolo", comment: ""), message: nil, preferredStyle: .actionSheet)
+            mesagho.addAction( UIAlertAction(title: NSLocalizedString("artikolo chelo ago kopii", comment: ""), style: .default, handler: { (ago: UIAlertAction) -> Void in
+                let tabulo = UIPasteboard.general
+                tabulo.string = chelo.chefaEtikedo?.text as! String // TODO
             }))
-            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Nenio", comment: ""), style: UIAlertActionStyle.Cancel, handler: nil))
+            mesagho.addAction( UIAlertAction(title: NSLocalizedString("Nenio", comment: ""), style: .cancel, handler: nil))
             
             if let prezentilo = mesagho.popoverPresentationController {
                 prezentilo.sourceView = chelo;
                 prezentilo.sourceRect = chelo.bounds;
             }
             
-            presentViewController(mesagho, animated: true, completion: nil)
+            present(mesagho, animated: true, completion: nil)
         }
     }
 }
@@ -203,13 +203,13 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return 1 + ((videblaSumo > 0 || tradukSumo - videblaSumo > 0) ? 1 : 0)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         var rez = 0
         if section == 0 {
             
             for grupo in artikolo!.grupoj {
-                if artikolo?.grupoj.count > 1 { rez += 1 }
+                if artikolo?.grupoj.count ?? 0 > 1 { rez += 1 }
                 rez += grupo.vortoj.count
             }
             return rez
@@ -221,10 +221,10 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return rez
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo: ArtikoloTableViewCell
-        if let trovChelo = vortTabelo?.dequeueReusableCellWithIdentifier(artikolChelIdent) as? ArtikoloTableViewCell {
+        if let trovChelo = vortTabelo?.dequeueReusableCell(withIdentifier: artikolChelIdent) as? ArtikoloTableViewCell {
             novaChelo = trovChelo
         } else {
             novaChelo = ArtikoloTableViewCell()
@@ -267,10 +267,10 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         novaChelo.chefaEtikedo?.delegate = self
         novaChelo.isAccessibilityElement = true
         novaChelo.accessibilityLabel = ""
-        if let titolo = novaChelo.titolaEtikedo?.text where !titolo.isEmpty {
-            novaChelo.accessibilityLabel? += titolo + ", "
+        if let titolo = novaChelo.titolaEtikedo?.text as? String, !titolo.isEmpty {
+            novaChelo.accessibilityLabel! += titolo + ", " // TODO do this smarter
         }
-        novaChelo.accessibilityLabel? += novaChelo.chefaEtikedo?.text ?? ""
+        novaChelo.accessibilityLabel! += novaChelo.chefaEtikedo?.text as? String ?? ""
         
         // Gesture Recognizer por kopiado
         
@@ -283,14 +283,14 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if section == 0 {
             return nil
         }
         
         let novaKapo: ArtikoloKapoTableViewHeaderFooterView
-        if let trovKapo = vortTabelo?.dequeueReusableHeaderFooterViewWithIdentifier(artikolKapIdent) as? ArtikoloKapoTableViewHeaderFooterView {
+        if let trovKapo = vortTabelo?.dequeueReusableHeaderFooterView(withIdentifier: artikolKapIdent) as? ArtikoloKapoTableViewHeaderFooterView {
             novaKapo = trovKapo
         } else {
             novaKapo = ArtikoloKapoTableViewHeaderFooterView()
@@ -304,19 +304,19 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return novaKapo
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        if section == 1 && artikolo?.tradukoj.count > 0 {
+        if section == 1 && artikolo?.tradukoj.count ?? 0 > 0 {
             
             let novaPiedo: ArtikoloPiedButonoTableViewHeaderFooterView
-            if let trovPiedo = vortTabelo?.dequeueReusableHeaderFooterViewWithIdentifier(artikolPiedIdent) as? ArtikoloPiedButonoTableViewHeaderFooterView {
+            if let trovPiedo = vortTabelo?.dequeueReusableHeaderFooterView(withIdentifier: artikolPiedIdent) as? ArtikoloPiedButonoTableViewHeaderFooterView {
                 novaPiedo = trovPiedo
             } else {
                 novaPiedo = ArtikoloPiedButonoTableViewHeaderFooterView()
             }
             
             novaPiedo.prepari()
-            novaPiedo.butono?.addTarget(self, action: #selector(premisPliajnTradukojnButonon), forControlEvents: UIControlEvents.TouchUpInside)
+            novaPiedo.butono?.addTarget(self, action: #selector(premisPliajnTradukojnButonon), for: .touchUpInside)
             
             return novaPiedo
         }
@@ -324,7 +324,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section == 1 {
             return NSLocalizedString("artikolo tradukoj etikedo", comment: "")
@@ -333,40 +333,40 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     
         if section == 1 {
-            return UITableViewAutomaticDimension
+            return UITableView.automaticDimension
         }
         
         return 1
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if section == 1 {
-            let desc = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            let desc = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
             return 50 + desc.pointSize - 14
         }
         
         return 1
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 100
     }
     
     
-    func tableView(tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
         if section == 1 {
-            let desc = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+            let desc = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
             return 50 + desc.pointSize - 14
         }
         
@@ -381,18 +381,18 @@ extension ArtikoloViewController : TradukLingvojElektiloDelegate {
     func elektisTradukLingvojn() {
         
         prepariTradukListon()
-        vortTabelo?.reloadSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.Fade)
-        vortTabelo?.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 1), atScrollPosition: UITableViewScrollPosition.Top, animated: true)
+        vortTabelo?.reloadSections(IndexSet(integer: 1), with: .fade)
+        vortTabelo?.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
     }
 }
 
 extension ArtikoloViewController : TTTAttributedLabelDelegate {
     
     // Uzanto premis ligilon - iri al la dezirata sekcio de la artikolo, au montri novan artikolon
-    func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
         
-        let marko = url.absoluteString
-        let partoj = marko.componentsSeparatedByString(".")
+        let marko = url?.absoluteString ?? ""
+        let partoj = marko.components(separatedBy: ".")
         
         if partoj.count == 0 {
             return
@@ -404,7 +404,7 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
             }
         } else {
             if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
-                navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .Plain, target: nil, action: nil)
+                navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .plain, target: nil, action: nil)
                 (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
             }
         }

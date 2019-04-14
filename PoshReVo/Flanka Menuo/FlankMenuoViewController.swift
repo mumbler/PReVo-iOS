@@ -39,7 +39,7 @@ class FlankMenuoViewController : UIViewController, Stilplena {
         
         tabelo?.delegate = self
         tabelo?.dataSource = self
-        tabelo?.registerNib(UINib(nibName: "FlankMenuoTableViewCell", bundle: nil), forCellReuseIdentifier: flankMenuoChelIdent)
+        tabelo?.register(UINib(nibName: "FlankMenuoTableViewCell", bundle: nil), forCellReuseIdentifier: flankMenuoChelIdent)
         
         efektivigiStilon()
     }
@@ -52,7 +52,7 @@ class FlankMenuoViewController : UIViewController, Stilplena {
     }
     
     func navAltecoShanghis(alteco: CGFloat) {
-        navAlteco?.constant = alteco + ((UIApplication.sharedApplication().statusBarHidden) ? 0 : UIApplication.sharedApplication().statusBarFrame.size.height)
+        navAlteco?.constant = alteco + ((UIApplication.shared.isStatusBarHidden) ? 0 : UIApplication.shared.statusBarFrame.size.height)
         view.setNeedsUpdateConstraints()
     }
     
@@ -64,33 +64,33 @@ extension FlankMenuoViewController : UITableViewDelegate, UITableViewDataSource 
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Pagho.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo : FlankMenuoTableViewCell
-        if let trovChelo = tabelo?.dequeueReusableCellWithIdentifier(flankMenuoChelIdent) as? FlankMenuoTableViewCell {
+        if let trovChelo = tabelo?.dequeueReusableCell(withIdentifier: flankMenuoChelIdent) as? FlankMenuoTableViewCell {
             novaChelo = trovChelo
         } else {
             novaChelo = FlankMenuoTableViewCell()
         }
         
         if let pagho = Pagho(rawValue: indexPath.row) {
-            novaChelo.prepari(pagho.nomo, bildoNomo: pagho.bildoNomo)
+            novaChelo.prepari(teksto: pagho.nomo, bildoNomo: pagho.bildoNomo)
         }
         
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let novaPagho = Pagho(rawValue: indexPath.row) {
-            delegate?.elektisPaghon(novaPagho)
+            delegate?.elektisPaghon(novaPagho: novaPagho)
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

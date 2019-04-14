@@ -29,26 +29,26 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
     override func viewDidLoad() {
         
         title = NSLocalizedString("pri titolo", comment: "")
-        let versioTeksto = String(format: NSLocalizedString("pri versio", comment: ""), arguments: [ (NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String) ?? "" ])
+        let versioTeksto = String(format: NSLocalizedString("pri versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "" ])
         let teksto = NSLocalizedString("pri teksto", comment: "") + "\n\n" + versioTeksto
-        etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         
         etikedo?.delegate = self
         
         efektivigiStilon()
-        let markoj = Iloj.troviMarkojn(teksto)
+        let markoj = Iloj.troviMarkojn(teksto: teksto)
         etikedo?.setText(Iloj.pretigiTekston(teksto, kunMarkoj: markoj))
         for ligMarko in markoj[markoLigoKlavo]! {
-            etikedo?.addLinkToURL( NSURL(string: ligMarko.2), withRange: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
+            etikedo?.addLink( to: URL(string: ligMarko.2), with: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
     func aranghiNavigaciilo() {
         
-        parentViewController?.title = NSLocalizedString("pri titolo", comment: "")
-        parentViewController?.navigationItem.rightBarButtonItem = nil
+        parent?.title = NSLocalizedString("pri titolo", comment: "")
+        parent?.navigationItem.rightBarButtonItem = nil
     }
     
     func efektivigiStilon() {
@@ -56,8 +56,8 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
         rulumilo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         view.backgroundColor = UzantDatumaro.stilo.bazKoloro
         etikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
-        etikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
-        etikedo?.activeLinkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(integer: NSUnderlineStyle.StyleSingle.rawValue)]
+        etikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(value: NSUnderlineStyle.single.rawValue)]
+        //etikedo?.activeLinkAttributes = [NSAttributedString.Key.foregroundColor : UzantDatumaro.stilo.tintKoloro, .underlineStyle : NSNumber(value: .single.rawValue)]
     }
 }
 
@@ -65,7 +65,7 @@ extension PriViewController : TTTAttributedLabelDelegate {
     
     func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
         
-        UIApplication.sharedApplication().openURL(url)
+        UIApplication.shared.openURL(url as URL)
     }
 }
 
@@ -73,6 +73,6 @@ extension PriViewController : TTTAttributedLabelDelegate {
 extension PriViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {
-        etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
     }
 }

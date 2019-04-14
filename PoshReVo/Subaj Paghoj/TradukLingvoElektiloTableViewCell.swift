@@ -16,7 +16,7 @@ class TradukLingvojElektiloTableViewCell : UITableViewCell, Stilplena {
     
     func prepari() {
         
-        etikedo?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         efektivigiStilon()
     }
     

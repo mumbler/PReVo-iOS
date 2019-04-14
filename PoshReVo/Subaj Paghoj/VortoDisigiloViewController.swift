@@ -33,10 +33,10 @@ class VortoDisigiloViewController : UIViewController, Stilplena {
     
     override func viewDidLoad() {
         
-        title = (destinoj.first?.valueForKey("teksto") as? String) ?? "disigilo"
+        title = (destinoj.first?.value(forKey: "teksto") as? String) ?? "disigilo"
         vortoTabelo?.delegate = self
         vortoTabelo?.dataSource = self
-        vortoTabelo?.registerClass(VortoDisigiloTableViewCell.self, forCellReuseIdentifier: disigiloChelIdent)
+        vortoTabelo?.register(VortoDisigiloTableViewCell.self, forCellReuseIdentifier: disigiloChelIdent)
         efektivigiStilon()
     }
     
@@ -48,9 +48,9 @@ class VortoDisigiloViewController : UIViewController, Stilplena {
         vortoTabelo?.reloadData()
     }
     
-    func devasMontriSencon(indexPath: NSIndexPath) -> Bool {
+    func devasMontriSencon(indexPath: IndexPath) -> Bool {
         
-        if (destinoj[indexPath.row].valueForKey("senco") as? String) == "0" {
+        if (destinoj[indexPath.row].value(forKey: "senco") as? String) == "0" {
             return false
         }
         
@@ -65,7 +65,7 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return destinoj.count
@@ -74,27 +74,27 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let chelo = UITableViewCell(style: .Value1, reuseIdentifier: disigiloChelIdent)
+        let chelo = UITableViewCell(style: .value1, reuseIdentifier: disigiloChelIdent)
         
         chelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         chelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
-        chelo.textLabel?.text = (destinoj[indexPath.row].valueForKey("teksto") as? String) ?? ""
-        chelo.detailTextLabel?.text = (destinoj[indexPath.row].valueForKey("nomo") as? String) ?? ""
-        if devasMontriSencon(indexPath), let senco = destinoj[indexPath.row].valueForKey("senco") as? String {
+        chelo.textLabel?.text = (destinoj[indexPath.row].value(forKey: "teksto") as? String) ?? ""
+        chelo.detailTextLabel?.text = (destinoj[indexPath.row].value(forKey: "nomo") as? String) ?? ""
+        if devasMontriSencon(indexPath: indexPath), let senco = destinoj[indexPath.row].value(forKey: "senco") as? String {
             chelo.detailTextLabel?.text = (chelo.detailTextLabel?.text ?? "") + " " + senco
         }
         
         return chelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let artikolObjekto = destinoj[indexPath.row].valueForKey("artikolo") as? NSManagedObject {
+        if let artikolObjekto = destinoj[indexPath.row].value(forKey: "artikolo") as? NSManagedObject {
             if let artikolo = Artikolo(objekto: artikolObjekto) {
                 
-                if let marko = destinoj[indexPath.row].valueForKey("marko") as? String where !marko.isEmpty {
+                if let marko = destinoj[indexPath.row].value(forKey: "marko") as? String, !marko.isEmpty {
                     (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
                 } else {
                     (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
@@ -102,13 +102,13 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

@@ -16,7 +16,7 @@ class ArtikoloPiedButonoTableViewHeaderFooterView : UITableViewHeaderFooterView,
     
     func prepari() {
         
-        butono?.titleLabel?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody);
+        butono?.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body);
         butono?.titleLabel?.text = NSLocalizedString("traduk-elektilo butono titolo", comment: "")
         butono?.layer.borderWidth = 1
         butono?.layer.cornerRadius = 9
@@ -28,7 +28,7 @@ class ArtikoloPiedButonoTableViewHeaderFooterView : UITableViewHeaderFooterView,
         
         fono?.backgroundColor = UzantDatumaro.stilo.bazKoloro
         butono?.titleLabel?.textColor = UzantDatumaro.stilo.tintKoloro
-        butono?.layer.borderColor = UzantDatumaro.stilo.tintKoloro.CGColor
+        butono?.layer.borderColor = UzantDatumaro.stilo.tintKoloro.cgColor
     }
     
 }

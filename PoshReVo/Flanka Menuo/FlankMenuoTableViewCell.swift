@@ -17,7 +17,7 @@ class FlankMenuoTableViewCell : UITableViewCell, Stilplena {
     func prepari(teksto: String, bildoNomo: String) {
 
         etikedo?.text = teksto
-        bildo?.image = UIImage(named:bildoNomo)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        bildo?.image = UIImage(named:bildoNomo)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         
         efektivigiStilon()
     }

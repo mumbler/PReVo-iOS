@@ -32,9 +32,9 @@ class StiloElektiloViewController : UIViewController, Stilplena {
         
         stiloTabelo?.delegate = self
         stiloTabelo?.dataSource = self
-        stiloTabelo?.registerClass(UITableViewCell.self, forCellReuseIdentifier: stiloChelIdent)
+        stiloTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: stiloChelIdent)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(didChangePreferredContentSize(_:)), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
     }
@@ -56,7 +56,7 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             return KolorStilo.count
@@ -65,19 +65,19 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
         return 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo: UITableViewCell
-        if let trovChelo = stiloTabelo?.dequeueReusableCellWithIdentifier(stiloChelIdent) {
+        if let trovChelo = stiloTabelo?.dequeueReusableCell(withIdentifier: stiloChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()
         }
         
         if indexPath.row == UzantDatumaro.stilo.rawValue {
-            novaChelo.accessoryType = UITableViewCellAccessoryType.Checkmark
+            novaChelo.accessoryType = .checkmark
         } else {
-            novaChelo.accessoryType = UITableViewCellAccessoryType.None
+            novaChelo.accessoryType = .none
         }
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
@@ -90,21 +90,21 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if UzantDatumaro.stilo.rawValue != indexPath.row {
-            let antaua = NSIndexPath(forRow: UzantDatumaro.stilo.rawValue, inSection: 0)
-            UzantDatumaro.shanghisStilon(KolorStilo(rawValue: indexPath.row) ?? KolorStilo.Hela)
-            tableView.reloadRowsAtIndexPaths([antaua, indexPath], withRowAnimation: UITableViewRowAnimation.None)
+            let antaua = IndexPath(row: UzantDatumaro.stilo.rawValue, section: 0)
+            UzantDatumaro.shanghisStilon(novaStilo: KolorStilo(rawValue: indexPath.row) ?? KolorStilo.Hela)
+            tableView.reloadRows(at: [antaua, indexPath], with: .none)
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
     
-    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

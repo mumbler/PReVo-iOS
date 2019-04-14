@@ -27,9 +27,9 @@ class Artikolo {
     
     init?(objekto: NSManagedObject) {
         
-        let trovTitolo = objekto.valueForKey("titolo") as? String
-        let trovRadiko = objekto.valueForKey("radiko") as? String
-        let trovIndekso = objekto.valueForKey("indekso") as? String
+        let trovTitolo = objekto.value(forKey: "titolo") as? String
+        let trovRadiko = objekto.value(forKey: "radiko") as? String
+        let trovIndekso = objekto.value(forKey: "indekso") as? String
         if trovTitolo == nil || trovRadiko == nil || trovIndekso == nil {
             titolo = ""
             radiko = ""
@@ -49,15 +49,15 @@ class Artikolo {
         var novajTradukoj: [Traduko] = [Traduko]()
         do {
             
-            if let vortoDatumoj = objekto.valueForKey("vortoj") as? NSData {
-                let vortoJ = try NSJSONSerialization.JSONObjectWithData(vortoDatumoj, options: NSJSONReadingOptions())
+            if let vortoDatumoj = objekto.value(forKey: "vortoj") as? NSData {
+                let vortoJ = try JSONSerialization.jsonObject(with: vortoDatumoj as Data, options: JSONSerialization.ReadingOptions())
                 if let vortoDict = vortoJ as? NSDictionary {
                     
                     trovOfc = vortoDict["ofc"] as? String
                     
-                    for grupo in (vortoDict["grupoj"] as? NSArray) ?? [] {
+                    /*for grupo in (vortoDict["grupoj"] as? [[String: Any]]) ?? [:] {
                         var novajVortoj = [Vorto]()
-                        for vorto in (grupo["vortoj"] as? NSArray) ?? [] {
+                        for vorto in (grupo["vortoj"] as? [String: Any]) ?? [:] {
                             if let titolo = vorto["titolo"] as? String,
                                let teksto = vorto["teksto"] as? String,
                                let marko = vorto["marko"] as? String {
@@ -67,13 +67,13 @@ class Artikolo {
                         
                         let teksto = (grupo["teksto"] as? String) ?? ""
                         novajGrupoj?.append(Grupo(teksto: teksto, vortoj:novajVortoj ))
-                    }
+                    }*/
                 }
             }
             
             // Prepari la tradukojn
-            if let tradukDatumoj = objekto.valueForKey("tradukoj") as? NSData {
-                let tradukJ = try NSJSONSerialization.JSONObjectWithData(tradukDatumoj, options: NSJSONReadingOptions())
+            if let tradukDatumoj = objekto.value(forKey: "tradukoj") as? NSData {
+                let tradukJ = try JSONSerialization.jsonObject(with: tradukDatumoj as Data, options: JSONSerialization.ReadingOptions())
                 if let tradukDict = tradukJ as? NSDictionary {
                     for (lingvo, tradukoj) in tradukDict {
                         
@@ -88,25 +88,26 @@ class Artikolo {
                             if lasta != nil && (lasta["nomo"] as? String) != (nuna["nomo"] as? String) { montriSencon = false}
 
                             for j in i+1 ..< tradukArr.count {
-                                if (tradukArr[i]["nomo"] as? String) != (tradukArr[j]["nomo"] as? String) {
+                                let nunnuna = tradukArr[j] as! NSDictionary
+                                if (nuna["nomo"] as? String) != (nunnuna["nomo"] as? String) {
                                     break
                                 }
-                                else if (tradukArr[i]["senco"] as? Int) != (tradukArr[j]["senco"] as? Int) {
+                                else if (nuna["senco"] as? Int) != (nunnuna["senco"] as? Int) {
                                     montriSencon = true
                                     break
                                 }
                             }
                             
-                            if let tradTeksto = tradukArr[i]["teksto"] as? String,
-                               let tradNomo = tradukArr[i]["nomo"] as? String,
-                               let tradIndekso = tradukArr[i]["indekso"] as? String {
+                            if let tradTeksto = nuna["teksto"] as? String,
+                               let tradNomo = nuna["nomo"] as? String,
+                               let tradIndekso = nuna["indekso"] as? String {
                                 
                                 if lasta == nil ||
                                    (lasta["nomo"] as? String) != (nuna["nomo"] as? String) ||
                                    (lasta["senco"] as? Int) != (nuna["senco"] as? Int) {
                                         if !teksto.isEmpty { teksto += "; " }
                                         teksto += "<a href=\"" + tradIndekso + "\">" + tradNomo
-                                        if montriSencon && (tradukArr[i]["senco"] as? Int) > 0 { teksto += " " + String(tradukArr[i]["senco"] as! Int)}
+                                        if montriSencon && (nuna["senco"] as! Int) > 0 { teksto += " " + String(nuna["senco"] as! Int)}
                                         teksto += "</a>: "
                                 } else {
                                     teksto += ", "
@@ -188,37 +189,30 @@ class Lingvo : NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        if let enkodo = aDecoder.decodeObjectForKey("kodo") as? String,
-           let ennomo = aDecoder.decodeObjectForKey("nomo") as? String {
+        if let enkodo = aDecoder.decodeObject(forKey: "kodo") as? String,
+            let ennomo = aDecoder.decodeObject(forKey: "nomo") as? String {
            self.init(enkodo, ennomo)
         } else {
             return nil
         }
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(kodo, forKey: "kodo")
-        aCoder.encodeObject(nomo, forKey: "nomo")
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(kodo, forKey: "kodo")
+        aCoder.encode(nomo, forKey: "nomo")
     }
     
-    override func isEqual(object: AnyObject?) -> Bool {
-
-        if let konforma = object as? Lingvo {
-            return kodo == konforma.kodo
-        }
+    static func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
         
-        return false
+        return lhs.kodo == rhs.kodo
     }
     
-    override var hashValue: Int {
+    override var hash: Int {
         return kodo.hashValue
     }
 }
 
-func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
-    
-    return lhs.kodo == rhs.kodo
-}
+
 
 // Fakoj aperas en kelkaj difinoj
 struct Fako {
@@ -266,16 +260,16 @@ class Listero : NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        if let ennomo = aDecoder.decodeObjectForKey("nomo") as? String,
-            let enindekso = aDecoder.decodeObjectForKey("indekso") as? String {
+        if let ennomo = aDecoder.decodeObject(forKey: "nomo") as? String,
+            let enindekso = aDecoder.decodeObject(forKey: "indekso") as? String {
             self.init(ennomo, enindekso)
         } else {
             return nil
         }
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(nomo, forKey: "nomo")
-        aCoder.encodeObject(indekso, forKey: "indekso")
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(nomo, forKey: "nomo")
+        aCoder.encode(indekso, forKey: "indekso")
     }
 }

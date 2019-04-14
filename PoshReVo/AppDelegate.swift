@@ -18,24 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var fenestro: UIWindow?
     var konteksto: NSManagedObjectContext?
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        kreiDatumbazon = NSProcessInfo.processInfo().environment["kreiDatumbazon"] == "true"
+        kreiDatumbazon = ProcessInfo.processInfo.environment["kreiDatumbazon"] == "true"
         
         TrieRegilo.konteksto = self.managedObjectContext
         DatumLegilo.konteksto = self.managedObjectContext
-        
-        if kreiDatumbazon {
-            DatumLegilo.fariDatumbazon()
-        }
         
         SeancDatumaro.starigi()
         UzantDatumaro.starigi()
         
         let navilo = ChefaNavigationController()
         
-        fenestro = UIWindow(frame: UIScreen.mainScreen().bounds)
+        fenestro = UIWindow(frame: UIScreen.main.bounds)
         fenestro?.rootViewController = navilo
         fenestro?.makeKeyAndVisible()
         
@@ -44,61 +40,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
     // MARK: - Core Data stack
     
-    lazy var applicationDocumentsDirectory: NSURL = {
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    lazy var applicationDocumentsDirectory: URL = {
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
     }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("PoshReVoDatumoj", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)!
+        let modelURL = Bundle.main.url(forResource: "PoshReVoDatumoj", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let docsUrl = self.applicationDocumentsDirectory.URLByAppendingPathComponent(datumbazNomo + ".sqlite")
-        let bundleUrl = NSBundle.mainBundle().URLForResource(datumbazNomo, withExtension: "sqlite")
+        let docsUrl = self.applicationDocumentsDirectory.appendingPathComponent(datumbazNomo + ".sqlite")
+        let bundleUrl = Bundle.main.url(forResource: datumbazNomo, withExtension: "sqlite")
 
         do {
             let pragmas: [String : String] = ["journal_mode" : "DELETE", "synchronous" : "OFF"]
             if kreiDatumbazon {
                 do {
-                    try NSFileManager.defaultManager().removeItemAtURL(docsUrl)
+                    try FileManager.default.removeItem(at: docsUrl)
                 } catch { }
                 let options = [NSSQLitePragmasOption : pragmas]
-                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: docsUrl, options: options)
+                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: docsUrl, options: options)
             } else {
-                let options = [NSReadOnlyPersistentStoreOption : true, NSSQLitePragmasOption : ["journal_mode" : "DELETE", "synchronous" : "OFF"]]
-                try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: bundleUrl, options: options)
+                let options = [NSReadOnlyPersistentStoreOption : true, NSSQLitePragmasOption : ["journal_mode" : "DELETE", "synchronous" : "OFF"]] as [String : Any]
+                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: bundleUrl, options: options)
             }
         } catch {
             // Report any error we got.
-            var dict = [String: AnyObject]()
+            var dict = [String: Any]()
             dict[NSLocalizedDescriptionKey] = "Malsukcesis sharghante je datumoj"
             dict[NSLocalizedFailureReasonErrorKey] = "Eraro sharghante je datumoj"
             dict[NSUnderlyingErrorKey] = error as NSError
@@ -112,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
