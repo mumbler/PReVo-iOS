@@ -26,6 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TrieRegilo.konteksto = self.managedObjectContext
         DatumLegilo.konteksto = self.managedObjectContext
         
+        if kreiDatumbazon {
+            DatumLegilo.fariDatumbazon()
+        }
+        
         SeancDatumaro.starigi()
         UzantDatumaro.starigi()
         

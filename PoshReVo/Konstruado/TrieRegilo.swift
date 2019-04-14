@@ -24,7 +24,7 @@ class TrieRegilo {
     static func konstruiChiuTrie(_ kodoj: [String]) {
         
         // ["om"] has one entry - starts with W
-        for lingvo in ["om"] /*kodoj*/ {
+        for lingvo in ["om" ]/*kodoj*/ {
             konstruiTriePorLingvo(lingvo)
         }
         //konstruiTriePorLingvo("eo")
