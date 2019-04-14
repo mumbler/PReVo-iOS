@@ -124,7 +124,7 @@ class DatumLegilo {
             }
         }
         
-        // Enlegi mallongigojn
+        // Enlegi artikolojn
         if let artikoloURL = Bundle.main.url(forResource: "vortoj", withExtension: "dat") {
             do {
                 let artikoloDat = try Data(contentsOf: artikoloURL)

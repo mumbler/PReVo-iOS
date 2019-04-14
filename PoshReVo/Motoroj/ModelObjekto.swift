@@ -55,9 +55,9 @@ class Artikolo {
                     
                     trovOfc = vortoDict["ofc"] as? String
                     
-                    /*for grupo in (vortoDict["grupoj"] as? [[String: Any]]) ?? [:] {
+                    for grupo in (vortoDict["grupoj"] as? [[String: Any]]) ?? [[:]] {
                         var novajVortoj = [Vorto]()
-                        for vorto in (grupo["vortoj"] as? [String: Any]) ?? [:] {
+                        for vorto in (grupo["vortoj"] as? [[String: Any]]) ?? [[:]] {
                             if let titolo = vorto["titolo"] as? String,
                                let teksto = vorto["teksto"] as? String,
                                let marko = vorto["marko"] as? String {
@@ -67,7 +67,7 @@ class Artikolo {
                         
                         let teksto = (grupo["teksto"] as? String) ?? ""
                         novajGrupoj?.append(Grupo(teksto: teksto, vortoj:novajVortoj ))
-                    }*/
+                    }
                 }
             }
             
