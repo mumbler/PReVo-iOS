@@ -24,7 +24,7 @@ class TrieRegilo {
     static func konstruiChiuTrie(_ kodoj: [String]) {
         
         // ["om"] has one entry - starts with W
-        for lingvo in ["eo"] /*kodoj*/ {
+        for lingvo in kodoj {
             konstruiTriePorLingvo(lingvo)
         }
         //konstruiTriePorLingvo("eo")
@@ -42,7 +42,6 @@ class TrieRegilo {
             do {
                 let tradukoData = try Data(contentsOf: tradukoURL)
                 let tradukoJSON = try JSONSerialization.jsonObject(with: tradukoData, options: JSONSerialization.ReadingOptions())
-                //let tradukoJSON = try JSONSerialization.JSONObjectWithStream(tradukoData, options: JSONSerialization.ReadingOptions())
                 
                 if let tradukoj = tradukoJSON as? NSArray {
                     
@@ -103,7 +102,7 @@ class TrieRegilo {
                             nunNodo = nil
                         } // Enhavoj de la traduko
                         
-                        if let konteksto = konteksto {
+                        /*if let konteksto = konteksto {
                             konteksto.persistentStoreCoordinator?.performAndWait { () -> Void in
                                 do {
                                     try konteksto.save()
@@ -111,10 +110,10 @@ class TrieRegilo {
                                     NSLog("ERARO 2")
                                 }
                             }
-                        }
+                        }*/
                     } // Chiu traduko
                     
-                    //konteksto?.save()
+                    try konteksto?.save()
                 }
             } catch {
                 NSLog("ERARO")
