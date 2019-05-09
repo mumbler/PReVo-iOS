@@ -21,7 +21,7 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
     
     var subart: Bool = false
     
-    func prepari(titolo titolo: String, teksto: String, subart: Bool) {
+    func prepari(titolo: String, teksto: String, subart: Bool) {
         
         titolaEtikedo?.setText(titolo)
         titolaEtikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body);
@@ -41,7 +41,7 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         chefaEtikedo?.setText(Iloj.pretigiTekston(teksto, kunMarkoj: markoj))
         
         for ligMarko in markoj[markoLigoKlavo]! {
-            chefaEtikedo?.addLink( to: NSURL(string: ligMarko.2) as! URL, with: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
+            chefaEtikedo?.addLink( to: URL(string: ligMarko.2), with: NSMakeRange(ligMarko.0, ligMarko.1 - ligMarko.0) )
         }
 
     }

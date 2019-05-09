@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00477A6C227651AA00515416 /* PriViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6B227651AA00515416 /* PriViewController.xib */; };
+		00477A70227654B700515416 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6E227654B700515416 /* Localizable.strings */; };
+		00477A722276555800515416 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0084894C226385200071CEC2 /* Info.plist */; };
 		0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084890F226385200071CEC2 /* SeancDatumaro.swift */; };
 		0084894E226385200071CEC2 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848910226385200071CEC2 /* UzantDatumaro.swift */; };
 		0084894F226385200071CEC2 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848911226385200071CEC2 /* Stiloj.swift */; };
@@ -83,6 +85,7 @@
 		000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00477A6B227651AA00515416 /* PriViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriViewController.xib; sourceTree = "<group>"; };
+		00477A6F227654B700515416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		0084890F226385200071CEC2 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
 		00848910226385200071CEC2 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
 		00848911226385200071CEC2 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
@@ -115,7 +118,6 @@
 		0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
 		0084892F226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloKapoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		00848930226385200071CEC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		00848932226385200071CEC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlankMenuoTableViewCell.xib; sourceTree = "<group>"; };
 		00848935226385200071CEC2 /* FlankMenuoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoViewController.swift; sourceTree = "<group>"; };
 		00848936226385200071CEC2 /* FlankMenuoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlankMenuoTableViewCell.swift; sourceTree = "<group>"; };
@@ -342,21 +344,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		00477A6D227654B700515416 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				00477A6E227654B700515416 /* Localizable.strings */,
+			);
+			name = Base.lproj;
+			path = PoshReVo/Helpajhoj/Base.lproj;
+			sourceTree = SOURCE_ROOT;
+		};
+		00477A71227654ED00515416 /* Helpajhoj */ = {
+			isa = PBXGroup;
+			children = (
+				0084894A226385200071CEC2 /* Datumbazo */,
+				00848919226385200071CEC2 /* LaunchScreen.storyboard */,
+				00477A6D227654B700515416 /* Base.lproj */,
+				00848930226385200071CEC2 /* Assets.xcassets */,
+			);
+			path = Helpajhoj;
+			sourceTree = "<group>";
+		};
 		0084890D226385200071CEC2 /* PoshReVo */ = {
 			isa = PBXGroup;
 			children = (
-				00848931226385200071CEC2 /* LaunchScreen.storyboard */,
 				00848948226385200071CEC2 /* AppDelegate.swift */,
-				00848919226385200071CEC2 /* LaunchScreen.storyboard */,
 				0084894C226385200071CEC2 /* Info.plist */,
-				00848930226385200071CEC2 /* Assets.xcassets */,
 				008489942263E18B0071CEC2 /* Konstruado */,
 				0084890E226385200071CEC2 /* Motoroj */,
 				00848938226385200071CEC2 /* Navigaciiloj */,
 				0084893B226385200071CEC2 /* Chefaj Paghoj */,
 				0084891A226385200071CEC2 /* Subaj Paghoj */,
 				00848933226385200071CEC2 /* Flanka Menuo */,
-				0084894A226385200071CEC2 /* Datumbaza */,
+				00477A71227654ED00515416 /* Helpajhoj */,
 			);
 			path = PoshReVo;
 			sourceTree = "<group>";
@@ -452,14 +471,14 @@
 			path = "Chefaj Paghoj";
 			sourceTree = "<group>";
 		};
-		0084894A226385200071CEC2 /* Datumbaza */ = {
+		0084894A226385200071CEC2 /* Datumbazo */ = {
 			isa = PBXGroup;
 			children = (
 				00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */,
 				008489952263E2350071CEC2 /* Datumoj */,
 				0084898D226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld */,
 			);
-			path = Datumbaza;
+			path = Datumbazo;
 			sourceTree = "<group>";
 		};
 		008489942263E18B0071CEC2 /* Konstruado */ = {
@@ -762,6 +781,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00477A722276555800515416 /* Info.plist in Resources */,
 				00A869CE22764B6800A856E9 /* PoshReVoDatumbazo.sqlite in Resources */,
 				00A869BB2276497000A856E9 /* SerchPaghoViewController.xib in Resources */,
 				00A869BC2276497000A856E9 /* AgordojViewController.xib in Resources */,
@@ -772,6 +792,7 @@
 				00A869C12276497000A856E9 /* TradukLingvojElektiloViewController.xib in Resources */,
 				00A869C22276497000A856E9 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
 				00A869C32276497000A856E9 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
+				00477A70227654B700515416 /* Localizable.strings in Resources */,
 				00A869C42276497000A856E9 /* SerchLingvoElektiloViewController.xib in Resources */,
 				00A869C52276497000A856E9 /* StiloElektiloViewController.xib in Resources */,
 				00477A6C227651AA00515416 /* PriViewController.xib in Resources */,
@@ -919,12 +940,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		00848931226385200071CEC2 /* LaunchScreen.storyboard */ = {
+		00477A6E227654B700515416 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				00848932226385200071CEC2 /* Base */,
+				00477A6F227654B700515416 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

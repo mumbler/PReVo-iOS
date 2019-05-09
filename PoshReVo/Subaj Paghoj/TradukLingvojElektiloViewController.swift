@@ -73,7 +73,7 @@ class TradukLingvojElektiloViewController : UIViewController, Stilplena {
 
 extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableViewDataSource {
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
@@ -131,7 +131,7 @@ extension TradukLingvojElektiloViewController : UITableViewDelegate, UITableView
         return novaChelo
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
             switch indexPath.row {

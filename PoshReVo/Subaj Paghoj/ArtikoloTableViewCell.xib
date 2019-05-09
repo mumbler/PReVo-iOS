@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFi-1d-Dhf" userLabel="Titola View">
-                        <rect key="frame" x="12" y="3" width="410" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="434" height="37"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-C6-8DQ" userLabel="Titola Etikedo" customClass="TTTAttributedLabel">
-                                <rect key="frame" x="8" y="8" width="394" height="21"/>
+                                <rect key="frame" x="8" y="8" width="418" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -37,20 +37,20 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-uM-sRB" userLabel="Chefa Etikedo" customClass="TTTAttributedLabel">
-                        <rect key="frame" x="20" y="48" width="394" height="97"/>
+                        <rect key="frame" x="8" y="45" width="418" height="102.5"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="DFi-1d-Dhf" firstAttribute="top" secondItem="Qva-HQ-aAy" secondAttribute="topMargin" constant="-8" id="S3k-Sc-gFC"/>
-                    <constraint firstItem="DKb-uM-sRB" firstAttribute="leading" secondItem="Qva-HQ-aAy" secondAttribute="leadingMargin" id="TCN-2e-zgX"/>
-                    <constraint firstItem="DKb-uM-sRB" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="bottom" priority="999" constant="8" id="ULJ-We-QBw"/>
-                    <constraint firstItem="DFi-1d-Dhf" firstAttribute="leading" secondItem="Qva-HQ-aAy" secondAttribute="leadingMargin" constant="-8" id="bK0-NT-0Ka"/>
-                    <constraint firstItem="DKb-uM-sRB" firstAttribute="trailing" secondItem="Qva-HQ-aAy" secondAttribute="trailingMargin" id="fkQ-7g-LlI"/>
-                    <constraint firstItem="DKb-uM-sRB" firstAttribute="bottom" secondItem="Qva-HQ-aAy" secondAttribute="bottomMargin" id="npp-E5-hht"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="DFi-1d-Dhf" secondAttribute="trailing" constant="-8" id="vP6-7B-0Fv"/>
+                    <constraint firstItem="DFi-1d-Dhf" firstAttribute="top" secondItem="Qva-HQ-aAy" secondAttribute="top" id="S3k-Sc-gFC"/>
+                    <constraint firstItem="DKb-uM-sRB" firstAttribute="leading" secondItem="Qva-HQ-aAy" secondAttribute="leading" constant="8" id="TCN-2e-zgX"/>
+                    <constraint firstItem="DKb-uM-sRB" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="bottom" constant="8" id="ULJ-We-QBw"/>
+                    <constraint firstItem="DFi-1d-Dhf" firstAttribute="leading" secondItem="Qva-HQ-aAy" secondAttribute="leading" id="bK0-NT-0Ka"/>
+                    <constraint firstItem="DKb-uM-sRB" firstAttribute="trailing" secondItem="Qva-HQ-aAy" secondAttribute="trailing" constant="-8" id="fkQ-7g-LlI"/>
+                    <constraint firstItem="DKb-uM-sRB" firstAttribute="bottom" secondItem="Qva-HQ-aAy" secondAttribute="bottom" constant="-8" id="npp-E5-hht"/>
+                    <constraint firstAttribute="trailing" secondItem="DFi-1d-Dhf" secondAttribute="trailing" id="vP6-7B-0Fv"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -58,7 +58,7 @@
                 <outlet property="titolaEtikedo" destination="QPM-C6-8DQ" id="B7O-at-wmC"/>
                 <outlet property="titolaRegiono" destination="DFi-1d-Dhf" id="KR0-UP-M88"/>
             </connections>
-            <point key="canvasLocation" x="315" y="98"/>
+            <point key="canvasLocation" x="422" y="57"/>
         </tableViewCell>
     </objects>
 </document>

@@ -61,7 +61,7 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
         if presentingViewController != nil {
             navigationController?.dismiss(animated: true, completion: nil)
         } else {
-            navigationController?.dismiss(animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
         }
     }
 }

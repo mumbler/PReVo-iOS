@@ -48,6 +48,12 @@ class ArtikoloViewController : UIViewController, Stilplena {
         title = (artikolo?.titolo ?? "") + Iloj.superLit((artikolo?.ofc ?? ""))
         
         vortTabelo?.contentInset = UIEdgeInsets(top: -1, left: 0, bottom: 0, right: 0)
+        automaticallyAdjustsScrollViewInsets = false
+        if #available(iOS 11.0, *) {
+            vortTabelo?.contentInsetAdjustmentBehavior = .never
+        } else {
+            // Fallback on earlier versions
+        }
         vortTabelo?.delegate = self
         vortTabelo?.dataSource = self
         vortTabelo?.register(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
@@ -197,8 +203,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
 
 extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+    func numberOfSections(in tableView: UITableView) -> Int {
         let tradukSumo = artikolo?.tradukoj.count ?? 0, videblaSumo = tradukListo?.count ?? 0
         return 1 + ((videblaSumo > 0 || tradukSumo - videblaSumo > 0) ? 1 : 0)
     }
@@ -298,7 +303,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         
         if section == 1 {
             novaKapo.prepari()
-            novaKapo.etikedo?.text = "Tradukoj"
+            novaKapo.etikedo?.text = NSLocalizedString("artikolo tradukoj etikedo", comment: "")
         }
         
         return novaKapo
@@ -324,14 +329,14 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        if section == 1 {
+       /*if section == 1 {
             return NSLocalizedString("artikolo tradukoj etikedo", comment: "")
-        }
+        }*/
         
         return nil
-    }
+    }*/
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -362,6 +367,14 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        
+        if section == 1 {
+            return 32
+        }
+        
+        return 0
+    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         

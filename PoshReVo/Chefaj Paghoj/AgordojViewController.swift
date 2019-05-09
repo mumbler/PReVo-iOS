@@ -86,7 +86,7 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
 
 extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }
     

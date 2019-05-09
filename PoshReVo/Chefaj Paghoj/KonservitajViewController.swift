@@ -56,8 +56,7 @@ class KonservitajViewController : UIViewController, Chefpagho, Stilplena {
 
 extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource {
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+    func numberOfSections(in tableView: UITableView) -> Int {        
         return 1
     }
     

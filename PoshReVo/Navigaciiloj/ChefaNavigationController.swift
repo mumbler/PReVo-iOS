@@ -24,10 +24,19 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         
         navigationBar.isTranslucent = false
         
-        let maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_menuo"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(SlideNavigationController.toggleLeftMenu))
-        maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
-        navigationItem.leftBarButtonItem = maldekstraButono
-        leftBarButtonItem = maldekstraButono
+        let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+
+        let menuoButono = UIButton()
+        menuoButono.setImage(UIImage(named: "pikto_menuo")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        menuoButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+        menuoButono.addTarget(self, action: #selector(SlideNavigationController.toggleLeftMenu), for: .touchUpInside)
+        
+        butonujo.addSubview(menuoButono)
+        menuoButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        
+        let barButono = UIBarButtonItem(customView: butonujo)
+        navigationItem.leftBarButtonItem = barButono
+        leftBarButtonItem = barButono
         let flankMenuo = FlankMenuoViewController()
         leftMenu = flankMenuo
 

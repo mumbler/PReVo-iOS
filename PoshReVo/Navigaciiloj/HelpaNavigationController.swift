@@ -11,7 +11,7 @@ import UIKit
 
 /*
     UINavigationController por montri subajn paghojn kiuj aperas el la suba flanko de la ekrano.
-    Chi tiu Navigation Controller pretigas sian propran navigacia tabulo kun X butono, ktp.
+    Chi tiu Navigation Controller pretigas sian propran navigacian tabulon kun X butono, ktp.
 */
 class HelpaNavigationController : UINavigationController, Stilplena {
 
@@ -21,16 +21,22 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         
         navigationBar.isTranslucent = false
         
-        let maldekstraButono: UIBarButtonItem
+        let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        let maldekstraButono = UIBarButtonItem(customView: butonujo)
+        let iksoButono = UIButton()
+        iksoButono.setImage(UIImage(named: "pikto_ikso")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        iksoButono.tintColor = UzantDatumaro.stilo.navTintKoloro
+        iksoButono.addTarget(self, action: #selector(HelpaNavigationController.forigiSin), for: .touchUpInside)
+        butonujo.addSubview(iksoButono)
+        iksoButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         
-        if (UIApplication.shared.statusBarOrientation == .landscapeLeft ||
+        /*if (UIApplication.shared.statusBarOrientation == .landscapeLeft ||
             UIApplication.shared.statusBarOrientation == .landscapeRight) &&
             UIApplication.shared.isStatusBarHidden {
-            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso_eta"), style: .plain, target: self, action: #selector(HelpaNavigationController.forigiSin))
+
         } else {
-            maldekstraButono = UIBarButtonItem(image: UIImage(named: "pikto_ikso"), style: .plain, target: self, action: #selector(HelpaNavigationController.forigiSin))
-            maldekstraButono.imageInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 20)
-        }
+
+        }*/
         topViewController?.navigationItem.leftBarButtonItem = maldekstraButono
         
         efektivigiStilon()

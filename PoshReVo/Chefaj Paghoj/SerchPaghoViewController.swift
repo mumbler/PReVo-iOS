@@ -179,7 +179,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
 // Trakti tabelon
 extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     

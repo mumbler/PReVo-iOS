@@ -63,9 +63,10 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
 
 extension PriViewController : TTTAttributedLabelDelegate {
     
-    func attributedLabel(label: TTTAttributedLabel!, didSelectLinkWithURL url: NSURL!) {
-        
-        UIApplication.shared.openURL(url as URL)
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
+        if let url = url {
+            UIApplication.shared.openURL(url)
+        }
     }
 }
 
