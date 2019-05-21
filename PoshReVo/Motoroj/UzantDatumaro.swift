@@ -118,6 +118,14 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
+    static func nuligiHistorion() {
+
+        historio.removeAll()
+    
+        konserviHistorion = true
+        konserviDatumojn()
+    }
+    
     // Konservado de artikoloj ---------
     
     static func konserviPaghon(_ artikolo: Listero) {
@@ -153,6 +161,13 @@ class UzantDatumaro {
         } else {
             malkonserviPaghon(artikolo)
         }
+    }
+    
+    static func nuligiKonservitajn() {
+        konservitaj.removeAll()
+        
+        konserviKonservitajn = true
+        konserviDatumojn()
     }
     
     // Stiloj -----------

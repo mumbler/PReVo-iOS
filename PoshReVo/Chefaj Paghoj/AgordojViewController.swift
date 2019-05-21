@@ -54,7 +54,7 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     func nuligiHistorion() {
         let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi historion averto", comment: ""), message: nil, preferredStyle: .actionSheet)
         mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: .destructive, handler: { (ago: UIAlertAction) -> Void in
-            UzantDatumaro.historio.removeAll()
+            UzantDatumaro.nuligiHistorion()
         }))
         mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: .cancel, handler: nil))
         
@@ -70,7 +70,7 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     func nuligiKonservitajn() {
         let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("agordoj nuligi konservitajn averto", comment: ""), message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         mesagho.addAction( UIAlertAction(title: NSLocalizedString("Jes", comment: ""), style: UIAlertAction.Style.destructive, handler: { (ago: UIAlertAction) -> Void in
-            UzantDatumaro.konservitaj.removeAll()
+            UzantDatumaro.nuligiKonservitajn()
         }))
         mesagho.addAction( UIAlertAction(title: NSLocalizedString("Ne", comment: ""), style: UIAlertAction.Style.cancel, handler: nil))
         
