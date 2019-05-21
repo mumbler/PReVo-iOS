@@ -29,14 +29,7 @@ class HelpaNavigationController : UINavigationController, Stilplena {
         iksoButono.addTarget(self, action: #selector(HelpaNavigationController.forigiSin), for: .touchUpInside)
         butonujo.addSubview(iksoButono)
         iksoButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        
-        /*if (UIApplication.shared.statusBarOrientation == .landscapeLeft ||
-            UIApplication.shared.statusBarOrientation == .landscapeRight) &&
-            UIApplication.shared.isStatusBarHidden {
 
-        } else {
-
-        }*/
         topViewController?.navigationItem.leftBarButtonItem = maldekstraButono
         
         efektivigiStilon()

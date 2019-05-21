@@ -395,7 +395,9 @@ extension ArtikoloViewController : TradukLingvojElektiloDelegate {
         
         prepariTradukListon()
         vortTabelo?.reloadSections(IndexSet(integer: 1), with: .fade)
-        vortTabelo?.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
+        if vortTabelo?.numberOfRows(inSection: 1) ?? 0 > 0 {
+            vortTabelo?.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
+        }
     }
 }
 

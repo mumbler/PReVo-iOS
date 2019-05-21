@@ -136,11 +136,10 @@ extension SerchPaghoViewController : UISearchBarDelegate {
             
             if let lasta = teksto?.last, let chapelita = Iloj.chapeli(lasta) {
                 teksto = teksto!.prefix(teksto!.count - 1) + String(chapelita)
+                searchBar.text = teksto!
+                self.searchBar(searchBar, textDidChange: teksto!)
+                return false
             }
-            
-            searchBar.text = teksto!
-            self.searchBar(searchBar, textDidChange: teksto!)
-            return false
         }
         
         // Chi tiu abomenajho necesas char japanaj klavaroj ne kauzas textDidChange, kaj la fina teksto ne disponeblas chi tie
