@@ -59,6 +59,7 @@
 		00A869CB2276497000A856E9 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */; };
 		00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848937226385200071CEC2 /* FlankMenuoViewController.xib */; };
 		00A869CE22764B6800A856E9 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */; };
+		00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848919226385200071CEC2 /* LaunchScreen.storyboard */; };
 		00F6D1B22290A21100F2EB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00848930226385200071CEC2 /* Assets.xcassets */; };
 		7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */; };
 /* End PBXBuildFile section */
@@ -806,6 +807,7 @@
 				00A869CA2276497000A856E9 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
 				00A869CB2276497000A856E9 /* FlankMenuoTableViewCell.xib in Resources */,
 				00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */,
+				00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
