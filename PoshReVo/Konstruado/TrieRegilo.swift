@@ -102,15 +102,6 @@ class TrieRegilo {
                             nunNodo = nil
                         } // Enhavoj de la traduko
                         
-                        /*if let konteksto = konteksto {
-                            konteksto.persistentStoreCoordinator?.performAndWait { () -> Void in
-                                do {
-                                    try konteksto.save()
-                                } catch {
-                                    NSLog("ERARO 2")
-                                }
-                            }
-                        }*/
                     } // Chiu traduko
                     
                     try konteksto?.save()
@@ -131,19 +122,6 @@ class TrieRegilo {
         if konteksto == nil {
             return [(String, [NSManagedObject])]()
         }
-        
-        
-        /*
-         let serchPeto = NSFetchRequest()
-        serchPeto.entity = NSEntityDescription.entityForName("Artikolo", inManagedObjectContext: konteksto!)
-        serchPeto.predicate = NSPredicate(format: "indekso LIKE %@", argumentArray: [teksto + "%"])
-        do {
-            let rezultoj = try konteksto!.executeFetchRequest(serchPeto).first as? NSManagedObject
-            
-        } catch { }
-        
-        return [(String, [NSManagedObject])]()
-        */
         
         var nunNodo: NSManagedObject? = nil
         var sekvaNodo: NSManagedObject? = nil

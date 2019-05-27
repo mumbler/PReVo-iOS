@@ -163,6 +163,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
                 fariSerchon(teksto: teksto)
             } else {
                 serchRezultoj.removeAll()
+                lastaSercho = nil
                 trovTabelo?.reloadData()
             }
         }
