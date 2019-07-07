@@ -12,54 +12,11 @@ import iOS_Slide_Menu
 
 /*
     Protocol por la enhavitaj paghoj. Tiu chi funkcio helpas ilin pritigi la
-    navigacian tabulon lau siaj proproaj bezonoj
+    navigacian tabulon lau siaj propraj bezonoj
 */
 protocol Chefpagho {
     
     func aranghiNavigaciilo() -> Void
-}
-
-/*
-    Enum kiu reprezentas la elektojn de la maldekstra menuo. Kiam la uzanto premas
-    unu el tiuj butonoj, la elekto reprezentighas per unu el chi tiuj valoroj.
-*/
-enum Pagho : Int {
-    case Serchi = 0, Historio, Konservitaj, Agordoj, Pri
-    
-    var nomo: String {
-        
-        switch self {
-        case .Serchi:
-            return NSLocalizedString("flanko serchi etikedo", comment: "")
-        case .Historio:
-            return NSLocalizedString("flanko historio etikedo", comment: "")
-        case .Konservitaj:
-            return NSLocalizedString("flanko konservitaj etikedo", comment: "")
-        case .Agordoj:
-            return NSLocalizedString("flanko agordoj etikedo", comment: "")
-        case .Pri:
-            return NSLocalizedString("flanko pri etikedo", comment: "")
-        }
-    }
-    
-    var bildoNomo: String {
-        
-        switch self {
-        case .Serchi:
-            return "pikto_lenso"
-        case .Historio:
-            return "pikto_libro"
-        case .Konservitaj:
-            return "pikto_stelo"
-        case .Agordoj:
-            return "pikto_dentrado"
-        case .Pri:
-            return "pikto_informo"
-        }
-    }
-    
-    static var count: Int { return Pri.rawValue + 1 }
-    
 }
 
 /*
@@ -70,9 +27,7 @@ enum Pagho : Int {
 */
 class IngoPaghoViewController : UIViewController, Stilplena {
     
-    @IBOutlet var nunaEkrano: UIView?
-    var filoVC: UIViewController?
-    var filoV: UIView?
+    var nunaPagho: Pagho? = nil
     
     init() {
         super.init(nibName: "IngoPaghoViewController", bundle: nil)
@@ -89,33 +44,21 @@ class IngoPaghoViewController : UIViewController, Stilplena {
     // Montri paghon de tiu speco.
     func montriPaghon(_ paghTipo: Pagho) {
         
-        var novaPagho: UIViewController? = nil
-        switch paghTipo {
-        case .Serchi:
-            novaPagho = SerchPaghoViewController()
-            break
-        case .Historio:
-            novaPagho = HistorioViewController()
-            break
-        case .Konservitaj:
-            novaPagho = KonservitajViewController()
-            break
-        case .Agordoj:
-            novaPagho = AgordojViewController()
-            break
-        case .Pri:
-            novaPagho = PriViewController()
-            break
-        }
+        let novaPagho = PaghMotoro.publikaMotoro.ViewControllerPorPagho(paghTipo: paghTipo)
         
-        if filoVC == nil || type(of: novaPagho) != type(of: filoVC!) {
-            filoVC?.removeFromParent()
-            filoV?.removeFromSuperview()
-            filoVC = novaPagho
-            filoV = novaPagho?.view
-            addChild(filoVC!)
-            view.addSubview(filoV!)
-            filoV?.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        if nunaPagho != paghTipo {
+            
+            if let malnovaFilo = children.first {
+                malnovaFilo.removeFromParent()
+                malnovaFilo.view.removeFromSuperview()
+            }
+            
+            novaPagho.willMove(toParent: self)
+            addChild(novaPagho)
+            novaPagho.didMove(toParent: self)
+
+            view.addSubview(novaPagho.view)
+            novaPagho.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             
             if let konforma = novaPagho as? Chefpagho {
                 konforma.aranghiNavigaciilo()
@@ -125,8 +68,7 @@ class IngoPaghoViewController : UIViewController, Stilplena {
     
     func efektivigiStilon() {
         
-        if let konforma = filoVC as? Stilplena {
-            
+        if let konforma = children.first as? Stilplena {
             konforma.efektivigiStilon()
         }
     }

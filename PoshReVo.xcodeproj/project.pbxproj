@@ -59,6 +59,8 @@
 		00A869CB2276497000A856E9 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */; };
 		00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848937226385200071CEC2 /* FlankMenuoViewController.xib */; };
 		00A869CE22764B6800A856E9 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */; };
+		00D0B71922D1474100814637 /* Pagharo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71822D1474100814637 /* Pagharo.swift */; };
+		00D0B71B22D1477F00814637 /* PaghMotoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71A22D1477F00814637 /* PaghMotoro.swift */; };
 		00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848919226385200071CEC2 /* LaunchScreen.storyboard */; };
 		00F6D1B22290A21100F2EB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00848930226385200071CEC2 /* Assets.xcassets */; };
 		7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */; };
@@ -293,6 +295,8 @@
 		00848A2D2263E24F0071CEC2 /* indekso_ku.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ku.dat; sourceTree = "<group>"; };
 		00848A2E2263E24F0071CEC2 /* indekso_hy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hy.dat; sourceTree = "<group>"; };
 		00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		00D0B71822D1474100814637 /* Pagharo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagharo.swift; sourceTree = "<group>"; };
+		00D0B71A22D1477F00814637 /* PaghMotoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaghMotoro.swift; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D400D687919A5D860DDEA7C /* Pods-PoshReVo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshReVo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo.debug.xcconfig"; sourceTree = "<group>"; };
 		9310B9D90FE8D936EB3410BA /* Pods-PoshReVo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshReVo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo.release.xcconfig"; sourceTree = "<group>"; };
@@ -325,6 +329,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0003C4C422C9B00F0090A4D3 /* Artikoloj */ = {
+			isa = PBXGroup;
+			children = (
+				0084891E226385200071CEC2 /* ArtikoloViewController.swift */,
+				0084891B226385200071CEC2 /* ArtikoloViewController.xib */,
+				0084891C226385200071CEC2 /* ArtikolCheloTableViewCell.swift */,
+				0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */,
+				0084892F226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift */,
+				00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */,
+				00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
+				0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
+			);
+			path = Artikoloj;
+			sourceTree = "<group>";
+		};
+		0003C4C522C9B0790090A4D3 /* Agordoj */ = {
+			isa = PBXGroup;
+			children = (
+				00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */,
+				00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */,
+				0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */,
+				0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */,
+				00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */,
+				00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */,
+				00848927226385200071CEC2 /* StiloElektiloViewController.swift */,
+				00848924226385200071CEC2 /* StiloElektiloViewController.xib */,
+				0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */,
+			);
+			path = Agordoj;
+			sourceTree = "<group>";
+		};
+		0003C4C622C9B0B10090A4D3 /* Pri */ = {
+			isa = PBXGroup;
+			children = (
+				00848928226385200071CEC2 /* LicencoViewController.swift */,
+				00848929226385200071CEC2 /* LicencoViewController.xib */,
+			);
+			path = Pri;
+			sourceTree = "<group>";
+		};
+		0003C4C722C9B0DE0090A4D3 /* Serchado */ = {
+			isa = PBXGroup;
+			children = (
+				0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */,
+				0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */,
+			);
+			path = Serchado;
+			sourceTree = "<group>";
+		};
 		0009858E1C31F0CB0083DE24 = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +426,7 @@
 				008489942263E18B0071CEC2 /* Konstruado */,
 				0084890E226385200071CEC2 /* Motoroj */,
 				00848938226385200071CEC2 /* Navigaciiloj */,
+				00D0B71722D1473300814637 /* Pagharo */,
 				0084893B226385200071CEC2 /* Chefaj Paghoj */,
 				0084891A226385200071CEC2 /* Subaj Paghoj */,
 				00848933226385200071CEC2 /* Flanka Menuo */,
@@ -384,13 +438,13 @@
 		0084890E226385200071CEC2 /* Motoroj */ = {
 			isa = PBXGroup;
 			children = (
+				00848917226385200071CEC2 /* ModelObjekto.swift */,
 				0084890F226385200071CEC2 /* SeancDatumaro.swift */,
 				00848910226385200071CEC2 /* UzantDatumaro.swift */,
-				00848911226385200071CEC2 /* Stiloj.swift */,
-				00848912226385200071CEC2 /* ObjC Ponto */,
-				00848916226385200071CEC2 /* Iloj.swift */,
-				00848917226385200071CEC2 /* ModelObjekto.swift */,
 				00848918226385200071CEC2 /* Koloroj.swift */,
+				00848911226385200071CEC2 /* Stiloj.swift */,
+				00848916226385200071CEC2 /* Iloj.swift */,
+				00848912226385200071CEC2 /* ObjC Ponto */,
 			);
 			path = Motoroj;
 			sourceTree = "<group>";
@@ -408,27 +462,10 @@
 		0084891A226385200071CEC2 /* Subaj Paghoj */ = {
 			isa = PBXGroup;
 			children = (
-				0084891B226385200071CEC2 /* ArtikoloViewController.xib */,
-				0084891C226385200071CEC2 /* ArtikolCheloTableViewCell.swift */,
-				0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */,
-				0084891E226385200071CEC2 /* ArtikoloViewController.swift */,
-				0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */,
-				00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */,
-				00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */,
-				00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */,
-				00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
-				00848924226385200071CEC2 /* StiloElektiloViewController.xib */,
-				00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */,
-				00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */,
-				00848927226385200071CEC2 /* StiloElektiloViewController.swift */,
-				00848928226385200071CEC2 /* LicencoViewController.swift */,
-				00848929226385200071CEC2 /* LicencoViewController.xib */,
-				0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */,
-				0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */,
-				0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */,
-				0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
-				0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */,
-				0084892F226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift */,
+				0003C4C722C9B0DE0090A4D3 /* Serchado */,
+				0003C4C422C9B00F0090A4D3 /* Artikoloj */,
+				0003C4C522C9B0790090A4D3 /* Agordoj */,
+				0003C4C622C9B0B10090A4D3 /* Pri */,
 			);
 			path = "Subaj Paghoj";
 			sourceTree = "<group>";
@@ -436,10 +473,10 @@
 		00848933226385200071CEC2 /* Flanka Menuo */ = {
 			isa = PBXGroup;
 			children = (
-				00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */,
 				00848935226385200071CEC2 /* FlankMenuoViewController.swift */,
-				00848936226385200071CEC2 /* FlankMenuoTableViewCell.swift */,
 				00848937226385200071CEC2 /* FlankMenuoViewController.xib */,
+				00848936226385200071CEC2 /* FlankMenuoTableViewCell.swift */,
+				00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */,
 			);
 			path = "Flanka Menuo";
 			sourceTree = "<group>";
@@ -447,8 +484,8 @@
 		00848938226385200071CEC2 /* Navigaciiloj */ = {
 			isa = PBXGroup;
 			children = (
-				00848939226385200071CEC2 /* HelpaNavigationController.swift */,
 				0084893A226385200071CEC2 /* ChefaNavigationController.swift */,
+				00848939226385200071CEC2 /* HelpaNavigationController.swift */,
 			);
 			path = Navigaciiloj;
 			sourceTree = "<group>";
@@ -456,16 +493,16 @@
 		0084893B226385200071CEC2 /* Chefaj Paghoj */ = {
 			isa = PBXGroup;
 			children = (
-				0084893C226385200071CEC2 /* AgordojViewController.swift */,
+				00848943226385200071CEC2 /* IngoPaghoViewController.swift */,
+				00848945226385200071CEC2 /* IngoPaghoViewController.xib */,
+				00848941226385200071CEC2 /* SerchPaghoViewController.swift */,
 				0084893E226385200071CEC2 /* SerchPaghoViewController.xib */,
 				0084893F226385200071CEC2 /* HistorioViewController.swift */,
-				00848940226385200071CEC2 /* AgordojViewController.xib */,
-				00848941226385200071CEC2 /* SerchPaghoViewController.swift */,
-				00848942226385200071CEC2 /* KonservitajViewController.xib */,
-				00848943226385200071CEC2 /* IngoPaghoViewController.swift */,
-				00848944226385200071CEC2 /* KonservitajViewController.swift */,
-				00848945226385200071CEC2 /* IngoPaghoViewController.xib */,
 				00848946226385200071CEC2 /* HistorioViewController.xib */,
+				00848944226385200071CEC2 /* KonservitajViewController.swift */,
+				00848942226385200071CEC2 /* KonservitajViewController.xib */,
+				0084893C226385200071CEC2 /* AgordojViewController.swift */,
+				00848940226385200071CEC2 /* AgordojViewController.xib */,
 				00848947226385200071CEC2 /* PriViewController.swift */,
 				00477A6B227651AA00515416 /* PriViewController.xib */,
 			);
@@ -657,6 +694,15 @@
 			name = indeksoj;
 			path = Prepariloj/preparita/indeksoj;
 			sourceTree = SOURCE_ROOT;
+		};
+		00D0B71722D1473300814637 /* Pagharo */ = {
+			isa = PBXGroup;
+			children = (
+				00D0B71822D1474100814637 /* Pagharo.swift */,
+				00D0B71A22D1477F00814637 /* PaghMotoro.swift */,
+			);
+			path = Pagharo;
+			sourceTree = "<group>";
 		};
 		0282B2FEF6E4EC8E45CCEF41 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -891,6 +937,7 @@
 				00848950226385200071CEC2 /* ObjCPonto.m in Sources */,
 				00848975226385200071CEC2 /* HistorioViewController.swift in Sources */,
 				0084894F226385200071CEC2 /* Stiloj.swift in Sources */,
+				00D0B71922D1474100814637 /* Pagharo.swift in Sources */,
 				00848957226385200071CEC2 /* TradukLingvojElektiloViewController.swift in Sources */,
 				0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */,
 				00848962226385200071CEC2 /* LicencoViewController.swift in Sources */,
@@ -912,6 +959,7 @@
 				008489932263E0470071CEC2 /* DatumLegilo.swift in Sources */,
 				0084894E226385200071CEC2 /* UzantDatumaro.swift in Sources */,
 				00848971226385200071CEC2 /* ChefaNavigationController.swift in Sources */,
+				00D0B71B22D1477F00814637 /* PaghMotoro.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

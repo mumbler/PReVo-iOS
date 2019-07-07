@@ -24,6 +24,8 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         
         navigationBar.isTranslucent = false
         
+        // Agordi navigaciajn butonojn
+        
         let butonujo = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
 
         let menuoButono = UIButton()
@@ -37,6 +39,8 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         let barButono = UIBarButtonItem(customView: butonujo)
         navigationItem.leftBarButtonItem = barButono
         leftBarButtonItem = barButono
+        
+        // Agordi flankan menuon
         let flankMenuo = FlankMenuoViewController()
         leftMenu = flankMenuo
 
@@ -51,10 +55,12 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         }
         enableSwipeGesture = true
         
-        let pagho = IngoPaghoViewController()
-        viewControllers.append(pagho)
-        flankMenuo.delegate = pagho
-        pagho.montriPaghon(Pagho.Serchi)
+        // Starigi ingo-paĝon
+        
+        let ingoPagho = IngoPaghoViewController()
+        viewControllers.append(ingoPagho)
+        flankMenuo.delegate = ingoPagho
+        ingoPagho.montriPaghon(Pagho.Serchi)
         
         efektivigiStilon()
     }
@@ -98,7 +104,7 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 
-        //subLinio?.hidden = true
+        //subLinio?.hidden = true TODO
         closeMenu(completion: nil)
         
         weak var malforta = self

@@ -329,15 +329,6 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
-    /*func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-       /*if section == 1 {
-            return NSLocalizedString("artikolo tradukoj etikedo", comment: "")
-        }*/
-        
-        return nil
-    }*/
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return UITableView.automaticDimension
