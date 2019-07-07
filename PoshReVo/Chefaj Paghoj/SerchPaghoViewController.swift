@@ -131,24 +131,28 @@ extension SerchPaghoViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        var teksto = searchBar.text
-        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo() && text == "x" && teksto?.count ?? 0 > 0 {
+        guard let teksto = searchBar.text else {
+            return true
+        }
+        
+        // Ĉapeli literojn
+        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo()
+            && text == "x"
+            && teksto.count > 0 {
             
-            if let lasta = teksto?.last, let chapelita = Iloj.chapeli(lasta) {
-                teksto = teksto!.prefix(teksto!.count - 1) + String(chapelita)
-                searchBar.text = teksto!
-                self.searchBar(searchBar, textDidChange: teksto!)
+            let chapelita = Iloj.chapeliFinon(teksto)
+            if chapelita != teksto {
+                searchBar.text = chapelita
+                self.searchBar(searchBar, textDidChange: teksto)
                 return false
             }
         }
         
         // Chi tiu abomenajho necesas char japanaj klavaroj ne kauzas textDidChange, kaj la fina teksto ne disponeblas chi tie
         // Espereble Apple riparos tion estontece
-        if teksto != nil {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (0.3 * Double(NSEC_PER_SEC)) ) {
-                [weak self] in
-                self?.fariSerchon(teksto: self?.serchTabulo?.text! ?? "")
-            }
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + (0.3 * Double(NSEC_PER_SEC)) ) {
+            [weak self] in
+            self?.fariSerchon(teksto: self?.serchTabulo?.text! ?? "")
         }
         
         return true

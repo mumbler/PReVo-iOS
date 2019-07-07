@@ -36,6 +36,14 @@ class Iloj {
         return nil
     }
     
+    static func chapeliFinon(_ teksto: String) -> String {
+        if let lasta = teksto.last, let chapelita = Iloj.chapeli(lasta) {
+            return teksto.prefix(teksto.count - 1) + String(chapelita)
+        }
+        
+        return teksto
+    }
+    
     // Trovi la X-an literon de la alfabeto (por listado)
     static func alLitero(nombro: Int, _ granda: Bool) -> String {
         
@@ -307,5 +315,20 @@ class Iloj {
         }
         
         return ret
+    }
+    
+    //MARK: - Lingvo-traktado
+    
+    public static func filtriLingvojn(teksto: String, lingvoj: [Lingvo]) -> [Lingvo] {
+        
+        var trovitaj = [Lingvo]()
+        
+        for lingvo in lingvoj {
+            if lingvo.nomo.prefix(teksto.count).lowercased() == teksto.lowercased() {
+                trovitaj.append(lingvo)
+            }
+        }
+        
+        return trovitaj
     }
 }

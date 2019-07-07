@@ -426,7 +426,6 @@
 				008489942263E18B0071CEC2 /* Konstruado */,
 				0084890E226385200071CEC2 /* Motoroj */,
 				00848938226385200071CEC2 /* Navigaciiloj */,
-				00D0B71722D1473300814637 /* Pagharo */,
 				0084893B226385200071CEC2 /* Chefaj Paghoj */,
 				0084891A226385200071CEC2 /* Subaj Paghoj */,
 				00848933226385200071CEC2 /* Flanka Menuo */,
@@ -438,6 +437,7 @@
 		0084890E226385200071CEC2 /* Motoroj */ = {
 			isa = PBXGroup;
 			children = (
+				00D0B71722D1473300814637 /* Pagharo */,
 				00848917226385200071CEC2 /* ModelObjekto.swift */,
 				0084890F226385200071CEC2 /* SeancDatumaro.swift */,
 				00848910226385200071CEC2 /* UzantDatumaro.swift */,

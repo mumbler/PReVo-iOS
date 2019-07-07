@@ -25,7 +25,19 @@ protocol SerchLingvoElektiloDelegate {
 */
 class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     
+    @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var lingvoTabelo: UITableView?
+    
+    var filtritajLingvoj: [Lingvo]? = nil
+    
+    var oftajLingvoj: [Lingvo] {
+        return UzantDatumaro.oftajSerchLingvoj
+    }
+    
+    var chiujLingvoj: [Lingvo] {
+        return filtritajLingvoj ?? SeancDatumaro.lingvoj
+    }
+    
     var delegate: SerchLingvoElektiloDelegate?
     
     init() {
@@ -39,6 +51,9 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     override func viewDidLoad() {
         
         title = NSLocalizedString("serch-elektilo titolo", comment: "")
+        
+        serchTabulo?.delegate = self
+        
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
         lingvoTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
@@ -66,18 +81,74 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     }
 }
 
+extension SerchLingvoElektiloViewController : UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        guard let teksto = searchBar.text else {
+            return true
+        }
+        
+        // Ĉapeli literojn
+        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo()
+            && text == "x"
+            && teksto.count > 0 {
+            
+            let chapelita = Iloj.chapeliFinon(teksto)
+            if chapelita != teksto {
+                searchBar.text = chapelita
+                self.searchBar(searchBar, textDidChange: teksto)
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchBar.text = searchBar.text?.lowercased()
+    
+        if let teksto = searchBar.text, !teksto.isEmpty {
+            filtritajLingvoj = Iloj.filtriLingvojn(teksto: teksto, lingvoj: SeancDatumaro.lingvoj)
+        }
+        else {
+            filtritajLingvoj = nil
+        }
+        
+        lingvoTabelo?.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        searchBar.resignFirstResponder()
+    }
+    
+}
+
 extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        
+        if filtritajLingvoj == nil {
+            return 2
+        }
+        else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return UzantDatumaro.oftajSerchLingvoj.count
-        } else if section == 1 {
-            return SeancDatumaro.lingvoj.count
+        if let filtritajLingvoj = filtritajLingvoj {
+            return filtritajLingvoj.count
+        }
+        else {
+            if section == 0 {
+                return oftajLingvoj.count
+            } else if section == 1 {
+                return chiujLingvoj.count
+            }
         }
         
         return 0
@@ -95,14 +166,19 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
         
-        if indexPath.section == 0 {
-            
-            novaChelo.textLabel?.text = UzantDatumaro.oftajSerchLingvoj[indexPath.row].nomo
-        } else if indexPath.section == 1 {
-            
-            novaChelo.textLabel?.text = SeancDatumaro.lingvoj[indexPath.row].nomo
+        let lingvo: Lingvo
+        if let filtritajLingvoj = filtritajLingvoj {
+            lingvo = filtritajLingvoj[indexPath.row]
+        }
+        else {
+            if indexPath.section == 0 {
+                lingvo = oftajLingvoj[indexPath.row]
+            } else {
+                lingvo = chiujLingvoj[indexPath.row]
+            }
         }
         
+        novaChelo.textLabel?.text = lingvo.nomo
         novaChelo.isAccessibilityElement = true
         novaChelo.accessibilityLabel = novaChelo.textLabel?.text
         
@@ -111,22 +187,29 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        if section == 0 {
-            return NSLocalizedString("serch-elektilo lastaj etikedo", comment: "")
-        } else if section == 1 {
-            return NSLocalizedString("serch-elektilo chiuj etikedo", comment: "")
+        if filtritajLingvoj == nil {
+            if section == 0 {
+                return NSLocalizedString("serch-elektilo lastaj etikedo", comment: "")
+            } else if section == 1 {
+                return NSLocalizedString("serch-elektilo chiuj etikedo", comment: "")
+            }
         }
         
-        return ""
+        return nil
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var lingvo: Lingvo? = nil
-        if indexPath.section == 0 {
-            lingvo = UzantDatumaro.oftajSerchLingvoj[indexPath.row]
-        } else if indexPath.section == 1 {
-            lingvo = SeancDatumaro.lingvoj[indexPath.row]
+        if let filtritajLingvoj = filtritajLingvoj {
+            lingvo = filtritajLingvoj[indexPath.row]
+        }
+        else {
+            if indexPath.section == 0 {
+                lingvo = oftajLingvoj[indexPath.row]
+            } else if indexPath.section == 1 {
+                lingvo = chiujLingvoj[indexPath.row]
+            }
         }
         
         if let veraLingvo = lingvo {
