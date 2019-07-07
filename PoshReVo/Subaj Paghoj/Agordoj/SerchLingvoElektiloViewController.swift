@@ -65,6 +65,11 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     
     func efektivigiStilon() {
         
+        serchTabulo?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        serchTabulo?.barStyle = UzantDatumaro.stilo.serchTabuloKoloro
+        serchTabulo?.keyboardAppearance = UzantDatumaro.stilo.klavaroKoloro
+        serchTabulo?.tintColor = UzantDatumaro.stilo.tintKoloro
+        
         lingvoTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
         lingvoTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
         lingvoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
@@ -123,7 +128,6 @@ extension SerchLingvoElektiloViewController : UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
     }
-    
 }
 
 extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDataSource {
