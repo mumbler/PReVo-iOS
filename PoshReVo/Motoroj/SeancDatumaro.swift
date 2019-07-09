@@ -37,7 +37,7 @@ class SeancDatumaro {
             }
         }
         lingvoj.sort { (unua: Lingvo, dua: Lingvo) -> Bool in
-            return unua.nomo < dua.nomo
+            return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         }
         
         for fako in DatumLegilo.chiujFakoj() ?? [] {
