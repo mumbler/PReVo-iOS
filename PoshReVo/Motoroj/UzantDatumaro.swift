@@ -132,7 +132,7 @@ class UzantDatumaro {
         
         konservitaj.append(artikolo)
         konservitaj.sort(by: { (unua: Listero, dua: Listero) -> Bool in
-            return unua.nomo < dua.nomo
+            return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         })
         
         konserviKonservitajn = true

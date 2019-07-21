@@ -38,8 +38,9 @@
 		0084897D226385200071CEC2 /* PriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848947226385200071CEC2 /* PriViewController.swift */; };
 		0084897E226385200071CEC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848948226385200071CEC2 /* AppDelegate.swift */; };
 		0084898F226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0084898D226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld */; };
-		008489922263E0470071CEC2 /* TrieRegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008489902263E0470071CEC2 /* TrieRegilo.swift */; };
+		008489922263E0470071CEC2 /* TrieFarilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008489902263E0470071CEC2 /* TrieFarilo.swift */; };
 		008489932263E0470071CEC2 /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008489912263E0470071CEC2 /* DatumLegilo.swift */; };
+		0097B1B722DEB049003DEDC4 /* TrieLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097B1B622DEB049003DEDC4 /* TrieLegilo.swift */; };
 		00A869BB2276497000A856E9 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084893E226385200071CEC2 /* SerchPaghoViewController.xib */; };
 		00A869BC2276497000A856E9 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848940226385200071CEC2 /* AgordojViewController.xib */; };
 		00A869BD2276497000A856E9 /* KonservitajViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848942226385200071CEC2 /* KonservitajViewController.xib */; };
@@ -141,7 +142,7 @@
 		00848948226385200071CEC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0084894C226385200071CEC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0084898E226387F00071CEC2 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
-		008489902263E0470071CEC2 /* TrieRegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieRegilo.swift; sourceTree = "<group>"; };
+		008489902263E0470071CEC2 /* TrieFarilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieFarilo.swift; sourceTree = "<group>"; };
 		008489912263E0470071CEC2 /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
 		008489962263E24F0071CEC2 /* lingvoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = lingvoj.dat; path = Prepariloj/preparita/lingvoj.dat; sourceTree = SOURCE_ROOT; };
 		008489972263E24F0071CEC2 /* fakoj.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fakoj.dat; path = Prepariloj/preparita/fakoj.dat; sourceTree = SOURCE_ROOT; };
@@ -294,6 +295,7 @@
 		00848A2C2263E24F0071CEC2 /* indekso_ga.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ga.dat; sourceTree = "<group>"; };
 		00848A2D2263E24F0071CEC2 /* indekso_ku.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_ku.dat; sourceTree = "<group>"; };
 		00848A2E2263E24F0071CEC2 /* indekso_hy.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = indekso_hy.dat; sourceTree = "<group>"; };
+		0097B1B622DEB049003DEDC4 /* TrieLegilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieLegilo.swift; sourceTree = "<group>"; };
 		00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00D0B71822D1474100814637 /* Pagharo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagharo.swift; sourceTree = "<group>"; };
 		00D0B71A22D1477F00814637 /* PaghMotoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaghMotoro.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				00848917226385200071CEC2 /* ModelObjekto.swift */,
 				0084890F226385200071CEC2 /* SeancDatumaro.swift */,
 				00848910226385200071CEC2 /* UzantDatumaro.swift */,
+				0097B1B622DEB049003DEDC4 /* TrieLegilo.swift */,
 				00848918226385200071CEC2 /* Koloroj.swift */,
 				00848911226385200071CEC2 /* Stiloj.swift */,
 				00848916226385200071CEC2 /* Iloj.swift */,
@@ -523,7 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				008489912263E0470071CEC2 /* DatumLegilo.swift */,
-				008489902263E0470071CEC2 /* TrieRegilo.swift */,
+				008489902263E0470071CEC2 /* TrieFarilo.swift */,
 			);
 			path = Konstruado;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				0084897E226385200071CEC2 /* AppDelegate.swift in Sources */,
 				0084895D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
 				0084897D226385200071CEC2 /* PriViewController.swift in Sources */,
+				0097B1B722DEB049003DEDC4 /* TrieLegilo.swift in Sources */,
 				00848950226385200071CEC2 /* ObjCPonto.m in Sources */,
 				00848975226385200071CEC2 /* HistorioViewController.swift in Sources */,
 				0084894F226385200071CEC2 /* Stiloj.swift in Sources */,
@@ -945,7 +949,7 @@
 				00848977226385200071CEC2 /* SerchPaghoViewController.swift in Sources */,
 				00848969226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
 				00848979226385200071CEC2 /* IngoPaghoViewController.swift in Sources */,
-				008489922263E0470071CEC2 /* TrieRegilo.swift in Sources */,
+				008489922263E0470071CEC2 /* TrieFarilo.swift in Sources */,
 				00848961226385200071CEC2 /* StiloElektiloViewController.swift in Sources */,
 				00848952226385200071CEC2 /* ModelObjekto.swift in Sources */,
 				00848953226385200071CEC2 /* Koloroj.swift in Sources */,

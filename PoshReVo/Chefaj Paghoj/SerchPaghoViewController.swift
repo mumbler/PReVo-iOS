@@ -21,7 +21,10 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var trovTabelo: UITableView?
     var lastaSercho: (Lingvo, String)? = nil
-    var serchRezultoj = [(String, [NSManagedObject])]()
+    var serchStato: SerchStato?
+    var serchRezultoj: [(String, [NSManagedObject])] {
+        return serchStato?.rezultoj ?? [(String, [NSManagedObject])]()
+    }
     
     init() {
         super.init(nibName: "SerchPaghoViewController", bundle: nil)
@@ -120,9 +123,19 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func fariSerchon(teksto: String) {
         if UzantDatumaro.serchLingvo != lastaSercho?.0 || teksto != lastaSercho?.1 {
-            serchRezultoj = TrieRegilo.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, limo: serchLimo)
+            serchStato = TrieLegilo.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, komenco: 0, limo: serchLimo)
             trovTabelo?.reloadData()
             lastaSercho = (UzantDatumaro.serchLingvo, teksto)
+        }
+    }
+    
+    func venigiPli() {
+        if let stato = serchStato {
+            serchStato = TrieLegilo.serchi(komencaStato: stato, limo: serchLimo)
+            DispatchQueue.main.async {
+                self.trovTabelo?.reloadData()
+            }
+
         }
     }
 }
@@ -166,7 +179,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
             if !teksto.isEmpty {
                 fariSerchon(teksto: teksto)
             } else {
-                serchRezultoj.removeAll()
+                serchStato = nil
                 lastaSercho = nil
                 trovTabelo?.reloadData()
             }
@@ -204,6 +217,10 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
 
         if UzantDatumaro.serchLingvo != SeancDatumaro.esperantaLingvo() {
             novaChelo.detailTextLabel?.text = tekstoPorDestinoj(destinoj: serchRezultoj[indexPath.row].1)
+        }
+        
+        if indexPath.row > serchRezultoj.count - 5 {
+            venigiPli()
         }
         
         return novaChelo

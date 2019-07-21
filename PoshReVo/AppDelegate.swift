@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         kreiDatumbazon = ProcessInfo.processInfo.environment["kreiDatumbazon"] == "true"
         
-        TrieRegilo.konteksto = self.managedObjectContext
         DatumLegilo.konteksto = self.managedObjectContext
         
         if kreiDatumbazon {

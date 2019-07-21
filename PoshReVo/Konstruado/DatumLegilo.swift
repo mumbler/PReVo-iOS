@@ -19,8 +19,8 @@ class DatumLegilo {
     
     static func fariDatumbazon() {
         
-        if konteksto == nil {
-            return
+        guard let konteksto = konteksto else  {
+            fatalError("Eraro: necesas konteksto por fari datumbazon")
         }
         
         var lingvoKodoj = [String]()
@@ -36,7 +36,7 @@ class DatumLegilo {
                     for lingvo in listo {
                         if let enhavoj = lingvo as? NSArray {
                             
-                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Lingvo", into: konteksto!)
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Lingvo", into: konteksto)
                             novaObjekto.setValue(enhavoj[0], forKey: "kodo")
                             novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                             if let kodo = enhavoj[0] as? String {
@@ -45,7 +45,7 @@ class DatumLegilo {
                         }
                     }
                     
-                    try konteksto?.save()
+                    try konteksto.save()
                 }
             } catch {
                 NSLog("Erar en kreado de lingvo-datumbaz-objektoj")
@@ -63,13 +63,13 @@ class DatumLegilo {
                     for fako in listo {
                         if let enhavoj = fako as? NSArray {
                             
-                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Fako", into: konteksto!)
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Fako", into: konteksto)
                             novaObjekto.setValue(enhavoj[0], forKey: "kodo")
                             novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                         }
                     }
                     
-                    try konteksto?.save()
+                    try konteksto.save()
                 }
             } catch {
                 NSLog("Erar en kreado de fako-datumbaz-objektoj")
@@ -87,13 +87,13 @@ class DatumLegilo {
                     for stilo in listo {
                         if let enhavoj = stilo as? NSArray {
                             
-                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Stilo", into: konteksto!)
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Stilo", into: konteksto)
                             novaObjekto.setValue(enhavoj[0], forKey: "kodo")
                             novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                         }
                     }
                     
-                    try konteksto?.save()
+                    try konteksto.save()
                 }
             } catch {
                 NSLog("Erar en kreado de stilo-datumbaz-objektoj")
@@ -111,13 +111,13 @@ class DatumLegilo {
                     for mallongigo in listo {
                         if let enhavoj = mallongigo as? NSArray {
                             
-                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Mallongigo", into: konteksto!)
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Mallongigo", into: konteksto)
                             novaObjekto.setValue(enhavoj[0], forKey: "kodo")
                             novaObjekto.setValue(enhavoj[1], forKey: "nomo")
                         }
                     }
                     
-                    try konteksto?.save()
+                    try konteksto.save()
                 }
             } catch {
                 NSLog("Erar en kreado de mallongigo-datumbaz-objektoj")
@@ -135,7 +135,7 @@ class DatumLegilo {
                     for artikolo in listo {
                         if let enhavoj = artikolo as? NSDictionary {
                             
-                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Artikolo", into: konteksto!)
+                            let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Artikolo", into: konteksto)
                             novaObjekto.setValue(enhavoj["titolo"], forKey: "titolo")
                             novaObjekto.setValue(enhavoj["radiko"], forKey: "radiko")
                             novaObjekto.setValue(enhavoj["indekso"], forKey: "indekso")
@@ -146,15 +146,14 @@ class DatumLegilo {
                         }
                     }
                     
-                    try konteksto?.save()
+                    try konteksto.save()
                 }
             } catch {
                 NSLog("Erar en kreado de artikolo-datumbaz-objektoj")
             }
         }
         
-        TrieRegilo.konstruiChiuTrie(lingvoKodoj)
-        
+        TrieFarilo.konstruiChiuTrie(en: konteksto, kodoj: lingvoKodoj)
     }
     
     // =============================

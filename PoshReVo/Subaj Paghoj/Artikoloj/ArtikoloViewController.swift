@@ -130,7 +130,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         }
         
         tradukListo?.sort(by: { (unua: Traduko, dua: Traduko) -> Bool in
-            return unua.lingvo.nomo < dua.lingvo.nomo
+            return unua.lingvo.nomo.compare(dua.lingvo.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         })
     }
     
