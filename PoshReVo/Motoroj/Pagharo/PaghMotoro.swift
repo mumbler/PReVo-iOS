@@ -25,6 +25,9 @@ final class PaghMotoro {
             case .Serchi:
                 novaPagho = SerchPaghoViewController()
                 break
+            case .Esplori:
+                novaPagho = EsplorPaghoViewController(style: .grouped)
+                break
             case .Historio:
                 novaPagho = HistorioViewController()
                 break

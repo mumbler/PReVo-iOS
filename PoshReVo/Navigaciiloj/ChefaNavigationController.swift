@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
-var flankMenuoLargheco: CGFloat = 200
+var flankMenuoLargheco: CGFloat = 232
 
 /*
     La chefa UINavigationControlle de la programo. Ghi starigas la maldekstra-flankan menuon,
@@ -47,7 +47,7 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         let longa = max(view.frame.size.height, view.frame.size.width)
         let mallonga = min(view.frame.size.height, view.frame.size.width)
         if UIDevice.current.userInterfaceIdiom == .phone {
-            portraitSlideOffset = mallonga * 0.55
+            portraitSlideOffset = mallonga * 0.47
             landscapeSlideOffset = longa * 0.75
         } else {
             portraitSlideOffset = mallonga * 0.75

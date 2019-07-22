@@ -46,6 +46,10 @@ class SeancDatumaro {
                let nomo = fako.value(forKey: "nomo") as? String {
                 fakoj.append( Fako(kodo, nomo) )
             }
+            
+            fakoj.sort { (unua: Fako, dua: Fako) -> Bool in
+                return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+            }
         }
 
         for stilo in DatumLegilo.chiujStiloj() ?? [] {

@@ -9,6 +9,7 @@
 // Flanka Menuo
 
 "flanko serchi etikedo"                         = "Serĉi";
+"flanko esplori etikedo"                         = "Esplori";
 "flanko historio etikedo"                       = "Historio";
 "flanko konservitaj etikedo"                    = "Konservitaj";
 "flanko agordoj etikedo"                        = "Agordoj";
@@ -19,6 +20,11 @@
 "serchi baza titolo"                            = "Serĉi";
 "serchi lingva titolo"                          = "Serĉi (%@)";
 "serchi tabulo teksto"                          = "Serĉi vorton aŭ frazon";
+
+// Esplori
+
+"esplori fakoj titolo"                          = "Fakoj";
+"esplori iu ajn titolo"                         = "Iu Ajn Artikolo";
 
 // Historio
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FlankMenuoTableViewCell : UITableViewCell, Stilplena {
+class FlankMenuoTableViewCell : UITableViewCell {
 
     @IBOutlet var etikedo: UILabel?
     @IBOutlet var bildo: UIImageView?

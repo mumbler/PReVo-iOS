@@ -259,4 +259,25 @@ class DatumLegilo {
         
         return nil
     }
+    
+    public static func iuAjnArtikolo() -> NSManagedObject? {
+        
+        /*NSFetchRequest *myRequest = [[NSFetchRequest alloc] init];
+        [myRequest setEntity: [NSEntityDescription entityForName:myEntityName inManagedObjectContext:myManagedObjectContext]];
+        NSError *error = nil;
+        NSUInteger myEntityCount = [myManagedObjectContext countForFetchRequest:myRequest error:&error];
+        [myRequest release];*/
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto!)
+        serchPeto.predicate = NSPredicate(format: "PK == %@", argumentArray: [2])
+        do {
+            return try konteksto!.fetch(serchPeto).first as? NSManagedObject
+        } catch {
+            
+        }
+        
+        return nil
+
+    }
 }
