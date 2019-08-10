@@ -9,14 +9,27 @@
 import UIKit
 
 private enum Chelo: Int {
-    case Fakoj, IuAjn
+    case Fakoj, Mallongigoj, IuAjn
     
-    public static let kvanto = 2
+    public static let kvanto = [2, 1]
+    
+    init?(indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            self.init(rawValue: indexPath.row)
+        case 1:
+            self.init(rawValue: Chelo.kvanto[0] + indexPath.row)
+        default:
+            self.init(rawValue: 0)
+        }
+    }
     
     func titolo() -> String {
         switch self {
         case .Fakoj:
             return NSLocalizedString("esplori fakoj titolo", comment: "")
+        case .Mallongigoj:
+            return NSLocalizedString("esplori mallongigoj titolo", comment: "")
         case .IuAjn:
             return NSLocalizedString("esplori iu ajn titolo", comment: "")
         }
@@ -33,16 +46,16 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
         efektivigiStilon()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Chelo.kvanto
+        return Chelo.kvanto[section]
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let novaChelo = tableView.dequeueReusableCell(withIdentifier: EsplorPaghoViewController.chelIdent) ?? UITableViewCell()
-        let chelTipo = Chelo(rawValue: indexPath.row)
+        let chelTipo = Chelo(indexPath: indexPath)
         
         novaChelo.textLabel?.text = chelTipo?.titolo()
         
@@ -54,7 +67,7 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        guard let chelTipo = Chelo(rawValue: indexPath.row) else {
+        guard let chelTipo = Chelo(indexPath: indexPath) else {
             return
         }
         
@@ -62,6 +75,8 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
         case .Fakoj:
             let fakojVC = FakoListoTableViewController(style: .grouped)
             navigationController?.pushViewController(fakojVC, animated: true)
+        case .Mallongigoj:
+            return
         case .IuAjn:
             let sekva = DatumLegilo.iuAjnArtikolo()
         }
