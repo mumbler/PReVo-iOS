@@ -181,7 +181,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
     @objc func premisPliajnTradukojnButonon() {
         
         let navigaciilo = HelpaNavigationController()
-        let elektilo = TradukLingvojElektiloViewController()
+        let elektilo = TradukLingvojElektiloTableViewController(style: .grouped)
         elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)
         navigationController?.present(navigaciilo, animated: true, completion: nil)

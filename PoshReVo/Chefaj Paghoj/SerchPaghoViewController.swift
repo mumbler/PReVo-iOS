@@ -107,7 +107,9 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     @objc func elektiLingvon() {
         
         let navigaciilo = HelpaNavigationController()
-        let elektilo = SerchLingvoElektiloViewController()
+        let elektilo = LingvoElektiloViewController()
+        elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo titolo", comment: ""),
+                         suprajTitolo: NSLocalizedString("lingvo-elektilo lastaj etikedo", comment: ""))
         elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)
         self.navigationController?.present(navigaciilo, animated: true, completion: nil)
@@ -117,7 +119,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         if UzantDatumaro.oftajSerchLingvoj.count > 1 {
             let lasta = UzantDatumaro.oftajSerchLingvoj[1]
             UzantDatumaro.elektisSerchLingvon(lasta)
-            elektisSerchLingvon()
+            elektisLingvon(lingvo: lasta)
         }
     }
     
@@ -259,9 +261,10 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
 }
 
 // Trakti lingvo-elektadon
-extension SerchPaghoViewController : SerchLingvoElektiloDelegate {
+extension SerchPaghoViewController : LingvoElektiloDelegate {
     
-    func elektisSerchLingvon() {
+    func elektisLingvon(lingvo: Lingvo) {
+        UzantDatumaro.elektisSerchLingvon(lingvo)
         ghisdatigiTitolon()
         prepariNavigaciajnButonojn()
         fariSerchon(teksto: serchTabulo?.text ?? "")

@@ -1,5 +1,5 @@
 //
-//  SerchLingvoElektiloViewController.swift
+//  LingvoElektiloViewController.swift
 //  PoshReVo
 //
 //  Created by Robin Hill on 3/11/16.
@@ -9,58 +9,70 @@
 import Foundation
 import UIKit
 
-let serchLingvoElektiloChelIdent = "lingvoElektiloChelo"
+let lingvoElektiloChelIdent = "lingvoElektiloChelo"
 
 /*
     Delegate por ke aliaj paghoj povos reagi al lingvo-elektado
 */
-protocol SerchLingvoElektiloDelegate {
+protocol LingvoElektiloDelegate {
     
-    func elektisSerchLingvon()
+    func elektisLingvon(lingvo: Lingvo)
 }
 
 /*
-    Pagho por elekti la lingvo en kiu serchoj okazos. La unua sekcio montras
-    lastaj elektitaj lingvoj, kaj sube videblas chiu lingvo
+    Pagho por elekti lingvon.
+    La unua sekcio povas montri lastaj elektitaj lingvoj, kaj sube videblas chiu lingvo
 */
-class SerchLingvoElektiloViewController : UIViewController, Stilplena {
+class LingvoElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var lingvoTabelo: UITableView?
     
     var filtritajLingvoj: [Lingvo]? = nil
     
-    var oftajLingvoj: [Lingvo] {
-        return UzantDatumaro.oftajSerchLingvoj
-    }
+    var suprajLingvoj: [Lingvo]?
+    var suprajTitolo: String?
     
     var chiujLingvoj: [Lingvo] {
         return filtritajLingvoj ?? SeancDatumaro.lingvoj
     }
     
-    var delegate: SerchLingvoElektiloDelegate?
+    var delegate: LingvoElektiloDelegate?
     
     init() {
-        super.init(nibName: "SerchLingvoElektiloViewController", bundle: nil)
+        super.init(nibName: "LingvoElektiloViewController", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
+    public func starigi(titolo: String, suprajTitolo: String? = nil) {
+        title = titolo
+        self.suprajTitolo = suprajTitolo
+        suprajLingvoj = UzantDatumaro.oftajSerchLingvoj
+    }
+    
     override func viewDidLoad() {
-        
-        title = NSLocalizedString("serch-elektilo titolo", comment: "")
         
         serchTabulo?.delegate = self
         
         lingvoTabelo?.delegate = self
         lingvoTabelo?.dataSource = self
-        lingvoTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: serchLingvoElektiloChelIdent)
+        lingvoTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: lingvoElektiloChelIdent)
 
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
+    }
+    
+    private func chiujSekcio() -> Int {
+        if suprajLingvoj == nil {
+            return 0
+        }
+        else {
+            return 1
+        }
     }
     
     func efektivigiStilon() {
@@ -86,7 +98,7 @@ class SerchLingvoElektiloViewController : UIViewController, Stilplena {
     }
 }
 
-extension SerchLingvoElektiloViewController : UISearchBarDelegate {
+extension LingvoElektiloViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
@@ -95,10 +107,7 @@ extension SerchLingvoElektiloViewController : UISearchBarDelegate {
         }
         
         // Ĉapeli literojn
-        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo()
-            && text == "x"
-            && teksto.count > 0 {
-            
+        if text == "x" && teksto.count > 0 {
             let chapelita = Iloj.chapeliFinon(teksto)
             if chapelita != teksto {
                 searchBar.text = chapelita
@@ -130,11 +139,11 @@ extension SerchLingvoElektiloViewController : UISearchBarDelegate {
     }
 }
 
-extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDataSource {
+extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        if filtritajLingvoj == nil {
+        if filtritajLingvoj == nil && suprajLingvoj != nil {
             return 2
         }
         else {
@@ -148,10 +157,10 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
             return filtritajLingvoj.count
         }
         else {
-            if section == 0 {
-                return oftajLingvoj.count
-            } else if section == 1 {
+            if section == chiujSekcio() {
                 return chiujLingvoj.count
+            } else if let suprajLingvoj = suprajLingvoj {
+                return suprajLingvoj.count
             }
         }
         
@@ -161,7 +170,7 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let novaChelo: UITableViewCell
-        if let trovChelo = lingvoTabelo?.dequeueReusableCell(withIdentifier: serchLingvoElektiloChelIdent) {
+        if let trovChelo = lingvoTabelo?.dequeueReusableCell(withIdentifier: lingvoElektiloChelIdent) {
             novaChelo = trovChelo
         } else {
             novaChelo = UITableViewCell()
@@ -175,10 +184,12 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
             lingvo = filtritajLingvoj[indexPath.row]
         }
         else {
-            if indexPath.section == 0 {
-                lingvo = oftajLingvoj[indexPath.row]
-            } else {
+            if indexPath.section == chiujSekcio() {
                 lingvo = chiujLingvoj[indexPath.row]
+            } else if let suprajLingvoj = suprajLingvoj {
+                lingvo = suprajLingvoj[indexPath.row]
+            } else {
+                fatalError("Mankas lingvo")
             }
         }
         
@@ -191,11 +202,15 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
+        guard suprajLingvoj != [] else {
+            return nil
+        }
+        
         if filtritajLingvoj == nil {
             if section == 0 {
-                return NSLocalizedString("serch-elektilo lastaj etikedo", comment: "")
+                return suprajTitolo
             } else if section == 1 {
-                return NSLocalizedString("serch-elektilo chiuj etikedo", comment: "")
+                return NSLocalizedString("lingvo-elektilo chiuj etikedo", comment: "")
             }
         }
         
@@ -209,18 +224,15 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
             lingvo = filtritajLingvoj[indexPath.row]
         }
         else {
-            if indexPath.section == 0 {
-                lingvo = oftajLingvoj[indexPath.row]
-            } else if indexPath.section == 1 {
+            if indexPath.section == chiujSekcio() {
                 lingvo = chiujLingvoj[indexPath.row]
+            } else {
+                lingvo = suprajLingvoj?[indexPath.row]
             }
         }
         
-        if let veraLingvo = lingvo {
-            UzantDatumaro.elektisSerchLingvon(veraLingvo)
-            if delegate != nil {
-                delegate?.elektisSerchLingvon()
-            }
+        if let veraLingvo = lingvo, let delegate = delegate {
+            delegate.elektisLingvon(lingvo: veraLingvo)
         }
         
         lingvoTabelo?.deselectRow(at: indexPath, animated: true)
@@ -236,7 +248,7 @@ extension SerchLingvoElektiloViewController : UITableViewDelegate, UITableViewDa
 }
 
 // Respondi al mediaj shanghoj
-extension SerchLingvoElektiloViewController {
+extension LingvoElektiloViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {
         lingvoTabelo?.reloadData()

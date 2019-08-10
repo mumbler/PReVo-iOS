@@ -19,11 +19,10 @@
 		00848952226385200071CEC2 /* ModelObjekto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848917226385200071CEC2 /* ModelObjekto.swift */; };
 		00848953226385200071CEC2 /* Koloroj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848918226385200071CEC2 /* Koloroj.swift */; };
 		00848956226385200071CEC2 /* ArtikoloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891C226385200071CEC2 /* ArtikoloTableViewCell.swift */; };
-		00848957226385200071CEC2 /* TradukLingvojElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */; };
+		00848957226385200071CEC2 /* TradukLingvojElektiloTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891D226385200071CEC2 /* TradukLingvojElektiloTableViewController.swift */; };
 		00848958226385200071CEC2 /* ArtikoloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084891E226385200071CEC2 /* ArtikoloViewController.swift */; };
 		0084895D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */; };
-		0084895F226385200071CEC2 /* SerchLingvoElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */; };
-		00848960226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */; };
+		0084895F226385200071CEC2 /* LingvoElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848925226385200071CEC2 /* LingvoElektiloViewController.swift */; };
 		00848961226385200071CEC2 /* StiloElektiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848927226385200071CEC2 /* StiloElektiloViewController.swift */; };
 		00848962226385200071CEC2 /* LicencoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848928226385200071CEC2 /* LicencoViewController.swift */; };
 		00848968226385200071CEC2 /* VortoDisigiloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */; };
@@ -54,14 +53,11 @@
 		00A869BE2276497000A856E9 /* IngoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848945226385200071CEC2 /* IngoPaghoViewController.xib */; };
 		00A869BF2276497000A856E9 /* HistorioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848946226385200071CEC2 /* HistorioViewController.xib */; };
 		00A869C02276497000A856E9 /* ArtikoloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084891B226385200071CEC2 /* ArtikoloViewController.xib */; };
-		00A869C12276497000A856E9 /* TradukLingvojElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */; };
 		00A869C22276497000A856E9 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */; };
-		00A869C32276497000A856E9 /* TradukLingvoElektiloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */; };
-		00A869C42276497000A856E9 /* SerchLingvoElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */; };
+		00A869C42276497000A856E9 /* LingvoElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848922226385200071CEC2 /* LingvoElektiloViewController.xib */; };
 		00A869C52276497000A856E9 /* StiloElektiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848924226385200071CEC2 /* StiloElektiloViewController.xib */; };
 		00A869C62276497000A856E9 /* LicencoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848929226385200071CEC2 /* LicencoViewController.xib */; };
 		00A869C72276497000A856E9 /* ArtikoloTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */; };
-		00A869C82276497000A856E9 /* ShanghiTekstGrandeconViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */; };
 		00A869C92276497000A856E9 /* VortoDisigiloViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */; };
 		00A869CA2276497000A856E9 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */; };
 		00A869CB2276497000A856E9 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */; };
@@ -111,21 +107,17 @@
 		00848919226385200071CEC2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0084891B226385200071CEC2 /* ArtikoloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloViewController.xib; sourceTree = "<group>"; };
 		0084891C226385200071CEC2 /* ArtikoloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloTableViewCell.swift; sourceTree = "<group>"; };
-		0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvojElektiloViewController.swift; sourceTree = "<group>"; };
+		0084891D226385200071CEC2 /* TradukLingvojElektiloTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvojElektiloTableViewController.swift; sourceTree = "<group>"; };
 		0084891E226385200071CEC2 /* ArtikoloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloViewController.swift; sourceTree = "<group>"; };
-		0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvojElektiloViewController.xib; sourceTree = "<group>"; };
 		00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloKapoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
-		00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TradukLingvoElektiloTableViewCell.xib; sourceTree = "<group>"; };
-		00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SerchLingvoElektiloViewController.xib; sourceTree = "<group>"; };
+		00848922226385200071CEC2 /* LingvoElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LingvoElektiloViewController.xib; sourceTree = "<group>"; };
 		00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtikoloPiedButonoTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		00848924226385200071CEC2 /* StiloElektiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StiloElektiloViewController.xib; sourceTree = "<group>"; };
-		00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerchLingvoElektiloViewController.swift; sourceTree = "<group>"; };
-		00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradukLingvoElektiloTableViewCell.swift; sourceTree = "<group>"; };
+		00848925226385200071CEC2 /* LingvoElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LingvoElektiloViewController.swift; sourceTree = "<group>"; };
 		00848927226385200071CEC2 /* StiloElektiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloElektiloViewController.swift; sourceTree = "<group>"; };
 		00848928226385200071CEC2 /* LicencoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LicencoViewController.swift; sourceTree = "<group>"; };
 		00848929226385200071CEC2 /* LicencoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LicencoViewController.xib; sourceTree = "<group>"; };
 		0084892A226385200071CEC2 /* ArtikoloTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloTableViewCell.xib; sourceTree = "<group>"; };
-		0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShanghiTekstGrandeconViewController.xib; sourceTree = "<group>"; };
 		0084892C226385200071CEC2 /* VortoDisigiloViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VortoDisigiloViewController.xib; sourceTree = "<group>"; };
 		0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtikoloPiedButonoTableViewHeaderFooterView.xib; sourceTree = "<group>"; };
 		0084892E226385200071CEC2 /* VortoDisigiloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VortoDisigiloViewController.swift; sourceTree = "<group>"; };
@@ -365,15 +357,11 @@
 		0003C4C522C9B0790090A4D3 /* Agordoj */ = {
 			isa = PBXGroup;
 			children = (
-				00848925226385200071CEC2 /* SerchLingvoElektiloViewController.swift */,
-				00848922226385200071CEC2 /* SerchLingvoElektiloViewController.xib */,
-				0084891D226385200071CEC2 /* TradukLingvojElektiloViewController.swift */,
-				0084891F226385200071CEC2 /* TradukLingvojElektiloViewController.xib */,
-				00848926226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift */,
-				00848921226385200071CEC2 /* TradukLingvoElektiloTableViewCell.xib */,
+				00848925226385200071CEC2 /* LingvoElektiloViewController.swift */,
+				00848922226385200071CEC2 /* LingvoElektiloViewController.xib */,
+				0084891D226385200071CEC2 /* TradukLingvojElektiloTableViewController.swift */,
 				00848927226385200071CEC2 /* StiloElektiloViewController.swift */,
 				00848924226385200071CEC2 /* StiloElektiloViewController.xib */,
-				0084892B226385200071CEC2 /* ShanghiTekstGrandeconViewController.xib */,
 			);
 			path = Agordoj;
 			sourceTree = "<group>";
@@ -881,15 +869,12 @@
 				00A869BF2276497000A856E9 /* HistorioViewController.xib in Resources */,
 				0097B1C722E7DC8F003DEDC4 /* SubArtikoloTableViewCell.xib in Resources */,
 				00A869C02276497000A856E9 /* ArtikoloViewController.xib in Resources */,
-				00A869C12276497000A856E9 /* TradukLingvojElektiloViewController.xib in Resources */,
 				00A869C22276497000A856E9 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
-				00A869C32276497000A856E9 /* TradukLingvoElektiloTableViewCell.xib in Resources */,
 				00477A70227654B700515416 /* Localizable.strings in Resources */,
-				00A869C42276497000A856E9 /* SerchLingvoElektiloViewController.xib in Resources */,
+				00A869C42276497000A856E9 /* LingvoElektiloViewController.xib in Resources */,
 				00A869C52276497000A856E9 /* StiloElektiloViewController.xib in Resources */,
 				00A869C62276497000A856E9 /* LicencoViewController.xib in Resources */,
 				00A869C72276497000A856E9 /* ArtikoloTableViewCell.xib in Resources */,
-				00A869C82276497000A856E9 /* ShanghiTekstGrandeconViewController.xib in Resources */,
 				00A869C92276497000A856E9 /* VortoDisigiloViewController.xib in Resources */,
 				00A869CA2276497000A856E9 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib in Resources */,
 				00A869CB2276497000A856E9 /* FlankMenuoTableViewCell.xib in Resources */,
@@ -983,11 +968,11 @@
 				00848975226385200071CEC2 /* HistorioViewController.swift in Sources */,
 				0084894F226385200071CEC2 /* Stiloj.swift in Sources */,
 				00D0B71922D1474100814637 /* Pagharo.swift in Sources */,
-				00848957226385200071CEC2 /* TradukLingvojElektiloViewController.swift in Sources */,
+				00848957226385200071CEC2 /* TradukLingvojElektiloTableViewController.swift in Sources */,
 				0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */,
 				0097B1B922E51032003DEDC4 /* EsplorPaghoViewController.swift in Sources */,
 				00848962226385200071CEC2 /* LicencoViewController.swift in Sources */,
-				0084895F226385200071CEC2 /* SerchLingvoElektiloViewController.swift in Sources */,
+				0084895F226385200071CEC2 /* LingvoElektiloViewController.swift in Sources */,
 				00848977226385200071CEC2 /* SerchPaghoViewController.swift in Sources */,
 				00848969226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
 				000BF42622FD0FF100EA0271 /* InformoTableViewController.swift in Sources */,
@@ -1000,7 +985,6 @@
 				0084897A226385200071CEC2 /* KonservitajViewController.swift in Sources */,
 				0084898F226387F00071CEC2 /* PoshReVoDatumoj.xcdatamodeld in Sources */,
 				00848958226385200071CEC2 /* ArtikoloViewController.swift in Sources */,
-				00848960226385200071CEC2 /* TradukLingvoElektiloTableViewCell.swift in Sources */,
 				00848956226385200071CEC2 /* ArtikoloTableViewCell.swift in Sources */,
 				0084896D226385200071CEC2 /* FlankMenuoViewController.swift in Sources */,
 				008489932263E0470071CEC2 /* DatumLegilo.swift in Sources */,

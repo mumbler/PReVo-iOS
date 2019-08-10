@@ -177,12 +177,14 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         }
         else if indexPath.section == 1 {
             if indexPath.row == 0 {
-                let elektilo = SerchLingvoElektiloViewController()
+                let elektilo = LingvoElektiloViewController()
+                elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo titolo", comment: ""),
+                                 suprajTitolo: NSLocalizedString("lingvo-elektilo lastaj etikedo", comment: ""))
                 elektilo.delegate = self
                 navigationController?.pushViewController(elektilo, animated: true)
             }
             else if indexPath.row == 1{
-                let elektilo = TradukLingvojElektiloViewController()
+                let elektilo = TradukLingvojElektiloTableViewController(style: .grouped)
                 elektilo.delegate = self
                 navigationController?.pushViewController(elektilo, animated: true)
             }
@@ -205,9 +207,10 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension AgordojViewController : SerchLingvoElektiloDelegate {
+extension AgordojViewController : LingvoElektiloDelegate {
     
-    func elektisSerchLingvon() {
+    func elektisLingvon(lingvo: Lingvo) {
+        UzantDatumaro.elektisSerchLingvon(lingvo)
         tabelo?.reloadRows(at: [IndexPath(item: 0, section: 1)], with: .none)
     }
 }

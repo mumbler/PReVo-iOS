@@ -11,8 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TradukLingvojElektiloViewController" customModule="PoshReVo" customModuleProvider="target">
             <connections>
-                <outlet property="lingvoTabelo" destination="T1k-Hy-vnp" id="fEp-Lt-DGx"/>
-                <outlet property="serchTabulo" destination="eQN-Xs-Axu" id="Xtw-dO-J7s"/>
+                <outlet property="tabelo" destination="T1k-Hy-vnp" id="fEp-Lt-DGx"/>
                 <outlet property="view" destination="iN0-l3-epB" id="A5B-Go-nR7"/>
             </connections>
         </placeholder>
@@ -21,27 +20,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" placeholder="Serĉi lingvon" translatesAutoresizingMaskIntoConstraints="NO" id="eQN-Xs-Axu">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="gJF-by-gZb"/>
-                    </constraints>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="T1k-Hy-vnp">
-                    <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="eQN-Xs-Axu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5fB-oZ-LuC"/>
                 <constraint firstAttribute="bottom" secondItem="T1k-Hy-vnp" secondAttribute="bottom" id="IoO-9T-SIc"/>
                 <constraint firstItem="T1k-Hy-vnp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XKL-WM-7ZN"/>
                 <constraint firstAttribute="trailing" secondItem="T1k-Hy-vnp" secondAttribute="trailing" id="YY0-O8-OmA"/>
-                <constraint firstItem="eQN-Xs-Axu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bl1-0w-PrE"/>
-                <constraint firstAttribute="trailing" secondItem="eQN-Xs-Axu" secondAttribute="trailing" id="hRy-zl-ulO"/>
-                <constraint firstItem="T1k-Hy-vnp" firstAttribute="top" secondItem="eQN-Xs-Axu" secondAttribute="bottom" id="v4S-vC-lHC"/>
+                <constraint firstItem="T1k-Hy-vnp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gFs-Bx-rla"/>
             </constraints>
         </view>
     </objects>
