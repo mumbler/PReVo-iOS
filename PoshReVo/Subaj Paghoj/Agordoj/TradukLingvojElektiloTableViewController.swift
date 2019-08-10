@@ -99,7 +99,7 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
         if indexPath.section == aldonSekcio {
             let navigaciilo = HelpaNavigationController()
             let elektilo = LingvoElektiloViewController()
-            elektilo.starigi(titolo: NSLocalizedString("serch-elektilo titolo", comment: ""),
+            elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo titolo", comment: ""),
                              suprajTitolo: NSLocalizedString("lingvo-elektilo serchataj etikedo", comment: ""))
             elektilo.delegate = self
             navigaciilo.viewControllers.append(elektilo)
