@@ -1,5 +1,5 @@
 //
-//  PriViewController.swift
+//  InformoPaghoViewController.swift
 //  PoshReVo
 //
 //  Created by Robin Hill on 3/12/16.
@@ -13,13 +13,20 @@ import TTTAttributedLabel
 /*
     Informoj pri la programo, kaj ligoj al samtemaj retpaghoj
 */
-class PriViewController : UIViewController, Chefpagho, Stilplena {
+class InformoPaghoViewController: UIViewController, Stilplena {
     
     @IBOutlet var rulumilo: UIScrollView?
+    @IBOutlet var fonoView: UIView?
+    @IBOutlet var linioView: UIView?
     @IBOutlet var etikedo: TTTAttributedLabel?
     
-    init() {
-        super.init(nibName: "PriViewController", bundle: nil)
+    var titolo: String?
+    var teksto: String?
+    
+    init(titolo: String, teksto: String) {
+        self.titolo = titolo
+        self.teksto = teksto
+        super.init(nibName: "InformoPaghoViewController", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,11 +35,12 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
     
     override func viewDidLoad() {
         
-        title = NSLocalizedString("pri titolo", comment: "")
-        let versioTeksto = String(format: NSLocalizedString("pri versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "" ])
-        let teksto = NSLocalizedString("pri teksto", comment: "") + "\n\n" + versioTeksto
-        etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        guard let teksto = teksto else { return }
         
+        title = titolo
+        
+        etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
+        etikedo?.text = teksto
         etikedo?.delegate = self
         
         efektivigiStilon()
@@ -47,21 +55,28 @@ class PriViewController : UIViewController, Chefpagho, Stilplena {
     
     func aranghiNavigaciilo() {
         
-        parent?.title = NSLocalizedString("pri titolo", comment: "")
+        guard let titolo = titolo else { return }
+        
+        parent?.title = NSLocalizedString(titolo, comment: "")
         parent?.navigationItem.rightBarButtonItem = nil
     }
     
     func efektivigiStilon() {
         
+        view.backgroundColor = UzantDatumaro.stilo.fonKoloro
         rulumilo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
-        view.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        fonoView?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        linioView?.layer.borderWidth = 1
+        linioView?.layer.borderColor = UzantDatumaro.stilo.fonKoloro.cgColor
+        linioView?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        
         etikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
         etikedo?.linkAttributes = [kCTForegroundColorAttributeName : UzantDatumaro.stilo.tintKoloro, kCTUnderlineStyleAttributeName : NSNumber(value: NSUnderlineStyle.single.rawValue)]
         //etikedo?.activeLinkAttributes = [NSAttributedString.Key.foregroundColor : UzantDatumaro.stilo.tintKoloro, .underlineStyle : NSNumber(value: .single.rawValue)]
     }
 }
 
-extension PriViewController : TTTAttributedLabelDelegate {
+extension InformoPaghoViewController : TTTAttributedLabelDelegate {
     
     func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
         if let url = url {
@@ -71,7 +86,7 @@ extension PriViewController : TTTAttributedLabelDelegate {
 }
 
 // Respondi al mediaj shanghoj
-extension PriViewController {
+extension InformoPaghoViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {
         etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)

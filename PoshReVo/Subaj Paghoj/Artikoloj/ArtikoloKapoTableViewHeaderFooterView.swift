@@ -12,6 +12,8 @@ import UIKit
 class ArtikoloKapoTableViewHeaderFooterView : UITableViewHeaderFooterView, Stilplena {
     
     @IBOutlet var etikedo: UILabel?
+    @IBOutlet var fonaView: UIView?
+    @IBOutlet var liniaView: UIView?
     
     func prepari() {
         
@@ -21,7 +23,10 @@ class ArtikoloKapoTableViewHeaderFooterView : UITableViewHeaderFooterView, Stilp
     
     func efektivigiStilon() {
         
-        contentView.backgroundColor = UzantDatumaro.stilo.fonKoloro
-        etikedo?.textColor = UzantDatumaro.stilo.fonTekstKoloro
+        fonaView?.backgroundColor = UzantDatumaro.stilo.bazKoloro
+        liniaView?.layer.borderWidth = 1
+        //liniaView?.layer.borderColor = UzantDatumaro.stilo.difinKapFonKoloro.cgColor
+        liniaView?.layer.borderColor = UzantDatumaro.stilo.fonKoloro.cgColor
+        etikedo?.textColor = UzantDatumaro.stilo.tekstKoloro
     }
 }

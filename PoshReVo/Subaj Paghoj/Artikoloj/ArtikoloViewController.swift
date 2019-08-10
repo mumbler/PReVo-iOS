@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import TTTAttributedLabel
 
+let subArtikolChelIdent = "subArtikolaChelo"
 let artikolChelIdent = "artikolaChelo"
 let artikolKapIdent  = "artikolaKapo"
 let artikolPiedIdent = "artikolaPiedo"
@@ -18,6 +19,10 @@ let artikolPiedIdent = "artikolaPiedo"
     Pagho kiu montras la artikolojn kun difinoj kaj tradukoj
 */
 class ArtikoloViewController : UIViewController, Stilplena {
+    
+    private enum ChelSpeco {
+        case Vorto(titolo: String, teksto: String), GrupKapo(titolo: String, teksto: String), Traduko(titolo: String, teksto: String)
+    }
     
     @IBOutlet var vortTabelo: UITableView?
     var artikolo: Artikolo? = nil
@@ -57,6 +62,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         vortTabelo?.delegate = self
         vortTabelo?.dataSource = self
         vortTabelo?.register(UINib(nibName: "ArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: artikolChelIdent)
+        vortTabelo?.register(UINib(nibName: "SubArtikoloTableViewCell", bundle: nil), forCellReuseIdentifier: subArtikolChelIdent)
         vortTabelo?.register(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
         vortTabelo?.register(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
         
@@ -228,64 +234,47 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let novaChelo: ArtikoloTableViewCell
-        if let trovChelo = vortTabelo?.dequeueReusableCell(withIdentifier: artikolChelIdent) as? ArtikoloTableViewCell {
-            novaChelo = trovChelo
-        } else {
-            novaChelo = ArtikoloTableViewCell()
-        }
+        guard let artikolo = artikolo else { fatalError("Devas esti artikolo") }
         
+        let chelSpeco: ChelSpeco
         if indexPath.section == 0 {
-            // La chelo montros difinon
-            
-            if artikolo?.grupoj.count == 1 {
-                if let vorto = artikolo?.grupoj.first?.vortoj[indexPath.row] {
-                    novaChelo.prepari(titolo: vorto.kunaTitolo, teksto: vorto.teksto, subart: false)
+            if artikolo.grupoj.count == 1 {
+                let grupo = artikolo.grupoj.first!
+                let vorto = grupo.vortoj[indexPath.row]
+                chelSpeco = .Vorto(titolo: vorto.kunaTitolo, teksto: vorto.teksto)
+            }
+            else {
+                if let vorto = vortoDeIndexPath(indexPath) {
+                    chelSpeco = .Vorto(titolo: vorto.kunaTitolo, teksto: vorto.teksto)
                 }
-            } else {
-                
-                var sumo = 0
-                for grupo in artikolo!.grupoj {
-                    
-                    if sumo == indexPath.row {
-                        novaChelo.prepari(titolo: "", teksto: grupo.teksto, subart: true)
-                        break
-                    }
-                    else if indexPath.row < sumo + grupo.vortoj.count + 1 {
-                        let vorto = grupo.vortoj[indexPath.row - sumo - 1]
-                        novaChelo.prepari(titolo: vorto.kunaTitolo, teksto: vorto.teksto, subart: false)
-                        break
-                    }
-                    
-                    sumo += grupo.vortoj.count + 1
+                else if let grupTeksto = grupTekstoDeIndexPath(indexPath) {
+                    chelSpeco = .GrupKapo(titolo: "?", teksto: grupTeksto)
+                }
+                else {
+                    fatalError("AHH")
                 }
             }
-        } else if indexPath.section == 1 {
-            // La chelo montros tradukon
-            
-            if let traduko = tradukListo?[indexPath.row] {
-                
-                novaChelo.prepari(titolo: traduko.lingvo.nomo, teksto: traduko.teksto, subart: false)
-            }
+        } else if indexPath.section == 1,
+            let traduko = tradukListo?[indexPath.row] {
+                chelSpeco = .Traduko(titolo: traduko.lingvo.nomo, teksto: traduko.teksto)
+        } else {
+            fatalError("Sekcia numero malvalidas")
         }
         
-        novaChelo.chefaEtikedo?.delegate = self
-        novaChelo.isAccessibilityElement = true
-        novaChelo.accessibilityLabel = ""
-        if let titolo = novaChelo.titolaEtikedo?.text as? String, !titolo.isEmpty {
-            novaChelo.accessibilityLabel! += titolo + ", " // TODO do this smarter
+        switch chelSpeco {
+            case .Vorto(let titolo, let teksto):
+                let novaChelo = tableView.dequeueReusableCell(withIdentifier: artikolChelIdent, for: indexPath) as! ArtikoloTableViewCell
+                pretigiArtikolaChelo(chelo: novaChelo, titolo: titolo, teksto: teksto)
+                return novaChelo
+            case .GrupKapo(let titolo, let teksto):
+                let novaChelo = tableView.dequeueReusableCell(withIdentifier: subArtikolChelIdent, for: indexPath) as! SubArtikoloTableViewCell
+                pretigiSubArtikolaChelo(chelo: novaChelo, titolo: titolo, teksto: teksto, unua: indexPath.row == 0)
+                return novaChelo
+            case .Traduko(let titolo, let teksto):
+                let novaChelo = tableView.dequeueReusableCell(withIdentifier: artikolChelIdent, for: indexPath) as! ArtikoloTableViewCell
+                pretigiArtikolaChelo(chelo: novaChelo, titolo: titolo, teksto: teksto)
+                return novaChelo
         }
-        novaChelo.accessibilityLabel! += novaChelo.chefaEtikedo?.text as? String ?? ""
-        
-        // Gesture Recognizer por kopiado
-        
-        for afero in novaChelo.gestureRecognizers ?? [] {
-            novaChelo.removeGestureRecognizer(afero)
-        }
-        let rekonilo = UILongPressGestureRecognizer(target: self, action: #selector(premisChelon(_:)))
-        novaChelo.addGestureRecognizer(rekonilo)
-        
-        return novaChelo
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -376,7 +365,88 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         
         return 0
     }
-
+    
+    // MARK: - Chelo starigado
+    
+    private func pretigiArtikolaChelo(chelo: ArtikoloTableViewCell, titolo: String, teksto: String) {
+        chelo.prepari(titolo: titolo, teksto: teksto)
+        chelo.chefaEtikedo?.delegate = self
+        pretigiChelAccessibility(chelo: chelo, titolo: titolo, teksto: teksto)
+        pretigiRekonilon(por: chelo)
+    }
+    
+    private func pretigiSubArtikolaChelo(chelo: SubArtikoloTableViewCell, titolo: String, teksto: String?, unua: Bool = false) {
+        chelo.prepari(titolo: titolo, teksto: teksto, unua: unua)
+        chelo.chefaEtikedo?.delegate = self
+        pretigiChelAccessibility(chelo: chelo, titolo: titolo, teksto: teksto)
+        pretigiRekonilon(por: chelo)
+    }
+    
+    private func pretigiChelAccessibility(chelo: UITableViewCell, titolo: String?, teksto: String?) {
+        chelo.isAccessibilityElement = true
+        if titolo == nil || teksto == nil {
+            chelo.accessibilityLabel = titolo ?? teksto
+        }
+        else if let titolo = titolo,
+            let teksto = teksto {
+            chelo.accessibilityLabel = [titolo, teksto].joined(separator: ",")
+        }
+    }
+    
+    private func pretigiRekonilon(por chelo: UITableViewCell) {
+        for rekonilo in chelo.gestureRecognizers ?? [] {
+            chelo.removeGestureRecognizer(rekonilo)
+        }
+        let rekonilo = UILongPressGestureRecognizer(target: self, action: #selector(premisChelon(_:)))
+        chelo.addGestureRecognizer(rekonilo)
+    }
+    
+    /*
+ if sumo == indexPath.row {
+ chelSpeco = .GrupKapo(titolo: "?", teksto: grupo.teksto)
+ break
+ }
+ else if indexPath.row < sumo + grupo.vortoj.count + 1 {
+ let vorto = grupo.vortoj[indexPath.row - sumo - 1]
+ chelSpeco = .Vorto(titolo: vorto.kunaTitolo, teksto: vorto.teksto)
+ break
+ }
+ */
+    // MARK: - Heliploj
+    
+    private func vortoDeIndexPath(_ indexPath: IndexPath) -> Vorto? {
+        guard let artikolo = artikolo else { fatalError("Devas esti artikolo") }
+        
+        var sumo = 0
+        for grupo in artikolo.grupoj {
+            if sumo == indexPath.row {
+                return nil
+            }
+            if indexPath.row < sumo + grupo.vortoj.count + 1 {
+                return grupo.vortoj[indexPath.row - sumo - 1]
+            }
+            sumo += grupo.vortoj.count + 1
+        }
+        
+        return nil
+    }
+    
+    private func grupTekstoDeIndexPath(_ indexPath: IndexPath) -> String? {
+        guard let artikolo = artikolo else { fatalError("Devas esti artikolo") }
+        
+        var sumo = 0
+        for grupo in artikolo.grupoj {
+            if sumo == indexPath.row {
+                return grupo.teksto
+            }
+            if indexPath.row < sumo + grupo.vortoj.count + 1 {
+                return nil
+            }
+            sumo += grupo.vortoj.count + 1
+        }
+        
+        return nil
+    }
 }
 
 extension ArtikoloViewController : TradukLingvojElektiloDelegate {
