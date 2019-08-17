@@ -9,10 +9,10 @@
 import CoreData
 
 struct SerchStato {
-    
     var peto: String
     var iterator: TrieIterator
     var rezultoj: [(String, [NSManagedObject])]
+    var atingisFinon: Bool
 }
 
 class TrieIterator {
@@ -81,7 +81,10 @@ final class TrieLegilo {
     public static func serchi(lingvoKodo: String, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStato {
         
         let iterator = TrieIterator(lingvo: lingvoKodo, peto: teksto)
-        let stato = SerchStato(peto: teksto, iterator: iterator, rezultoj: [(String, [NSManagedObject])]())
+        let stato = SerchStato(peto: teksto,
+                               iterator: iterator,
+                               rezultoj: [(String, [NSManagedObject])](),
+                               atingisFinon: false)
         
         return serchi(komencaStato: stato, limo: limo)
     }
@@ -89,17 +92,22 @@ final class TrieLegilo {
     public static func serchi(komencaStato stato: SerchStato, limo: Int) -> SerchStato {
         
         var rezultoj = stato.rezultoj
+        var atingisFinon = false
         
         for _ in 0..<limo {
             if let sekva = stato.iterator.next() {
                 rezultoj.append(sekva)
             }
             else {
+                atingisFinon = true
                 break
             }
         }
         
-        let finaStato = SerchStato(peto: stato.peto, iterator: stato.iterator, rezultoj: rezultoj)
+        let finaStato = SerchStato(peto: stato.peto,
+                                   iterator: stato.iterator,
+                                   rezultoj: rezultoj,
+                                   atingisFinon: atingisFinon)
         return finaStato
     }
     

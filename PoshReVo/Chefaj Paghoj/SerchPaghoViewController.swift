@@ -132,12 +132,11 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     }
     
     func venigiPli() {
-        if let stato = serchStato {
+        if let stato = serchStato, !stato.atingisFinon {
             serchStato = TrieLegilo.serchi(komencaStato: stato, limo: serchLimo)
             DispatchQueue.main.async {
                 self.trovTabelo?.reloadData()
             }
-
         }
     }
 }
