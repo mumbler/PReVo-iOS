@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
+import ReVoDatumbazo
+
 let serchChelIdent = "serchRezultoChelo"
 let serchLimo = 32
 
@@ -125,7 +127,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func fariSerchon(teksto: String) {
         if UzantDatumaro.serchLingvo != lastaSercho?.0 || teksto != lastaSercho?.1 {
-            serchStato = TrieLegilo.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, komenco: 0, limo: serchLimo)
+            serchStato = DatumbazAlirilo.komuna.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, komenco: 0, limo: serchLimo)
             trovTabelo?.reloadData()
             lastaSercho = (UzantDatumaro.serchLingvo, teksto)
         }
@@ -133,7 +135,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func venigiPli() {
         if let stato = serchStato, !stato.atingisFinon {
-            serchStato = TrieLegilo.serchi(komencaStato: stato, limo: serchLimo)
+            serchStato = DatumbazAlirilo.komuna.serchi(komencaStato: stato, limo: serchLimo)
             DispatchQueue.main.async {
                 self.trovTabelo?.reloadData()
             }

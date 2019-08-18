@@ -8,6 +8,8 @@
 
 import UIKit
 
+import ReVoDatumbazo
+
 private enum Chelo: Int {
     case Fakoj, Mallongigoj, IuAjn
     
@@ -78,7 +80,7 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
         case .Mallongigoj:
             return
         case .IuAjn:
-            let sekva = DatumLegilo.iuAjnArtikolo()
+            let sekva = DatumbazAlirilo.komuna.iuAjnArtikolo()
         }
     }
 }

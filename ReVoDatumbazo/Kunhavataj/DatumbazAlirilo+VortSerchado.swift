@@ -1,5 +1,5 @@
 //
-//  TrieLegilo.swift
+//  DatumbazAlirilo+VortSerchado.swift
 //  PoshReVo
 //
 //  Created by Robin Hill on 7/16/19.
@@ -8,43 +8,22 @@
 
 import CoreData
 
-struct SerchStato {
-    var peto: String
-    var iterator: TrieIterator
-    var rezultoj: [(String, [NSManagedObject])]
-    var atingisFinon: Bool
+public struct SerchStato {
+    public var peto: String
+    internal var iterator: TrieIterator
+    public var rezultoj: [(String, [NSManagedObject])]
+    public var atingisFinon: Bool
 }
 
-class TrieIterator {
+final public class TrieIterator {
     
     var nodStaplo = [NSManagedObject]()
     let locale: Locale
     
-    init(lingvo: String, peto: String) {
+    init(lingvoKodo: String, komencaNodo: NSManagedObject?) {
+        locale = Locale(identifier: lingvoKodo)
         
-        var nunNodo: NSManagedObject? = nil
-        var sekvaNodo: NSManagedObject? = nil
-        
-        locale = Locale(identifier: lingvo)
-        
-        for nunLitero in peto {
-            
-            sekvaNodo = nil
-            if nunNodo == nil {
-                sekvaNodo = TrieLegilo.komencaNodo(por: lingvo , kunLitero: String(nunLitero))
-            } else {
-                sekvaNodo = TrieLegilo.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero))
-            }
-            
-            if sekvaNodo != nil {
-                nunNodo = sekvaNodo
-            } else {
-                nunNodo = nil
-                break
-            }
-        }
-        
-        if let komencaNodo = nunNodo {
+        if let komencaNodo = komencaNodo {
             nodStaplo.append(komencaNodo)
         }
     }
@@ -74,22 +53,27 @@ class TrieIterator {
     }
 }
 
-final class TrieLegilo {
+extension DatumbazAlirilo {
     
-    // Publikaj metodoj
-    
-    public static func serchi(lingvoKodo: String, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStato {
+    public func serchi(lingvoKodo: String, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStato {
         
-        let iterator = TrieIterator(lingvo: lingvoKodo, peto: teksto)
-        let stato = SerchStato(peto: teksto,
-                               iterator: iterator,
-                               rezultoj: [(String, [NSManagedObject])](),
-                               atingisFinon: false)
-        
-        return serchi(komencaStato: stato, limo: limo)
+        if let iterator = starigiTrieIteraror(lingvo: lingvoKodo, peto: teksto) {
+            let stato = SerchStato(peto: teksto,
+                                   iterator: iterator,
+                                   rezultoj: [(String, [NSManagedObject])](),
+                                   atingisFinon: false)
+            
+            return serchi(komencaStato: stato, limo: limo)
+        }
+        else {
+            return SerchStato(peto: teksto,
+                              iterator: TrieIterator(lingvoKodo: lingvoKodo, komencaNodo: nil),
+                              rezultoj: [(String, [NSManagedObject])](),
+                              atingisFinon: true)
+        }
     }
     
-    public static func serchi(komencaStato stato: SerchStato, limo: Int) -> SerchStato {
+    public func serchi(komencaStato stato: SerchStato, limo: Int) -> SerchStato {
         
         var rezultoj = stato.rezultoj
         var atingisFinon = false
@@ -111,21 +95,21 @@ final class TrieLegilo {
         return finaStato
     }
     
-    public static func komencajNodojPorLingvo(_ lingvo: NSManagedObject) -> [NSManagedObject] {
+    public func komencajNodojPorLingvo(_ lingvo: NSManagedObject) -> [NSManagedObject] {
         
         return Array(lingvo.value(forKey: "komencajNodoj") as! Set)
     }
 
-    public static func komencaNodo(por kodo: String, kunLitero litero: String) -> NSManagedObject? {
+    public func komencaNodo(por kodo: String, kunLitero litero: String) -> NSManagedObject? {
         
-        guard let lingvoObjekto = DatumLegilo.lingvoPorKodo(kodo) else {
+        guard let lingvoObjekto = lingvoPorKodo(kodo) else {
             return nil
         }
         
         return komencaNodo(el: lingvoObjekto, kunLitero: litero)
     }
     
-    public static func komencaNodo(el lingvo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
+    public func komencaNodo(el lingvo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
             
         let nodoj = komencajNodojPorLingvo(lingvo)
         
@@ -139,7 +123,7 @@ final class TrieLegilo {
         return nil
     }
     
-    public static func sekvaNodo(el nodo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
+    public func sekvaNodo(el nodo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
         
         if let sekvaj: [NSManagedObject] = (nodo.value(forKey: "sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject] {
             
@@ -149,6 +133,28 @@ final class TrieLegilo {
             }) {
                 return sekvaj[trov]
             }
+        }
+        
+        return nil
+    }
+    
+    //Mark: TrieIteratorajhoj
+    
+    private func starigiTrieIteraror(lingvo: String, peto: String) -> TrieIterator? {
+        
+        var nunNodo = komencaNodo(por: lingvo , kunLitero: String(peto.prefix(1)))
+        
+        for nunLitero in String(peto.suffix(peto.count - 1)) {
+            if let sekvaNodo = sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
+                nunNodo = sekvaNodo
+            }
+            else {
+                return nil
+            }
+        }
+        
+        if let komencaNodo = nunNodo {
+            return TrieIterator(lingvoKodo: lingvo, komencaNodo: komencaNodo)
         }
         
         return nil

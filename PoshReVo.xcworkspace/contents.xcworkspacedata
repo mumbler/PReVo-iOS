@@ -8,6 +8,9 @@
       location = "group:ReVoDatumbazo/ReVoDatumbazo.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:DatumbazKonstruilo/DatumbazKonstruilo.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

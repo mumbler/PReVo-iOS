@@ -7,16 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003657062309C7980028C21F /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */; };
+		003657142309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657132309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift */; };
+		003657152309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657132309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift */; };
+		003657172309CE250028C21F /* DatumbazAlirilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657162309CE250028C21F /* DatumbazAlirilo.swift */; };
+		003657182309CE250028C21F /* DatumbazAlirilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657162309CE250028C21F /* DatumbazAlirilo.swift */; };
+		0036571A2309DB740028C21F /* DatumbazAlirilo+Objektaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657192309DB740028C21F /* DatumbazAlirilo+Objektaro.swift */; };
+		0036571B2309DB740028C21F /* DatumbazAlirilo+Objektaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657192309DB740028C21F /* DatumbazAlirilo+Objektaro.swift */; };
 		0051A6D02309A3690034DFF9 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003656FE2309C78F0028C21F /* ReVoDatumbazoOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoDatumbazoOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		003657012309C78F0028C21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		003657132309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatumbazAlirilo+VortSerchado.swift"; sourceTree = "<group>"; };
+		003657162309CE250028C21F /* DatumbazAlirilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatumbazAlirilo.swift; sourceTree = "<group>"; };
+		003657192309DB740028C21F /* DatumbazAlirilo+Objektaro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatumbazAlirilo+Objektaro.swift"; sourceTree = "<group>"; };
 		0051A6BF2309A2F90034DFF9 /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0051A6C32309A2F90034DFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0051A6CE2309A3630034DFF9 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		003656FB2309C78F0028C21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0051A6BC2309A2F90034DFF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -27,10 +46,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003656FF2309C78F0028C21F /* ReVoDatumbazoOSX */ = {
+			isa = PBXGroup;
+			children = (
+				003657012309C78F0028C21F /* Info.plist */,
+			);
+			path = ReVoDatumbazoOSX;
+			sourceTree = "<group>";
+		};
+		0036570F2309CA020028C21F /* Kunhavataj */ = {
+			isa = PBXGroup;
+			children = (
+				0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */,
+				003657162309CE250028C21F /* DatumbazAlirilo.swift */,
+				003657132309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift */,
+				003657192309DB740028C21F /* DatumbazAlirilo+Objektaro.swift */,
+			);
+			path = Kunhavataj;
+			sourceTree = "<group>";
+		};
 		0051A6B52309A2F90034DFF9 = {
 			isa = PBXGroup;
 			children = (
 				0051A6C12309A2F90034DFF9 /* ReVoDatumbazo */,
+				003656FF2309C78F0028C21F /* ReVoDatumbazoOSX */,
+				0036570F2309CA020028C21F /* Kunhavataj */,
 				0051A6C02309A2F90034DFF9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				0051A6BF2309A2F90034DFF9 /* ReVoDatumbazo.framework */,
+				003656FE2309C78F0028C21F /* ReVoDatumbazoOSX.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,7 +87,6 @@
 		0051A6C12309A2F90034DFF9 /* ReVoDatumbazo */ = {
 			isa = PBXGroup;
 			children = (
-				0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */,
 				0051A6C32309A2F90034DFF9 /* Info.plist */,
 			);
 			path = ReVoDatumbazo;
@@ -55,6 +95,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		003656F92309C78F0028C21F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0051A6BA2309A2F90034DFF9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +112,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		003656FD2309C78F0028C21F /* ReVoDatumbazoOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 003657052309C78F0028C21F /* Build configuration list for PBXNativeTarget "ReVoDatumbazoOSX" */;
+			buildPhases = (
+				003656F92309C78F0028C21F /* Headers */,
+				003656FA2309C78F0028C21F /* Sources */,
+				003656FB2309C78F0028C21F /* Frameworks */,
+				003656FC2309C78F0028C21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReVoDatumbazoOSX;
+			productName = ReVoDatumbazoOSX;
+			productReference = 003656FE2309C78F0028C21F /* ReVoDatumbazoOSX.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		0051A6BE2309A2F90034DFF9 /* ReVoDatumbazo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0051A6C72309A2F90034DFF9 /* Build configuration list for PBXNativeTarget "ReVoDatumbazo" */;
@@ -93,8 +158,13 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Robin Hill";
 				TargetAttributes = {
+					003656FD2309C78F0028C21F = {
+						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
+					};
 					0051A6BE2309A2F90034DFF9 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -111,11 +181,19 @@
 			projectRoot = "";
 			targets = (
 				0051A6BE2309A2F90034DFF9 /* ReVoDatumbazo */,
+				003656FD2309C78F0028C21F /* ReVoDatumbazoOSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		003656FC2309C78F0028C21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0051A6BD2309A2F90034DFF9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -126,17 +204,90 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		003656FA2309C78F0028C21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				003657182309CE250028C21F /* DatumbazAlirilo.swift in Sources */,
+				003657062309C7980028C21F /* PoshReVoDatumoj.xcdatamodeld in Sources */,
+				0036571B2309DB740028C21F /* DatumbazAlirilo+Objektaro.swift in Sources */,
+				003657152309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0051A6BB2309A2F90034DFF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				003657172309CE250028C21F /* DatumbazAlirilo.swift in Sources */,
 				0051A6D02309A3690034DFF9 /* PoshReVoDatumoj.xcdatamodeld in Sources */,
+				0036571A2309DB740028C21F /* DatumbazAlirilo+Objektaro.swift in Sources */,
+				003657142309CA3F0028C21F /* DatumbazAlirilo+VortSerchado.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		003657032309C78F0028C21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ReVoDatumbazoOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.ReVoDatumbazoOSX;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		003657042309C78F0028C21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ReVoDatumbazoOSX/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.ReVoDatumbazoOSX;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		0051A6C52309A2F90034DFF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -262,6 +413,7 @@
 		0051A6C82309A2F90034DFF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -271,6 +423,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ReVoDatumbazo/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -279,6 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = inthescales.ReVoDatumbazo;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,6 +441,7 @@
 		0051A6C92309A2F90034DFF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -296,6 +451,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ReVoDatumbazo/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +468,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		003657052309C78F0028C21F /* Build configuration list for PBXNativeTarget "ReVoDatumbazoOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				003657032309C78F0028C21F /* Debug */,
+				003657042309C78F0028C21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0051A6B92309A2F90034DFF9 /* Build configuration list for PBXProject "ReVoDatumbazo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

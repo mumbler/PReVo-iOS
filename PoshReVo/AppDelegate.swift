@@ -10,24 +10,18 @@ import UIKit
 import CoreData
 import iOS_Slide_Menu
 
-var kreiDatumbazon: Bool = false
+import ReVoDatumbazo
+
 let datumbazNomo = "PoshReVoDatumbazo"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var fenestro: UIWindow?
-    var konteksto: NSManagedObjectContext?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        kreiDatumbazon = ProcessInfo.processInfo.environment["kreiDatumbazon"] == "true"
-        
-        DatumLegilo.konteksto = self.managedObjectContext
-        
-        if kreiDatumbazon {
-            DatumLegilo.fariDatumbazon()
-        }
+        DatumbazAlirilo.komuna = DatumbazAlirilo(konteksto: managedObjectContext)
         
         SeancDatumaro.starigi()
         UzantDatumaro.starigi()
@@ -86,16 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         do {
             let pragmas: [String : String] = ["journal_mode" : "DELETE", "synchronous" : "OFF"]
-            if kreiDatumbazon {
-                do {
-                    try FileManager.default.removeItem(at: docsUrl)
-                } catch { }
-                let options = [NSSQLitePragmasOption : pragmas]
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: docsUrl, options: options)
-            } else {
-                let options = [NSReadOnlyPersistentStoreOption : true, NSSQLitePragmasOption : ["journal_mode" : "DELETE", "synchronous" : "OFF"]] as [String : Any]
-                try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: bundleUrl, options: options)
-            }
+            let options = [NSReadOnlyPersistentStoreOption : true, NSSQLitePragmasOption : ["journal_mode" : "DELETE", "synchronous" : "OFF"]] as [String : Any]
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: bundleUrl, options: options)
         } catch {
             // Report any error we got.
             var dict = [String: Any]()

@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+import ReVoDatumbazo
+
 /*
     La seancDatumaro enhavas preparitajn datumojn el la datumbazo por rapida
     atingo. Ekzemple la listo de lingvoj, fakoj, ktp.
@@ -24,7 +26,7 @@ class SeancDatumaro {
     
     static func starigi() {
         
-        for lingvo in DatumLegilo.chiujLingvoj() ?? [] {
+        for lingvo in DatumbazAlirilo.komuna.chiujLingvoj() ?? [] {
             
             if let kodo = lingvo.value(forKey: "kodo") as? String,
                let nomo = lingvo.value(forKey: "nomo") as? String {
@@ -40,7 +42,7 @@ class SeancDatumaro {
             return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         }
         
-        for fako in DatumLegilo.chiujFakoj() ?? [] {
+        for fako in DatumbazAlirilo.komuna.chiujFakoj() ?? [] {
             
             if let kodo = fako.value(forKey: "kodo") as? String,
                let nomo = fako.value(forKey: "nomo") as? String {
@@ -52,7 +54,7 @@ class SeancDatumaro {
             }
         }
 
-        for stilo in DatumLegilo.chiujStiloj() ?? [] {
+        for stilo in DatumbazAlirilo.komuna.chiujStiloj() ?? [] {
             
             if let kodo = stilo.value(forKey: "kodo") as? String,
                let nomo = stilo.value(forKey: "nomo") as? String {
@@ -60,7 +62,7 @@ class SeancDatumaro {
             }
         }
         
-        for mallongigo in DatumLegilo.chiujMallongigoj() ?? [] {
+        for mallongigo in DatumbazAlirilo.komuna.chiujMallongigoj() ?? [] {
             
             if let kodo = mallongigo.value(forKey: "kodo") as? String,
                let nomo = mallongigo.value(forKey: "nomo") as? String {
@@ -88,7 +90,7 @@ class SeancDatumaro {
     
     static func artikoloPorIndekso(_ indekso: String) -> Artikolo? {
         
-        if let objekto = DatumLegilo.artikoloPorIndekso(indekso) {
+        if let objekto = DatumbazAlirilo.komuna.artikoloPorIndekso(indekso) {
             return Artikolo(objekto: objekto)
         }
         
