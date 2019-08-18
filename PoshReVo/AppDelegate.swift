@@ -73,7 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: "PoshReVoDatumoj", withExtension: "momd")!
+        let datumbazBundle = Bundle(identifier: "inthescales.ReVoDatumbazo")!
+        let modelURL = datumbazBundle.url(forResource: "PoshReVoDatumoj", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
     
