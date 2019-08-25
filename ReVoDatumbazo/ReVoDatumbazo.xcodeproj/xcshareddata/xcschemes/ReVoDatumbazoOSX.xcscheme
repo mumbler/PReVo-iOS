@@ -17,21 +17,7 @@
                BlueprintIdentifier = "003656FD2309C78F0028C21F"
                BuildableName = "ReVoDatumbazoOSX.framework"
                BlueprintName = "ReVoDatumbazoOSX"
-               ReferencedContainer = "container:../ReVoDatumbazo/ReVoDatumbazo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "003656DD2309C2940028C21F"
-               BuildableName = "DatumbazKonstruilo"
-               BlueprintName = "DatumbazKonstruilo"
-               ReferencedContainer = "container:DatumbazKonstruilo.xcodeproj">
+               ReferencedContainer = "container:ReVoDatumbazo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -43,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "003656DD2309C2940028C21F"
-            BuildableName = "DatumbazKonstruilo"
-            BlueprintName = "DatumbazKonstruilo"
-            ReferencedContainer = "container:DatumbazKonstruilo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -65,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "003656DD2309C2940028C21F"
-            BuildableName = "DatumbazKonstruilo"
-            BlueprintName = "DatumbazKonstruilo"
-            ReferencedContainer = "container:DatumbazKonstruilo.xcodeproj">
+            BlueprintIdentifier = "003656FD2309C78F0028C21F"
+            BuildableName = "ReVoDatumbazoOSX.framework"
+            BlueprintName = "ReVoDatumbazoOSX"
+            ReferencedContainer = "container:ReVoDatumbazo.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -84,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "003656DD2309C2940028C21F"
-            BuildableName = "DatumbazKonstruilo"
-            BlueprintName = "DatumbazKonstruilo"
-            ReferencedContainer = "container:DatumbazKonstruilo.xcodeproj">
+            BlueprintIdentifier = "003656FD2309C78F0028C21F"
+            BuildableName = "ReVoDatumbazoOSX.framework"
+            BlueprintName = "ReVoDatumbazoOSX"
+            ReferencedContainer = "container:ReVoDatumbazo.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

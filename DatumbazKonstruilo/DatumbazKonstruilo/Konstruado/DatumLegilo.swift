@@ -13,20 +13,16 @@ import CoreData
     Chi tiu klaso legas la datumojn faritajn de la Ruby-programeto kaj uzas ilin
     cele al konstrui Core Data datumbazon por posta uzado.
 */
-class DatumLegilo {
+final class DatumLegilo {
+  
+    static let datumojURLString = "datumoj/"
     
-    static var konteksto: NSManagedObjectContext?
-    
-    static func fariDatumbazon() {
-        
-        guard let konteksto = konteksto else  {
-            fatalError("Eraro: necesas konteksto por fari datumbazon")
-        }
+    static func fariDatumbazon(en konteksto: NSManagedObjectContext) {
         
         var lingvoKodoj = [String]()
         
         // Enlegi lingvojn
-        if let lingvoURL = Bundle.main.url(forResource: "lingvoj", withExtension: "dat") {
+        if let lingvoURL = Bundle.main.url(forResource: datumojURLString + "lingvoj", withExtension: "dat") {
             do {
                 let lingvoDat = try Data(contentsOf: lingvoURL)
                 let lingvoJ = try JSONSerialization.jsonObject(with: lingvoDat, options: JSONSerialization.ReadingOptions())
@@ -48,12 +44,12 @@ class DatumLegilo {
                     try konteksto.save()
                 }
             } catch {
-                NSLog("Erar en kreado de lingvo-datumbaz-objektoj")
+                print("Erar en kreado de lingvo-datumbaz-objektoj")
             }
         }
         
         // Enlegi fakojn
-        if let fakoURL = Bundle.main.url(forResource: "fakoj", withExtension: "dat") {
+        if let fakoURL = Bundle.main.url(forResource: datumojURLString + "fakoj", withExtension: "dat") {
             do {
                 let fakoDat = try Data(contentsOf: fakoURL)
                 let fakoJ = try JSONSerialization.jsonObject(with: fakoDat as Data, options: JSONSerialization.ReadingOptions())
@@ -72,12 +68,12 @@ class DatumLegilo {
                     try konteksto.save()
                 }
             } catch {
-                NSLog("Erar en kreado de fako-datumbaz-objektoj")
+                print("Erar en kreado de fako-datumbaz-objektoj")
             }
         }
         
         // Enlegi stilojn
-        if let stiloURL = Bundle.main.url(forResource: "stiloj", withExtension: "dat") {
+        if let stiloURL = Bundle.main.url(forResource: datumojURLString + "stiloj", withExtension: "dat") {
             do {
                 let stiloDat = try Data(contentsOf: stiloURL)
                 let stiloJ = try JSONSerialization.jsonObject(with: stiloDat as Data, options: JSONSerialization.ReadingOptions())
@@ -96,12 +92,12 @@ class DatumLegilo {
                     try konteksto.save()
                 }
             } catch {
-                NSLog("Erar en kreado de stilo-datumbaz-objektoj")
+                print("Erar en kreado de stilo-datumbaz-objektoj")
             }
         }
         
         // Enlegi mallongigojn
-        if let mallongigoURL = Bundle.main.url(forResource: "mallongigoj", withExtension: "dat") {
+        if let mallongigoURL = Bundle.main.url(forResource: datumojURLString + "mallongigoj", withExtension: "dat") {
             do {
                 let mallongigoDat = try Data(contentsOf: mallongigoURL)
                 let mallongigoJ = try JSONSerialization.jsonObject(with: mallongigoDat as Data, options: JSONSerialization.ReadingOptions())
@@ -120,12 +116,12 @@ class DatumLegilo {
                     try konteksto.save()
                 }
             } catch {
-                NSLog("Erar en kreado de mallongigo-datumbaz-objektoj")
+                print("Erar en kreado de mallongigo-datumbaz-objektoj")
             }
         }
         
         // Enlegi artikolojn
-        if let artikoloURL = Bundle.main.url(forResource: "vortoj", withExtension: "dat") {
+        if let artikoloURL = Bundle.main.url(forResource: datumojURLString + "vortoj", withExtension: "dat") {
             do {
                 let artikoloDat = try Data(contentsOf: artikoloURL)
                 let artikoloJ = try JSONSerialization.jsonObject(with: artikoloDat as Data, options: JSONSerialization.ReadingOptions())
@@ -149,10 +145,11 @@ class DatumLegilo {
                     try konteksto.save()
                 }
             } catch {
-                NSLog("Erar en kreado de artikolo-datumbaz-objektoj")
+                print("Erar en kreado de artikolo-datumbaz-objektoj")
             }
         }
         
-        TrieFarilo.konstruiChiuTrie(en: konteksto, kodoj: lingvoKodoj)
+        let trieFarilo = TrieFarilo(konteksto: konteksto)
+        trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
     }
 }

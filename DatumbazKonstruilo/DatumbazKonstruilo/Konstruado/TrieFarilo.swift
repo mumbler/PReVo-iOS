@@ -9,27 +9,34 @@
 import Foundation
 import CoreData
 
+import ReVoDatumbazoOSX
+
 /*
     La trie farilo faras la trie parton de la datumbazo
 */
 final class TrieFarilo {
     
-    // ====================================
-    // Trie farado
-    // ====================================
+    let indeksojURLString = "/datumoj/indeksoj/"
     
-    static func konstruiChiuTrie(en konteksto: NSManagedObjectContext, kodoj: [String]) {
-        
+    let konteksto: NSManagedObjectContext
+    let alirilo: DatumbazAlirilo
+    
+    init(konteksto: NSManagedObjectContext) {
+        self.konteksto = konteksto
+        alirilo = DatumbazAlirilo(konteksto: konteksto)
+    }
+    
+    func konstruiChiuTrie(kodoj: [String]) {
         for lingvo in kodoj {
-            konstruiTriePorLingvo(en: konteksto, kodo: lingvo)
+            konstruiTriePorLingvo(kodo: lingvo)
         }
     }
     
-    static func konstruiTriePorLingvo(en konteksto: NSManagedObjectContext, kodo: String) {
+    func konstruiTriePorLingvo(kodo: String) {
         
-        if let tradukoURL = Bundle.main.url(forResource: "indekso_" + kodo, withExtension: "dat") {
+        if let tradukoURL = Bundle.main.url(forResource: indeksojURLString + "indekso_" + kodo, withExtension: "dat") {
             
-            let lingvoObjekto = DatumLegilo.lingvoPorKodo(kodo)
+            let lingvoObjekto = alirilo.lingvoPorKodo(kodo)
             if lingvoObjekto == nil {
                 return
             }
@@ -57,11 +64,11 @@ final class TrieFarilo {
                                 
                                 var sekvaNodo: NSManagedObject? = nil
                                 if nunNodo == nil {
-                                    if let trovNodo = TrieLegilo.komencaNodo(el: lingvoObjekto!, kunLitero: String(nunLitero)) {
+                                    if let trovNodo = alirilo.komencaNodo(el: lingvoObjekto!, kunLitero: String(nunLitero)) {
                                         sekvaNodo = trovNodo
                                     }
                                 } else {
-                                    if let trovNodo = TrieLegilo.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
+                                    if let trovNodo = alirilo.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
                                         sekvaNodo = trovNodo
                                     }
                                 }
@@ -88,7 +95,7 @@ final class TrieFarilo {
                                 novaDestino.setValue(nomo, forKey: "nomo")
                                 novaDestino.setValue(marko, forKey: "marko")
                                 novaDestino.setValue(String(senco), forKey: "senco")
-                                if let artikolo = DatumLegilo.artikoloPorIndekso(indekso!) {
+                                if let artikolo = alirilo.artikoloPorIndekso(indekso!) {
                                     novaDestino.setValue(artikolo, forKey: "artikolo")
                                 }
                                 nunNodo?.mutableOrderedSetValue(forKey: "destinoj").add(novaDestino)
@@ -102,7 +109,7 @@ final class TrieFarilo {
                     try konteksto.save()
                 }
             } catch {
-                NSLog("ERARO")
+                print("Eraro: Ne trovis datumojn por lingvo %@", kodo)
             }
         }
 

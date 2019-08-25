@@ -278,7 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				00848948226385200071CEC2 /* AppDelegate.swift */,
-				0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */,
 				0084894C226385200071CEC2 /* Info.plist */,
 				0084890E226385200071CEC2 /* Motoroj */,
 				00848938226385200071CEC2 /* Navigaciiloj */,
@@ -293,14 +292,15 @@
 		0084890E226385200071CEC2 /* Motoroj */ = {
 			isa = PBXGroup;
 			children = (
+				00848912226385200071CEC2 /* ObjC Ponto */,
 				00D0B71722D1473300814637 /* Pagharo */,
 				00848917226385200071CEC2 /* ModelObjekto.swift */,
+				0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */,
 				0084890F226385200071CEC2 /* SeancDatumaro.swift */,
 				00848910226385200071CEC2 /* UzantDatumaro.swift */,
 				00848918226385200071CEC2 /* Koloroj.swift */,
 				00848911226385200071CEC2 /* Stiloj.swift */,
 				00848916226385200071CEC2 /* Iloj.swift */,
-				00848912226385200071CEC2 /* ObjC Ponto */,
 			);
 			path = Motoroj;
 			sourceTree = "<group>";
