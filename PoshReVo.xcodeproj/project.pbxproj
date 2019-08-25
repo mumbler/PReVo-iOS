@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		000BF42622FD0FF100EA0271 /* InformoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF42522FD0FF100EA0271 /* InformoTableViewController.swift */; };
 		000BF42A22FE4C4000EA0271 /* InformoPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000BF42922FE4C4000EA0271 /* InformoPaghoViewController.xib */; };
-		002ED99522FF16230071D1A6 /* Generata.strings in Resources */ = {isa = PBXBuildFile; fileRef = 002ED99322FF16230071D1A6 /* Generata.strings */; };
 		003656D42309A50E0028C21F /* ReVoDatumbazo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003656D32309A50E0028C21F /* ReVoDatumbazo.framework */; };
 		0036571D2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */; };
+		0036572223132E8F0028C21F /* Generataj.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0036572023132E8F0028C21F /* Generataj.strings */; };
 		00477A70227654B700515416 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6E227654B700515416 /* Localizable.strings */; };
 		0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084890F226385200071CEC2 /* SeancDatumaro.swift */; };
 		0084894E226385200071CEC2 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848910226385200071CEC2 /* UzantDatumaro.swift */; };
@@ -91,9 +91,9 @@
 		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000BF42522FD0FF100EA0271 /* InformoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformoTableViewController.swift; sourceTree = "<group>"; };
 		000BF42922FE4C4000EA0271 /* InformoPaghoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformoPaghoViewController.xib; sourceTree = "<group>"; };
-		002ED99422FF16230071D1A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Generata.strings; sourceTree = "<group>"; };
 		003656D32309A50E0028C21F /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatumbazAlirilo+Komuna.swift"; sourceTree = "<group>"; };
+		0036572123132E8F0028C21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Generataj.strings; sourceTree = "<group>"; };
 		00477A6F227654B700515416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		0084890F226385200071CEC2 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
 		00848910226385200071CEC2 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				00477A6E227654B700515416 /* Localizable.strings */,
-				002ED99322FF16230071D1A6 /* Generata.strings */,
+				0036572023132E8F0028C21F /* Generataj.strings */,
 			);
 			name = Base.lproj;
 			path = PoshReVo/Helpajhoj/Base.lproj;
@@ -533,7 +533,6 @@
 				00A869BC2276497000A856E9 /* AgordojViewController.xib in Resources */,
 				00A869BD2276497000A856E9 /* KonservitajViewController.xib in Resources */,
 				00A869BE2276497000A856E9 /* IngoPaghoViewController.xib in Resources */,
-				002ED99522FF16230071D1A6 /* Generata.strings in Resources */,
 				00A869BF2276497000A856E9 /* HistorioViewController.xib in Resources */,
 				0097B1C722E7DC8F003DEDC4 /* SubArtikoloTableViewCell.xib in Resources */,
 				00A869C02276497000A856E9 /* ArtikoloViewController.xib in Resources */,
@@ -541,6 +540,7 @@
 				00477A70227654B700515416 /* Localizable.strings in Resources */,
 				00A869C42276497000A856E9 /* LingvoElektiloViewController.xib in Resources */,
 				00A869C52276497000A856E9 /* StiloElektiloViewController.xib in Resources */,
+				0036572223132E8F0028C21F /* Generataj.strings in Resources */,
 				00A869C62276497000A856E9 /* LicencoViewController.xib in Resources */,
 				00A869C72276497000A856E9 /* ArtikoloTableViewCell.xib in Resources */,
 				00A869C92276497000A856E9 /* VortoDisigiloViewController.xib in Resources */,
@@ -690,12 +690,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		002ED99322FF16230071D1A6 /* Generata.strings */ = {
+		0036572023132E8F0028C21F /* Generataj.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				002ED99422FF16230071D1A6 /* Base */,
+				0036572123132E8F0028C21F /* Base */,
 			);
-			name = Generata.strings;
+			name = Generataj.strings;
 			sourceTree = "<group>";
 		};
 		00477A6E227654B700515416 /* Localizable.strings */ = {

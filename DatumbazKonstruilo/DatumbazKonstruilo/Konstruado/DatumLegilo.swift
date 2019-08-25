@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+import ReVoDatumbazoOSX
+
 /*
     Chi tiu klaso legas la datumojn faritajn de la Ruby-programeto kaj uzas ilin
     cele al konstrui Core Data datumbazon por posta uzado.
@@ -154,7 +156,10 @@ final class DatumLegilo {
             }
         }
         
-        //let trieFarilo = TrieFarilo(konteksto: konteksto)
-        //trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
+        let trieFarilo = TrieFarilo(konteksto: konteksto)
+        trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
+        
+        let alirilo = DatumbazAlirilo(konteksto: konteksto)
+        TekstFarilo.fariTekstoDosieron(alirilo)
     }
 }

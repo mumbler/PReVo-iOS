@@ -11,6 +11,7 @@
 		003657082309C7AF0028C21F /* ReVoDatumbazoOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003657072309C7AF0028C21F /* ReVoDatumbazoOSX.framework */; };
 		0036570D2309C8C90028C21F /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657092309C7DD0028C21F /* DatumLegilo.swift */; };
 		0036570E2309C8CD0028C21F /* TrieFarilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036570A2309C7DD0028C21F /* TrieFarilo.swift */; };
+		0036571F231230C20028C21F /* TekstFarilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571E231230C20028C21F /* TekstFarilo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		003657072309C7AF0028C21F /* ReVoDatumbazoOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazoOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		003657092309C7DD0028C21F /* DatumLegilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatumLegilo.swift; sourceTree = "<group>"; };
 		0036570A2309C7DD0028C21F /* TrieFarilo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrieFarilo.swift; sourceTree = "<group>"; };
+		0036571E231230C20028C21F /* TekstFarilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TekstFarilo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				003657092309C7DD0028C21F /* DatumLegilo.swift */,
 				0036570A2309C7DD0028C21F /* TrieFarilo.swift */,
+				0036571E231230C20028C21F /* TekstFarilo.swift */,
 			);
 			path = Konstruado;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003656E22309C2940028C21F /* main.swift in Sources */,
+				0036571F231230C20028C21F /* TekstFarilo.swift in Sources */,
 				0036570D2309C8C90028C21F /* DatumLegilo.swift in Sources */,
 				0036570E2309C8CD0028C21F /* TrieFarilo.swift in Sources */,
 			);

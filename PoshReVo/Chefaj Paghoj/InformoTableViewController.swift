@@ -42,7 +42,7 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
                 titoloj = [
                     NSLocalizedString("informo revo titolo", comment: ""),
                     NSLocalizedString("informo vortaraj-mallongigoj titolo", comment: ""),
-                    NSLocalizedString("informo bibliografio titolo", comment: "")
+                    NSLocalizedString("informo fakaj-mallongigoj titolo", comment: "")
                 ]
             case .PoshReVo:
                 titoloj = [NSLocalizedString("informo poshrevo titolo", comment: "")]
@@ -59,8 +59,8 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
             case .ReVo:
                 tekstoj = [
                     NSLocalizedString("informo revo teksto", comment: ""),
-                    Bundle.main.localizedString(forKey: "informo vortaraj-mallongigoj teksto", value: nil, table: "Generata"),
-                    Bundle.main.localizedString(forKey: "informo bibliografio teksto", value: nil, table: "Generata")
+                    Bundle.main.localizedString(forKey: "informo vortaraj-mallongigoj teksto", value: nil, table: "Generataj"),
+                    Bundle.main.localizedString(forKey: "informo fakaj-mallongigoj teksto", value: nil, table: "Generataj")
                 ]
             case .PoshReVo:
                 let versioTeksto = String(format: NSLocalizedString("informo versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "" ])
