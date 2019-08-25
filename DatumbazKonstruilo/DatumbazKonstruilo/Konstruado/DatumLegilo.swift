@@ -128,10 +128,15 @@ final class DatumLegilo {
                 
                 if let listo = artikoloJ as? NSArray {
                     
+                    var artikoloNumero = 0
+                    
                     for artikolo in listo {
                         if let enhavoj = artikolo as? NSDictionary {
                             
                             let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Artikolo", into: konteksto)
+                            
+                            novaObjekto.setValue(artikoloNumero, forKey: "numero")
+                            artikoloNumero += 1
                             novaObjekto.setValue(enhavoj["titolo"], forKey: "titolo")
                             novaObjekto.setValue(enhavoj["radiko"], forKey: "radiko")
                             novaObjekto.setValue(enhavoj["indekso"], forKey: "indekso")
@@ -149,7 +154,7 @@ final class DatumLegilo {
             }
         }
         
-        let trieFarilo = TrieFarilo(konteksto: konteksto)
-        trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
+        //let trieFarilo = TrieFarilo(konteksto: konteksto)
+        //trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
     }
 }

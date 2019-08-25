@@ -47,24 +47,29 @@ final public class DatumbazAlirilo {
     }
 
     public func iuAjnArtikolo() -> NSManagedObject? {
-        
-        /*NSFetchRequest *myRequest = [[NSFetchRequest alloc] init];
-         [myRequest setEntity: [NSEntityDescription entityForName:myEntityName inManagedObjectContext:myManagedObjectContext]];
-         NSError *error = nil;
-         NSUInteger myEntityCount = [myManagedObjectContext countForFetchRequest:myRequest error:&error];
-         [myRequest release];*/
-        
+        let kvanto = kvantoDeArtikoloj()
+        let numero = Int.random(in: 0..<kvanto)
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto)
-        serchPeto.predicate = NSPredicate(format: "PK == %@", argumentArray: [2])
+        serchPeto.predicate = NSPredicate(format: "numero == %@", argumentArray: [numero])
         do {
             return try konteksto.fetch(serchPeto).first as? NSManagedObject
-        } catch {
-            
-        }
+        } catch {}
         
         return nil
+    }
+    
+    // Mark: Privataj
+    
+    private func kvantoDeArtikoloj() -> Int {
+        let kvantoPeto = NSFetchRequest<NSFetchRequestResult>()
+        kvantoPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto)
         
+        do {
+            return try konteksto.count(for: kvantoPeto)
+        } catch {}
+    
+        return 0
     }
 
 }

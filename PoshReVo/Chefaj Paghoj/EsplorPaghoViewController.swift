@@ -80,7 +80,11 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
         case .Mallongigoj:
             return
         case .IuAjn:
-            let sekva = DatumbazAlirilo.komuna.iuAjnArtikolo()
+            if let artikolObjekto = DatumbazAlirilo.komuna.iuAjnArtikolo(),
+                let artikolo = Artikolo(objekto: artikolObjekto),
+                let navigaciilo = navigationController as? ChefaNavigationController {
+                navigaciilo.montriArtikolon(artikolo)
+            }
         }
     }
 }
