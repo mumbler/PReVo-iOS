@@ -13,6 +13,7 @@
 		0036571D2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */; };
 		0036572223132E8F0028C21F /* Generataj.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0036572023132E8F0028C21F /* Generataj.strings */; };
 		00477A70227654B700515416 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6E227654B700515416 /* Localizable.strings */; };
+		00700AD5231C59150075A077 /* FakVortoListoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */; };
 		0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0084890F226385200071CEC2 /* SeancDatumaro.swift */; };
 		0084894E226385200071CEC2 /* UzantDatumaro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848910226385200071CEC2 /* UzantDatumaro.swift */; };
 		0084894F226385200071CEC2 /* Stiloj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00848911226385200071CEC2 /* Stiloj.swift */; };
@@ -95,6 +96,7 @@
 		0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatumbazAlirilo+Komuna.swift"; sourceTree = "<group>"; };
 		0036572123132E8F0028C21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Generataj.strings; sourceTree = "<group>"; };
 		00477A6F227654B700515416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
+		00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakVortoListoTableViewController.swift; sourceTree = "<group>"; };
 		0084890F226385200071CEC2 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
 		00848910226385200071CEC2 /* UzantDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UzantDatumaro.swift; sourceTree = "<group>"; };
 		00848911226385200071CEC2 /* Stiloj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stiloj.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				0097B1C022E532C6003DEDC4 /* FakoListoTableViewController.swift */,
+				00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */,
 			);
 			path = Esplorado;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				0084894F226385200071CEC2 /* Stiloj.swift in Sources */,
 				00D0B71922D1474100814637 /* Pagharo.swift in Sources */,
 				00848957226385200071CEC2 /* TradukLingvojElektiloTableViewController.swift in Sources */,
+				00700AD5231C59150075A077 /* FakVortoListoTableViewController.swift in Sources */,
 				0084894D226385200071CEC2 /* SeancDatumaro.swift in Sources */,
 				0097B1B922E51032003DEDC4 /* EsplorPaghoViewController.swift in Sources */,
 				00848962226385200071CEC2 /* LicencoViewController.swift in Sources */,

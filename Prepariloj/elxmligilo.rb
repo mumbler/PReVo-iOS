@@ -6,6 +6,7 @@ require 'nokogiri'
 
 @literoj = {}
 @esperantaj = []
+@fakvortoj = {}
 
 # Funkcioj Gheneralaj  =============================
 
@@ -153,6 +154,7 @@ if fakoDos
       rezulto = fakoRegesp.match(linio)
       if rezulto and rezulto.size == 4
          fakoj << [rezulto[1], rezulto[3], rezulto[2]]
+         @fakvortoj[rezulto[1]] = {}
       end
    end
 else
@@ -409,14 +411,13 @@ def traktiKapon(kap, stato)
    teksto = ""
    nomo = ""
    tildo = ""
-
    kap.children().each do |fil|
 
       if fil.name == "ofc"
          objekto["ofc"] = fil.text
-      elsif fil.name == "rad"
+      elsif fil.name == "rad" and stato["radiko"] == nil
          objekto["rad"] = fil.text
-	 stato["radiko"] = fil.text
+         stato["radiko"] = fil.text
          stato["artikolo"]["radiko"] = fil.text
          teksto += fil.text
       elsif fil.name == "fnt"
@@ -454,13 +455,25 @@ end
 
 def traktiUzon(uzo, stato)
 
-   objekto = {"tipo" => uzo.name}
-   uzo.each do |a, b|
-      objekto[a] = b
-   end
+    # registi fakvorton se cheestas
+    if uzo["tip"] == "fak"
+        for nomo in stato["nomo"].split(", ")
+            if not @fakvortoj[uzo.text].include?(nomo)
+                @fakvortoj[uzo.text][nomo] = []
+            end
+            
+            fakVorto = fariFakVorton(nomo, stato["artikolo"]["indekso"], stato["marko"][2], stato["senco"], nomo)
+            @fakvortoj[uzo.text][nomo] << fakVorto
+        end
+    end
+    
+    objekto = {"tipo" => uzo.name}
+    uzo.each do |a, b|
+        objekto[a] = b
+    end
 
-   objekto["teksto"] = uzo.text
-   return objekto
+    objekto["teksto"] = uzo.text
+    return objekto
 end
 
 def traktiDifinon(dif, stato)
@@ -826,6 +839,11 @@ def fariSerchTradukon(videbla, teksto, nomo, indekso, marko, senco)
    return {"videbla" => videbla, "teksto" => teksto, "nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco}
 
 end
+       
+def fariFakVorton(nomo, indekso, marko, senco, teksto)
+   
+    return {"nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco, "teksto" => teksto}
+end
 
 def provi(nodo)
 
@@ -1053,6 +1071,10 @@ def printi(nodo)
    end
    end # Fino de filoj
 
+    if nodo["tipo"] == "drv"
+        #puts nodo 
+    end
+    
    objekto["teksto"] = teksto
 
    if nodo["tipo"] == "art" and objekto["vortoj"] != nil and objekto["grupoj"] == []
@@ -1070,14 +1092,13 @@ if vortoDos and File.directory?(dir+"/xml/")
 
    puts "=== Legante artikolojn ==="
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
-      next if artikolDosiero == '.' or artikolDosiero == '..'
+      next if artikolDosiero == '.' or artikolDosiero == '..' or artikolDosiero[0] == '.'
 
       #artikolDosiero = "kasxta.xml"
       #puts "-legante #{artikolDosiero}"
       dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
       enhavo = dosiero.read
       dosiero.close()
-      
       xml = Nokogiri::XML(prepariTekston(enhavo))
 
       artikolo = {"indekso" => artikolDosiero.gsub(".xml", ""), "tradukoj" => {}}
@@ -1100,7 +1121,7 @@ vortoDos.close
 
 Dir.mkdir("preparita") unless File.exists?("preparita")
 
-LingvojElDos = File.open("preparita/lingvoj.dat", "w")
+LingvojElDos = File.open("preparita/lingvoj.json", "w")
 
 LingvojElDos.print JSON.generate(lingvoj)
 
@@ -1108,15 +1129,23 @@ LingvojElDos.close
 
 # ---
 
-FakojElDos = File.open("preparita/fakoj.dat", "w")
+FakojElDos = File.open("preparita/fakoj.json", "w")
 
 FakojElDos.print JSON.generate(fakoj)
 
 FakojElDos.close
-
+    
+# ---
+    
+FakVortojElDos = File.open("preparita/fakvortoj.json", "w")
+    
+FakVortojElDos.print JSON.generate(@fakvortoj)
+    
+FakojElDos.close
+    
 # ---
 
-MallongigElDos = File.open("preparita/mallongigoj.dat", "w")
+MallongigElDos = File.open("preparita/mallongigoj.json", "w")
 
 MallongigElDos.print JSON.generate(mallongigoj)
 
@@ -1124,7 +1153,7 @@ MallongigElDos.close
 
 # ---
 
-StilojElDos = File.open("preparita/stiloj.dat", "w")
+StilojElDos = File.open("preparita/stiloj.json", "w")
 
 StilojElDos.print JSON.generate(@stiloj)
 
@@ -1132,7 +1161,7 @@ StilojElDos.close
 
 # ---
 
-VortojElDos = File.open("preparita/vortoj.dat", "w")
+VortojElDos = File.open("preparita/vortoj.json", "w")
 
 VortojElDos.print JSON.generate(artikoloj)
 
@@ -1145,7 +1174,7 @@ Dir.mkdir("preparita/indeksoj") unless File.exists?("preparita/indeksoj")
 
 for lingvo in tradukoj.each_key
     
-    miaDos = File.open("preparita/indeksoj/indekso_#{lingvo}.dat", "w")
+    miaDos = File.open("preparita/indeksoj/indekso_#{lingvo}.json", "w")
 
     miaDos.print JSON.generate(tradukoj[lingvo])
 
@@ -1154,7 +1183,7 @@ end
 
 # Registri esperantajn vortojn
 
-miaDos = File.open("preparita/indeksoj/indekso_eo.dat", "w")
+miaDos = File.open("preparita/indeksoj/indekso_eo.json", "w")
 miaDos.print JSON.generate(@esperantaj)
 miaDos.close
 

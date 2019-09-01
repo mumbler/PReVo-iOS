@@ -11,9 +11,9 @@ import UIKit
 import ReVoDatumbazo
 
 private enum Chelo: Int {
-    case Fakoj, Mallongigoj, IuAjn
+    case Fakoj, IuAjn
     
-    public static let kvanto = [2, 1]
+    public static let kvanto = [1, 1]
     
     init?(indexPath: IndexPath) {
         switch indexPath.section {
@@ -30,8 +30,6 @@ private enum Chelo: Int {
         switch self {
         case .Fakoj:
             return NSLocalizedString("esplori fakoj titolo", comment: "")
-        case .Mallongigoj:
-            return NSLocalizedString("esplori mallongigoj titolo", comment: "")
         case .IuAjn:
             return NSLocalizedString("esplori iu ajn titolo", comment: "")
         }
@@ -75,10 +73,8 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
         
         switch chelTipo {
         case .Fakoj:
-            let fakojVC = FakoListoTableViewController(style: .grouped)
+            let fakojVC = FakoListoTableViewController(style: .plain)
             navigationController?.pushViewController(fakojVC, animated: true)
-        case .Mallongigoj:
-            return
         case .IuAjn:
             if let artikolObjekto = DatumbazAlirilo.komuna.iuAjnArtikolo(),
                 let artikolo = Artikolo(objekto: artikolObjekto),

@@ -27,7 +27,7 @@ final class TrieFarilo {
     }
     
     func konstruiChiuTrie(kodoj: [String]) {
-        for lingvo in kodoj {
+        for lingvo in ["eo"]/*kodoj*/ {
             konstruiTriePorLingvo(kodo: lingvo)
         }
     }

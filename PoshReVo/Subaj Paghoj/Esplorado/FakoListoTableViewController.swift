@@ -21,11 +21,12 @@ final class FakoListoTableViewController: BazStilaTableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let novaChelo = tableView.dequeueReusableCell(withIdentifier: FakoListoTableViewController.chelIdent) ?? UITableViewCell()
+        let novaChelo = tableView.dequeueReusableCell(withIdentifier: FakoListoTableViewController.chelIdent) ?? UITableViewCell(style: .value1, reuseIdentifier: FakoListoTableViewController.chelIdent)
         
         let fako = SeancDatumaro.fakoj[indexPath.row]
         
         novaChelo.textLabel?.text = fako.nomo
+        novaChelo.detailTextLabel?.text = fako.kodo
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
@@ -34,7 +35,9 @@ final class FakoListoTableViewController: BazStilaTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let fako = SeancDatumaro.fakoj[indexPath.row]
+        let listoVC = FakVortoListoTableViewController(fako)
+        navigationController?.pushViewController(listoVC, animated: true)
     }
     
 }

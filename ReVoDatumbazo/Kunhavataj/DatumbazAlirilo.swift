@@ -31,6 +31,20 @@ final public class DatumbazAlirilo {
         
         return nil
     }
+    
+    public func fakoPorKodo(_ kodo: String) -> NSManagedObject? {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Fako", in: konteksto)
+        serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
+        do {
+            return try konteksto.fetch(serchPeto).first as? NSManagedObject
+        } catch {
+            
+        }
+        
+        return nil
+    }
 
     public func artikoloPorIndekso(_ indekso: String) -> NSManagedObject? {
         

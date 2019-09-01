@@ -33,6 +33,20 @@ extension DatumbazAlirilo {
         return nil
     }
     
+    public func fakVortojPorFako(_ kodo: String) -> [NSManagedObject]? {
+        
+        if let fako = fakoPorKodo(kodo) {
+            let vortoj = fako.mutableSetValue(forKey: "fakvortoj").allObjects as? [NSManagedObject]
+            return vortoj?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
+                let unuaNomo = unua.value(forKey: "nomo") as! String
+                let duaNomo = dua.value(forKey: "nomo") as! String
+                return unuaNomo.compare(duaNomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+            })
+        }
+        
+        return nil
+    }
+    
     public func chiujStiloj() -> [NSManagedObject]? {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()

@@ -21,6 +21,7 @@
     <entity name="Fako" syncable="YES">
         <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fakvortoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Destino" syncable="YES"/>
     </entity>
     <entity name="Lingvo" syncable="YES">
         <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,7 +46,7 @@
     <elements>
         <element name="Artikolo" positionX="0" positionY="54" width="128" height="150"/>
         <element name="Destino" positionX="-9" positionY="72" width="128" height="150"/>
-        <element name="Fako" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Fako" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Lingvo" positionX="18" positionY="99" width="128" height="90"/>
         <element name="Mallongigo" positionX="36" positionY="108" width="128" height="75"/>
         <element name="Stilo" positionX="-54" positionY="9" width="128" height="75"/>

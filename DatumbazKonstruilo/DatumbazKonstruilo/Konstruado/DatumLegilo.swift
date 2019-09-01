@@ -22,9 +22,11 @@ final class DatumLegilo {
     static func fariDatumbazon(en konteksto: NSManagedObjectContext) {
         
         var lingvoKodoj = [String]()
+
+        let alirilo = DatumbazAlirilo(konteksto: konteksto)
         
         // Enlegi lingvojn
-        if let lingvoURL = Bundle.main.url(forResource: datumojURLString + "lingvoj", withExtension: "dat") {
+        if let lingvoURL = Bundle.main.url(forResource: datumojURLString + "lingvoj", withExtension: "json") {
             do {
                 let lingvoDat = try Data(contentsOf: lingvoURL)
                 let lingvoJ = try JSONSerialization.jsonObject(with: lingvoDat, options: JSONSerialization.ReadingOptions())
@@ -51,7 +53,7 @@ final class DatumLegilo {
         }
         
         // Enlegi fakojn
-        if let fakoURL = Bundle.main.url(forResource: datumojURLString + "fakoj", withExtension: "dat") {
+        if let fakoURL = Bundle.main.url(forResource: datumojURLString + "fakoj", withExtension: "json") {
             do {
                 let fakoDat = try Data(contentsOf: fakoURL)
                 let fakoJ = try JSONSerialization.jsonObject(with: fakoDat as Data, options: JSONSerialization.ReadingOptions())
@@ -75,7 +77,7 @@ final class DatumLegilo {
         }
         
         // Enlegi stilojn
-        if let stiloURL = Bundle.main.url(forResource: datumojURLString + "stiloj", withExtension: "dat") {
+        if let stiloURL = Bundle.main.url(forResource: datumojURLString + "stiloj", withExtension: "json") {
             do {
                 let stiloDat = try Data(contentsOf: stiloURL)
                 let stiloJ = try JSONSerialization.jsonObject(with: stiloDat as Data, options: JSONSerialization.ReadingOptions())
@@ -99,7 +101,7 @@ final class DatumLegilo {
         }
         
         // Enlegi mallongigojn
-        if let mallongigoURL = Bundle.main.url(forResource: datumojURLString + "mallongigoj", withExtension: "dat") {
+        if let mallongigoURL = Bundle.main.url(forResource: datumojURLString + "mallongigoj", withExtension: "json") {
             do {
                 let mallongigoDat = try Data(contentsOf: mallongigoURL)
                 let mallongigoJ = try JSONSerialization.jsonObject(with: mallongigoDat as Data, options: JSONSerialization.ReadingOptions())
@@ -123,7 +125,7 @@ final class DatumLegilo {
         }
         
         // Enlegi artikolojn
-        if let artikoloURL = Bundle.main.url(forResource: datumojURLString + "vortoj", withExtension: "dat") {
+        if let artikoloURL = Bundle.main.url(forResource: datumojURLString + "vortoj", withExtension: "json") {
             do {
                 let artikoloDat = try Data(contentsOf: artikoloURL)
                 let artikoloJ = try JSONSerialization.jsonObject(with: artikoloDat as Data, options: JSONSerialization.ReadingOptions())
@@ -156,10 +158,49 @@ final class DatumLegilo {
             }
         }
         
-        let trieFarilo = TrieFarilo(konteksto: konteksto)
-        trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
+        // Enlegi fakojvortojn
+        if let fakvortoURL = Bundle.main.url(forResource: datumojURLString + "fakvortoj", withExtension: "json") {
+            do {
+                let fakvortojDat = try Data(contentsOf: fakvortoURL)
+                let fakvortojJSON = try JSONSerialization.jsonObject(with: fakvortojDat as Data, options: JSONSerialization.ReadingOptions())
+                
+                if let fakoj = fakvortojJSON as? NSDictionary {
+                    for (fako, vortoj) in fakoj as? [String: [String: [AnyObject]] ] ?? [:] {
+                        for (_, datumoj) in vortoj {
+                            
+                            let vortDatumoj = datumoj.first!
+                            
+                            let nomo = vortDatumoj["nomo"] as? String
+                            let teksto = vortDatumoj["teksto"] as? String
+                            let indekso = vortDatumoj["indekso"] as? String
+                            let marko = vortDatumoj["marko"] as? String
+                            let senco = vortDatumoj["senco"] as! Int
+                            
+                            let novaDestino = NSEntityDescription.insertNewObject(forEntityName: "Destino", into: konteksto)
+                            novaDestino.setValue(teksto, forKey: "teksto")
+                            novaDestino.setValue(indekso, forKey: "indekso")
+                            novaDestino.setValue(nomo, forKey: "nomo")
+                            novaDestino.setValue(marko, forKey: "marko")
+                            novaDestino.setValue(String(senco), forKey: "senco")
+                            if let artikolo = alirilo.artikoloPorIndekso(indekso!) {
+                                novaDestino.setValue(artikolo, forKey: "artikolo")
+                                if let fako = alirilo.fakoPorKodo(fako) {
+                                    fako.mutableSetValue(forKey: "fakvortoj").add(novaDestino)
+                                }
+                            }
+                        }
+                    }
+                    
+                    try konteksto.save()
+                }
+            } catch {
+                print("Erar en kreado de fako-datumbaz-objektoj")
+            }
+        }
         
-        let alirilo = DatumbazAlirilo(konteksto: konteksto)
+        //let trieFarilo = TrieFarilo(konteksto: konteksto)
+        //trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
+        
         TekstFarilo.fariTekstoDosieron(alirilo)
     }
 }
