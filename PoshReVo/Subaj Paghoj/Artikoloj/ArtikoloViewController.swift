@@ -21,7 +21,7 @@ let artikolPiedIdent = "artikolaPiedo"
 class ArtikoloViewController : UIViewController, Stilplena {
     
     private enum ChelSpeco {
-        case Vorto(titolo: String, teksto: String), GrupKapo(titolo: String, teksto: String), Traduko(titolo: String, teksto: String)
+        case Vorto(titolo: String, teksto: String), GrupKapo(titolo: String?, teksto: String?), Traduko(titolo: String, teksto: String)
     }
     
     @IBOutlet var vortTabelo: UITableView?
@@ -248,7 +248,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
                     chelSpeco = .Vorto(titolo: vorto.kunaTitolo, teksto: vorto.teksto)
                 }
                 else if let grupTeksto = grupTekstoDeIndexPath(indexPath) {
-                    chelSpeco = .GrupKapo(titolo: "?", teksto: grupTeksto)
+                    chelSpeco = .GrupKapo(titolo: nil, teksto: grupTeksto)
                 }
                 else {
                     fatalError("AHH")
@@ -375,7 +375,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         pretigiRekonilon(por: chelo)
     }
     
-    private func pretigiSubArtikolaChelo(chelo: SubArtikoloTableViewCell, titolo: String, teksto: String?, unua: Bool = false) {
+    private func pretigiSubArtikolaChelo(chelo: SubArtikoloTableViewCell, titolo: String?, teksto: String?, unua: Bool = false) {
         chelo.prepari(titolo: titolo, teksto: teksto, unua: unua)
         chelo.chefaEtikedo?.delegate = self
         pretigiChelAccessibility(chelo: chelo, titolo: titolo, teksto: teksto)

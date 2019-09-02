@@ -14,6 +14,7 @@ final class SubArtikoloTableViewCell : UITableViewCell, Stilplena {
     
     @IBOutlet var supraConstraint: NSLayoutConstraint?
     @IBOutlet var interConstraint: NSLayoutConstraint?
+    @IBOutlet var titolaAltecConstraint: NSLayoutConstraint?
     @IBOutlet var chefaAltecConstraint: NSLayoutConstraint?
     
     @IBOutlet var fonaView: UIView?
@@ -23,14 +24,18 @@ final class SubArtikoloTableViewCell : UITableViewCell, Stilplena {
     
     var subart: Bool = false
     
-    func prepari(titolo: String, teksto: String?, unua: Bool = false) {
+    func prepari(titolo: String?, teksto: String?, unua: Bool = false) {
         
-        titolaEtikedo?.text = titolo
-        titolaEtikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body);
+        if let titolo = titolo {
+            titolaAltecConstraint?.isActive = false
+            titolaEtikedo?.text = titolo
+            titolaEtikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body);
+        } else {
+            titolaAltecConstraint?.isActive = true
+        }
         
         if let teksto = teksto {
             chefaEtikedo?.text = Iloj.forigiAngulojn(teksto: teksto)
-            interConstraint?.constant = 4
             chefaAltecConstraint?.isActive = false
             
             let markoj = Iloj.troviMarkojn(teksto: teksto)
@@ -41,8 +46,13 @@ final class SubArtikoloTableViewCell : UITableViewCell, Stilplena {
             }
         }
         else {
-            interConstraint?.constant = 0
             chefaAltecConstraint?.isActive = true
+        }
+        
+        if titolo != nil && teksto != nil {
+            interConstraint?.constant = 4
+        } else {
+            interConstraint?.constant = 0
         }
         
         if unua {

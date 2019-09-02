@@ -16,13 +16,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AM4-j5-mfX" userLabel="FonaView">
-                    <rect key="frame" x="4" y="16" width="312" height="42"/>
+                    <rect key="frame" x="0.0" y="16" width="320" height="42"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJD-7B-3DS" userLabel="LiniaView">
-                            <rect key="frame" x="4" y="4" width="304" height="34"/>
+                            <rect key="frame" x="4" y="4" width="312" height="34"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k66-LU-9rw">
-                                    <rect key="frame" x="4" y="4" width="296" height="26"/>
+                                    <rect key="frame" x="4" y="4" width="304" height="26"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -46,9 +46,9 @@
                 </view>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="AM4-j5-mfX" secondAttribute="trailing" constant="4" id="VvK-f6-Y4j"/>
+                <constraint firstAttribute="trailing" secondItem="AM4-j5-mfX" secondAttribute="trailing" id="VvK-f6-Y4j"/>
                 <constraint firstItem="AM4-j5-mfX" firstAttribute="top" secondItem="fnU-pH-h7z" secondAttribute="top" constant="16" id="m99-5x-IwP"/>
-                <constraint firstItem="AM4-j5-mfX" firstAttribute="leading" secondItem="fnU-pH-h7z" secondAttribute="leading" constant="4" id="sRP-8e-zR4"/>
+                <constraint firstItem="AM4-j5-mfX" firstAttribute="leading" secondItem="fnU-pH-h7z" secondAttribute="leading" id="sRP-8e-zR4"/>
                 <constraint firstAttribute="bottom" secondItem="AM4-j5-mfX" secondAttribute="bottom" constant="4" id="tJf-I3-j7l"/>
             </constraints>
             <connections>
