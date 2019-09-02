@@ -133,18 +133,18 @@ class Iloj {
                 rubo += 1
                 en = false
                 
-                if enhavo == "i" {
+                if enhavo == "i" || enhavo == "k" {
                     akcentoStako.append(loko)
                 }
-                else if enhavo == "/i" {
+                else if enhavo == "/i" || enhavo == "/k" {
                     if let nombro = akcentoStako.popLast() {
                         rez[markoAkcentoKlavo]?.append((nombro, loko, ""))
                     }
                 }
-                else if enhavo == "b" {
+                else if enhavo == "b" || enhavo == "g" {
                     fortoStako.append(loko)
                 }
-                else if enhavo == "/b" {
+                else if enhavo == "/b" || enhavo == "/g" {
                     if let nombro = fortoStako.popLast() {
                         rez[markoFortoKlavo]?.append((nombro, loko, ""))
                     }
@@ -223,13 +223,19 @@ class Iloj {
                         // Fari nenion
                     } else if enhavoj == "<i>"    ||
                               enhavoj == "</i>"   ||
+                              enhavoj == "<k>"    ||
+                              enhavoj == "</k>"   ||
                               enhavoj == "<b>"    ||
                               enhavoj == "</b>"   ||
+                              enhavoj == "<g>"    ||
+                              enhavoj == "</g>"   ||
                               enhavoj == "<sup>"  ||
                               enhavoj == "</sup>" ||
                               enhavoj == "<sub>"  ||
                               enhavoj == "</sub>" ||
-                              enhavoj == "</a>" {
+                              enhavoj == "</a>" ||
+                              enhavoj == "<frm>" ||
+                              enhavoj == "</frm>" {
                                 // Fari nenion
                     } else {
                         rez += enhavoj

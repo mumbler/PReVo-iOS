@@ -400,18 +400,7 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         let rekonilo = UILongPressGestureRecognizer(target: self, action: #selector(premisChelon(_:)))
         chelo.addGestureRecognizer(rekonilo)
     }
-    
-    /*
- if sumo == indexPath.row {
- chelSpeco = .GrupKapo(titolo: "?", teksto: grupo.teksto)
- break
- }
- else if indexPath.row < sumo + grupo.vortoj.count + 1 {
- let vorto = grupo.vortoj[indexPath.row - sumo - 1]
- chelSpeco = .Vorto(titolo: vorto.kunaTitolo, teksto: vorto.teksto)
- break
- }
- */
+
     // MARK: - Heliploj
     
     private func vortoDeIndexPath(_ indexPath: IndexPath) -> Vorto? {
