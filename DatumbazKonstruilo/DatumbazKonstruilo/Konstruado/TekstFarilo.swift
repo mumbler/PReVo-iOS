@@ -14,7 +14,7 @@ final class TekstFarilo {
 
     public static func fariTekstoDosieron(_ alirilo: DatumbazAlirilo) {
         
-        let dosierNomo = "Generataj.strings"
+        let dosierNomo = "/produktajhoj/Generataj.strings"
         let teksto = verkiTekstojn(alirilo)
         let url = Bundle.main.bundleURL
             
@@ -36,6 +36,9 @@ final class TekstFarilo {
     }
     
     private static func verkiTekstojn(_ alirilo: DatumbazAlirilo) -> String {
+        
+        print("Verkas tekstojn")
+        
         var teksto = ""
         teksto += verkiKapanTekston()
         teksto += "\n"

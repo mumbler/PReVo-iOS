@@ -142,10 +142,14 @@ extension DatumbazAlirilo {
     
     private func starigiTrieIteraror(lingvo: String, peto: String) -> TrieIterator? {
         
-        var nunNodo = komencaNodo(por: lingvo , kunLitero: String(peto.prefix(1)))
+        guard peto.count > 0,
+            let komencaNodo = komencaNodo(por: lingvo , kunLitero: String(peto.prefix(1))) else {
+            return nil
+        }
         
+        var nunNodo = komencaNodo
         for nunLitero in String(peto.suffix(peto.count - 1)) {
-            if let sekvaNodo = sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
+            if let sekvaNodo = sekvaNodo(el: nunNodo, kunLitero: String(nunLitero)) {
                 nunNodo = sekvaNodo
             }
             else {
@@ -153,10 +157,6 @@ extension DatumbazAlirilo {
             }
         }
         
-        if let komencaNodo = nunNodo {
-            return TrieIterator(lingvoKodo: lingvo, komencaNodo: komencaNodo)
-        }
-        
-        return nil
+        return TrieIterator(lingvoKodo: lingvo, komencaNodo: nunNodo)
     }
 }

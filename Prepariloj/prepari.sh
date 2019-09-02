@@ -8,15 +8,15 @@ fi
 echo $LOKO/revo
 if [ -e $LOKO/revo ]
 then
+
    echo "Trovis elxmligilon kaj revo-dosierujon"
    ruby $LOKO/elxmligilo.rb $LOKO/revo --trace
    echo "Finis elxmligadon"
-   if [ -e $LOKO/preparita ]
+   if [ ! -e $LOKO/datumoj ]
    then
-      mv $LOKO/preparita $LOKO/PoshReVo/Datumoj
-   else
-      echo "Ne trovis preparitan dosierujon"
+      echo "Ne trovis datumo-dosierujon"
    fi
+   $LOKO/DatumbazKonstruilo
 else
    echo "Ne trovis revo-dosierujon"
 fi

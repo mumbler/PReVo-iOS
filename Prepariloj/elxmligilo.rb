@@ -1119,9 +1119,9 @@ vortoDos.close
 
 # ============================
 
-Dir.mkdir("preparita") unless File.exists?("preparita")
+Dir.mkdir("datumoj") unless File.exists?("datumoj")
 
-LingvojElDos = File.open("preparita/lingvoj.json", "w")
+LingvojElDos = File.open("datumoj/lingvoj.json", "w")
 
 LingvojElDos.print JSON.generate(lingvoj)
 
@@ -1129,7 +1129,7 @@ LingvojElDos.close
 
 # ---
 
-FakojElDos = File.open("preparita/fakoj.json", "w")
+FakojElDos = File.open("datumoj/fakoj.json", "w")
 
 FakojElDos.print JSON.generate(fakoj)
 
@@ -1137,7 +1137,7 @@ FakojElDos.close
     
 # ---
     
-FakVortojElDos = File.open("preparita/fakvortoj.json", "w")
+FakVortojElDos = File.open("datumoj/fakvortoj.json", "w")
     
 FakVortojElDos.print JSON.generate(@fakvortoj)
     
@@ -1145,7 +1145,7 @@ FakojElDos.close
     
 # ---
 
-MallongigElDos = File.open("preparita/mallongigoj.json", "w")
+MallongigElDos = File.open("datumoj/mallongigoj.json", "w")
 
 MallongigElDos.print JSON.generate(mallongigoj)
 
@@ -1153,7 +1153,7 @@ MallongigElDos.close
 
 # ---
 
-StilojElDos = File.open("preparita/stiloj.json", "w")
+StilojElDos = File.open("datumoj/stiloj.json", "w")
 
 StilojElDos.print JSON.generate(@stiloj)
 
@@ -1161,7 +1161,7 @@ StilojElDos.close
 
 # ---
 
-VortojElDos = File.open("preparita/vortoj.json", "w")
+VortojElDos = File.open("datumoj/vortoj.json", "w")
 
 VortojElDos.print JSON.generate(artikoloj)
 
@@ -1170,11 +1170,11 @@ VortojElDos.close
 # ---
 # Registri tradukojn po lingvo
 
-Dir.mkdir("preparita/indeksoj") unless File.exists?("preparita/indeksoj")
+Dir.mkdir("datumoj/indeksoj") unless File.exists?("datumoj/indeksoj")
 
 for lingvo in tradukoj.each_key
     
-    miaDos = File.open("preparita/indeksoj/indekso_#{lingvo}.json", "w")
+    miaDos = File.open("datumoj/indeksoj/indekso_#{lingvo}.json", "w")
 
     miaDos.print JSON.generate(tradukoj[lingvo])
 
@@ -1183,8 +1183,9 @@ end
 
 # Registri esperantajn vortojn
 
-miaDos = File.open("preparita/indeksoj/indekso_eo.json", "w")
+miaDos = File.open("datumoj/indeksoj/indekso_eo.json", "w")
 miaDos.print JSON.generate(@esperantaj)
 miaDos.close
 
-# === Fino ===/Users/robin/Desktop
+# === Fino ===
+puts "=== Finis ElXMLigadon ==="

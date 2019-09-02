@@ -28,6 +28,7 @@ final class DatumLegilo {
         // Enlegi lingvojn
         if let lingvoURL = Bundle.main.url(forResource: datumojURLString + "lingvoj", withExtension: "json") {
             do {
+                print("Legas lingvojn")
                 let lingvoDat = try Data(contentsOf: lingvoURL)
                 let lingvoJ = try JSONSerialization.jsonObject(with: lingvoDat, options: JSONSerialization.ReadingOptions())
                 
@@ -55,6 +56,7 @@ final class DatumLegilo {
         // Enlegi fakojn
         if let fakoURL = Bundle.main.url(forResource: datumojURLString + "fakoj", withExtension: "json") {
             do {
+                print("Legas fakojn")
                 let fakoDat = try Data(contentsOf: fakoURL)
                 let fakoJ = try JSONSerialization.jsonObject(with: fakoDat as Data, options: JSONSerialization.ReadingOptions())
                 
@@ -79,6 +81,7 @@ final class DatumLegilo {
         // Enlegi stilojn
         if let stiloURL = Bundle.main.url(forResource: datumojURLString + "stiloj", withExtension: "json") {
             do {
+                print("Legas stilojn")
                 let stiloDat = try Data(contentsOf: stiloURL)
                 let stiloJ = try JSONSerialization.jsonObject(with: stiloDat as Data, options: JSONSerialization.ReadingOptions())
                 
@@ -103,6 +106,7 @@ final class DatumLegilo {
         // Enlegi mallongigojn
         if let mallongigoURL = Bundle.main.url(forResource: datumojURLString + "mallongigoj", withExtension: "json") {
             do {
+                print("Legas mallongigojn")
                 let mallongigoDat = try Data(contentsOf: mallongigoURL)
                 let mallongigoJ = try JSONSerialization.jsonObject(with: mallongigoDat as Data, options: JSONSerialization.ReadingOptions())
                 
@@ -127,6 +131,7 @@ final class DatumLegilo {
         // Enlegi artikolojn
         if let artikoloURL = Bundle.main.url(forResource: datumojURLString + "vortoj", withExtension: "json") {
             do {
+                print("Legas artikolojn")
                 let artikoloDat = try Data(contentsOf: artikoloURL)
                 let artikoloJ = try JSONSerialization.jsonObject(with: artikoloDat as Data, options: JSONSerialization.ReadingOptions())
                 
@@ -161,6 +166,7 @@ final class DatumLegilo {
         // Enlegi fakojvortojn
         if let fakvortoURL = Bundle.main.url(forResource: datumojURLString + "fakvortoj", withExtension: "json") {
             do {
+                print("Legas fakvortojn")
                 let fakvortojDat = try Data(contentsOf: fakvortoURL)
                 let fakvortojJSON = try JSONSerialization.jsonObject(with: fakvortojDat as Data, options: JSONSerialization.ReadingOptions())
                 
@@ -198,8 +204,8 @@ final class DatumLegilo {
             }
         }
         
-        //let trieFarilo = TrieFarilo(konteksto: konteksto)
-        //trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
+        let trieFarilo = TrieFarilo(konteksto: konteksto)
+        trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
         
         TekstFarilo.fariTekstoDosieron(alirilo)
     }

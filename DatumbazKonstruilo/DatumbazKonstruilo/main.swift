@@ -13,6 +13,21 @@ import ReVoDatumbazoOSX
 
 let datumbazNomo = "PoshReVoDatumbazo"
 
+let produktajhejo = Bundle.main.bundleURL.appendingPathComponent("/produktajhoj/")
+if FileManager.default.fileExists(atPath: produktajhejo.absoluteString) {
+    do {
+        try FileManager.default.removeItem(at: produktajhejo)
+    } catch {
+        print("Ne sukcesis nuligi produktajhan dosierujon");
+    }
+}
+
+do {
+    try FileManager.default.createDirectory(at: produktajhejo, withIntermediateDirectories: true, attributes: nil)
+} catch {
+    print("Ekkonstruas datumbazon")
+}
+
 var managedObjectModel: NSManagedObjectModel = {
     let datumbazBundle = Bundle(identifier: "inthescales.ReVoDatumbazoOSX")!
     let modelURL = datumbazBundle.url(forResource: "PoshReVoDatumoj", withExtension: "momd")!
@@ -22,7 +37,7 @@ var managedObjectModel: NSManagedObjectModel = {
 var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
     
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-    let docsUrl = Bundle.main.bundleURL.appendingPathComponent(datumbazNomo + ".sqlite")
+    let docsUrl = Bundle.main.bundleURL.appendingPathComponent("/produktajhoj/" + datumbazNomo + ".sqlite")
     
     do {
         let pragmas: [String : String] = ["journal_mode" : "DELETE", "synchronous" : "OFF"]
@@ -53,5 +68,5 @@ var managedObjectContext: NSManagedObjectContext = {
 
 // ================================================================================================
 
-print("Ekkonstruas datumbazon")
 DatumLegilo.fariDatumbazon(en: managedObjectContext)
+print("Finis datumbaz-konstruadon")
