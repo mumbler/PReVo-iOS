@@ -36,7 +36,7 @@ private enum Chelo: Int {
     }
 }
 
-final class EsplorPaghoViewController: BazStilaTableViewController {
+final class EsplorPaghoViewController: BazStilaTableViewController, Chefpagho {
 
     private static let chelIdent = "EsplorPaghoChelIdent"
     
@@ -45,6 +45,11 @@ final class EsplorPaghoViewController: BazStilaTableViewController {
         
         efektivigiStilon()
     }
+    
+    func aranghiNavigaciilo() {
+        parent?.title = NSLocalizedString("esplori titolo", comment: "")
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
