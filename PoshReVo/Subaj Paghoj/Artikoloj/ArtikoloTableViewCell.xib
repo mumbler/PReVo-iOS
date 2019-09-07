@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="434" height="35"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-C6-8DQ" userLabel="Titola Etikedo" customClass="TTTAttributedLabel">
-                                <rect key="frame" x="8" y="8" width="418" height="19"/>
+                                <rect key="frame" x="8" y="2" width="418" height="31"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -30,11 +30,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" secondItem="QPM-C6-8DQ" secondAttribute="height" constant="16" id="3Ld-Yu-oM2"/>
+                            <constraint firstItem="QPM-C6-8DQ" firstAttribute="height" secondItem="DFi-1d-Dhf" secondAttribute="height" constant="-4" id="3Ld-Yu-oM2"/>
                             <constraint firstItem="QPM-C6-8DQ" firstAttribute="leading" secondItem="DFi-1d-Dhf" secondAttribute="leading" constant="8" id="9ER-QH-sDa"/>
                             <constraint firstAttribute="height" constant="35" id="AkI-hE-0gA"/>
                             <constraint firstAttribute="trailing" secondItem="QPM-C6-8DQ" secondAttribute="trailing" constant="8" id="Knu-1z-rIu"/>
-                            <constraint firstItem="QPM-C6-8DQ" firstAttribute="top" secondItem="DFi-1d-Dhf" secondAttribute="top" constant="8" id="me1-MJ-1bK"/>
+                            <constraint firstItem="QPM-C6-8DQ" firstAttribute="centerY" secondItem="DFi-1d-Dhf" secondAttribute="centerY" id="cYR-XP-jgG"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-uM-sRB" userLabel="Chefa Etikedo" customClass="TTTAttributedLabel">
