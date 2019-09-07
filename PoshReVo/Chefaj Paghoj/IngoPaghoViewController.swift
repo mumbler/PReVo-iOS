@@ -25,7 +25,7 @@ protocol Chefpagho {
     ke la montrita pagho shanghighas ech kiam alia pagho sidas sure - ekzemple, ni povos forigi
     artikolan paghon kaj malkashi ian ajn paghon sube, ne nur tio kiu estis sube antau.
 */
-class IngoPaghoViewController : UIViewController, Stilplena {
+final class IngoPaghoViewController : UIViewController, Stilplena {
     
     var nunaPagho: Pagho? = nil
     
@@ -42,7 +42,7 @@ class IngoPaghoViewController : UIViewController, Stilplena {
     }
     
     // Montri paghon de tiu speco.
-    func montriPaghon(_ paghTipo: Pagho) {
+    public func montriPaghon(_ paghTipo: Pagho) {
         
         let novaPagho = PaghMotoro.publikaMotoro.ViewControllerPorPagho(paghTipo: paghTipo)
         
@@ -62,6 +62,10 @@ class IngoPaghoViewController : UIViewController, Stilplena {
             
             if let konforma = novaPagho as? Chefpagho {
                 konforma.aranghiNavigaciilo()
+            }
+            
+            if let sercha = novaPagho as? SerchPaghoViewController {
+                sercha.renovigiSerchon()
             }
         }
     }

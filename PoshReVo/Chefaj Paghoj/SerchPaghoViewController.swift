@@ -141,6 +141,14 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
             }
         }
     }
+    
+    // MARK: Publikajn metodojn
+    
+    public func renovigiSerchon() {
+        serchTabulo?.text = ""
+        serchStato = nil
+        trovTabelo?.reloadData()
+    }
 }
 
 extension SerchPaghoViewController : UISearchBarDelegate {
