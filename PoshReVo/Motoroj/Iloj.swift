@@ -15,6 +15,10 @@ let markoFortoKlavo = "forto"
 let markoSuperKlavo = "super"
 let markoSubKlavo = "sub"
 
+public struct AtentigoNomoj {
+    static let elektisTradukLingvojn = "elektisTradukLingvoj"
+}
+
 /*
     Diversaj iloj
 */

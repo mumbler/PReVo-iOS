@@ -12,19 +12,10 @@ import UIKit
 let tradukLingvojElektiloChelIdent = "tradukLingvoElektiloChelo"
 
 /*
-    Protocol por ke aliaj paghoj povos reagi al la elekto de traduk-lingvoj
-*/
-protocol TradukLingvojElektiloDelegate {
-    
-    func elektisTradukLingvojn()
-}
-
-/*
     Pagho por elekti lingvojn en kiu tradukoj por vortoj montrighos.
 */
 class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
     
-    var delegate: TradukLingvojElektiloDelegate?
     var shanghisLingvojn: Bool = false
     
     var tradukLingvoj = [Lingvo]()
@@ -52,7 +43,7 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         
         if shanghisLingvojn {
-            delegate?.elektisTradukLingvojn()
+            NotificationCenter.default.post(name: NSNotification.Name(AtentigoNomoj.elektisTradukLingvojn), object: nil)
             UzantDatumaro.elektisTradukLingvojn()
         }
     }
@@ -100,7 +91,8 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
             let navigaciilo = HelpaNavigationController()
             let elektilo = LingvoElektiloViewController()
             elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo titolo", comment: ""),
-                             suprajTitolo: NSLocalizedString("lingvo-elektilo serchataj etikedo", comment: ""))
+                             suprajTitolo: NSLocalizedString("lingvo-elektilo serchataj etikedo", comment: ""),
+                             montriEsperanton: false)
             elektilo.delegate = self
             navigaciilo.viewControllers.append(elektilo)
             self.navigationController?.present(navigaciilo, animated: true, completion: nil)
@@ -131,6 +123,7 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
             let lingvo = tradukLingvoj[indexPath.row]
             tradukLingvoj.remove(at: indexPath.row)
             UzantDatumaro.tradukLingvoj.remove(lingvo)
+            shanghisLingvojn = true
             tableView.reloadData()
         }
     }
@@ -144,6 +137,7 @@ extension TradukLingvojElektiloTableViewController: LingvoElektiloDelegate {
     func elektisLingvon(lingvo: Lingvo) {
         UzantDatumaro.tradukLingvoj.insert(lingvo)
         tradukLingvoj = kaptiTradukLingvojn()
+        shanghisLingvojn = true
         tableView.reloadData()
     }
 }

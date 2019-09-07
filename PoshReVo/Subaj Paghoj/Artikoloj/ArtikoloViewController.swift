@@ -66,6 +66,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         vortTabelo?.register(UINib(nibName: "ArtikoloKapoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolKapIdent)
         vortTabelo?.register(UINib(nibName: "ArtikoloPiedButonoTableViewHeaderFooterView", bundle: nil), forHeaderFooterViewReuseIdentifier: artikolPiedIdent)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(elektisTradukLingvojn), name: NSNotification.Name(rawValue: AtentigoNomoj.elektisTradukLingvojn), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
@@ -182,7 +183,6 @@ class ArtikoloViewController : UIViewController, Stilplena {
         
         let navigaciilo = HelpaNavigationController()
         let elektilo = TradukLingvojElektiloTableViewController(style: .grouped)
-        elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)
         navigationController?.present(navigaciilo, animated: true, completion: nil)
     }
@@ -203,6 +203,15 @@ class ArtikoloViewController : UIViewController, Stilplena {
             }
             
             present(mesagho, animated: true, completion: nil)
+        }
+    }
+    
+    @objc func elektisTradukLingvojn() {
+        
+        prepariTradukListon()
+        vortTabelo?.reloadSections(IndexSet(integer: 1), with: .fade)
+        if vortTabelo?.numberOfRows(inSection: 1) ?? 0 > 0 {
+            vortTabelo?.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
         }
     }
 }
@@ -435,19 +444,6 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         return nil
-    }
-}
-
-extension ArtikoloViewController : TradukLingvojElektiloDelegate {
-    
-    // Elektis traduk-lingvojn - reprezenti la tradukan sekcion de la pagho
-    func elektisTradukLingvojn() {
-        
-        prepariTradukListon()
-        vortTabelo?.reloadSections(IndexSet(integer: 1), with: .fade)
-        if vortTabelo?.numberOfRows(inSection: 1) ?? 0 > 0 {
-            vortTabelo?.scrollToRow(at: IndexPath(row: 0, section: 1), at: .top, animated: true)
-        }
     }
 }
 

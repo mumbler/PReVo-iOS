@@ -23,18 +23,20 @@ protocol LingvoElektiloDelegate {
     Pagho por elekti lingvon.
     La unua sekcio povas montri lastaj elektitaj lingvoj, kaj sube videblas chiu lingvo
 */
-class LingvoElektiloViewController : UIViewController, Stilplena {
+final class LingvoElektiloViewController : UIViewController, Stilplena {
     
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var lingvoTabelo: UITableView?
     
-    var filtritajLingvoj: [Lingvo]? = nil
+    private var validajLingvoj: [Lingvo]?
+    private var filtritajLingvoj: [Lingvo]? = nil
     
-    var suprajLingvoj: [Lingvo]?
-    var suprajTitolo: String?
+    private var suprajLingvoj: [Lingvo]?
+    private var suprajTitolo: String?
+    private var montriEsperanto: Bool = true
     
     var chiujLingvoj: [Lingvo] {
-        return filtritajLingvoj ?? SeancDatumaro.lingvoj
+        return filtritajLingvoj ?? validajLingvoj ?? SeancDatumaro.lingvoj
     }
     
     var delegate: LingvoElektiloDelegate?
@@ -47,10 +49,20 @@ class LingvoElektiloViewController : UIViewController, Stilplena {
         super.init(coder: aDecoder)
     }
     
-    public func starigi(titolo: String, suprajTitolo: String? = nil) {
+    public func starigi(titolo: String, suprajTitolo: String? = nil, montriEsperanton: Bool = true) {
         title = titolo
         self.suprajTitolo = suprajTitolo
         suprajLingvoj = UzantDatumaro.oftajSerchLingvoj
+
+        if !montriEsperanton {
+            suprajLingvoj?.removeAll(where: { (lingvo) -> Bool in
+                lingvo.kodo == "eo"
+            })
+            validajLingvoj = SeancDatumaro.lingvoj
+            validajLingvoj?.removeAll(where: { (lingvo) -> Bool in
+                lingvo.kodo == "eo"
+            })
+        }
     }
     
     override func viewDidLoad() {

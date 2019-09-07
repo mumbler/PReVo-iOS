@@ -32,8 +32,9 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
         tabelo?.dataSource = self
         tabelo?.register(UITableViewCell.self, forCellReuseIdentifier: agordojChelIdent)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(elektisTradukLingvojn), name: NSNotification.Name(rawValue: AtentigoNomoj.elektisTradukLingvojn), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
-
+        
         efektivigiStilon()
     }
     
@@ -81,6 +82,10 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
         }
         
         present(mesagho, animated: true, completion: nil)
+    }
+        
+    @objc func elektisTradukLingvojn() {
+        tabelo?.reloadRows(at: [IndexPath(item: 1, section: 1)], with: .none)
     }
 }
 
@@ -185,7 +190,6 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
             }
             else if indexPath.row == 1{
                 let elektilo = TradukLingvojElektiloTableViewController(style: .grouped)
-                elektilo.delegate = self
                 navigationController?.pushViewController(elektilo, animated: true)
             }
         }
@@ -212,13 +216,6 @@ extension AgordojViewController : LingvoElektiloDelegate {
     func elektisLingvon(lingvo: Lingvo) {
         UzantDatumaro.elektisSerchLingvon(lingvo)
         tabelo?.reloadRows(at: [IndexPath(item: 0, section: 1)], with: .none)
-    }
-}
-
-extension AgordojViewController : TradukLingvojElektiloDelegate {
-    
-    func elektisTradukLingvojn() {
-        tabelo?.reloadRows(at: [IndexPath(item: 1, section: 1)], with: .none)
     }
 }
 
