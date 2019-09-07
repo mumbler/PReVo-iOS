@@ -157,7 +157,17 @@ if fakoDos
       if komentoRegesp.match(linio) then next end
       rezulto = fakoRegesp.match(linio)
       if rezulto and rezulto.size == 4
-         fakoj << [rezulto[1], rezulto[3], rezulto[2]]
+          
+         # Specialaj korektoj
+         kodo = rezulto[1]
+         case rezulto[1]
+            when "POSX"
+                kodo = "POŜ"
+            when "SHI"
+                kodo = "ŜIP"
+         end
+          
+         fakoj << [kodo, rezulto[3], rezulto[2]]
          @fakvortoj[rezulto[1]] = {}
       end
    end
