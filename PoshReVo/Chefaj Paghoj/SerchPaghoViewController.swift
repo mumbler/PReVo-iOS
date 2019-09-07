@@ -293,7 +293,7 @@ extension SerchPaghoViewController {
             }
             return bonaNomo
         } else {
-            return String(destinoj.count) + " trovoj"
+            return String(destinoj.count) + " rezultoj"
         }
     }
 }
