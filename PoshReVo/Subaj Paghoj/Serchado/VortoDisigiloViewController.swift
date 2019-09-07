@@ -83,7 +83,7 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
         chelo.textLabel?.text = (destinoj[indexPath.row].value(forKey: "teksto") as? String) ?? ""
         chelo.detailTextLabel?.text = (destinoj[indexPath.row].value(forKey: "nomo") as? String) ?? ""
         if devasMontriSencon(indexPath: indexPath), let senco = destinoj[indexPath.row].value(forKey: "senco") as? String {
-            chelo.detailTextLabel?.text = (chelo.detailTextLabel?.text ?? "") + " " + senco
+            chelo.detailTextLabel?.text = (chelo.detailTextLabel?.text ?? "") + " (" + senco + ")"
         }
         
         return chelo
