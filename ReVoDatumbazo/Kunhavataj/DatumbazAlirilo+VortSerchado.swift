@@ -17,20 +17,25 @@ public struct SerchStato {
 
 final public class TrieIterator {
     
-    var nodStaplo = [NSManagedObject]()
+    var nodStaplo = [(String, NSManagedObject)]()
+    var destinojRestantaj = [(String, [NSManagedObject])]()
     let locale: Locale
     
-    init(lingvoKodo: String, komencaNodo: NSManagedObject?) {
+    init(lingvoKodo: String, peto: String, komencaNodo: NSManagedObject?) {
         locale = Locale(identifier: lingvoKodo)
         
         if let komencaNodo = komencaNodo {
-            nodStaplo.append(komencaNodo)
+            nodStaplo.append((peto, komencaNodo))
         }
     }
-    
+
     func next() -> (String, [NSManagedObject])? {
         
-        while let nodo = nodStaplo.popLast() {
+        if let sekvaDestino = destinojRestantaj.popLast() {
+            return sekvaDestino
+        }
+        
+        while let (nomo, nodo) = nodStaplo.popLast() {
             
             if let filoj = ((nodo.mutableSetValue(forKey: "sekvajNodoj")).allObjects as? [NSManagedObject])?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
                 let unuaLitero = (unua.value(forKey: "litero") as? String) ?? ""
@@ -39,14 +44,39 @@ final public class TrieIterator {
                 //return unuaLitero < duaLitero
             }) {
                 for filo in filoj {
-                    nodStaplo.append(filo)
+                    if let litero = filo.value(forKey: "litero") as? String {
+                        nodStaplo.append((nomo + litero, filo))
+                    }
                 }
             }
             
-            if let destinoj = nodo.mutableOrderedSetValue(forKey: "destinoj").array as? [NSManagedObject],
-                let teksto = destinoj.first?.value(forKey: "teksto") as? String {
+            if let destinoj = nodo.mutableOrderedSetValue(forKey: "destinoj").array as? [NSManagedObject] {
                 
-                return (teksto, destinoj)
+                // Grupigi destinojn lau videbla nomo
+                var grupoj = [String: [NSManagedObject]]()
+                var donota: (String, [NSManagedObject])?
+                
+                for destino in destinoj {
+                    if let videbla = destino.value(forKey: "teksto") as? String {
+                        if grupoj[videbla] == nil {
+                            grupoj[videbla] = [NSManagedObject]()
+                        }
+                        grupoj[videbla]?.append(destino)
+                    }
+                }
+                
+                // Ordigi grupojn tiel ke la unua havu la bazan nomo, aliaj alfabetigitaj poste
+                for klavo in grupoj.keys.sorted(by: { (unuaVorto, duaVorto) -> Bool in
+                    return unuaVorto.compare(duaVorto, options: .forcedOrdering, range: nil, locale: locale) == .orderedDescending
+                }) {
+                    if klavo == nomo {
+                        donota = (klavo, grupoj[klavo]!)
+                    } else {
+                        destinojRestantaj.append((klavo, grupoj[klavo]!))
+                    }
+                }
+
+                return donota ?? next()
             }
         }
         return nil
@@ -67,7 +97,7 @@ extension DatumbazAlirilo {
         }
         else {
             return SerchStato(peto: teksto,
-                              iterator: TrieIterator(lingvoKodo: lingvoKodo, komencaNodo: nil),
+                              iterator: TrieIterator(lingvoKodo: lingvoKodo, peto: teksto, komencaNodo: nil),
                               rezultoj: [(String, [NSManagedObject])](),
                               atingisFinon: true)
         }
@@ -157,6 +187,6 @@ extension DatumbazAlirilo {
             }
         }
         
-        return TrieIterator(lingvoKodo: lingvo, komencaNodo: nunNodo)
+        return TrieIterator(lingvoKodo: lingvo, peto: peto, komencaNodo: nunNodo)
     }
 }

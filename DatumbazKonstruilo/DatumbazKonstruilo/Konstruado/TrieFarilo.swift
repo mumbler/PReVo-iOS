@@ -61,48 +61,56 @@ final class TrieFarilo {
                             let marko = enhavoj["marko"] as? String
                             let senco = enhavoj["senco"] as! Int
                             
-                            for nunLitero in teksto!.lowercased() {
-                                
-                                var sekvaNodo: NSManagedObject? = nil
-                                if nunNodo == nil {
-                                    if let trovNodo = alirilo.komencaNodo(el: lingvoObjekto!, kunLitero: String(nunLitero)) {
-                                        sekvaNodo = trovNodo
-                                    }
-                                } else {
-                                    if let trovNodo = alirilo.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
-                                        sekvaNodo = trovNodo
-                                    }
-                                }
-                                
-                                if sekvaNodo == nil {
-                                    sekvaNodo = NSEntityDescription.insertNewObject(forEntityName: "TrieNodo", into: konteksto)
-                                    sekvaNodo?.setValue(String(nunLitero), forKey: "litero")
+                            // Trovi klavojn
+                            var klavoj = [String]()
+                            if videbla != nil { klavoj.append(videbla!) }
+                            if videbla != teksto { klavoj.append(teksto!) }
+                            
+                            for klavo in klavoj {
+                                for nunLitero in klavo.lowercased() {
                                     
+                                    var sekvaNodo: NSManagedObject? = nil
                                     if nunNodo == nil {
-                                        lingvoObjekto?.mutableSetValue(forKey: "komencajNodoj").add(sekvaNodo!)
+                                        if let trovNodo = alirilo.komencaNodo(el: lingvoObjekto!, kunLitero: String(nunLitero)) {
+                                            sekvaNodo = trovNodo
+                                        }
                                     } else {
-                                        nunNodo?.mutableSetValue(forKey: "sekvajNodoj").add(sekvaNodo!)
+                                        if let trovNodo = alirilo.sekvaNodo(el: nunNodo!, kunLitero: String(nunLitero)) {
+                                            sekvaNodo = trovNodo
+                                        }
                                     }
+                                    
+                                    if sekvaNodo == nil {
+                                        sekvaNodo = NSEntityDescription.insertNewObject(forEntityName: "TrieNodo", into: konteksto)
+                                        sekvaNodo?.setValue(String(nunLitero), forKey: "litero")
+                                        
+                                        if nunNodo == nil {
+                                            lingvoObjekto?.mutableSetValue(forKey: "komencajNodoj").add(sekvaNodo!)
+                                        } else {
+                                            nunNodo?.mutableSetValue(forKey: "sekvajNodoj").add(sekvaNodo!)
+                                        }
+                                    }
+                                    
+                                    nunNodo = sekvaNodo
+                                    
                                 }
                                 
-                                nunNodo = sekvaNodo
-                                
-                            }
-                            
-                            if indekso != nil {
-                                let novaDestino = NSEntityDescription.insertNewObject(forEntityName: "Destino", into: konteksto)
-                                novaDestino.setValue(videbla, forKey: "teksto")
-                                novaDestino.setValue(indekso, forKey: "indekso")
-                                novaDestino.setValue(nomo, forKey: "nomo")
-                                novaDestino.setValue(marko, forKey: "marko")
-                                novaDestino.setValue(String(senco), forKey: "senco")
-                                if let artikolo = alirilo.artikoloPorIndekso(indekso!) {
-                                    novaDestino.setValue(artikolo, forKey: "artikolo")
+                                if indekso != nil {
+                                    let novaDestino = NSEntityDescription.insertNewObject(forEntityName: "Destino", into: konteksto)
+                                    novaDestino.setValue(videbla, forKey: "teksto")
+                                    novaDestino.setValue(indekso, forKey: "indekso")
+                                    novaDestino.setValue(nomo, forKey: "nomo")
+                                    novaDestino.setValue(marko, forKey: "marko")
+                                    novaDestino.setValue(String(senco), forKey: "senco")
+                                    if let artikolo = alirilo.artikoloPorIndekso(indekso!) {
+                                        novaDestino.setValue(artikolo, forKey: "artikolo")
+                                    }
+                                    nunNodo?.mutableOrderedSetValue(forKey: "destinoj").add(novaDestino)
                                 }
-                                nunNodo?.mutableOrderedSetValue(forKey: "destinoj").add(novaDestino)
-                            }
+                                
+                                nunNodo = nil
+                            } // Serch klavoj
                             
-                            nunNodo = nil
                         } // Enhavoj de la traduko
                         
                     } // Chiu traduko
