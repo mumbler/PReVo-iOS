@@ -8,6 +8,10 @@ require 'nokogiri'
 @esperantaj = []
 @fakvortoj = {}
 
+# dumprogramaj
+
+@indikiloDeMarko = {}
+
 # Funkcioj Gheneralaj  =============================
 
 # Anstatauigi la HTML-kodojn, incluzivante tiujn listigitajn en "literoj.xml",
@@ -322,11 +326,21 @@ def traktiNodon(nod, stato)
       elsif fil.name == "snc"
          objekto["filNombro"] += 1
          stato["senco"] = objekto["filNombro"]
-         objekto["filoj"] << traktiNodon(fil, stato)
+         novaSenco = traktiNodon(fil, stato)
+         objekto["filoj"] << novaSenco
+         if novaSenco["mrk"] != nil
+             @indikiloDeMarko[novaSenco["mrk"]] = objekto["filNombro"].to_s
+         end
          stato["senco"] = 0
       elsif fil.name == "subsnc"
          objekto["filNombro"] += 1
-         objekto["filoj"] << traktiNodon(fil, stato)
+         novaSubSenco = traktiNodon(fil, stato)
+         objekto["filoj"] << novaSubSenco
+         if novaSubSenco["mrk"] != nil
+             litero = ("a".."z").to_a[objekto["filNombro"]-1]
+             numero = stato["senco"].to_s + litero
+             @indikiloDeMarko[novaSubSenco["mrk"]] = numero
+         end
       elsif fil.name == "dif"
          novaDifino = traktiDifinon(fil, stato)
          objekto["filoj"] << novaDifino
@@ -413,7 +427,7 @@ def traktiKapon(kap, stato)
    tildo = ""
    kap.children().each do |fil|
 
-      if fil.name == "ofc"
+      if fil.name == "ofc" and objekto["ofc"] == nil
          objekto["ofc"] = fil.text
       elsif fil.name == "rad" and stato["radiko"] == nil
          objekto["rad"] = fil.text
@@ -510,6 +524,8 @@ def traktiDifinon(dif, stato)
       elsif fil.name == "frm"
          novaFormulo = traktiFormulon(fil, stato)
 	 teksto += novaFormulo["teksto"]
+      elsif fil.name == "sncref"
+          teksto += prepariTekston(fil.to_s)
       else
          if fil != nil and fil.text != nil
 	    subdifino = traktiDifinon(fil, stato)
@@ -556,7 +572,9 @@ def traktiRimarkon(rim, stato)
          teksto += "„" + prepariVorte(fil.inner_html, stato["radiko"]) + "“"
       elsif fil.name == "frm"
          novaFormulo = traktiFormulon(fil, stato)
-	 teksto += novaFormulo["teksto"]
+         teksto += novaFormulo["teksto"]
+      elsif fil.name == "sncref"
+          teksto += prepariTekston(fil.to_s)
       else
 
       end
@@ -606,7 +624,9 @@ def traktiEkzemplon(ekz, stato)
          teksto += "„" + prepariVorte(fil.inner_html, stato["radiko"]) + "“"
       elsif fil.name == "frm"
          novaFormulo = traktiFormulon(fil, stato)
-	 teksto += novaFormulo["teksto"]
+         teksto += novaFormulo["teksto"]
+      elsif fil.name == "sncref"
+          teksto += prepariTekston(fil.to_s)
       else
 
       end
@@ -668,6 +688,8 @@ def traktiRefon(ref, stato)
          teksto += "„" + prepariVorte(fil.inner_html, stato["radiko"]) + "“"         
       elsif fil.name == "text"
          teksto += prepariTekston(fil.text)
+      elsif fil.name == "sncref"
+          teksto += prepariTekston(fil.to_s)
       end
    end
 
@@ -844,7 +866,7 @@ def fariFakVorton(nomo, indekso, marko, senco, teksto)
    
     return {"nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco, "teksto" => teksto}
 end
-
+       
 def provi(nodo)
 
    if nodo["vspec"] != nil
@@ -908,9 +930,8 @@ def provi(nodo)
       else
          provi(fil)
       end
-
    end
-
+       
 end
 
 def tekstoPorUzo(kodo, tipo)
@@ -1086,6 +1107,47 @@ def printi(nodo)
 
 end
 
+def postTraktiArtikolon(dosiero, teksto)
+    simplaFormo = /<sncref ref=\\"(.*?)\\"\/>/
+    anstatauoj = {}
+    teksto.scan(simplaFormo) { |m|
+        marko = m[0]
+        indikilo = @indikiloDeMarko[marko]
+        if indikilo != nil
+            anstatauoj[marko] = indikilo
+        end
+    }
+    
+    anstatauoj.each do |marko, indikilo|
+       teksto = teksto.gsub("<sncref ref=\\\"" + marko.to_s + "\\\"\/>", "<sup>" + indikilo + "</sup>") 
+    end
+    
+    anstatauoj = {}
+    aFormo = /<a href=\\"(.*?)\\">(.*?)<\/a>/
+    tekstKopio = teksto
+    tekstKopio.scan(aFormo) { |m|
+        marko = m[0]
+        interno = m[1]
+        if interno.include?("<sncref\/>")
+            indikilo = @indikiloDeMarko[marko]
+            if indikilo == nil
+                indikilo = ""
+                puts "AVERTO: MANKAS INDIKILO POR " + marko + " EN ARTIKOLO " + dosiero
+            end
+            novaInterno = interno.gsub("<sncref\/>", "<sup>" + indikilo + "</sup>") 
+            teksto = teksto.gsub("<a href=\\\"" + marko + "\\\">" + interno + "</a>", "<a href=\\\"" + marko + "\\\">" + novaInterno + "</a>")
+        end
+    }
+    
+    # kroma purigado
+    if /<sncref.*?\/>/.match(teksto)
+        puts "AVERTO: RESTAS sncref EN ARTIKOLO " + dosiero
+        teksto = teksto.gsub(/<sncref.*?\/>/, "")
+    end
+    
+    return teksto
+end
+    
 vortoDos = File.open(dir+"/xml/")
 
 if vortoDos and File.directory?(dir+"/xml/")
@@ -1163,7 +1225,13 @@ StilojElDos.close
 
 VortojElDos = File.open("datumoj/vortoj.json", "w")
 
-VortojElDos.print JSON.generate(artikoloj)
+traktitaj = []
+for artikolo in artikoloj
+    teksto = JSON.generate(artikolo)
+    teksto = postTraktiArtikolon(artikolo["indekso"], teksto)
+    traktitaj << JSON.parse(teksto)
+end
+VortojElDos.print JSON.generate(traktitaj)
 
 VortojElDos.close
 

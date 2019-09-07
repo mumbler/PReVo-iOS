@@ -61,8 +61,9 @@ final class TrieFarilo {
                             let marko = enhavoj["marko"] as? String
                             let senco = enhavoj["senco"] as! Int
                             
-                            for nunLitero in teksto! {
+                            for litero in teksto! {
                                 
+                                let nunLitero = litero.lowercased()
                                 var sekvaNodo: NSManagedObject? = nil
                                 if nunNodo == nil {
                                     if let trovNodo = alirilo.komencaNodo(el: lingvoObjekto!, kunLitero: String(nunLitero)) {
