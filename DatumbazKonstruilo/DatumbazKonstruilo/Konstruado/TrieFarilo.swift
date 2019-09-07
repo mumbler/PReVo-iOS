@@ -34,7 +34,7 @@ final class TrieFarilo {
     
     func konstruiTriePorLingvo(kodo: String) {
         
-        if let tradukoURL = Bundle.main.url(forResource: indeksojURLString + "indekso_" + kodo, withExtension: "dat") {
+        if let tradukoURL = Bundle.main.url(forResource: indeksojURLString + "indekso_" + kodo, withExtension: "json") {
             
             print("Kreas trie-on por " + kodo)
             let lingvoObjekto = alirilo.lingvoPorKodo(kodo)
