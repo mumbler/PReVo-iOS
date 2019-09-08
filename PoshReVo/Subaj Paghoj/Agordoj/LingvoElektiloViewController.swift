@@ -33,7 +33,7 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
     
     private var suprajLingvoj: [Lingvo]?
     private var suprajTitolo: String?
-    private var montriEsperanto: Bool = true
+    private var montriEsperanton: Bool = true
     
     var chiujLingvoj: [Lingvo] {
         return filtritajLingvoj ?? validajLingvoj ?? SeancDatumaro.lingvoj
@@ -54,13 +54,14 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
         self.suprajTitolo = suprajTitolo
         suprajLingvoj = UzantDatumaro.oftajSerchLingvoj
 
+        self.montriEsperanton = montriEsperanton
         if !montriEsperanton {
             suprajLingvoj?.removeAll(where: { (lingvo) -> Bool in
-                lingvo.kodo == "eo"
+                lingvo == SeancDatumaro.esperantaLingvo()
             })
             validajLingvoj = SeancDatumaro.lingvoj
             validajLingvoj?.removeAll(where: { (lingvo) -> Bool in
-                lingvo.kodo == "eo"
+                lingvo == SeancDatumaro.esperantaLingvo()
             })
         }
     }
@@ -136,7 +137,7 @@ extension LingvoElektiloViewController : UISearchBarDelegate {
         searchBar.text = searchBar.text?.lowercased()
     
         if let teksto = searchBar.text, !teksto.isEmpty {
-            filtritajLingvoj = Iloj.filtriLingvojn(teksto: teksto, lingvoj: SeancDatumaro.lingvoj)
+            filtritajLingvoj = Iloj.filtriLingvojn(teksto: teksto, lingvoj: SeancDatumaro.lingvoj, montriEsperanton: montriEsperanton)
         }
         else {
             filtritajLingvoj = nil

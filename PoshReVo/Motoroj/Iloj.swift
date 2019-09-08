@@ -329,12 +329,13 @@ class Iloj {
     
     //MARK: - Lingvo-traktado
     
-    public static func filtriLingvojn(teksto: String, lingvoj: [Lingvo]) -> [Lingvo] {
+    public static func filtriLingvojn(teksto: String, lingvoj: [Lingvo], montriEsperanton: Bool = true) -> [Lingvo] {
         
         var trovitaj = [Lingvo]()
         
         for lingvo in lingvoj {
-            if lingvo.nomo.prefix(teksto.count).lowercased() == teksto.lowercased() {
+            if lingvo.nomo.prefix(teksto.count).lowercased() == teksto.lowercased() &&
+                !(!montriEsperanton && lingvo == SeancDatumaro.esperantaLingvo()) {
                 trovitaj.append(lingvo)
             }
         }

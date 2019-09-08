@@ -42,12 +42,9 @@ class UzantDatumaro {
         if oftajSerchLingvoj.count == 0 {
             for kodo in NSLocale.preferredLanguages {
                 
-                let bazKodo = kodo.components(separatedBy: "-").first
-                guard bazKodo != "eo" else {
-                    continue
-                }
-                
-                if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo) {
+                let bazKodo = kodo.components(separatedBy: "-").first                
+                if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo),
+                    lingvo != SeancDatumaro.esperantaLingvo() {
                     tradukLingvoj.insert(lingvo)
                     oftajSerchLingvoj.append(lingvo)
                 }
