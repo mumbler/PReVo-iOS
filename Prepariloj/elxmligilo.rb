@@ -442,9 +442,13 @@ def traktiKapon(kap, stato)
    tildo = ""
    kap.children().each do |fil|
 
-      if fil.name == "ofc" and objekto["ofc"] == nil
-         objekto["ofc"] = fil.text
+      if fil.name == "ofc"
+         # Nur uzu unuan "ofc"-on
+         if objekto["ofc"] == nil
+             objekto["ofc"] = fil.text
+         end
       elsif fil.name == "rad" and stato["radiko"] == nil
+         # Nur registru unuan "rad"-on, tamen ja aldoni la tekston de sekvaj
          objekto["rad"] = fil.text
          stato["radiko"] = fil.text
          stato["artikolo"]["radiko"] = fil.text
@@ -468,10 +472,10 @@ def traktiKapon(kap, stato)
                tildo += subkapo["tildo"]
             end
          end
+      else
+         teksto += fil.text 
       end
-      
    end
-
    
    objekto["teksto"] = teksto.gsub("\n", "").gsub("\r", "").squeeze(" ").strip
    if stato["super"][-1] == "art"
@@ -479,6 +483,7 @@ def traktiKapon(kap, stato)
    end
    stato["nomo"] = objekto["nomo"] = nomo.strip
    stato["tildo"] = objekto["tildo"] = tildo.strip
+    
    return objekto
 end
 
@@ -830,6 +835,9 @@ def traktiTradukon(trd, stato)
 	 indekso = novaIndekso["teksto"]
       elsif fil.name == "klr"
          teksto += prepariVorte(fil.inner_html, stato["radiko"])
+      elsif fil.name == "em"
+          # Ne montru <em>-ojn en traduko (ekz. "Banderolo - en)
+          teksto += fil.teksto
       else
      
       end
