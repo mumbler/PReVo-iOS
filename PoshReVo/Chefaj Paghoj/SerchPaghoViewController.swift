@@ -48,7 +48,9 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         trovTabelo?.register(UITableViewCell.self, forCellReuseIdentifier: serchChelIdent)
 
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         efektivigiStilon()
     }
 
