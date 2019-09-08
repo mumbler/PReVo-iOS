@@ -145,6 +145,17 @@ lingvoDos.close
 
 # -- fakolisto
 
+def korektiFakKodon(kodo)
+     case kodo
+        when "POSX"
+            return "POŜ"
+        when "SHI"
+            return "ŜIP"
+        else
+            return kodo
+     end
+end
+    
 puts "=== Legante fakojn ==="
 fakoDos = File.open(dir+"/cfg/fakoj.xml", "r")
 fakoj = []
@@ -159,16 +170,10 @@ if fakoDos
       if rezulto and rezulto.size == 4
           
          # Specialaj korektoj
-         kodo = rezulto[1]
-         case rezulto[1]
-            when "POSX"
-                kodo = "POŜ"
-            when "SHI"
-                kodo = "ŜIP"
-         end
+         kodo = korektiFakKodon(rezulto[1])
           
          fakoj << [kodo, rezulto[3], rezulto[2]]
-         @fakvortoj[rezulto[1]] = {}
+         @fakvortoj[kodo] = {}
       end
    end
 else
@@ -479,24 +484,29 @@ end
 
 def traktiUzon(uzo, stato)
 
-    # registi fakvorton se cheestas
+    objekto = {"tipo" => uzo.name, "teksto" => uzo.text}
+    
     if uzo["tip"] == "fak"
+        
+        # registi fakvorton se cheestas
         for nomo in stato["nomo"].split(", ")
-            if not @fakvortoj[uzo.text].include?(nomo)
-                @fakvortoj[uzo.text][nomo] = []
+            kodo = korektiFakKodon(uzo.text)
+            if not @fakvortoj[kodo].include?(nomo)
+                @fakvortoj[kodo][nomo] = []
             end
             
             fakVorto = fariFakVorton(nomo, stato["artikolo"]["indekso"], stato["marko"][2], stato["senco"], nomo)
-            @fakvortoj[uzo.text][nomo] << fakVorto
+            @fakvortoj[kodo][nomo] << fakVorto
         end
+        
+        # Uzu korektitan kodon kiel teksto
+        objekto["teksto"] = kodo
     end
     
-    objekto = {"tipo" => uzo.name}
     uzo.each do |a, b|
         objekto[a] = b
     end
 
-    objekto["teksto"] = uzo.text
     return objekto
 end
 
@@ -987,7 +997,7 @@ def alRomia(nombro)
 
     return romia
 end
-
+    
 def printi(nodo)
 
    objekto = {"marko" => nodo["mrk"]}
