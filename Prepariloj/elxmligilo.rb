@@ -814,6 +814,9 @@ def traktiFormulon(frm, stato)
 	elsif fil.name == "sub"
 	   teksto += "<sub>" + fil.text + "</sub>"
 	else
+	   if fil.text == nil
+	      puts stato["radiko"]
+ 	   end
 	   teksto += fil.text
 	end
     end
@@ -838,12 +841,12 @@ def traktiTradukon(trd, stato)
          teksto += novaIndekso["teksto"]
 	 indekso = novaIndekso["teksto"]
       elsif fil.name == "klr"
-         teksto += prepariVorte(fil.inner_html, stato["radiko"])
+         klarigaTeksto = prepariVorte(fil.inner_html, stato["radiko"])
+         # Ne montru <em>-ojn en traduko (ekz. "Banderolo - en)
+         klarigaTeksto = klarigaTeksto.gsub("<em>", "").gsub("</em>" ,"")
+         teksto += klarigaTeksto
       elsif fil.name == "em"
-          # Ne montru <em>-ojn en traduko (ekz. "Banderolo - en)
           teksto += fil.teksto
-      else
-     
       end
    end
 
