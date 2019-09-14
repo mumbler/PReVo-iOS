@@ -151,6 +151,10 @@ def korektiFakKodon(kodo)
             return "POŜ"
         when "SHI"
             return "ŜIP"
+        when "MAS"
+            return "MAŜ"
+        when "AUT"
+            return "AŬT"
         else
             return kodo
      end
