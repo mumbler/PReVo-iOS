@@ -42,7 +42,10 @@ final class EsplorPaghoViewController: BazStilaTableViewController, Chefpagho {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         efektivigiStilon()
     }
     
