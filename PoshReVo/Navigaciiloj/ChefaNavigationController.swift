@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
-var flankMenuoLargheco: CGFloat = 232
+var flankMenuoLargheco: CGFloat = 194
 
 /*
     La chefa UINavigationControlle de la programo. Ghi starigas la maldekstra-flankan menuon,
@@ -44,15 +44,10 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         let flankMenuo = FlankMenuoViewController()
         leftMenu = flankMenuo
 
-        let longa = max(view.frame.size.height, view.frame.size.width)
-        let mallonga = min(view.frame.size.height, view.frame.size.width)
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            portraitSlideOffset = mallonga * 0.47
-            landscapeSlideOffset = longa * 0.75
-        } else {
-            portraitSlideOffset = mallonga * 0.75
-            landscapeSlideOffset = longa * 0.80
-        }
+        let longa = max(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+        let mallonga = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
+        portraitSlideOffset = mallonga - flankMenuoLargheco
+        landscapeSlideOffset = longa - flankMenuoLargheco
         enableSwipeGesture = true
         
         // Starigi ingo-paĝon

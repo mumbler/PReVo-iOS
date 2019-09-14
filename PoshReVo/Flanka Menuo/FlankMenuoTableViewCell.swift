@@ -24,6 +24,7 @@ class FlankMenuoTableViewCell : UITableViewCell {
     
     func efektivigiStilon() {
         
+        backgroundColor = UzantDatumaro.stilo.flankFonKoloro
         contentView.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
         etikedo?.textColor = UzantDatumaro.stilo.flankTekstKoloro
         bildo?.tintColor = UzantDatumaro.stilo.flankTekstKoloro
