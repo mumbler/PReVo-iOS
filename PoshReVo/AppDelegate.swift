@@ -59,6 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask
+    {
+        return .portrait
+    }
+    
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: URL = {
