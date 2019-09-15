@@ -26,8 +26,12 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
         title = NSLocalizedString("traduk-elektilo titolo", comment: "")
         tradukLingvoj = kaptiTradukLingvojn()
         
-        let redaktButono = UIBarButtonItem.init(title: "Redakti", style: .plain, target: self, action: #selector(TradukLingvojElektiloTableViewController.premisRedakti(sender:)))
+        let redaktButono = UIBarButtonItem.init(title: NSLocalizedString("traduk-elektilo redakti", comment: ""),
+                                                style: .plain,
+                                                target: self,
+                                                action: #selector(TradukLingvojElektiloTableViewController.premisRedakti(sender:)))
         navigationItem.rightBarButtonItem = redaktButono
+        ghisdatigiButonon()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: tradukLingvojElektiloChelIdent)
         
@@ -44,9 +48,40 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
         
         if shanghisLingvojn {
             NotificationCenter.default.post(name: NSNotification.Name(AtentigoNomoj.elektisTradukLingvojn), object: nil)
-            UzantDatumaro.elektisTradukLingvojn()
         }
     }
+    
+    private func ghisdatigiButonon() {
+        navigationItem.rightBarButtonItem?.isEnabled = (tableView.isEditing || tradukLingvoj.count > 0)
+        
+        if !tableView.isEditing {
+            navigationItem.rightBarButtonItem?.title = NSLocalizedString("traduk-elektilo redakti", comment: "")
+        } else {
+            navigationItem.rightBarButtonItem?.title = NSLocalizedString("traduk-elektilo fini", comment: "")
+        }
+        
+    }
+    
+    private func ghisdatigiRedaktadon() {
+        ghisdatigiButonon()
+        
+        if tableView.isEditing {
+            tableView.beginUpdates()
+            tableView.deleteSections([tableView.numberOfSections - 1], with: .fade)
+            tableView.endUpdates()
+        } else {
+            tableView.beginUpdates()
+            tableView.insertSections([tableView.numberOfSections], with: .fade)
+            tableView.endUpdates()
+        }
+    }
+    
+    @objc func premisRedakti(sender: Any) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        ghisdatigiRedaktadon()
+    }
+    
+    // MARK: - UITableViewController
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         let estasTradukLingvoj = (tradukLingvoj.count > 0) ? 1 : 0
@@ -133,22 +168,17 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
             let lingvo = tradukLingvoj[indexPath.row]
             tradukLingvoj.remove(at: indexPath.row)
             UzantDatumaro.tradukLingvoj.remove(lingvo)
+            UzantDatumaro.elektisTradukLingvojn()
             shanghisLingvojn = true
+            
+            if tradukLingvoj.count == 0 {
+                DispatchQueue.main.async {
+                    tableView.setEditing(false, animated: true)
+                    self.ghisdatigiRedaktadon()
+                }
+            }
+            
             tableView.reloadData()
-        }
-    }
-        
-    @objc func premisRedakti(sender: Any) {
-        tableView.setEditing(!tableView.isEditing, animated: true)
-        
-        if tableView.isEditing {
-            tableView.beginUpdates()
-            tableView.deleteSections([tableView.numberOfSections - 1], with: .fade)
-            tableView.endUpdates()
-        } else {
-            tableView.beginUpdates()
-            tableView.insertSections([tableView.numberOfSections], with: .fade)
-            tableView.endUpdates()
         }
     }
 }
@@ -156,8 +186,11 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
 extension TradukLingvojElektiloTableViewController: LingvoElektiloDelegate {
     func elektisLingvon(lingvo: Lingvo) {
         UzantDatumaro.tradukLingvoj.insert(lingvo)
-        tradukLingvoj = kaptiTradukLingvojn()
+        UzantDatumaro.elektisTradukLingvojn()
         shanghisLingvojn = true
+        
+        tradukLingvoj = kaptiTradukLingvojn()
+        ghisdatigiButonon()
         tableView.reloadData()
     }
 }
