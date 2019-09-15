@@ -49,7 +49,9 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return (tradukLingvoj.count > 0) ? 2 : 1
+        let estasTradukLingvoj = (tradukLingvoj.count > 0) ? 1 : 0
+        let aldoniLingvon = (!tableView.isEditing) ? 1 : 0
+        return estasTradukLingvoj + aldoniLingvon
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +60,7 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
             return (tradukLingvoj.count > 0) ? tradukLingvoj.count : 1
         }
         else if section == 1 {
-            return 1
+            return (tradukLingvoj.count > 0) ? 1 : 0
         }
         
         return 0
@@ -138,6 +140,16 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
         
     @objc func premisRedakti(sender: Any) {
         tableView.setEditing(!tableView.isEditing, animated: true)
+        
+        if tableView.isEditing {
+            tableView.beginUpdates()
+            tableView.deleteSections([tableView.numberOfSections - 1], with: .fade)
+            tableView.endUpdates()
+        } else {
+            tableView.beginUpdates()
+            tableView.insertSections([tableView.numberOfSections], with: .fade)
+            tableView.endUpdates()
+        }
     }
 }
 
