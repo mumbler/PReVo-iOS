@@ -102,11 +102,19 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        if (tradukLingvoj.count > 0 && indexPath.section == 0) || indexPath.section == 1 {
+        if tradukLingvoj.count == 0 || indexPath.section == 1 {
             return indexPath
         }
         
         return nil
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        if tradukLingvoj.count == 0 || indexPath.section == 1 {
+            return true
+        }
+        
+        return false
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
