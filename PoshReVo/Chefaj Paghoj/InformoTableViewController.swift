@@ -63,7 +63,7 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
                     Bundle.main.localizedString(forKey: "informo fakaj-mallongigoj teksto", value: nil, table: "Generataj")
                 ]
             case .PoshReVo:
-                let versioTeksto = String(format: NSLocalizedString("informo versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleVersion"] as? String) ?? "" ])
+                let versioTeksto = String(format: NSLocalizedString("informo versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "" ])
                 tekstoj = [
                     String(format: NSLocalizedString("informo poshrevo teksto", comment: ""), versioTeksto)
                 ]
