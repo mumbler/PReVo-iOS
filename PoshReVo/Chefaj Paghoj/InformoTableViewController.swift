@@ -120,7 +120,6 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
     // MARK: Chefpagho
     
     func aranghiNavigaciilo() {
-        
         parent?.title = NSLocalizedString("informo titolo", comment: "")
         parent?.navigationItem.rightBarButtonItem = nil
     }

@@ -51,6 +51,7 @@ final class EsplorPaghoViewController: BazStilaTableViewController, Chefpagho {
     
     func aranghiNavigaciilo() {
         parent?.title = NSLocalizedString("esplori titolo", comment: "")
+        parent?.navigationItem.rightBarButtonItem = nil
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
