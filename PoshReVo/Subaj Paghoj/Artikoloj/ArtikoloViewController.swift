@@ -309,7 +309,12 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
-        if section == 1 && artikolo?.tradukoj.count ?? 0 > 0 {
+        if section == 0 && tableView.numberOfSections > 1 {
+            let piedo = UITableViewHeaderFooterView(frame: CGRect.zero)
+            //piedo.addConstraint(NSLayoutConstraint(item: piedo, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 16))
+            return piedo
+        }
+        else if section == 1 && artikolo?.tradukoj.count ?? 0 > 0 {
             
             let novaPiedo: ArtikoloPiedButonoTableViewHeaderFooterView
             if let trovPiedo = vortTabelo?.dequeueReusableHeaderFooterView(withIdentifier: artikolPiedIdent) as? ArtikoloPiedButonoTableViewHeaderFooterView {
@@ -343,7 +348,10 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        if section == 1 {
+        if section == 0 && tableView.numberOfSections > 1 {
+            return 16
+        }
+        else if section == 1 {
             let desc = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
             return 50 + desc.pointSize - 14
         }
@@ -367,7 +375,10 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
-        if section == 1 {
+        if section == 0 && tableView.numberOfSections > 1 {
+            return 16
+        }
+        else if section == 1 {
             let desc = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
             return 50 + desc.pointSize - 14
         }
