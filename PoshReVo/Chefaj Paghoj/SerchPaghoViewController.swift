@@ -112,7 +112,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         
         let navigaciilo = HelpaNavigationController()
         let elektilo = LingvoElektiloViewController()
-        elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo titolo", comment: ""),
+        elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo sercha titolo", comment: ""),
                          suprajTitolo: NSLocalizedString("lingvo-elektilo lastaj etikedo", comment: ""))
         elektilo.delegate = self
         navigaciilo.viewControllers.append(elektilo)

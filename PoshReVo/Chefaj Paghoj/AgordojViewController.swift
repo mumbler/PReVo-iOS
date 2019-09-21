@@ -183,7 +183,7 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
         else if indexPath.section == 1 {
             if indexPath.row == 0 {
                 let elektilo = LingvoElektiloViewController()
-                elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo titolo", comment: ""),
+                elektilo.starigi(titolo: NSLocalizedString("lingvo-elektilo sercha titolo", comment: ""),
                                  suprajTitolo: NSLocalizedString("lingvo-elektilo lastaj etikedo", comment: ""))
                 elektilo.delegate = self
                 navigationController?.pushViewController(elektilo, animated: true)

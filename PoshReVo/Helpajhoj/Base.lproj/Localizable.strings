@@ -72,7 +72,8 @@
 
 // Serch lingvo elektilo
 
-"lingvo-elektilo titolo"                        = "Elekti serĉ-lingvon";
+"lingvo-elektilo sercha titolo"                 = "Elekti serĉ-lingvon";
+"lingvo-elektilo traduka titolo"                = "Elekti traduk-lingvon";
 "lingvo-elektilo lastaj etikedo"                = "Lastaj Lingvoj";
 "lingvo-elektilo serchataj etikedo"             = "Lastaj Serĉ-Lingvoj ";
 "lingvo-elektilo chiuj etikedo"                 = "Ĉiuj Lingvoj";
