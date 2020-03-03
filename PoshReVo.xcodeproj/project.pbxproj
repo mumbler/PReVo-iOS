@@ -70,23 +70,6 @@
 		7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		000985AC1C31F0CB0083DE24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000985961C31F0CB0083DE24;
-			remoteInfo = PReVo;
-		};
-		000985B71C31F0CB0083DE24 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 000985961C31F0CB0083DE24;
-			remoteInfo = PReVo;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		00700AD8231D3BA50075A077 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -103,8 +86,6 @@
 
 /* Begin PBXFileReference section */
 		000985971C31F0CB0083DE24 /* PoshReVo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoshReVo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		000985B61C31F0CB0083DE24 /* PoshReVo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		000BF42522FD0FF100EA0271 /* InformoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformoTableViewController.swift; sourceTree = "<group>"; };
 		000BF42922FE4C4000EA0271 /* InformoPaghoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformoPaghoViewController.xib; sourceTree = "<group>"; };
 		003656D32309A50E0028C21F /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,20 +164,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		000985A81C31F0CB0083DE24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		000985B31C31F0CB0083DE24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -263,8 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				000985971C31F0CB0083DE24 /* PoshReVo.app */,
-				000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */,
-				000985B61C31F0CB0083DE24 /* PoshReVo.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,42 +424,6 @@
 			productReference = 000985971C31F0CB0083DE24 /* PoshReVo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		000985AA1C31F0CB0083DE24 /* PoshReVoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000985C21C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoTests" */;
-			buildPhases = (
-				000985A71C31F0CB0083DE24 /* Sources */,
-				000985A81C31F0CB0083DE24 /* Frameworks */,
-				000985A91C31F0CB0083DE24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				000985AD1C31F0CB0083DE24 /* PBXTargetDependency */,
-			);
-			name = PoshReVoTests;
-			productName = PReVoTests;
-			productReference = 000985AB1C31F0CB0083DE24 /* PoshReVo.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		000985B51C31F0CB0083DE24 /* PoshReVoUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 000985C51C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoUITests" */;
-			buildPhases = (
-				000985B21C31F0CB0083DE24 /* Sources */,
-				000985B31C31F0CB0083DE24 /* Frameworks */,
-				000985B41C31F0CB0083DE24 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				000985B81C31F0CB0083DE24 /* PBXTargetDependency */,
-			);
-			name = PoshReVoUITests;
-			productName = PReVoUITests;
-			productReference = 000985B61C31F0CB0083DE24 /* PoshReVo.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -502,32 +431,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Sinuous Rill";
 				TargetAttributes = {
 					000985961C31F0CB0083DE24 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = WYZ8GHNKW7;
-					};
-					000985AA1C31F0CB0083DE24 = {
-						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JZ3WYZWA8F;
-						TestTargetID = 000985961C31F0CB0083DE24;
-					};
-					000985B51C31F0CB0083DE24 = {
-						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JZ3WYZWA8F;
-						TestTargetID = 000985961C31F0CB0083DE24;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
 			buildConfigurationList = 000985921C31F0CB0083DE24 /* Build configuration list for PBXProject "PoshReVo" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				Base,
+				en,
 			);
 			mainGroup = 0009858E1C31F0CB0083DE24;
 			productRefGroup = 000985981C31F0CB0083DE24 /* Products */;
@@ -535,8 +455,6 @@
 			projectRoot = "";
 			targets = (
 				000985961C31F0CB0083DE24 /* PoshReVo */,
-				000985AA1C31F0CB0083DE24 /* PoshReVoTests */,
-				000985B51C31F0CB0083DE24 /* PoshReVoUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -568,20 +486,6 @@
 				00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */,
 				00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */,
 				000BF42A22FE4C4000EA0271 /* InformoPaghoViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		000985A91C31F0CB0083DE24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		000985B41C31F0CB0083DE24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,34 +584,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		000985A71C31F0CB0083DE24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		000985B21C31F0CB0083DE24 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		000985AD1C31F0CB0083DE24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
-			targetProxy = 000985AC1C31F0CB0083DE24 /* PBXContainerItemProxy */;
-		};
-		000985B81C31F0CB0083DE24 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
-			targetProxy = 000985B71C31F0CB0083DE24 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0036572023132E8F0028C21F /* Generataj.strings */ = {
@@ -737,13 +614,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -786,13 +673,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -814,6 +711,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "9303a5a2-da06-46da-bf8c-8e3b5333ea76";
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -837,6 +735,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Motoroj/ObjC Ponto/PoshReVo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -856,58 +755,7 @@
 				PRODUCT_NAME = PoshReVo;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Motoroj/ObjC Ponto/PoshReVo-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		000985C31C31F0CB0083DE24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PoshReVoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoTests;
-				PRODUCT_NAME = PoshReVo;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoshReVo.app/PoshReVo";
-			};
-			name = Debug;
-		};
-		000985C41C31F0CB0083DE24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = PoshReVoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoTests;
-				PRODUCT_NAME = PoshReVo;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoshReVo.app/PoshReVo";
-			};
-			name = Release;
-		};
-		000985C61C31F0CB0083DE24 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = PoshReVoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
-				PRODUCT_NAME = PoshReVo;
-				TEST_TARGET_NAME = PoshReVo;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		000985C71C31F0CB0083DE24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = PoshReVoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = SinuousRill.PReVoUITests;
-				PRODUCT_NAME = PoshReVo;
-				TEST_TARGET_NAME = PoshReVo;
-				USES_XCTRUNNER = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -928,24 +776,6 @@
 			buildConfigurations = (
 				000985C01C31F0CB0083DE24 /* Debug */,
 				000985C11C31F0CB0083DE24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		000985C21C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				000985C31C31F0CB0083DE24 /* Debug */,
-				000985C41C31F0CB0083DE24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		000985C51C31F0CB0083DE24 /* Build configuration list for PBXNativeTarget "PoshReVoUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				000985C61C31F0CB0083DE24 /* Debug */,
-				000985C71C31F0CB0083DE24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
