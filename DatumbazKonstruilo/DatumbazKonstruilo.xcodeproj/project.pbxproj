@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000C2CAA241C3500002B2A96 /* DatumLegilo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CA9241C3500002B2A96 /* DatumLegilo2.swift */; };
+		000C2CAD241C426C002B2A96 /* LingvoXMLLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CAC241C426C002B2A96 /* LingvoXMLLegilo.swift */; };
 		003656E22309C2940028C21F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003656E12309C2940028C21F /* main.swift */; };
 		003657082309C7AF0028C21F /* ReVoDatumbazoOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003657072309C7AF0028C21F /* ReVoDatumbazoOSX.framework */; };
 		0036570D2309C8C90028C21F /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657092309C7DD0028C21F /* DatumLegilo.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		000C2CA9241C3500002B2A96 /* DatumLegilo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatumLegilo2.swift; sourceTree = "<group>"; };
+		000C2CAC241C426C002B2A96 /* LingvoXMLLegilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingvoXMLLegilo.swift; sourceTree = "<group>"; };
 		003656DE2309C2940028C21F /* DatumbazKonstruilo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DatumbazKonstruilo; sourceTree = BUILT_PRODUCTS_DIR; };
 		003656E12309C2940028C21F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		003657072309C7AF0028C21F /* ReVoDatumbazoOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazoOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000C2CAB241C4254002B2A96 /* XMLLegiloj */ = {
+			isa = PBXGroup;
+			children = (
+				000C2CAC241C426C002B2A96 /* LingvoXMLLegilo.swift */,
+			);
+			path = XMLLegiloj;
+			sourceTree = "<group>";
+		};
 		003656D52309C2940028C21F = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +96,8 @@
 		0036570B2309C7DD0028C21F /* Konstruado */ = {
 			isa = PBXGroup;
 			children = (
+				000C2CA9241C3500002B2A96 /* DatumLegilo2.swift */,
+				000C2CAB241C4254002B2A96 /* XMLLegiloj */,
 				003657092309C7DD0028C21F /* DatumLegilo.swift */,
 				0036570A2309C7DD0028C21F /* TrieFarilo.swift */,
 				0036571E231230C20028C21F /* TekstFarilo.swift */,
@@ -151,6 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				003656E22309C2940028C21F /* main.swift in Sources */,
+				000C2CAA241C3500002B2A96 /* DatumLegilo2.swift in Sources */,
+				000C2CAD241C426C002B2A96 /* LingvoXMLLegilo.swift in Sources */,
 				0036571F231230C20028C21F /* TekstFarilo.swift in Sources */,
 				0036570D2309C8C90028C21F /* DatumLegilo.swift in Sources */,
 				0036570E2309C8CD0028C21F /* TrieFarilo.swift in Sources */,

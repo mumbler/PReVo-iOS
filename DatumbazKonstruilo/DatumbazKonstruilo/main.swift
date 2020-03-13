@@ -68,5 +68,5 @@ var managedObjectContext: NSManagedObjectContext = {
 
 // ================================================================================================
 
-DatumLegilo.fariDatumbazon(en: managedObjectContext)
+DatumLegilo2.fariDatumbazon(en: managedObjectContext)
 print("Finis datumbaz-konstruadon")

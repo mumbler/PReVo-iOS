@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'cgi'
 require 'json'
 require 'nokogiri'
@@ -813,6 +814,12 @@ def traktiFormulon(frm, stato)
 	   teksto += "<sup>" + fil.text + "</sup>"
 	elsif fil.name == "sub"
 	   teksto += "<sub>" + fil.text + "</sub>"
+        elsif fil.name == "deg"
+          teksto += "°"
+        elsif fil.name == "minute"
+          teksto += "′"
+        elsif fil.name == "second"
+          teksto += "″"
 	else
 	   if fil.text == nil
 	      puts stato["radiko"]
@@ -1189,7 +1196,7 @@ if vortoDos and File.directory?(dir+"/xml/")
 
    puts "=== Legante artikolojn ==="
    Dir.foreach(dir+"/xml/") do |artikolDosiero|
-      next if artikolDosiero == '.' or artikolDosiero == '..' or artikolDosiero[0] == '.'
+      next if artikolDosiero == '.' or artikolDosiero == '..' or artikolDosiero[0] == '.' or not artikolDosiero.end_with?(".xml")
 
       #artikolDosiero = "kasxta.xml"
       #puts "-legante #{artikolDosiero}"
