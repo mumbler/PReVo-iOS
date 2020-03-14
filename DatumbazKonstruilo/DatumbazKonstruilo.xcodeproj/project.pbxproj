@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		000C2CAA241C3500002B2A96 /* DatumLegilo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CA9241C3500002B2A96 /* DatumLegilo2.swift */; };
 		000C2CAD241C426C002B2A96 /* LingvoXMLLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CAC241C426C002B2A96 /* LingvoXMLLegilo.swift */; };
+		000C2CAF241D83E2002B2A96 /* FakoXMLLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CAE241D83E2002B2A96 /* FakoXMLLegilo.swift */; };
+		000C2CB1241D8642002B2A96 /* StiloXMLLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CB0241D8642002B2A96 /* StiloXMLLegilo.swift */; };
+		000C2CB3241D87E1002B2A96 /* MallongigoXMLLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000C2CB2241D87E1002B2A96 /* MallongigoXMLLegilo.swift */; };
 		003656E22309C2940028C21F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003656E12309C2940028C21F /* main.swift */; };
 		003657082309C7AF0028C21F /* ReVoDatumbazoOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003657072309C7AF0028C21F /* ReVoDatumbazoOSX.framework */; };
 		0036570D2309C8C90028C21F /* DatumLegilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003657092309C7DD0028C21F /* DatumLegilo.swift */; };
@@ -31,6 +34,9 @@
 /* Begin PBXFileReference section */
 		000C2CA9241C3500002B2A96 /* DatumLegilo2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatumLegilo2.swift; sourceTree = "<group>"; };
 		000C2CAC241C426C002B2A96 /* LingvoXMLLegilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingvoXMLLegilo.swift; sourceTree = "<group>"; };
+		000C2CAE241D83E2002B2A96 /* FakoXMLLegilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakoXMLLegilo.swift; sourceTree = "<group>"; };
+		000C2CB0241D8642002B2A96 /* StiloXMLLegilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StiloXMLLegilo.swift; sourceTree = "<group>"; };
+		000C2CB2241D87E1002B2A96 /* MallongigoXMLLegilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallongigoXMLLegilo.swift; sourceTree = "<group>"; };
 		003656DE2309C2940028C21F /* DatumbazKonstruilo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DatumbazKonstruilo; sourceTree = BUILT_PRODUCTS_DIR; };
 		003656E12309C2940028C21F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		003657072309C7AF0028C21F /* ReVoDatumbazoOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazoOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				000C2CAC241C426C002B2A96 /* LingvoXMLLegilo.swift */,
+				000C2CAE241D83E2002B2A96 /* FakoXMLLegilo.swift */,
+				000C2CB0241D8642002B2A96 /* StiloXMLLegilo.swift */,
+				000C2CB2241D87E1002B2A96 /* MallongigoXMLLegilo.swift */,
 			);
 			path = XMLLegiloj;
 			sourceTree = "<group>";
@@ -166,10 +175,13 @@
 			files = (
 				003656E22309C2940028C21F /* main.swift in Sources */,
 				000C2CAA241C3500002B2A96 /* DatumLegilo2.swift in Sources */,
+				000C2CB3241D87E1002B2A96 /* MallongigoXMLLegilo.swift in Sources */,
 				000C2CAD241C426C002B2A96 /* LingvoXMLLegilo.swift in Sources */,
 				0036571F231230C20028C21F /* TekstFarilo.swift in Sources */,
+				000C2CAF241D83E2002B2A96 /* FakoXMLLegilo.swift in Sources */,
 				0036570D2309C8C90028C21F /* DatumLegilo.swift in Sources */,
 				0036570E2309C8CD0028C21F /* TrieFarilo.swift in Sources */,
+				000C2CB1241D8642002B2A96 /* StiloXMLLegilo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
