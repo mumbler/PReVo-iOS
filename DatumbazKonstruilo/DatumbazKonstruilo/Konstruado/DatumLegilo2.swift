@@ -25,54 +25,37 @@ final class DatumLegilo2: NSObject, XMLParserDelegate {
         let alirilo = DatumbazAlirilo(konteksto: konteksto)
         
         // Enlegi lingvojn
+        print("Eklegas lingvojn")
         if let lingvoURL = Bundle.main.url(forResource: revoURLRadiko + "cfg/lingvoj", withExtension: "xml") {
-            print("Eklegas lingvojn")
-            let lingvoLegilo = LingvoXMLLegilo(konteksto)
-            if let parser = XMLParser(contentsOf: lingvoURL) {
-                parser.delegate = lingvoLegilo
-                parser.parse()
-                lingvoKodoj = lingvoLegilo.lingvoKodoj
-            }
+            lingvoKodoj = LingvoXMLLegilo.legiDosieron(lingvoURL, enKontekston: konteksto)
             print("Finis lingvolegadon. Trovis \(lingvoKodoj.count) lingvojn.")
         } else {
             print("Eraro: ne trovis lingvo-dosieron")
         }
         
         // Enlegi fakojn
+        print("Eklegas fakojn")
         if let fakoURL = Bundle.main.url(forResource: revoURLRadiko + "cfg/fakoj", withExtension: "xml") {
-            print("Eklegas fakojn")
-            let fakoLegilo = FakoXMLLegilo(konteksto)
-            if let parser = XMLParser(contentsOf: fakoURL) {
-                parser.delegate = fakoLegilo
-                parser.parse()
-            }
-            print("Finis fakolegadon. Trovis \(fakoLegilo.fakoKvanto) fakojn.")
+            let fakoKodoj = FakoXMLLegilo.legiDosieron(fakoURL, enKontekston: konteksto)
+            print("Finis fakolegadon. Trovis \(fakoKodoj.count) fakojn.")
         } else {
             print("Eraro: ne trovis fako-dosieron")
         }
         
         // Enlegi stilojn
+        print("Eklegas stilojn")
         if let stiloURL = Bundle.main.url(forResource: revoURLRadiko + "cfg/stiloj", withExtension: "xml") {
-            print("Eklegas stilojn")
-            let stiloLegilo = StiloXMLLegilo(konteksto)
-            if let parser = XMLParser(contentsOf: stiloURL) {
-                parser.delegate = stiloLegilo
-                parser.parse()
-            }
-            print("Finis stilolegadon. Trovis \(stiloLegilo.stiloKvanto) stilojn.")
+            let stiloKodoj = StiloXMLLegilo.legiDosieron(stiloURL, enKontekston: konteksto)
+            print("Finis stilolegadon. Trovis \(stiloKodoj.count) stilojn.")
         } else {
             print("Eraro: ne trovis stilo-dosieron")
         }
         
         // Enlegi mallongigojn
+        print("Eklegas mallongigojn")
         if let mallongigoURL = Bundle.main.url(forResource: revoURLRadiko + "cfg/mallongigoj", withExtension: "xml") {
-            print("Eklegas mallongigojn")
-            let mallongigoLegilo = MallongigoXMLLegilo(konteksto)
-            if let parser = XMLParser(contentsOf: mallongigoURL) {
-                parser.delegate = mallongigoLegilo
-                parser.parse()
-            }
-            print("Finis mallongigolegadon. Trovis \(mallongigoLegilo.mallongigoKvanto) mallongigojn.")
+            let mallongigoKodoj = MallongigoXMLLegilo.legiDosieron(mallongigoURL, enKontekston: konteksto)
+            print("Finis mallongigolegadon. Trovis \(mallongigoKodoj.count) mallongigojn.")
         } else {
             print("Eraro: ne trovis mallongigo-dosieron")
         }

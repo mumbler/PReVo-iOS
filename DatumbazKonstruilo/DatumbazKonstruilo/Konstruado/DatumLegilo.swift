@@ -22,8 +22,9 @@ final class DatumLegilo {
     static func fariDatumbazon(en konteksto: NSManagedObjectContext) {
         
         var lingvoKodoj = [String]()
-
         let alirilo = DatumbazAlirilo(konteksto: konteksto)
+        
+        print("Komencas datumbaz-konstruon")
         
         // Enlegi lingvojn
         if let lingvoURL = Bundle.main.url(forResource: datumojURLString + "lingvoj", withExtension: "json") {

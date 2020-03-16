@@ -11,7 +11,7 @@ import CoreData
 
 class FakoXMLLegilo: NSObject, XMLParserDelegate {
     
-    public var fakoKvanto = 0
+    public var fakoKodoj = [String]()
     
     private let konteksto: NSManagedObjectContext
     private var nunaFako: NSManagedObject?
@@ -26,6 +26,7 @@ class FakoXMLLegilo: NSObject, XMLParserDelegate {
         if elementName == "fako", let kodo = attributeDict["kodo"] {
             nunaFako = NSEntityDescription.insertNewObject(forEntityName: "Fako", into: konteksto)
             nunaFako?.setValue(kodo, forKey: "kodo")
+            fakoKodoj.append(kodo)
             fakoNomo = ""
         }
     }
@@ -38,8 +39,23 @@ class FakoXMLLegilo: NSObject, XMLParserDelegate {
         if elementName == "fako" {
             if let nunaFako = nunaFako {
                 nunaFako.setValue(fakoNomo, forKey: "nomo")
-                fakoKvanto += 1
             }
         }
+    }
+}
+
+extension FakoXMLLegilo {
+    
+    public static func legiDosieron(_ fakoURL: URL, enKontekston konteksto: NSManagedObjectContext) -> [String] {
+                
+        var fakoKodoj = [String]()
+        let fakoLegilo = FakoXMLLegilo(konteksto)
+        if let parser = XMLParser(contentsOf: fakoURL) {
+            parser.delegate = fakoLegilo
+            parser.parse()
+            fakoKodoj = fakoLegilo.fakoKodoj
+        }
+        
+        return fakoKodoj
     }
 }

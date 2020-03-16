@@ -44,3 +44,19 @@ class LingvoXMLLegilo: NSObject, XMLParserDelegate {
         }
     }
 }
+
+extension LingvoXMLLegilo {
+    
+    public static func legiDosieron(_ lingvoURL: URL, enKontekston konteksto: NSManagedObjectContext) -> [String] {
+                
+        var lingvoKodoj = [String]()
+        let lingvoLegilo = LingvoXMLLegilo(konteksto)
+        if let parser = XMLParser(contentsOf: lingvoURL) {
+            parser.delegate = lingvoLegilo
+            parser.parse()
+            lingvoKodoj = lingvoLegilo.lingvoKodoj
+        }
+        
+        return lingvoKodoj
+    }
+}

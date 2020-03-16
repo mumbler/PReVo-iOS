@@ -11,7 +11,7 @@ import CoreData
 
 class MallongigoXMLLegilo: NSObject, XMLParserDelegate {
     
-    public var mallongigoKvanto = 0
+    public var mallongigoKodoj = [String]()
     
     private let konteksto: NSManagedObjectContext
     private var nunaMallongigo: NSManagedObject?
@@ -26,6 +26,7 @@ class MallongigoXMLLegilo: NSObject, XMLParserDelegate {
         if elementName == "mallongigo", let kodo = attributeDict["mll"] {
             nunaMallongigo = NSEntityDescription.insertNewObject(forEntityName: "Mallongigo", into: konteksto)
             nunaMallongigo?.setValue(kodo, forKey: "kodo")
+            mallongigoKodoj.append(kodo)
             mallongigoNomo = ""
         }
     }
@@ -38,8 +39,23 @@ class MallongigoXMLLegilo: NSObject, XMLParserDelegate {
         if elementName == "mallongigo" {
             if let nunaMallongigo = nunaMallongigo {
                 nunaMallongigo.setValue(mallongigoNomo, forKey: "nomo")
-                mallongigoKvanto += 1
             }
         }
+    }
+}
+
+extension MallongigoXMLLegilo {
+    
+    public static func legiDosieron(_ mallongigoURL: URL, enKontekston konteksto: NSManagedObjectContext) -> [String] {
+                
+        var mallongigoKodoj = [String]()
+        let mallongigoLegilo = MallongigoXMLLegilo(konteksto)
+        if let parser = XMLParser(contentsOf: mallongigoURL) {
+            parser.delegate = mallongigoLegilo
+            parser.parse()
+            mallongigoKodoj = mallongigoLegilo.mallongigoKodoj
+        }
+        
+        return mallongigoKodoj
     }
 }
