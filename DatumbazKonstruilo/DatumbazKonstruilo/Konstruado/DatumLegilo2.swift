@@ -25,7 +25,7 @@ final class DatumLegilo2: NSObject, XMLParserDelegate {
         let alirilo = DatumbazAlirilo(konteksto: konteksto)
         
         // Enlegi lingvojn
-        print("Eklegas lingvojn")
+        /*print("Eklegas lingvojn")
         if let lingvoURL = Bundle.main.url(forResource: revoURLRadiko + "cfg/lingvoj", withExtension: "xml") {
             lingvoKodoj = LingvoXMLLegilo.legiDosieron(lingvoURL, enKontekston: konteksto)
             print("Finis lingvolegadon. Trovis \(lingvoKodoj.count) lingvojn.")
@@ -58,6 +58,15 @@ final class DatumLegilo2: NSObject, XMLParserDelegate {
             print("Finis mallongigolegadon. Trovis \(mallongigoKodoj.count) mallongigojn.")
         } else {
             print("Eraro: ne trovis mallongigo-dosieron")
+        }*/
+        
+        // Enlegi artikolojn
+        print("Eklegas artikolojn")
+        if let artikolujoURL = Bundle.main.url(forResource: revoURLRadiko + "xml", withExtension: nil) {
+            let artikoloKodoj = ArtikoloXMLLegilo.legiDosierujon(artikolujoURL, radikoURL: revoURLRadiko, enKontekston: konteksto)
+            print("Finis artikololegadon. Trovis \(artikoloKodoj.count) artikolojn.")
+        } else {
+            print("Eraro: ne trovis artikolo-dosierujon")
         }
         
         do {

@@ -23,7 +23,8 @@ class FakoXMLLegilo: NSObject, XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
 
-        if elementName == "fako", let kodo = attributeDict["kodo"] {
+        if elementName == "fako", let krudaKodo = attributeDict["kodo"] {
+            let kodo = korektitaKodon(krudaKodo)
             nunaFako = NSEntityDescription.insertNewObject(forEntityName: "Fako", into: konteksto)
             nunaFako?.setValue(kodo, forKey: "kodo")
             fakoKodoj.append(kodo)
@@ -42,7 +43,26 @@ class FakoXMLLegilo: NSObject, XMLParserDelegate {
             }
         }
     }
+    
+    // MARK: - Helpiloj
+    
+    private func korektitaKodon(_ kodo: String) -> String {
+        switch (kodo) {
+        case "POSX":
+            return "POŜ"
+        case "SHI":
+            return "ŜIP"
+        case "MAS":
+            return "MAŜ"
+        case "AUT":
+            return "AŬT"
+        default:
+            return kodo
+        }
+    }
 }
+
+// MARK: - Vokilo
 
 extension FakoXMLLegilo {
     

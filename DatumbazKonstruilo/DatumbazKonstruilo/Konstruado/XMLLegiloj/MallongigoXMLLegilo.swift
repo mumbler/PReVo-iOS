@@ -44,6 +44,8 @@ class MallongigoXMLLegilo: NSObject, XMLParserDelegate {
     }
 }
 
+// MARK: - Vokilo
+
 extension MallongigoXMLLegilo {
     
     public static func legiDosieron(_ mallongigoURL: URL, enKontekston konteksto: NSManagedObjectContext) -> [String] {

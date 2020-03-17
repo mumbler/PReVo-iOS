@@ -44,6 +44,8 @@ class StiloXMLLegilo: NSObject, XMLParserDelegate {
     }
 }
 
+// MARK: - Vokilo
+
 extension StiloXMLLegilo {
     
     public static func legiDosieron(_ stiloURL: URL, enKontekston konteksto: NSManagedObjectContext) -> [String] {

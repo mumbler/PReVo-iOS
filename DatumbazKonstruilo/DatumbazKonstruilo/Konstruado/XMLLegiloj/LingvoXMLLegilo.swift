@@ -45,6 +45,8 @@ class LingvoXMLLegilo: NSObject, XMLParserDelegate {
     }
 }
 
+// MARK: - Vokilo
+
 extension LingvoXMLLegilo {
     
     public static func legiDosieron(_ lingvoURL: URL, enKontekston konteksto: NSManagedObjectContext) -> [String] {
