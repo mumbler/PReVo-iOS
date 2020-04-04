@@ -81,4 +81,9 @@ var managedObjectContext: NSManagedObjectContext = {
 // ================================================================================================
 
 DatumLegilo.fariDatumbazon(en: managedObjectContext, datumoURL: datumejo, produktajhoURL: produktajhejo)
-print("Finis datumbaz-konstruadon")
+let datumbazoValidas = DatumbazValidigilo.validas(konteksto: managedObjectContext)
+if datumbazoValidas {
+    print("Datumbazo VALIDAS")
+} else {
+    print("Datumbazo NE VALIDAS")
+}

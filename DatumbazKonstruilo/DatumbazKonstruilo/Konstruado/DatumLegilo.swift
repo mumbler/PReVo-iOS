@@ -201,5 +201,7 @@ final class DatumLegilo {
         trieFarilo.konstruiChiuTrie(kodoj: lingvoKodoj)
         
         TekstFarilo.fariTekstoDosieron(alirilo, produktajhoURL: produktajhoURL)
+        
+        print("Finis datumbaz-konstruadon")
     }
 }
