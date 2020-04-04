@@ -104,16 +104,20 @@ end
 
 # === Legi la parametrojn
 dir = nil
+aldir = "./datumoj"
 
 if ARGV.count > 0
-   dir = ARGV[0]
+  dir = ARGV[0]
+end
+
+if ARGV.count > 1
+  aldir = ARGV[1] + "/datumoj"
 end
 
 # === Kontroli chu la dosierujo ekzistas, kaj havas ĝustan strukturon
 unless File.exists?(dir) and File.exists?(dir+"/cfg") and File.exists?(dir+"/xml")
    puts "Eraro: bezonataj doserujoj ne trovitas"
 end
-
 
 # === Fari listojn de lingvoj kaj iliaj literoj
 
@@ -1223,9 +1227,9 @@ vortoDos.close
 
 # ============================
 
-Dir.mkdir("datumoj") unless File.exists?("datumoj")
+Dir.mkdir(aldir) unless File.exists?(aldir)
 
-LingvojElDos = File.open("datumoj/lingvoj.json", "w")
+LingvojElDos = File.open(aldir + "/lingvoj.json", "w")
 
 LingvojElDos.print JSON.generate(lingvoj)
 
@@ -1233,7 +1237,7 @@ LingvojElDos.close
 
 # ---
 
-FakojElDos = File.open("datumoj/fakoj.json", "w")
+FakojElDos = File.open(aldir + "/fakoj.json", "w")
 
 FakojElDos.print JSON.generate(fakoj)
 
@@ -1241,7 +1245,7 @@ FakojElDos.close
     
 # ---
     
-FakVortojElDos = File.open("datumoj/fakvortoj.json", "w")
+FakVortojElDos = File.open(aldir + "/fakvortoj.json", "w")
     
 FakVortojElDos.print JSON.generate(@fakvortoj)
     
@@ -1249,7 +1253,7 @@ FakojElDos.close
     
 # ---
 
-MallongigElDos = File.open("datumoj/mallongigoj.json", "w")
+MallongigElDos = File.open(aldir + "/mallongigoj.json", "w")
 
 MallongigElDos.print JSON.generate(mallongigoj)
 
@@ -1257,7 +1261,7 @@ MallongigElDos.close
 
 # ---
 
-StilojElDos = File.open("datumoj/stiloj.json", "w")
+StilojElDos = File.open(aldir + "/stiloj.json", "w")
 
 StilojElDos.print JSON.generate(@stiloj)
 
@@ -1265,7 +1269,7 @@ StilojElDos.close
 
 # ---
 
-VortojElDos = File.open("datumoj/vortoj.json", "w")
+VortojElDos = File.open(aldir + "/vortoj.json", "w")
 
 traktitaj = []
 for artikolo in artikoloj
@@ -1280,11 +1284,11 @@ VortojElDos.close
 # ---
 # Registri tradukojn po lingvo
 
-Dir.mkdir("datumoj/indeksoj") unless File.exists?("datumoj/indeksoj")
+Dir.mkdir(aldir + "/indeksoj") unless File.exists?(aldir + "/indeksoj")
 
 for lingvo in tradukoj.each_key
     
-    miaDos = File.open("datumoj/indeksoj/indekso_#{lingvo}.json", "w")
+    miaDos = File.open(aldir + "/indeksoj/indekso_#{lingvo}.json", "w")
 
     miaDos.print JSON.generate(tradukoj[lingvo])
 
@@ -1293,7 +1297,7 @@ end
 
 # Registri esperantajn vortojn
 
-miaDos = File.open("datumoj/indeksoj/indekso_eo.json", "w")
+miaDos = File.open(aldir + "/indeksoj/indekso_eo.json", "w")
 miaDos.print JSON.generate(@esperantaj)
 miaDos.close
 

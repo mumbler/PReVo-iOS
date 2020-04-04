@@ -12,13 +12,10 @@ import ReVoDatumbazoOSX
 
 final class TekstFarilo {
 
-    public static func fariTekstoDosieron(_ alirilo: DatumbazAlirilo) {
+    public static func fariTekstoDosieron(_ alirilo: DatumbazAlirilo, produktajhoURL: URL) {
         
-        let dosierNomo = "/produktajhoj/Generataj.strings"
-        let teksto = verkiTekstojn(alirilo)
-        let url = Bundle.main.bundleURL
-            
-        let fileURL = url.appendingPathComponent(dosierNomo)
+        let teksto = verkiTekstojn(alirilo)    
+        let fileURL = produktajhoURL.appendingPathComponent("Generataj.strings")
         
         //writing
         do {

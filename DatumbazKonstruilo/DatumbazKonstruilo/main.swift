@@ -11,9 +11,21 @@ import CoreData
 
 import ReVoDatumbazoOSX
 
+var datumoRadiko = "."
+var produktajhoRadiko = "."
+
+if CommandLine.arguments.count > 1 {
+    datumoRadiko = CommandLine.arguments[1]
+}
+
+if CommandLine.arguments.count > 2 {
+    produktajhoRadiko = CommandLine.arguments[2]
+}
+
 let datumbazNomo = "PoshReVoDatumbazo"
 
-let produktajhejo = Bundle.main.bundleURL.appendingPathComponent("/produktajhoj/")
+let datumejo = URL(fileURLWithPath: datumoRadiko)
+let produktajhejo = URL(fileURLWithPath: produktajhoRadiko + "/produktajhoj")
 if FileManager.default.fileExists(atPath: produktajhejo.absoluteString) {
     do {
         try FileManager.default.removeItem(at: produktajhejo)
@@ -37,7 +49,7 @@ var managedObjectModel: NSManagedObjectModel = {
 var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
     
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-    let docsUrl = Bundle.main.bundleURL.appendingPathComponent("/produktajhoj/" + datumbazNomo + ".sqlite")
+    let docsUrl = produktajhejo.appendingPathComponent(datumbazNomo + ".sqlite")
     
     do {
         let pragmas: [String : String] = ["journal_mode" : "DELETE", "synchronous" : "OFF"]
@@ -53,7 +65,7 @@ var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         dict[NSLocalizedDescriptionKey] = "Malsukcesis sharghante je datumoj"
         dict[NSLocalizedFailureReasonErrorKey] = "Eraro sharghante je datumoj"
         dict[NSUnderlyingErrorKey] = error as NSError
-        
+        print(dict)
         abort()
     }
     
@@ -68,5 +80,5 @@ var managedObjectContext: NSManagedObjectContext = {
 
 // ================================================================================================
 
-DatumLegilo2.fariDatumbazon(en: managedObjectContext)
+DatumLegilo.fariDatumbazon(en: managedObjectContext, datumoURL: datumejo, produktajhoURL: produktajhejo)
 print("Finis datumbaz-konstruadon")
