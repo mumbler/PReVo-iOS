@@ -1,6 +1,6 @@
 #!/bin/sh
 
-defaulta_revoloko="revo"
+defaulta_revoloko="DatumoPreparilo/revo"
 revoloko=$defaulta_revoloko
 
 if [ $# -gt 1 ]
@@ -10,7 +10,7 @@ fi
 
 mkdir tmp
 
-ruby DatumoPreparilo/datumopreparilo.rb $revoloko tmp/revo
+ruby DatumoPreparilo/datumopreparilo.rb $revoloko tmp
 ./build/PoshReVo/Build/Products/Debug/DatumbazKonstruilo tmp/datumoj tmp
 
 

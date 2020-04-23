@@ -84,6 +84,8 @@ DatumLegilo.fariDatumbazon(en: managedObjectContext, datumoURL: datumejo, produk
 let datumbazoValidas = DatumbazValidigilo.validas(konteksto: managedObjectContext)
 if datumbazoValidas {
     print("Datumbazo VALIDAS")
+    exit(0)
 } else {
     print("Datumbazo NE VALIDAS")
+    exit(1)
 }
