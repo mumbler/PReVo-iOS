@@ -10,7 +10,7 @@ fi
 
 mkdir tmp
 
-ruby DatumoPreparilo/datumopreparilo.rb $revoloko tmp
+bundle exec ruby DatumoPreparilo/datumopreparilo.rb $revoloko tmp
 ./build/PoshReVo/Build/Products/Debug/DatumbazKonstruilo tmp/datumoj tmp
 
 
