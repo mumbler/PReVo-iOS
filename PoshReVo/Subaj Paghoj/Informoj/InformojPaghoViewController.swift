@@ -1,5 +1,5 @@
 //
-//  InformoPaghoViewController.swift
+//  InformojPaghoViewController.swift
 //  PoshReVo
 //
 //  Created by Robin Hill on 3/12/16.
@@ -13,7 +13,7 @@ import TTTAttributedLabel
 /*
     Informoj pri la programo, kaj ligoj al samtemaj retpaghoj
 */
-class InformoPaghoViewController: UIViewController, Stilplena {
+class InformojPaghoViewController: UIViewController, Stilplena {
     
     @IBOutlet var rulumilo: UIScrollView?
     @IBOutlet var fonoView: UIView?
@@ -26,7 +26,7 @@ class InformoPaghoViewController: UIViewController, Stilplena {
     init(titolo: String, teksto: String) {
         self.titolo = titolo
         self.teksto = teksto
-        super.init(nibName: "InformoPaghoViewController", bundle: nil)
+        super.init(nibName: "InformojPaghoViewController", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,7 +76,7 @@ class InformoPaghoViewController: UIViewController, Stilplena {
     }
 }
 
-extension InformoPaghoViewController : TTTAttributedLabelDelegate {
+extension InformojPaghoViewController : TTTAttributedLabelDelegate {
     
     func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
         if let url = url {
@@ -86,7 +86,7 @@ extension InformoPaghoViewController : TTTAttributedLabelDelegate {
 }
 
 // Respondi al mediaj shanghoj
-extension InformoPaghoViewController {
+extension InformojPaghoViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {
         etikedo?.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)

@@ -1,7 +1,7 @@
 // Komputile generataj tekstoj
 // Ne ŝanĝu mane. Vidu 'TekstFarilo.swift' en DatumbazKonstruilo.
 
-"informo vortaraj-mallongigoj teksto"			= "<b>*</b>\
+"informoj vortaraj-mallongigoj teksto"			= "<b>*</b>\
     fundamenta\
 
 <b>1</b>\
@@ -200,7 +200,7 @@
     Zamenhof\
 
 ";
-"informo fakaj-mallongigoj teksto"				= "<b>AGR</b>\
+"informoj fakaj-mallongigoj teksto"				= "<b>AGR</b>\
     agrokulturo\
 
 <b>ANA</b>\

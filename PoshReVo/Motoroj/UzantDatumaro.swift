@@ -36,7 +36,7 @@ class UzantDatumaro {
         
         sharghiJeKonservitajnDatumojn()
         
-        // Se datumoj ne estas trovitaj, starigi bazan informon
+        // Se datumoj ne estas trovitaj, starigi bazajn informojn
         
         // Trovi lingvojn el la aparataj agoroj, kaj uzi ilin
         if oftajSerchLingvoj.count == 0 {

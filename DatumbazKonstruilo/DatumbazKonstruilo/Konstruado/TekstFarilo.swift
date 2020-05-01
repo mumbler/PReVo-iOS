@@ -68,7 +68,7 @@ final class TekstFarilo {
             }
         }
         
-        return "\"informo vortaraj-mallongigoj teksto\"\t\t\t= \"" + teksto + "\";\n"
+        return "\"informoj vortaraj-mallongigoj teksto\"\t\t\t= \"" + teksto + "\";\n"
     }
     
     private static func verkiFakoMallongiganTekston(_ alirilo: DatumbazAlirilo) -> String {
@@ -88,7 +88,7 @@ final class TekstFarilo {
             }
         }
         
-        return "\"informo fakaj-mallongigoj teksto\"\t\t\t\t= \"" + teksto + "\";\n"
+        return "\"informoj fakaj-mallongigoj teksto\"\t\t\t\t= \"" + teksto + "\";\n"
     }
     
 }

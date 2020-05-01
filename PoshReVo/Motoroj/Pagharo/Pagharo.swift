@@ -27,7 +27,7 @@ enum Pagho : Int {
         case .Agordoj:
             return NSLocalizedString("flanko agordoj etikedo", comment: "")
         case .Pri:
-            return NSLocalizedString("flanko informo etikedo", comment: "")
+            return NSLocalizedString("flanko informoj etikedo", comment: "")
         }
     }
     
@@ -45,7 +45,7 @@ enum Pagho : Int {
         case .Agordoj:
             return "pikto_dentrado"
         case .Pri:
-            return "pikto_informo"
+            return "pikto_informoj"
         }
     }
     

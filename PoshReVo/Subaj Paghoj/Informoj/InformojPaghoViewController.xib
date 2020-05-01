@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InformoPaghoViewController" customModule="PoshReVo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InformojPaghoViewController" customModule="PoshReVo" customModuleProvider="target">
             <connections>
                 <outlet property="etikedo" destination="G4B-Fu-3HN" id="5CU-oW-wBE"/>
                 <outlet property="fonoView" destination="tUi-Zb-jjR" id="ac4-m4-m0w"/>
@@ -27,13 +25,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUi-Zb-jjR">
-                            <rect key="frame" x="4" y="4" width="406" height="45"/>
+                            <rect key="frame" x="4" y="4" width="406" height="44.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bU-l6-sz6">
-                                    <rect key="frame" x="4" y="4" width="398" height="37"/>
+                                    <rect key="frame" x="4" y="4" width="398" height="36.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4B-Fu-3HN" customClass="TTTAttributedLabel">
-                                            <rect key="frame" x="8" y="8" width="382" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="382" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -72,6 +70,7 @@
                 <constraint firstItem="845-aI-oJA" firstAttribute="top" secondItem="kJI-QN-OwZ" secondAttribute="topMargin" id="a30-kI-zto"/>
                 <constraint firstItem="845-aI-oJA" firstAttribute="leading" secondItem="kJI-QN-OwZ" secondAttribute="leading" id="lh7-Ku-LJr"/>
             </constraints>
+            <point key="canvasLocation" x="132" y="125"/>
         </view>
     </objects>
 </document>

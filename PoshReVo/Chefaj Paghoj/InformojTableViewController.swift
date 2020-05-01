@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
+final class InformojTableViewController: BazStilaTableViewController, Chefpagho {
     
     private enum Sekcio{
         case ReVo, PoshReVo
@@ -40,12 +40,12 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
             switch self {
             case .ReVo:
                 titoloj = [
-                    NSLocalizedString("informo revo titolo", comment: ""),
-                    NSLocalizedString("informo vortaraj-mallongigoj titolo", comment: ""),
-                    NSLocalizedString("informo fakaj-mallongigoj titolo", comment: "")
+                    NSLocalizedString("informoj revo titolo", comment: ""),
+                    NSLocalizedString("informoj vortaraj-mallongigoj titolo", comment: ""),
+                    NSLocalizedString("informoj fakaj-mallongigoj titolo", comment: "")
                 ]
             case .PoshReVo:
-                titoloj = [NSLocalizedString("informo poshrevo titolo", comment: "")]
+                titoloj = [NSLocalizedString("informoj poshrevo titolo", comment: "")]
             }
             
             return titoloj[numero]
@@ -58,23 +58,23 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
             switch self {
             case .ReVo:
                 tekstoj = [
-                    NSLocalizedString("informo revo teksto", comment: ""),
-                    Bundle.main.localizedString(forKey: "informo vortaraj-mallongigoj teksto", value: nil, table: "Generataj"),
-                    Bundle.main.localizedString(forKey: "informo fakaj-mallongigoj teksto", value: nil, table: "Generataj")
+                    NSLocalizedString("informoj revo teksto", comment: ""),
+                    Bundle.main.localizedString(forKey: "informoj vortaraj-mallongigoj teksto", value: nil, table: "Generataj"),
+                    Bundle.main.localizedString(forKey: "informoj fakaj-mallongigoj teksto", value: nil, table: "Generataj")
                 ]
             case .PoshReVo:
-                let versioTeksto = String(format: NSLocalizedString("informo versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "" ])
+                let versioTeksto = String(format: NSLocalizedString("informoj versio", comment: ""), arguments: [ (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "" ])
                 tekstoj = [
-                    String(format: NSLocalizedString("informo poshrevo teksto", comment: ""), versioTeksto)
+                    String(format: NSLocalizedString("informoj poshrevo teksto", comment: ""), versioTeksto)
                 ]
             }
             
             return tekstoj[numero]
         }
         
-        public func destino(numero: Int) -> InformoPaghoViewController {
+        public func destino(numero: Int) -> InformojPaghoViewController {
             
-            let pagho = InformoPaghoViewController(titolo: titolo(numero: numero), teksto: teksto(numero: numero))
+            let pagho = InformojPaghoViewController(titolo: titolo(numero: numero), teksto: teksto(numero: numero))
             return pagho
         }
     }
@@ -120,7 +120,7 @@ final class InformoTableViewController: BazStilaTableViewController, Chefpagho {
     // MARK: Chefpagho
     
     func aranghiNavigaciilo() {
-        parent?.title = NSLocalizedString("informo titolo", comment: "")
+        parent?.title = NSLocalizedString("informoj titolo", comment: "")
         parent?.navigationItem.rightBarButtonItem = nil
     }
 }

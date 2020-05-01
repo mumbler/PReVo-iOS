@@ -13,7 +13,7 @@
 "flanko historio etikedo"                       = "Historio";
 "flanko konservitaj etikedo"                    = "Konservitaj";
 "flanko agordoj etikedo"                        = "Agordoj";
-"flanko informo etikedo"                        = "Informo";
+"flanko informoj etikedo"                       = "Informoj";
 
 // Serchi
 
@@ -51,18 +51,18 @@
 "agordoj nuligi konservitajn averto"            = "Ĉu nuligu konservitajn artikolojn?";
 
 // Pri
-"informo titolo"                                = "Informo";
+"informoj titolo"                               = "Informoj";
 
-"informo revo titolo"                           = "Pri ReVo";
-"informo revo teksto"                           = "<b>Reta Vortaro</b>\nReta Vortaro estas vortaro de la esperanta lingvo, legebla senpage sur la reto ĉe <a href=\"http://www.reta-vortaro.de\">www.reta-vortaro.de</a>. Ĉi apo kolektas kaj prezentas la difinojn kaj tradukojn kiujn enhavas ĝi, samkiel ili aperas tie.\n\n<b>Redaktado</b>\nReta Vortaro estas redaktata de rondo de volontuloj. Se vi trovas eraron aŭ mankon, aŭ simple deziras kontribui al libera kaj aktuala vortaro sur la reto, <a href=\"http://www.reta-vortaro.de/revo/dok/redinfo.html\">fariĝu redaktanto</a>.";
+"informoj revo titolo"                          = "Pri ReVo";
+"informoj revo teksto"                          = "<b>Reta Vortaro</b>\nReta Vortaro estas vortaro de la esperanta lingvo, legebla senpage sur la reto ĉe <a href=\"http://www.reta-vortaro.de\">www.reta-vortaro.de</a>. Ĉi apo kolektas kaj prezentas la difinojn kaj tradukojn kiujn enhavas ĝi, samkiel ili aperas tie.\n\n<b>Redaktado</b>\nReta Vortaro estas redaktata de rondo de volontuloj. Se vi trovas eraron aŭ mankon, aŭ simple deziras kontribui al libera kaj aktuala vortaro sur la reto, <a href=\"http://www.reta-vortaro.de/revo/dok/redinfo.html\">fariĝu redaktanto</a>.";
 
-"informo vortaraj-mallongigoj titolo"           = "Vortaraj Mallongigoj";
-"informo fakaj-mallongigoj titolo"              = "Fakaj Mallongigoj";
+"informoj vortaraj-mallongigoj titolo"          = "Vortaraj Mallongigoj";
+"informoj fakaj-mallongigoj titolo"             = "Fakaj Mallongigoj";
 
-"informo poshrevo titolo"                       = "Pri PoŝReVo";
-"informo poshrevo teksto"                       = "<b>Poŝa Reta Vortaro</b>\nPoŝa Reta Vortaro estas programita de Robin Hill. Plena informo troviĝas ĉe <a href=\"http://www.inthescales.com/projects/poshrevo_eo\">ĉi tiu retpaĝo</a>.\n\nSe vi bezonas helpon, renkontis eraron, aŭ havas ajnaspecan komenton vi povas kontakti per retpoŝtmesaĝo al <a href=\"mailto:contact@inthescales.com\">tiu ĉi adreso</a>.\n\n<b>Kodaro</b>\nLa font-kodo de ĉi tiu programo estas libere havebla kaj oni rajtas legi, kopii, ŝanĝi, redisdoni, kaj vendi ĝin ajnamaniere. Tiu kodo disponeblas <a href=\"https://www.github.com/inthescales/PoshReVo\">ĉi tie</a>, kaj estas eldonita sub la <a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 Permesilo</a>.\n\nLa enapaj bildetoj venas de <a href=\"http://www.icons8.com\">icons8</a>.\n\n\n<i>Poŝa Reta Vortaro, PoŝReVo © 2016-2019, Robin Hill\n\n%@</i>";
+"informoj poshrevo titolo"                      = "Pri PoŝReVo";
+"informoj poshrevo teksto"                      = "<b>Poŝa Reta Vortaro</b>\nPoŝa Reta Vortaro estas programita de Robin Hill. Pliaj informoj troviĝas ĉe <a href=\"http://www.inthescales.com/projects/poshrevo_eo\">ĉi tiu retpaĝo</a>.\n\nSe vi bezonas helpon, renkontis eraron, aŭ havas ajnaspecan komenton vi povas kontakti per retpoŝtmesaĝo al <a href=\"mailto:contact@inthescales.com\">tiu ĉi adreso</a>.\n\n<b>Kodaro</b>\nLa font-kodo de ĉi tiu programo estas libere havebla kaj oni rajtas legi, kopii, ŝanĝi, redisdoni, kaj vendi ĝin ajnamaniere. Tiu kodo disponeblas <a href=\"https://www.github.com/inthescales/PoshReVo\">ĉi tie</a>, kaj estas eldonita sub la <a href=\"http://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GPLv2 Permesilo</a>.\n\nLa enapaj bildetoj venas de <a href=\"http://www.icons8.com\">icons8</a>.\n\n\n<i>Poŝa Reta Vortaro, PoŝReVo © 2016-2019, Robin Hill\n\n%@</i>";
 
-"informo versio"                                = "Versio numero %@";
+"informoj versio"                               = "Versio numero %@";
 
 // Artikolo pagho
 
