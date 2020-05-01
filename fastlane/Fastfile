@@ -16,8 +16,15 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Push a new release build to the App Store"
-  lane :release do
+
+  desc "Alshutas betan konstruajhon al la Ap-vendejo"
+  lane :beta do
+    build_app(workspace: "PoshReVo.xcworkspace", scheme: "PoshReVo (eldona)")
+    upload_to_testflight
+  end
+
+  desc "Alshutas eldonan konstruajhon al la Ap-vendejo"
+  lane :eldona do
     increment_build_number(
 	build_number: app_store_build_number + 1,
 	    xcodeproj: "PoshReVo.xcodeproj"

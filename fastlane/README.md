@@ -16,11 +16,16 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios release
+### ios beta
 ```
-fastlane ios release
+fastlane ios beta
 ```
-Push a new release build to the App Store
+Alshutas betan konstruajhon al la Ap-vendejo
+### ios eldona
+```
+fastlane ios eldona
+```
+Alshutas eldonan konstruajhon al la Ap-vendejo
 
 ----
 
