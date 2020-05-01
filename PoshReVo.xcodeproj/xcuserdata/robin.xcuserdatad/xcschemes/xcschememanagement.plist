@@ -4,14 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PoshReVo (eldona).xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
-		<key>PoshReVo.xcscheme</key>
+		<key>PoshReVo (debug).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
