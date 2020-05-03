@@ -60,6 +60,15 @@
             ReferencedContainer = "container:PoshReVo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0041F8B1245CC81A00254EA0"
+            BuildableName = "PoshReVoEkranKopiilo.xctest"
+            BlueprintName = "PoshReVoEkranKopiilo"
+            ReferencedContainer = "container:PoshReVo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

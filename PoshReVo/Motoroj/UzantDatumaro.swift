@@ -34,7 +34,13 @@ class UzantDatumaro {
     
     static func starigi() {
         
-        sharghiJeKonservitajnDatumojn()
+        let testTrapaso = UserDefaults.standard.bool(forKey: "TestTrapaso")
+        
+        if testTrapaso {
+            sharghiTrapasajnDatumojn()
+        } else {
+            sharghiJeKonservitajnDatumojn()
+        }
         
         // Se datumoj ne estas trovitaj, starigi bazajn informojn
         
@@ -180,6 +186,29 @@ class UzantDatumaro {
         
         konserviStilon = true
         konserviDatumojn()
+    }
+    
+    // Trapasado de konservitaj datumoj por testado --------------------
+    
+    static func sharghiTrapasajnDatumojn() {
+        if let trapasaSerchLingvoKodo = UserDefaults.standard.string(forKey: "TestSerchLingvo"),
+                let trapasaSerchLingvo = SeancDatumaro.lingvoPorKodo(trapasaSerchLingvoKodo) {
+            serchLingvo = trapasaSerchLingvo
+        }
+        if let trapasaOftajKodoj = UserDefaults.standard.string(forKey: "TestOftajSerchLingvoj") {
+            for kodo in trapasaOftajKodoj.split(separator: ",") {
+                if let trapasaLingvo = SeancDatumaro.lingvoPorKodo(String(kodo)) {
+                    oftajSerchLingvoj.append(trapasaLingvo)
+                }
+            }
+        }
+        if let trapasaTradukLingvoj = UserDefaults.standard.string(forKey: "TestTradukLingvoj") {
+            for kodo in trapasaTradukLingvoj.split(separator: ",") {
+                if let trapasaLingvo = SeancDatumaro.lingvoPorKodo(String(kodo)) {
+                    tradukLingvoj.insert(trapasaLingvo)
+                }
+            }
+        }
     }
     
     // Konservado kaj resharghado de datumoj ---------------------------

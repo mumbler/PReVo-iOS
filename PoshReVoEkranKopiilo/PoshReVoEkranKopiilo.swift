@@ -15,6 +15,10 @@ class PoshReVoEkranKopiilo: XCTestCase {
     override func setUp() {
         let app = XCUIApplication()
         setupSnapshot(app)
+        app.launchArguments += ["-TestTrapaso", "YES"]
+        app.launchArguments += ["-TestSerchLingvo", "eo"]
+        app.launchArguments += ["-TestOftajSerchLingvoj", "eo,en,es,he,ja"]
+        app.launchArguments += ["-TestTradukLingvoj", "en,es,he,ja"]
         app.launch()
     }
 
@@ -46,7 +50,7 @@ class PoshReVoEkranKopiilo: XCTestCase {
         
         let window = app.windows.element(boundBy: 0)
         let butono = app.tables.element.cells["japana,<a href=\"unu.0\">~</a>: 一 [いち]."]
-        while butono.frame.maxY > window.frame.height /*!butono.exists*/ {
+        while butono.frame.maxY > window.frame.height {
             app.swipeUp()
         }
         snapshot("tradukoj")
