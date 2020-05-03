@@ -40,8 +40,8 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         
         serchTabulo?.delegate = self
         serchTabulo?.placeholder = NSLocalizedString("serchi tabulo teksto", comment: "")
-        serchTabulo?.isAccessibilityElement = true
-        serchTabulo?.accessibilityLabel = serchTabulo?.placeholder
+        serchTabulo?.searchTextField.isAccessibilityElement = true
+        serchTabulo?.searchTextField.accessibilityIdentifier = "serchTabulaTekstejo"
         
         trovTabelo?.delegate = self
         trovTabelo?.dataSource = self
@@ -90,6 +90,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         elektiloButono.setImage(UIImage(named: "pikto_traduko")?.withRenderingMode(.alwaysTemplate), for: .normal)
         elektiloButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         elektiloButono.addTarget(self, action: #selector(elektiLingvon), for: .touchUpInside)
+        elektiloButono.accessibilityLabel = "elekti lingvon"
         
         let lastaButono = UIButton(type: .system)
         if UzantDatumaro.oftajSerchLingvoj.count > 1 {
@@ -100,6 +101,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
             lastaButono.tintColor = UzantDatumaro.stilo.navTintKoloro
             lastaButono.addTarget(self, action: #selector(uziLastanLingvon), for: .touchUpInside)
         }
+        lastaButono.accessibilityLabel = "lasta lingvo"
         
         butonujo.addSubview(lastaButono)
         butonujo.addSubview(elektiloButono)

@@ -11,6 +11,8 @@
 		000BF42A22FE4C4000EA0271 /* InformojPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000BF42922FE4C4000EA0271 /* InformojPaghoViewController.xib */; };
 		0036571D2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */; };
 		0036572223132E8F0028C21F /* Generataj.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0036572023132E8F0028C21F /* Generataj.strings */; };
+		0041F8B5245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F8B4245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift */; };
+		0041F8BD245CC86300254EA0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F8BC245CC86300254EA0 /* SnapshotHelper.swift */; };
 		00477A70227654B700515416 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6E227654B700515416 /* Localizable.strings */; };
 		00700AD5231C59150075A077 /* FakVortoListoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */; };
 		00700AD6231D3BA50075A077 /* ReVoDatumbazo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003656D32309A50E0028C21F /* ReVoDatumbazo.framework */; };
@@ -70,6 +72,16 @@
 		7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0041F8B7245CC81A00254EA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0009858F1C31F0CB0083DE24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 000985961C31F0CB0083DE24;
+			remoteInfo = PoshReVo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		00700AD8231D3BA50075A077 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -91,6 +103,10 @@
 		003656D32309A50E0028C21F /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatumbazAlirilo+Komuna.swift"; sourceTree = "<group>"; };
 		0036572123132E8F0028C21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Generataj.strings; sourceTree = "<group>"; };
+		0041F8B2245CC81A00254EA0 /* PoshReVoEkranKopiilo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVoEkranKopiilo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0041F8B4245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoshReVoEkranKopiilo.swift; sourceTree = "<group>"; };
+		0041F8B6245CC81A00254EA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0041F8BC245CC86300254EA0 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		00477A6F227654B700515416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakVortoListoTableViewController.swift; sourceTree = "<group>"; };
 		0084890F226385200071CEC2 /* SeancDatumaro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeancDatumaro.swift; sourceTree = "<group>"; };
@@ -164,6 +180,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0041F8AF245CC81A00254EA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -220,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				0084890D226385200071CEC2 /* PoshReVo */,
+				0041F8B3245CC81A00254EA0 /* PoshReVoEkranKopiilo */,
 				000985981C31F0CB0083DE24 /* Products */,
 				0282B2FEF6E4EC8E45CCEF41 /* Frameworks */,
 				93F3CA26D2E3AB8B6C0FBA24 /* Pods */,
@@ -230,8 +254,19 @@
 			isa = PBXGroup;
 			children = (
 				000985971C31F0CB0083DE24 /* PoshReVo.app */,
+				0041F8B2245CC81A00254EA0 /* PoshReVoEkranKopiilo.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0041F8B3245CC81A00254EA0 /* PoshReVoEkranKopiilo */ = {
+			isa = PBXGroup;
+			children = (
+				0041F8B4245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift */,
+				0041F8BC245CC86300254EA0 /* SnapshotHelper.swift */,
+				0041F8B6245CC81A00254EA0 /* Info.plist */,
+			);
+			path = PoshReVoEkranKopiilo;
 			sourceTree = "<group>";
 		};
 		00477A6D227654B700515416 /* Base.lproj */ = {
@@ -334,8 +369,8 @@
 			children = (
 				00848943226385200071CEC2 /* IngoPaghoViewController.swift */,
 				00848945226385200071CEC2 /* IngoPaghoViewController.xib */,
-				0084893E226385200071CEC2 /* SerchPaghoViewController.xib */,
 				00848941226385200071CEC2 /* SerchPaghoViewController.swift */,
+				0084893E226385200071CEC2 /* SerchPaghoViewController.xib */,
 				0097B1B822E51032003DEDC4 /* EsplorPaghoViewController.swift */,
 				0084893F226385200071CEC2 /* HistorioViewController.swift */,
 				00848946226385200071CEC2 /* HistorioViewController.xib */,
@@ -424,13 +459,32 @@
 			productReference = 000985971C31F0CB0083DE24 /* PoshReVo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0041F8B1245CC81A00254EA0 /* PoshReVoEkranKopiilo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0041F8B9245CC81A00254EA0 /* Build configuration list for PBXNativeTarget "PoshReVoEkranKopiilo" */;
+			buildPhases = (
+				0041F8AE245CC81A00254EA0 /* Sources */,
+				0041F8AF245CC81A00254EA0 /* Frameworks */,
+				0041F8B0245CC81A00254EA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0041F8B8245CC81A00254EA0 /* PBXTargetDependency */,
+			);
+			name = PoshReVoEkranKopiilo;
+			productName = PoshReVoEkranKopiilo;
+			productReference = 0041F8B2245CC81A00254EA0 /* PoshReVoEkranKopiilo.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0009858F1C31F0CB0083DE24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				DefaultBuildSystemTypeForWorkspace = Latest;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Sinuous Rill";
 				TargetAttributes = {
@@ -438,6 +492,12 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = WYZ8GHNKW7;
 						LastSwiftMigration = 1130;
+					};
+					0041F8B1245CC81A00254EA0 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = JZ3WYZWA8F;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 000985961C31F0CB0083DE24;
 					};
 				};
 			};
@@ -455,6 +515,7 @@
 			projectRoot = "";
 			targets = (
 				000985961C31F0CB0083DE24 /* PoshReVo */,
+				0041F8B1245CC81A00254EA0 /* PoshReVoEkranKopiilo */,
 			);
 		};
 /* End PBXProject section */
@@ -486,6 +547,13 @@
 				00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */,
 				00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */,
 				000BF42A22FE4C4000EA0271 /* InformojPaghoViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0041F8B0245CC81A00254EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +652,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0041F8AE245CC81A00254EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0041F8B5245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift in Sources */,
+				0041F8BD245CC86300254EA0 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0041F8B8245CC81A00254EA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
+			targetProxy = 0041F8B7245CC81A00254EA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0036572023132E8F0028C21F /* Generataj.strings */ = {
@@ -763,6 +848,57 @@
 			};
 			name = Release;
 		};
+		0041F8BA245CC81A00254EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PoshReVoEkranKopiilo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.PoshReVoEkranKopiilo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PoshReVo;
+			};
+			name = Debug;
+		};
+		0041F8BB245CC81A00254EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PoshReVoEkranKopiilo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.PoshReVoEkranKopiilo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PoshReVo;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -780,6 +916,15 @@
 			buildConfigurations = (
 				000985C01C31F0CB0083DE24 /* Debug */,
 				000985C11C31F0CB0083DE24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0041F8B9245CC81A00254EA0 /* Build configuration list for PBXNativeTarget "PoshReVoEkranKopiilo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0041F8BA245CC81A00254EA0 /* Debug */,
+				0041F8BB245CC81A00254EA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -32,6 +32,7 @@ class ChefaNavigationController : SlideNavigationController, Stilplena {
         menuoButono.setImage(UIImage(named: "pikto_menuo")?.withRenderingMode(.alwaysTemplate), for: .normal)
         menuoButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         menuoButono.addTarget(self, action: #selector(SlideNavigationController.toggleLeftMenu), for: .touchUpInside)
+        menuoButono.accessibilityLabel = "menuo"
         
         butonujo.addSubview(menuoButono)
         menuoButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)

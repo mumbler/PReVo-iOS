@@ -58,6 +58,7 @@ final class IngoPaghoViewController : UIViewController, Stilplena {
             novaPagho.didMove(toParent: self)
 
             view.addSubview(novaPagho.view)
+            view.accessibilityElements = [novaPagho.view!]
             novaPagho.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
             
             if let konforma = novaPagho as? Chefpagho {
