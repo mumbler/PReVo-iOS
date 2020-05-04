@@ -77,11 +77,13 @@
 		00D0B71922D1474100814637 /* Pagharo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71822D1474100814637 /* Pagharo.swift */; };
 		00D0B71B22D1477F00814637 /* PaghMotoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71A22D1477F00814637 /* PaghMotoro.swift */; };
 		00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848919226385200071CEC2 /* LaunchScreen.storyboard */; };
-		00DCE85D246093B300C76094 /* SimplaModeloTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE85C246093B300C76094 /* SimplaModeloTestoj.swift */; };
 		00DCE85F2460961E00C76094 /* ListeroTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE85E2460961E00C76094 /* ListeroTestoj.swift */; };
 		00DCE86424609C6100C76094 /* TradukoTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE86324609C6100C76094 /* TradukoTestoj.swift */; };
 		00DCE86624609D3000C76094 /* VortoTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE86524609D3000C76094 /* VortoTestoj.swift */; };
 		00DCE86824609F7200C76094 /* SubartikoloTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE86724609F7200C76094 /* SubartikoloTestoj.swift */; };
+		00DCE86A2460A1EB00C76094 /* FakoTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE8692460A1EB00C76094 /* FakoTestoj.swift */; };
+		00DCE86C2460A21100C76094 /* MallongigoTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE86B2460A21100C76094 /* MallongigoTestoj.swift */; };
+		00DCE86F2460A29A00C76094 /* StiloTestoj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DCE86E2460A29A00C76094 /* StiloTestoj.swift */; };
 		00F6D1B22290A21100F2EB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00848930226385200071CEC2 /* Assets.xcassets */; };
 		7D5D86C69AE149885D31A327 /* Pods_PoshReVo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFC0D67AB59AE09A62C26831 /* Pods_PoshReVo.framework */; };
 /* End PBXBuildFile section */
@@ -196,11 +198,13 @@
 		00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00D0B71822D1474100814637 /* Pagharo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagharo.swift; sourceTree = "<group>"; };
 		00D0B71A22D1477F00814637 /* PaghMotoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaghMotoro.swift; sourceTree = "<group>"; };
-		00DCE85C246093B300C76094 /* SimplaModeloTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplaModeloTestoj.swift; sourceTree = "<group>"; };
 		00DCE85E2460961E00C76094 /* ListeroTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeroTestoj.swift; sourceTree = "<group>"; };
 		00DCE86324609C6100C76094 /* TradukoTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradukoTestoj.swift; sourceTree = "<group>"; };
 		00DCE86524609D3000C76094 /* VortoTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VortoTestoj.swift; sourceTree = "<group>"; };
 		00DCE86724609F7200C76094 /* SubartikoloTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubartikoloTestoj.swift; sourceTree = "<group>"; };
+		00DCE8692460A1EB00C76094 /* FakoTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakoTestoj.swift; sourceTree = "<group>"; };
+		00DCE86B2460A21100C76094 /* MallongigoTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MallongigoTestoj.swift; sourceTree = "<group>"; };
+		00DCE86E2460A29A00C76094 /* StiloTestoj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StiloTestoj.swift; sourceTree = "<group>"; };
 		47EF2D02040D4CCD471ACA36 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D400D687919A5D860DDEA7C /* Pods-PoshReVo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshReVo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo.debug.xcconfig"; sourceTree = "<group>"; };
 		9310B9D90FE8D936EB3410BA /* Pods-PoshReVo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoshReVo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoshReVo/Pods-PoshReVo.release.xcconfig"; sourceTree = "<group>"; };
@@ -515,12 +519,14 @@
 		00DCE8602460962700C76094 /* Modeloj */ = {
 			isa = PBXGroup;
 			children = (
-				00DCE85C246093B300C76094 /* SimplaModeloTestoj.swift */,
 				00A2522224606724000759B9 /* LingvoTestoj.swift */,
+				00DCE8692460A1EB00C76094 /* FakoTestoj.swift */,
+				00DCE86B2460A21100C76094 /* MallongigoTestoj.swift */,
+				00DCE86E2460A29A00C76094 /* StiloTestoj.swift */,
 				00DCE85E2460961E00C76094 /* ListeroTestoj.swift */,
-				00DCE86324609C6100C76094 /* TradukoTestoj.swift */,
-				00DCE86524609D3000C76094 /* VortoTestoj.swift */,
 				00DCE86724609F7200C76094 /* SubartikoloTestoj.swift */,
+				00DCE86524609D3000C76094 /* VortoTestoj.swift */,
+				00DCE86324609C6100C76094 /* TradukoTestoj.swift */,
 			);
 			path = Modeloj;
 			sourceTree = "<group>";
@@ -813,9 +819,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00DCE86F2460A29A00C76094 /* StiloTestoj.swift in Sources */,
 				00DCE86824609F7200C76094 /* SubartikoloTestoj.swift in Sources */,
 				00DCE86624609D3000C76094 /* VortoTestoj.swift in Sources */,
-				00DCE85D246093B300C76094 /* SimplaModeloTestoj.swift in Sources */,
+				00DCE86A2460A1EB00C76094 /* FakoTestoj.swift in Sources */,
+				00DCE86C2460A21100C76094 /* MallongigoTestoj.swift in Sources */,
 				00DCE86424609C6100C76094 /* TradukoTestoj.swift in Sources */,
 				00A2522324606724000759B9 /* LingvoTestoj.swift in Sources */,
 				00DCE85F2460961E00C76094 /* ListeroTestoj.swift in Sources */,
