@@ -53,26 +53,26 @@ final public class TrieIterator {
             if let destinoj = nodo.mutableOrderedSetValue(forKey: "destinoj").array as? [NSManagedObject] {
                 
                 // Grupigi destinojn lau videbla nomo
-                var grupoj = [String: [NSManagedObject]]()
+                var subartikolo = [String: [NSManagedObject]]()
                 var donota: (String, [NSManagedObject])?
                 
                 for destino in destinoj {
                     if let videbla = destino.value(forKey: "teksto") as? String {
-                        if grupoj[videbla] == nil {
-                            grupoj[videbla] = [NSManagedObject]()
+                        if subartikolo[videbla] == nil {
+                            subartikolo[videbla] = [NSManagedObject]()
                         }
-                        grupoj[videbla]?.append(destino)
+                        subartikolo[videbla]?.append(destino)
                     }
                 }
                 
                 // Ordigi grupojn tiel ke la unua havu la bazan nomo, aliaj alfabetigitaj poste
-                for klavo in grupoj.keys.sorted(by: { (unuaVorto, duaVorto) -> Bool in
+                for klavo in subartikolo.keys.sorted(by: { (unuaVorto, duaVorto) -> Bool in
                     return unuaVorto.compare(duaVorto, options: .forcedOrdering, range: nil, locale: locale) == .orderedDescending
                 }) {
                     if klavo == nomo {
-                        donota = (klavo, grupoj[klavo]!)
+                        donota = (klavo, subartikolo[klavo]!)
                     } else {
-                        destinojRestantaj.append((klavo, grupoj[klavo]!))
+                        destinojRestantaj.append((klavo, subartikolo[klavo]!))
                     }
                 }
 

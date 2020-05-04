@@ -145,11 +145,11 @@ class ArtikoloViewController : UIViewController, Stilplena {
     func iriAlMarko(_ marko: String, animacii: Bool) {
         
         var sumo = 0
-        for grupo in artikolo?.grupoj ?? [] {
+        for subartikolo in artikolo?.subartikoloj ?? [] {
             
-            if artikolo?.grupoj.count ?? 0 > 1 { sumo += 1 }
+            if artikolo?.subartikoloj.count ?? 0 > 1 { sumo += 1 }
             
-            for vorto in grupo.vortoj {
+            for vorto in subartikolo.vortoj {
                 
                 if vorto.marko == marko {
                     
@@ -228,9 +228,9 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         var rez = 0
         if section == 0 {
             
-            for grupo in artikolo!.grupoj {
-                if artikolo?.grupoj.count ?? 0 > 1 { rez += 1 }
-                rez += grupo.vortoj.count
+            for subartikolo in artikolo!.subartikoloj {
+                if artikolo?.subartikoloj.count ?? 0 > 1 { rez += 1 }
+                rez += subartikolo.vortoj.count
             }
             return rez
         } else if section == 1 {
@@ -247,9 +247,9 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         
         let chelSpeco: ChelSpeco
         if indexPath.section == 0 {
-            if artikolo.grupoj.count == 1 {
-                let grupo = artikolo.grupoj.first!
-                let vorto = grupo.vortoj[indexPath.row]
+            if artikolo.subartikoloj.count == 1 {
+                let subartikolo = artikolo.subartikoloj.first!
+                let vorto = subartikolo.vortoj[indexPath.row]
                 chelSpeco = .Vorto(titolo: vorto.kunaTitolo, teksto: vorto.teksto)
             }
             else {
@@ -427,14 +427,14 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         guard let artikolo = artikolo else { fatalError("Devas esti artikolo") }
         
         var sumo = 0
-        for grupo in artikolo.grupoj {
+        for subartikolo in artikolo.subartikoloj {
             if sumo == indexPath.row {
                 return nil
             }
-            if indexPath.row < sumo + grupo.vortoj.count + 1 {
-                return grupo.vortoj[indexPath.row - sumo - 1]
+            if indexPath.row < sumo + subartikolo.vortoj.count + 1 {
+                return subartikolo.vortoj[indexPath.row - sumo - 1]
             }
-            sumo += grupo.vortoj.count + 1
+            sumo += subartikolo.vortoj.count + 1
         }
         
         return nil
@@ -444,14 +444,14 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         guard let artikolo = artikolo else { fatalError("Devas esti artikolo") }
         
         var sumo = 0
-        for grupo in artikolo.grupoj {
+        for subartikolo in artikolo.subartikoloj {
             if sumo == indexPath.row {
-                return grupo.teksto
+                return subartikolo.teksto
             }
-            if indexPath.row < sumo + grupo.vortoj.count + 1 {
+            if indexPath.row < sumo + subartikolo.vortoj.count + 1 {
                 return nil
             }
-            sumo += grupo.vortoj.count + 1
+            sumo += subartikolo.vortoj.count + 1
         }
         
         return nil

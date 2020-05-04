@@ -1,5 +1,5 @@
 //
-//  Grupo.swift
+//  Subartikolo.swift
 //  PoshReVo
 //
 //  Created by Robin Hill on 5/4/20.
@@ -11,6 +11,6 @@ import Foundation
 /*
     Parto de artikolo havanta sian propran tekstoj supre de listo da vortoj.
 */
-struct Grupo {
+struct Subartikolo {
     let teksto: String, vortoj: [Vorto]
 }

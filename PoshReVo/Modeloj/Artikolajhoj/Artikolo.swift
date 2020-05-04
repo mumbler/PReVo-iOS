@@ -19,7 +19,7 @@ final class Artikolo {
     let indekso: String
     let ofc: String?
     
-    let grupoj: [Grupo]
+    let subartikoloj: [Subartikolo]
     let tradukoj: [Traduko]
     
     init?(objekto: NSManagedObject) {
@@ -39,7 +39,7 @@ final class Artikolo {
         indekso = trovIndekso!
         
         var trovOfc: String? = nil
-        var novajGrupoj: [Grupo]? = [Grupo]()
+        var novajSubartikoloj: [Subartikolo]? = [Subartikolo]()
         var novajTradukoj: [Traduko] = [Traduko]()
         do {
             
@@ -49,9 +49,9 @@ final class Artikolo {
                     
                     trovOfc = vortoDict["ofc"] as? String
                     
-                    for grupo in (vortoDict["grupoj"] as? [[String: Any]]) ?? [[:]] {
+                    for subartikoloj in (vortoDict["grupoj"] as? [[String: Any]]) ?? [[:]] {
                         var novajVortoj = [Vorto]()
-                        for vorto in (grupo["vortoj"] as? [[String: Any]]) ?? [[:]] {
+                        for vorto in (subartikoloj["vortoj"] as? [[String: Any]]) ?? [[:]] {
                             if let titolo = vorto["titolo"] as? String,
                                let teksto = vorto["teksto"] as? String,
                                let marko = vorto["marko"] as? String {
@@ -59,8 +59,8 @@ final class Artikolo {
                             }
                         }
                         
-                        let teksto = (grupo["teksto"] as? String) ?? ""
-                        novajGrupoj?.append(Grupo(teksto: teksto, vortoj:novajVortoj ))
+                        let teksto = (subartikoloj["teksto"] as? String) ?? ""
+                        novajSubartikoloj?.append(Subartikolo(teksto: teksto, vortoj:novajVortoj ))
                     }
                 }
             }
@@ -120,14 +120,14 @@ final class Artikolo {
                 }
             }
         } catch {
-            grupoj = [Grupo]()
+            subartikoloj = [Subartikolo]()
             tradukoj = [Traduko]()
             ofc = nil
             return
         }
         
         ofc = trovOfc
-        grupoj = novajGrupoj ?? [Grupo]()
+        subartikoloj = novajSubartikoloj ?? [Subartikolo]()
         tradukoj = novajTradukoj
  
     }
