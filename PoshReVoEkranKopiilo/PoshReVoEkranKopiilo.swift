@@ -3,7 +3,7 @@
 //  PoshReVoEkranKopiilo
 //
 //  Created by Robin Hill on 5/1/20.
-//  Copyright © 2020 Sinuous Rill. All rights reserved.
+//  Copyright © 2020 Robin Hill. All rights reserved.
 //
 
 import XCTest

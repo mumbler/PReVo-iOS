@@ -618,7 +618,7 @@
 				DefaultBuildSystemTypeForWorkspace = Latest;
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Sinuous Rill";
+				ORGANIZATIONNAME = "Robin Hill";
 				TargetAttributes = {
 					000985961C31F0CB0083DE24 = {
 						CreatedOnToolsVersion = 7.2;

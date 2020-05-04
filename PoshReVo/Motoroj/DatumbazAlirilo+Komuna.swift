@@ -3,7 +3,7 @@
 //  PoshReVo
 //
 //  Created by Robin Hill on 8/18/19.
-//  Copyright © 2019 Sinuous Rill. All rights reserved.
+//  Copyright © 2019 Robin Hill. All rights reserved.
 //
 
 import Foundation

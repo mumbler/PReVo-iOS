@@ -3,7 +3,7 @@
 //  PoshReVo
 //
 //  Created by Robin Hill on 12/28/15.
-//  Copyright © 2015 Sinuous Rill. All rights reserved.
+//  Copyright © 2015 Robin Hill. All rights reserved.
 //
 
 import UIKit
