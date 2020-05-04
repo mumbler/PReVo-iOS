@@ -9,7 +9,7 @@
 import XCTest
 @testable import PoshReVo
 
-class LingvoTestoj: XCTestCase {
+final class LingvoTestoj: XCTestCase {
 
     func testKreiLingvon() {
         let esperanto = Lingvo("eo", "esperanto")
@@ -41,7 +41,7 @@ class LingvoTestoj: XCTestCase {
         XCTAssertNotEqual(franca, francperanto)
     }
     
-    func testChifradon() {
+    func testLingvoChifradon() {
 
         let lingvo = Lingvo("eo", "esperanto")
 

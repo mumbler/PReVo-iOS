@@ -11,7 +11,7 @@ import Foundation
 /*
     Reprezentas ero en listo da artikoloj, montrante ligojn inter vortliston kaj artikolojn.
 */
-final class Listero : NSObject, NSCoding {
+final class Listero : NSObject, NSSecureCoding {
     
     let nomo: String, indekso: String
     
@@ -20,7 +20,9 @@ final class Listero : NSObject, NSCoding {
         indekso = enindekso
     }
     
-    // MARK: - NSCoding
+    // MARK: - NSSecureCoding
+    
+    static var supportsSecureCoding = true
     
     required convenience init?(coder aDecoder: NSCoder) {
         if let ennomo = aDecoder.decodeObject(forKey: "nomo") as? String,
