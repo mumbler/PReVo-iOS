@@ -44,7 +44,7 @@ final class IngoPaghoViewController : UIViewController, Stilplena {
     // Montri paghon de tiu speco.
     public func montriPaghon(_ paghTipo: Pagho) {
         
-        let novaPagho = PaghMotoro.publikaMotoro.ViewControllerPorPagho(paghTipo: paghTipo)
+        let novaPagho = PaghMotoro.komuna.ViewControllerPorPagho(paghTipo: paghTipo)
         
         if nunaPagho != paghTipo {
             

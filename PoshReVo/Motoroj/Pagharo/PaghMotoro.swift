@@ -8,7 +8,7 @@
 
 final class PaghMotoro {
     
-    public static let publikaMotoro = PaghMotoro()
+    public static let komuna = PaghMotoro()
     
     var paghoj = [Pagho: UIViewController]()
     
