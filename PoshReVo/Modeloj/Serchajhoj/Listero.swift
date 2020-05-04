@@ -8,8 +8,8 @@
 
 import Foundation
 
-/* Listero estas ghenerala objekto por reprezenti artikolon en
-   liston ekzemple la historio, kaj havas apartan nomon por montri
+/*
+    Reprezentas ero en listo da artikoloj, montrante ligojn inter vortliston kaj artikolojn.
 */
 final class Listero : NSObject, NSCoding {
     
@@ -19,6 +19,8 @@ final class Listero : NSObject, NSCoding {
         nomo = ennomo
         indekso = enindekso
     }
+    
+    // MARK: - NSCoding
     
     required convenience init?(coder aDecoder: NSCoder) {
         if let ennomo = aDecoder.decodeObject(forKey: "nomo") as? String,

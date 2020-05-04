@@ -9,8 +9,7 @@
 import Foundation
 
 /*
-    Grupo enhavas sian propran tekston, kaj listo de vortoj
-    kies teksto aperos sube
+    Parto de artikolo havanta sian propran tekstoj supre de listo da vortoj.
 */
 struct Grupo {
     let teksto: String, vortoj: [Vorto]

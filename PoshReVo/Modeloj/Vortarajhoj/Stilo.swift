@@ -8,7 +8,9 @@
 
 import Foundation
 
-// Stiloj aperas en kelkaj difinoj
+/*
+    Reprezentas skriban stilon. Uzataj en kelkaj difinoj.
+ */
 struct Stilo {
     
     let kodo: String, nomo: String

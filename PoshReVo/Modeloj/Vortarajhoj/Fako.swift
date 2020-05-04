@@ -8,7 +8,9 @@
 
 import Foundation
 
-// Fakoj aperas en kelkaj difinoj
+/*
+    Reprezentas fakon al kiu apartenas vorto aŭ frazaĵo. Uzataj en kelkaj difinoj.
+ */
 struct Fako {
     
     let kodo: String, nomo: String

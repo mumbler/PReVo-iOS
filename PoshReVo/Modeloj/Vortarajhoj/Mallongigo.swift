@@ -8,7 +8,9 @@
 
 import Foundation
 
-// Mallongigoj nun ne uzatas, sed eble estontece
+/*
+    Reprezentas vortaran mallongigon, kiuj inkluzivas fontojn, verikistojn, aldonojn.
+ */
 struct Mallongigo {
     
     let kodo: String, nomo: String

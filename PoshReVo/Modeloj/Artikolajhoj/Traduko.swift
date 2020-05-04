@@ -9,10 +9,8 @@
 import Foundation
 
 /*
-    Traduko aperas en la suba parto de artikolo, kaj montras
-    tradukoj en aliajn lingvojn.
+    Traduko de esperanta vorto en alian lingvon.
 */
 struct Traduko {
-    
     let lingvo: Lingvo, teksto: String
 }

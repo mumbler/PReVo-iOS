@@ -10,28 +10,27 @@ import Foundation
 import CoreData
 
 /*
-    Artikolo reprezentas la enhavoj de unu artikolo pagho.
-    "grupoj" spegulas la sub-artikoloj de la retejo - la plejparto de artikoloj
-    havas nur unu grupo, sed kelkaj havas pli. La chi tie tradukoj estas tiuj
-    kiuj aperas en la artikolo
+    Reprezentas la enhavojn de tuta paĝo en la vortaro.
 */
 final class Artikolo {
     
-    let titolo: String, radiko: String, indekso: String, ofc: String?
-    let grupoj: [Grupo], tradukoj: [Traduko]
+    let titolo: String
+    let radiko: String
+    let indekso: String
+    let ofc: String?
+    
+    let grupoj: [Grupo]
+    let tradukoj: [Traduko]
     
     init?(objekto: NSManagedObject) {
         
         let trovTitolo = objekto.value(forKey: "titolo") as? String
         let trovRadiko = objekto.value(forKey: "radiko") as? String
         let trovIndekso = objekto.value(forKey: "indekso") as? String
-        if trovTitolo == nil || trovRadiko == nil || trovIndekso == nil {
-            titolo = ""
-            radiko = ""
-            indekso = ""
-            ofc = nil
-            grupoj = [Grupo]()
-            tradukoj = [Traduko]()
+        
+        guard trovTitolo != nil
+            && trovRadiko != nil
+            && trovIndekso != nil else {
             return nil
         }
         

@@ -466,10 +466,10 @@
 		00A2524024606F65000759B9 /* Artikolajhoj */ = {
 			isa = PBXGroup;
 			children = (
-				00A2524124606F65000759B9 /* Vorto.swift */,
-				00A2524224606F65000759B9 /* Traduko.swift */,
 				00A2524324606F65000759B9 /* Artikolo.swift */,
 				00A2524424606F65000759B9 /* Grupo.swift */,
+				00A2524124606F65000759B9 /* Vorto.swift */,
+				00A2524224606F65000759B9 /* Traduko.swift */,
 			);
 			path = Artikolajhoj;
 			sourceTree = "<group>";

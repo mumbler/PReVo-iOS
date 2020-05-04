@@ -9,9 +9,8 @@
 import Foundation
 
 /*
-    La lingvo objekto estas uzata por elekti kiun lingvon uzi por
-    serchado, kaj kiujn lingvojn montri en la traduka sekcio de
-    artikolo
+    Reprezentas lingvon ekzistantan en la vortaro.
+    Uzata en serĉado kaj listigado de tradukoj en artikoloj.
 */
 final class Lingvo : NSObject, NSCoding {
     
@@ -21,6 +20,8 @@ final class Lingvo : NSObject, NSCoding {
         kodo = enkodo
         nomo = ennomo
     }
+    
+    // MARK: - NSCoding
     
     required convenience init?(coder aDecoder: NSCoder) {
         if let enkodo = aDecoder.decodeObject(forKey: "kodo") as? String,
@@ -36,6 +37,15 @@ final class Lingvo : NSObject, NSCoding {
         aCoder.encode(nomo, forKey: "nomo")
     }
     
+    override var hash: Int {
+        return kodo.hashValue
+    }
+}
+
+// MARK: - Equatable
+
+extension Lingvo {
+    
     override func isEqual(_ object: Any?) -> Bool {
         if let lingvo = object as? Lingvo {
             return self == lingvo
@@ -47,9 +57,5 @@ final class Lingvo : NSObject, NSCoding {
     
     static func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
         return lhs.kodo == rhs.kodo && lhs.nomo == rhs.nomo
-    }
-    
-    override var hash: Int {
-        return kodo.hashValue
     }
 }

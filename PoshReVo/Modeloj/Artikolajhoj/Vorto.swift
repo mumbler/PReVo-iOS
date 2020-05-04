@@ -9,8 +9,7 @@
 import Foundation
 
 /*
-    Vorto reprezentas unu au pli vortoj kun sama difino.
-    Ili estas la bazaj eroj de artikoloj
+    Reprezentas unu aŭ pluraj vortoj havanta unu saman difinon.
 */
 struct Vorto {
     
