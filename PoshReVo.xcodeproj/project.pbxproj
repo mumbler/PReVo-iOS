@@ -277,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				0084890D226385200071CEC2 /* PoshReVo */,
+				00A2522124606724000759B9 /* PoshReVoUnuopTestoj */,
 				0041F8B3245CC81A00254EA0 /* PoshReVoEkranKopiilo */,
 				000985981C31F0CB0083DE24 /* Products */,
 				0282B2FEF6E4EC8E45CCEF41 /* Frameworks */,
@@ -289,6 +290,7 @@
 			children = (
 				000985971C31F0CB0083DE24 /* PoshReVo.app */,
 				0041F8B2245CC81A00254EA0 /* PoshReVoEkranKopiilo.xctest */,
+				00A2522024606724000759B9 /* PoshReVoUnuopTestoj.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -560,6 +562,24 @@
 			productReference = 0041F8B2245CC81A00254EA0 /* PoshReVoEkranKopiilo.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		00A2521F24606724000759B9 /* PoshReVoUnuopTestoj */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00A2522724606724000759B9 /* Build configuration list for PBXNativeTarget "PoshReVoUnuopTestoj" */;
+			buildPhases = (
+				00A2521C24606724000759B9 /* Sources */,
+				00A2521D24606724000759B9 /* Frameworks */,
+				00A2521E24606724000759B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00A2522624606724000759B9 /* PBXTargetDependency */,
+			);
+			name = PoshReVoUnuopTestoj;
+			productName = PoshReVoUnuopTestoj;
+			productReference = 00A2522024606724000759B9 /* PoshReVoUnuopTestoj.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -582,6 +602,12 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 000985961C31F0CB0083DE24;
 					};
+					00A2521F24606724000759B9 = {
+						CreatedOnToolsVersion = 11.3.1;
+						DevelopmentTeam = JZ3WYZWA8F;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 000985961C31F0CB0083DE24;
+					};
 				};
 			};
 			buildConfigurationList = 000985921C31F0CB0083DE24 /* Build configuration list for PBXProject "PoshReVo" */;
@@ -598,6 +624,7 @@
 			projectRoot = "";
 			targets = (
 				000985961C31F0CB0083DE24 /* PoshReVo */,
+				00A2521F24606724000759B9 /* PoshReVoUnuopTestoj */,
 				0041F8B1245CC81A00254EA0 /* PoshReVoEkranKopiilo */,
 			);
 		};
@@ -634,6 +661,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0041F8B0245CC81A00254EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00A2521E24606724000759B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -752,6 +786,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00A2521C24606724000759B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00A2522324606724000759B9 /* LingvoTestoj.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -759,6 +801,11 @@
 			isa = PBXTargetDependency;
 			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
 			targetProxy = 0041F8B7245CC81A00254EA0 /* PBXContainerItemProxy */;
+		};
+		00A2522624606724000759B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 000985961C31F0CB0083DE24 /* PoshReVo */;
+			targetProxy = 00A2522524606724000759B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -990,6 +1037,59 @@
 			};
 			name = Release;
 		};
+		00A2522824606724000759B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PoshReVoUnuopTestoj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.PoshReVoUnuopTestoj;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoshReVo.app/PoshReVo";
+			};
+			name = Debug;
+		};
+		00A2522924606724000759B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JZ3WYZWA8F;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PoshReVoUnuopTestoj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = inthescales.PoshReVoUnuopTestoj;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PoshReVo.app/PoshReVo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1016,6 +1116,15 @@
 			buildConfigurations = (
 				0041F8BA245CC81A00254EA0 /* Debug */,
 				0041F8BB245CC81A00254EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00A2522724606724000759B9 /* Build configuration list for PBXNativeTarget "PoshReVoUnuopTestoj" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00A2522824606724000759B9 /* Debug */,
+				00A2522924606724000759B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

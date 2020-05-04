@@ -38,6 +38,16 @@
                ReferencedContainer = "container:PoshReVo.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00A2521F24606724000759B9"
+               BuildableName = "PoshReVoUnuopTestoj.xctest"
+               BlueprintName = "PoshReVoUnuopTestoj"
+               ReferencedContainer = "container:PoshReVo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
