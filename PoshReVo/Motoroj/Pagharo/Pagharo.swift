@@ -11,7 +11,7 @@
  unu el tiuj butonoj, la elekto reprezentighas per unu el chi tiuj valoroj.
  */
 enum Pagho : Int {
-    case Serchi = 0, Esplori, Historio, Konservitaj, Agordoj, Pri
+    case Serchi = 0, Esplori, Historio, Konservitaj, Agordoj, Informoj
     
     var nomo: String {
         
@@ -26,7 +26,7 @@ enum Pagho : Int {
             return NSLocalizedString("flanko konservitaj etikedo", comment: "")
         case .Agordoj:
             return NSLocalizedString("flanko agordoj etikedo", comment: "")
-        case .Pri:
+        case .Informoj:
             return NSLocalizedString("flanko informoj etikedo", comment: "")
         }
     }
@@ -44,11 +44,11 @@ enum Pagho : Int {
             return UIImage(named: "pikto_stelo")
         case .Agordoj:
             return UIImage(named: "pikto_dentrado")
-        case .Pri:
+        case .Informoj:
             return UIImage(named: "pikto_informoj")
         }
     }
     
-    static var count: Int { return Pri.rawValue + 1 }
+    static var count: Int { return Informoj.rawValue + 1 }
     
 }

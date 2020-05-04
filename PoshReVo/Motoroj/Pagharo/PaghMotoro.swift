@@ -37,7 +37,7 @@ final class PaghMotoro {
             case .Agordoj:
                 novaPagho = AgordojViewController()
                 break
-            case .Pri:
+            case .Informoj:
                 novaPagho = InformojTableViewController(style: .grouped)
                 break
             }
