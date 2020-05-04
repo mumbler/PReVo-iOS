@@ -11,13 +11,13 @@ import UIKit
 
 class FlankMenuoTableViewCell : UITableViewCell {
 
-    @IBOutlet var etikedo: UILabel?
-    @IBOutlet var bildo: UIImageView?
+    @IBOutlet var titoloLabel: UILabel!
+    @IBOutlet var bildoImageView: UIImageView!
     
-    func prepari(teksto: String, bildoNomo: String) {
+    func prepari(teksto: String, bildo: UIImage?) {
 
-        etikedo?.text = teksto
-        bildo?.image = UIImage(named:bildoNomo)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        titoloLabel.text = teksto
+        bildoImageView.image = bildo?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
         
         efektivigiStilon()
     }
@@ -26,8 +26,8 @@ class FlankMenuoTableViewCell : UITableViewCell {
         
         backgroundColor = UzantDatumaro.stilo.flankFonKoloro
         contentView.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
-        etikedo?.textColor = UzantDatumaro.stilo.flankTekstKoloro
-        bildo?.tintColor = UzantDatumaro.stilo.flankTekstKoloro
+        titoloLabel.textColor = UzantDatumaro.stilo.flankTekstKoloro
+        bildoImageView.tintColor = UzantDatumaro.stilo.flankTekstKoloro
         
         let elektitaView = UIView()
         elektitaView.backgroundColor = UzantDatumaro.stilo.flankElektitaKoloro

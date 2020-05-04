@@ -78,7 +78,7 @@ extension FlankMenuoViewController : UITableViewDelegate, UITableViewDataSource 
         }
         
         if let pagho = Pagho(rawValue: indexPath.row) {
-            novaChelo.prepari(teksto: pagho.nomo, bildoNomo: pagho.bildoNomo)
+            novaChelo.prepari(teksto: pagho.nomo, bildo: pagho.bildo)
         }
         
         return novaChelo

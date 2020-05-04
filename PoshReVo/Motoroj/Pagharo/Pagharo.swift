@@ -31,21 +31,21 @@ enum Pagho : Int {
         }
     }
     
-    var bildoNomo: String {
+    var bildo: UIImage? {
         
         switch self {
         case .Serchi:
-            return "pikto_lenso"
+            return UIImage(named: "pikto_lenso")
         case .Esplori:
-            return "pikto_kompaso"
+            return UIImage(named: "pikto_kompaso")
         case .Historio:
-            return "pikto_libro"
+            return UIImage(named: "pikto_libro")
         case .Konservitaj:
-            return "pikto_stelo"
+            return UIImage(named: "pikto_stelo")
         case .Agordoj:
-            return "pikto_dentrado"
+            return UIImage(named: "pikto_dentrado")
         case .Pri:
-            return "pikto_informoj"
+            return UIImage(named: "pikto_informoj")
         }
     }
     
