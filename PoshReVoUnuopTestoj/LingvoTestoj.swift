@@ -40,4 +40,25 @@ class LingvoTestoj: XCTestCase {
         XCTAssertNotEqual(esperanto, francperanto)
         XCTAssertNotEqual(franca, francperanto)
     }
+    
+    func testChifradon() {
+
+        let lingvo = Lingvo("eo", "esperanto")
+
+        do {
+            let chifrita = try NSKeyedArchiver.archivedData(withRootObject: lingvo,
+                                                            requiringSecureCoding: true)
+            guard let malchifrita =
+                try NSKeyedUnarchiver.unarchivedObject(ofClass: Lingvo.self,
+                                                       from: chifrita) else {
+                XCTFail("Malsukcesis malchifri lingvon")
+                return
+            }
+            
+            XCTAssertEqual(malchifrita.kodo, "eo")
+            XCTAssertEqual(malchifrita.nomo, "esperanto")
+        } catch {
+            XCTFail("Eraris en chifrado de lingvo")
+        }
+    }
 }

@@ -12,7 +12,7 @@ import Foundation
     Reprezentas lingvon ekzistantan en la vortaro.
     Uzata en serĉado kaj listigado de tradukoj en artikoloj.
 */
-final class Lingvo : NSObject, NSCoding {
+final class Lingvo : NSObject, NSSecureCoding {
     
     let kodo: String, nomo: String
     
@@ -21,7 +21,9 @@ final class Lingvo : NSObject, NSCoding {
         nomo = ennomo
     }
     
-    // MARK: - NSCoding
+    // MARK: - NSSecureCoding
+
+    static var supportsSecureCoding = true
     
     required convenience init?(coder aDecoder: NSCoder) {
         if let enkodo = aDecoder.decodeObject(forKey: "kodo") as? String,
