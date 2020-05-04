@@ -18,7 +18,7 @@ let historioLimo = 32 // Limo de artikoloj en la historio-listo
 */
 class UzantDatumaro {
 
-    static var serchLingvo: Lingvo! = nil
+    static var serchLingvo: Lingvo = SeancDatumaro.esperantaLingvo()
     static var oftajSerchLingvoj: [Lingvo] = [Lingvo]()
     static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
     static var historio: [Listero] = [Listero]()
@@ -60,12 +60,7 @@ class UzantDatumaro {
             konserviDatumojn()
         }
         
-        // Esperanto estas la baza serch-lingvo, se alia ne trovighis
-        if serchLingvo == nil {
-            elektisSerchLingvon(SeancDatumaro.esperantaLingvo())
-        } else {
-            elektisSerchLingvon(UzantDatumaro.serchLingvo)
-        }
+        elektisSerchLingvon(UzantDatumaro.serchLingvo)
         
         if oftajSerchLingvoj.count > oftajLimo {
             oftajSerchLingvoj = Array(oftajSerchLingvoj.prefix(oftajLimo))

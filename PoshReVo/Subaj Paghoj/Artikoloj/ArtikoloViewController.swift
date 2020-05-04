@@ -193,7 +193,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
             let mesagho: UIAlertController = UIAlertController(title: NSLocalizedString("artikolo chelo agoj titolo", comment: ""), message: nil, preferredStyle: .actionSheet)
             mesagho.addAction( UIAlertAction(title: NSLocalizedString("artikolo chelo ago kopii", comment: ""), style: .default, handler: { (ago: UIAlertAction) -> Void in
                 let tabulo = UIPasteboard.general
-                tabulo.string = chelo.chefaEtikedo?.text as! String // TODO
+                tabulo.string = chelo.chefaEtikedo?.text as? String ?? ""
             }))
             mesagho.addAction( UIAlertAction(title: NSLocalizedString("Nenio", comment: ""), style: .cancel, handler: nil))
             
