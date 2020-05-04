@@ -9,7 +9,7 @@
 import XCTest
 @testable import PoshReVo
 
-class SimplaModeloTestoj: XCTestCase {
+final class SimplaModeloTestoj: XCTestCase {
     
     func testKreiFakon() {
         let kir = Fako("KIR", "kirurgio")
