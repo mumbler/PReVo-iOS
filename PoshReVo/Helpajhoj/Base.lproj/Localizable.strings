@@ -54,7 +54,7 @@
 "informoj titolo"                               = "Informoj";
 
 "informoj revo titolo"                          = "Pri ReVo";
-"informoj revo teksto"                          = "<b>Reta Vortaro</b>\nReta Vortaro estas vortaro de la esperanta lingvo, legebla senpage sur la reto ĉe <a href=\"http://www.reta-vortaro.de\">www.reta-vortaro.de</a>. Ĉi apo kolektas kaj prezentas la difinojn kaj tradukojn kiujn enhavas ĝi, samkiel ili aperas tie.\n\n<b>Redaktado</b>\nReta Vortaro estas redaktata de rondo de volontuloj. Se vi trovas eraron aŭ mankon, aŭ simple deziras kontribui al libera kaj aktuala vortaro sur la reto, <a href=\"http://www.reta-vortaro.de/revo/dok/redinfo.html\">fariĝu redaktanto</a>.";
+"informoj revo teksto"                          = "<b>Reta Vortaro</b>\nReta Vortaro estas vortaro de la esperanta lingvo, legebla senpage sur la reto ĉe <a href=\"http://www.reta-vortaro.de\">www.reta-vortaro.de</a>. Ĉi apo kolektas kaj prezentas la difinojn kaj tradukojn kiujn enhavas ĝi, samkiel ili aperas tie.\n\n<b>Redaktado</b>\nReta Vortaro estas redaktata de rondo de volontuloj. Se vi trovas eraron aŭ mankon, aŭ simple deziras kontribui al libera kaj aktuala vortaro sur la reto, <a href=\"https://revuloj.github.io/temoj/redinfo.html\">fariĝu redaktanto</a>.";
 
 "informoj vortaraj-mallongigoj titolo"          = "Vortaraj Mallongigoj";
 "informoj fakaj-mallongigoj titolo"             = "Fakaj Mallongigoj";
