@@ -103,19 +103,19 @@ end
 # ================================================
 
 # === Legi la parametrojn
-dir = nil
+eldir = nil
 aldir = "./datumoj"
 
 if ARGV.count > 0
-  dir = ARGV[0]
+  eldir = ARGV[0]
 end
 
 if ARGV.count > 1
-  aldir = ARGV[1] + "/datumoj"
+  aldir = ARGV[1]
 end
 
 # === Kontroli chu la dosierujo ekzistas, kaj havas ĝustan strukturon
-unless File.exists?(dir) and File.exists?(dir+"/cfg") and File.exists?(dir+"/xml")
+unless File.exists?(eldir) and File.exists?(eldir+"/grundo") and File.exists?(eldir+"/revo")
    puts "Eraro: bezonataj doserujoj ne trovitas"
 end
 
@@ -126,7 +126,7 @@ komentoRegesp = /\s*<!--.*-->˜\s*/
 # -- lingvolisto
 
 puts "=== Legante lingvojn ==="
-lingvoDos = File.open(dir+"/cfg/lingvoj.xml", "r")
+lingvoDos = File.open(eldir+"/grundo/lingvoj.xml", "r")
 lingvoj = []
 tradukoj = {}
 
@@ -166,7 +166,7 @@ def korektiFakKodon(kodo)
 end
     
 puts "=== Legante fakojn ==="
-fakoDos = File.open(dir+"/cfg/fakoj.xml", "r")
+fakoDos = File.open(eldir+"/grundo/fakoj.xml", "r")
 fakoj = []
 
 if fakoDos
@@ -195,7 +195,7 @@ end
 fakoDos.close
 
 puts "=== Legante literojn ==="
-literoDos = File.open(dir+"/cfg/literoj.xml", "r")
+literoDos = File.open(eldir+"/grundo/literoj.xml", "r")
 atendLiteroj = {}
 
 if literoDos
@@ -249,7 +249,7 @@ if @literoj["a_fatha_a"] == nil then @literoj["a_fatha_a"] = @literoj["a_fatha_A
 # -- mallongigoj
 
 puts "=== Legante mallongigojn ==="
-mallongigDos = File.open(dir+"/cfg/mallongigoj.xml", "r")
+mallongigDos = File.open(eldir+"/grundo/mallongigoj.xml", "r")
 mallongigoj = []
 
 if mallongigDos
@@ -269,7 +269,7 @@ mallongigDos.close
 # -- Stiloj
 
 puts "=== Legante stilojn ==="
-stilojDos = File.open(dir+"/cfg/stiloj.xml", "r")
+stilojDos = File.open(eldir+"/grundo/stiloj.xml", "r")
 @stiloj = []
 
 if stilojDos
@@ -1194,17 +1194,17 @@ def postTraktiArtikolon(dosiero, teksto)
     return teksto
 end
     
-vortoDos = File.open(dir+"/xml/")
+vortoDos = File.open(eldir+"/revo/")
 
-if vortoDos and File.directory?(dir+"/xml/")
+if vortoDos and File.directory?(eldir+"/revo/")
 
    puts "=== Legante artikolojn ==="
-   Dir.foreach(dir+"/xml/") do |artikolDosiero|
+   Dir.foreach(eldir+"/revo/") do |artikolDosiero|
       next if artikolDosiero == '.' or artikolDosiero == '..' or artikolDosiero[0] == '.' or not artikolDosiero.end_with?(".xml")
 
       #artikolDosiero = "kasxta.xml"
       #puts "-legante #{artikolDosiero}"
-      dosiero = File.open(dir + "/xml/" + artikolDosiero, "r")
+      dosiero = File.open(eldir + "/revo/" + artikolDosiero, "r")
       enhavo = dosiero.read
       dosiero.close()
       xml = Nokogiri::XML(prepariTekston(enhavo))
