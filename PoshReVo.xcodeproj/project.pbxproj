@@ -10,10 +10,8 @@
 		000BF42622FD0FF100EA0271 /* InformojTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF42522FD0FF100EA0271 /* InformojTableViewController.swift */; };
 		000BF42A22FE4C4000EA0271 /* InformojPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000BF42922FE4C4000EA0271 /* InformojPaghoViewController.xib */; };
 		0036571D2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */; };
-		0036572223132E8F0028C21F /* Generataj.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0036572023132E8F0028C21F /* Generataj.strings */; };
 		0041F8B5245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F8B4245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift */; };
 		0041F8BD245CC86300254EA0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F8BC245CC86300254EA0 /* SnapshotHelper.swift */; };
-		00477A70227654B700515416 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6E227654B700515416 /* Localizable.strings */; };
 		00700AD5231C59150075A077 /* FakVortoListoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */; };
 		00700AD6231D3BA50075A077 /* ReVoDatumbazo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003656D32309A50E0028C21F /* ReVoDatumbazo.framework */; };
 		00700AD7231D3BA50075A077 /* ReVoDatumbazo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 003656D32309A50E0028C21F /* ReVoDatumbazo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -58,6 +56,8 @@
 		00A2525224606F65000759B9 /* Stilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A2524824606F65000759B9 /* Stilo.swift */; };
 		00A2525324606F65000759B9 /* Fako.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A2524924606F65000759B9 /* Fako.swift */; };
 		00A2525424606F65000759B9 /* Listero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A2524B24606F65000759B9 /* Listero.swift */; };
+		00A83A462461D96200AC2E20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00477A6E227654B700515416 /* Localizable.strings */; };
+		00A83A472461D96200AC2E20 /* Generataj.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0036572023132E8F0028C21F /* Generataj.strings */; };
 		00A869BB2276497000A856E9 /* SerchPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0084893E226385200071CEC2 /* SerchPaghoViewController.xib */; };
 		00A869BC2276497000A856E9 /* AgordojViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848940226385200071CEC2 /* AgordojViewController.xib */; };
 		00A869BD2276497000A856E9 /* KonservitajViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848942226385200071CEC2 /* KonservitajViewController.xib */; };
@@ -326,20 +326,20 @@
 				0036572023132E8F0028C21F /* Generataj.strings */,
 			);
 			name = Base.lproj;
-			path = PoshReVo/Helpajhoj/Base.lproj;
+			path = PoshReVo/Risurcoj/Base.lproj;
 			sourceTree = SOURCE_ROOT;
 		};
-		00477A71227654ED00515416 /* Helpajhoj */ = {
+		00477A71227654ED00515416 /* Risurcoj */ = {
 			isa = PBXGroup;
 			children = (
 				00848912226385200071CEC2 /* ObjC Ponto */,
 				0097B1BF22E5322E003DEDC4 /* Interfacajhoj */,
 				0084894A226385200071CEC2 /* Datumbazo */,
-				00848919226385200071CEC2 /* LaunchScreen.storyboard */,
 				00477A6D227654B700515416 /* Base.lproj */,
+				00848919226385200071CEC2 /* LaunchScreen.storyboard */,
 				00848930226385200071CEC2 /* Assets.xcassets */,
 			);
-			path = Helpajhoj;
+			path = Risurcoj;
 			sourceTree = "<group>";
 		};
 		0084890D226385200071CEC2 /* PoshReVo */ = {
@@ -353,7 +353,7 @@
 				0084893B226385200071CEC2 /* Chefaj Paghoj */,
 				0084891A226385200071CEC2 /* Subaj Paghoj */,
 				00848933226385200071CEC2 /* Flanka Menuo */,
-				00477A71227654ED00515416 /* Helpajhoj */,
+				00477A71227654ED00515416 /* Risurcoj */,
 			);
 			path = PoshReVo;
 			sourceTree = "<group>";
@@ -664,6 +664,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A83A462461D96200AC2E20 /* Localizable.strings in Resources */,
+				00A83A472461D96200AC2E20 /* Generataj.strings in Resources */,
 				00F6D1B22290A21100F2EB6B /* Assets.xcassets in Resources */,
 				00A869CE22764B6800A856E9 /* PoshReVoDatumbazo.sqlite in Resources */,
 				00A869BB2276497000A856E9 /* SerchPaghoViewController.xib in Resources */,
@@ -674,10 +676,8 @@
 				0097B1C722E7DC8F003DEDC4 /* SubArtikoloTableViewCell.xib in Resources */,
 				00A869C02276497000A856E9 /* ArtikoloViewController.xib in Resources */,
 				00A869C22276497000A856E9 /* ArtikoloKapoTableViewHeaderFooterView.xib in Resources */,
-				00477A70227654B700515416 /* Localizable.strings in Resources */,
 				00A869C42276497000A856E9 /* LingvoElektiloViewController.xib in Resources */,
 				00A869C52276497000A856E9 /* StiloElektiloViewController.xib in Resources */,
-				0036572223132E8F0028C21F /* Generataj.strings in Resources */,
 				00A869C62276497000A856E9 /* LicencoViewController.xib in Resources */,
 				00A869C72276497000A856E9 /* ArtikoloTableViewCell.xib in Resources */,
 				00A869C92276497000A856E9 /* VortoDisigiloViewController.xib in Resources */,
@@ -990,7 +990,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SinuousRill.PReVo;
 				PRODUCT_NAME = PoshReVo;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Helpajhoj/ObjC Ponto/PoshReVo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Risurcoj/ObjC Ponto/PoshReVo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1013,7 +1013,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SinuousRill.PReVo;
 				PRODUCT_NAME = PoshReVo;
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Helpajhoj/ObjC Ponto/PoshReVo-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PoshReVo/Risurcoj/ObjC Ponto/PoshReVo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

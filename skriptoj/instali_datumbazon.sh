@@ -9,8 +9,8 @@ fi
 
 echo ""
 echo "== Instalas datumbazon"
-cp $produktajhejo/PoshReVoDatumbazo.sqlite PoshReVo/Helpajhoj/Datumbazo/
+cp $produktajhejo/PoshReVoDatumbazo.sqlite PoshReVo/Risurcoj/Datumbazo/
 
 echo ""
 echo "== Instalas tekstojn"
-cp $produktajhejo/Generataj.strings PoshReVo/Helpajhoj/Base.lproj/
+cp $produktajhejo/Generataj.strings PoshReVo/Risurcoj/Base.lproj/
