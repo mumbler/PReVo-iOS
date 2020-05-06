@@ -17,8 +17,8 @@ default_platform(:ios)
 
 platform :ios do
 
-  desc "Alshutas betan konstruajhon al la Ap-vendejo"
-  lane :beta do
+  desc "Alshutas betaan konstruajhon al la Ap-vendejo"
+  lane :betaa do
     build_app(workspace: "PoshReVo.xcworkspace", scheme: "PoshReVo (eldona)")
     upload_to_testflight
   end
