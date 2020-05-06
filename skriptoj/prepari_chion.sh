@@ -22,3 +22,5 @@ sh skriptoj/instali_datumbazon.sh
 echo ""
 echo "==== Preparado finighis"
 echo ""
+
+rm -rf tmp
