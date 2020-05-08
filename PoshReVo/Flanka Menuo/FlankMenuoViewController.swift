@@ -44,19 +44,24 @@ class FlankMenuoViewController : UIViewController, Stilplena {
         efektivigiStilon()
     }
     
-    func efektivigiStilon() {
-        
-        supraRegiono?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
-        tabelo?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
-        tabelo?.reloadData()
-    }
+    // MARK: - UI agordoj
     
     func navAltecoShanghis(alteco: CGFloat) {
         navAlteco?.constant = alteco + ((UIApplication.shared.isStatusBarHidden) ? 0 : UIApplication.shared.statusBarFrame.size.height)
         view.setNeedsUpdateConstraints()
     }
     
+    // MARK: - Stilplena
+    
+    func efektivigiStilon() {
+        
+        supraRegiono?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
+        tabelo?.backgroundColor = UzantDatumaro.stilo.flankFonKoloro
+        tabelo?.reloadData()
+    }
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension FlankMenuoViewController : UITableViewDelegate, UITableViewDataSource {
 

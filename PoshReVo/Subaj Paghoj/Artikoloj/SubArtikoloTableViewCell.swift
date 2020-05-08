@@ -65,6 +65,8 @@ final class SubArtikoloTableViewCell : UITableViewCell, Stilplena {
         efektivigiStilon()
     }
     
+    // MARK: - Stilplena
+    
     func efektivigiStilon() {
         
         titolaEtikedo?.textColor = UzantDatumaro.stilo.tekstKoloro

@@ -68,7 +68,7 @@ class UzantDatumaro {
         
     }
     
-    // Lingvoj --------------
+    // MARK: - Lingvaj agoj
     
     // Uzata post kiam oni elektas serch-lingvon. Ghi ghisdatigas parencajn aferojn
     static func elektisSerchLingvon(_ elektita: Lingvo) {
@@ -98,7 +98,7 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
-    // Historio -------------
+    // MARK: - Historiaj registraĵoj
     
     // Uzata kiam oni vizitas artikolon por konservi ghin kaj ghisdatigi
     // la historion
@@ -128,7 +128,7 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
-    // Konservado de artikoloj ---------
+    // MARK: - Konservado de artikoloj
     
     static func konserviPaghon(_ artikolo: Listero) {
         
@@ -172,7 +172,7 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
-    // Stiloj -----------
+    // MARK: Ŝanĝado de stiloj
     
     static func shanghisStilon(novaStilo: KolorStilo) {
         
@@ -183,7 +183,7 @@ class UzantDatumaro {
         konserviDatumojn()
     }
     
-    // Trapasado de konservitaj datumoj por testado --------------------
+    // MARK: - Ŝarĝado por testoj
     
     static func sharghiTrapasajnDatumojn() {
         if let trapasaSerchLingvoKodo = UserDefaults.standard.string(forKey: "TestSerchLingvo"),
@@ -206,7 +206,7 @@ class UzantDatumaro {
         }
     }
     
-    // Konservado kaj resharghado de datumoj ---------------------------
+    // MARK: - Konservado kaj reŝarĝado de datumoj
     
     // Konservi la uzant datumojn por reuzi ghin post rekomenco de la programo
     static func konserviDatumojn() {

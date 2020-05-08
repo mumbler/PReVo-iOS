@@ -54,6 +54,8 @@ class KonservitajViewController : UIViewController, Chefpagho, Stilplena {
     }
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {        
@@ -99,6 +101,8 @@ extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource
         return UITableView.automaticDimension
     }
 }
+
+// MARK: - Helpiloj
 
 // Respondi al mediaj shanghoj
 extension KonservitajViewController {

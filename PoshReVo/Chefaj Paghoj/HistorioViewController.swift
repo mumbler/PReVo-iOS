@@ -54,12 +54,14 @@ class HistorioViewController : UIViewController, Chefpagho, Stilplena {
     
 }
 
+// MARK: - UITableViewDelegate + UITableViewDataSource
+
 extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return UzantDatumaro.historio.count
@@ -99,6 +101,8 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
 }
+
+// MARK: - Helpiloj
 
 // Respondi al mediaj shanghoj
 extension HistorioViewController {

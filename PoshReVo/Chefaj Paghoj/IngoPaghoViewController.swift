@@ -79,6 +79,8 @@ final class IngoPaghoViewController : UIViewController, Stilplena {
     }
 }
 
+// MARK: - SlideNavigationControllerDelegate
+
 extension IngoPaghoViewController : SlideNavigationControllerDelegate {
     
     func slideNavigationControllerShouldDisplayLeftMenu() -> Bool {
@@ -89,6 +91,8 @@ extension IngoPaghoViewController : SlideNavigationControllerDelegate {
         return false
     }
 }
+
+// MARK: - FlankMenuoDelegate
 
 extension IngoPaghoViewController : FlankMenuoDelegate {
     

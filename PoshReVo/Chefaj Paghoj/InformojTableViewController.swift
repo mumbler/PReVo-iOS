@@ -87,9 +87,11 @@ final class InformojTableViewController: BazStilaTableViewController, Chefpagho 
         super.viewWillAppear(animated)
         efektivigiStilon()
     }
-    
-    // UITableViewDelegate + UITableViewDatasource
-    
+}
+
+// MARK: - UITableViewDelegate & UITableViewDatasource
+
+extension InformojTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }

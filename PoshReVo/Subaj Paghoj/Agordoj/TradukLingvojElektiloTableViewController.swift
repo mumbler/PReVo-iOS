@@ -38,18 +38,20 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
-    private func kaptiTradukLingvojn() -> [Lingvo] {
-        return Array<Lingvo>(UzantDatumaro.tradukLingvoj).sorted { (unua: Lingvo, dua: Lingvo) -> Bool in
-            return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
-        }
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         
         if shanghisLingvojn {
             NotificationCenter.default.post(name: NSNotification.Name(AtentigoNomoj.elektisTradukLingvojn), object: nil)
         }
     }
+    
+    private func kaptiTradukLingvojn() -> [Lingvo] {
+        return Array<Lingvo>(UzantDatumaro.tradukLingvoj).sorted { (unua: Lingvo, dua: Lingvo) -> Bool in
+            return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+        }
+    }
+    
+    // MARK: - UI agordadon
     
     private func ghisdatigiButonon() {
         navigationItem.rightBarButtonItem?.isEnabled = (tableView.isEditing || tradukLingvoj.count > 0)
@@ -76,12 +78,14 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
         }
     }
     
+    // MARK: UI agoj
+    
     @objc func premisRedakti(sender: Any) {
         tableView.setEditing(!tableView.isEditing, animated: true)
         ghisdatigiRedaktadon()
     }
     
-    // MARK: - UITableViewController
+    // MARK: - UITableViewDelegate & UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         let estasTradukLingvoj = (tradukLingvoj.count > 0) ? 1 : 0
@@ -183,6 +187,8 @@ class TradukLingvojElektiloTableViewController : BazStilaTableViewController {
     }
 }
 
+// MARK: - LingvoElektiloDelegate
+
 extension TradukLingvojElektiloTableViewController: LingvoElektiloDelegate {
     func elektisLingvon(lingvo: Lingvo) {
         UzantDatumaro.tradukLingvoj.insert(lingvo)
@@ -195,7 +201,8 @@ extension TradukLingvojElektiloTableViewController: LingvoElektiloDelegate {
     }
 }
 
-// Respondi al mediaj shanghoj
+// MARK: - Helpiloj
+
 extension TradukLingvojElektiloTableViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {

@@ -59,6 +59,8 @@ class VortoDisigiloViewController : UIViewController, Stilplena {
     
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {

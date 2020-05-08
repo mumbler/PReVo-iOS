@@ -89,6 +89,8 @@ class AgordojViewController : UIViewController, Chefpagho, Stilplena {
     }
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -211,6 +213,8 @@ extension AgordojViewController : UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - LingvoElektiloDelegate
+
 extension AgordojViewController : LingvoElektiloDelegate {
     
     func elektisLingvon(lingvo: Lingvo) {
@@ -218,6 +222,8 @@ extension AgordojViewController : LingvoElektiloDelegate {
         tabelo?.reloadRows(at: [IndexPath(item: 0, section: 1)], with: .none)
     }
 }
+
+// MARK: - Helpiloj
 
 // Respondi al mediaj shanghoj
 extension AgordojViewController {

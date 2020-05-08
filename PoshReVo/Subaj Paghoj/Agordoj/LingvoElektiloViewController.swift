@@ -79,7 +79,9 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
         efektivigiStilon()
     }
     
-    private func chiujSekcio() -> Int {
+    // MARK: - Paĝ-informoj
+    
+    private func chiujSekcioj() -> Int {
         if suprajLingvoj == nil {
             return 0
         }
@@ -87,6 +89,19 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
             return 1
         }
     }
+    
+    // MARK: - Paĝ-agoj
+    
+    func forigiSin() {
+        
+        if presentingViewController != nil {
+            navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    // MARK: - Stiplena
     
     func efektivigiStilon() {
         
@@ -100,16 +115,9 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
         lingvoTabelo?.separatorColor = UzantDatumaro.stilo.apartigiloKoloro
         lingvoTabelo?.reloadData()
     }
-    
-    func forigiSin() {
-        
-        if presentingViewController != nil {
-            navigationController?.dismiss(animated: true, completion: nil)
-        } else {
-            navigationController?.popViewController(animated: true)
-        }
-    }
 }
+
+// MARK: - UISearchBarDelegate
 
 extension LingvoElektiloViewController : UISearchBarDelegate {
     
@@ -152,6 +160,8 @@ extension LingvoElektiloViewController : UISearchBarDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
 extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -170,7 +180,7 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
             return filtritajLingvoj.count
         }
         else {
-            if section == chiujSekcio() {
+            if section == chiujSekcioj() {
                 return chiujLingvoj.count
             } else if let suprajLingvoj = suprajLingvoj {
                 return suprajLingvoj.count
@@ -197,7 +207,7 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
             lingvo = filtritajLingvoj[indexPath.row]
         }
         else {
-            if indexPath.section == chiujSekcio() {
+            if indexPath.section == chiujSekcioj() {
                 lingvo = chiujLingvoj[indexPath.row]
             } else if let suprajLingvoj = suprajLingvoj {
                 lingvo = suprajLingvoj[indexPath.row]
@@ -237,7 +247,7 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
             lingvo = filtritajLingvoj[indexPath.row]
         }
         else {
-            if indexPath.section == chiujSekcio() {
+            if indexPath.section == chiujSekcioj() {
                 lingvo = chiujLingvoj[indexPath.row]
             } else {
                 lingvo = suprajLingvoj?[indexPath.row]
@@ -260,7 +270,8 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
     }
 }
 
-// Respondi al mediaj shanghoj
+// MARK: - Helpiloj
+
 extension LingvoElektiloViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {

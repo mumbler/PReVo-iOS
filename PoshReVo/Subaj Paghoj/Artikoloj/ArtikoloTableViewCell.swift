@@ -34,6 +34,11 @@ class ArtikoloTableViewCell : UITableViewCell, Stilplena {
         }
 
     }
+}
+
+// MARK: - Stilplena
+
+extension ArtikoloTableViewCell {
     
     func efektivigiStilon() {
         

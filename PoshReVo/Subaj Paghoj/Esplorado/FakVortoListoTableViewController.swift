@@ -26,6 +26,11 @@ final class FakVortoListoTableViewController: BazStilaTableViewController {
     required init(coder aDecoder: NSCoder) {
         fatalError("Ne kreu FakVortoListoTableViewController tiel")
     }
+}
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
+
+extension FakVortoListoTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

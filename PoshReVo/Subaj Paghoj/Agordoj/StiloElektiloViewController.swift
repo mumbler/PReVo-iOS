@@ -49,6 +49,8 @@ class StiloElektiloViewController : UIViewController, Stilplena {
     
 }
 
+// MARK: - UITableViewDelegate & UITableViewDatSource
+
 extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {        
@@ -107,7 +109,8 @@ extension StiloElektiloViewController : UITableViewDelegate, UITableViewDataSour
     }
 }
 
-// Respondi al mediaj shanghoj
+// MARK: - Helpiloj
+
 extension StiloElektiloViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {

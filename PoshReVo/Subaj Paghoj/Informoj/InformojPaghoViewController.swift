@@ -53,6 +53,8 @@ class InformojPaghoViewController: UIViewController, Stilplena {
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
     }
     
+    // MARK: - UI agordoj
+    
     func aranghiNavigaciilo() {
         
         guard let titolo = titolo else { return }
@@ -60,6 +62,8 @@ class InformojPaghoViewController: UIViewController, Stilplena {
         parent?.title = NSLocalizedString(titolo, comment: "")
         parent?.navigationItem.rightBarButtonItem = nil
     }
+    
+    // MARK: - Stilplena
     
     func efektivigiStilon() {
         
@@ -76,6 +80,8 @@ class InformojPaghoViewController: UIViewController, Stilplena {
     }
 }
 
+// MARK: - TTTAttributedLabelDelegate
+
 extension InformojPaghoViewController : TTTAttributedLabelDelegate {
     
     func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
@@ -85,7 +91,9 @@ extension InformojPaghoViewController : TTTAttributedLabelDelegate {
     }
 }
 
-// Respondi al mediaj shanghoj
+
+// MARK: - Helpiloj
+
 extension InformojPaghoViewController {
     
     func didChangePreferredContentSize(notification: NSNotification) -> Void {

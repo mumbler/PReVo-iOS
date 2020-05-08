@@ -24,6 +24,8 @@ class ArtikoloPiedButonoTableViewHeaderFooterView : UITableViewHeaderFooterView,
         efektivigiStilon()
     }
     
+    // MARK: - Stilplena
+    
     func efektivigiStilon() {
         
         fono?.backgroundColor = UzantDatumaro.stilo.bazKoloro

@@ -95,29 +95,4 @@ class SeancDatumaro {
         
         return nil
     }
-    
-    static func tekstoPorUzo(_ teksto: String, tipo: String)  -> String? {
-        
-        if tipo == "fak" {
-            // Nun ni ne uzas la tutajn fakajn tekstojn. La mallongigoj
-            // sufichas
-            
-            /*if let indekso = fakoj.firstIndex(where: { (nuna: Fako) -> Bool in
-                return nuna.kodo == teksto
-            }) {
-                return "[" + fakoj[indekso].nomo + "]"
-            }*/
-            return "[" + teksto + "]"
-        }
-        else if tipo == "stl" {
-            if let indekso = stiloj.firstIndex(where: { (nuna: Stilo) -> Bool in
-                return nuna.kodo == teksto
-            }) {
-                return "(" + stiloj[indekso].nomo + ")"
-            }
-        }
-    
-        return nil
-    }
-    
 }

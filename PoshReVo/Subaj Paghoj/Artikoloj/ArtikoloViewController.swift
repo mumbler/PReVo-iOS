@@ -70,13 +70,12 @@ class ArtikoloViewController : UIViewController, Stilplena {
         NotificationCenter.default.addObserver(self, selector: #selector(preferredContentSizeDidChange(forChildContentContainer:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
         
         efektivigiStilon()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if konservitaMarko != nil {
             DispatchQueue.main.async { [weak self] in
-                self?.iriAlMarko(self?.konservitaMarko ?? "", animacii: false)
+                self?.saltiAlMarko(self?.konservitaMarko ?? "", animacii: false)
             }
         }
     }
@@ -89,13 +88,7 @@ class ArtikoloViewController : UIViewController, Stilplena {
         }
     }
     
-    func efektivigiStilon() {
-        
-        navigationController?.navigationBar.tintColor = UzantDatumaro.stilo.navTintKoloro
-        vortTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
-        vortTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
-        vortTabelo?.reloadData()
-    }
+    // MARK: - View-agordado
     
     func prepariNavigaciajnButonojn() {
         
@@ -141,8 +134,20 @@ class ArtikoloViewController : UIViewController, Stilplena {
         })
     }
     
+    // MARK: - Stilplena
+    
+    func efektivigiStilon() {
+        
+        navigationController?.navigationBar.tintColor = UzantDatumaro.stilo.navTintKoloro
+        vortTabelo?.backgroundColor = UzantDatumaro.stilo.fonKoloro
+        vortTabelo?.indicatorStyle = UzantDatumaro.stilo.scrollKoloro
+        vortTabelo?.reloadData()
+    }
+    
+    // MARK: - Paĝ-agoj
+    
     // Haste movi la ekranon al la dezirata vorto en la artikolo
-    func iriAlMarko(_ marko: String, animacii: Bool) {
+    func saltiAlMarko(_ marko: String, animacii: Bool) {
         
         var sumo = 0
         for subartikolo in artikolo?.subartikoloj ?? [] {
@@ -161,6 +166,8 @@ class ArtikoloViewController : UIViewController, Stilplena {
             }
         }
     }
+    
+    // MARK: - UI agoj
     
     // Reiri al la ingo pagho kaj igi ghin montri la serch-paghon
     @objc func premisSerchButonon() {
@@ -215,6 +222,8 @@ class ArtikoloViewController : UIViewController, Stilplena {
         }
     }
 }
+
+// MARK: - UITableViewDelegate & UITableViewDataSource
 
 extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     
@@ -385,8 +394,11 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         
         return 0
     }
-    
-    // MARK: - Chelo starigado
+}
+
+// MARK: - Chelo-starigado
+
+extension ArtikoloViewController {
     
     private func pretigiArtikolaChelo(chelo: ArtikoloTableViewCell, titolo: String, teksto: String) {
         chelo.prepari(titolo: titolo, teksto: teksto)
@@ -420,8 +432,38 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         let rekonilo = UILongPressGestureRecognizer(target: self, action: #selector(premisChelon(_:)))
         chelo.addGestureRecognizer(rekonilo)
     }
+}
 
-    // MARK: - Heliploj
+// MARK: - TTTAttributedLabelDelegate
+
+extension ArtikoloViewController : TTTAttributedLabelDelegate {
+    
+    // Uzanto premis ligilon - iri al la dezirata sekcio de la artikolo, au montri novan artikolon
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
+        
+        let marko = url?.absoluteString ?? ""
+        let partoj = marko.components(separatedBy: ".")
+        
+        if partoj.count == 0 {
+            return
+        }
+        
+        if partoj[0] == artikolo?.indekso {
+            if partoj.count >= 2 {
+                saltiAlMarko(partoj[0] + "." + partoj[1], animacii: true)
+            }
+        } else {
+            if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
+                navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .plain, target: nil, action: nil)
+                (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
+            }
+        }
+    }
+}
+
+// MARK: - Helpiloj
+
+extension ArtikoloViewController {
     
     private func vortoDeIndexPath(_ indexPath: IndexPath) -> Vorto? {
         guard let artikolo = artikolo else { fatalError("Devas esti artikolo") }
@@ -456,36 +498,8 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
         
         return nil
     }
-}
-
-extension ArtikoloViewController : TTTAttributedLabelDelegate {
     
-    // Uzanto premis ligilon - iri al la dezirata sekcio de la artikolo, au montri novan artikolon
-    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL?) {
-        
-        let marko = url?.absoluteString ?? ""
-        let partoj = marko.components(separatedBy: ".")
-        
-        if partoj.count == 0 {
-            return
-        }
-        
-        if partoj[0] == artikolo?.indekso {
-            if partoj.count >= 2 {
-                iriAlMarko(partoj[0] + "." + partoj[1], animacii: true)
-            }
-        } else {
-            if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
-                navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .plain, target: nil, action: nil)
-                (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
-            }
-        }
-    }
-}
-
-// Respondi al mediaj shanghoj
-extension ArtikoloViewController {
-    
+    // Respondi al mediaj shanghoj
     func didChangePreferredContentSize(notification: NSNotification) -> Void {
         vortTabelo?.reloadData()
     }

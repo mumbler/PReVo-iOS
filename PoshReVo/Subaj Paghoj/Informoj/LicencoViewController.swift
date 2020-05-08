@@ -32,6 +32,8 @@ class LicencoViewController : UIViewController, Stilplena {
         efektivigiStilon()
     }
     
+    // MARK: - Stilplena
+    
     func efektivigiStilon() {
         
         view.backgroundColor = UzantDatumaro.stilo.bazKoloro

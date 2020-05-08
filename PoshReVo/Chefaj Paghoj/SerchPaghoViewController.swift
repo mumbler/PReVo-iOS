@@ -155,6 +155,8 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     }
 }
 
+// MARK: UISearchBarDelegate
+
 extension SerchPaghoViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
@@ -208,7 +210,8 @@ extension SerchPaghoViewController : UISearchBarDelegate {
     
 }
 
-// Trakti tabelon
+// MARK: UITableViewDelegate & UITableViewDataSource
+
 extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -273,7 +276,7 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-// Trakti lingvo-elektadon
+// MARK: - LingvoElektiloDelegate
 extension SerchPaghoViewController : LingvoElektiloDelegate {
     
     func elektisLingvon(lingvo: Lingvo) {
@@ -284,7 +287,8 @@ extension SerchPaghoViewController : LingvoElektiloDelegate {
     }
 }
 
-// Helpaj aferoj
+// MARK: - Helpiloj
+
 extension SerchPaghoViewController {
     
     func tekstoPorDestinoj(destinoj: [NSManagedObject]) -> String {

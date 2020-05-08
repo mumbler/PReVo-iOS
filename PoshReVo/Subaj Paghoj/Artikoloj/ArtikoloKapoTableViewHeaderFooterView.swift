@@ -21,6 +21,8 @@ class ArtikoloKapoTableViewHeaderFooterView : UITableViewHeaderFooterView, Stilp
         efektivigiStilon()
     }
     
+    // MARK: - Stilplena
+    
     func efektivigiStilon() {
         
         fonaView?.backgroundColor = UzantDatumaro.stilo.bazKoloro
