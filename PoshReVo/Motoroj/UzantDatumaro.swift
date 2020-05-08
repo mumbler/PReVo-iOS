@@ -44,7 +44,7 @@ class UzantDatumaro {
         
         // Se datumoj ne estas trovitaj, starigi bazajn informojn
         
-        // Trovi lingvojn el la aparataj agoroj, kaj uzi ilin
+        // Trovi lingvojn el la aparataj agordoj, kaj uzi ilin
         if oftajSerchLingvoj.count == 0 {
             for kodo in NSLocale.preferredLanguages {
                 

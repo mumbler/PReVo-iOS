@@ -16,7 +16,7 @@ import ReVoDatumbazo
 
     Ghi ankau inkluzivas kelkajn funkciojn por facila uzado de tiuj datumoj.
 */
-class SeancDatumaro {
+final class SeancDatumaro {
     
     static var lingvoj: [Lingvo] = [Lingvo]()
     static var fakoj: [Fako] = [Fako]()
@@ -47,10 +47,9 @@ class SeancDatumaro {
                let nomo = fako.value(forKey: "nomo") as? String {
                 fakoj.append( Fako(kodo, nomo) )
             }
-            
-            fakoj.sort { (unua: Fako, dua: Fako) -> Bool in
-                return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
-            }
+        }
+        fakoj.sort { (unua: Fako, dua: Fako) -> Bool in
+            return unua.nomo.compare(dua.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         }
 
         for stilo in DatumbazAlirilo.komuna.chiujStiloj() ?? [] {
