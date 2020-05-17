@@ -58,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */,
-				00C7B30C2461E8240084CC8F /* Modeloj */,
 				00C7B30B2461E8090084CC8F /* Alirilo */,
 			);
 			path = Komunaj;
@@ -99,13 +98,6 @@
 				003657192309DB740028C21F /* DatumbazAlirilo+Objektaro.swift */,
 			);
 			path = Alirilo;
-			sourceTree = "<group>";
-		};
-		00C7B30C2461E8240084CC8F /* Modeloj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modeloj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
