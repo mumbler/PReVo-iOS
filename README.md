@@ -1,15 +1,8 @@
-# PoshReVo
-Posha Reta Vortaro
+# Poŝa Reta Vortaro
+Poŝa Reta Vortaro (PoŝReVo) estas vortaro de Esperanto, forme de aplikaĵo por iOSaj aparatoj (iPhone kaj iPad). Ĝi enhavas kaj prezentas la artikolojn de [Reta Vortaro](http://www.reta-vortaro.de) (ReVo).
 
-Konstruado de la datumbazo:
-- elshutu la tutan retpaghan font-kodaron de La Reta Vortaro (http://reta-vortaro.de/tgz/index.html - tion nomata "fontdosieroj")
-- Rulu 'prep.rb', kun la loko de la elshutita revo doseriujo kiel parametro
-  -tio kreos dosierujon "preparita"
-- Movu la "preparita" dosierujon en la "Datumoj" dosierujo de la XCode projekto.
-- En AppDelegate.swift, shanghi la kreiDatumbazon valoron al "true".
-  - Tiustate, rulado de la iOS-programo komence konstruos Core Data datumbazon kiu enhavos la vortarajn datumojn.
-- Post tio, refiksi la valoron de kreiDatumbazon kiel "false".
-- Trovu la "PReVoDatumoj.sqlite" dosiero kiu kreis la programon, kaj movu ghin en la "DatumoJ" dosierujon.
-- Vi povas forigi la "preparita" dosierujon
-- Aldonu la "PReVoDatumoj.sqlite" dosiero al la "Copy Bundle Resources" listo sub la projektaj agordoj
-- Kun "PReVoDatumoj.sqlite" en "Datumoj", kaj aldonita la bundle, la programo funkcios normale.
+La apo estas havebla senpage che la apo-vendejo de Apple [ĉi tie](https://apps.apple.com/us/app/po%C5%9Da-reta-vortaro/id1093321928).
+
+## La Datumbazo
+
+PoŝReVo uzas datumbazon konstruitan el la fonto-dosieroj de ReVo. Oni povas kostrui aktualan 'Core Data'-datumbazon de la ReVo-enhavoj per la skriptoj en ĉi tiu kodaro. 'prepari_chion.sh' komencas la tutan taskaron (notu ke 'instali_datumbazon.sh' movos la produktaĵojn al ilia fina loko).
