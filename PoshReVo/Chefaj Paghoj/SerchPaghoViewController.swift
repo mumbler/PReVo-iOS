@@ -40,8 +40,13 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
         
         serchTabulo?.delegate = self
         serchTabulo?.placeholder = NSLocalizedString("serchi tabulo teksto", comment: "")
-        serchTabulo?.searchTextField.isAccessibilityElement = true
-        serchTabulo?.searchTextField.accessibilityIdentifier = "serchTabulaTekstejo"
+        if #available(iOS 13.0, *) {
+            serchTabulo?.searchTextField.isAccessibilityElement = true
+            serchTabulo?.searchTextField.accessibilityIdentifier = "serchTabulaTekstejo"
+        } else {
+            serchTabulo?.isAccessibilityElement = true
+            serchTabulo?.accessibilityIdentifier = "serchTabulo"
+        }
         
         trovTabelo?.delegate = self
         trovTabelo?.dataSource = self
