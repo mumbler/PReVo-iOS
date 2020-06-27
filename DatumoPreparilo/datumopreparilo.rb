@@ -314,7 +314,7 @@ def traktiNodon(nod, stato)
    teksto = ""
    
    nod.children().each do |fil|
-
+       
       if fil.name == "kap"
          novaKapo = traktiKapon(fil, stato)
          objekto["nomo"] = novaKapo["nomo"]
@@ -609,6 +609,8 @@ def traktiRimarkon(rim, stato)
          teksto += novaFormulo["teksto"]
       elsif fil.name == "sncref"
           teksto += prepariTekston(fil.to_s)
+      elsif fil.name == "esc"
+          teksto += tekstoPorNodo(fil, stato)
       else
 
       end
