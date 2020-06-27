@@ -1,13 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "lupeo-50.png",
       "idiom" : "universal",
-      "filename" : "Support.png",
       "scale" : "1x"
     },
     {
+      "filename" : "lupeo-100.png",
       "idiom" : "universal",
-      "filename" : "Support-1.png",
       "scale" : "2x"
     },
     {
@@ -16,7 +16,7 @@
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

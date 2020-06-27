@@ -101,19 +101,23 @@ class ArtikoloViewController : UIViewController, Stilplena {
         let bildo = UzantDatumaro.konservitaj.contains { (nuna: Listero) -> Bool in
             return nuna.indekso == artikolo?.indekso
             } ? UIImage(named: "pikto_stelo_plena") : UIImage(named: "pikto_stelo")
+        
         let konservButono = UIButton()
         konservButono.tintColor = UzantDatumaro.stilo.navTintKoloro
         konservButono.setImage(bildo?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
         konservButono.addTarget(self, action: #selector(premisKonservButonon), for: UIControl.Event.touchUpInside)
+        konservButono.imageView?.contentMode = .scaleAspectFit
+        
         let serchButono = UIButton()
         serchButono.tintColor = UzantDatumaro.stilo.navTintKoloro
-        serchButono.setImage(UIImage(named: "pikto_lenso")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
+        serchButono.setImage(UIImage(named: "pikto_lupeo")?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate), for: .normal)
         serchButono.addTarget(self, action: #selector(premisSerchButonon), for: .touchUpInside)
+        serchButono.contentHorizontalAlignment = .right
         
         butonujo.addSubview(konservButono)
         butonujo.addSubview(serchButono)
-        serchButono.frame = CGRect(x: 40, y: 0, width: 30, height: 30)
-        konservButono.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        serchButono.frame = CGRect(x: 34, y: 0, width: 36, height: 30)
+        konservButono.frame = CGRect(x: 0, y: 0, width: 34, height: 30)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: butonujo)
     }
     

@@ -35,7 +35,7 @@ enum Pagho : Int {
         
         switch self {
         case .Serchi:
-            return UIImage(named: "pikto_lenso")
+            return UIImage(named: "pikto_lupeo_granda")
         case .Esplori:
             return UIImage(named: "pikto_kompaso")
         case .Historio:
@@ -43,7 +43,7 @@ enum Pagho : Int {
         case .Konservitaj:
             return UIImage(named: "pikto_stelo")
         case .Agordoj:
-            return UIImage(named: "pikto_dentrado")
+            return UIImage(named: "pikto_boltilo")
         case .Informoj:
             return UIImage(named: "pikto_informoj")
         }
