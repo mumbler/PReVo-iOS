@@ -663,6 +663,8 @@ def traktiEkzemplon(ekz, stato)
          teksto += novaFormulo["teksto"]
       elsif fil.name == "sncref"
           teksto += prepariTekston(fil.to_s)
+      elsif fil.name == "nom"
+          teksto += tekstoPorNodo(fil, stato)
       else
 
       end
