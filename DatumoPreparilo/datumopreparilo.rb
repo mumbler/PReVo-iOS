@@ -648,7 +648,7 @@ def traktiEkzemplon(ekz, stato)
       elsif fil.name == "trdgrp"
          traktiTradukGrupon(fil, stato)
       elsif fil.name == "tld"
-         teksto += traktiTildon(fil, stato)
+         teksto += "<b>" + traktiTildon(fil, stato) + "</b>"
       elsif fil.name == "fnt"
          #trakti fonton
          teksto.gsub!(/\s*$/, "")
