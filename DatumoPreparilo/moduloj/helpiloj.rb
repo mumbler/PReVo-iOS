@@ -38,12 +38,6 @@ def uziTildon(teksto)
 
 end
 
-def prepariTilde(teksto)
-
-    return prepariTekston(uziTildo(teksto))
-
-end
-
 def prepariVorte(teksto, vorto)
 
     return prepariTekston(anstatauTildo(teksto, vorto))
@@ -61,7 +55,7 @@ def prepariTekston(teksto)
 end
 
 # Por konstrui la traduk-indeksojn - intermeti en traduk-array vorton kaj ĝian
-#  destino-markon
+# destino-markon
 def alfameti(arr, vorto, mark)
     
     min = 0, maks = arr.size
@@ -81,4 +75,57 @@ def alfameti(arr, vorto, mark)
     end
 
     arr.insert(min, [vorto, mark])
+end
+    
+# Trovi Romian version de nombro (por listado)
+def alRomia(nombro)
+
+    arabajLiteroj = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+    romiajLiteroj = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"]
+        
+    romia = ""
+    komenca = nombro
+        
+    for j in 0..romiajLiteroj.count - 1
+        romiaLitero = romiajLiteroj[j]        
+        arabaSumo = arabajLiteroj[j]
+        div = komenca / arabaSumo
+        
+        if div > 0
+            for i in 0..div-1
+                romia += romiaLitero
+            end
+                
+            komenca -= arabaSumo * div
+        end
+    end
+
+    return romia
+end
+
+# Simboloj kiuj aperas en etikedoj <ref>
+    
+def refSimbolo(tip)
+    case tip
+        when "sin"
+            return "⇒"
+        when "ant"
+            return "⇝"
+        when "dif"
+            return "="
+        when "super"
+            return "⇗"
+        when "sub"
+            return "⇘"
+        when "vid"
+            return "➞"
+        when "ekz"
+            return "⇉"
+        when "prt"
+            return ""
+        when "malprt"
+            return ""
+        else
+            return ""
+    end
 end
