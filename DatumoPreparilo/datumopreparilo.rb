@@ -70,7 +70,9 @@ end
 def prepariTekston(teksto)
 
     teksto2 = teksto.gsub("\n", " ").gsub("\r", " ").gsub("\t", "").squeeze(" ")
-    teksto2.gsub("...", "…")
+    teksto2 = teksto2.gsub("...", "…")
+    teksto2 = teksto2.gsub("<em>", "<b>").gsub("</em>", "</b>")
+
     return anstatauKodo(teksto2)
 
 end
@@ -508,7 +510,6 @@ def traktiUzon(uzo, stato)
             if not @fakvortoj[kodo].include?(nomo)
                 @fakvortoj[kodo][nomo] = []
             end
-            
             fakVorto = fariFakVorton(nomo, stato["artikolo"]["indekso"], stato["marko"][2], stato["senco"], nomo)
             @fakvortoj[kodo][nomo] << fakVorto
         end
@@ -586,7 +587,7 @@ def traktiRimarkon(rim, stato)
          teksto += prepariTekston(fil.text)
       elsif fil.name == "ekz"
          novaEkzemplo = traktiEkzemplon(fil, stato)
-         teksto += novaEkzemplo["teksto"]
+         teksto += novaEkzemplo["teksto"].strip()
       elsif fil.name == "trd"
          novaTraduko = traktiTradukon(fil, stato)
          teksto += "<i>#{novaTraduko["teksto"]}</i>"
@@ -913,7 +914,6 @@ def fariSerchTradukon(videbla, teksto, nomo, indekso, marko, senco)
 end
        
 def fariFakVorton(nomo, indekso, marko, senco, teksto)
-   
     return {"nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco, "teksto" => teksto}
 end
        
