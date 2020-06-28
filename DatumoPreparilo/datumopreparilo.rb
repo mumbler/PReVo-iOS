@@ -3,102 +3,20 @@ require 'cgi'
 require 'json'
 require 'nokogiri'
 
+modulejo = 'moduloj'
+require_relative "#{modulejo}/grundajhoj"
+require_relative "#{modulejo}/helpiloj"
+
 # Supraj valoroj ===================================
 
 @literoj = {}
 @esperantaj = []
 @fakvortoj = {}
+@stiloj = []
 
 # dumprogramaj
 
 @indikiloDeMarko = {}
-
-# Funkcioj Gheneralaj  =============================
-
-# Anstatauigi la HTML-kodojn, incluzivante tiujn listigitajn en "literoj.xml",
-# per veraj, unicod-aj literoj
-
-def anstatauKodo(teksto)
-
-     trovoj = teksto.scan(/&(.*?);/)
-     if trovoj == nil or trovoj.size <= 0 then return teksto end
-
-     for i in 0..trovoj.size do
-        
-	trov = trovoj[i].to_s[2..-3]
-        if @literoj[trov] != nil
-	   teksto.sub!("&#{trov};", @literoj[trov])
-	else
-	   #puts "Eraro! Ne trovis [#{trov}]"
-	end
-     end
-
-     teksto = CGI::unescapeHTML(teksto)
-     return teksto
-end
-
-def anstatauTildo(teksto, vorto)
-
-   teksto = teksto.gsub("<tld/>", vorto)
-   teksto = teksto.gsub(/<tld>.*?<\/tld>/, vorto)
-   teksto = teksto.gsub(/<tld lit=\"(.*?)\"\/>/, '\1' + "#{vorto[1..-1]}")
-   teksto = teksto.gsub(/<tld lit=\"(.*?)\">.*?<\/tld>/, '\1' + "#{vorto[1..-1]}") 
-   return teksto  
-
-end
-
-def uziTildon(teksto)
-
-   teksto = teksto.gsub("<tld/>", "~")
-   teksto = teksto.gsub(/<tld>.*?<\/tld>/, "~")
-   return teksto  
-
-end
-
-def prepariTilde(teksto)
-
-    return prepariTekston(uziTildo(teksto))
-
-end
-
-def prepariVorte(teksto, vorto)
-
-    return prepariTekston(anstatauTildo(teksto, vorto))
-
-end
-
-def prepariTekston(teksto)
-
-    teksto2 = teksto.gsub("\n", " ").gsub("\r", " ").gsub("\t", "").squeeze(" ")
-    teksto2 = teksto2.gsub("...", "…")
-    teksto2 = teksto2.gsub("<em>", "<b>").gsub("</em>", "</b>")
-
-    return anstatauKodo(teksto2)
-
-end
-
-# Por konstrui la traduk-indeksojn - intermeti en traduk-array vorton kaj ĝian
-#  destino-markon
-def alfameti(arr, vorto, mark)
-    
-    min = 0, maks = arr.size
-    prov = 0
-
-    while min != maks
-
-       prov = ((min + maks)/2).floor
-       nuna = arr[prov][0]
-       if vorto < nuna
-          maks = prov
-       elsif vorto < nuna
-       	  min = prov
-       elisf vorto == nuna
-          min = maks = prov
-       end
-    end
-
-    arr.insert(min, [vorto, mark])
-end
 
 # Legu subtenajn dosierojn =======================
 # Tiuj faros la pli simplajn datumarojn pri lingvoj, mallongigoj, ktp.
@@ -121,174 +39,33 @@ unless File.exists?(eldir) and File.exists?(eldir+"/grundo") and File.exists?(el
    puts "Eraro: bezonataj doserujoj ne trovitas"
 end
 
-# === Fari listojn de lingvoj kaj iliaj literoj
+# === Prepari grundaĵojn
 
-komentoRegesp = /\s*<!--.*-->˜\s*/
-
-# -- lingvolisto
 
 puts "=== Legante lingvojn ==="
-lingvoDos = File.open(eldir+"/grundo/lingvoj.xml", "r")
-lingvoj = []
-tradukoj = {}
-
-if lingvoDos
-   linio = ""
-   lingvoRegesp = /\s*<lingvo kodo="([[:alpha:]]+)">(.+)<\/lingvo>\s*/
-   while linio = lingvoDos.gets
-      #if komentoRegesp.match(linio) then next end
-      rezulto = lingvoRegesp.match(linio)
-      if rezulto and rezulto.size == 3
-      	 lingvoj << [rezulto[1], rezulto[2]]
-	 tradukoj[rezulto[1]] = []
-         tradukoj[rezulto[1]] = []
-      end
-   end
-else
-   puts "Lingvo-lista dosiero ne troveblas"
-end
-
-lingvoDos.close
+lingvoj = legiLingvojn(eldir)
+tradukoj = starigiTradukojn(lingvoj)
 
 # -- fakolisto
 
-def korektiFakKodon(kodo)
-     case kodo
-        when "POSX"
-            return "POŜ"
-        when "SHI"
-            return "ŜIP"
-        when "MAS"
-            return "MAŜ"
-        when "AUT"
-            return "AŬT"
-        else
-            return kodo
-     end
-end
-    
 puts "=== Legante fakojn ==="
-fakoDos = File.open(eldir+"/grundo/fakoj.xml", "r")
-fakoj = []
-
-if fakoDos
-   linio = ""
-   fakoRegesp = /\s*<fako kodo="([[:alpha:]]+)" vinjeto="([.\/[[:alpha:]]]+)">([\s,[[:alpha:]]]+)<\/fako>\s*/
-   while linio = fakoDos.gets
-
-      if komentoRegesp.match(linio) then next end
-      rezulto = fakoRegesp.match(linio)
-      if rezulto and rezulto.size == 4
-          
-         # Specialaj korektoj
-         kodo = korektiFakKodon(rezulto[1])
-          
-         fakoj << [kodo, rezulto[3], rezulto[2]]
-         @fakvortoj[kodo] = {}
-      end
-   end
-else
-   puts "Fako-lista dosiero ne troveblas"
-end
+fakoj = legiFakojn(eldir)
+@fakvortoj = starigiFakVortojn(fakoj)
 
 # -- literoj
-#    Kodoj por neASCII literoj
-
-fakoDos.close
 
 puts "=== Legante literojn ==="
-literoDos = File.open(eldir+"/grundo/literoj.xml", "r")
-atendLiteroj = {}
-
-if literoDos
-   linio = ""
-   literojRegesp = /<l\s*nomo=\"(.*)\"\s*kodo=\"(.*)\"\/>/
-
-   while linio = literoDos.gets
-      trovo = literojRegesp.match(linio)
-      if trovo != nil and trovo.size == 3
-         
-	 kodo = trovo[1].strip
-      	 if rez = /#x(.*)/.match(trovo[2])
-
-	    @literoj[kodo] = [rez[1].to_s.hex].pack("U")
-
-	    if atendLiteroj[kodo] != nil
-	       @literoj[atendLiteroj[kodo]] = @literoj[trovo[1]]
-	       atendLiteroj[kodo] = nil
-	    end
-	 else
-	    ampArr = trovo[2].split(";")
-
-	    if ampArr.size == 1
-	       atendLiteroj[trovo[2]] = kodo
-	    elsif ampArr.size > 1
-	       sumo = ""
-	       for val in ampArr
-	          if val == "&amp" then next end
-		  if @literoj[val] != nil
-	             sumo = sumo + @literoj[val]
-		  end
-	       end
-	       @literoj[kodo] = sumo
-	    end
-	 end
-      end
-   end
-
-end
-
-literoDos.close
-
-# ripari kelkajn mankantajn literojn
-
-if @literoj["a_a"] == nil then @literoj["a_a"] = @literoj["a_A"] end
-if @literoj["a_fatha_a"] == nil then @literoj["a_fatha_a"] = @literoj["a_fatha_A"] end
-
-# -- literordolisto
-#    Ŝajne ne bezonata
+@literoj = legiLiterojn(eldir)
 
 # -- mallongigoj
 
 puts "=== Legante mallongigojn ==="
-mallongigDos = File.open(eldir+"/grundo/mallongigoj.xml", "r")
-mallongigoj = []
-
-if mallongigDos
-   linio = ""
-   mallongigRegesp = /<mallongigo mll=\"(.*)\">(.*)<\/mallongigo>/
-   while linio = mallongigDos.gets
-
-      trovo = mallongigRegesp.match(linio)
-      if trovo != nil and trovo.size == 3
-        mallongigoj << [trovo[1], trovo[2]]
-      end
-   end
-end
-
-mallongigDos.close
+mallongigoj = legiMallongigojn(eldir)
 
 # -- Stiloj
 
 puts "=== Legante stilojn ==="
-stilojDos = File.open(eldir+"/grundo/stiloj.xml", "r")
-@stiloj = []
-
-if stilojDos
-   linio = ""
-   stilojRegesp = /<stilo kodo=\"(.*)\">(.*)<\/stilo>/
-   while linio = stilojDos.gets
-
-      trovo = stilojRegesp.match(linio)
-      if trovo != nil and trovo.size == 3
-         @stiloj << [trovo[1], trovo[2]]
-      end
-   end
-else
-   puts "Stiloj dosiero netroveblas"
-end
-
-stilojDos.close
+@stiloj = legiStilojn(eldir)
 
 # === Trakti vort-dosierojn
 
