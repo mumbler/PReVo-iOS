@@ -602,6 +602,7 @@ def traktiRimarkon(rim, stato)
       elsif fil.name == "tld"
          teksto += traktiTildon(fil.text, stato)
       elsif fil.name == "em"
+         puts tekstoPorNodo(fil, stato)
          teksto += "<b>" + tekstoPorNodo(fil, stato) + "</b>"
       elsif fil.name == "ctl"
          teksto += "„" + prepariVorte(fil.inner_html, stato["radiko"]) + "“"
@@ -612,6 +613,8 @@ def traktiRimarkon(rim, stato)
           teksto += prepariTekston(fil.to_s)
       elsif fil.name == "esc"
           teksto += tekstoPorNodo(fil, stato)
+      elsif fil.name == "b"
+          teksto += fil.text
       else
 
       end
