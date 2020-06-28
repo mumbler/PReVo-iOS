@@ -266,6 +266,9 @@ class Iloj {
         let tekstStilo = UIFont.systemFont(ofSize: tekstGrandeco)
         let fortaTeksto = UIFont.boldSystemFont(ofSize: tekstGrandeco)
         let akcentaTeksto = UIFont.italicSystemFont(ofSize: tekstGrandeco)
+
+        let fortaAkcentaDescriptor = fortaTeksto.fontDescriptor.withSymbolicTraits([.traitItalic, .traitBold])!
+        let fortaAkcentaTeksto = UIFont(descriptor: fortaAkcentaDescriptor, size: tekstGrandeco)
     
         mutaciaTeksto.addAttribute(.font, value: tekstStilo, range: NSMakeRange(0, mutaciaTeksto.length))
         mutaciaTeksto.addAttribute(.foregroundColor, value: UzantDatumaro.stilo.tekstKoloro, range: NSMakeRange(0, mutaciaTeksto.length))
@@ -275,7 +278,13 @@ class Iloj {
         }
         
         for fortMarko in markoj[markoFortoKlavo]! {
-            mutaciaTeksto.addAttribute(.font, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
+            var fortaRange = NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0)
+            let attributes = mutaciaTeksto.attributes(at: fortMarko.0, effectiveRange: &fortaRange)
+            if attributes[.font] as! UIFont == akcentaTeksto {
+                mutaciaTeksto.addAttribute(.font, value: fortaAkcentaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
+            } else {
+                mutaciaTeksto.addAttribute(.font, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
+            }
         }
 
         // TODO la superscript vershajne ne funkcios
