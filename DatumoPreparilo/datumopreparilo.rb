@@ -920,6 +920,7 @@ vortoDos = File.open(eldir+"/revo/")
 if vortoDos and File.directory?(eldir+"/revo/")
 
     puts "=== Legante artikolojn ==="
+    
     Dir.foreach(eldir+"/revo/") do |artikolDosiero|
         next if artikolDosiero == '.' or artikolDosiero == '..' or artikolDosiero[0] == '.' or not artikolDosiero.end_with?(".xml")
 
@@ -938,47 +939,15 @@ end
 
 vortoDos.close
 
-# ============================
+# === Registri produktaĵojn
 
-Dir.mkdir(aldir) unless File.exists?(aldir)
-
-LingvojElDos = File.open(aldir + "/lingvoj.json", "w")
-
-LingvojElDos.print JSON.generate(lingvoj)
-
-LingvojElDos.close
-
-# ---
-
-FakojElDos = File.open(aldir + "/fakoj.json", "w")
-
-FakojElDos.print JSON.generate(fakoj)
-
-FakojElDos.close
-    
-# ---
-    
-FakVortojElDos = File.open(aldir + "/fakvortoj.json", "w")
-    
-FakVortojElDos.print JSON.generate(@fakvortoj)
-    
-FakojElDos.close
-    
-# ---
-
-MallongigElDos = File.open(aldir + "/mallongigoj.json", "w")
-
-MallongigElDos.print JSON.generate(mallongigoj)
-
-MallongigElDos.close
-
-# ---
-
-StilojElDos = File.open(aldir + "/stiloj.json", "w")
-
-StilojElDos.print JSON.generate(@stiloj)
-
-StilojElDos.close
+puts "=== Registras Datumojn ==="
+        
+skribiLingvojn(lingvoj, aldir)
+skribiFakojn(fakoj, aldir)
+skribiFakVortojn(@fakvortoj, aldir)
+skribiMallongigojn(mallongigoj, aldir)
+skribiStilojn(@stiloj, aldir)
 
 # ---
 

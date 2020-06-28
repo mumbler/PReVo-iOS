@@ -34,6 +34,13 @@ def starigiTradukojn(lingvoj)
     
    return tradukoj
 end
+    
+def skribiLingvojn(lingvoj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    lingvojDosiero = File.open(dosierujo + "/lingvoj.json", "w")
+    lingvojDosiero.print JSON.generate(lingvoj)
+    lingvojDosiero.close 
+end
 
 # Fakoj
 
@@ -87,6 +94,19 @@ def starigiFakVortojn(fakoj)
     return fakvortoj
 end
 
+def skribiFakojn(fakoj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    fakojDosiero = File.open(dosierujo + "/fakoj.json", "w")
+    fakojDosiero.print JSON.generate(fakoj)
+    fakojDosiero.close 
+end
+
+def skribiFakVortojn(fakVortoj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    fakVortojDosiero = File.open(dosierujo + "/fakvortoj.json", "w")    
+    fakVortojDosiero.print JSON.generate(fakVortoj)
+    fakVortojDosiero.close
+end
 # Literoj
 
 def legiLiterojn(dosierujo)
@@ -164,6 +184,13 @@ def legiMallongigojn(dosierujo)
     return mallongigoj
 end
 
+def skribiMallongigojn(mallongigoj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    mallongigojDosiero = File.open(dosierujo + "/mallongigoj.json", "w")
+    mallongigojDosiero.print JSON.generate(mallongigoj)
+    mallongigojDosiero.close 
+end
+
 # Stiloj
 
 def legiStilojn(dosierujo)
@@ -185,4 +212,11 @@ def legiStilojn(dosierujo)
     end
 
     return stiloj
+end
+
+def skribiStilojn(stiloj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    stilojDosiero = File.open(dosierujo + "/stiloj.json", "w")
+    stilojDosiero.print JSON.generate(stiloj)
+    stilojDosiero.close 
 end
