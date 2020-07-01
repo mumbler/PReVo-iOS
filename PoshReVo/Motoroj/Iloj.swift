@@ -113,91 +113,72 @@ class Iloj {
         rez[markoLigoKlavo] = [(Int, Int, String)]()
         rez[markoSuperKlavo] = [(Int, Int, String)]()
         rez[markoSubKlavo] = [(Int, Int, String)]()
+        
+        let regesp = try! NSRegularExpression(pattern: "<(/?([ikbga]|sup|sub))( href=\"(.*?)\")?>")
+        let matches = regesp.matches(in: teksto, range: NSRange(teksto.startIndex..., in: teksto))
+        
+        var rubo = 0
         var ligoStako = [(Int, String)]()
         var akcentoStako = [Int]()
         var fortoStako = [Int]()
         var superStako = [Int]()
         var subStako = [Int]()
         
-        var en: Bool = false
-        var enhavo: String = ""
-        var rubo: Int = 0
-        var loko: Int = 0
-        
-        for literoScalar in teksto.unicodeScalars {
-        
-            let litero = String(literoScalar)
+        for match in matches {
             
-            if litero == "<" {
-                
-                rubo += 1
-                en = true
-            } else if litero == ">" {
-                
-                rubo += 1
-                en = false
-                
-                if enhavo == "i" || enhavo == "k" {
-                    akcentoStako.append(loko)
-                }
-                else if enhavo == "/i" || enhavo == "/k" {
-                    if let nombro = akcentoStako.popLast() {
-                        rez[markoAkcentoKlavo]?.append((nombro, loko, ""))
-                    }
-                }
-                else if enhavo == "b" || enhavo == "g" {
-                    fortoStako.append(loko)
-                }
-                else if enhavo == "/b" || enhavo == "/g" {
-                    if let nombro = fortoStako.popLast() {
-                        rez[markoFortoKlavo]?.append((nombro, loko, ""))
-                    }
-                }
-                else if enhavo == "sup" {
-                    superStako.append(loko)
-                }
-                else if enhavo == "/sup" {
-                    if let nombro = superStako.popLast() {
-                        rez[markoSuperKlavo]?.append((nombro, loko, ""))
-                    }
-                }
-                else if enhavo == "sub" {
-                    subStako.append(loko)
-                }
-                else if enhavo == "/sub" {
-                    if let nombro = subStako.popLast() {
-                        rez[markoSubKlavo]?.append((nombro, loko, ""))
-                    }
-                }
-                else if enhavo == "/a" {
-                    if let ligo = ligoStako.popLast() {
-                        let nombro = ligo.0, celo = ligo.1
-                        rez[markoLigoKlavo]?.append((nombro, loko, celo))
-                    }
-                } else {
-                    do {
-                        let regesp = try NSRegularExpression(pattern: "a href=\"(.*?)\"", options: NSRegularExpression.Options())
-                        let trovoj = regesp.matches(in: enhavo, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, enhavo.count))
-                        if let trovo = trovoj.first {
-                            let celo = (enhavo as NSString).substring(with: trovo.range(at: 1))
-                            ligoStako.append((loko, celo))
-                        }
-                    } catch { }
-                }
-                
-                enhavo = ""
-                
-            } else {
-                
-                if en {
-                    rubo += 1
-                    
-                    enhavo.append(litero)
-                } else {
-                    
-                    loko += 1
+            let range = match.range
+            let klavo = String(teksto[Range(match.range(at: 1), in: teksto)!])
+            let loko = range.location - rubo
+            
+            if klavo == "i" || klavo == "k" {
+                akcentoStako.append(loko)
+            }
+            else if klavo == "/i" || klavo == "/k" {
+                if let nombro = akcentoStako.popLast() {
+                    rez[markoAkcentoKlavo]?.append((nombro, loko, ""))
                 }
             }
+            else if klavo == "b" || klavo == "g" {
+                fortoStako.append(loko)
+            }
+            else if klavo == "/b" || klavo == "/g" {
+                if let nombro = fortoStako.popLast() {
+                    rez[markoFortoKlavo]?.append((nombro, loko, ""))
+                }
+            }
+            else if klavo == "sup" {
+                superStako.append(loko)
+            }
+            else if klavo == "/sup" {
+                if let nombro = superStako.popLast() {
+                    rez[markoSuperKlavo]?.append((nombro, loko, ""))
+                }
+            }
+            else if klavo == "sub" {
+                subStako.append(loko)
+            }
+            else if klavo == "/sub" {
+                if let nombro = subStako.popLast() {
+                    rez[markoSubKlavo]?.append((nombro, loko, ""))
+                }
+            }
+            else if klavo == "/a" {
+                if let ligo = ligoStako.popLast() {
+                    let nombro = ligo.0, celo = ligo.1
+                    rez[markoLigoKlavo]?.append((nombro, loko, celo))
+                }
+            }
+            else if klavo == "a" && match.numberOfRanges >= 3 {
+                let ligLoko = match.range(at: 4)
+                if ligLoko.location != NSNotFound {
+                    let ligCelo = String(teksto[Range(ligLoko, in: teksto)!])
+                    ligoStako.append((loko, ligCelo))
+                }
+            } else {
+                print("AHHHHH")
+            }
+                
+            rubo += range.length
         }
         
         return rez
