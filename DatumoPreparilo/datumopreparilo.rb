@@ -369,6 +369,12 @@ def traktiDifinon(dif, stato)
         elsif fil.name == "sncref"
             teksto += prepariTekston(fil.to_s)
             
+        elsif fil.name == "nom"
+            teksto += tekstoPorNodo(fil, stato)
+            
+        elsif fil.name == "nac"
+            teksto += tekstoPorNodo(fil, stato)
+            
         else
             if fil != nil and fil.text != nil
                 subdifino = traktiDifinon(fil, stato)
@@ -430,6 +436,12 @@ def traktiRimarkon(rim, stato)
             teksto += prepariTekston(fil.to_s)
             
         elsif fil.name == "esc"
+            teksto += tekstoPorNodo(fil, stato)
+            
+        elsif fil.name == "nom"
+            teksto += tekstoPorNodo(fil, stato)
+            
+        elsif fil.name == "nac"
             teksto += tekstoPorNodo(fil, stato)
             
         elsif fil.name == "b"
@@ -498,6 +510,9 @@ def traktiEkzemplon(ekz, stato)
             teksto += prepariTekston(fil.to_s)
             
         elsif fil.name == "nom"
+            teksto += tekstoPorNodo(fil, stato)
+            
+        elsif fil.name == "nac"
             teksto += tekstoPorNodo(fil, stato)
         else
             # Fari nenion
