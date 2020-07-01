@@ -41,29 +41,29 @@ end
 
 # === Prepari grundaĵojn
 
-puts "=== Legante lingvojn ==="
+puts "=== Legas lingvojn ==="
 lingvoj = legiLingvojn(eldir)
 tradukoj = starigiTradukojn(lingvoj)
 
 # fakolisto
 
-puts "=== Legante fakojn ==="
+puts "=== Legas fakojn ==="
 fakoj = legiFakojn(eldir)
 @fakvortoj = starigiFakVortojn(fakoj)
 
 # literoj
 
-puts "=== Legante literojn ==="
+puts "=== Legas literojn ==="
 @literoj = legiLiterojn(eldir)
 
 # mallongigoj
 
-puts "=== Legante mallongigojn ==="
+puts "=== Legas mallongigojn ==="
 mallongigoj = legiMallongigojn(eldir)
 
 # Stiloj
 
-puts "=== Legante stilojn ==="
+puts "=== Legas stilojn ==="
 @stiloj = legiStilojn(eldir)
 
 # === Trakti vort-dosierojn
@@ -150,7 +150,7 @@ def traktiNodon(nod, stato)
             if novaSubSenco["mrk"] != nil
                 litero = ("a".."z").to_a[objekto["filNombro"]-1]
                 numero = stato["senco"].to_s + litero
-                indikiloDeMarko[novaSubSenco["mrk"]] = numero
+                @indikiloDeMarko[novaSubSenco["mrk"]] = numero
             end
             
         elsif fil.name == "dif"
@@ -269,6 +269,7 @@ def traktiKapon(kap, stato)
             teksto += fil.text
             nomo += fil.text
             tildo += fil.text
+            
         elsif fil.name == "var"
             fil.children().each do |fil2|
                 if fil2.name == "kap"
@@ -919,7 +920,7 @@ vortoDos = File.open(eldir+"/revo/")
 
 if vortoDos and File.directory?(eldir+"/revo/")
 
-    puts "=== Legante artikolojn ==="
+    puts "=== Legas artikolojn ==="
     
     Dir.foreach(eldir+"/revo/") do |artikolDosiero|
         next if artikolDosiero == '.' or artikolDosiero == '..' or artikolDosiero[0] == '.' or not artikolDosiero.end_with?(".xml")
