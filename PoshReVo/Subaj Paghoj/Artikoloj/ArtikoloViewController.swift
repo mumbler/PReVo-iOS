@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import TTTAttributedLabel
 
+import ReVoModeloj
+import ReVoDatumbazo
+
 let subArtikolChelIdent = "subArtikolaChelo"
 let artikolChelIdent = "artikolaChelo"
 let artikolKapIdent  = "artikolaKapo"
@@ -457,7 +460,7 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
                 saltiAlMarko(partoj[0] + "." + partoj[1], animacii: true)
             }
         } else {
-            if let artikolo =  SeancDatumaro.artikoloPorIndekso(partoj[0]) {
+            if let artikolo =  DatumbazAlirilo.komuna.artikoloPorIndekso(partoj[0]) {
                 navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .plain, target: nil, action: nil)
                 (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
             }

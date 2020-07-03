@@ -9,33 +9,43 @@
 import Foundation
 import CoreData
 
+import ReVoModeloj
+
 extension DatumbazAlirilo {
     
-    public func chiujLingvoj() -> [NSManagedObject]? {
+    public func chiujLingvoj() -> [Lingvo] {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Lingvo", in: konteksto)
         do {
-            return try konteksto.fetch(serchPeto) as? [NSManagedObject]
+            if let objektoj = try konteksto.fetch(serchPeto) as? [NSManagedObject] {
+                return objektoj.compactMap {
+                    Lingvo.elDatumbazObjekto($0)
+                }
+            }
         } catch { }
         
-        return nil
+        return []
     }
     
-    public func chiujFakoj() -> [NSManagedObject]? {
+    public func chiujFakoj() -> [Fako] {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Fako", in: konteksto)
         do {
-            return try konteksto.fetch(serchPeto) as? [NSManagedObject]
+            if let objektoj = try konteksto.fetch(serchPeto) as? [NSManagedObject] {
+                return objektoj.compactMap {
+                    Fako.elDatumbazObjekto($0)
+                }
+            }
         } catch { }
         
-        return nil
+        return []
     }
     
     public func fakVortojPorFako(_ kodo: String) -> [NSManagedObject]? {
         
-        if let fako = fakoPorKodo(kodo) {
+        if let fako = fakaObjektoPorKodo(kodo) {
             let vortoj = fako.mutableSetValue(forKey: "fakvortoj").allObjects as? [NSManagedObject]
             return vortoj?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
                 let unuaNomo = unua.value(forKey: "nomo") as! String

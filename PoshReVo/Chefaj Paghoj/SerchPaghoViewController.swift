@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
+import ReVoModeloj
 import ReVoDatumbazo
 
 let serchChelIdent = "serchRezultoChelo"
@@ -171,7 +172,7 @@ extension SerchPaghoViewController : UISearchBarDelegate {
         }
         
         // Ĉapeli literojn
-        if UzantDatumaro.serchLingvo == SeancDatumaro.esperantaLingvo()
+        if UzantDatumaro.serchLingvo == Lingvo.esperanto
             && text == "x"
             && teksto.count > 0 {
             
@@ -238,7 +239,7 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         novaChelo.isAccessibilityElement = true
         novaChelo.accessibilityLabel = novaChelo.textLabel?.text
 
-        if UzantDatumaro.serchLingvo != SeancDatumaro.esperantaLingvo() {
+        if UzantDatumaro.serchLingvo != Lingvo.esperanto {
             novaChelo.detailTextLabel?.text = tekstoPorDestinoj(destinoj: serchRezultoj[indexPath.row].1)
         }
         
@@ -253,7 +254,7 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
         
         if serchRezultoj[indexPath.row].1.count == 1 {
             if let artikolObjekto = serchRezultoj[indexPath.row].1.first?.value(forKey: "artikolo") as? NSManagedObject {
-                if let artikolo = Artikolo(objekto: artikolObjekto) {
+                if let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna) {
                     
                     parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .plain, target: nil, action: nil)
                     if let marko = serchRezultoj[indexPath.row].1.first?.value(forKey: "marko") as? String, !marko.isEmpty {

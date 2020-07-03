@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+import ReVoModeloj
+import ReVoDatumbazo
+
 let lingvoElektiloChelIdent = "lingvoElektiloChelo"
 
 /*
@@ -28,6 +31,7 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
     @IBOutlet var serchTabulo: UISearchBar?
     @IBOutlet var lingvoTabelo: UITableView?
     
+    private let chiujLingvoj = DatumbazAlirilo.komuna.chiujLingvoj()
     private var validajLingvoj: [Lingvo]?
     private var filtritajLingvoj: [Lingvo]? = nil
     
@@ -35,8 +39,8 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
     private var suprajTitolo: String?
     private var montriEsperanton: Bool = true
     
-    var chiujLingvoj: [Lingvo] {
-        return filtritajLingvoj ?? validajLingvoj ?? SeancDatumaro.lingvoj
+    var montrotajLingvoj: [Lingvo] {
+        return filtritajLingvoj ?? validajLingvoj ?? chiujLingvoj
     }
     
     var delegate: LingvoElektiloDelegate?
@@ -57,11 +61,11 @@ final class LingvoElektiloViewController : UIViewController, Stilplena {
         self.montriEsperanton = montriEsperanton
         if !montriEsperanton {
             suprajLingvoj?.removeAll(where: { (lingvo) -> Bool in
-                lingvo == SeancDatumaro.esperantaLingvo()
+                lingvo == Lingvo.esperanto
             })
-            validajLingvoj = SeancDatumaro.lingvoj
+            validajLingvoj = chiujLingvoj
             validajLingvoj?.removeAll(where: { (lingvo) -> Bool in
-                lingvo == SeancDatumaro.esperantaLingvo()
+                lingvo == Lingvo.esperanto
             })
         }
     }
@@ -145,7 +149,7 @@ extension LingvoElektiloViewController : UISearchBarDelegate {
         searchBar.text = searchBar.text?.lowercased()
     
         if let teksto = searchBar.text, !teksto.isEmpty {
-            filtritajLingvoj = Iloj.filtriLingvojn(teksto: teksto, lingvoj: SeancDatumaro.lingvoj, montriEsperanton: montriEsperanton)
+            filtritajLingvoj = Iloj.filtriLingvojn(teksto: teksto, lingvoj: chiujLingvoj, montriEsperanton: montriEsperanton)
         }
         else {
             filtritajLingvoj = nil
@@ -181,7 +185,7 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
         }
         else {
             if section == chiujSekcioj() {
-                return chiujLingvoj.count
+                return montrotajLingvoj.count
             } else if let suprajLingvoj = suprajLingvoj {
                 return suprajLingvoj.count
             }
@@ -208,7 +212,7 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
         }
         else {
             if indexPath.section == chiujSekcioj() {
-                lingvo = chiujLingvoj[indexPath.row]
+                lingvo = montrotajLingvoj[indexPath.row]
             } else if let suprajLingvoj = suprajLingvoj {
                 lingvo = suprajLingvoj[indexPath.row]
             } else {
@@ -248,7 +252,7 @@ extension LingvoElektiloViewController : UITableViewDelegate, UITableViewDataSou
         }
         else {
             if indexPath.section == chiujSekcioj() {
-                lingvo = chiujLingvoj[indexPath.row]
+                lingvo = montrotajLingvoj[indexPath.row]
             } else {
                 lingvo = suprajLingvoj?[indexPath.row]
             }

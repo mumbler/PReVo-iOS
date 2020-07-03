@@ -11,12 +11,12 @@ import Foundation
 /*
     Reprezentas skriban stilon. Uzataj en kelkaj difinoj.
  */
-struct Stilo {
+public struct Stilo {
+    public let kodo: String
+    public let nomo: String
     
-    let kodo: String, nomo: String
-    
-    init(_ enkodo: String, _ ennomo: String) {
-        kodo = enkodo
-        nomo = ennomo
+    public init(kodo: String, nomo: String) {
+        self.kodo = kodo
+        self.nomo = nomo
     }
 }

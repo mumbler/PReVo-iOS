@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 
+import ReVoModeloj
+import ReVoDatumbazo
+
 let disigiloChelIdent = "vortoDisigiloChelo"
 
 class VortoDisigiloTableViewCell : UITableViewCell {
@@ -94,8 +97,7 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let artikolObjekto = destinoj[indexPath.row].value(forKey: "artikolo") as? NSManagedObject {
-            if let artikolo = Artikolo(objekto: artikolObjekto) {
-                
+            if let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna) {
                 if let marko = destinoj[indexPath.row].value(forKey: "marko") as? String, !marko.isEmpty {
                     (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
                 } else {

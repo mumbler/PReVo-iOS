@@ -1,5 +1,5 @@
 //
-//  Lingvo+ReVoDatumbazo.swift
+//  Fako+ReVoDatumbazo.swift
 //  ReVoDatumbazo
 //
 //  Created by Robin Hill on 7/3/20.
@@ -10,18 +10,14 @@ import CoreData
 
 import ReVoModeloj
 
-extension Lingvo {
+extension Fako {
     
-    public static func elDatumbazObjekto(_ objekto: NSManagedObject) -> Lingvo? {
+    public static func elDatumbazObjekto(_ objekto: NSManagedObject) -> Fako? {
         if let kodo = objekto.value(forKey: "kodo") as? String,
            let nomo = objekto.value(forKey: "nomo") as? String {
-            return Lingvo(kodo: kodo, nomo: nomo)
+            return Fako(kodo: kodo, nomo: nomo)
         }
         
         return nil
-    }
-    
-    public static var esperanto: Lingvo {
-        return Lingvo(kodo: "eo", nomo: "Esperanto")
     }
 }

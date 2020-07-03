@@ -11,6 +11,16 @@ import Foundation
 /*
     Reprezentas unu aŭ pluraj vortoj havanta unu saman difinon.
 */
-struct Vorto {
-    let titolo: String, teksto: String, marko: String?, ofc: String?
+public struct Vorto {
+    public let titolo: String
+    public let teksto: String
+    public let marko: String?
+    public let ofc: String?
+    
+    public init(titolo: String, teksto: String, marko: String?, ofc: String?) {
+        self.titolo = titolo
+        self.teksto = teksto
+        self.marko = marko
+        self.ofc = ofc
+    }
 }

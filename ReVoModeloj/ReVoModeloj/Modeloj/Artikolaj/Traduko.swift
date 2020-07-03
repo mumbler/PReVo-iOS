@@ -11,6 +11,12 @@ import Foundation
 /*
     Traduko de esperanta vorto en alian lingvon.
 */
-struct Traduko {
-    let lingvo: Lingvo, teksto: String
+public struct Traduko {
+    public let lingvo: Lingvo
+    public let teksto: String
+    
+    public init(lingvo: Lingvo, teksto: String) {
+        self.lingvo = lingvo
+        self.teksto = teksto
+    }
 }

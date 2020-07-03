@@ -6,4 +6,16 @@
 //  Copyright © 2020 Robin Hill. All rights reserved.
 //
 
-import Foundation
+import ReVoModeloj
+
+extension Vorto {
+    
+    // Titolo de vorto, havanta indikilon de oficialeco
+    var kunaTitolo: String {
+        if let verOfc = ofc {
+            return titolo + Iloj.superLit(verOfc)
+        } else {
+            return titolo
+        }
+    }
+}

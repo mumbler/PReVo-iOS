@@ -9,9 +9,9 @@
 import Foundation
 import CoreData
 
-final public class DatumbazAlirilo {
-    
-    static var komuna: DatumbazAlirilo?
+import ReVoModeloj
+
+public final class DatumbazAlirilo {
     
     let konteksto: NSManagedObjectContext
     
@@ -19,7 +19,7 @@ final public class DatumbazAlirilo {
         self.konteksto = konteksto
     }
     
-    public func lingvoPorKodo(_ kodo: String) -> NSManagedObject? {
+    public func lingvaObjektoPorKodo(_ kodo: String) -> NSManagedObject? {
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Lingvo", in: konteksto)
         serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
@@ -32,7 +32,14 @@ final public class DatumbazAlirilo {
         return nil
     }
     
-    public func fakoPorKodo(_ kodo: String) -> NSManagedObject? {
+    public func lingvoPorKodo(_ kodo: String) -> Lingvo? {
+        if let objekto = lingvaObjektoPorKodo(kodo) {
+            return Lingvo.elDatumbazObjekto(objekto)
+        }
+        return nil
+    }
+    
+    public func fakaObjektoPorKodo(_ kodo: String) -> NSManagedObject? {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Fako", in: konteksto)
@@ -45,8 +52,15 @@ final public class DatumbazAlirilo {
         
         return nil
     }
+    
+    public func fakoPorKodo(_ kodo: String) -> Fako? {
+        if let objekto = fakaObjektoPorKodo(kodo) {
+            return Fako.elDatumbazObjekto(objekto)
+        }
+        return nil
+    }
 
-    public func artikoloPorIndekso(_ indekso: String) -> NSManagedObject? {
+    public func artikolaObjektoPorIndekso(_ indekso: String) -> NSManagedObject? {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto)
@@ -55,6 +69,14 @@ final public class DatumbazAlirilo {
             return try konteksto.fetch(serchPeto).first as? NSManagedObject
         } catch {
             
+        }
+        
+        return nil
+    }
+    
+    public func artikoloPorIndekso(_ indekso: String) -> Artikolo? {
+        if let objekto = artikolaObjektoPorIndekso(indekso) {
+            return Artikolo(objekto: objekto, datumbazAlirilo: self)
         }
         
         return nil

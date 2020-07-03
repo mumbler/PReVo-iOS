@@ -12,34 +12,35 @@ import Foundation
     Reprezentas lingvon ekzistantan en la vortaro.
     Uzata en serĉado kaj listigado de tradukoj en artikoloj.
 */
-final class Lingvo : NSObject, NSSecureCoding {
+public final class Lingvo : NSObject, NSSecureCoding {
     
-    let kodo: String, nomo: String
+    public let kodo: String
+    public let nomo: String
     
-    init(_ enkodo: String, _ ennomo: String) {
-        kodo = enkodo
-        nomo = ennomo
+    public init(kodo: String, nomo: String) {
+        self.kodo = kodo
+        self.nomo = nomo
     }
     
     // MARK: - NSSecureCoding
 
-    static var supportsSecureCoding = true
+    public static var supportsSecureCoding = true
     
-    required convenience init?(coder aDecoder: NSCoder) {
+    public required convenience init?(coder aDecoder: NSCoder) {
         if let enkodo = aDecoder.decodeObject(forKey: "kodo") as? String,
             let ennomo = aDecoder.decodeObject(forKey: "nomo") as? String {
-           self.init(enkodo, ennomo)
+            self.init(kodo: enkodo, nomo: ennomo)
         } else {
             return nil
         }
     }
     
-    func encode(with aCoder: NSCoder) {
+    public func encode(with aCoder: NSCoder) {
         aCoder.encode(kodo, forKey: "kodo")
         aCoder.encode(nomo, forKey: "nomo")
     }
     
-    override var hash: Int {
+    public override var hash: Int {
         return kodo.hashValue
     }
 }
@@ -48,7 +49,7 @@ final class Lingvo : NSObject, NSSecureCoding {
 
 extension Lingvo {
     
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         if let lingvo = object as? Lingvo {
             return self == lingvo
         }
@@ -57,7 +58,7 @@ extension Lingvo {
         }
     }
     
-    static func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
+    public static func ==(lhs: Lingvo, rhs: Lingvo) -> Bool {
         return lhs.kodo == rhs.kodo && lhs.nomo == rhs.nomo
     }
 }

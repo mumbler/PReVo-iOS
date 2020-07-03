@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import iOS_Slide_Menu
 
+import ReVoModeloj
+
 var flankMenuoLargheco: CGFloat = 194
 
 /*

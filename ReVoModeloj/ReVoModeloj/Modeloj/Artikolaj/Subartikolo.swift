@@ -11,6 +11,12 @@ import Foundation
 /*
     Parto de artikolo havanta sian propran tekstoj supre de listo da vortoj.
 */
-struct Subartikolo {
-    let teksto: String, vortoj: [Vorto]
+public struct Subartikolo {
+    public let teksto: String
+    public let vortoj: [Vorto]
+    
+    public init(teksto: String, vortoj: [Vorto]) {
+        self.teksto = teksto
+        self.vortoj = vortoj
+    }
 }

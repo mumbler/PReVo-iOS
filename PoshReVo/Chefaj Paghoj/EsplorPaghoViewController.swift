@@ -8,6 +8,7 @@
 
 import UIKit
 
+import ReVoModeloj
 import ReVoDatumbazo
 
 private enum Chelo: Int {
@@ -86,7 +87,7 @@ final class EsplorPaghoViewController: BazStilaTableViewController, Chefpagho {
             navigationController?.pushViewController(fakojVC, animated: true)
         case .IuAjn:
             if let artikolObjekto = DatumbazAlirilo.komuna.iuAjnArtikolo(),
-                let artikolo = Artikolo(objekto: artikolObjekto),
+                let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna),
                 let navigaciilo = navigationController as? ChefaNavigationController {
                 navigaciilo.montriArtikolon(artikolo)
             }

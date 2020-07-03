@@ -11,12 +11,12 @@ import Foundation
 /*
     Reprezentas vortaran mallongigon, kiuj inkluzivas fontojn, verikistojn, aldonojn.
  */
-struct Mallongigo {
+public struct Mallongigo {
+    public let kodo: String
+    public let nomo: String
     
-    let kodo: String, nomo: String
-    
-    init(_ enkodo: String, _ ennomo: String) {
-        kodo = enkodo
-        nomo = ennomo
+    public init(kodo: String, nomo: String) {
+        self.kodo = kodo
+        self.nomo = nomo
     }
 }

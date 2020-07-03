@@ -8,6 +8,8 @@
 
 import CoreData
 import Foundation
+
+import ReVoModeloj
 import ReVoDatumbazo
 
 final class FakVortoListoTableViewController: BazStilaTableViewController {
@@ -63,7 +65,7 @@ extension FakVortoListoTableViewController {
         let vortObjekto = vortoj[indexPath.row]
         
         if let artikolObjekto = vortObjekto.value(forKey: "artikolo") as? NSManagedObject {
-            if let artikolo = Artikolo(objekto: artikolObjekto) {
+            if let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna) {
                 
                 parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: fako.nomo, style: .plain, target: nil, action: nil)
                 if let marko = vortObjekto.value(forKey: "marko") as? String, !marko.isEmpty {

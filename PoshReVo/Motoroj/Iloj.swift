@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+import ReVoModeloj
+
 let markoLigoKlavo = "ligo"
 let markoAkcentoKlavo = "akcento"
 let markoFortoKlavo = "forto"
@@ -323,7 +325,7 @@ class Iloj {
         
         for lingvo in lingvoj {
             if lingvo.nomo.prefix(teksto.count).lowercased() == teksto.lowercased() &&
-                !(!montriEsperanton && lingvo == SeancDatumaro.esperantaLingvo()) {
+                !(!montriEsperanton && lingvo == Lingvo.esperanto) {
                 trovitaj.append(lingvo)
             }
         }

@@ -11,12 +11,12 @@ import Foundation
 /*
     Reprezentas fakon al kiu apartenas vorto aŭ frazaĵo. Uzataj en kelkaj difinoj.
  */
-struct Fako {
+public struct Fako {
+    public let kodo: String
+    public let nomo: String
     
-    let kodo: String, nomo: String
-    
-    init(_ enkodo: String, _ ennomo: String) {
-        kodo = enkodo
-        nomo = ennomo
+    public init(kodo: String, nomo: String) {
+        self.kodo = kodo
+        self.nomo = nomo
     }
 }

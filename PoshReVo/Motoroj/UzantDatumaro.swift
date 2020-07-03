@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+import ReVoModeloj
+import ReVoDatumbazo
+
 let oftajLimo = 5 // Limo de lingvoj en la "oftaj uzataj serch-lingvoj" listo
 let historioLimo = 32 // Limo de artikoloj en la historio-listo
 
@@ -18,7 +21,7 @@ let historioLimo = 32 // Limo de artikoloj en la historio-listo
 */
 class UzantDatumaro {
 
-    static var serchLingvo: Lingvo = SeancDatumaro.esperantaLingvo()
+    static var serchLingvo: Lingvo = Lingvo.esperanto
     static var oftajSerchLingvoj: [Lingvo] = [Lingvo]()
     static var tradukLingvoj: Set<Lingvo> = Set<Lingvo>()
     static var historio: [Listero] = [Listero]()
@@ -49,8 +52,8 @@ class UzantDatumaro {
             for kodo in NSLocale.preferredLanguages {
                 
                 let bazKodo = kodo.components(separatedBy: "-").first                
-                if let lingvo = SeancDatumaro.lingvoPorKodo(bazKodo ?? kodo),
-                    lingvo != SeancDatumaro.esperantaLingvo() {
+                if let lingvo = DatumbazAlirilo.komuna.lingvoPorKodo(bazKodo ?? kodo),
+                    lingvo != Lingvo.esperanto {
                     tradukLingvoj.insert(lingvo)
                     oftajSerchLingvoj.append(lingvo)
                 }
@@ -187,19 +190,19 @@ class UzantDatumaro {
     
     static func sharghiTrapasajnDatumojn() {
         if let trapasaSerchLingvoKodo = UserDefaults.standard.string(forKey: "TestSerchLingvo"),
-                let trapasaSerchLingvo = SeancDatumaro.lingvoPorKodo(trapasaSerchLingvoKodo) {
+                let trapasaSerchLingvo = DatumbazAlirilo.komuna.lingvoPorKodo(trapasaSerchLingvoKodo) {
             serchLingvo = trapasaSerchLingvo
         }
         if let trapasaOftajKodoj = UserDefaults.standard.string(forKey: "TestOftajSerchLingvoj") {
             for kodo in trapasaOftajKodoj.split(separator: ",") {
-                if let trapasaLingvo = SeancDatumaro.lingvoPorKodo(String(kodo)) {
+                if let trapasaLingvo = DatumbazAlirilo.komuna.lingvoPorKodo(String(kodo)) {
                     oftajSerchLingvoj.append(trapasaLingvo)
                 }
             }
         }
         if let trapasaTradukLingvoj = UserDefaults.standard.string(forKey: "TestTradukLingvoj") {
             for kodo in trapasaTradukLingvoj.split(separator: ",") {
-                if let trapasaLingvo = SeancDatumaro.lingvoPorKodo(String(kodo)) {
+                if let trapasaLingvo = DatumbazAlirilo.komuna.lingvoPorKodo(String(kodo)) {
                     tradukLingvoj.insert(trapasaLingvo)
                 }
             }
@@ -257,8 +260,8 @@ class UzantDatumaro {
         let defaults = UserDefaults.standard
         
         // Legi malnov-nomajn aferojn
-        NSKeyedUnarchiver.setClass(Lingvo.self, forClassName: "PReVo.Lingvo")
-        NSKeyedUnarchiver.setClass(Listero.self, forClassName: "PReVo.Listero")
+        NSKeyedUnarchiver.setClass(Lingvo.self, forClassName: "PoshReVo.Lingvo")
+        NSKeyedUnarchiver.setClass(Listero.self, forClassName: "PoshReVo.Listero")
         
         if let datumoj = defaults.object(forKey: "serchLingvo") as? Data,
             let trovo = NSKeyedUnarchiver.unarchiveObject(with: datumoj) as? Lingvo {

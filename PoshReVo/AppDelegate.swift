@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DatumbazAlirilo.komuna = DatumbazAlirilo(konteksto: managedObjectContext)
         
-        SeancDatumaro.starigi()
         UzantDatumaro.starigi()
         
         let navilo = ChefaNavigationController()

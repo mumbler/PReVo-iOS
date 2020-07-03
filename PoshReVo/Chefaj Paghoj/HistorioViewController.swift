@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+import ReVoModeloj
+import ReVoDatumbazo
+
 let historiChelIdent = "historioChelo"
 
 /*
@@ -88,7 +91,7 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indekso = UzantDatumaro.historio[indexPath.row].indekso
-        if let artikolo = SeancDatumaro.artikoloPorIndekso(indekso) {
+        if let artikolo = DatumbazAlirilo.komuna.artikoloPorIndekso(indekso) {
             (navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
         }
         tableView.deselectRow(at: indexPath, animated: true)

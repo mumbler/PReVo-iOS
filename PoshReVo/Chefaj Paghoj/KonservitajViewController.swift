@@ -6,6 +6,8 @@
 //  Copyright © 2016 Robin Hill. All rights reserved.
 //
 
+import ReVoDatumbazo
+
 import Foundation
 import UIKit
 
@@ -88,8 +90,8 @@ extension KonservitajViewController : UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indekso = UzantDatumaro.konservitaj[indexPath.row].indekso
-        if let artikolo = SeancDatumaro.artikoloPorIndekso(indekso) {
-            (navigationController as? ChefaNavigationController)?.montriArtikolon( artikolo )
+        if let artikolo = DatumbazAlirilo.komuna.artikoloPorIndekso(indekso) {
+            (navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
