@@ -267,8 +267,6 @@ class Iloj {
                 mutaciaTeksto.addAttribute(.font, value: fortaTeksto, range: NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0))
             }
         }
-
-        // TODO la superscript vershajne ne funkcios
         
         for superMarko in markoj[markoSuperKlavo]! {
             mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as NSAttributedString.Key, value: 2, range: NSMakeRange(superMarko.0, superMarko.1 - superMarko.0))
