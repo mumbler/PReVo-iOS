@@ -91,7 +91,7 @@ extension HistorioViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let indekso = UzantDatumaro.historio[indexPath.row].indekso
-        if let artikolo = DatumbazAlirilo.komuna.artikoloPorIndekso(indekso) {
+        if let artikolo = VortaroDatumbazo.komuna.artikolo(porIndekso: indekso) {
             (navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
         }
         tableView.deselectRow(at: indexPath, animated: true)

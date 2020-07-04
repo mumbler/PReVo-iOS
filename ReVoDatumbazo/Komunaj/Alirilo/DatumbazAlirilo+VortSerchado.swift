@@ -8,13 +8,6 @@
 
 import CoreData
 
-public struct SerchStato {
-    public var peto: String
-    internal var iterator: TrieIterator
-    public var rezultoj: [(String, [NSManagedObject])]
-    public var atingisFinon: Bool
-}
-
 final public class TrieIterator {
     
     var nodStaplo = [(String, NSManagedObject)]()
@@ -85,25 +78,25 @@ final public class TrieIterator {
 
 extension DatumbazAlirilo {
     
-    public func serchi(lingvoKodo: String, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStato {
+    func serchi(lingvoKodo: String, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStatoInterna {
         
         if let iterator = starigiTrieIteraror(lingvo: lingvoKodo, peto: teksto) {
-            let stato = SerchStato(peto: teksto,
-                                   iterator: iterator,
-                                   rezultoj: [(String, [NSManagedObject])](),
-                                   atingisFinon: false)
+            let stato = SerchStatoInterna(peto: teksto,
+                                          iterator: iterator,
+                                          rezultoj: [(String, [NSManagedObject])](),
+                                          atingisFinon: false)
             
             return serchi(komencaStato: stato, limo: limo)
         }
         else {
-            return SerchStato(peto: teksto,
-                              iterator: TrieIterator(lingvoKodo: lingvoKodo, peto: teksto, komencaNodo: nil),
-                              rezultoj: [(String, [NSManagedObject])](),
-                              atingisFinon: true)
+            return SerchStatoInterna(peto: teksto,
+                                     iterator: TrieIterator(lingvoKodo: lingvoKodo, peto: teksto, komencaNodo: nil),
+                                     rezultoj: [(String, [NSManagedObject])](),
+                                     atingisFinon: true)
         }
     }
     
-    public func serchi(komencaStato stato: SerchStato, limo: Int) -> SerchStato {
+    func serchi(komencaStato stato: SerchStatoInterna, limo: Int) -> SerchStatoInterna {
         
         var rezultoj = stato.rezultoj
         var atingisFinon = false
@@ -118,28 +111,28 @@ extension DatumbazAlirilo {
             }
         }
         
-        let finaStato = SerchStato(peto: stato.peto,
-                                   iterator: stato.iterator,
-                                   rezultoj: rezultoj,
-                                   atingisFinon: atingisFinon)
+        let finaStato = SerchStatoInterna(peto: stato.peto,
+                                          iterator: stato.iterator,
+                                          rezultoj: rezultoj,
+                                          atingisFinon: atingisFinon)
         return finaStato
     }
     
-    public func komencajNodojPorLingvo(_ lingvo: NSManagedObject) -> [NSManagedObject] {
+    func komencajNodojPorLingvo(_ lingvo: NSManagedObject) -> [NSManagedObject] {
         
         return Array(lingvo.value(forKey: "komencajNodoj") as! Set)
     }
 
-    public func komencaNodo(por kodo: String, kunLitero litero: String) -> NSManagedObject? {
+    func komencaNodo(por kodo: String, kunLitero litero: String) -> NSManagedObject? {
         
-        guard let lingvoObjekto = lingvaObjektoPorKodo(kodo) else {
+        guard let lingvoObjekto = lingvo(porKodo: kodo) else {
             return nil
         }
         
         return komencaNodo(el: lingvoObjekto, kunLitero: litero)
     }
     
-    public func komencaNodo(el lingvo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
+    func komencaNodo(el lingvo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
             
         let nodoj = komencajNodojPorLingvo(lingvo)
         
@@ -153,7 +146,7 @@ extension DatumbazAlirilo {
         return nil
     }
     
-    public func sekvaNodo(el nodo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
+    func sekvaNodo(el nodo: NSManagedObject, kunLitero litero: String) -> NSManagedObject? {
         
         if let sekvaj: [NSManagedObject] = (nodo.value(forKey: "sekvajNodoj") as? NSSet)?.allObjects as? [NSManagedObject] {
             

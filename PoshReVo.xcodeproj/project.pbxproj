@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		000BF42622FD0FF100EA0271 /* InformojTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF42522FD0FF100EA0271 /* InformojTableViewController.swift */; };
 		000BF42A22FE4C4000EA0271 /* InformojPaghoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 000BF42922FE4C4000EA0271 /* InformojPaghoViewController.xib */; };
-		0036571D2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */; };
+		0036571D2309DBF10028C21F /* VortaroDatumbazo+Komuna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036571C2309DBF10028C21F /* VortaroDatumbazo+Komuna.swift */; };
 		0041F8B5245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F8B4245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift */; };
 		0041F8BD245CC86300254EA0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041F8BC245CC86300254EA0 /* SnapshotHelper.swift */; };
 		00700AD5231C59150075A077 /* FakVortoListoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */; };
@@ -109,7 +109,7 @@
 		000BF42522FD0FF100EA0271 /* InformojTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformojTableViewController.swift; sourceTree = "<group>"; };
 		000BF42922FE4C4000EA0271 /* InformojPaghoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformojPaghoViewController.xib; sourceTree = "<group>"; };
 		003656D32309A50E0028C21F /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatumbazAlirilo+Komuna.swift"; sourceTree = "<group>"; };
+		0036571C2309DBF10028C21F /* VortaroDatumbazo+Komuna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VortaroDatumbazo+Komuna.swift"; sourceTree = "<group>"; };
 		0036572123132E8F0028C21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Generataj.strings; sourceTree = "<group>"; };
 		0041F8B2245CC81A00254EA0 /* PoshReVoEkranKopiilo.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PoshReVoEkranKopiilo.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0041F8B4245CC81A00254EA0 /* PoshReVoEkranKopiilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoshReVoEkranKopiilo.swift; sourceTree = "<group>"; };
@@ -332,7 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				00D0B71722D1473300814637 /* Pagharo */,
-				0036571C2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift */,
+				0036571C2309DBF10028C21F /* VortaroDatumbazo+Komuna.swift */,
 				00848910226385200071CEC2 /* UzantDatumaro.swift */,
 				00848918226385200071CEC2 /* Koloroj.swift */,
 				00848911226385200071CEC2 /* Stiloj.swift */,
@@ -699,7 +699,7 @@
 				0084896E226385200071CEC2 /* FlankMenuoTableViewCell.swift in Sources */,
 				0097B1C522E7DBD9003DEDC4 /* SubArtikoloTableViewCell.swift in Sources */,
 				0097B1BE22E53228003DEDC4 /* BazStilaTableViewController.swift in Sources */,
-				0036571D2309DBF10028C21F /* DatumbazAlirilo+Komuna.swift in Sources */,
+				0036571D2309DBF10028C21F /* VortaroDatumbazo+Komuna.swift in Sources */,
 				00A47A5824AFDDCD00EA9DCF /* Vorto+Helpiloj.swift in Sources */,
 				00848951226385200071CEC2 /* Iloj.swift in Sources */,
 				0084897E226385200071CEC2 /* AppDelegate.swift in Sources */,

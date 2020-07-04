@@ -14,7 +14,7 @@ final class FakoListoTableViewController: BazStilaTableViewController {
     
     private static let chelIdent = "FakojChelIdent"
     
-    private let fakoj = DatumbazAlirilo.komuna.chiujFakoj()
+    private let fakoj = VortaroDatumbazo.komuna.chiujFakoj()
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

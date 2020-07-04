@@ -1,5 +1,5 @@
 //
-//  DatumbazAlirilo+Komuna.swift
+//  VortaroDatumbazo+Komuna.swift
 //  PoshReVo
 //
 //  Created by Robin Hill on 8/18/19.
@@ -9,6 +9,6 @@
 import Foundation
 import ReVoDatumbazo
 
-extension DatumbazAlirilo {
-    static var komuna: DatumbazAlirilo!
+extension VortaroDatumbazo {
+    static var komuna: VortaroDatumbazo!
 }

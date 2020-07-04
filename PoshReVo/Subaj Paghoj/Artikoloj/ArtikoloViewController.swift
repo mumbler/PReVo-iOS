@@ -460,7 +460,7 @@ extension ArtikoloViewController : TTTAttributedLabelDelegate {
                 saltiAlMarko(partoj[0] + "." + partoj[1], animacii: true)
             }
         } else {
-            if let artikolo =  DatumbazAlirilo.komuna.artikoloPorIndekso(partoj[0]) {
+            if let artikolo =  VortaroDatumbazo.komuna.artikolo(porIndekso: partoj[0]) {
                 navigationItem.backBarButtonItem = UIBarButtonItem(title: self.artikolo?.titolo, style: .plain, target: nil, action: nil)
                 (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
             }

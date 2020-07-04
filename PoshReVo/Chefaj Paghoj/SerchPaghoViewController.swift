@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 import ReVoModeloj
 import ReVoDatumbazo
@@ -25,8 +24,8 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     @IBOutlet var trovTabelo: UITableView?
     var lastaSercho: (Lingvo, String)? = nil
     var serchStato: SerchStato?
-    var serchRezultoj: [(String, [NSManagedObject])] {
-        return serchStato?.rezultoj ?? [(String, [NSManagedObject])]()
+    var serchRezultoj: [(String, [Destino])] {
+        return serchStato?.rezultoj ?? [(String, [Destino])]()
     }
     
     init() {
@@ -137,7 +136,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func fariSerchon(teksto: String) {
         if UzantDatumaro.serchLingvo != lastaSercho?.0 || teksto != lastaSercho?.1 {
-            serchStato = DatumbazAlirilo.komuna.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, komenco: 0, limo: serchLimo)
+            serchStato = VortaroDatumbazo.komuna.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, komenco: 0, limo: serchLimo)
             trovTabelo?.reloadData()
             lastaSercho = (UzantDatumaro.serchLingvo, teksto)
         }
@@ -145,7 +144,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func venigiPli() {
         if let stato = serchStato, !stato.atingisFinon {
-            serchStato = DatumbazAlirilo.komuna.serchi(komencaStato: stato, limo: serchLimo)
+            serchStato = VortaroDatumbazo.komuna.serchi(komencaStato: stato, limo: serchLimo)
             DispatchQueue.main.async {
                 self.trovTabelo?.reloadData()
             }
@@ -253,15 +252,12 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if serchRezultoj[indexPath.row].1.count == 1 {
-            if let artikolObjekto = serchRezultoj[indexPath.row].1.first?.value(forKey: "artikolo") as? NSManagedObject {
-                if let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna) {
-                    
-                    parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .plain, target: nil, action: nil)
-                    if let marko = serchRezultoj[indexPath.row].1.first?.value(forKey: "marko") as? String, !marko.isEmpty {
-                        (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
-                    } else {
-                        (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
-                    }
+            if let artikolo = serchRezultoj[indexPath.row].1.first?.artikolo {
+                parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .plain, target: nil, action: nil)
+                if let marko = serchRezultoj[indexPath.row].1.first?.marko, !marko.isEmpty {
+                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
+                } else {
+                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
                 }
             }
         } else {
@@ -297,12 +293,12 @@ extension SerchPaghoViewController : LingvoElektiloDelegate {
 
 extension SerchPaghoViewController {
     
-    func tekstoPorDestinoj(destinoj: [NSManagedObject]) -> String {
+    func tekstoPorDestinoj(destinoj: [Destino]) -> String {
         
         var bonaNomo: String = ""
         if destinoj.count == 1 {
-            bonaNomo = (destinoj.first?.value(forKey: "nomo") as? String)?.components(separatedBy: ", ").first ?? ""
-            if let senco = destinoj.first?.value(forKey: "senco") as? String, senco != "0" {
+            bonaNomo = (destinoj.first?.nomo)?.components(separatedBy: ", ").first ?? ""
+            if let senco = destinoj.first?.senco, senco != "0" {
                 bonaNomo += Iloj.superLit(senco)
             }
             return bonaNomo

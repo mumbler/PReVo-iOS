@@ -6,7 +6,6 @@
 //  Copyright © 2019 Robin Hill. All rights reserved.
 //
 
-import CoreData
 import Foundation
 
 import ReVoModeloj
@@ -17,11 +16,11 @@ final class FakVortoListoTableViewController: BazStilaTableViewController {
     private let chelIdentigilo = "fakVortoChelo"
     
     private let fako: Fako
-    private let vortoj: [NSManagedObject]
+    private let vortoj: [Destino]
     
     init(_ fako: Fako) {
         self.fako = fako
-        vortoj = DatumbazAlirilo.komuna.fakVortojPorFako(fako.kodo) ?? []
+        vortoj = VortaroDatumbazo.komuna.fakVortoj(porFako: fako.kodo) ?? []
         super.init(style: .plain)
     }
     
@@ -49,9 +48,9 @@ extension FakVortoListoTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chelo = tableView.dequeueReusableCell(withIdentifier: chelIdentigilo) ?? UITableViewCell()
-        let vortObjekto = vortoj[indexPath.row]
+        let vortoDestino = vortoj[indexPath.row]
         
-        let nomo = vortObjekto.value(forKey: "nomo") as? String
+        let nomo = vortoDestino.nomo
         chelo.textLabel?.text = nomo
         
         chelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
@@ -62,18 +61,14 @@ extension FakVortoListoTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let vortObjekto = vortoj[indexPath.row]
+        let vortoDestino = vortoj[indexPath.row]
+        let artikolo = vortoDestino.artikolo
         
-        if let artikolObjekto = vortObjekto.value(forKey: "artikolo") as? NSManagedObject {
-            if let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna) {
-                
-                parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: fako.nomo, style: .plain, target: nil, action: nil)
-                if let marko = vortObjekto.value(forKey: "marko") as? String, !marko.isEmpty {
-                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
-                } else {
-                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
-                }
-            }
+        parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: fako.nomo, style: .plain, target: nil, action: nil)
+        if let marko = vortoDestino.marko, !marko.isEmpty {
+            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
+        } else {
+            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
         }
     }
 }

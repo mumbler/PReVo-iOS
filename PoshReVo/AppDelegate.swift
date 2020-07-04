@@ -6,8 +6,9 @@
 //  Copyright © 2015 Robin Hill. All rights reserved.
 //
 
-import UIKit
 import CoreData
+
+import UIKit
 import iOS_Slide_Menu
 
 import ReVoDatumbazo
@@ -21,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        DatumbazAlirilo.komuna = DatumbazAlirilo(konteksto: managedObjectContext)
+        VortaroDatumbazo.komuna = VortaroDatumbazo(konteksto: managedObjectContext)
         
         UzantDatumaro.starigi()
         

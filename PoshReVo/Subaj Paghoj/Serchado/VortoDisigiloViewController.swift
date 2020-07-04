@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import CoreData
 
 import ReVoModeloj
 import ReVoDatumbazo
@@ -21,22 +20,21 @@ class VortoDisigiloTableViewCell : UITableViewCell {
 
 class VortoDisigiloViewController : UIViewController, Stilplena {
 
-    var destinoj: [NSManagedObject]
+    var destinoj = [Destino]()
     @IBOutlet var vortoTabelo: UITableView?
     
-    init(endestinoj: [NSManagedObject]) {
+    init(endestinoj: [Destino]) {
         destinoj = endestinoj
         super.init(nibName: "VortoDisigiloViewController", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        destinoj = [NSManagedObject]()
         super.init(coder: aDecoder)
     }
     
     override func viewDidLoad() {
         
-        title = (destinoj.first?.value(forKey: "teksto") as? String) ?? "disigilo"
+        title = (destinoj.first?.teksto) ?? "disigilo"
         vortoTabelo?.delegate = self
         vortoTabelo?.dataSource = self
         vortoTabelo?.register(VortoDisigiloTableViewCell.self, forCellReuseIdentifier: disigiloChelIdent)
@@ -53,7 +51,7 @@ class VortoDisigiloViewController : UIViewController, Stilplena {
     
     func devasMontriSencon(indexPath: IndexPath) -> Bool {
         
-        if (destinoj[indexPath.row].value(forKey: "senco") as? String) == "0" {
+        if (destinoj[indexPath.row].senco) == "0" {
             return false
         }
         
@@ -85,9 +83,10 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
         
         chelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         chelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro
-        chelo.textLabel?.text = (destinoj[indexPath.row].value(forKey: "teksto") as? String) ?? ""
-        chelo.detailTextLabel?.text = (destinoj[indexPath.row].value(forKey: "nomo") as? String) ?? ""
-        if devasMontriSencon(indexPath: indexPath), let senco = destinoj[indexPath.row].value(forKey: "senco") as? String {
+        chelo.textLabel?.text = destinoj[indexPath.row].teksto
+        chelo.detailTextLabel?.text = destinoj[indexPath.row].nomo
+        if devasMontriSencon(indexPath: indexPath),
+            let senco = destinoj[indexPath.row].senco {
             chelo.detailTextLabel?.text = (chelo.detailTextLabel?.text ?? "") + Iloj.superLit(senco)
         }
         
@@ -96,14 +95,11 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if let artikolObjekto = destinoj[indexPath.row].value(forKey: "artikolo") as? NSManagedObject {
-            if let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna) {
-                if let marko = destinoj[indexPath.row].value(forKey: "marko") as? String, !marko.isEmpty {
-                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
-                } else {
-                    (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
-                }
-            }
+        let destino = destinoj[indexPath.row]
+        if let marko = destino.marko, !marko.isEmpty {
+            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(destino.artikolo, marko: marko)
+        } else {
+            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(destino.artikolo)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)

@@ -12,7 +12,7 @@ import ReVoModeloj
 
 extension Artikolo {
     
-    public convenience init?(objekto: NSManagedObject, datumbazAlirilo alirilo: DatumbazAlirilo) {
+    static func elDatumbazObjekto(objekto: NSManagedObject, datumbazo: VortaroDatumbazo) -> Artikolo? {
         
         guard let trovTitolo = objekto.value(forKey: "titolo") as? String,
             let trovRadiko = objekto.value(forKey: "radiko") as? String,
@@ -100,7 +100,8 @@ extension Artikolo {
                        }
                        
                        teksto += "."
-                        if let lingvo = alirilo.lingvoPorKodo(lingvo as! String) {
+                       if let lingvoString = lingvo as? String,
+                        let lingvo = datumbazo.lingvo(porKodo: lingvoString) {
                            novajTradukoj.append(
                                 Traduko(lingvo: lingvo, teksto: teksto)
                            )
@@ -110,20 +111,20 @@ extension Artikolo {
                }
            }
         } catch {
-           self.init(titolo: trovTitolo,
-                     radiko: trovRadiko,
-                     indekso: trovIndekso,
-                     ofc: nil,
-                     subartikoloj: [],
-                     tradukoj: [])
+           return Artikolo(titolo: trovTitolo,
+                           radiko: trovRadiko,
+                           indekso: trovIndekso,
+                           ofc: nil,
+                           subartikoloj: [],
+                           tradukoj: [])
         }
 
-        self.init(titolo: trovTitolo,
-                  radiko: trovRadiko,
-                  indekso: trovIndekso,
-                  ofc: trovOfc,
-                  subartikoloj: novajSubartikoloj ?? [],
-                  tradukoj: novajTradukoj)
+        return Artikolo(titolo: trovTitolo,
+                        radiko: trovRadiko,
+                        indekso: trovIndekso,
+                        ofc: trovOfc,
+                        subartikoloj: novajSubartikoloj ?? [],
+                        tradukoj: novajTradukoj)
        
    }
 }

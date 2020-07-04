@@ -86,8 +86,7 @@ final class EsplorPaghoViewController: BazStilaTableViewController, Chefpagho {
             let fakojVC = FakoListoTableViewController(style: .plain)
             navigationController?.pushViewController(fakojVC, animated: true)
         case .IuAjn:
-            if let artikolObjekto = DatumbazAlirilo.komuna.iuAjnArtikolo(),
-                let artikolo = Artikolo(objekto: artikolObjekto, datumbazAlirilo: DatumbazAlirilo.komuna),
+            if let artikolo = VortaroDatumbazo.komuna.iuAjnArtikolo(),
                 let navigaciilo = navigationController as? ChefaNavigationController {
                 navigaciilo.montriArtikolon(artikolo)
             }

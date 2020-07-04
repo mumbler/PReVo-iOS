@@ -11,7 +11,7 @@ import CoreData
 
 import ReVoModeloj
 
-public final class DatumbazAlirilo {
+final class DatumbazAlirilo {
     
     let konteksto: NSManagedObjectContext
     
@@ -19,7 +19,9 @@ public final class DatumbazAlirilo {
         self.konteksto = konteksto
     }
     
-    public func lingvaObjektoPorKodo(_ kodo: String) -> NSManagedObject? {
+    // MARK: - Serĉi individuajn objektojn
+    
+    func lingvo(porKodo kodo: String) -> NSManagedObject? {
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Lingvo", in: konteksto)
         serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
@@ -32,14 +34,7 @@ public final class DatumbazAlirilo {
         return nil
     }
     
-    public func lingvoPorKodo(_ kodo: String) -> Lingvo? {
-        if let objekto = lingvaObjektoPorKodo(kodo) {
-            return Lingvo.elDatumbazObjekto(objekto)
-        }
-        return nil
-    }
-    
-    public func fakaObjektoPorKodo(_ kodo: String) -> NSManagedObject? {
+    func fako(porKodo kodo: String) -> NSManagedObject? {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Fako", in: konteksto)
@@ -53,14 +48,7 @@ public final class DatumbazAlirilo {
         return nil
     }
     
-    public func fakoPorKodo(_ kodo: String) -> Fako? {
-        if let objekto = fakaObjektoPorKodo(kodo) {
-            return Fako.elDatumbazObjekto(objekto)
-        }
-        return nil
-    }
-
-    public func artikolaObjektoPorIndekso(_ indekso: String) -> NSManagedObject? {
+    func artikolo(porIndekso indekso: String) -> NSManagedObject? {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
         serchPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto)
@@ -74,15 +62,79 @@ public final class DatumbazAlirilo {
         return nil
     }
     
-    public func artikoloPorIndekso(_ indekso: String) -> Artikolo? {
-        if let objekto = artikolaObjektoPorIndekso(indekso) {
-            return Artikolo(objekto: objekto, datumbazAlirilo: self)
+    // MARK: - Kolekto klasojn da objektoj
+    
+    public func fakVortoj(porFako kodo: String) -> [NSManagedObject]? {
+        
+        if let fako = fako(porKodo: kodo) {
+            let vortoj = fako.mutableSetValue(forKey: "fakvortoj").allObjects as? [NSManagedObject]
+            return vortoj?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
+                let unuaNomo = unua.value(forKey: "nomo") as! String
+                let duaNomo = dua.value(forKey: "nomo") as! String
+                return unuaNomo.compare(duaNomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+            })
         }
         
         return nil
     }
-
-    public func iuAjnArtikolo() -> NSManagedObject? {
+    
+    // MARK: - Kolekti ĉiujn objektojn
+    
+    func chiujLingvoj() -> [NSManagedObject] {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Lingvo", in: konteksto)
+        do {
+            if let objektoj = try konteksto.fetch(serchPeto) as? [NSManagedObject] {
+                return objektoj
+            }
+        } catch { }
+        
+        return []
+    }
+    
+    func chiujFakoj() -> [NSManagedObject] {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Fako", in: konteksto)
+        do {
+            if let objektoj = try konteksto.fetch(serchPeto) as? [NSManagedObject] {
+                return objektoj
+            }
+        } catch { }
+        
+        return []
+    }
+    
+    func chiujStiloj() -> [NSManagedObject] {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Stilo", in: konteksto)
+        do {
+            if let objektoj = try konteksto.fetch(serchPeto) as? [NSManagedObject] {
+                return objektoj
+            }
+        } catch { }
+        
+        return []
+    }
+    
+    func chiujMallongigoj() -> [NSManagedObject] {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Mallongigo", in: konteksto)
+        do {
+            if let objektoj = try konteksto.fetch(serchPeto) as? [NSManagedObject] {
+                return objektoj
+            }
+        } catch { }
+        
+        return []
+    }
+    
+    // MARK: - Aliaj
+    
+    func iuAjnArtikolo() -> NSManagedObject? {
         let kvanto = kvantoDeArtikoloj()
         let numero = Int.random(in: 0..<kvanto)
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
@@ -95,7 +147,7 @@ public final class DatumbazAlirilo {
         return nil
     }
     
-    // Mark: Privataj
+    // MARK: - Helpiloj
     
     private func kvantoDeArtikoloj() -> Int {
         let kvantoPeto = NSFetchRequest<NSFetchRequestResult>()
@@ -107,5 +159,4 @@ public final class DatumbazAlirilo {
     
         return 0
     }
-
 }

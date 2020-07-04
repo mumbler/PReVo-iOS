@@ -14,6 +14,34 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00A47A0324AFDBE400EA9DCF"
+               BuildableName = "ReVoModeloj.framework"
+               BlueprintName = "ReVoModeloj"
+               ReferencedContainer = "container:ReVoModeloj/ReVoModeloj.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0051A6BE2309A2F90034DFF9"
+               BuildableName = "ReVoDatumbazo.framework"
+               BlueprintName = "ReVoDatumbazo"
+               ReferencedContainer = "container:ReVoDatumbazo/ReVoDatumbazo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "000985961C31F0CB0083DE24"
                BuildableName = "PoshReVo.app"
                BlueprintName = "PoshReVo"
