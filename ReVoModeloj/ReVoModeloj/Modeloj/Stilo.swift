@@ -20,3 +20,19 @@ public struct Stilo {
         self.nomo = nomo
     }
 }
+
+// MARK: - Equatable
+
+extension Stilo: Equatable {
+    public static func ==(lhs: Stilo, rhs: Stilo) -> Bool {
+        return lhs.kodo == rhs.kodo && lhs.nomo == rhs.nomo
+    }
+}
+
+// MARK: - Comparable
+
+extension Stilo: Comparable {
+    public static func < (lhs: Stilo, rhs: Stilo) -> Bool {
+        return lhs.nomo.compare(rhs.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+    }
+}

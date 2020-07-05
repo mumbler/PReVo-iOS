@@ -20,3 +20,19 @@ public struct Fako {
         self.nomo = nomo
     }
 }
+
+// MARK: - Equatable
+
+extension Fako: Equatable {
+    public static func ==(lhs: Fako, rhs: Fako) -> Bool {
+        return lhs.kodo == rhs.kodo && lhs.nomo == rhs.nomo
+    }
+}
+
+// MARK: - Comparable
+
+extension Fako: Comparable {
+    public static func < (lhs: Fako, rhs: Fako) -> Bool {
+        return lhs.nomo.compare(rhs.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+    }
+}

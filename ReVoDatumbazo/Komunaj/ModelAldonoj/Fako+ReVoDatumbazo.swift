@@ -11,7 +11,6 @@ import CoreData
 import ReVoModeloj
 
 extension Fako {
-    
     public static func elDatumbazObjekto(_ objekto: NSManagedObject) -> Fako? {
         if let kodo = objekto.value(forKey: "kodo") as? String,
            let nomo = objekto.value(forKey: "nomo") as? String {

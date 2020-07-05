@@ -11,7 +11,6 @@ import CoreData
 import ReVoModeloj
 
 extension Lingvo {
-    
     public static func elDatumbazObjekto(_ objekto: NSManagedObject) -> Lingvo? {
         if let kodo = objekto.value(forKey: "kodo") as? String,
            let nomo = objekto.value(forKey: "nomo") as? String {
@@ -23,5 +22,11 @@ extension Lingvo {
     
     public static var esperanto: Lingvo {
         return Lingvo(kodo: "eo", nomo: "Esperanto")
+    }
+}
+
+extension Lingvo: Comparable {
+    public static func < (lhs: Lingvo, rhs: Lingvo) -> Bool {
+        return lhs.nomo.compare(rhs.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
     }
 }

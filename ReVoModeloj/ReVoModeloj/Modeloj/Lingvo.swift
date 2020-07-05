@@ -48,7 +48,6 @@ public final class Lingvo : NSObject, NSSecureCoding {
 // MARK: - Equatable
 
 extension Lingvo {
-    
     public override func isEqual(_ object: Any?) -> Bool {
         if let lingvo = object as? Lingvo {
             return self == lingvo
@@ -62,3 +61,12 @@ extension Lingvo {
         return lhs.kodo == rhs.kodo && lhs.nomo == rhs.nomo
     }
 }
+
+// MARK: - Comparable
+
+extension Lingvo: Comparable {
+    public static func < (lhs: Lingvo, rhs: Lingvo) -> Bool {
+        return lhs.nomo.compare(rhs.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+    }
+}
+

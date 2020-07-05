@@ -128,9 +128,9 @@
 				00A47A2224AFDC3000EA9DCF /* Artikolaj */,
 				0049B1F924B0E32700B81E15 /* Serchaj */,
 				00A47A1F24AFDC3000EA9DCF /* Lingvo.swift */,
-				00A47A2024AFDC3000EA9DCF /* Mallongigo.swift */,
-				00A47A2124AFDC3000EA9DCF /* Stilo.swift */,
 				00A47A2724AFDC3000EA9DCF /* Fako.swift */,
+				00A47A2124AFDC3000EA9DCF /* Stilo.swift */,
+				00A47A2024AFDC3000EA9DCF /* Mallongigo.swift */,
 			);
 			path = Modeloj;
 			sourceTree = "<group>";

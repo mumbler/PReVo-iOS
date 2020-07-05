@@ -56,6 +56,8 @@ public final class VortaroDatumbazo {
     public func fakVortoj(porFako kodo: String) -> [Destino] {
         alirilo.fakVortoj(porFako: kodo)?.compactMap { objekto in
             Destino.elDatumbazObjekto(objekto, datumbazo: self)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
         } ?? []
     }
     
@@ -64,24 +66,32 @@ public final class VortaroDatumbazo {
     public func chiujLingvoj() -> [Lingvo] {
         alirilo.chiujLingvoj().compactMap { objekto in
             Lingvo.elDatumbazObjekto(objekto)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
         }
     }
     
     public func chiujFakoj() -> [Fako] {
         alirilo.chiujFakoj().compactMap { objekto in
             Fako.elDatumbazObjekto(objekto)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
         }
     }
     
     public func chiujStiloj() -> [Stilo]? {
         alirilo.chiujStiloj().compactMap { objekto in
             Stilo.elDatumbazObjekto(objekto)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
         }
     }
     
     public func chiujMallongigoj() -> [Mallongigo]? {
         alirilo.chiujMallongigoj().compactMap { objekto in
             Mallongigo.elDatumbazObjekto(objekto)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
         }
     }
     

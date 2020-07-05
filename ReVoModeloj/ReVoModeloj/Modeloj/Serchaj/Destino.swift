@@ -6,6 +6,8 @@
 //  Copyright © 2020 Robin Hill. All rights reserved.
 //
 
+import Foundation
+
 public struct Destino {
     public let indekso: String
     public let marko: String?
@@ -23,5 +25,25 @@ public struct Destino {
         self.nomo = nomo
         self.senco = senco
         self.teksto = teksto
+    }
+}
+
+// MARK: - Equatable
+
+extension Destino: Equatable {
+    public static func ==(lhs: Destino, rhs: Destino) -> Bool {
+        return lhs.indekso == rhs.indekso &&
+            lhs.marko == rhs.marko &&
+            lhs.nomo == rhs.nomo &&
+            lhs.senco == rhs.senco &&
+            lhs.teksto == rhs.teksto
+    }
+}
+
+// MARK: - Comparable
+
+extension Destino: Comparable {
+    public static func < (lhs: Destino, rhs: Destino) -> Bool {
+        return lhs.nomo.compare(rhs.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
     }
 }
