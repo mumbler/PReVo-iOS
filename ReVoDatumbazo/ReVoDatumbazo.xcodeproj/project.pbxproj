@@ -46,6 +46,7 @@
 		0049B21824B0F3C000B81E15 /* Stilo+ReVoDatumbazo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stilo+ReVoDatumbazo.swift"; sourceTree = "<group>"; };
 		0049B21B24B0F3E600B81E15 /* Mallongigo+ReVoDatumbazo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mallongigo+ReVoDatumbazo.swift"; sourceTree = "<group>"; };
 		0049B22024B154F000B81E15 /* TrieIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrieIterator.swift; sourceTree = "<group>"; };
+		0049B22B24B1622A00B81E15 /* ReVoModeloj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoModeloj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0051A6BF2309A2F90034DFF9 /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0051A6C32309A2F90034DFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0051A6CE2309A3630034DFF9 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
@@ -100,6 +101,14 @@
 			path = Modeloj;
 			sourceTree = "<group>";
 		};
+		0049B22A24B1622A00B81E15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0049B22B24B1622A00B81E15 /* ReVoModeloj.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0051A6B52309A2F90034DFF9 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +116,7 @@
 				003656FF2309C78F0028C21F /* ReVoDatumbazoOSX */,
 				0036570F2309CA020028C21F /* Komunaj */,
 				0051A6C02309A2F90034DFF9 /* Products */,
+				0049B22A24B1622A00B81E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
