@@ -97,18 +97,20 @@ public final class VortaroDatumbazo {
     
     // MARK: - Trie-serĉado
     
-    public func serchi(lingvoKodo: String, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStato {
-        let internaStato = alirilo.serchi(lingvoKodo: lingvoKodo, teksto: teksto, komenco: komenco, limo: limo)
-        return SerchStato(internaStato: internaStato, datumbazo: self)
+    public func komenciSerchon(lingvo: Lingvo, teksto: String, komenco: Int? = 0, limo: Int) -> SerchStato {
+        if let iterator = alirilo.starigiTrieIterator(lingvo: lingvo.kodo, peto: teksto) {
+            let komencaStato = SerchStato(iterator: iterator, rezultoj: [], peto: teksto, atingisFinon: false)
+            return daurigiSerchon(stato: komencaStato, limo: limo)
+        }
+        return SerchStato(iterator: TrieIterator(lingvoKodo: lingvo.kodo, peto: teksto, komencaNodo: nil),
+                          rezultoj: [],
+                          peto: teksto,
+                          atingisFinon: true)
     }
     
-    public func serchi(komencaStato stato: SerchStato, limo: Int) -> SerchStato {
-        let komencaInternaStato = SerchStatoInterna(peto: stato.peto,
-                                                    iterator: stato.iterator,
-                                                    rezultoj: [],
-                                                    atingisFinon: stato.atingisFinon)
-        let novaInternaStato = alirilo.serchi(komencaStato: komencaInternaStato, limo: limo)
-        let novajDestinoj = novaInternaStato.rezultoj.map { rezulto in
+    public func daurigiSerchon(stato: SerchStato, limo: Int) -> SerchStato {
+        let rezultObjektoj = alirilo.serchi(iterator: stato.iterator, limo: limo)
+        let novajRezultoj = rezultObjektoj.map { rezulto in
            (
                rezulto.0,
                rezulto.1.compactMap {
@@ -116,8 +118,9 @@ public final class VortaroDatumbazo {
                }
            )
         }
-        var novaEksteraStato = SerchStato(internaStato: novaInternaStato, datumbazo: self)
-        novaEksteraStato.rezultoj = stato.rezultoj + novajDestinoj
-        return novaEksteraStato
+        return SerchStato(iterator: stato.iterator,
+                          rezultoj: stato.rezultoj + novajRezultoj,
+                          peto: stato.peto,
+                          atingisFinon: novajRezultoj.isEmpty)
     }
 }

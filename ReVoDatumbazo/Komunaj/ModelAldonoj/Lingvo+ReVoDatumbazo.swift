@@ -24,9 +24,3 @@ extension Lingvo {
         return Lingvo(kodo: "eo", nomo: "Esperanto")
     }
 }
-
-extension Lingvo: Comparable {
-    public static func < (lhs: Lingvo, rhs: Lingvo) -> Bool {
-        return lhs.nomo.compare(rhs.nomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
-    }
-}

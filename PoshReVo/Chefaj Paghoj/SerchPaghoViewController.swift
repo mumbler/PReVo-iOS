@@ -136,7 +136,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func fariSerchon(teksto: String) {
         if UzantDatumaro.serchLingvo != lastaSercho?.0 || teksto != lastaSercho?.1 {
-            serchStato = VortaroDatumbazo.komuna.serchi(lingvoKodo: UzantDatumaro.serchLingvo.kodo, teksto: teksto, komenco: 0, limo: serchLimo)
+            serchStato = VortaroDatumbazo.komuna.komenciSerchon(lingvo: UzantDatumaro.serchLingvo, teksto: teksto, komenco: 0, limo: serchLimo)
             trovTabelo?.reloadData()
             lastaSercho = (UzantDatumaro.serchLingvo, teksto)
         }
@@ -144,7 +144,7 @@ class SerchPaghoViewController : UIViewController, Chefpagho, Stilplena {
     
     func venigiPli() {
         if let stato = serchStato, !stato.atingisFinon {
-            serchStato = VortaroDatumbazo.komuna.serchi(komencaStato: stato, limo: serchLimo)
+            serchStato = VortaroDatumbazo.komuna.daurigiSerchon(stato: stato, limo: serchLimo)
             DispatchQueue.main.async {
                 self.trovTabelo?.reloadData()
             }
