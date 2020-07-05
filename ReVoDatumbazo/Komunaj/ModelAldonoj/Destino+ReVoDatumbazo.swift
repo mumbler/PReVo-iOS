@@ -15,9 +15,7 @@ extension Destino {
         guard let indekso = objekto.value(forKey: "indekso") as? String,
             let nomo = objekto.value(forKey: "nomo") as? String,
             let senco = objekto.value(forKey: "senco") as? String,
-            let teksto = objekto.value(forKey: "teksto") as? String,
-            let artikolObjekto = objekto.value(forKey: "artikolo") as? NSManagedObject,
-            let artikolo = Artikolo.elDatumbazObjekto(objekto: artikolObjekto, datumbazo: datumbazo) else {
+            let teksto = objekto.value(forKey: "teksto") as? String else {
                 return nil
         }
         
@@ -27,7 +25,6 @@ extension Destino {
                        marko: marko,
                        nomo: nomo,
                        senco: senco,
-                       teksto: teksto,
-                       artikolo: artikolo)
+                       teksto: teksto)
     }
 }

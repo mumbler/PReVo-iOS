@@ -20,7 +20,7 @@ final class FakVortoListoTableViewController: BazStilaTableViewController {
     
     init(_ fako: Fako) {
         self.fako = fako
-        vortoj = VortaroDatumbazo.komuna.fakVortoj(porFako: fako.kodo) ?? []
+        vortoj = VortaroDatumbazo.komuna.fakVortoj(porFako: fako.kodo)
         super.init(style: .plain)
     }
     
@@ -62,7 +62,9 @@ extension FakVortoListoTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let vortoDestino = vortoj[indexPath.row]
-        let artikolo = vortoDestino.artikolo
+        guard let artikolo = VortaroDatumbazo.komuna.artikolo(porIndekso: vortoDestino.indekso) else {
+            return
+        }
         
         parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: fako.nomo, style: .plain, target: nil, action: nil)
         if let marko = vortoDestino.marko, !marko.isEmpty {

@@ -12,19 +12,16 @@ public struct Destino {
     public let nomo: String
     public let senco: String?
     public let teksto: String
-    public let artikolo: Artikolo
     
     public init(indekso: String,
                 marko: String?,
                 nomo: String,
                 senco: String?,
-                teksto: String,
-                artikolo: Artikolo) {
+                teksto: String) {
         self.indekso = indekso
         self.marko = marko
         self.nomo = nomo
         self.senco = senco
         self.teksto = teksto
-        self.artikolo = artikolo
     }
 }

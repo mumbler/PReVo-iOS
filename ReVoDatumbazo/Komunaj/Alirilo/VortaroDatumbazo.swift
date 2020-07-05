@@ -107,7 +107,7 @@ public final class VortaroDatumbazo {
            )
         }
         var novaEksteraStato = SerchStato(internaStato: novaInternaStato, datumbazo: self)
-        novaEksteraStato.rezultoj.append(contentsOf: novajDestinoj)
+        novaEksteraStato.rezultoj = stato.rezultoj + novajDestinoj
         return novaEksteraStato
     }
 }

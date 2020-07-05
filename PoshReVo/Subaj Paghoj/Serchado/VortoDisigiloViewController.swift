@@ -96,10 +96,14 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let destino = destinoj[indexPath.row]
+        guard let artikolo = VortaroDatumbazo.komuna.artikolo(porIndekso: destino.indekso) else {
+            return
+        }
+        
         if let marko = destino.marko, !marko.isEmpty {
-            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(destino.artikolo, marko: marko)
+            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)
         } else {
-            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(destino.artikolo)
+            (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
