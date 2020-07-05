@@ -116,7 +116,7 @@ class Iloj {
         rez[markoSuperKlavo] = [(Int, Int, String)]()
         rez[markoSubKlavo] = [(Int, Int, String)]()
         
-        let regesp = try! NSRegularExpression(pattern: "<(/?([ikbga]|sup|sub))( href=\"(.*?)\")?>")
+        let regesp = try! NSRegularExpression(pattern: "<(/?([ikbga]|sup|sub|frm))( (href|am)=\"(.*?)\")?>")
         let matches = regesp.matches(in: teksto, range: NSRange(teksto.startIndex..., in: teksto))
         
         var rubo = 0
@@ -177,7 +177,7 @@ class Iloj {
                     ligoStako.append((loko, ligCelo))
                 }
             } else {
-                print("AHHHHH")
+
             }
                 
             rubo += range.length
@@ -204,7 +204,7 @@ class Iloj {
                 enhavoj.append(litero)
 
                 do {
-                    let regesp = try NSRegularExpression(pattern: "<a href=\"(.*?)\">", options: NSRegularExpression.Options())
+                    let regesp = try NSRegularExpression(pattern: "(<a href=\"(.*?)\">)|(<frm am=\".*?\">)", options: NSRegularExpression.Options())
                     let trovoj = regesp.matches(in: enhavoj, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, enhavoj.count))
                     if trovoj.count > 0 {
                         // Fari nenion
