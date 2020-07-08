@@ -170,8 +170,8 @@ class Iloj {
                     rez[markoLigoKlavo]?.append((nombro, loko, celo))
                 }
             }
-            else if klavo == "a" && match.numberOfRanges >= 3 {
-                let ligLoko = match.range(at: 4)
+            else if klavo == "a" && match.numberOfRanges >= 4 {
+                let ligLoko = match.range(at: 5)
                 if ligLoko.location != NSNotFound {
                     let ligCelo = String(teksto[Range(ligLoko, in: teksto)!])
                     ligoStako.append((loko, ligCelo))

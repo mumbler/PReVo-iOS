@@ -159,7 +159,6 @@ extension LingvoElektiloViewController : UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
         searchBar.resignFirstResponder()
     }
 }

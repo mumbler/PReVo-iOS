@@ -209,7 +209,6 @@ extension SerchPaghoViewController : UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
         searchBar.resignFirstResponder()
     }
     
