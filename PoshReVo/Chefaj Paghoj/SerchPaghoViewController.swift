@@ -251,8 +251,8 @@ extension SerchPaghoViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if serchRezultoj[indexPath.row].1.count == 1 {
-            if let indekso = serchRezultoj[indexPath.row].1.first?.indekso,
-                let artikolo = VortaroDatumbazo.komuna.artikolo(porIndekso: indekso) {
+            if let destino = serchRezultoj[indexPath.row].1.first,
+                let artikolo = destino.artikolo(enVortaro: VortaroDatumbazo.komuna) {
                 parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: NSLocalizedString("serchi baza titolo", comment: ""), style: .plain, target: nil, action: nil)
                 if let marko = serchRezultoj[indexPath.row].1.first?.marko, !marko.isEmpty {
                     (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo, marko: marko)

@@ -96,7 +96,7 @@ extension VortoDisigiloViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let destino = destinoj[indexPath.row]
-        guard let artikolo = VortaroDatumbazo.komuna.artikolo(porIndekso: destino.indekso) else {
+        guard let artikolo = destino.artikolo(enVortaro: VortaroDatumbazo.komuna) else {
             return
         }
         

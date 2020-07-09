@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0049B1FB24B0E33D00B81E15 /* Destino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0049B1FA24B0E33D00B81E15 /* Destino.swift */; };
 		00A47A0E24AFDBE400EA9DCF /* ReVoModeloj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A47A0424AFDBE400EA9DCF /* ReVoModeloj.framework */; };
 		00A47A2824AFDC3000EA9DCF /* Lingvo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A1F24AFDC3000EA9DCF /* Lingvo.swift */; };
 		00A47A2924AFDC3000EA9DCF /* Mallongigo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A2024AFDC3000EA9DCF /* Mallongigo.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0049B1FA24B0E33D00B81E15 /* Destino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destino.swift; sourceTree = "<group>"; };
 		00A47A0424AFDBE400EA9DCF /* ReVoModeloj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoModeloj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A47A0824AFDBE400EA9DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00A47A0D24AFDBE400EA9DCF /* ReVoModelojTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReVoModelojTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,14 +76,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0049B1F924B0E32700B81E15 /* Serchaj */ = {
-			isa = PBXGroup;
-			children = (
-				0049B1FA24B0E33D00B81E15 /* Destino.swift */,
-			);
-			path = Serchaj;
-			sourceTree = "<group>";
-		};
 		00A479FA24AFDBE400EA9DCF = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +116,6 @@
 			isa = PBXGroup;
 			children = (
 				00A47A2224AFDC3000EA9DCF /* Artikolaj */,
-				0049B1F924B0E32700B81E15 /* Serchaj */,
 				00A47A1F24AFDC3000EA9DCF /* Lingvo.swift */,
 				00A47A2724AFDC3000EA9DCF /* Fako.swift */,
 				00A47A2124AFDC3000EA9DCF /* Stilo.swift */,
@@ -286,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A47A2E24AFDC3000EA9DCF /* Artikolo.swift in Sources */,
-				0049B1FB24B0E33D00B81E15 /* Destino.swift in Sources */,
 				00A47A2B24AFDC3000EA9DCF /* Vorto.swift in Sources */,
 				00A47A2924AFDC3000EA9DCF /* Mallongigo.swift in Sources */,
 				00A47A2D24AFDC3000EA9DCF /* Traduko.swift in Sources */,

@@ -55,7 +55,7 @@ public final class VortaroDatumbazo {
     
     public func fakVortoj(porFako kodo: String) -> [Destino] {
         alirilo.fakVortoj(porFako: kodo)?.compactMap { objekto in
-            Destino.elDatumbazObjekto(objekto, datumbazo: self)
+            Destino(objekto: objekto)
         }.sorted { (lhs, rhs) -> Bool in
             return lhs < rhs
         } ?? []
@@ -110,13 +110,13 @@ public final class VortaroDatumbazo {
     
     public func daurigiSerchon(stato: SerchStato, limo: Int) -> SerchStato {
         let rezultObjektoj = alirilo.serchi(iterator: stato.iterator, limo: limo)
-        let novajRezultoj = rezultObjektoj.map { rezulto in
-           (
-               rezulto.0,
-               rezulto.1.compactMap {
-                   Destino.elDatumbazObjekto($0, datumbazo: self)
-               }
-           )
+        let novajRezultoj = rezultObjektoj.compactMap { rezulto in
+            (
+                rezulto.0,
+                rezulto.1.compactMap {
+                    Destino(objekto: $0)
+                }
+            )
         }
         return SerchStato(iterator: stato.iterator,
                           rezultoj: stato.rezultoj + novajRezultoj,

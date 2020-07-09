@@ -62,7 +62,7 @@ extension FakVortoListoTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         let vortoDestino = vortoj[indexPath.row]
-        guard let artikolo = VortaroDatumbazo.komuna.artikolo(porIndekso: vortoDestino.indekso) else {
+        guard let artikolo = vortoDestino.artikolo(enVortaro: VortaroDatumbazo.komuna) else {
             return
         }
         
