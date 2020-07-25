@@ -257,10 +257,14 @@ class Iloj {
         mutaciaTeksto.addAttribute(.foregroundColor, value: UzantDatumaro.stilo.tekstKoloro, range: NSMakeRange(0, mutaciaTeksto.length))
         
         for akcentMarko in markoj[markoAkcentoKlavo]! {
+            guard akcentMarko.0 >= 0 && akcentMarko.1 <= mutaciaTeksto.length else { continue }
+            
             mutaciaTeksto.addAttribute(.font, value: akcentaTeksto, range: NSMakeRange(akcentMarko.0, akcentMarko.1 - akcentMarko.0))
         }
         
         for fortMarko in markoj[markoFortoKlavo]! {
+            guard fortMarko.0 >= 0 && fortMarko.1 <= mutaciaTeksto.length else { continue }
+            
             var fortaRange = NSMakeRange(fortMarko.0, fortMarko.1 - fortMarko.0)
             let attributes = mutaciaTeksto.attributes(at: fortMarko.0, effectiveRange: &fortaRange)
             if attributes[.font] as! UIFont == akcentaTeksto {
@@ -271,10 +275,14 @@ class Iloj {
         }
         
         for superMarko in markoj[markoSuperKlavo]! {
+            guard superMarko.0 >= 0 && superMarko.1 <= mutaciaTeksto.length else { continue }
+            
             mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as NSAttributedString.Key, value: 2, range: NSMakeRange(superMarko.0, superMarko.1 - superMarko.0))
         }
 
         for subMarko in markoj[markoSubKlavo]! {
+            guard subMarko.0 >= 0 && subMarko.1 <= mutaciaTeksto.length else { continue }
+            
             mutaciaTeksto.addAttribute(kCTSuperscriptAttributeName as NSAttributedString.Key, value: -2, range: NSMakeRange(subMarko.0, subMarko.1 - subMarko.0))
         }
         
