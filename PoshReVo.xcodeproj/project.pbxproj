@@ -67,6 +67,7 @@
 		00A869CB2276497000A856E9 /* FlankMenuoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848934226385200071CEC2 /* FlankMenuoTableViewCell.xib */; };
 		00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848937226385200071CEC2 /* FlankMenuoViewController.xib */; };
 		00A869CE22764B6800A856E9 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */; };
+		00AF852E24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF852D24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift */; };
 		00D0B71922D1474100814637 /* Pagharo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71822D1474100814637 /* Pagharo.swift */; };
 		00D0B71B22D1477F00814637 /* PaghMotoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71A22D1477F00814637 /* PaghMotoro.swift */; };
 		00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848919226385200071CEC2 /* LaunchScreen.storyboard */; };
@@ -176,6 +177,7 @@
 		00A2524B24606F65000759B9 /* Listero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listero.swift; sourceTree = "<group>"; };
 		00A47A5724AFDDCD00EA9DCF /* Vorto+Helpiloj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vorto+Helpiloj.swift"; sourceTree = "<group>"; };
 		00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
+		00AF852D24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtikoloNevideblaTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		00D0B71822D1474100814637 /* Pagharo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagharo.swift; sourceTree = "<group>"; };
 		00D0B71A22D1477F00814637 /* PaghMotoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaghMotoro.swift; sourceTree = "<group>"; };
 		00DCE85E2460961E00C76094 /* ListeroTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeroTestoj.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				00848920226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.xib */,
 				00848923226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift */,
 				0084892D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.xib */,
+				00AF852D24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift */,
 			);
 			path = Artikoloj;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				0084896E226385200071CEC2 /* FlankMenuoTableViewCell.swift in Sources */,
 				0097B1C522E7DBD9003DEDC4 /* SubArtikoloTableViewCell.swift in Sources */,
 				0097B1BE22E53228003DEDC4 /* BazStilaTableViewController.swift in Sources */,
+				00AF852E24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift in Sources */,
 				0036571D2309DBF10028C21F /* VortaroDatumbazo+Komuna.swift in Sources */,
 				00A47A5824AFDDCD00EA9DCF /* Vorto+Helpiloj.swift in Sources */,
 				00848951226385200071CEC2 /* Iloj.swift in Sources */,

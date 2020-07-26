@@ -6,4 +6,14 @@
 //  Copyright © 2020 Robin Hill. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class ArtikoloNevideblaTableHeaderFooterView: UITableViewHeaderFooterView {
+    
+    override public var backgroundView: UIView? {
+        get {
+            return nil
+        }
+        set { }
+    }
+}

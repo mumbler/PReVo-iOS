@@ -17,6 +17,7 @@ let subArtikolChelIdent = "subArtikolaChelo"
 let artikolChelIdent = "artikolaChelo"
 let artikolKapIdent  = "artikolaKapo"
 let artikolPiedIdent = "artikolaPiedo"
+let artikolNevideblaPiedoIdent = "artikolaNevideblaPiedo"
 
 /*
     Pagho kiu montras la artikolojn kun difinoj kaj tradukoj
@@ -326,9 +327,11 @@ extension ArtikoloViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
         if section == 0 && tableView.numberOfSections > 1 {
-            let piedo = UITableViewHeaderFooterView(frame: CGRect.zero)
-            //piedo.addConstraint(NSLayoutConstraint(item: piedo, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 16))
-            return piedo
+            if let trovPiedo = vortTabelo?.dequeueReusableHeaderFooterView(withIdentifier: artikolNevideblaPiedoIdent) as? ArtikoloNevideblaTableHeaderFooterView {
+                return trovPiedo
+            }
+
+            return ArtikoloNevideblaTableHeaderFooterView(frame: .zero)
         }
         else if section == 1 && artikolo?.tradukoj.count ?? 0 > 0 {
             
