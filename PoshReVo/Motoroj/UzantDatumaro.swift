@@ -258,6 +258,10 @@ class UzantDatumaro {
     static func sharghiJeKonservitajnDatumojn() {
         
         let defaults = UserDefaults.standard
+
+        // Legi malnoveg-nomajn aferojn
+        NSKeyedUnarchiver.setClass(Lingvo.self, forClassName: "PReVo.Lingvo")
+        NSKeyedUnarchiver.setClass(Listero.self, forClassName: "PReVo.Listero")
         
         // Legi malnov-nomajn aferojn
         NSKeyedUnarchiver.setClass(Lingvo.self, forClassName: "PoshReVo.Lingvo")
