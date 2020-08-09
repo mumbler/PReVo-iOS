@@ -38,7 +38,7 @@ class PoshReVoEkranKopiilo: XCTestCase {
         let app = XCUIApplication()
         app.searchFields["serchTabulaTekstejo"].tap()
         app.searchFields["serchTabulaTekstejo"].typeText("esperanto")
-        app.staticTexts["Esperanto"].tap()
+        app.staticTexts["Esperanto"].firstMatch.tap()
         snapshot("artikolo")
     }
     
@@ -46,7 +46,7 @@ class PoshReVoEkranKopiilo: XCTestCase {
         let app = XCUIApplication()
         app.searchFields["serchTabulaTekstejo"].tap()
         app.searchFields["serchTabulaTekstejo"].typeText("unu")
-        app.staticTexts["unu"].tap()
+        app.staticTexts["unu"].firstMatch.tap()
         
         let window = app.windows.element(boundBy: 0)
         let butono = app.tables.element.cells["japana,<a href=\"unu.0\">~</a>: 一 [いち]."]

@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-@testable import ReVoModeloj
+@testable import PoshReVo
 
 final class ListeroTestoj: XCTestCase {
     
