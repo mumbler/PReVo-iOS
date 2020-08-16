@@ -29,6 +29,7 @@
 		0049B22524B15EC200B81E15 /* Artikolo+ReVoDatumbazo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A5A24AFDFEB00EA9DCF /* Artikolo+ReVoDatumbazo.swift */; };
 		0049B22724B15EC600B81E15 /* AliriloKashmemoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A5C24AFE19D00EA9DCF /* AliriloKashmemoro.swift */; };
 		0051A6D02309A3690034DFF9 /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */; };
+		005270ED24E9A9E2009E17AA /* ReVoModelojOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005270EC24E9A9E2009E17AA /* ReVoModelojOSX.framework */; };
 		005E907B24CCF391002480BF /* ReVoModeloj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0049B22B24B1622A00B81E15 /* ReVoModeloj.framework */; };
 		00A47A5B24AFDFEB00EA9DCF /* Artikolo+ReVoDatumbazo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A5A24AFDFEB00EA9DCF /* Artikolo+ReVoDatumbazo.swift */; };
 		00A47A5D24AFE19D00EA9DCF /* AliriloKashmemoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A5C24AFE19D00EA9DCF /* AliriloKashmemoro.swift */; };
@@ -51,6 +52,7 @@
 		0051A6BF2309A2F90034DFF9 /* ReVoDatumbazo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoDatumbazo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0051A6C32309A2F90034DFF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0051A6CE2309A3630034DFF9 /* PReVoDatumoj.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PReVoDatumoj.xcdatamodel; sourceTree = "<group>"; };
+		005270EC24E9A9E2009E17AA /* ReVoModelojOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ReVoModelojOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A47A5A24AFDFEB00EA9DCF /* Artikolo+ReVoDatumbazo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Artikolo+ReVoDatumbazo.swift"; sourceTree = "<group>"; };
 		00A47A5C24AFE19D00EA9DCF /* AliriloKashmemoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliriloKashmemoro.swift; sourceTree = "<group>"; };
 		00A47A5E24AFE34B00EA9DCF /* Lingvo+ReVoDatumbazo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lingvo+ReVoDatumbazo.swift"; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				005270ED24E9A9E2009E17AA /* ReVoModelojOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +110,7 @@
 		0049B22A24B1622A00B81E15 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				005270EC24E9A9E2009E17AA /* ReVoModelojOSX.framework */,
 				0049B22B24B1622A00B81E15 /* ReVoModeloj.framework */,
 			);
 			name = Frameworks;

@@ -8,7 +8,11 @@
 
 import CoreData
 
+#if os(iOS)
 import ReVoModeloj
+#elseif os(macOS)
+import ReVoModelojOSX
+#endif
 
 extension Lingvo {
     public static func elDatumbazObjekto(_ objekto: NSManagedObject) -> Lingvo? {
