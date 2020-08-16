@@ -37,7 +37,7 @@ final class TrieFarilo {
         let tradukoURL = indeksojURL.appendingPathComponent("indekso_" + kodo + ".json")
             
         print("Kreas trie-on por " + kodo)
-        let lingvoObjekto = alirilo.lingvoPorKodo(kodo)
+        let lingvoObjekto = alirilo.lingvo(porKodo: kodo)
         if lingvoObjekto == nil {
             return
         }
@@ -102,7 +102,7 @@ final class TrieFarilo {
                                 novaDestino.setValue(nomo, forKey: "nomo")
                                 novaDestino.setValue(marko, forKey: "marko")
                                 novaDestino.setValue(String(senco), forKey: "senco")
-                                if let artikolo = alirilo.artikoloPorIndekso(indekso!) {
+                                if let artikolo = alirilo.artikolo(porIndekso: indekso!) {
                                     novaDestino.setValue(artikolo, forKey: "artikolo")
                                 }
                                 nunNodo?.mutableOrderedSetValue(forKey: "destinoj").add(novaDestino)

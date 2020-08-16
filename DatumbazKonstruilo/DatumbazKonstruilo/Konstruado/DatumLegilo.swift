@@ -182,9 +182,9 @@ final class DatumLegilo {
                         novaDestino.setValue(nomo, forKey: "nomo")
                         novaDestino.setValue(marko, forKey: "marko")
                         novaDestino.setValue(String(senco), forKey: "senco")
-                        if let artikolo = alirilo.artikoloPorIndekso(indekso!) {
+                        if let artikolo = alirilo.artikolo(porIndekso: indekso!) {
                             novaDestino.setValue(artikolo, forKey: "artikolo")
-                            if let fako = alirilo.fakoPorKodo(fako) {
+                            if let fako = alirilo.fako(porKodo: fako) {
                                 fako.mutableSetValue(forKey: "fakvortoj").add(novaDestino)
                             }
                         }

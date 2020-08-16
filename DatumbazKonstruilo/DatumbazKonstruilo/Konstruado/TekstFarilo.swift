@@ -24,12 +24,6 @@ final class TekstFarilo {
         catch {
             print("Eraro: Ne sukcesis fari generatajn tekstojn.")
         }
-        
-        //reading
-        /*do {
-            let teksto = try String(contentsOf: fileURL, encoding: .utf8)
-        }
-        catch {/* error handling here */}*/
     }
     
     private static func verkiTekstojn(_ alirilo: DatumbazAlirilo) -> String {
@@ -52,14 +46,14 @@ final class TekstFarilo {
     }
     
     private static func verkiVortaroMallongiganTekston(_ alirilo: DatumbazAlirilo) -> String {
-        let mallongigoj = alirilo.chiujMallongigoj()?.sorted(by: { (unua, dua) -> Bool in
+        let mallongigoj = alirilo.chiujMallongigoj().sorted(by: { (unua, dua) -> Bool in
             let unuaKodo = (unua.value(forKey: "kodo") as? String) ?? ""
             let duaKodo = (dua.value(forKey: "kodo") as? String) ?? ""
             return unuaKodo.compare(duaKodo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         })
         
         var teksto = ""
-        for mallongigo in mallongigoj ?? [] {
+        for mallongigo in mallongigoj {
             let kodo = mallongigo.value(forKey: "kodo") as? String
             let nomo = mallongigo.value(forKey: "nomo") as? String
             if let kodo = kodo,
@@ -72,14 +66,14 @@ final class TekstFarilo {
     }
     
     private static func verkiFakoMallongiganTekston(_ alirilo: DatumbazAlirilo) -> String {
-        let fakoj = alirilo.chiujFakoj()?.sorted(by: { (unua, dua) -> Bool in
+        let fakoj = alirilo.chiujFakoj().sorted(by: { (unua, dua) -> Bool in
             let unuaKodo = (unua.value(forKey: "kodo") as? String) ?? ""
             let duaKodo = (dua.value(forKey: "kodo") as? String) ?? ""
             return unuaKodo.compare(duaKodo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
         })
         
         var teksto = ""
-        for fako in fakoj ?? [] {
+        for fako in fakoj {
             let kodo = fako.value(forKey: "kodo") as? String
             let nomo = fako.value(forKey: "nomo") as? String
             if let kodo = kodo,
