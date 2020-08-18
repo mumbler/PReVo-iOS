@@ -68,8 +68,21 @@ final class DatumbazAlirilo {
     
     // MARK: - Kolekto klasojn da objektoj
     
-    public func fakVortoj(porFako kodo: String) -> [NSManagedObject]? {
+    public func vortoj(oficialeco: String) -> [NSManagedObject]? {
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Artikolo", in: konteksto)
+        serchPeto.predicate = NSPredicate(format: "ofc == %@", argumentArray: [oficialeco])
+        do {
+            return try konteksto.fetch(serchPeto) as? [NSManagedObject]
+        } catch {
+            
+        }
         
+        return nil
+    }
+        
+    public func fakVortoj(porFako kodo: String) -> [NSManagedObject]? {
+
         if let fako = fako(porKodo: kodo) {
             let vortoj = fako.mutableSetValue(forKey: "fakvortoj").allObjects as? [NSManagedObject]
             return vortoj?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in

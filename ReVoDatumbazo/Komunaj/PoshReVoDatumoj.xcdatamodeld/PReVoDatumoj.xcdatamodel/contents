@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18G87" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Artikolo" syncable="YES">
         <attribute name="indekso" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numero" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="ofc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="radiko" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titolo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tradukoj" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -16,12 +17,13 @@
         <attribute name="senco" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="teksto" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="artikolo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Artikolo" inverseName="destinoj" inverseEntity="Artikolo" syncable="YES"/>
+        <relationship name="fako" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fako" inverseName="fakvortoj" inverseEntity="Fako" syncable="YES"/>
         <relationship name="nodo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="destinoj" inverseEntity="TrieNodo" syncable="YES"/>
     </entity>
     <entity name="Fako" syncable="YES">
         <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nomo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="fakvortoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Destino" syncable="YES"/>
+        <relationship name="fakvortoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Destino" inverseName="fako" inverseEntity="Destino" syncable="YES"/>
     </entity>
     <entity name="Lingvo" syncable="YES">
         <attribute name="kodo" optional="YES" attributeType="String" syncable="YES"/>
@@ -44,9 +46,9 @@
         <relationship name="sekvajNodoj" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TrieNodo" inverseName="fontoNodo" inverseEntity="TrieNodo" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Artikolo" positionX="0" positionY="54" width="128" height="150"/>
-        <element name="Destino" positionX="-9" positionY="72" width="128" height="150"/>
-        <element name="Fako" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Artikolo" positionX="0" positionY="54" width="128" height="163"/>
+        <element name="Destino" positionX="-9" positionY="72" width="128" height="163"/>
+        <element name="Fako" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Lingvo" positionX="18" positionY="99" width="128" height="90"/>
         <element name="Mallongigo" positionX="36" positionY="108" width="128" height="75"/>
         <element name="Stilo" positionX="-54" positionY="9" width="128" height="75"/>

@@ -148,6 +148,10 @@ final class DatumLegilo {
                         novaObjekto.setValue(tradukDatumoj, forKey: "tradukoj")
                         let vortDatumoj = try JSONSerialization.data(withJSONObject: enhavoj["objekto"]!, options: JSONSerialization.WritingOptions())
                         novaObjekto.setValue(vortDatumoj, forKey: "vortoj")
+                        if let vortDict = enhavoj["objekto"] as? [String: Any?],
+                            let ofc = vortDict["ofc"] {
+                            novaObjekto.setValue(ofc, forKey: "ofc")
+                        }
                     }
                 }
                 

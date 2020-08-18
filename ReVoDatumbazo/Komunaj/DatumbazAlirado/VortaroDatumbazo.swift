@@ -57,6 +57,14 @@ public final class VortaroDatumbazo {
     
     // MARK: - Klasoj de modeloj
     
+    public func vortoj(oficialeco: String) -> [Artikolo] {
+        alirilo.vortoj(oficialeco: oficialeco)?.compactMap { objekto in
+            Artikolo.elDatumbazObjekto(objekto: objekto, datumbazo: self)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs.titolo < rhs.titolo
+        } ?? []
+    }
+    
     public func fakVortoj(porFako kodo: String) -> [Destino] {
         alirilo.fakVortoj(porFako: kodo)?.compactMap { objekto in
             Destino(objekto: objekto)
@@ -97,6 +105,14 @@ public final class VortaroDatumbazo {
         }.sorted { (lhs, rhs) -> Bool in
             return lhs < rhs
         }
+    }
+    
+    public func chiujOficialecoj() -> [String] {
+        var oficialecoj = ["*"]
+        for i in 1...10 {
+            oficialecoj.append(String(i))
+        }
+        return oficialecoj
     }
     
     // MARK: - Trie-serĉado

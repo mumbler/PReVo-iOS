@@ -12,9 +12,9 @@ import ReVoModeloj
 import ReVoDatumbazo
 
 private enum Chelo: Int {
-    case Fakoj, IuAjn
+    case Oficialeco, Fakoj, IuAjn
     
-    public static let kvanto = [1, 1]
+    public static let kvanto = [2, 1]
     
     init?(indexPath: IndexPath) {
         switch indexPath.section {
@@ -29,6 +29,8 @@ private enum Chelo: Int {
     
     func titolo() -> String {
         switch self {
+        case .Oficialeco:
+            return NSLocalizedString("esplori oficialeco titolo", comment: "")
         case .Fakoj:
             return NSLocalizedString("esplori fakoj titolo", comment: "")
         case .IuAjn:
@@ -82,6 +84,9 @@ final class EsplorPaghoViewController: BazStilaTableViewController, Chefpagho {
         }
         
         switch chelTipo {
+        case .Oficialeco:
+            let oficialecoVC = OficialecoListoTableViewController(style: .plain)
+            navigationController?.pushViewController(oficialecoVC, animated: true)
         case .Fakoj:
             let fakojVC = FakoListoTableViewController(style: .plain)
             navigationController?.pushViewController(fakojVC, animated: true)

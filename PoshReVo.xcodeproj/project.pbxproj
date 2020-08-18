@@ -68,6 +68,8 @@
 		00A869CC2276497000A856E9 /* FlankMenuoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00848937226385200071CEC2 /* FlankMenuoViewController.xib */; };
 		00A869CE22764B6800A856E9 /* PoshReVoDatumbazo.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */; };
 		00AF852E24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AF852D24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift */; };
+		00B2C2B724B92639002CEE64 /* OficialecoListoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2C2B624B92639002CEE64 /* OficialecoListoTableViewController.swift */; };
+		00B2C2B924B92773002CEE64 /* OficialecoVortoListoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B2C2B824B92773002CEE64 /* OficialecoVortoListoTableViewController.swift */; };
 		00D0B71922D1474100814637 /* Pagharo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71822D1474100814637 /* Pagharo.swift */; };
 		00D0B71B22D1477F00814637 /* PaghMotoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D0B71A22D1477F00814637 /* PaghMotoro.swift */; };
 		00D71F08229C24CE008CEA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00848919226385200071CEC2 /* LaunchScreen.storyboard */; };
@@ -178,6 +180,8 @@
 		00A47A5724AFDDCD00EA9DCF /* Vorto+Helpiloj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vorto+Helpiloj.swift"; sourceTree = "<group>"; };
 		00A869CD22764B3500A856E9 /* PoshReVoDatumbazo.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PoshReVoDatumbazo.sqlite; sourceTree = "<group>"; };
 		00AF852D24CDFFFF0037E93E /* ArtikoloNevideblaTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtikoloNevideblaTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		00B2C2B624B92639002CEE64 /* OficialecoListoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OficialecoListoTableViewController.swift; sourceTree = "<group>"; };
+		00B2C2B824B92773002CEE64 /* OficialecoVortoListoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OficialecoVortoListoTableViewController.swift; sourceTree = "<group>"; };
 		00D0B71822D1474100814637 /* Pagharo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagharo.swift; sourceTree = "<group>"; };
 		00D0B71A22D1477F00814637 /* PaghMotoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaghMotoro.swift; sourceTree = "<group>"; };
 		00DCE85E2460961E00C76094 /* ListeroTestoj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeroTestoj.swift; sourceTree = "<group>"; };
@@ -421,6 +425,8 @@
 		0097B1BC22E52FC5003DEDC4 /* Esplorado */ = {
 			isa = PBXGroup;
 			children = (
+				00B2C2B624B92639002CEE64 /* OficialecoListoTableViewController.swift */,
+				00B2C2B824B92773002CEE64 /* OficialecoVortoListoTableViewController.swift */,
 				0097B1C022E532C6003DEDC4 /* FakoListoTableViewController.swift */,
 				00700AD4231C59150075A077 /* FakVortoListoTableViewController.swift */,
 			);
@@ -715,6 +721,7 @@
 				00848951226385200071CEC2 /* Iloj.swift in Sources */,
 				0084897E226385200071CEC2 /* AppDelegate.swift in Sources */,
 				0084895D226385200071CEC2 /* ArtikoloPiedButonoTableViewHeaderFooterView.swift in Sources */,
+				00B2C2B724B92639002CEE64 /* OficialecoListoTableViewController.swift in Sources */,
 				0084897D226385200071CEC2 /* InformojPaghoViewController.swift in Sources */,
 				00848950226385200071CEC2 /* ObjCPonto.m in Sources */,
 				00848975226385200071CEC2 /* HistorioViewController.swift in Sources */,
@@ -724,6 +731,7 @@
 				00700AD5231C59150075A077 /* FakVortoListoTableViewController.swift in Sources */,
 				0097B1B922E51032003DEDC4 /* EsplorPaghoViewController.swift in Sources */,
 				00848962226385200071CEC2 /* LicencoViewController.swift in Sources */,
+				00B2C2B924B92773002CEE64 /* OficialecoVortoListoTableViewController.swift in Sources */,
 				0084895F226385200071CEC2 /* LingvoElektiloViewController.swift in Sources */,
 				00848977226385200071CEC2 /* SerchPaghoViewController.swift in Sources */,
 				00848969226385200071CEC2 /* ArtikoloKapoTableViewHeaderFooterView.swift in Sources */,
