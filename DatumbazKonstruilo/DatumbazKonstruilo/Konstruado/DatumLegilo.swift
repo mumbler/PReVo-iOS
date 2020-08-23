@@ -123,6 +123,27 @@ final class DatumLegilo {
             print("Erar en kreado de mallongigo-datumbaz-objektoj")
         }
         
+        // Enlegi oficialecojn
+        let oficialecoURL = datumoURL.appendingPathComponent("oficialecoj.json")
+        do {
+            print("Legas oficialecojn")
+            let oficialecoDat = try Data(contentsOf: oficialecoURL)
+            let oficialecoJSON = try JSONSerialization.jsonObject(with: oficialecoDat as Data, options: JSONSerialization.ReadingOptions())
+            
+            if let listo = oficialecoJSON as? [[String: String]] {
+                for oficialeco in listo {
+                    let novaObjekto = NSEntityDescription.insertNewObject(forEntityName: "Oficialeco", into: konteksto)
+                    novaObjekto.setValue(oficialeco["kodo"], forKey: "kodo")
+                    novaObjekto.setValue(oficialeco["indikilo"], forKey: "indikilo")
+                    novaObjekto.setValue(oficialeco["nomo"], forKey: "nomo")
+                }
+                
+                try konteksto.save()
+            }
+        } catch {
+            print("Erar en kreado de oficialeco-datumbaz-objektoj")
+        }
+        
         // Enlegi artikolojn
         let artikoloURL = datumoURL.appendingPathComponent("vortoj.json")
         do {
@@ -175,21 +196,54 @@ final class DatumLegilo {
                         let vortDatumoj = datumoj.first!
                         
                         let nomo = vortDatumoj["nomo"] as? String
-                        let teksto = vortDatumoj["teksto"] as? String
                         let indekso = vortDatumoj["indekso"] as? String
                         let marko = vortDatumoj["marko"] as? String
                         let senco = vortDatumoj["senco"] as! Int
                         
                         let novaDestino = NSEntityDescription.insertNewObject(forEntityName: "Destino", into: konteksto)
-                        novaDestino.setValue(teksto, forKey: "teksto")
-                        novaDestino.setValue(indekso, forKey: "indekso")
                         novaDestino.setValue(nomo, forKey: "nomo")
+                        novaDestino.setValue(nomo, forKey: "teksto")
+                        novaDestino.setValue(indekso, forKey: "indekso")
                         novaDestino.setValue(marko, forKey: "marko")
                         novaDestino.setValue(String(senco), forKey: "senco")
-                        if let artikolo = alirilo.artikolo(porIndekso: indekso!) {
+                        if let artikolo = alirilo.artikolo(porIndekso: indekso!),
+                            let fako = alirilo.fako(porKodo: fako){
+                            
                             novaDestino.setValue(artikolo, forKey: "artikolo")
-                            if let fako = alirilo.fako(porKodo: fako) {
-                                fako.mutableSetValue(forKey: "fakvortoj").add(novaDestino)
+                            fako.mutableSetValue(forKey: "fakvortoj").add(novaDestino)
+                        }
+                    }
+                }
+                
+                try konteksto.save()
+            }
+        } catch {
+            print("Erar en kreado de fakvorto-datumbaz-objektoj")
+        }
+        
+        // Enlegi ofcvortojn
+        let ofcvortoURL = datumoURL.appendingPathComponent("ofcvortoj.json")
+        do {
+            print("Legas ofcvortojn")
+            let ofcvortojDat = try Data(contentsOf: ofcvortoURL)
+            let ofcvortojJSON = try JSONSerialization.jsonObject(with: ofcvortojDat as Data, options: JSONSerialization.ReadingOptions())
+            
+            if let ofcvortoj = ofcvortojJSON as? [String: [[String: String?]] ] {
+                for (kodo, vortoj) in ofcvortoj {
+                    if let oficialeco = alirilo.oficialeco(porKodo: kodo) {
+                        for vortDatumoj in vortoj {
+                            let nomo = vortDatumoj["nomo"] as? String
+                            let indekso = vortDatumoj["indekso"] as? String
+                            
+                            let novaDestino = NSEntityDescription.insertNewObject(forEntityName: "Destino", into: konteksto)
+                            novaDestino.setValue(nomo, forKey: "nomo")
+                            novaDestino.setValue(nomo, forKey: "teksto")
+                            novaDestino.setValue(indekso, forKey: "indekso")
+
+                            
+                            if let artikolo = alirilo.artikolo(porIndekso: indekso!) {
+                                novaDestino.setValue(artikolo, forKey: "artikolo")
+                                oficialeco.mutableSetValue(forKey: "ofcvortoj").add(novaDestino)
                             }
                         }
                     }
@@ -198,7 +252,7 @@ final class DatumLegilo {
                 try konteksto.save()
             }
         } catch {
-            print("Erar en kreado de fako-datumbaz-objektoj")
+            print("Erar en kreado de ofcvorto-datumbaz-objektoj")
         }
         
         let trieFarilo = TrieFarilo(konteksto: konteksto, datumoURL: datumoURL)

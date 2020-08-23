@@ -107,6 +107,7 @@ def skribiFakVortojn(fakVortoj, dosierujo)
     fakVortojDosiero.print JSON.generate(fakVortoj)
     fakVortojDosiero.close
 end
+
 # Literoj
 
 def legiLiterojn(dosierujo)
@@ -219,4 +220,95 @@ def skribiStilojn(stiloj, dosierujo)
     stilojDosiero = File.open(dosierujo + "/stiloj.json", "w")
     stilojDosiero.print JSON.generate(stiloj)
     stilojDosiero.close 
+end
+
+def legiOficialecojn(dosierujo)
+    oficialecoj = [
+        {
+            "kodo" => "*",
+            "indikilo" => "*",
+            "nomo" => "fundamento"
+        },
+        {
+            "kodo" => "1",
+            "indikilo" => "1",
+            "nomo" => "1a aldono"
+        },
+        {
+            "kodo" => "2",
+            "indikilo" => "2",
+            "nomo" => "2a aldono"
+        },
+        {
+            "kodo" => "3",
+            "indikilo" => "3",
+            "nomo" => "3a aldono"
+        },
+        {
+            "kodo" => "4",
+            "indikilo" => "4",
+            "nomo" => "4a aldono"
+        },
+        {
+            "kodo" => "5",
+            "indikilo" => "5",
+            "nomo" => "5a aldono"
+        },
+        {
+            "kodo" => "6",
+            "indikilo" => "6",
+            "nomo" => "6a aldono"
+        },
+        {
+            "kodo" => "7",
+            "indikilo" => "7",
+            "nomo" => "7a aldono"
+        },
+        {
+            "kodo" => "8",
+            "indikilo" => "8",
+            "nomo" => "8a aldono"
+        },
+        {
+            "kodo" => "9",
+            "indikilo" => "9",
+            "nomo" => "9a aldono"
+        },
+        {
+            "kodo" => "a",
+            "indikilo" => "",
+            "nomo" => "alia oficialigo"
+        },
+        {
+            "kodo" => "n",
+            "indikilo" => "",
+            "nomo" => "neoficialaj"
+        }
+    ]
+    
+    return oficialecoj
+end
+
+def skribiOficialecojn(oficialecoj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    oficialecojDosiero = File.open(dosierujo + "/oficialecoj.json", "w")    
+    oficialecojDosiero.print JSON.generate(oficialecoj)
+    oficialecojDosiero.close
+end
+
+def starigiOfcVortojn(oficialecoj)
+    ofcvortoj = {}
+    
+    for ofc in oficialecoj
+        ofcvortoj[ofc["kodo"]] = []
+    end
+    
+    return ofcvortoj
+end
+
+def skribiOfcVortojn(ofcVortoj, dosierujo)
+    Dir.mkdir(dosierujo) unless File.exists?(dosierujo)
+    ofcVortojDosiero = File.open(dosierujo + "/ofcvortoj.json", "w")    
+    ofcVortojDosiero.print JSON.generate(ofcVortoj)
+    ofcVortojDosiero.close
 end

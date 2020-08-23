@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000F784724F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F784624F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift */; };
+		000F784824F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F784624F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift */; };
 		0027816724B7CE7300DFD71F /* Destino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027816624B7CE7300DFD71F /* Destino.swift */; };
 		0027816824B7CE7300DFD71F /* Destino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0027816624B7CE7300DFD71F /* Destino.swift */; };
 		003657062309C7980028C21F /* PoshReVoDatumoj.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0051A6CD2309A3630034DFF9 /* PoshReVoDatumoj.xcdatamodeld */; };
@@ -38,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000F784624F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Oficialeco+ReVoDatumbazo.swift"; sourceTree = "<group>"; };
 		0027816624B7CE7300DFD71F /* Destino.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Destino.swift; sourceTree = "<group>"; };
 		003656FE2309C78F0028C21F /* ReVoDatumbazoOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoDatumbazoOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		003657012309C78F0028C21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 				00A47A6324AFF19D00EA9DCF /* Fako+ReVoDatumbazo.swift */,
 				0049B21824B0F3C000B81E15 /* Stilo+ReVoDatumbazo.swift */,
 				0049B21B24B0F3E600B81E15 /* Mallongigo+ReVoDatumbazo.swift */,
+				000F784624F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift */,
 				00A47A5A24AFDFEB00EA9DCF /* Artikolo+ReVoDatumbazo.swift */,
 			);
 			path = ModelAldonoj;
@@ -286,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0049B21D24B0F3E600B81E15 /* Mallongigo+ReVoDatumbazo.swift in Sources */,
+				000F784824F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift in Sources */,
 				0049B22324B15EB200B81E15 /* Lingvo+ReVoDatumbazo.swift in Sources */,
 				0027816824B7CE7300DFD71F /* Destino.swift in Sources */,
 				003657182309CE250028C21F /* VortaroDatumbazo.swift in Sources */,
@@ -306,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				003657172309CE250028C21F /* VortaroDatumbazo.swift in Sources */,
+				000F784724F1B47400F918C9 /* Oficialeco+ReVoDatumbazo.swift in Sources */,
 				00A47A5B24AFDFEB00EA9DCF /* Artikolo+ReVoDatumbazo.swift in Sources */,
 				0027816724B7CE7300DFD71F /* Destino.swift in Sources */,
 				00A47A6424AFF19D00EA9DCF /* Fako+ReVoDatumbazo.swift in Sources */,

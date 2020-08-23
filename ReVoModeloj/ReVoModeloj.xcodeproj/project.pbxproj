@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000F784424F1B43100F918C9 /* Oficialeco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F784324F1B43100F918C9 /* Oficialeco.swift */; };
+		000F784524F1B43400F918C9 /* Oficialeco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F784324F1B43100F918C9 /* Oficialeco.swift */; };
 		005270E224E998E9009E17AA /* Vorto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A2324AFDC3000EA9DCF /* Vorto.swift */; };
 		005270E324E998EC009E17AA /* Subartikolo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A2424AFDC3000EA9DCF /* Subartikolo.swift */; };
 		005270E424E998EE009E17AA /* Traduko.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A47A2524AFDC3000EA9DCF /* Traduko.swift */; };
@@ -44,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000F784324F1B43100F918C9 /* Oficialeco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oficialeco.swift; sourceTree = "<group>"; };
 		005270DA24E998CB009E17AA /* ReVoModelojOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoModelojOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005270DD24E998CB009E17AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00A47A0424AFDBE400EA9DCF /* ReVoModeloj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReVoModeloj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +158,7 @@
 				00A47A2724AFDC3000EA9DCF /* Fako.swift */,
 				00A47A2124AFDC3000EA9DCF /* Stilo.swift */,
 				00A47A2024AFDC3000EA9DCF /* Mallongigo.swift */,
+				000F784324F1B43100F918C9 /* Oficialeco.swift */,
 			);
 			path = Modeloj;
 			sourceTree = "<group>";
@@ -343,6 +347,7 @@
 				005270E324E998EC009E17AA /* Subartikolo.swift in Sources */,
 				005270E924E998F8009E17AA /* Mallongigo.swift in Sources */,
 				005270E624E998F3009E17AA /* Lingvo.swift in Sources */,
+				000F784524F1B43400F918C9 /* Oficialeco.swift in Sources */,
 				005270E524E998F0009E17AA /* Artikolo.swift in Sources */,
 				005270E424E998EE009E17AA /* Traduko.swift in Sources */,
 			);
@@ -358,6 +363,7 @@
 				00A47A2D24AFDC3000EA9DCF /* Traduko.swift in Sources */,
 				00A47A2824AFDC3000EA9DCF /* Lingvo.swift in Sources */,
 				00A47A2C24AFDC3000EA9DCF /* Subartikolo.swift in Sources */,
+				000F784424F1B43100F918C9 /* Oficialeco.swift in Sources */,
 				00A47A2F24AFDC3000EA9DCF /* Fako.swift in Sources */,
 				00A47A2A24AFDC3000EA9DCF /* Stilo.swift in Sources */,
 			);

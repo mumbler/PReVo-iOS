@@ -50,6 +50,34 @@ final class DatumbazAlirilo {
         return nil
     }
     
+    func mallongigo(porKodo kodo: String) -> NSManagedObject? {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Mallongigo", in: konteksto)
+        serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
+        do {
+            return try konteksto.fetch(serchPeto).first as? NSManagedObject
+        } catch {
+            
+        }
+        
+        return nil
+    }
+    
+    func oficialeco(porKodo kodo: String) -> NSManagedObject? {
+        
+        let serchPeto = NSFetchRequest<NSFetchRequestResult>()
+        serchPeto.entity = NSEntityDescription.entity(forEntityName: "Oficialeco", in: konteksto)
+        serchPeto.predicate = NSPredicate(format: "kodo == %@", argumentArray: [kodo])
+        do {
+            return try konteksto.fetch(serchPeto).first as? NSManagedObject
+        } catch {
+            
+        }
+        
+        return nil
+    }
+    
     func artikolo(porIndekso indekso: String) -> NSManagedObject? {
         
         let serchPeto = NSFetchRequest<NSFetchRequestResult>()
@@ -70,6 +98,20 @@ final class DatumbazAlirilo {
         
         if let fako = fako(porKodo: kodo) {
             let vortoj = fako.mutableSetValue(forKey: "fakvortoj").allObjects as? [NSManagedObject]
+            return vortoj?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
+                let unuaNomo = unua.value(forKey: "nomo") as! String
+                let duaNomo = dua.value(forKey: "nomo") as! String
+                return unuaNomo.compare(duaNomo, options: .caseInsensitive, range: nil, locale: Locale(identifier: "eo")) == .orderedAscending
+            })
+        }
+        
+        return nil
+    }
+    
+    public func ofcVortoj(porOficialeco kodo: String) -> [NSManagedObject]? {
+        
+        if let oficialeco = oficialeco(porKodo: kodo) {
+            let vortoj = oficialeco.mutableSetValue(forKey: "ofcvortoj").allObjects as? [NSManagedObject]
             return vortoj?.sorted(by: { (unua: NSManagedObject, dua: NSManagedObject) -> Bool in
                 let unuaNomo = unua.value(forKey: "nomo") as! String
                 let duaNomo = dua.value(forKey: "nomo") as! String

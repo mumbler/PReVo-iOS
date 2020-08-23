@@ -12,6 +12,8 @@ require_relative "#{modulejo}/helpiloj"
 @literoj = {}
 @esperantaj = []
 @fakvortoj = {}
+@oficialecoj = []
+@ofcvortoj = {}
 @stiloj = []
 
 # dumprogramaj
@@ -45,18 +47,18 @@ puts "=== Legas lingvojn ==="
 lingvoj = legiLingvojn(eldir)
 tradukoj = starigiTradukojn(lingvoj)
 
-# fakolisto
+# Fakolisto
 
 puts "=== Legas fakojn ==="
 fakoj = legiFakojn(eldir)
 @fakvortoj = starigiFakVortojn(fakoj)
 
-# literoj
+# Literoj
 
 puts "=== Legas literojn ==="
 @literoj = legiLiterojn(eldir)
 
-# mallongigoj
+# Mallongigoj
 
 puts "=== Legas mallongigojn ==="
 mallongigoj = legiMallongigojn(eldir)
@@ -65,6 +67,12 @@ mallongigoj = legiMallongigojn(eldir)
 
 puts "=== Legas stilojn ==="
 @stiloj = legiStilojn(eldir)
+
+# Oficialecoj
+
+puts "=== Legas oficialecojn ==="
+@oficialecoj = legiOficialecojn(eldir)
+@ofcvortoj = starigiOfcVortojn(@oficialecoj)
 
 # === Trakti vort-dosierojn
 
@@ -286,12 +294,22 @@ def traktiKapon(kap, stato)
     end
    
     objekto["teksto"] = teksto.gsub("\n", "").gsub("\r", "").squeeze(" ").strip
-    if stato["super"][-1] == "art"
-        stato["artikolo"]["titolo"] = objekto["teksto"]
-    end
-    
     stato["nomo"] = objekto["nomo"] = nomo.strip
     stato["tildo"] = objekto["tildo"] = tildo.strip
+    
+    if stato["super"][-1] == "art"
+        stato["artikolo"]["titolo"] = objekto["teksto"]
+        
+        # Registi ofcvorton se ofc troviĝas
+        konservOfc = konservOficialeco(objekto["ofc"])
+        kodo = konservOfc
+        if not @ofcvortoj.has_key?(kodo)
+            @ofcvortoj[kodo] = []
+        end
+        ofcVorto = fariOfcVorton(objekto["teksto"], stato["artikolo"]["indekso"])
+        @ofcvortoj[kodo] << ofcVorto
+    end
+    
     return objekto
 end
 
@@ -308,7 +326,7 @@ def traktiUzon(uzo, stato)
                 @fakvortoj[kodo][nomo] = []
             end
             
-            fakVorto = fariFakVorton(nomo, stato["artikolo"]["indekso"], stato["marko"][2], stato["senco"], nomo)
+            fakVorto = fariFakVorton(nomo, stato["artikolo"]["indekso"], stato["marko"][2], stato["senco"])
             @fakvortoj[kodo][nomo] << fakVorto
         end
         
@@ -422,7 +440,6 @@ def traktiRimarkon(rim, stato)
             teksto += traktiTildon(fil.text, stato)
             
         elsif fil.name == "em"
-            puts tekstoPorNodo(fil, stato)
             teksto += "<b>" + tekstoPorNodo(fil, stato) + "</b>"
             
         elsif fil.name == "ctl"
@@ -659,9 +676,6 @@ def traktiFormulon(frm, stato)
         elsif fil.name == "second"
             teksto += "″"
         else
-	       if fil.text == nil
-               puts stato["radiko"]
-           end
             teksto += fil.text
         end
     end
@@ -739,8 +753,12 @@ def fariSerchTradukon(videbla, teksto, nomo, indekso, marko, senco)
     return {"videbla" => videbla, "teksto" => teksto, "nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco}
 end
        
-def fariFakVorton(nomo, indekso, marko, senco, teksto)
-    return {"nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco, "teksto" => teksto}
+def fariFakVorton(nomo, indekso, marko, senco)
+    return {"nomo" => nomo, "indekso" => indekso, "marko" => marko, "senco" => senco}
+end
+
+def fariOfcVorton(nomo, indekso)
+    return {"nomo" => nomo, "indekso" => indekso}
 end
 
 def tekstoPorUzo(kodo, tipo)
@@ -964,6 +982,8 @@ skribiFakojn(fakoj, aldir)
 skribiFakVortojn(@fakvortoj, aldir)
 skribiMallongigojn(mallongigoj, aldir)
 skribiStilojn(@stiloj, aldir)
+skribiOficialecojn(@oficialecoj, aldir)
+skribiOfcVortojn(@ofcvortoj, aldir)
 
 # ---
 

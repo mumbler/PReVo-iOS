@@ -14,7 +14,7 @@ final class OficialecoListoTableViewController: BazStilaTableViewController {
     
     private static let chelIdent = "OficialecoChelIdent"
     
-    private let oficialecoj = VortaroDatumbazo.komuna.chiujOficialecoj()
+    private let oficialecoj = VortaroDatumbazo.komuna.chiujOficialecoj() ?? []
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -29,8 +29,8 @@ final class OficialecoListoTableViewController: BazStilaTableViewController {
         
         let oficialeco = oficialecoj[indexPath.row]
         
-        novaChelo.textLabel?.text = oficialeco
-        //novaChelo.detailTextLabel?.text = oficialeco.kodo
+        novaChelo.textLabel?.text = oficialeco.nomo.prefix(1).uppercased() + oficialeco.nomo.dropFirst()
+        novaChelo.detailTextLabel?.text = oficialeco.indikilo
         
         novaChelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
         novaChelo.textLabel?.textColor = UzantDatumaro.stilo.tekstKoloro

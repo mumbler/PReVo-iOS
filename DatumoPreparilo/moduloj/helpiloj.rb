@@ -21,13 +21,15 @@ def anstatauTildo(teksto, vorto)
     teksto = teksto.gsub("<tld/>", vorto)
     teksto = teksto.gsub(/<tld>.*?<\/tld>/, vorto)
     teksto = teksto.gsub(/<tld lit=\"(.*?)\"\/>/, '\1' + "#{vorto[1..-1]}")
-    teksto = teksto.gsub(/<tld lit=\"(.*?)\">.*?<\/tld>/, '\1' + "#{vorto[1..-1]}") 
+    teksto = teksto.gsub(/<tld lit=\"(.*?)\">.*?<\/tld>/, '\1' + "#{vorto[1..-1]}")
     return teksto  
 end
 
 def uziTildon(teksto)
     teksto = teksto.gsub("<tld/>", "~")
     teksto = teksto.gsub(/<tld>.*?<\/tld>/, "~")
+    teksto = teksto.gsub(/<tld lit=\"(.*?)\"\/>/, '\1' + "~")
+    teksto = teksto.gsub(/<tld lit=\"(.*?)\">.*?<\/tld>/, '\1' + "~") 
     return teksto  
 end
 
@@ -42,6 +44,16 @@ def prepariTekston(teksto)
     return anstatauKodo(teksto2)
 end
     
+def konservOficialeco(ofc)
+    if ofc == nil
+        return "n"
+    elsif ["*", "1", "2", "3", "4", "5", "6", "7", "8", "9"].include?(ofc)
+        return ofc
+    else
+        return "a"
+    end
+end
+
 # Fari Romian formon de nombro (por listado)
 def alRomia(nombro)
 

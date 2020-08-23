@@ -13,12 +13,12 @@ final class OficialecoVortoListoTableViewController: BazStilaTableViewController
     
     private let chelIdentigilo = "oficialecoVortoChelo"
     
-    private let oficialeco: String
-    private let vortoj: [Artikolo]
+    private let oficialeco: Oficialeco
+    private let vortoj: [Destino]
     
-    init(_ oficialeco: String) {
+    init(_ oficialeco: Oficialeco) {
         self.oficialeco = oficialeco
-        vortoj = VortaroDatumbazo.komuna.vortoj(oficialeco: oficialeco)
+        vortoj = VortaroDatumbazo.komuna.ofcVortoj(porOficialeco: oficialeco.kodo)
         super.init(style: .plain)
     }
     
@@ -46,9 +46,9 @@ extension OficialecoVortoListoTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let chelo = tableView.dequeueReusableCell(withIdentifier: chelIdentigilo) ?? UITableViewCell()
-        let artikolo = vortoj[indexPath.row]
+        let destino = vortoj[indexPath.row]
         
-        let nomo = artikolo.titolo
+        let nomo = destino.nomo
         chelo.textLabel?.text = nomo
         
         chelo.backgroundColor = UzantDatumaro.stilo.bazKoloro
@@ -59,9 +59,12 @@ extension OficialecoVortoListoTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let artikolo = vortoj[indexPath.row]
+        let vortoDestino = vortoj[indexPath.row]
+        guard let artikolo = vortoDestino.artikolo(enVortaro: VortaroDatumbazo.komuna) else {
+            return
+        }
         
-        parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: oficialeco, style: .plain, target: nil, action: nil)
+        parent?.navigationItem.backBarButtonItem = UIBarButtonItem(title: oficialeco.nomo, style: .plain, target: nil, action: nil)
         (self.navigationController as? ChefaNavigationController)?.montriArtikolon(artikolo)
     }
 }

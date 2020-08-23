@@ -17,11 +17,11 @@ import ReVoModelojOSX
 
 public struct Destino {
     let artikolObjekto: NSManagedObject
+    public let nomo: String
+    public let teksto: String
     public let indekso: String
     public let marko: String?
-    public let nomo: String
     public let senco: String?
-    public let teksto: String
     
     public init?(objekto: NSManagedObject) {
         
@@ -31,20 +31,20 @@ public struct Destino {
         
         self.artikolObjekto = artikolObjekto
         
-        guard let indekso = objekto.value(forKey: "indekso") as? String,
-            let marko = objekto.value(forKey: "marko") as? String,
-            let nomo = objekto.value(forKey: "nomo") as? String,
-            let teksto = objekto.value(forKey: "teksto") as? String else {
+        guard let nomo = objekto.value(forKey: "nomo") as? String,
+            let teksto = objekto.value(forKey: "teksto") as? String,
+            let indekso = objekto.value(forKey: "indekso") as? String else {
                 return nil
         }
 
+        let marko = objekto.value(forKey: "marko") as? String
         let senco = objekto.value(forKey: "senco") as? String
         
+        self.nomo = nomo
+        self.teksto = teksto
         self.indekso = indekso
         self.marko = marko
-        self.nomo = nomo
         self.senco = senco
-        self.teksto = teksto
     }
 
     
@@ -57,11 +57,11 @@ public struct Destino {
 
 extension Destino: Equatable {
     public static func ==(lhs: Destino, rhs: Destino) -> Bool {
-        return lhs.indekso == rhs.indekso &&
-            lhs.marko == rhs.marko &&
-            lhs.nomo == rhs.marko &&
-            lhs.senco == rhs.senco &&
+        return lhs.nomo == rhs.marko &&
             lhs.teksto == rhs.teksto &&
+            lhs.indekso == rhs.indekso &&
+            lhs.marko == rhs.marko &&
+            lhs.senco == rhs.senco &&
             lhs.artikolObjekto == rhs.artikolObjekto
     }
 }

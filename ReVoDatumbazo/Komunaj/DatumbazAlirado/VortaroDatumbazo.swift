@@ -73,6 +73,14 @@ public final class VortaroDatumbazo {
         } ?? []
     }
     
+    public func ofcVortoj(porOficialeco kodo: String) -> [Destino] {
+        alirilo.ofcVortoj(porOficialeco: kodo)?.compactMap { objekto in
+            Destino(objekto: objekto)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
+        } ?? []
+    }
+    
     // MARK: - Chiuj modeloj
     
     public func chiujLingvoj() -> [Lingvo] {
@@ -107,12 +115,12 @@ public final class VortaroDatumbazo {
         }
     }
     
-    public func chiujOficialecoj() -> [String] {
-        var oficialecoj = ["*"]
-        for i in 1...10 {
-            oficialecoj.append(String(i))
+    public func chiujOficialecoj() -> [Oficialeco]? {
+        alirilo.chiujOficialecoj().compactMap { objekto in
+            Oficialeco.elDatumbazObjekto(objekto)
+        }.sorted { (lhs, rhs) -> Bool in
+            return lhs < rhs
         }
-        return oficialecoj
     }
     
     // MARK: - Trie-serĉado
