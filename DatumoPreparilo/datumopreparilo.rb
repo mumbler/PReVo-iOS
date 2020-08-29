@@ -250,6 +250,8 @@ def traktiKapon(kap, stato)
     teksto = ""
     nomo = ""
     tildo = ""
+    
+    stato["super"] << kap.name
     kap.children().each do |fil|
 
         if fil.name == "ofc"
@@ -293,11 +295,11 @@ def traktiKapon(kap, stato)
         end
     end
    
-    objekto["teksto"] = teksto.gsub("\n", "").gsub("\r", "").squeeze(" ").strip
+    objekto["teksto"] = teksto.gsub("\n", "").gsub("\r", "").gsub(" , ", ", ").squeeze(" ").strip
     stato["nomo"] = objekto["nomo"] = nomo.strip
     stato["tildo"] = objekto["tildo"] = tildo.strip
     
-    if stato["super"][-1] == "art"
+    if stato["super"][-2] == "art"
         stato["artikolo"]["titolo"] = objekto["teksto"]
         
         # Registi ofcvorton se ofc troviĝas
@@ -310,6 +312,7 @@ def traktiKapon(kap, stato)
         @ofcvortoj[kodo] << ofcVorto
     end
     
+    stato["super"].pop()
     return objekto
 end
 
