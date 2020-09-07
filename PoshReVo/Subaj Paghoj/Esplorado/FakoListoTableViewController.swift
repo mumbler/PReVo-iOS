@@ -16,6 +16,12 @@ final class FakoListoTableViewController: BazStilaTableViewController {
     
     private let fakoj = VortaroDatumbazo.komuna.chiujFakoj()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = NSLocalizedString("esplori fakoj titolo", comment: "")
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -20,6 +20,8 @@ final class OficialecoVortoListoTableViewController: BazStilaTableViewController
         self.oficialeco = oficialeco
         vortoj = VortaroDatumbazo.komuna.ofcVortoj(porOficialeco: oficialeco.kodo)
         super.init(style: .plain)
+        
+        title = Iloj.majuskligiUnuan(oficialeco.nomo)
     }
     
     required init(coder aDecoder: NSCoder) {

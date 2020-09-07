@@ -22,6 +22,8 @@ final class FakVortoListoTableViewController: BazStilaTableViewController {
         self.fako = fako
         vortoj = VortaroDatumbazo.komuna.fakVortoj(porFako: fako.kodo)
         super.init(style: .plain)
+        
+        title = Iloj.majuskligiUnuan(fako.nomo)
     }
     
     required init(coder aDecoder: NSCoder) {

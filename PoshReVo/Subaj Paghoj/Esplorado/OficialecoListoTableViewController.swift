@@ -16,6 +16,12 @@ final class OficialecoListoTableViewController: BazStilaTableViewController {
     
     private let oficialecoj = VortaroDatumbazo.komuna.chiujOficialecoj() ?? []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = NSLocalizedString("esplori oficialeco titolo", comment: "")
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

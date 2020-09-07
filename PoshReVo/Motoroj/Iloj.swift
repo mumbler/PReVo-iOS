@@ -50,6 +50,10 @@ class Iloj {
         return teksto
     }
     
+    static func majuskligiUnuan(_ teksto: String) -> String {
+        return teksto.prefix(1).uppercased() + teksto.lowercased().dropFirst()
+    }
+    
     // Trovi la X-an literon de la alfabeto (por listado)
     static func alLitero(nombro: Int, _ granda: Bool) -> String {
         
