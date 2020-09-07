@@ -925,7 +925,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = WYZ8GHNKW7;
 				INFOPLIST_FILE = PoshReVo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -950,7 +950,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = WYZ8GHNKW7;
 				INFOPLIST_FILE = PoshReVo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
